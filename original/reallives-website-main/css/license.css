@@ -1,0 +1,1701 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans", sans-serif;
+}
+
+body {
+  background-color: black;
+}
+
+/* web degine css  */
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.text-decoration-none {
+  text-decoration: none;
+}
+
+.container-license-outer {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* by default tab button css  */
+
+.child-license-card-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.top-outer-box {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.container-box-card {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 2rem;
+  /* padding: 2rem 0rem; */
+  padding: 0rem 0rem;
+}
+
+.button-back-container {
+  text-align: center;
+}
+
+.text-select-segment {
+  font-weight: 300;
+  font-size: 28px;
+  color: #f2f2f2;
+}
+
+.text-description-segment {
+  font-weight: 200;
+  font-size: 18px;
+  color: #ccc;
+}
+
+.cards-license-button {
+  border-radius: 12px;
+  background-color: #282828;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 4rem;
+}
+
+.cards-license-button:nth-child(1):hover {
+  background: linear-gradient(360deg, #282828 14.69%, #c05402 74%);
+}
+
+.cards-license-button:nth-child(1):hover .smillar-text-font {
+  color: #fed4b4;
+}
+
+.cards-license-button:nth-child(2):hover {
+  background: linear-gradient(360deg, #282828 14.86%, #065143 73.76%);
+}
+
+.cards-license-button:nth-child(2):hover .university-text-color {
+  color: #a1f7e7;
+}
+
+.cards-license-button:nth-child(3):hover {
+  background: linear-gradient(360deg, #282828 15%, #810dc9 74%);
+}
+
+.cards-license-button:nth-child(3):hover .family-text-color-2 {
+  color: #d69ff9;
+}
+
+.cards-license-button:nth-child(4):hover {
+  background: linear-gradient(360deg, #282828 15%, #0097ad 100%);
+}
+
+.cards-license-button:nth-child(4):hover .gamer-text-color {
+  color: #99f2ff;
+}
+
+.mobile-background-color {
+  border-radius: 12px;
+  background-color: #282828;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 4rem;
+}
+
+.icon-box-child {
+  width: 50%;
+  height: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-box-child > span {
+  font-size: 7rem;
+  font-weight: 100 !important;
+  color: #f2f2f2;
+}
+
+.smillar-text-font {
+  font-weight: 300;
+  font-size: 26px;
+  color: #ffffff;
+}
+
+.back-button-style {
+  padding: 0.4rem 2rem;
+  background-color: transparent;
+  font-weight: 300;
+  font-size: 18px;
+  color: #cccccc;
+  border: 1px solid #cccccc;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.flex-center-gap-10px {
+  display: flex;
+  gap: 10px;
+}
+
+.image-fit {
+  height: 100%;
+}
+
+/* by default tab button css end  */
+
+/* first tab css  */
+
+.container-package-outer {
+  width: 100%;
+  height: 100vh;
+  /* background-color: lightgreen; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.background-box-color {
+  width: 70%;
+  height: 80%;
+  background: radial-gradient(50% 50% at 50% 50%, #b45105 0%, #000000 84.62%);
+}
+
+.content-package-box-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  padding: 20px 50px;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 1rem;
+}
+
+.content-package-outer {
+  /* background-color: #065143; */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.school-text-color {
+  color: #fed4b4 !important;
+}
+
+.left-side-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1rem;
+  padding: 0px 10px;
+}
+
+.first-child-package-box:nth-child(3) {
+  grid-column: 1 / -1;
+  justify-self: center;
+}
+
+.right-side-container {
+  padding: 1rem;
+  background-color: #282828;
+  border: 1px solid #ff9b4f;
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+  gap: 1rem;
+  box-shadow: 0px 0px 20px 0px #00000040;
+  border-radius: 12px;
+}
+
+.box-product-container {
+  /* display: flex;
+    align-items: center; */
+  display: grid;
+  grid-template-columns: 30% 1fr;
+  gap: 1rem;
+}
+
+.title-row-text {
+  font-weight: 300;
+  font-size: 16px;
+  color: #f2f2f2;
+}
+
+.description-row-text {
+  font-weight: 300;
+  font-size: 15px;
+  color: #cccccc;
+  line-height: 22px;
+}
+
+.icon-row-box {
+  width: auto;
+  height: 50px;
+  /* padding: 12px; */
+}
+
+.gap-1rem {
+  gap: 1rem !important;
+}
+
+.whats-included-text {
+  font-weight: 300;
+  font-size: 20px;
+  color: #f2f2f2;
+}
+
+.description-row-included {
+  font-weight: 300;
+  font-size: 16px;
+  color: #cccccc;
+}
+
+.flex-colume {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.content-div {
+  display: none;
+}
+
+.first-child-package-box {
+  background-color: #282828;
+  box-shadow: 0px 0px 20px 0px #00000040;
+  border-radius: 12px;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.first-child-package-box > p {
+  font-weight: 300;
+  font-size: 25px;
+  color: #f2f2f2;
+}
+
+.second-child-package-box {
+  background-color: #282828;
+  box-shadow: 0px 0px 20px 0px #00000040;
+  border-radius: 12px;
+}
+
+.first-child-package-box:nth-child(1):hover {
+  outline: 1px solid #ff9b4f;
+}
+
+.first-child-package-box:nth-child(1):hover .explor-btn-new {
+  background-color: #c05402;
+  border: 1px solid #ff9b4f;
+  color: white;
+}
+
+.first-child-package-box:nth-child(2):hover {
+  outline: 1px solid #ff9b4f;
+}
+
+.first-child-package-box:nth-child(2):hover .explor-btn-new {
+  background-color: #c05402;
+  border: 1px solid #ff9b4f;
+  color: white;
+}
+
+.first-child-package-box:nth-child(3):hover {
+  outline: 1px solid #ff9b4f;
+}
+
+.first-child-package-box:nth-child(3):hover .explor-btn-new {
+  background-color: #c05402;
+  border: 1px solid #ff9b4f;
+  color: white;
+}
+
+.pricing-box-outer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.border-right {
+  border-right: 1px solid white;
+}
+
+.explor-btn-new {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background: transparent;
+  padding: 0.5rem 1rem;
+  outline: none;
+  border: 1px solid #bababa;
+  border-radius: 6px;
+  font-weight: 200;
+  font-size: 17px;
+  color: #cccccc;
+  cursor: pointer;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.pricing-devide-box {
+  /* border: 1px solid white; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.doller-price-text {
+  font-weight: 300;
+  font-size: 50px;
+  color: #f2f2f2;
+}
+
+.student-count-text {
+  font-weight: 200;
+  font-size: 21px;
+  color: #f2f2f2;
+}
+
+.validity-text-style-1 {
+  font-weight: 100;
+  font-size: 19px;
+  color: #f2f2f2;
+}
+
+.span-style {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* first tab css  */
+
+/* second tab university css  */
+
+.background-color-university {
+  background: radial-gradient(50% 50% at 50% 50%, #064f42 0%, #000000 84.62%);
+}
+
+.border-university {
+  border: 1px solid #34f1cd !important;
+}
+
+.university-color-text {
+  color: #a1f7e7;
+}
+
+.university-pricing-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  padding: 0rem 1rem;
+  gap: 1rem;
+}
+
+.university-child-pricing {
+  background-color: #282828;
+  border-radius: 12px;
+  padding: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.uni-text-style {
+  font-weight: 300;
+  font-size: 20px;
+  color: #f2f2f2;
+}
+
+.flex-colume-box {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.year-and-student-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.year-student-box {
+  /* padding: 10px; */
+}
+
+.university-child-pricing:nth-child(1):hover {
+  outline: 1px solid #34f1cd;
+}
+
+.university-child-pricing:nth-child(1):hover .explor-btn-new {
+  background-color: #065143;
+  border: 1px solid #34f1cd;
+  color: white;
+}
+
+.university-child-pricing:nth-child(2):hover {
+  outline: 1px solid #34f1cd;
+}
+
+.university-child-pricing:nth-child(2):hover .explor-btn-new {
+  background-color: #065143;
+  border: 1px solid #34f1cd;
+  color: white;
+}
+
+.university-child-pricing:nth-child(3):hover {
+  outline: 1px solid #34f1cd;
+}
+
+.university-child-pricing:nth-child(3):hover .explor-btn-new {
+  background-color: #065143;
+  border: 1px solid #34f1cd;
+  color: white;
+}
+
+.university-child-pricing:nth-child(4):hover {
+  outline: 1px solid #34f1cd;
+}
+
+.university-child-pricing:nth-child(4):hover .explor-btn-new {
+  background-color: #065143;
+  border: 1px solid #34f1cd;
+  color: white;
+}
+
+.university-child-pricing:nth-child(5):hover {
+  outline: 1px solid #34f1cd;
+}
+
+.university-child-pricing:nth-child(5):hover .explor-btn-new {
+  background-color: #065143;
+  border: 1px solid #34f1cd;
+  color: white;
+}
+
+.university-child-pricing:nth-child(6):hover {
+  outline: 1px solid #34f1cd;
+}
+
+.university-child-pricing:nth-child(6):hover .explor-btn-new {
+  background-color: #065143;
+  border: 1px solid #34f1cd;
+  color: white;
+}
+
+.university-two-side-container {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  gap: 10px;
+}
+
+.text-view-style {
+  font-weight: 200;
+  font-size: 18px;
+  color: #ffffff;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* js  */
+
+.university-child-pricing.hidden {
+  display: none;
+}
+
+.toggle-btn:active {
+  transform: translateY(0);
+}
+
+.toggle-btn {
+  transition: all 0.3s ease;
+}
+
+/* js  */
+
+/* second tab university css  */
+
+/* therd tab family  */
+
+.flex-align-none {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.family-pricing-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1rem;
+  padding: 0rem 1rem;
+}
+
+.family-pricing-box {
+  background-color: #282828;
+  box-shadow: 0px 0px 20px 0px #00000040;
+  border-radius: 12px;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.gamer-child-pricing {
+  background-color: #282828;
+  border-radius: 12px;
+  padding: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.family-pricing-box:nth-child(1):hover {
+  outline: 1px solid #ce8cf6;
+  color: white;
+}
+
+.family-pricing-box:nth-child(1):hover .explor-btn-new {
+  background-color: #810dc9;
+  color: white;
+}
+
+.family-pricing-box:nth-child(2):hover {
+  outline: 1px solid #ce8cf6;
+  color: white;
+}
+
+.family-pricing-box:nth-child(2):hover .explor-btn-new {
+  background-color: #810dc9;
+  color: white;
+}
+
+.family-pricing-box:nth-child(3):hover {
+  outline: 1px solid #ce8cf6;
+}
+
+.family-pricing-box:nth-child(3):hover .explor-btn-new {
+  background-color: #810dc9;
+  color: white;
+}
+
+.family-pricing-box:nth-child(3) {
+  grid-column: 1 / -1;
+  justify-self: center;
+}
+
+.background-color-family {
+  background: radial-gradient(50% 50% at 50% 50%, #7f0dc5 0%, #000000 84.62%);
+}
+
+.family-text-color {
+  font-weight: 300;
+  font-size: 40px;
+  color: #d69ff9;
+}
+
+.padding-right {
+  padding-right: 1rem;
+}
+
+.border-family {
+  border: 1px solid #ce8cf6 !important;
+}
+
+/* therd tab family  */
+
+/* fourth tab  gamer */
+
+.background-color-gamer {
+  background: radial-gradient(50% 50% at 50% 50%, #0194aa 0%, #000000 84.62%);
+}
+
+.gamer-color-text {
+  font-weight: 300;
+  font-size: 40px;
+  color: #99f2ff;
+}
+
+.gamer-pricing-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  padding: 0rem 1rem;
+  gap: 1rem;
+}
+
+.gamer-child-pricing:nth-child(1):hover {
+  outline: 1px solid #89d9e5;
+}
+
+.gamer-child-pricing:nth-child(1):hover .explor-btn-new {
+  background-color: #0095ac;
+  border: 1px solid #89d9e5;
+  color: white;
+}
+
+.gamer-child-pricing:nth-child(2):hover {
+  outline: 1px solid #89d9e5;
+}
+
+.gamer-child-pricing:nth-child(2):hover .explor-btn-new {
+  background-color: #0095ac;
+  border: 1px solid #89d9e5;
+  color: white;
+}
+
+.gamer-child-pricing:nth-child(3):hover {
+  outline: 1px solid #89d9e5;
+}
+
+.gamer-child-pricing:nth-child(3):hover .explor-btn-new {
+  background-color: #0095ac;
+  border: 1px solid #89d9e5;
+  color: white;
+}
+
+.gamer-child-pricing:nth-child(4):hover {
+  outline: 1px solid #89d9e5;
+}
+
+.gamer-child-pricing:nth-child(4):hover .explor-btn-new {
+  background-color: #0095ac;
+  border: 1px solid #89d9e5;
+  color: white;
+}
+
+/* fourth tab gamer  */
+
+.mobile-show-style {
+  display: none;
+}
+
+/* web degine css  */
+
+
+/* modal css  */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4); /* slightly dark */
+  backdrop-filter: blur(8px); /* blur effect */
+  -webkit-backdrop-filter: blur(8px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease;
+  z-index: 1000;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Modal box */
+
+.modal-register {
+  width: 30vw;
+  background-color: #282828;
+  border: 1px solid #767676;
+  border-radius: 6px;
+  padding: 1.6rem;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  display: grid;
+  grid-template-rows: 1fr auto;
+  gap: 2rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  z-index: 1001;
+}
+
+.modal-register.activemodal {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Modal content */
+.top-title-head {
+  font-weight: 300;
+  font-size: 28px;
+  color: #ffffff;
+}
+.description-title {
+  font-weight: 300;
+  font-size: 18px;
+  color: #dddddd;
+}
+.description-modal-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.button-wrapper-box {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.go-back-btn {
+  padding: 0.7rem 2rem;
+  background: transparent;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  color: #ccc;
+  cursor: pointer;
+}
+.register-btn {
+  padding: 0.7rem 2rem;
+  background: #ddd;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+/* modal css  */
+
+@media (max-width: 1668px) {
+  .child-license-card-container {
+    gap: 3rem;
+  }
+
+  .cards-license-button {
+    padding: 3rem;
+  }
+}
+
+@media (max-width: 1440px) {
+  .cards-license-button {
+    padding: 3rem;
+  }
+
+  .child-license-card-container {
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 1368px) {
+  .modal-register {
+    width: 40vw;
+  }
+
+  .cards-license-button {
+    padding: 3rem;
+  }
+}
+
+@media (max-width: 1280px) {
+  .modal-register {
+    width: 40vw;
+  }
+  .cards-license-button {
+    padding: 3rem;
+  }
+
+  .uni-text-style {
+    font-size: 26px;
+  }
+
+  .year-student-box {
+    padding-left: 7px;
+  }
+
+  .text-view-style {
+    font-size: 22px;
+  }
+
+  .explor-btn-new {
+    padding: 0.3rem 1rem;
+  }
+
+  .text-description-segment {
+    font-size: 19px;
+  }
+
+  .university-child-pricing {
+    gap: 2rem;
+    padding: 1rem;
+    height: min-content;
+  }
+
+  .content-package-box-container {
+    padding: 1rem 1rem;
+  }
+
+  .mobile-background-color {
+    padding: 3rem;
+  }
+
+  .icon-box-child {
+    height: 50%;
+  }
+
+  .icon-box-child > img {
+    height: 100%;
+  }
+
+  .mobile-show-style {
+    display: none;
+  }
+
+  .web-show-style {
+    display: block;
+  }
+
+  /* tab css  */
+
+  .description-row-text {
+    font-size: 16px;
+  }
+
+  .title-row-text {
+    font-size: 15px;
+  }
+
+  .icon-row-box {
+    height: 50px;
+  }
+
+  .first-child-package-box > p {
+    font-size: 30px;
+  }
+
+  .doller-price-text {
+    font-size: 50px;
+  }
+
+  .text-select-segment {
+    font-size: 38px;
+  }
+
+  .right-side-container {
+    gap: 0rem;
+  }
+
+  .box-product-container {
+    position: relative;
+    top: 10%;
+  }
+
+  .description-row-included {
+    font-size: 18px;
+  }
+
+  .whats-included-text {
+    font-size: 22px;
+  }
+
+  .validity-text-style-1 {
+    font-size: 19px;
+  }
+
+  .student-count-text {
+    font-size: 19px;
+  }
+
+  .text-description-segment {
+    font-size: 24px;
+  }
+
+  /* tab css  */
+}
+
+@media (max-width: 1180px) {
+  .modal-register {
+    width: 40vw;
+  }
+  .cards-license-button {
+    padding: 3rem;
+  }
+
+  .uni-text-style {
+    font-size: 26px;
+  }
+
+  .year-student-box {
+    padding-left: 7px;
+  }
+
+  .text-view-style {
+    font-size: 22px;
+  }
+
+  .explor-btn-new {
+    padding: 0.3rem 1rem;
+  }
+
+  .text-description-segment {
+    font-size: 19px;
+  }
+
+  .university-child-pricing {
+    gap: 2rem;
+    padding: 1rem;
+    height: min-content;
+  }
+
+  .content-package-box-container {
+    padding: 1rem 1rem;
+  }
+
+  .mobile-background-color {
+    padding: 3rem;
+  }
+
+  .icon-box-child {
+    height: 50%;
+  }
+
+  .icon-box-child > img {
+    height: 100%;
+  }
+
+  .mobile-show-style {
+    display: none;
+  }
+
+  .web-show-style {
+    display: block;
+  }
+
+  /* tab css  */
+
+  .description-row-text {
+    font-size: 15px;
+  }
+
+  .title-row-text {
+    font-size: 14px;
+  }
+
+  .icon-row-box {
+    height: 50px;
+  }
+
+  .first-child-package-box > p {
+    font-size: 25px;
+  }
+
+  .doller-price-text {
+    font-size: 50px;
+  }
+
+  .text-select-segment {
+    font-size: 38px;
+  }
+
+  .right-side-container {
+    gap: 0rem;
+  }
+
+  .box-product-container {
+    position: relative;
+    top: 10%;
+  }
+
+  .description-row-included {
+    font-size: 18px;
+  }
+
+  .whats-included-text {
+    font-size: 22px;
+  }
+
+  .validity-text-style-1 {
+    font-size: 17px;
+  }
+
+  .student-count-text {
+    font-size: 19px;
+  }
+
+  .text-description-segment {
+    font-size: 24px;
+  }
+
+  /* tab css  */
+}
+
+@media (max-width: 1104px) {
+  .modal-register {
+    width: 40vw;
+  }
+  .cards-license-button {
+    padding: 2.5rem;
+  }
+
+  .uni-text-style {
+    font-size: 26px;
+  }
+
+  .year-student-box {
+    padding-left: 7px;
+  }
+
+  .text-view-style {
+    font-size: 22px;
+  }
+
+  .explor-btn-new {
+    padding: 0.3rem 1rem;
+  }
+
+  .text-description-segment {
+    font-size: 19px;
+  }
+
+  .university-child-pricing {
+    gap: 2rem;
+    padding: 1rem;
+    height: min-content;
+  }
+
+  .content-package-box-container {
+    padding: 1rem 1rem;
+  }
+
+  .mobile-background-color {
+    padding: 3rem;
+  }
+
+  .icon-box-child {
+    height: 50%;
+  }
+
+  .icon-box-child > img {
+    height: 100%;
+  }
+
+  .mobile-show-style {
+    display: none;
+  }
+
+  .web-show-style {
+    display: block;
+  }
+
+  /* tab css  */
+
+  .description-row-text {
+    font-size: 15px;
+  }
+
+  .title-row-text {
+    font-size: 14px;
+  }
+
+  .icon-row-box {
+    height: 50px;
+  }
+
+  .first-child-package-box > p {
+    font-size: 30px;
+  }
+
+  .doller-price-text {
+    font-size: 60px;
+  }
+
+  .text-select-segment {
+    font-size: 38px;
+  }
+
+  .right-side-container {
+    gap: 0rem;
+  }
+
+  .box-product-container {
+    position: relative;
+    top: 0%;
+  }
+
+  .description-row-included {
+    font-size: 18px;
+  }
+
+  .whats-included-text {
+    font-size: 22px;
+  }
+
+  .validity-text-style-1 {
+    font-size: 22px;
+  }
+
+  .student-count-text {
+    font-size: 19px;
+  }
+
+  .text-description-segment {
+    font-size: 24px;
+  }
+
+  /* tab css  */
+}
+
+@media (min-width: 1024px) {
+  .mobile-show-style {
+    display: none;
+  }
+
+  .web-show-style {
+    display: block;
+  }
+}
+
+@media (max-width: 1024px) {
+  .modal-register {
+    width: 40vw;
+  }
+
+  .cards-license-button {
+    padding: 2rem;
+  }
+
+  .student-count-text {
+    font-size: 14px;
+  }
+
+  .uni-text-style {
+    font-size: 21px;
+  }
+
+  .text-view-style {
+    font-size: 14px;
+  }
+
+  .explor-btn-new {
+    padding: 0.3rem 1rem;
+  }
+
+  .text-description-segment {
+    font-size: 19px;
+  }
+
+  .university-child-pricing {
+    gap: 1rem;
+    padding: 1rem;
+    height: min-content;
+  }
+
+  .mobile-background-color {
+    padding: 3rem;
+  }
+
+  .icon-box-child {
+    height: 50%;
+  }
+
+  .icon-box-child > img {
+    height: 100%;
+  }
+
+  /* tab css  */
+
+  .description-row-text {
+    font-size: 12px;
+  }
+
+  .title-row-text {
+    font-size: 12px;
+  }
+
+  .icon-row-box {
+    height: 37px;
+  }
+
+  .first-child-package-box > p {
+    font-size: 17px;
+  }
+
+  .doller-price-text {
+    font-size: 38px;
+  }
+
+  .text-select-segment {
+    font-size: 23px;
+  }
+
+  .right-side-container {
+    gap: 0rem;
+  }
+
+  .box-product-container {
+    position: relative;
+    top: 16%;
+  }
+
+  .description-row-included {
+    font-size: 14px;
+  }
+
+  .whats-included-text {
+    font-size: 17px;
+  }
+
+  .validity-text-style-1 {
+    font-size: 14px;
+  }
+
+  /* tab css  */
+}
+
+@media (max-width: 991px) {
+  /* web & mobile styel  */
+
+  .mobile-show-style {
+    display: block;
+  }
+
+  .web-show-style {
+    display: none;
+  }
+
+  /* web & mobile style  */
+
+  .top-outer-box {
+    padding: 22px;
+  }
+
+  .container-box-card {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1rem 1rem;
+  }
+
+  .child-license-card-container {
+    justify-content: center;
+  }
+
+  .mobile-background-color {
+    padding: 3rem;
+  }
+
+  .icon-box-child > img {
+    height: 100%;
+  }
+
+  .icon-box-child {
+    height: 60%;
+  }
+
+  .smillar-text-font {
+    font-size: 20px;
+  }
+
+  .text-select-segment {
+    font-size: 25px;
+  }
+
+  .text-description-segment {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 800px) {
+  /* web & mobile styel  */
+
+  .mobile-show-style {
+    display: block;
+  }
+
+  .web-show-style {
+    display: none;
+  }
+
+  /* web & mobile style  */
+
+  .top-outer-box {
+    padding: 22px;
+  }
+
+  .container-box-card {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1rem 1rem;
+  }
+
+  .child-license-card-container {
+    justify-content: center;
+  }
+
+  .mobile-background-color {
+    padding: 3rem;
+  }
+
+  .icon-box-child > img {
+    height: 100%;
+  }
+
+  .icon-box-child {
+    height: 60%;
+  }
+
+  .smillar-text-font {
+    font-size: 20px;
+  }
+
+  .text-select-segment {
+    font-size: 25px;
+  }
+
+  .text-description-segment {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 700px) {
+  .mobile-background-color {
+    padding: 3rem;
+  }
+
+  /* web & mobile styel  */
+
+  .mobile-show-style {
+    display: block;
+  }
+
+  .web-show-style {
+    display: none;
+  }
+
+  /* web & mobile style  */
+
+  .top-outer-box {
+    padding: 22px;
+  }
+
+  .container-box-card {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1rem 1rem;
+  }
+
+  .child-license-card-container {
+    justify-content: center;
+  }
+
+  .mobile-background-color {
+    padding: 2rem;
+  }
+
+  .icon-box-child > img {
+    height: 100%;
+  }
+
+  .icon-box-child {
+    height: 60%;
+  }
+
+  .smillar-text-font {
+    font-size: 20px;
+  }
+
+  .text-select-segment {
+    font-size: 25px;
+  }
+
+  .text-description-segment {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  /* web & mobile styel  */
+
+  .mobile-show-style {
+    display: block;
+  }
+
+  .web-show-style {
+    display: none;
+  }
+
+  /* web & mobile style  */
+
+  .top-outer-box {
+    padding: 22px;
+  }
+
+  .container-box-card {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1rem 1rem;
+  }
+
+  .child-license-card-container {
+    justify-content: center;
+  }
+
+  .mobile-background-color {
+    padding: 2rem;
+  }
+
+  .icon-box-child > img {
+    height: 100%;
+  }
+
+  .icon-box-child {
+    height: 60%;
+  }
+
+  .smillar-text-font {
+    font-size: 20px;
+  }
+
+  .text-select-segment {
+    font-size: 22px;
+  }
+
+  .text-description-segment {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 520px) {
+  /* web & mobile styel  */
+
+  .back-button-style {
+    padding: 0.4rem 1.4rem;
+  }
+
+  .mobile-show-style {
+    display: block;
+  }
+
+  .web-show-style {
+    display: none;
+  }
+
+  /* web & mobile style  */
+
+  .top-outer-box {
+    padding: 22px;
+  }
+
+  .container-box-card {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1rem 1rem;
+  }
+
+  .child-license-card-container {
+    justify-content: center;
+  }
+
+  .mobile-background-color {
+    padding: 2rem;
+  }
+
+  .icon-box-child > img {
+    height: 100%;
+  }
+
+  .icon-box-child {
+    height: 60%;
+  }
+
+  .smillar-text-font {
+    font-size: 20px;
+  }
+
+  .text-select-segment {
+    font-size: 22px;
+  }
+
+  .text-description-segment {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 430px) {
+  /* web & mobile styel  */
+
+  .mobile-show-style {
+    display: block;
+  }
+
+  .web-show-style {
+    display: none;
+  }
+
+  /* web & mobile style  */
+
+  .top-outer-box {
+    padding: 2rem;
+    padding-bottom: 0rem;
+  }
+
+  .container-box-card {
+    grid-template-columns: 1fr;
+    padding: 1rem 2rem;
+  }
+
+  .child-license-card-container {
+    justify-content: start;
+  }
+
+  .mobile-background-color {
+    padding: 3rem;
+  }
+
+  .icon-box-child > img {
+    height: 100%;
+  }
+
+  .icon-box-child {
+    height: 60%;
+  }
+
+  .smillar-text-font {
+    font-size: 20px;
+  }
+
+  .text-select-segment {
+    font-size: 22px;
+  }
+
+  .text-description-segment {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 375px) {
+  /* web & mobile styel  */
+
+  .mobile-show-style {
+    display: block;
+  }
+
+  .web-show-style {
+    display: none;
+  }
+
+  /* web & mobile style  */
+
+  .top-outer-box {
+    padding: 2rem;
+    padding-bottom: 0rem;
+  }
+
+  .container-box-card {
+    grid-template-columns: 1fr;
+    padding: 1rem 1rem;
+  }
+
+  .child-license-card-container {
+    justify-content: start;
+  }
+
+  .mobile-background-color {
+    padding: 2rem;
+  }
+
+  .icon-box-child > img {
+    height: 100%;
+  }
+
+  .icon-box-child {
+    height: 50%;
+  }
+
+  .smillar-text-font {
+    font-size: 20px;
+  }
+
+  .text-select-segment {
+    font-size: 22px;
+  }
+
+  .text-description-segment {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 360px) {
+  /* web & mobile styel  */
+
+  .mobile-show-style {
+    display: block;
+  }
+
+  .web-show-style {
+    display: none;
+  }
+
+  /* web & mobile style  */
+
+  .top-outer-box {
+    padding: 2rem;
+    padding-bottom: 0rem;
+  }
+
+  .container-box-card {
+    grid-template-columns: 1fr;
+    padding: 1rem 1rem;
+  }
+
+  .child-license-card-container {
+    justify-content: start;
+  }
+
+  .mobile-background-color {
+    padding: 2rem;
+  }
+
+  .icon-box-child > img {
+    height: 100%;
+  }
+
+  .icon-box-child {
+    height: 50%;
+  }
+
+  .smillar-text-font {
+    font-size: 20px;
+  }
+
+  .text-select-segment {
+    font-size: 22px;
+  }
+
+  .text-description-segment {
+    font-size: 16px;
+  }
+}

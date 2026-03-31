@@ -1,0 +1,911 @@
+# Cursor Prompt — RealLives Website React Conversion
+
+---
+
+## PROJECT OVERVIEW
+
+You are converting the RealLives website from plain HTML, CSS, and JavaScript into a modern React application. This is a large, multi-section website with a unique nested structure. Read this entire prompt before writing a single line of code. Every decision below is intentional.
+
+---
+
+## SITE ARCHITECTURE (Understand This First)
+
+The site has a layered structure:
+
+```
+/ (root)
+└── Portal Page — two cards: "RealLives" and "ChangemakerIndex" (just a link out)
+
+/reallives
+└── RealLives Landing — image carousel + 4 entry cards + 2 CTAs + unique footer
+    │
+    ├── [CTA 1] /reallives/licenses
+    │   └── License Hub — 4 cards (school, university, homeschooler, gamer)
+    │       ├── /reallives/licenses/school        → School license detail page
+    │       ├── /reallives/licenses/university     → University license detail page
+    │       ├── /reallives/licenses/homeschooler   → Homeschooler license detail page
+    │       └── /reallives/licenses/gamer          → Gamer license detail page
+    │           Each license detail page has 2 CTAs:
+    │             • "Visit Website"  → /reallives/<type> (the sub-site)
+    │             • "Buy License"    → /reallives/register/<type> (registration form)
+    │
+    ├── [CTA 2] /reallives/login
+    │   └── Login Page
+    │
+    ├── /reallives/register/school          → School registration form
+    ├── /reallives/register/university      → University registration form
+    ├── /reallives/register/homeschooler    → Homeschooler registration form
+    └── /reallives/register/gamer           → Gamer registration form
+
+/reallives/school         → School sub-site (own navbar + dynamic footer)
+/reallives/university     → University sub-site
+/reallives/homeschooler   → Homeschooler sub-site
+/reallives/gamer          → Gamer sub-site (unique, different design)
+```
+
+Each sub-site (school, university, homeschooler, gamer) is a self-contained website with its own navbar and pages. School, university, and homeschooler share approximately 90% of their components and layout — only their content differs. The gamer sub-site is visually distinct but still reuses common pages like About Us, Contact Us, etc.
+
+### Two distinct footer types
+
+There are two completely different footer components in this project:
+
+1. **`LandingFooter`** — used only on `/reallives` (the landing page). Has its own unique About and Contact Us content that is separate from any sub-site. Lives in `components/landing/LandingFooter/`.
+
+2. **`Footer`** (dynamic sub-site footer) — used inside every sub-site (school, university, homeschooler, gamer). Dynamically renders all navbar links for the current sub-site by reading from the site's nav config in its content file. This means if a new page is added to the school navbar, the school footer automatically includes it — there is no separate footer link list to maintain.
+
+Do not mix these up. They are different components with different purposes.
+
+---
+
+## TECH STACK
+
+- **React** (with hooks)
+- **Vite** as the build tool
+- **React Router v6** for routing
+- **CSS Modules** for component-scoped styles
+- **CSS custom properties (variables)** for theming (light/dark mode)
+- No CSS frameworks (no Tailwind, no Bootstrap) unless already present in the original project
+
+---
+
+## FOLDER STRUCTURE
+
+Scaffold exactly this structure. Do not deviate:
+
+```
+src/
+├── pages/
+│   ├── Portal.jsx
+│   ├── RealLivesLanding.jsx
+│   ├── NotFound.jsx
+│   │
+│   ├── licenses/
+│   │   ├── LicenseHub.jsx             ← shows 4 user-type cards
+│   │   ├── SchoolLicense.jsx          ← school license detail + 2 CTAs
+│   │   ├── UniversityLicense.jsx
+│   │   ├── HomeschoolerLicense.jsx
+│   │   └── GamerLicense.jsx
+│   │
+│   ├── register/
+│   │   ├── SchoolRegister.jsx         ← school registration form
+│   │   ├── UniversityRegister.jsx
+│   │   ├── HomeschoolerRegister.jsx
+│   │   └── GamerRegister.jsx
+│   │
+│   ├── Login.jsx
+│   │
+│   ├── school/
+│   │   ├── SchoolHome.jsx
+│   │   ├── SchoolAbout.jsx
+│   │   └── ... (one file per route)
+│   ├── university/
+│   │   ├── UniversityHome.jsx
+│   │   └── ...
+│   ├── homeschooler/
+│   │   ├── HomeschoolerHome.jsx
+│   │   └── ...
+│   └── gamer/
+│       ├── GamerHome.jsx
+│       └── ...
+│
+├── components/
+│   ├── common/
+│   │   ├── Navbar/
+│   │   │   ├── Navbar.jsx
+│   │   │   └── Navbar.module.css
+│   │   ├── Footer/
+│   │   │   ├── Footer.jsx             ← dynamic sub-site footer (reads nav links from content)
+│   │   │   └── Footer.module.css
+│   │   ├── AboutUs/
+│   │   │   ├── AboutUs.jsx
+│   │   │   └── AboutUs.module.css
+│   │   ├── ContactUs/
+│   │   │   ├── ContactUs.jsx
+│   │   │   └── ContactUs.module.css
+│   │   ├── Carousel/
+│   │   │   ├── Carousel.jsx
+│   │   │   └── Carousel.module.css
+│   │   ├── LicenseCard/               ← reusable card used in LicenseHub
+│   │   │   ├── LicenseCard.jsx
+│   │   │   └── LicenseCard.module.css
+│   │   ├── LicenseTierCard/           ← reusable card for individual license tiers
+│   │   │   ├── LicenseTierCard.jsx
+│   │   │   └── LicenseTierCard.module.css
+│   │   └── ... (one folder per shared component)
+│   │
+│   ├── landing/
+│   │   ├── LandingFooter/             ← unique footer only for /reallives landing page
+│   │   │   ├── LandingFooter.jsx
+│   │   │   └── LandingFooter.module.css
+│   │   └── ... (other landing-page-specific components)
+│   │
+│   ├── school/
+│   │   └── ...
+│   ├── university/
+│   │   └── ...
+│   ├── homeschooler/
+│   │   └── ...
+│   └── gamer/
+│       └── ...
+│
+├── layouts/
+│   ├── RootLayout.jsx          ← wraps ThemeProvider, contains <Outlet />
+│   ├── LandingLayout.jsx       ← layout for /reallives and license/login/register pages
+│   ├── SubSiteLayout.jsx       ← shared layout for school/university/homeschooler
+│   └── GamerLayout.jsx         ← gamer-specific layout
+│
+├── context/
+│   ├── ThemeContext.jsx
+│   └── SiteContext.jsx
+│
+├── hooks/
+│   ├── useTheme.js
+│   └── useSiteContent.js
+│
+├── content/
+│   ├── school.js               ← includes navLinks array used by Navbar + Footer
+│   ├── university.js
+│   ├── homeschooler.js
+│   ├── gamer.js
+│   └── licenses.js             ← license tiers and benefits for all 4 user types
+│
+├── assets/
+│   ├── images/
+│   └── icons/
+│
+├── styles/
+│   └── global.css
+│
+├── docs/
+│   └── component-map.md
+│
+├── App.jsx
+└── main.jsx
+```
+
+---
+
+## ROUTING (App.jsx)
+
+Use React Router v6 with nested routes and layout routes. Implement it exactly like this:
+
+```jsx
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+// Layouts
+import RootLayout from './layouts/RootLayout';
+import LandingLayout from './layouts/LandingLayout';
+import SubSiteLayout from './layouts/SubSiteLayout';
+import GamerLayout from './layouts/GamerLayout';
+
+// Top-level pages
+import Portal from './pages/Portal';
+import RealLivesLanding from './pages/RealLivesLanding';
+import Login from './pages/Login';
+import NotFound from './pages/NotFound';
+
+// License pages
+import LicenseHub from './pages/licenses/LicenseHub';
+import SchoolLicense from './pages/licenses/SchoolLicense';
+import UniversityLicense from './pages/licenses/UniversityLicense';
+import HomeschoolerLicense from './pages/licenses/HomeschoolerLicense';
+import GamerLicense from './pages/licenses/GamerLicense';
+
+// Registration pages
+import SchoolRegister from './pages/register/SchoolRegister';
+import UniversityRegister from './pages/register/UniversityRegister';
+import HomeschoolerRegister from './pages/register/HomeschoolerRegister';
+import GamerRegister from './pages/register/GamerRegister';
+
+// Sub-site pages (import all)
+// ...
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route element={<RootLayout />}>
+
+          {/* Portal — no layout wrapper, standalone */}
+          <Route path="/" element={<Portal />} />
+
+          {/* Landing + pre-entry pages (licenses, login, register) share LandingLayout */}
+          <Route element={<LandingLayout />}>
+            <Route path="/reallives" element={<RealLivesLanding />} />
+            <Route path="/reallives/login" element={<Login />} />
+
+            {/* License hub and detail pages */}
+            <Route path="/reallives/licenses" element={<LicenseHub />} />
+            <Route path="/reallives/licenses/school" element={<SchoolLicense />} />
+            <Route path="/reallives/licenses/university" element={<UniversityLicense />} />
+            <Route path="/reallives/licenses/homeschooler" element={<HomeschoolerLicense />} />
+            <Route path="/reallives/licenses/gamer" element={<GamerLicense />} />
+
+            {/* Registration forms */}
+            <Route path="/reallives/register/school" element={<SchoolRegister />} />
+            <Route path="/reallives/register/university" element={<UniversityRegister />} />
+            <Route path="/reallives/register/homeschooler" element={<HomeschoolerRegister />} />
+            <Route path="/reallives/register/gamer" element={<GamerRegister />} />
+          </Route>
+
+          {/* Sub-sites */}
+          <Route path="/reallives/school" element={<SubSiteLayout siteKey="school" />}>
+            <Route index element={<SchoolHome />} />
+            <Route path="about" element={<SchoolAbout />} />
+            {/* Add all school sub-routes here */}
+          </Route>
+
+          <Route path="/reallives/university" element={<SubSiteLayout siteKey="university" />}>
+            <Route index element={<UniversityHome />} />
+            {/* Add all university sub-routes here */}
+          </Route>
+
+          <Route path="/reallives/homeschooler" element={<SubSiteLayout siteKey="homeschooler" />}>
+            <Route index element={<HomeschoolerHome />} />
+            {/* Add all homeschooler sub-routes here */}
+          </Route>
+
+          <Route path="/reallives/gamer" element={<GamerLayout />}>
+            <Route index element={<GamerHome />} />
+            {/* Add all gamer sub-routes here */}
+          </Route>
+
+          {/* 404 */}
+          <Route path="*" element={<NotFound />} />
+
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
+}
+```
+
+---
+
+## LAYOUT FILES
+
+### RootLayout.jsx
+- Wraps everything
+- Contains `<Outlet />` from React Router so child routes render inside it
+- Does NOT include a navbar (each sub-site has its own)
+- Is the place where the `ThemeProvider` context wraps the whole app (ThemeProvider can alternatively wrap at main.jsx level)
+
+### LandingLayout.jsx
+- Used for: `/reallives` (landing), `/reallives/login`, `/reallives/licenses/**`, `/reallives/register/**`
+- These pages all exist "before" the user has chosen a sub-site, so they share a pre-entry visual style
+- Renders `<LandingFooter />` (the unique landing page footer) — NOT the dynamic sub-site `<Footer />`
+- Does NOT render a sub-site Navbar (the landing page has its own minimal nav or no nav — match whatever the original has)
+- Example:
+```jsx
+import LandingFooter from '@components/landing/LandingFooter/LandingFooter';
+
+export default function LandingLayout() {
+  return (
+    <>
+      {/* Optional: landing-specific minimal header/nav here */}
+      <main>
+        <Outlet />
+      </main>
+      <LandingFooter />
+    </>
+  );
+}
+```
+
+### SubSiteLayout.jsx
+- Accepts a `siteKey` prop ("school" | "university" | "homeschooler")
+- Provides the `siteKey` to all children via `SiteContext`
+- Renders the shared `<Navbar />` and dynamic `<Footer />` around `<Outlet />`
+- Example:
+```jsx
+export default function SubSiteLayout({ siteKey }) {
+  return (
+    <SiteContext.Provider value={{ siteKey }}>
+      <Navbar />
+      <main>
+        <Outlet />
+      </main>
+      <Footer />
+    </SiteContext.Provider>
+  );
+}
+```
+
+### GamerLayout.jsx
+- Same structure as SubSiteLayout but with `siteKey="gamer"`
+- Uses gamer-specific Navbar variant or applies a gamer-specific CSS class to the shared Navbar
+- If the gamer sub-site has a visually different navbar, create `components/gamer/GamerNavbar/` instead of overloading the shared one
+
+---
+
+## LANDING PAGE CTAs
+
+`RealLivesLanding.jsx` has two CTAs. Implement them exactly as follows:
+
+### CTA 1 — "Buy License"
+```jsx
+<Link to="/reallives/licenses">Buy License</Link>
+```
+This navigates to `LicenseHub.jsx`.
+
+### CTA 2 — "Login"
+```jsx
+<Link to="/reallives/login">Login</Link>
+```
+This navigates to `Login.jsx`.
+
+Both CTAs are styled as buttons using CSS Modules. They are NOT `<a href>` tags.
+
+---
+
+## LICENSE FLOW (pages/licenses/)
+
+### LicenseHub.jsx (`/reallives/licenses`)
+- Displays 4 cards, one per user type: School, University, Homeschooler, Gamer
+- Each card is a `<LicenseCard />` component from `components/common/LicenseCard/`
+- Each card links to its detail page: `/reallives/licenses/<type>`
+- Content (card title, description, icon) comes from `src/content/licenses.js`
+- No sub-site navbar — this page is inside `LandingLayout`
+
+### License Detail Pages (`/reallives/licenses/school` etc.)
+Each of the 4 license detail pages (`SchoolLicense.jsx`, `UniversityLicense.jsx`, etc.) follows the same structure:
+- Shows the license tiers available for that user type (e.g. Basic, Standard, Premium)
+- Each tier is a `<LicenseTierCard />` component showing the tier name, price, and benefits list
+- Two CTAs at the bottom (or per-tier if appropriate):
+
+```jsx
+{/* CTA 1 — Visit the sub-site */}
+<Link to="/reallives/school">Visit Website</Link>
+
+{/* CTA 2 — Go to registration form */}
+<Link to="/reallives/register/school">Buy License</Link>
+```
+
+- All license content (tier names, prices, benefits) lives in `src/content/licenses.js` — not hardcoded in JSX
+
+### licenses.js content structure
+```js
+// src/content/licenses.js
+export const licensesContent = {
+  school: {
+    title: "School License",
+    description: "...",
+    icon: "...",
+    tiers: [
+      {
+        id: "school-basic",
+        name: "Basic",
+        price: "...",
+        benefits: ["...", "...", "..."],
+      },
+      {
+        id: "school-standard",
+        name: "Standard",
+        price: "...",
+        benefits: ["...", "...", "..."],
+      },
+    ],
+    visitPath: "/reallives/school",
+    registerPath: "/reallives/register/school",
+  },
+  university: { ... },
+  homeschooler: { ... },
+  gamer: { ... },
+};
+```
+
+License detail pages import from this file directly (not via `useSiteContent` — these pages are not inside a sub-site context):
+```jsx
+import { licensesContent } from '@content/licenses';
+const content = licensesContent['school'];
+```
+
+### Registration Pages (`/reallives/register/<type>`)
+- One page per user type, each in `pages/register/`
+- These are form pages — render the registration form for that user type
+- If the registration is an external URL (e.g. a third-party form), use `window.location.href` or a plain `<a href target="_blank">` — do NOT use React Router `<Link>` for external destinations
+- If it is an internal form, build it as a controlled React form with state
+
+---
+
+## DYNAMIC FOOTER (components/common/Footer/)
+
+The sub-site `Footer` component is dynamic. It does not have a hardcoded list of links. Instead, it reads the current sub-site's navigation links from the content file and renders them automatically.
+
+### How it works
+
+Each content file exports a `navLinks` array:
+```js
+// src/content/school.js
+export const schoolContent = {
+  navLinks: [
+    { label: "Home",       path: "/reallives/school" },
+    { label: "About Us",   path: "/reallives/school/about" },
+    { label: "Features",   path: "/reallives/school/features" },
+    { label: "Contact",    path: "/reallives/school/contact" },
+    // ... all pages that appear in this sub-site's navbar
+  ],
+  // ... rest of content
+};
+```
+
+The `Footer` component reads this via `useSiteContent()`:
+```jsx
+import { useSiteContent } from '@hooks/useSiteContent';
+
+export default function Footer() {
+  const { navLinks, footer } = useSiteContent();
+
+  return (
+    <footer className={styles.footer}>
+      <nav className={styles.linkGrid}>
+        {navLinks.map(link => (
+          <Link key={link.path} to={link.path} className={styles.link}>
+            {link.label}
+          </Link>
+        ))}
+      </nav>
+      {/* Other footer content (tagline, social links, copyright) */}
+    </footer>
+  );
+}
+```
+
+This means:
+- Adding a new page to the school sub-site = add it to `navLinks` in `school.js` — the footer updates automatically
+- The Navbar also reads from the same `navLinks` array, so both stay in sync from a single source of truth
+- Never maintain a separate link list for the footer
+
+### LandingFooter (components/landing/LandingFooter/)
+- Completely separate from the sub-site `Footer`
+- Has its own unique About blurb and Contact Us information for the landing page
+- Its content lives in a dedicated `src/content/landing.js` file (not in any sub-site content file)
+- It does NOT render sub-site nav links — it has its own set of links relevant to the landing context only
+- Example content structure:
+```js
+// src/content/landing.js
+export const landingContent = {
+  footer: {
+    about: "RealLives is a simulation game that...",
+    contact: {
+      email: "...",
+      address: "...",
+    },
+    links: [
+      { label: "About", path: "/reallives/about" },   // landing-level pages if any
+      { label: "Contact", path: "/reallives/contact" },
+    ],
+  },
+};
+```
+
+---
+
+
+
+### ThemeContext.jsx
+Implement exactly as follows:
+
+```jsx
+import { createContext, useContext, useState, useEffect } from 'react';
+
+const ThemeContext = createContext();
+
+export function ThemeProvider({ children }) {
+  const [theme, setTheme] = useState(
+    () => localStorage.getItem('rl-theme') || 'light'
+  );
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('rl-theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () =>
+    setTheme(prev => (prev === 'light' ? 'dark' : 'light'));
+
+  return (
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+      {children}
+    </ThemeContext.Provider>
+  );
+}
+
+export function useTheme() {
+  return useContext(ThemeContext);
+}
+```
+
+Key rules:
+- On app load, reads from `localStorage` first. If nothing is stored, defaults to `'light'`
+- On every theme change, writes to `localStorage` and updates `data-theme` on `<html>`
+- This means if a user picks dark mode and refreshes, dark mode persists automatically
+
+### global.css (theming)
+All color values must use CSS custom properties. Never hardcode colors in component CSS. Define all tokens here:
+
+```css
+:root {
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f5f5f5;
+  --color-text-primary: #111111;
+  --color-text-secondary: #555555;
+  --color-accent: #your-brand-color;
+  --color-border: #dddddd;
+  --color-card-bg: #ffffff;
+
+  --font-primary: 'Your Font', sans-serif;
+  --font-size-base: 16px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 32px;
+  --border-radius: 8px;
+  --transition-speed: 0.2s;
+}
+
+[data-theme="dark"] {
+  --color-bg-primary: #1a1a1a;
+  --color-bg-secondary: #252525;
+  --color-text-primary: #eeeeee;
+  --color-text-secondary: #aaaaaa;
+  --color-accent: #your-brand-color-dark-variant;
+  --color-border: #333333;
+  --color-card-bg: #252525;
+}
+```
+
+Every component uses `var(--color-bg-primary)` etc. — never a raw hex. Switching the theme attribute flips the entire site automatically.
+
+---
+
+## CSS MODULES RULES
+
+- Every component has its own `.module.css` file in the same folder
+- Import it as `import styles from './ComponentName.module.css'`
+- Apply classes as `className={styles.wrapper}` etc.
+- Never use global class names in component files (no `className="navbar"`)
+- For conditional classes, use template literals: `` className={`${styles.btn} ${isActive ? styles.active : ''}`} ``
+- For combining with a utility: use the `clsx` library if needed
+
+---
+
+## CONTENT SEPARATION PATTERN
+
+Since school, university, and homeschooler share 90% of their components but have different content, use a content config file per sub-site. This is the most important reusability pattern in the whole project.
+
+### Example: src/content/school.js
+```js
+export const schoolContent = {
+  hero: {
+    title: "RealLives for Schools",
+    subtitle: "...",
+    ctaText: "Get Started",
+  },
+  features: [
+    { id: 1, title: "...", description: "...", icon: "..." },
+    // ...
+  ],
+  testimonials: [...],
+  about: {
+    heading: "About Our School Program",
+    body: "...",
+  },
+  // ... all text content for this sub-site
+};
+```
+
+### useSiteContent.js hook
+```js
+import { useContext } from 'react';
+import SiteContext from '../context/SiteContext';
+import { schoolContent } from '../content/school';
+import { universityContent } from '../content/university';
+import { homeschoolerContent } from '../content/homeschooler';
+import { gamerContent } from '../content/gamer';
+
+const contentMap = {
+  school: schoolContent,
+  university: universityContent,
+  homeschooler: homeschoolerContent,
+  gamer: gamerContent,
+};
+
+export function useSiteContent() {
+  const { siteKey } = useContext(SiteContext);
+  return contentMap[siteKey] || {};
+}
+```
+
+Shared components like `<HeroSection />` call `useSiteContent()` to get their text. Changing content for university = edit `university.js`. No JSX files need to change.
+
+---
+
+## COMPONENT RULES
+
+### One component = one folder
+```
+components/common/Navbar/
+├── Navbar.jsx
+└── Navbar.module.css
+```
+Never put component CSS in a shared stylesheet. Never put two components in the same file.
+
+### Component props design
+- Pass only what the component needs — no "god objects"
+- Use `siteKey` context (via `useSiteContent`) for content variation, not props drilling
+- For truly static content (e.g. social links in footer that are the same everywhere), it's fine to hardcode inside the component
+
+### Shared components (common/)
+These are components used across two or more sub-sites or pages:
+- `Navbar` — adapts nav links based on `navLinks` from `useSiteContent()`
+- `Footer` — dynamic, reads `navLinks` from `useSiteContent()` to render all page links automatically
+- `AboutUs` — renders content from `useSiteContent().about`
+- `ContactUs`
+- `Carousel` — accepts `slides` as a prop (array of image/text objects)
+- `HeroSection`
+- `FeatureCard`
+- `TestimonialCard`
+- `PageHeader`
+- `CTABanner`
+- `LicenseCard` — used in `LicenseHub.jsx` to show each user-type option
+- `LicenseTierCard` — used in each license detail page to show a single tier with benefits
+
+### Landing-specific components (landing/)
+- `LandingFooter` — unique footer only for the landing page, has its own About and Contact content
+
+When you create a new component that's used in more than one sub-site, always put it in `common/`. Landing-specific components (only ever appear on `/reallives` and its pre-entry pages) go in `landing/`.
+
+---
+
+## 404 PAGE (NotFound.jsx)
+
+Must include:
+- A clear "Page Not Found" heading
+- The URL that was attempted (use `useLocation()` from React Router to display it)
+- A prominent "Go to Home" button that links to `"/"`
+- Styled consistently with the rest of the site (uses theme variables, is mobile responsive)
+- The cat is optional but encouraged (the team mentioned it — add a small illustration or emoji cat if you like)
+
+---
+
+## MOBILE RESPONSIVENESS
+
+Every component must be responsive. Rules:
+- Use CSS Grid and Flexbox — no fixed pixel widths on layout containers
+- Breakpoints defined as CSS custom properties or media queries in each module.css:
+  ```css
+  /* Mobile first */
+  .grid { display: grid; grid-template-columns: 1fr; gap: var(--spacing-md); }
+
+  @media (min-width: 768px) {
+    .grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (min-width: 1024px) {
+    .grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  ```
+- Navbar must have a hamburger menu on mobile (implement a `menuOpen` state in Navbar.jsx)
+- All font sizes in `rem`, not `px`
+- All images: `max-width: 100%; height: auto`
+- Touch targets (buttons, links) minimum 44px tall
+
+---
+
+## VITE SETUP
+
+Initialize the project with:
+```bash
+npm create vite@latest reallives -- --template react
+cd reallives
+npm install
+npm install react-router-dom
+```
+
+Optional but recommended:
+```bash
+npm install clsx        # for conditional classNames
+```
+
+In `vite.config.js`, set the base path if the site is hosted at a subdirectory. If it's at the root domain, the default is fine.
+
+Configure path aliases for cleaner imports:
+```js
+// vite.config.js
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import path from 'path';
+
+export default defineConfig({
+  plugins: [react()],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+      '@components': path.resolve(__dirname, './src/components'),
+      '@pages': path.resolve(__dirname, './src/pages'),
+      '@content': path.resolve(__dirname, './src/content'),
+      '@hooks': path.resolve(__dirname, './src/hooks'),
+      '@context': path.resolve(__dirname, './src/context'),
+    },
+  },
+});
+```
+
+This means imports look like `import Navbar from '@components/common/Navbar/Navbar'` instead of `'../../../components/common/Navbar/Navbar'`.
+
+---
+
+## COMPONENT MAP (docs/component-map.md)
+
+After scaffolding, generate this file. Format it as a markdown table:
+
+```md
+# Component Map
+
+## Common Components
+
+| Component        | Used In Pages                                                               |
+|------------------|-----------------------------------------------------------------------------|
+| Navbar           | All sub-site pages (school, university, homeschooler, gamer)                |
+| Footer           | All sub-site pages — dynamically renders navLinks from that sub-site's content file |
+| AboutUs          | school/about, university/about, homeschooler/about, gamer/about             |
+| ContactUs        | school/contact, university/contact, homeschooler/contact, gamer/contact     |
+| Carousel         | RealLivesLanding                                                            |
+| HeroSection      | school/index, university/index, homeschooler/index                          |
+| FeatureCard      | school/features, university/features, homeschooler/features                 |
+| LicenseCard      | licenses/LicenseHub                                                         |
+| LicenseTierCard  | licenses/SchoolLicense, licenses/UniversityLicense, licenses/HomeschoolerLicense, licenses/GamerLicense |
+
+## Landing-Specific Components
+
+| Component        | Used In Pages                          |
+|------------------|----------------------------------------|
+| LandingFooter    | RealLivesLanding, Login, LicenseHub, all license detail pages, all register pages |
+
+## School-Specific Components
+
+| Component        | Used In Pages    |
+|------------------|------------------|
+| SchoolHero       | school/index     |
+
+## Gamer-Specific Components
+
+| Component        | Used In Pages    |
+|------------------|------------------|
+| GamerHero        | gamer/index      |
+```
+
+Keep this file updated as you add new components.
+
+---
+
+## CONVERSION PROCESS — STEP BY STEP
+
+Follow this order. Do not skip steps.
+
+### Step 1 — Audit the original HTML
+Before converting any page, list out:
+- All sections/pages that exist in the navbar of each sub-site
+- All license tiers and their benefits for each user type
+- All repeating UI blocks (hero, cards, testimonials, license tiers, etc.)
+- All images and assets that need to be moved to `src/assets/`
+- All existing CSS classes that need to be replicated
+
+### Step 2 — Scaffold the project
+- Run Vite setup
+- Create every folder in the structure above (even empty ones)
+- Create `global.css` with all theme variables extracted from the original CSS
+- Create `ThemeContext.jsx` and `SiteContext.jsx`
+- Create `App.jsx` with all routes stubbed (pages can just return `<div>PageName</div>` at first)
+
+### Step 3 — Build content files first (before any components)
+This is the most important step for keeping the project maintainable:
+1. Create `src/content/school.js` — include `navLinks` array with every page in the school navbar
+2. Create `src/content/university.js` — same structure
+3. Create `src/content/homeschooler.js` — same structure
+4. Create `src/content/gamer.js` — same structure
+5. Create `src/content/licenses.js` — all license tiers and benefits for all 4 user types
+6. Create `src/content/landing.js` — landing page footer content (About, Contact, links)
+
+The `navLinks` array in each content file is the single source of truth for both the Navbar and the Footer. Define it once here.
+
+### Step 4 — Build common components
+Start with the components used on the most pages:
+1. `Navbar` (reads `navLinks` from `useSiteContent()`, includes dark mode toggle and mobile hamburger)
+2. `Footer` (reads `navLinks` from `useSiteContent()`, renders them as links automatically)
+3. `LandingFooter` (reads from `landing.js`, has unique About and Contact content)
+4. `Carousel`
+5. `HeroSection`
+6. `AboutUs`, `ContactUs`
+7. `FeatureCard`, `TestimonialCard`
+8. `LicenseCard`, `LicenseTierCard`
+
+Test each component in isolation before moving on.
+
+### Step 5 — Build layouts
+1. `RootLayout`
+2. `LandingLayout` (wraps with `LandingFooter`)
+3. `SubSiteLayout` (wires up `SiteContext`, wraps with `Navbar` + `Footer`)
+4. `GamerLayout`
+
+### Step 6 — Build pages in this order
+1. `Portal.jsx`
+2. `RealLivesLanding.jsx` (carousel + 4 entry cards + Buy License CTA + Login CTA)
+3. `Login.jsx`
+4. `LicenseHub.jsx` (4 user-type cards)
+5. All 4 license detail pages (SchoolLicense, UniversityLicense, HomeschoolerLicense, GamerLicense)
+6. All 4 registration pages
+7. All school pages
+8. All university pages (reuse school components, swap content via `useSiteContent`)
+9. All homeschooler pages (same approach)
+10. All gamer pages
+
+### Step 7 — 404 page
+Build `NotFound.jsx` last, once routing is confirmed working.
+
+### Step 8 — QA checklist
+Before considering any page done, verify:
+- [ ] Dark mode works and persists on refresh
+- [ ] Mobile layout is correct at 375px, 768px, 1024px widths
+- [ ] No hardcoded colors in any component (all use CSS variables)
+- [ ] No CSS class name conflicts (all using CSS Modules)
+- [ ] All internal links use `<Link>` from React Router, not `<a href>`
+- [ ] All images have `alt` attributes
+- [ ] The 404 page appears for any unknown route
+- [ ] Sub-site footer dynamically shows all navbar links for that sub-site
+- [ ] Adding a link to `navLinks` in a content file makes it appear in both Navbar and Footer
+- [ ] Landing page footer shows its own unique About and Contact — not sub-site content
+- [ ] License detail pages link to the correct sub-site (`visitPath`) and registration form (`registerPath`)
+- [ ] `component-map.md` is updated
+
+---
+
+## THINGS TO NEVER DO
+
+- Never use `<a href>` for internal navigation — always `<Link to>` from React Router
+- Never hardcode color values in component CSS — always `var(--color-*)`
+- Never write global CSS inside a `.module.css` file
+- Never put two components in one file
+- Never put content (text, copy) inside JSX — it must come from a content file
+- Never use inline styles for layout — use CSS Modules
+- Never skip the mobile breakpoints
+- Never create a new component without its own `.module.css` file
+- Never maintain a separate link list in the Footer — it must read from `navLinks` in the content file
+- Never use the sub-site `<Footer />` on the landing page, license pages, login, or register pages — those use `<LandingFooter />`
+- Never use `<LandingFooter />` inside a sub-site layout — those use `<Footer />`
+- Never hardcode license tier data or benefits in JSX — it must come from `licenses.js`
+- Never duplicate `navLinks` — the same array must power both the Navbar and the Footer for each sub-site
+
+---
+
+## NOTES FOR CURSOR
+
+- When Cursor asks "should I create this file?", the answer is yes — create the full folder structure upfront even if pages are empty stubs
+- When converting a section from the original HTML, extract all text into the relevant `content/*.js` file before writing JSX
+- When a component is used in more than one sub-site, it belongs in `components/common/`, not in a sub-site folder
+- When unsure whether something is "common" or "sub-site specific", default to `common/` — it's easier to move out than to discover duplication later
+- The gamer sub-site shares `AboutUs`, `ContactUs`, `Footer` and any other generic pages — do not duplicate these into `components/gamer/`
+- CSS Modules automatically scope class names — you do not need to prefix classes with the component name (`.navbar__link` is unnecessary; `.link` is fine inside `Navbar.module.css`)
+- The `navLinks` array in each content file is intentionally the single source of truth for both Navbar and Footer — if you find yourself writing link lists in two places, stop and fix it
+- License detail pages are NOT inside a sub-site context, so they import from `licenses.js` directly rather than using `useSiteContent()`
+- The two footer components (`Footer` and `LandingFooter`) are completely separate — do not try to make one component handle both cases with a prop flag
