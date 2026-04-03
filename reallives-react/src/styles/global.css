@@ -82,6 +82,12 @@
   --gradient-surface-warm: linear-gradient(180deg, #ffffff 0%, #ffdd93 100%);
   --gradient-surface-purple: linear-gradient(180deg, #ffffff 0%, #daa7e3 75.48%);
   --gradient-overlay-dark: linear-gradient(360deg, rgba(0, 0, 0, 0.5) 10%, rgba(59, 59, 59, 0.5) 75%);
+  /* Landing page footer (Home.html / background-new-color + accents) */
+  --gradient-landing-footer: linear-gradient(0deg, #0f7482 12.25%, #000000 100%);
+  --color-landing-footer-text: #d1d5db;
+  --color-landing-footer-heading: #11e2ff;
+  --color-landing-footer-divider: #6fd4e1;
+  --color-landing-footer-link-hover: #23b8cc;
 
   /* Spacing scale (merged from source values) */
   --space-0: 0;
@@ -236,6 +242,11 @@
   --gradient-surface-warm: linear-gradient(180deg, #111827 0%, #3f2b17 100%);
   --gradient-surface-purple: linear-gradient(180deg, #111827 0%, #31253e 75.48%);
   --gradient-overlay-dark: linear-gradient(360deg, rgba(0, 0, 0, 0.7) 10%, rgba(17, 24, 39, 0.75) 75%);
+  --gradient-landing-footer: linear-gradient(0deg, #0f7482 12.25%, #000000 100%);
+  --color-landing-footer-text: #d1d5db;
+  --color-landing-footer-heading: #11e2ff;
+  --color-landing-footer-divider: #6fd4e1;
+  --color-landing-footer-link-hover: #23b8cc;
 
   /* Keep spacing/radius/shadow scales same */
   --space-0: 0;

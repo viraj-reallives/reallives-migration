@@ -1,121 +1,77 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import RootLayout from './layouts/RootLayout';
+import LandingLayout from './layouts/LandingLayout';
+import SubSiteLayout from './layouts/SubSiteLayout';
+import GamerLayout from './layouts/GamerLayout';
+import Portal from './pages/Portal';
+import RealLivesLanding from './pages/RealLivesLanding';
+import LicenseHub from './pages/licenses/LicenseHub';
+import SchoolLicense from './pages/licenses/SchoolLicense';
+import UniversityLicense from './pages/licenses/UniversityLicense';
+import HomeschoolerLicense from './pages/licenses/HomeschoolerLicense';
+import GamerLicense from './pages/licenses/GamerLicense';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<RootLayout />}>
+          <Route path="/" element={<Portal />} />
 
-      <div className="ticks"></div>
+          <Route element={<LandingLayout />}>
+            <Route path="/reallives" element={<RealLivesLanding />} />
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+            <Route path="/reallives/licenses" element={<LicenseHub />} />
+            <Route path="/reallives/licenses/school" element={<SchoolLicense />} />
+            <Route path="/reallives/licenses/university" element={<UniversityLicense />} />
+            <Route path="/reallives/licenses/homeschooler" element={<HomeschoolerLicense />} />
+            <Route path="/reallives/licenses/gamer" element={<GamerLicense />} />
+          </Route>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+          <Route path="/reallives/school" element={<SubSiteLayout siteKey="school" />}>
+            <Route index element={<div>SchoolHome placeholder</div>} />
+            <Route path="products" element={<div>SchoolProducts placeholder</div>} />
+            <Route path="changemaker" element={<div>SchoolChangemaker placeholder</div>} />
+            <Route path="impact" element={<div>SchoolImpact placeholder</div>} />
+            <Route path="research" element={<div>SchoolResearch placeholder</div>} />
+            <Route path="pricing" element={<div>SchoolPricing placeholder</div>} />
+            <Route path="about" element={<div>SchoolAbout placeholder</div>} />
+            <Route path="contact" element={<div>SchoolContact placeholder</div>} />
+          </Route>
+
+          <Route path="/reallives/university" element={<SubSiteLayout siteKey="university" />}>
+            <Route index element={<div>UniversityHome placeholder</div>} />
+            <Route path="products" element={<div>UniversityProducts placeholder</div>} />
+            <Route path="changemaker" element={<div>UniversityChangemaker placeholder</div>} />
+            <Route path="impact" element={<div>UniversityImpact placeholder</div>} />
+            <Route path="research" element={<div>UniversityResearch placeholder</div>} />
+            <Route path="pricing" element={<div>UniversityPricing placeholder</div>} />
+            <Route path="about" element={<div>UniversityAbout placeholder</div>} />
+            <Route path="contact" element={<div>UniversityContact placeholder</div>} />
+          </Route>
+
+          <Route path="/reallives/homeschooler" element={<SubSiteLayout siteKey="homeschooler" />}>
+            <Route index element={<div>HomeschoolerHome placeholder</div>} />
+            <Route path="products" element={<div>HomeschoolerProducts placeholder</div>} />
+            <Route path="changemaker" element={<div>HomeschoolerChangemaker placeholder</div>} />
+            <Route path="impact" element={<div>HomeschoolerImpact placeholder</div>} />
+            <Route path="research" element={<div>HomeschoolerResearch placeholder</div>} />
+            <Route path="pricing" element={<div>HomeschoolerPricing placeholder</div>} />
+            <Route path="about" element={<div>HomeschoolerAbout placeholder</div>} />
+            <Route path="contact" element={<div>HomeschoolerContact placeholder</div>} />
+          </Route>
+
+          <Route path="/reallives/gamer" element={<GamerLayout />}>
+            <Route index element={<div>GamerHome placeholder</div>} />
+            <Route path="about" element={<div>GamerAbout placeholder</div>} />
+            <Route path="products" element={<div>GamerProducts placeholder</div>} />
+            <Route path="pricing" element={<div>GamerPricing placeholder</div>} />
+            <Route path="contact" element={<div>GamerContact placeholder</div>} />
+          </Route>
+
+          <Route path="*" element={<div>NotFound placeholder</div>} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
 }
-
-export default App
