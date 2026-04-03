@@ -22,6 +22,8 @@ export function ThemeProvider({ children }) {
   );
 }
 
+// Hook is intentionally co-located with ThemeProvider for this project.
+// eslint-disable-next-line react-refresh/only-export-components -- paired hook export
 export function useTheme() {
   return useContext(ThemeContext);
 }

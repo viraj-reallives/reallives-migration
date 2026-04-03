@@ -23,6 +23,7 @@ function groupNavLinksIntoColumns(navLinks) {
       p.endsWith('/changemaker') ||
       p.endsWith('/impact') ||
       p.endsWith('/research') ||
+      p.endsWith('/foundation') ||
       isSubSiteIndexPath(p)
     ) {
       education.push(link);

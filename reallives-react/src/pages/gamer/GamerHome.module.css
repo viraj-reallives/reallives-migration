@@ -1,0 +1,205 @@
+.page {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.hero {
+  position: relative;
+  min-height: min(85vh, 52rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroBg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.heroOverlay {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: var(--space-32, 2rem) var(--space-16, 1rem);
+  background: var(--gradient-gamer-hero-overlay);
+}
+
+.heroInner {
+  max-width: 56rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.titleBlock {
+  position: relative;
+  display: inline-block;
+  margin-bottom: var(--space-24, 1.5rem);
+}
+
+.bracket {
+  position: absolute;
+  width: min(18vw, 6.5rem);
+  height: auto;
+  opacity: 0.85;
+  pointer-events: none;
+}
+
+.bracketTL {
+  top: -0.75rem;
+  left: -1rem;
+}
+
+.bracketBR {
+  bottom: -0.75rem;
+  right: -1rem;
+  transform: rotate(180deg);
+}
+
+.life {
+  margin: 0;
+  font-size: clamp(3.5rem, 14vw, 8rem);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: 0.04em;
+  color: var(--color-white);
+  text-shadow: 0 4px 24px var(--color-shadow-gamer-text);
+}
+
+.midLine {
+  margin: 0.35rem 0 0;
+  font-size: clamp(1.125rem, 3.5vw, 1.75rem);
+  font-weight: 500;
+  color: var(--color-gamer-text-muted);
+}
+
+.footLine {
+  margin: 0.5rem 0 0;
+  font-size: clamp(1.25rem, 4vw, 2rem);
+  font-weight: 600;
+  color: var(--color-white);
+}
+
+.gameWord {
+  color: var(--color-brand-cyan-bright);
+  font-weight: 800;
+}
+
+.welcome {
+  margin: 0 auto;
+  max-width: 40rem;
+  font-size: clamp(0.9375rem, 2.2vw, 1.125rem);
+  line-height: 1.65;
+  color: var(--color-gamer-text-welcome);
+}
+
+.bottomTag {
+  margin: var(--space-24, 1.5rem) auto 0;
+  max-width: 36rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-brand-cyan-bright);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.section {
+  padding: var(--space-40, 2.5rem) var(--space-16, 1rem) var(--space-48, 3rem);
+  max-width: 90rem;
+  margin: 0 auto;
+}
+
+.sectionTitleImg {
+  display: block;
+  max-width: min(100%, 28rem);
+  margin: 0 auto var(--space-24, 1.5rem);
+  height: auto;
+}
+
+.embedShell {
+  border-radius: var(--radius-xl, 1rem);
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--color-brand-cyan) 35%, transparent);
+  background: var(--color-gamer-card);
+  box-shadow: 0 12px 40px var(--color-shadow-gamer-elevated);
+}
+
+.iframeWrap {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+}
+
+.iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.timelineImg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: var(--space-32, 2rem) auto 0;
+}
+
+.reviewsTitle {
+  display: block;
+  max-width: min(100%, 28rem);
+  margin: 0 auto var(--space-24, 1.5rem);
+  height: auto;
+}
+
+.reviewsGrid {
+  display: grid;
+  gap: var(--space-20, 1.25rem);
+  align-items: start;
+}
+
+@media (min-width: 60rem) {
+  .reviewsGrid {
+    grid-template-columns: 1fr 1.15fr 1fr;
+  }
+}
+
+.reviewCol {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16, 1rem);
+}
+
+.reviewCard {
+  padding: var(--space-20, 1.25rem);
+  border-radius: var(--radius-lg, 0.75rem);
+  background: color-mix(in srgb, var(--color-gamer-card-surface) 88%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-white) 12%, transparent);
+}
+
+.reviewQuote {
+  margin: 0 0 var(--space-12, 0.75rem);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--color-gamer-text);
+}
+
+.reviewAuthor {
+  font-weight: 700;
+  font-size: 0.9375rem;
+  color: var(--color-brand-cyan-bright);
+}
+
+.reviewRole {
+  margin: 0.25rem 0 0;
+  font-size: 0.8125rem;
+  color: var(--color-gamer-text-muted-soft);
+}
+
+.centerCard .reviewQuote {
+  font-size: 0.9375rem;
+}

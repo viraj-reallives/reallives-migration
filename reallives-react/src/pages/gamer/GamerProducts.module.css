@@ -1,0 +1,496 @@
+.page {
+  padding: var(--space-24, 1.5rem) var(--space-16, 1rem) var(--space-48, 3rem);
+  color: var(--color-gamer-text);
+}
+
+.inner {
+  max-width: 90rem;
+  margin: 0 auto;
+}
+
+.tabList {
+  display: flex;
+  gap: 0.35rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: var(--space-24, 1.5rem);
+  padding-bottom: var(--space-8, 0.5rem);
+  border-bottom: 1px solid color-mix(in srgb, var(--color-white) 12%, transparent);
+}
+
+.tab {
+  flex: 0 0 auto;
+  min-height: 44px;
+  padding: 0.5rem 1rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--color-gamer-text-muted-soft);
+  background: color-mix(in srgb, var(--color-gamer-card-surface) 80%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-white) 8%, transparent);
+  border-radius: var(--radius-md, 0.5rem);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.tab:hover {
+  color: var(--color-white);
+}
+
+.tabActive {
+  color: var(--color-gamer-bg-top);
+  background: var(--color-brand-cyan-bright);
+  border-color: transparent;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24, 1.5rem);
+}
+
+.videoHero {
+  position: relative;
+  border-radius: var(--radius-lg, 0.75rem);
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--color-brand-cyan) 35%, transparent);
+}
+
+.video {
+  width: 100%;
+  display: block;
+  max-height: 28rem;
+  object-fit: cover;
+  background: var(--color-black);
+}
+
+.videoControls {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  padding: var(--space-12, 0.75rem);
+  background: color-mix(in srgb, var(--color-black) 75%, transparent);
+}
+
+.videoTrackBtn {
+  min-width: 2.5rem;
+  min-height: 2.5rem;
+  border-radius: var(--radius-md, 0.5rem);
+  border: 1px solid color-mix(in srgb, var(--color-white) 25%, transparent);
+  background: transparent;
+  color: var(--color-white);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.videoTrackActive {
+  background: var(--color-brand-cyan-bright);
+  color: var(--color-gamer-bg-top);
+  border-color: transparent;
+}
+
+.twoCol {
+  display: grid;
+  gap: var(--space-24, 1.5rem);
+  align-items: start;
+}
+
+@media (min-width: 60rem) {
+  .twoCol {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.heading {
+  margin: 0 0 var(--space-12, 0.75rem);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--color-white);
+}
+
+.paragraph {
+  margin: 0 0 var(--space-12, 0.75rem);
+  line-height: 1.65;
+  color: var(--color-gamer-text-muted);
+}
+
+.mediaCard {
+  border-radius: var(--radius-lg, 0.75rem);
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--color-white) 10%, transparent);
+  background: color-mix(in srgb, var(--color-gamer-card-surface) 94%, transparent);
+}
+
+.mediaCard img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.embedBlock {
+  margin-top: var(--space-8, 0.5rem);
+}
+
+.iframeWrap {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+  border-radius: var(--radius-lg, 0.75rem);
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--color-brand-cyan) 35%, transparent);
+}
+
+.iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.logoRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-16, 1rem);
+  align-items: center;
+  justify-content: center;
+  margin-top: var(--space-12, 0.75rem);
+}
+
+.logoRow img {
+  height: 2.25rem;
+  width: auto;
+  object-fit: contain;
+  filter: brightness(1.1);
+}
+
+.outcomeList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16, 1rem);
+}
+
+.outcomeItem {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr;
+  gap: var(--space-12, 0.75rem);
+  align-items: start;
+}
+
+.outcomeNum {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  background: var(--color-brand-cyan-bright);
+  color: var(--color-gamer-bg-top);
+}
+
+.outcomeTitle {
+  margin: 0 0 0.25rem;
+  font-weight: 700;
+  color: var(--color-white);
+  font-size: 0.9375rem;
+}
+
+.outcomeDesc {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--color-gamer-text-muted);
+}
+
+.rcmiHero {
+  display: grid;
+  gap: var(--space-24, 1.5rem);
+  align-items: center;
+}
+
+@media (min-width: 60rem) {
+  .rcmiHero {
+    grid-template-columns: minmax(12rem, 1fr) 1.2fr;
+  }
+}
+
+.rcmiTitle {
+  margin: 0 0 var(--space-12, 0.75rem);
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--color-brand-cyan-bright);
+}
+
+.highlightRow {
+  display: flex;
+  gap: 0.65rem;
+  margin-bottom: 0.65rem;
+  align-items: flex-start;
+}
+
+.highlightDot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--color-brand-cyan-bright);
+  margin-top: 0.4rem;
+  flex-shrink: 0;
+}
+
+.clusterGrid {
+  display: grid;
+  gap: var(--space-12, 0.75rem);
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (min-width: 60rem) {
+  .clusterGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.clusterLabelBox {
+  min-height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+             font-weight: 800;
+  font-size: 0.75rem;
+  line-height: 1.25;
+  padding: var(--space-8, 0.5rem);
+  border-radius: var(--radius-md, 0.5rem);
+  background: color-mix(in srgb, var(--color-brand-purple-soft) 22%, transparent);
+  color: var(--color-white);
+  border: 1px solid color-mix(in srgb, var(--color-white) 12%, transparent);
+}
+
+.clusterDescGrid {
+  display: grid;
+  gap: var(--space-12, 0.75rem);
+}
+
+@media (min-width: 60rem) {
+  .clusterDescGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.clusterDescCard {
+  margin: 0;
+  padding: var(--space-12, 0.75rem);
+  font-size: 0.875rem;
+  line-height: 1.55;
+  border-radius: var(--radius-md, 0.5rem);
+  background: color-mix(in srgb, var(--color-gamer-card-surface) 94%, transparent);
+  color: var(--color-gamer-text-muted);
+  border: 1px solid color-mix(in srgb, var(--color-white) 8%, transparent);
+}
+
+.bannerFull img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-lg, 0.75rem);
+}
+
+.splitBanner {
+  text-align: center;
+}
+
+.splitBanner img {
+  max-width: 100%;
+  height: auto;
+  margin-top: var(--space-16, 1rem);
+}
+
+.sliderShell {
+  display: grid;
+  gap: var(--space-16, 1rem);
+  align-items: center;
+}
+
+@media (min-width: 60rem) {
+  .sliderShell {
+    grid-template-columns: 10rem 1fr;
+  }
+}
+
+.sideHeading {
+  margin: 0 0 0.35rem;
+  font-size: 0.9375rem;
+  font-weight: 800;
+  color: var(--color-white);
+  line-height: 1.3;
+}
+
+.sideHeadingAccent {
+  margin: 0 0 0.35rem;
+  font-size: 0.9375rem;
+  font-weight: 800;
+  color: var(--color-brand-cyan-bright);
+  line-height: 1.3;
+}
+
+.sliderRail {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.arrowBtn {
+  flex-shrink: 0;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--color-brand-cyan) 45%, transparent);
+  background: color-mix(in srgb, var(--color-gamer-card-surface) 95%, transparent);
+  color: var(--color-white);
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+.sliderCenter {
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+}
+
+.slideTitle {
+  margin: 0 0 var(--space-8, 0.5rem);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-white);
+}
+
+.slideImage img {
+  width: 100%;
+  max-height: 20rem;
+  object-fit: contain;
+}
+
+.whyEducators {
+  margin-top: var(--space-24, 1.5rem);
+}
+
+.whyEducators h3 {
+  margin: 0 0 var(--space-16, 1rem);
+  font-size: 1.125rem;
+  font-weight: 800;
+  color: var(--color-brand-cyan-bright);
+}
+
+.benefitBlock {
+  margin-bottom: var(--space-16, 1rem);
+  padding: var(--space-12, 0.75rem);
+  border-radius: var(--radius-md, 0.5rem);
+  background: color-mix(in srgb, var(--color-gamer-card-surface) 92%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-white) 8%, transparent);
+}
+
+.benefitBlock h4 {
+  margin: 0 0 0.35rem;
+  font-size: 0.9375rem;
+  color: var(--color-white);
+}
+
+.benefitBlock p {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--color-gamer-text-muted);
+}
+
+.aiVideoWrap {
+  border-radius: var(--radius-lg, 0.75rem);
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--color-brand-cyan) 35%, transparent);
+}
+
+.aiVideo {
+  width: 100%;
+  display: block;
+  max-height: 22rem;
+  object-fit: cover;
+}
+
+.aiHeader {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-16, 1rem);
+  margin: var(--space-20, 1.25rem) 0;
+}
+
+.aiBrand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12, 0.75rem);
+}
+
+.aiBrand img {
+  height: 2.5rem;
+  width: auto;
+}
+
+.tagline {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-gamer-text-muted);
+}
+
+.aiGridTop,
+.aiGridBottom {
+  display: grid;
+  gap: var(--space-8, 0.5rem);
+  margin-bottom: var(--space-8, 0.5rem);
+}
+
+.aiGridTop {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.aiGridBottom {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.aiGridCell img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-md, 0.5rem);
+}
+
+.analysisRow {
+  display: grid;
+  gap: var(--space-20, 1.25rem);
+  align-items: start;
+  margin-top: var(--space-24, 1.5rem);
+}
+
+@media (min-width: 60rem) {
+  .analysisRow {
+    grid-template-columns: 1fr minmax(12rem, 22rem);
+  }
+}
+
+.rcmiBg {
+  background: color-mix(in srgb, var(--color-gamer-card-surface) 85%, transparent);
+  padding: var(--space-20, 1.25rem);
+  border-radius: var(--radius-lg, 0.75rem);
+}
+
+.analysisHeading {
+  margin: 0 0 var(--space-12, 0.75rem);
+  font-size: 1.125rem;
+  font-weight: 800;
+  color: var(--color-white);
+}
+
+.analysisImg {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-md, 0.5rem);
+}

@@ -1,3 +1,6 @@
+import { homeAdditionalTabsForBasePath } from './homeAdditionalTabsShared';
+import { empathyCanvasTabShared, realBoardTabShared } from './productsEmpathyRealBoardShared';
+
 export const schoolContent = {
   navLinks: [
     { label: 'Home', path: '/reallives/school' },
@@ -6,6 +9,7 @@ export const schoolContent = {
     { label: 'Impact', path: '/reallives/school/impact' },
     { label: 'Research & Evidence', path: '/reallives/school/research' },
     { label: 'Pricing', path: '/reallives/school/pricing' },
+    { label: 'Foundation', path: '/reallives/school/foundation' },
     { label: 'About Us', path: '/reallives/school/about' },
     { label: 'Contact', path: '/reallives/school/contact' },
   ],
@@ -65,14 +69,41 @@ export const schoolContent = {
         'Proven in Schools Worldwide\u00a0Thousands of K-12 teachers have successfully implemented RealLives in their classrooms, with measurable improvements in student engagement, cultural awareness, and critical thinking skills.',
         'Ready to bring the world to your classroom? Contact us to schedule a demo or start your free trial today.',
       ],
+      gettingStartedCtaText: 'Get Started',
+      gettingStartedCtaPath: '/reallives/school/pricing',
     },
     images: {
-      heroVideoUrl: 'https://d2jn82ki4w4ftn.cloudfront.net/background-video-student.mp4',
-      illustration: '/assets/images/school/image/everyone-chnage-maker.svg',
-      classroomDiagram: '/assets/images/school/image/work-in-classroome-svg.svg',
-      gettingStartedIllustration: '/assets/images/school/image/getting-started-easy.svg',
+      heroVideoUrl:
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/school/videos/background-video-student.mp4',
+      illustration:
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-home-page/everyone-change-maker.svg',
+      classroomDiagram:
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-home-page/work-in-classroom.svg',
+      gettingStartedIllustration:
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-home-page/getting-started-easy.svg',
+      empathy21CenturyBanner:
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-home-page/empathy-21century-skills.png',
+      supportedByRealLives:
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-home-page/supoorted-by-reallives-image.svg',
+      experienceAuthentic:
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-home-page/Experience-authentic-iamge.svg',
+      empathyCanvasIllustration:
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-home-page/Empathy-image-add.svg',
+      readyToTransform:
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-home-page/ready-to-transform.svg',
+      sdgBackground:
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-home-page/SDG-background-image.svg',
+      sdgEarth:
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/Earth-image-svg.svg',
+      sdgImpactVideo:
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/videos/sdg-background-video.mp4',
+      sdgAnnouncement:
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-home-page/announcment-image.svg',
+      sdgGlobalAction:
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/global-action-image.svg',
     },
     homeTabLabels: ['Who Can Use?', '21st Century Skills', "SDG's", 'Resources'],
+    homeAdditionalTabs: homeAdditionalTabsForBasePath('/reallives/school'),
   },
 
   products: {
@@ -126,17 +157,18 @@ export const schoolContent = {
         'Using real-world demographic and economic data, the simulation places students in authentic scenarios where they make decisions about school, work, family, health, and more. Every choice leads to realistic consequences, shaped by global inequality, access, and opportunity.',
         "RealLives isn’t just a game—it’s a window into the lived experience of people across the globe. Whether you’re born into a wealthy family in Sweden or a struggling household in rural India, the simulation challenges you to navigate life based on real-world constraints and possibilities.",
       ],
-      worldImagePath: '/assets/images/school/image-add/reallives-world-img.svg',
+      worldImagePath:
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/reallives-world-img.svg',
       fosterHeading: 'Foster Empathy Through Experience',
       fosterDescription:
         'By making choices and living consequences, students organically develop empathy. They begin to ask: What would I do in this situation? What opportunities would I miss or gain just by being born elsewhere?',
       experienceHeading: 'Experience RealLives',
       drivenByDataText: 'RealLives is driven by real world data',
       dataLogos: [
-        '/assets/images/school/logo-image/united nations.svg',
-        '/assets/images/school/logo-image/world bank group.svg',
-        '/assets/images/school/logo-image/lonely planet.svg',
-        '/assets/images/school/logo-image/birds logo.svg',
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/united-nations.svg',
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/world-bank-group.svg',
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/lonely-planet.svg',
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/birds-logo.svg',
       ],
       learningOutcomesHeading: 'Learning Outcomes',
       learningOutcomes: [
@@ -171,8 +203,15 @@ export const schoolContent = {
             'Build awareness of diverse perspectives, reflect on equity and resilience, and embrace interdependence.',
         },
       ],
-      learningOutcomesImagePath: '/assets/images/school/image/larning-outcome-image.svg',
-      heroVideoPath: '/assets/images/school/video/RL STEM-3.mp4',
+      learningOutcomesImagePath:
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/learning-outcome-image.svg',
+      heroVideoPaths: [
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/videos/rl-stem.mp4',
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/videos/rl-21st-century-skills.mp4',
+      ],
+      videoTrackLabels: ['1', '2'],
+      demoIframeSrc:
+        'https://demo.arcade.software/T3kOXgmqRKrPgCzTcKQF?embed&embed_mobile=tab&embed_desktop=inline&show_copy_link=true',
     },
     changeMakerIndexTab: {
       title: 'RCMI',
@@ -186,32 +225,56 @@ export const schoolContent = {
       clustersHeading: 'RCMI Clusters',
       clustersDescription:
         'RCMI is built on the foundation that effective changemakers excel across four interconnected domains. The assessment system recognizes that true changemaking ability emerges from the balance and integration of these four essential clusters:',
-      illustrationPath: '/assets/images/school/image/real-change-maker.svg',
+      illustrationPath:
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/real-change-maker.svg',
+      clusterLabels: [
+        { lines: ['Personal'] },
+        { lines: ['Inter', 'Personal'] },
+        { lines: ['Contextual', 'Awareness'] },
+        { lines: ['Strategic', 'Thinking'] },
+      ],
+      clusterDescriptions: [
+        'Internal/Personal Qualities\u00a0form the foundation - you must first master yourself before leading change in society, others or even in the world.',
+        'Interpersonal Competencies\u00a0 build upon this foundation - enabling you to connect with, influence, and mobilize others toward shared goals.',
+        'Contextual Awareness\u00a0ensures responsible impact - grounding your efforts in ethical responsibility and global understanding.',
+        'Strategic Thinking\u00a0provides the intellectual framework - giving you the tools to analyze complex problems and develop innovative solutions.',
+      ],
+      howItWorksHeading: 'How does it work?',
+      howItWorksImagePath:
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/reallives-changemaker-image.svg',
+      experienceEmbedHeading: 'Experience RCMI',
+      demoIframeSrc:
+        'https://demo.arcade.software/i527E8HZo4YlXdSC8arb?embed&embed_mobile=tab&embed_desktop=inline&show_copy_link=true',
     },
+    empathyCanvasTab: empathyCanvasTabShared,
+    realBoardTab: realBoardTabShared,
     realAiTab: {
       brandLine: 'Real AI',
       tagline: 'Turning life stories into insights',
-      videoPath: '/assets/images/school/video/real-ai-video.mp4',
+      videoPath:
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/videos/real-ai-video.mp4',
       logoPath: '/assets/images/school/image/real-r-logo.svg',
       gridImages: [
-        '/assets/images/school/image/first-reflection.svg',
-        '/assets/images/school/image/key-life-value.svg',
-        '/assets/images/school/image/sdg-challenge.svg',
-        '/assets/images/school/image/birth-story.svg',
-        '/assets/images/school/image/life-analysis.svg',
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/first-reflection.svg',
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/key-life-value.svg',
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/sdg-challenge.svg',
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/birth-story.svg',
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/life-analysis.svg',
       ],
       empathyCanvasAnalysisHeading: 'Empathy Canvas analysis \nusing Real AI',
       empathyCanvasAnalysisParagraphs: [
         "The Empathy Canvas, powered by Real AI, is a unique tool that analyzes a user's emotional intelligence based on their responses to 9 carefully designed questions. Each response is processed using our Real AI engine to generate personalized AI reflections, providing deeper insights into the user’s emotional awareness and interpersonal understanding.",
         'Based on this analysis, users receive an overall Empathy Score out of 100, along with actionable feedback. This process helps individuals explore their capacity for empathy — a vital trait in changemaking. Real AI also powers the RealLives ChangeMaker Index and other interactive reports, making complex human values like empathy, resilience, and social connection measurable and meaningful.',
       ],
-      empathyCanvasImagePath: '/assets/images/school/image/emapthy_canvas_2.svg',
+      empathyCanvasImagePath:
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/empathy_canvas_2.svg',
       rcmiAnalysisHeading: 'RCMI analysis using Real AI',
       rcmiAnalysisParagraphs: [
         "The RealLives ChangeMaker Index (RCMI), powered by Real AI, measures a user's changemaking potential through their in-game decisions and responses. Based on their score, users are placed in one of five growth stages, Seed, Sprout, Sapling, Plant, or Fruit, reflecting their changemaker journey.",
         'The report also includes a Severity Index, which maps the complexity and risks associated with different changemaking domains. Ranging from 1 (low risk) to 10 (extreme risk), this index helps users understand the potential challenges in areas like Peace & Conflict, Human Rights, or Environmental Protection. By aligning RCMI scores with domain severity, Real AI offers personalized insights on where users can contribute meaningfully while preparing for the realities of changemaking work.',
       ],
-      rcmiReportImagePath: '/assets/images/school/image/RealLives_Changemaker_Report-images-0.svg',
+      rcmiReportImagePath:
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/RealLives_Changemaker_Report-images-0.svg',
     },
   },
 
@@ -222,6 +285,7 @@ export const schoolContent = {
       'The RealLives ChangeMaker Project is your journey from awareness to action. Experience life through different perspectives, assess your global competencies, and channel your insights into creating meaningful change through impactful business solutions',
     ctaSchoolHeading: 'Ready to Become a \nChangeMaker School?',
     ctaButtonText: 'Get Started',
+    heroPrimaryCtaPath: '/reallives/school/pricing',
     journeyHeading: 'Your ChangeMaker Journey',
     phases: [
       {
@@ -235,6 +299,7 @@ export const schoolContent = {
           'Identify Patterns: Recognize recurring themes and systemic problems that affect communities worldwide',
         ],
         imagePath: '/assets/images/school/image/change-maker-1-img.svg',
+        transitionArrowPath: '/assets/images/school/image/left-arrow-svg.svg',
       },
       {
         title: 'Phase 2: Assess & Reflect',
@@ -247,6 +312,7 @@ export const schoolContent = {
           'Identify Patterns: Recognize recurring themes and systemic problems that affect communities worldwide',
         ],
         imagePath: '/assets/images/school/image/change-maker-2-img.svg',
+        transitionArrowPath: '/assets/images/school/image/arrow-right-2.svg',
       },
       {
         title: 'Phase 3: Ideate & Act',
@@ -309,7 +375,90 @@ export const schoolContent = {
     closingHeading: 'Ready to Become a ChangeMaker?',
     closingSubtext: 'Your journey from understanding to impact starts now',
     closingButtonText: 'Become a ChangeMaker',
-    heroBackgroundImagePath: '/assets/images/school/image/chnagemaker-school-background.png',
+    closingCtaPath: '/reallives/school/products',
+    heroBackgroundImagePath:
+      'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/school/changemaker-school-background.png',
+  },
+
+  foundation: {
+    hero: {
+      heading: 'RealLives Foundation',
+      tagline: 'Changing Education Through Lived Experience.',
+      body:
+        'We believe learning should not stop at memorizing facts, it should cultivate empathy, critical thinking, and real-world awareness. Through immersive simulations, students step into lives across different countries, cultures, and realities. They make decisions, face consequences, and reflect deeply.',
+      skills: [
+        'Empathy',
+        'Adaptability',
+        'Cultural awareness',
+        'Ethical Reasoning',
+        'Problem-solving skills',
+        'Leadership',
+      ],
+      donateCtaText: 'Invest in future ChangeMakers',
+      donateBtnText: 'Donate Now',
+      donateUrl: 'https://www.reallivesfoundation.org/donate',
+    },
+    educationalApproach: {
+      heading: 'Our Educational Approach',
+      body:
+        'We believe learning should not stop at memorizing facts, it should cultivate empathy, critical thinking, and real-world awareness.',
+      cards: [
+        {
+          title: 'Learning Through Experience',
+          description:
+            "Students don't just learn about global challenges, they live them through interactive simulations. This builds understanding far deeper than traditional instruction.",
+        },
+        {
+          title: 'Building Empathy',
+          description:
+            'By experiencing lives across socio-economic and cultural contexts, students develop compassion, perspective, and global awareness.',
+        },
+        {
+          title: 'Strengthening Critical Thinking',
+          description:
+            'Every decision has consequences. Students analyze situations, evaluate options, and understand complex systems.',
+        },
+        {
+          title: 'Empowering Students',
+          description:
+            'We help learners recognize that their choices matter in simulations and in real life. This fosters confidence, responsibility, and leadership.',
+        },
+      ],
+    },
+    globalImpact: {
+      heading: 'Our Global Impact',
+      subheading: 'RealLives has empowered students worldwide',
+      learnMoreText: 'Learn More about Our Impact',
+      learnMorePath: '/reallives/school/impact',
+    },
+    rcmi: {
+      heading: 'RealLives Changemaker Index (RCMI)',
+      subheading:
+        'To deepen impact beyond the simulation, we developed the RealLives Changemaker Index (RCMI) — a framework that helps students understand their growth as changemakers.',
+      competencies: [
+        'Empathy',
+        'Leadership',
+        'Self Awareness',
+        'Resilience',
+        'Problem Solving Skills',
+        'Critical Thinking',
+        'Ethical Responsibility',
+        'Adaptability',
+        'Emotional Intelligence',
+        'Initiative',
+        'Communication',
+        'Visionary Thinking',
+        'Social Awareness',
+        'Risk Taking',
+        'Global Awareness',
+        'Collaboration',
+        'Persistence',
+        'Creativity & Innovation',
+      ],
+      diagramImage: '/assets/images/common/rcmi-diagram.png',
+      learnMoreText: 'Learn More about RCMI',
+      learnMoreUrl: 'https://www.reallivesfoundation.org/rcmi',
+    },
   },
 
   impact: {
@@ -321,6 +470,8 @@ export const schoolContent = {
     workshopSectionLabel: 'Impact home',
     ctaBannerHeading: 'Empower Your Students with Global Perspectives',
     ctaBannerButtonText: 'Bring RealLives to Your Campus',
+    ctaBannerButtonPath: '/reallives/school/pricing',
+    workshopLearnMorePath: '/reallives/school/contact',
     sliderImages: [
       '/assets/images/school/image/Final Business with Purpose 1.png',
       '/assets/images/school/image/school-1-image-slider.png',
@@ -410,6 +561,8 @@ export const schoolContent = {
         collaborationName: 'Dr. Sawaros Thanapornsangsuth',
         participantsLabel: 'Participants :',
         participantsNumber: '200',
+        usedToolLabel: 'Used tool :',
+        usedTool: 'RealLives',
         skillsDevelopedLabel: 'Skills Developed',
         skills: ['Empathy', 'SDG Awareness', 'Critical Thinking'],
         learnMoreText: 'Learn more',
@@ -425,6 +578,16 @@ export const schoolContent = {
     browseIntro:
       'Browse peer-reviewed studies, theoretical analyses,\nand classroom research on RealLives.',
     exploreButtonText: 'Explore',
+    keyFindingsLabel: 'Key Findings\u00a0',
+    methodsLabel: 'Methods\u00a0',
+    goBackText: 'Go Back',
+    readPaperText: 'Read the Paper',
+    bringToSchoolText: 'Bring This to Your School',
+    bringToSchoolPath: '/reallives/school/contact',
+    contactBannerHeading: 'Get in Touch',
+    contactBannerSubheading:
+      'Questions about our research or bringing RealLives to your school? We would love to hear from you.',
+    contactBannerButtonPath: '/reallives/school/contact',
     items: [
       {
         id: 'research2-content-1',
@@ -433,6 +596,21 @@ export const schoolContent = {
         whatWasStudied:
           'Evaluation of RealLives Simulation as a game-based empathy education tool for high school and university learners',
         logoPath: '/assets/images/school/image/Korea-university.svg',
+        detail: {
+          heroImagePath: '/assets/images/school/image/research-image.png',
+          heroTitle:
+            'Effects of a Game-Based Empathy Education Program Linked to the SDGs',
+          heroSubtitle:
+            'Evaluation of RealLives Simulation as a game-based empathy education tool for high school and university learners',
+          keyFindings: [
+            'Significant growth in\u00a0cognitive, emotional, and attitudinal empathy',
+            'Strong alignment with\u00a0UN SDGs, especially SDGs 3, 4, 8, 11, and 16',
+            'Learners moved beyond awareness to\u00a0reflection and action intent',
+          ],
+          methods:
+            'Qualitative coding, language network analysis, topic modeling (NetMiner)',
+          pdfPath: '/assets/documents/school/pdf/Kwon etal_2025_RealLives in HE class-2.pdf',
+        },
       },
       {
         id: 'research2-content-2',
@@ -441,6 +619,20 @@ export const schoolContent = {
         whatWasStudied:
           'How probabilistic life modeling influences learning, empathy, and understanding of global inequality.',
         logoPath: '/assets/images/school/image/uwe-bristol-img.svg',
+        detail: {
+          heroImagePath: '/assets/images/school/image/University-West-of-England.svg',
+          heroTitle: 'Real Lives 2004: The Devil You Know…',
+          heroSubtitle:
+            'How probabilistic life modeling influences learning, empathy, and understanding of global inequality.',
+          keyFindings: [
+            'Real Lives 2004 uses statistical and probabilistic models to simulate human lives, reflecting traditions of modern governance and control.',
+            'While intended to foster empathy and global understanding, the game risks reducing lived experience to calculative equivalence.',
+            'The simulation promotes “comprehension” through data but limits “surprise” or singular lived experience.',
+          ],
+          methods:
+            'Conceptual examination of statistics, simulation, and educational game design. Interpretive analysis rather than empirical experimentation or user studies.',
+          pdfPath: '/assets/documents/school/pdf/uwe-bristol.pdf',
+        },
       },
       {
         id: 'research2-content-3',
@@ -451,6 +643,24 @@ export const schoolContent = {
           'How probabilistic life modeling influences learning, empathy, and understanding of global inequality.',
         logoPath: '/assets/images/school/image/Santa-clara-university.svg',
         logoCaption: 'Santa Clara University',
+        detail: {
+          heroImagePath: '/assets/images/school/image/Santa-university-png.png',
+          heroTitle:
+            'Simulating REAL LIVES: Promoting Global Empathy and Interest in Learning Through Simulation Games',
+          heroSubtitle:
+            'How role-playing simulated lives from different countries affects students’ affective and motivational learning outcomes.',
+          institution: 'Santa Clara University, California, USA',
+          whatWasStudied:
+            'How role-playing simulated lives from different countries affects students’ affective and motivational learning outcomes.',
+          keyFindings: [
+            'Playing REAL LIVES significantly increased global empathy among high school students compared to a control group.',
+            'Students who played the simulation showed greater interest in learning about other countries, both immediately and weeks after gameplay.',
+            'Identification with in-game characters was strongly and positively associated with higher global empathy.',
+          ],
+          methods:
+            'Quasi-experimental classroom study. Participants: 301 high school students from three Northern California schools',
+          pdfPath: '/assets/documents/school/pdf/Santa Clara University.pdf',
+        },
       },
       {
         id: 'research2-content-4',
@@ -460,16 +670,50 @@ export const schoolContent = {
         whatWasStudied:
           'How probabilistic life modeling influences learning, empathy, and understanding of global inequality.',
         logoPath: '/assets/images/school/image/University-Albany.svg',
+        detail: {
+          heroImagePath: '/assets/images/school/image/University-albany-png.png',
+          heroTitle:
+            'Real Lives and the Problem of Distributive Justice Essay on video games, meritocracy, and justice',
+          heroSubtitle:
+            'The pedagogical potential of life-simulation games to introduce players to debates on\u00a0distributive justice, luck, and social inequality.',
+          whatWasStudied:
+            'The pedagogical potential of life-simulation games to introduce players to debates on\u00a0distributive justice, luck, and social inequality.',
+          keyFindings: [
+            'Real Lives challenges the meritocratic norm commonly reinforced by mainstream video games.',
+            'Unlike most games that emphasize player control and individual power, Real Lives highlights how chance, social context, and structural constraints shape life outcomes.',
+            'The game encourages players to critically reflect on distributive justice, particularly the role of luck versus personal effort.',
+          ],
+          methods:
+            'Quasi-experimental classroom study. Participants: 301 high school students from three Northern California schools',
+          pdfPath: '/assets/documents/school/pdf/albany.pdf',
+        },
       },
       {
         id: 'research2-content-6',
         paperTitle:
-          ' Gaining Tolerance of Immigrants through Simulating Migratory Experiences:',
+          'Gaining Tolerance of Immigrants through Simulating Migratory Experiences:',
         institution: 'Uppsala University, Department of Education, Sweden',
         whatWasStudied:
           'The study tested whether a migration simulation game (Real Lives) can improve students’ attitudes toward immigrants.',
         logoPath: '/assets/images/school/image/Uppsala_University_logo.svg 2.svg',
         logoCaption: 'Uppsala University Sweden',
+        detail: {
+          heroImagePath: '/assets/images/school/image/ALB1-scaled 1.png',
+          heroTitle:
+            'Gaining Tolerance of Immigrants through Simulating Migratory Experiences:',
+          heroSubtitle:
+            'The study examined whether simulating migratory experiences through a digital game (Real Lives) can improve students’ attitudes toward immigrants.',
+          whatWasStudied:
+            'The study examined whether simulating migratory experiences through a digital game (Real Lives) can improve students’ attitudes toward immigrants.',
+          keyFindings: [
+            'Simulating migration significantly increased overall tolerance toward immigrants among students.',
+            'Social tolerance improved, meaning students became more accepting and empathetic toward immigrants.',
+            'Longer gameplay (more exposure) led to stronger positive attitude changes.',
+          ],
+          methods:
+            'Quasi-experimental classroom study with secondary school students (ages 14–19). Participants played the Real Lives simulation, experiencing life as migrants from MENA regions.',
+          pdfPath: '/assets/documents/school/pdf/ThomasNygrenResearchPaper-1.pdf',
+        },
       },
       {
         id: 'research2-content-5',
@@ -479,6 +723,22 @@ export const schoolContent = {
         whatWasStudied:
           'Evaluation of RealLives Simulation as a game-based empathy education tool for high school and university learners',
         heading: 'Individual Research by Kallen Tsikalas',
+        detail: {
+          heroImagePath: '/assets/images/school/image/Individual-Research-png.png',
+          heroTitle:
+            'Computer-Based Life Simulations and Young Adolescents: Identity Exploration, Information Learning, and Sense-Making',
+          heroSubtitle: 'How young adolescents learn while engaging in a computer-based life simulation.',
+          institution: 'Published as an individual academic research paper, mid-2000s',
+          whatWasStudied: 'How young adolescents learn while engaging in a computer-based life simulation.',
+          keyFindings: [
+            'Students developed practical decision-making strategies around education, work, relationships, money, and family choices.',
+            'Real Lives functioned as an\u00a0identity laboratory, enabling safe exploration of life paths that may be inaccessible or risky',
+            'Players demonstrated\u00a0strong moral reasoning, often avoiding smoking and teen pregnancy, while also strategically experimenting with crime, family size, and risk.',
+          ],
+          methods:
+            'Descriptive mixed-methods study\u00a0combining qualitative and quantitative data. Analysis of\u00a063 simulated lives\u00a0played by 13 low-income, urban adolescents.',
+          pdfPath: '/assets/documents/school/pdf/Kallen Tsikalas.pdf',
+        },
       },
     ],
     detailPanelLabels: {
@@ -522,11 +782,17 @@ export const schoolContent = {
         ctaText: 'Get Started',
       },
     ],
+    purchaseModal: {
+      heading: 'Continue to registration',
+      body:
+        'You will leave this site and open the school license registration page to complete your purchase.',
+      confirmText: 'Continue',
+    },
   },
 
   about: {
     heading: 'About Us',
-    tabs: ['History', 'The Team', 'Global Support', 'Inventor'],
+    tabs: ['History', 'Our Team', 'Working Team', 'Global Support'],
     history: {
       milestones: [
         {
@@ -559,7 +825,7 @@ export const schoolContent = {
         {
           version: 'RealLives 2025',
           description:
-            'This cloud-based version of RealLives, released in October 2017, brought the experience online. With a revamped interface and updated global data, it works seamlessly on all modern browsers and operating systems.',
+            'The current RealLives release continues the cloud-first experience with refreshed flows, updated global datasets, and ongoing improvements to empathy-focused learning outcomes for schools worldwide.',
           badge: 'Current Version',
         },
       ],
@@ -640,6 +906,80 @@ export const schoolContent = {
     },
     globalSupport: {
       specialThanksHeading: 'Special Thanks',
+      specialThanks: [
+        {
+          imagePath: '/assets/images/school/global-support-image/thanks-ashoka-img.jpg',
+          body:
+            'We thank Ashoka for fostering empathy and social innovation worldwide. Their recognition of Dr. Parag Mankeeker as an Ashoka Fellow validated our mission and connected us with a global network of changemakers who share our vision of building cross-cultural understanding through transformative education.',
+        },
+        {
+          imagePath: '/assets/images/school/global-support-image/bmgi-img.jpg',
+          body:
+            'We thank BMGI Global for their strategic partnership and management consulting expertise across India and the Asia Pacific region. Their professional guidance has helped us navigate complex markets while staying true to our mission of creating meaningful educational impact through technology.',
+        },
+        {
+          imagePath: '/assets/images/school/global-support-image/impact-world-img.png',
+          body:
+            'We are grateful to Ashoka Globalizer for accelerating our worldwide impact. Their specialized support in scaling social innovations has been instrumental in helping RealLives reach new communities globally, amplifying our ability to foster empathy and understanding in classrooms around the world.',
+        },
+      ],
+      alwaysGratefulHeading: 'Always Grateful',
+      alwaysGratefulMembers: [
+        {
+          name: 'Lee Hartwell',
+          location: 'Arizona, USA',
+          description:
+            'Nobel Laureate (2001), Nobel Prize in Physiology or Medicine',
+          imagePath: '/assets/images/school/global-support-image/Lee Hartwell-img.jpg',
+        },
+        {
+          name: 'David Gibson',
+          location: 'Perth, Australia',
+          description:
+            'Director | Learning Futures | Curtin Learning and Teaching, Australia.',
+          imagePath: '/assets/images/school/global-support-image/David Gibson-img.jpg',
+        },
+        {
+          name: 'Laura Giadorou-Koch',
+          location: 'NY, USA',
+          description:
+            'Practiced corporate law on Wall Street. System-level social entrepreneur and innovative educator & CEO',
+          imagePath: '/assets/images/school/global-support-image/Laura Giadorou-Koch-img.jpg',
+        },
+        {
+          name: 'Naresh Shahani',
+          location: 'Mumbai, India',
+          description:
+            'MD and Founder, BMGI India\u00a0Business Coach Innovation and Organic Growth with Consulting Experience',
+          imagePath: '/assets/images/school/global-support-image/Naresh Shahani-img.jpg',
+        },
+        {
+          name: 'Abhay Nalawade',
+          location: 'Pune, India',
+          description:
+            'Advisor for start-ups, technology companies, social organizations, Entrepreneur & Ex-MD/CEO of Thermax',
+          imagePath: '/assets/images/school/global-support-image/Abhay Nalawade-img.jpg',
+        },
+        {
+          name: 'Milind Desai',
+          location: 'Mumbai, India',
+          description: 'Advisor, Trackball Consultancy Services Private Limited',
+          imagePath: '/assets/images/school/global-support-image/Milind Desai-img.jpg',
+        },
+      ],
+      thanksHeading: 'Thanks',
+      thanksEntries: [
+        { name: 'Natya Tatineni', location: 'Bangalore, India' },
+        { name: 'Bob Runyan', location: 'Chico, CA, USA' },
+        { name: 'Neelesh Kulkarni', location: 'Pune, India' },
+        { name: 'Anil Paranjape', location: 'Pune, India' },
+        { name: 'Hemant Karandikar', location: 'Pune, India' },
+        { name: 'Milind Desai', location: 'Mumbai, India' },
+        { name: 'Vibhas Chandrachood', location: 'Lexington, KY, USA' },
+        { name: 'Hiren Bhat', location: 'Detroit, MI, USA' },
+        { name: 'Parimal Tathawadekar', location: 'Detroit, MI, USA' },
+        { name: 'Daniel Truran', location: 'Madrid, Spain' },
+      ],
     },
   },
 
@@ -651,8 +991,7 @@ export const schoolContent = {
     addressLabel: 'Address',
     address: 'Pune, India',
     formLabels: {
-      firstName: 'First Name',
-      lastName: 'Last Name',
+      name: 'Name',
       email: 'Email Address',
       message: 'Message',
       messagePlaceholder: 'Tell us how we can help you...',

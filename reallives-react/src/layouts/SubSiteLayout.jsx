@@ -7,7 +7,7 @@ import styles from './SubSiteLayout.module.css';
 export default function SubSiteLayout({ siteKey }) {
   return (
     <SiteContext.Provider value={{ siteKey }}>
-      <div className={styles.layout}>
+      <div className={styles.layout} data-site={siteKey}>
         <Navbar />
         <main className={styles.main}>
           <Outlet />

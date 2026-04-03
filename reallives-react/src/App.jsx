@@ -10,6 +10,39 @@ import SchoolLicense from './pages/licenses/SchoolLicense';
 import UniversityLicense from './pages/licenses/UniversityLicense';
 import HomeschoolerLicense from './pages/licenses/HomeschoolerLicense';
 import GamerLicense from './pages/licenses/GamerLicense';
+import SchoolHome from '@pages/school/SchoolHome';
+import SchoolProducts from '@pages/school/SchoolProducts';
+import SchoolChangemaker from '@pages/school/SchoolChangemaker';
+import SchoolImpact from '@pages/school/SchoolImpact';
+import SchoolResearch from '@pages/school/SchoolResearch';
+import SchoolAbout from '@pages/school/SchoolAbout';
+import SchoolContact from '@pages/school/SchoolContact';
+import SchoolPricing from '@pages/school/SchoolPricing';
+import SchoolFoundation from '@pages/school/SchoolFoundation';
+import UniversityHome from '@pages/university/UniversityHome';
+import UniversityProducts from '@pages/university/UniversityProducts';
+import UniversityChangemaker from '@pages/university/UniversityChangemaker';
+import UniversityImpact from '@pages/university/UniversityImpact';
+import UniversityResearch from '@pages/university/UniversityResearch';
+import UniversityPricing from '@pages/university/UniversityPricing';
+import UniversityAbout from '@pages/university/UniversityAbout';
+import UniversityContact from '@pages/university/UniversityContact';
+import UniversityFoundation from '@pages/university/UniversityFoundation';
+import HomeschoolerHome from '@pages/homeschooler/HomeschoolerHome';
+import HomeschoolerProducts from '@pages/homeschooler/HomeschoolerProducts';
+import HomeschoolerChangemaker from '@pages/homeschooler/HomeschoolerChangemaker';
+import HomeschoolerImpact from '@pages/homeschooler/HomeschoolerImpact';
+import HomeschoolerResearch from '@pages/homeschooler/HomeschoolerResearch';
+import HomeschoolerPricing from '@pages/homeschooler/HomeschoolerPricing';
+import HomeschoolerAbout from '@pages/homeschooler/HomeschoolerAbout';
+import HomeschoolerContact from '@pages/homeschooler/HomeschoolerContact';
+import HomeschoolerFoundation from '@pages/homeschooler/HomeschoolerFoundation';
+import GamerHome from '@pages/gamer/GamerHome';
+import GamerProducts from '@pages/gamer/GamerProducts';
+import GamerAbout from '@pages/gamer/GamerAbout';
+import GamerPricing from '@pages/gamer/GamerPricing';
+import GamerContact from '@pages/gamer/GamerContact';
+import NotFound from '@pages/NotFound';
 
 export default function App() {
   return (
@@ -29,47 +62,50 @@ export default function App() {
           </Route>
 
           <Route path="/reallives/school" element={<SubSiteLayout siteKey="school" />}>
-            <Route index element={<div>SchoolHome placeholder</div>} />
-            <Route path="products" element={<div>SchoolProducts placeholder</div>} />
-            <Route path="changemaker" element={<div>SchoolChangemaker placeholder</div>} />
-            <Route path="impact" element={<div>SchoolImpact placeholder</div>} />
-            <Route path="research" element={<div>SchoolResearch placeholder</div>} />
-            <Route path="pricing" element={<div>SchoolPricing placeholder</div>} />
-            <Route path="about" element={<div>SchoolAbout placeholder</div>} />
-            <Route path="contact" element={<div>SchoolContact placeholder</div>} />
+            <Route index element={<SchoolHome />} />
+            <Route path="products" element={<SchoolProducts />} />
+            <Route path="changemaker" element={<SchoolChangemaker />} />
+            <Route path="impact" element={<SchoolImpact />} />
+            <Route path="research" element={<SchoolResearch />} />
+            <Route path="pricing" element={<SchoolPricing />} />
+            <Route path="about" element={<SchoolAbout />} />
+            <Route path="contact" element={<SchoolContact />} />
+            <Route path="foundation" element={<SchoolFoundation />} />
           </Route>
 
           <Route path="/reallives/university" element={<SubSiteLayout siteKey="university" />}>
-            <Route index element={<div>UniversityHome placeholder</div>} />
-            <Route path="products" element={<div>UniversityProducts placeholder</div>} />
-            <Route path="changemaker" element={<div>UniversityChangemaker placeholder</div>} />
-            <Route path="impact" element={<div>UniversityImpact placeholder</div>} />
-            <Route path="research" element={<div>UniversityResearch placeholder</div>} />
-            <Route path="pricing" element={<div>UniversityPricing placeholder</div>} />
-            <Route path="about" element={<div>UniversityAbout placeholder</div>} />
-            <Route path="contact" element={<div>UniversityContact placeholder</div>} />
+            <Route index element={<UniversityHome />} />
+            <Route path="products" element={<UniversityProducts />} />
+            <Route path="changemaker" element={<UniversityChangemaker />} />
+            <Route path="impact" element={<UniversityImpact />} />
+            <Route path="research" element={<UniversityResearch />} />
+            <Route path="pricing" element={<UniversityPricing />} />
+            <Route path="about" element={<UniversityAbout />} />
+            <Route path="contact" element={<UniversityContact />} />
+            <Route path="foundation" element={<UniversityFoundation />} />
           </Route>
 
           <Route path="/reallives/homeschooler" element={<SubSiteLayout siteKey="homeschooler" />}>
-            <Route index element={<div>HomeschoolerHome placeholder</div>} />
-            <Route path="products" element={<div>HomeschoolerProducts placeholder</div>} />
-            <Route path="changemaker" element={<div>HomeschoolerChangemaker placeholder</div>} />
-            <Route path="impact" element={<div>HomeschoolerImpact placeholder</div>} />
-            <Route path="research" element={<div>HomeschoolerResearch placeholder</div>} />
-            <Route path="pricing" element={<div>HomeschoolerPricing placeholder</div>} />
-            <Route path="about" element={<div>HomeschoolerAbout placeholder</div>} />
-            <Route path="contact" element={<div>HomeschoolerContact placeholder</div>} />
+            <Route index element={<HomeschoolerHome />} />
+            <Route path="products" element={<HomeschoolerProducts />} />
+            <Route path="changemaker" element={<HomeschoolerChangemaker />} />
+            <Route path="impact" element={<HomeschoolerImpact />} />
+            <Route path="research" element={<HomeschoolerResearch />} />
+            <Route path="pricing" element={<HomeschoolerPricing />} />
+            <Route path="about" element={<HomeschoolerAbout />} />
+            <Route path="contact" element={<HomeschoolerContact />} />
+            <Route path="foundation" element={<HomeschoolerFoundation />} />
           </Route>
 
           <Route path="/reallives/gamer" element={<GamerLayout />}>
-            <Route index element={<div>GamerHome placeholder</div>} />
-            <Route path="about" element={<div>GamerAbout placeholder</div>} />
-            <Route path="products" element={<div>GamerProducts placeholder</div>} />
-            <Route path="pricing" element={<div>GamerPricing placeholder</div>} />
-            <Route path="contact" element={<div>GamerContact placeholder</div>} />
+            <Route index element={<GamerHome />} />
+            <Route path="about" element={<GamerAbout />} />
+            <Route path="products" element={<GamerProducts />} />
+            <Route path="pricing" element={<GamerPricing />} />
+            <Route path="contact" element={<GamerContact />} />
           </Route>
 
-          <Route path="*" element={<div>NotFound placeholder</div>} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>

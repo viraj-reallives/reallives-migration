@@ -13,7 +13,8 @@ export const gamerContent = {
     external: true,
   },
 
-  home: {
+  /** Gamer landing: hero visual, gameplay embed, and reviews (matches original gamer home). */
+  hero: {
     backgroundImagePath: '/assets/images/gamer/image/background-gamer-image.jpg',
     bracketDecorationPath: '/assets/images/gamer/image/top-bracetes.png',
     headline: {
@@ -26,48 +27,46 @@ export const gamerContent = {
       "Welcome to The Largest Gamified Simulation Engine of Human Experience on the Planet. We're revolutionizing gaming by bringing back the power of imagination through immersive text based simulations",
     bottomTagline:
       'The Largest Gamified Simulation Engine of Human Experience on the Planet',
-  },
-
-  gameplay: {
-    titleImagePath: '/assets/images/gamer/image-add/GAMEPLAY.svg',
-    arcadeEmbedUrl:
-      'https://demo.arcade.software/T3kOXgmqRKrPgCzTcKQF?embed&embed_mobile=tab&embed_desktop=inline&show_copy_link=true',
-    timelineImagePath: '/assets/images/gamer/image/gamer-timeline.svg',
-  },
-
-  whatGamersSay: {
-    titleImagePath: '/assets/images/gamer/image-add/WHAT GAMERS SAY.svg',
-    reviews: {
-      leftColumn: [
-        {
-          quote:
-            'I just played my first character to the end, and the experience is incredible. I was in tears at the end...',
-          author: 'David Laborie',
-          role: 'Musician from paris',
-        },
-        {
-          quote:
-            'I just played my first character to the end, and the experience is incredible. I was in tears at the end...',
-          author: 'Lukas andersen',
-          role: 'Gaming Influencer',
-        },
-      ],
-      centerColumn: [
-        {
-          quote:
-            '“When i played RealLives for the first time back in 2011, i honestly thought it was different from the other simulators i played. The depth of the experience, the problems that happen around your character or with your character, his family and their problems, it was all very real and touching, especially after playing with characters from different economical and political situations, while one has the possibility of going to college and becoming a CEO, the other is fighting hard to make it past his 30s. It was something that hit me hard, in the sense that my life wasn’t as bad as i previously thought it was. I don’t think many people think about this, that’s why RealLives really left an impression on me”',
-          author: 'pedro marques',
-          role: null,
-        },
-      ],
-      rightColumn: [
-        {
-          quote:
-            'What i like about RealLives is how it ‘throws’ you into a country and makes you face all the issues, like either health problems or tensions from government, poverty and so on, and it’s like “deal with it',
-          author: 'sergiu ovidiu',
-          role: 'Romania',
-        },
-      ],
+    gameplay: {
+      titleImagePath: '/assets/images/gamer/image-add/GAMEPLAY.svg',
+      arcadeEmbedUrl:
+        'https://demo.arcade.software/T3kOXgmqRKrPgCzTcKQF?embed&embed_mobile=tab&embed_desktop=inline&show_copy_link=true',
+      timelineImagePath: '/assets/images/gamer/image/gamer-timeline.svg',
+    },
+    whatGamersSay: {
+      titleImagePath: '/assets/images/gamer/image-add/WHAT GAMERS SAY.svg',
+      reviews: {
+        leftColumn: [
+          {
+            quote:
+              'I just played my first character to the end, and the experience is incredible. I was in tears at the end...',
+            author: 'David Laborie',
+            role: 'Musician from paris',
+          },
+          {
+            quote:
+              'I just played my first character to the end, and the experience is incredible. I was in tears at the end...',
+            author: 'Lukas andersen',
+            role: 'Gaming Influencer',
+          },
+        ],
+        centerColumn: [
+          {
+            quote:
+              '“When i played RealLives for the first time back in 2011, i honestly thought it was different from the other simulators i played. The depth of the experience, the problems that happen around your character or with your character, his family and their problems, it was all very real and touching, especially after playing with characters from different economical and political situations, while one has the possibility of going to college and becoming a CEO, the other is fighting hard to make it past his 30s. It was something that hit me hard, in the sense that my life wasn’t as bad as i previously thought it was. I don’t think many people think about this, that’s why RealLives really left an impression on me”',
+            author: 'pedro marques',
+            role: null,
+          },
+        ],
+        rightColumn: [
+          {
+            quote:
+              'What i like about RealLives is how it ‘throws’ you into a country and makes you face all the issues, like either health problems or tensions from government, poverty and so on, and it’s like “deal with it',
+            author: 'sergiu ovidiu',
+            role: 'Romania',
+          },
+        ],
+      },
     },
   },
 
@@ -359,6 +358,12 @@ export const gamerContent = {
     ],
     toolInfoNote:
       'Based on your requirements, we recommend the most suitable license plan, plus show an alternative option for comparison. All features remain the same across plans - only student capacity and life credits differ',
+    purchaseModal: {
+      heading: 'Continue to registration',
+      body:
+        'You will leave this site and open the gamer license registration page to complete your purchase.',
+      confirmText: 'Continue',
+    },
   },
 
   products: {
@@ -425,6 +430,11 @@ export const gamerContent = {
       learningOutcomesImagePath: '/assets/images/gamer/image/larning-outcome-image.svg',
       heroVideoPath: '/assets/images/gamer/video/RL STEM DARK.mp4',
       alternateHeroVideoPath: '/assets/images/gamer/video/RL 21ST CENTURY SKILLS DARK.mp4',
+      heroVideoPaths: [
+        '/assets/images/gamer/video/RL STEM DARK.mp4',
+        '/assets/images/gamer/video/RL 21ST CENTURY SKILLS DARK.mp4',
+      ],
+      videoTrackLabels: ['1', '2'],
     },
     changeMakerIndexTab: {
       title: 'RCMI',
@@ -528,8 +538,7 @@ export const gamerContent = {
     addressLabel: 'Address',
     address: 'Pune, India',
     formLabels: {
-      firstName: 'First Name',
-      lastName: 'Last Name',
+      name: 'Name',
       email: 'Email Address',
       message: 'Message',
       messagePlaceholder: 'Tell us how we can help you...',

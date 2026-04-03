@@ -50,6 +50,12 @@
   --color-brand-purple: #810dc9;
   --color-brand-purple-soft: #d08cdc;
 
+  /* Sub-site brand colors */
+  --color-school-brand: #e87722;
+  --color-university-brand: #1b4d3e;
+  --color-homeschooler-brand: #7b68c8;
+  --color-gamer-brand: #00bcd4;
+
   /* Contextual status */
   --color-success: #16a34a;
   --color-warning: #ca8a04;
@@ -88,6 +94,24 @@
   --color-landing-footer-heading: #11e2ff;
   --color-landing-footer-divider: #6fd4e1;
   --color-landing-footer-link-hover: #23b8cc;
+
+  /* Gamer sub-site — referenced only from gamer *.module.css (no hex in modules) */
+  --color-gamer-bg-top: #061018;
+  --color-gamer-bg-bottom: #0f2433;
+  --color-gamer-bg-mid: #0a1922;
+  --color-gamer-text: #e3f2f5;
+  --color-gamer-text-muted: #c5dde4;
+  --color-gamer-text-muted-soft: #9db8c4;
+  --color-gamer-text-welcome: #b8d4dc;
+  --color-gamer-card: #0d2535;
+  --color-gamer-card-surface: #132a3a;
+  --gradient-gamer-hero-overlay: linear-gradient(
+    180deg,
+    rgba(6, 16, 24, 0.55) 0%,
+    rgba(6, 16, 24, 0.75) 100%
+  );
+  --color-shadow-gamer-text: rgba(0, 0, 0, 0.45);
+  --color-shadow-gamer-elevated: rgba(0, 0, 0, 0.35);
 
   /* Spacing scale (merged from source values) */
   --space-0: 0;
@@ -211,6 +235,12 @@
   --color-brand-purple: #c084fc;
   --color-brand-purple-soft: #e9d5ff;
 
+  /* Sub-site brand colors (dark mode) */
+  --color-school-brand: #e87722;
+  --color-university-brand: #1b4d3e;
+  --color-homeschooler-brand: #7b68c8;
+  --color-gamer-brand: #00bcd4;
+
   --color-success: #4ade80;
   --color-warning: #facc15;
   --color-error: #f87171;
@@ -314,6 +344,23 @@
 
   --transition-fast: 0.2s;
   --transition-base: 0.3s;
+}
+
+/* Site-scoped brand variable for Navbar and CTAs */
+[data-site="school"] {
+  --color-site-brand: var(--color-school-brand);
+}
+
+[data-site="university"] {
+  --color-site-brand: var(--color-university-brand);
+}
+
+[data-site="homeschooler"] {
+  --color-site-brand: var(--color-homeschooler-brand);
+}
+
+[data-site="gamer"] {
+  --color-site-brand: var(--color-gamer-brand);
 }
 
 /* Base reset */

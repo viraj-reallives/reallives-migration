@@ -1,0 +1,163 @@
+.page {
+  padding-bottom: var(--space-48, 3rem);
+}
+
+.grid {
+  display: grid;
+  gap: var(--space-32, 2rem);
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 var(--space-16, 1rem) var(--space-32, 2rem);
+}
+
+@media (min-width: 56rem) {
+  .grid {
+    grid-template-columns: 1fr minmax(16rem, 22rem);
+    align-items: start;
+    gap: var(--space-40, 2.5rem);
+    padding-left: var(--space-24, 1.5rem);
+    padding-right: var(--space-24, 1.5rem);
+  }
+}
+
+.formSection {
+  width: 100%;
+  min-width: 0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24, 1.5rem);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8, 0.5rem);
+}
+
+.label {
+  font-family: var(--font-ui, var(--font-primary));
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.input,
+.textarea {
+  width: 100%;
+  max-width: 100%;
+  min-height: 44px;
+  padding: 0.75rem 1rem;
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--color-text-primary);
+  background: var(--color-bg-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md, 0.5rem);
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.textarea {
+  min-height: 8rem;
+  resize: vertical;
+}
+
+.input:focus,
+.textarea:focus {
+  outline: none;
+  border-color: var(--color-border-accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-border-accent) 35%, transparent);
+}
+
+.submit {
+  align-self: flex-start;
+  min-height: 44px;
+  padding: 0.75rem 1.75rem;
+  margin-top: var(--space-8, 0.5rem);
+  font-family: var(--font-ui, var(--font-primary));
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-white);
+  background: var(--color-brand-blue);
+  border: none;
+  border-radius: var(--radius-md, 0.5rem);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.submit:hover {
+  background: var(--color-brand-blue-strong);
+}
+
+.submit:focus-visible {
+  outline: 2px solid var(--color-border-accent);
+  outline-offset: 2px;
+}
+
+.infoSection {
+  padding: var(--space-24, 1.5rem);
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md, 0.5rem);
+}
+
+.infoTitle {
+  margin: 0 0 var(--space-24, 1.5rem);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.item {
+  display: flex;
+  gap: var(--space-16, 1rem);
+  align-items: flex-start;
+}
+
+.item + .item {
+  margin-top: var(--space-24, 1.5rem);
+}
+
+.icon {
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--color-brand-blue);
+  margin-top: 0.125rem;
+}
+
+.itemBody {
+  min-width: 0;
+}
+
+.itemLabel {
+  margin: 0 0 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.emailLink {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--color-brand-blue);
+  text-decoration: none;
+  word-break: break-word;
+}
+
+.emailLink:hover {
+  text-decoration: underline;
+}
+
+.addressText {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+}

@@ -1,0 +1,391 @@
+.about {
+  padding: var(--space-24, 1.5rem) var(--space-16, 1rem) var(--space-48, 3rem);
+  max-width: 72rem;
+  margin: 0 auto;
+  color: var(--color-gamer-text);
+}
+
+.heading {
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 800;
+  color: var(--color-white);
+  text-align: center;
+  margin: 0 0 var(--space-24, 1.5rem);
+}
+
+.tabBar {
+  display: flex;
+  gap: 0.25rem;
+  margin-bottom: var(--space-24, 1.5rem);
+  border-bottom: 1px solid color-mix(in srgb, var(--color-white) 14%, transparent);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.tab {
+  flex: 0 0 auto;
+  min-height: 44px;
+  padding: 0.65rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-gamer-text-muted-soft);
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -1px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.tab:hover {
+  color: var(--color-white);
+}
+
+.tabActive {
+  color: var(--color-brand-cyan-bright);
+  border-bottom-color: var(--color-brand-cyan-bright);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(6rem, 1fr));
+  gap: var(--space-12, 0.75rem);
+  margin-bottom: var(--space-24, 1.5rem);
+}
+
+.galleryImg {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-md, 0.5rem);
+  background: color-mix(in srgb, var(--color-gamer-card-surface) 90%, transparent);
+  padding: var(--space-8, 0.5rem);
+}
+
+.milestone {
+  padding: var(--space-20, 1.25rem);
+  margin-bottom: var(--space-16, 1rem);
+  border-radius: var(--radius-lg, 0.75rem);
+  background: color-mix(in srgb, var(--color-gamer-card-surface) 92%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-white) 10%, transparent);
+}
+
+.milestoneHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.version {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-white);
+}
+
+.badge {
+  font-size: 0.6875rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 0.2rem 0.5rem;
+  border-radius: 9999px;
+  background: var(--color-brand-cyan-bright);
+  color: var(--color-gamer-bg-top);
+}
+
+.milestoneBody {
+  margin: 0;
+  line-height: 1.6;
+  color: var(--color-gamer-text-muted);
+}
+
+.bioStack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-32, 2rem);
+}
+
+.bioRow {
+  display: grid;
+  gap: var(--space-20, 1.25rem);
+  align-items: start;
+}
+
+@media (min-width: 768px) {
+  .bioRow {
+    grid-template-columns: 1fr minmax(11rem, 16rem);
+  }
+
+  .bioRowReverse {
+    grid-template-columns: minmax(11rem, 16rem) 1fr;
+  }
+}
+
+.bioRole {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-brand-cyan-bright);
+  margin: 0 0 0.25rem;
+}
+
+.bioName {
+  margin: 0 0 var(--space-12, 0.75rem);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-white);
+}
+
+.bioParagraph {
+  margin: 0 0 var(--space-12, 0.75rem);
+  line-height: 1.6;
+  color: var(--color-gamer-text-muted);
+}
+
+.bioImgWrap {
+  border-radius: var(--radius-md, 0.5rem);
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--color-brand-cyan) 35%, transparent);
+}
+
+.bioImg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.subheading {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-white);
+  margin: 0 0 var(--space-12, 0.75rem);
+}
+
+.workGrid {
+  display: grid;
+  gap: var(--space-12, 0.75rem);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 600px) {
+  .workGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.memberCard {
+  padding: var(--space-12, 0.75rem);
+  border-radius: var(--radius-md, 0.5rem);
+  background: color-mix(in srgb, var(--color-gamer-card-surface) 94%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-white) 8%, transparent);
+}
+
+.memberName {
+  margin: 0 0 0.15rem;
+  font-weight: 700;
+  color: var(--color-white);
+  font-size: 0.9375rem;
+}
+
+.memberRole {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: var(--color-gamer-text-muted-soft);
+}
+
+.intro {
+  margin: 0 0 var(--space-12, 0.75rem);
+  line-height: 1.6;
+  font-size: 0.9375rem;
+  color: var(--color-gamer-text-muted);
+}
+
+.itinerantGrid {
+  display: grid;
+  gap: var(--space-16, 1rem);
+  margin-top: var(--space-16, 1rem);
+}
+
+@media (min-width: 768px) {
+  .itinerantGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.nameList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nameItem {
+  padding: 0.45rem 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-white) 10%, transparent);
+  font-size: 0.875rem;
+  color: var(--color-gamer-text);
+}
+
+.supportHeading {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--color-white);
+  text-align: center;
+  margin: 0 0 var(--space-20, 1.25rem);
+}
+
+.thanksRow {
+  margin-bottom: var(--space-24, 1.5rem);
+}
+
+.thanksCard {
+  display: grid;
+  gap: var(--space-16, 1rem);
+  align-items: start;
+}
+
+@media (min-width: 768px) {
+  .thanksCard {
+    grid-template-columns: minmax(9rem, 12rem) 1fr;
+  }
+}
+
+.thanksImg {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-md, 0.5rem);
+  border: 1px solid color-mix(in srgb, var(--color-white) 12%, transparent);
+}
+
+.thanksBody {
+  margin: 0;
+  line-height: 1.6;
+  font-size: 0.9375rem;
+  color: var(--color-gamer-text-muted);
+}
+
+.gratefulGrid {
+  display: grid;
+  gap: var(--space-16, 1rem);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .gratefulGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .gratefulGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.gratefulCard {
+  display: grid;
+  grid-template-columns: 4.5rem 1fr;
+  gap: var(--space-12, 0.75rem);
+  padding: var(--space-12, 0.75rem);
+  border-radius: var(--radius-md, 0.5rem);
+  background: color-mix(in srgb, var(--color-gamer-card-surface) 94%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-white) 8%, transparent);
+}
+
+.gratefulThumb {
+  width: 4.5rem;
+  height: 4.5rem;
+  object-fit: cover;
+  border-radius: var(--radius-md, 0.5rem);
+}
+
+.gratefulName {
+  margin: 0 0 0.125rem;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--color-white);
+}
+
+.gratefulLoc {
+  margin: 0 0 0.35rem;
+  font-size: 0.8125rem;
+  color: var(--color-gamer-text-muted-soft);
+}
+
+.gratefulDesc {
+  margin: 0;
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  color: var(--color-gamer-text-muted);
+}
+
+.thanksListGrid {
+  display: grid;
+  gap: var(--space-12, 0.75rem);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .thanksListGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.thanksEntry {
+  padding: var(--space-12, 0.75rem);
+  border-radius: var(--radius-md, 0.5rem);
+  background: color-mix(in srgb, var(--color-gamer-card-surface) 92%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-white) 8%, transparent);
+}
+
+.thanksEntryName {
+  margin: 0 0 0.15rem;
+  font-weight: 700;
+  color: var(--color-white);
+  font-size: 0.9375rem;
+}
+
+.thanksEntryLoc {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: var(--color-gamer-text-muted-soft);
+}
+
+.inventor {
+  display: grid;
+  gap: var(--space-24, 1.5rem);
+  align-items: start;
+}
+
+@media (min-width: 768px) {
+  .inventor {
+    grid-template-columns: minmax(14rem, 20rem) 1fr;
+  }
+}
+
+.inventorTitles {
+  margin: 0 0 var(--space-8, 0.5rem);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--color-white);
+}
+
+.inventorNames {
+  margin: 0 0 var(--space-16, 1rem);
+  font-size: 1.125rem;
+  color: var(--color-brand-cyan-bright);
+}
+
+.inventorImgWrap {
+  border-radius: var(--radius-lg, 0.75rem);
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--color-brand-cyan) 35%, transparent);
+}
+
+.inventorImg {
+  width: 100%;
+  height: auto;
+  display: block;
+}

@@ -1,3 +1,6 @@
+import { homeAdditionalTabsForBasePath } from './homeAdditionalTabsShared';
+import { empathyCanvasTabShared, realBoardTabShared } from './productsEmpathyRealBoardShared';
+
 export const homeschoolerContent = {
   navLinks: [
     { label: 'Home', path: '/reallives/homeschooler' },
@@ -6,6 +9,7 @@ export const homeschoolerContent = {
     { label: 'Impact', path: '/reallives/homeschooler/impact' },
     { label: 'Research & Evidence', path: '/reallives/homeschooler/research' },
     { label: 'Pricing', path: '/reallives/homeschooler/pricing' },
+    { label: 'Foundation', path: '/reallives/homeschooler/foundation' },
     { label: 'About Us', path: '/reallives/homeschooler/about' },
     { label: 'Contact', path: '/reallives/homeschooler/contact' },
   ],
@@ -65,14 +69,40 @@ export const homeschoolerContent = {
         'Families worldwide report enhanced children\'s engagement, improved analytical thinking, and stronger preparation for global citizenship and cultural awareness. Parents consistently note increased family conversations about sophisticated global topics.',
         'Ready to enhance your family\'s learning with cutting-edge simulation technology?',
       ],
+      gettingStartedCtaText: 'View pricing',
+      gettingStartedCtaPath: '/reallives/homeschooler/pricing',
     },
     images: {
       heroVideoUrl: '/assets/images/homeschooler/image/parent-who-can-use-background.jpeg',
-      illustration: '/assets/images/homeschooler/image/everyone-chnage-maker.svg',
-      classroomDiagram: '/assets/images/homeschooler/image/work-in-classroome-svg.svg',
-      gettingStartedIllustration: '/assets/images/homeschooler/image/getting-started-easy.svg',
+      illustration:
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-home-page/everyone-change-maker.svg',
+      classroomDiagram:
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-home-page/work-in-classroom.svg',
+      gettingStartedIllustration:
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-home-page/getting-started-easy.svg',
+      empathy21CenturyBanner:
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-home-page/empathy-21century-skills.png',
+      supportedByRealLives:
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-home-page/supoorted-by-reallives-image.svg',
+      experienceAuthentic:
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-home-page/Experience-authentic-iamge.svg',
+      empathyCanvasIllustration:
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-home-page/Empathy-image-add.svg',
+      readyToTransform:
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-home-page/ready-to-transform.svg',
+      sdgBackground:
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-home-page/SDG-background-image.svg',
+      sdgEarth:
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/Earth-image-svg.svg',
+      sdgImpactVideo:
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/videos/sdg-background-video.mp4',
+      sdgAnnouncement:
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-home-page/announcment-image.svg',
+      sdgGlobalAction:
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/global-action-image.svg',
     },
     homeTabLabels: ['Who Can Use?', '21st Century Skills', 'SDGs', 'Resources'],
+    homeAdditionalTabs: homeAdditionalTabsForBasePath('/reallives/homeschooler'),
   },
 
   products: {
@@ -126,17 +156,18 @@ export const homeschoolerContent = {
         'Using real-world demographic and economic data, the simulation places students in authentic scenarios where they make decisions about school, work, family, health, and more. Every choice leads to realistic consequences, shaped by global inequality, access, and opportunity.',
         "RealLives isn’t just a game—it’s a window into the lived experience of people across the globe. Whether you’re born into a wealthy family in Sweden or a struggling household in rural India, the simulation challenges you to navigate life based on real-world constraints and possibilities.",
       ],
-      worldImagePath: '/assets/images/homeschooler/image-add/reallives-world-img.svg',
+      worldImagePath:
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/reallives-world-img.svg',
       fosterHeading: 'Foster Empathy Through Experience',
       fosterDescription:
         'By making choices and living consequences, students organically develop empathy. They begin to ask: What would I do in this situation? What opportunities would I miss or gain just by being born elsewhere?',
       experienceHeading: 'Experience RealLives',
       drivenByDataText: 'RealLives is driven by real world data',
       dataLogos: [
-        '/assets/images/homeschooler/logo-image/united nations.svg',
-        '/assets/images/homeschooler/logo-image/world bank group.svg',
-        '/assets/images/homeschooler/logo-image/lonely planet.svg',
-        '/assets/images/homeschooler/logo-image/birds logo.svg',
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/united-nations.svg',
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/world-bank-group.svg',
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/lonely-planet.svg',
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/birds-logo.svg',
       ],
       learningOutcomesHeading: 'Learning Outcomes',
       learningOutcomes: [
@@ -171,8 +202,13 @@ export const homeschoolerContent = {
             'Build awareness of diverse perspectives, reflect on equity and resilience, and embrace interdependence.',
         },
       ],
-      learningOutcomesImagePath: '/assets/images/homeschooler/image/larning-outcome-image.svg',
-      heroVideoPath: '/assets/images/homeschooler/video/RL STEM-3.mp4',
+      learningOutcomesImagePath:
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/learning-outcome-image.svg',
+      heroVideoPaths: [
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/videos/rl-stem.mp4',
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/videos/rl-21st-century-skills.mp4',
+      ],
+      videoTrackLabels: ['1', '2'],
     },
     changeMakerIndexTab: {
       title: 'RCMI',
@@ -186,18 +222,40 @@ export const homeschoolerContent = {
       clustersHeading: 'RCMI Clusters',
       clustersDescription:
         'RCMI is built on the foundation that effective changemakers excel across four interconnected domains. The assessment system recognizes that true changemaking ability emerges from the balance and integration of these four essential clusters:',
-      illustrationPath: '/assets/images/homeschooler/image/real-change-maker.svg',
+      illustrationPath:
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/real-change-maker.svg',
+      clusterLabels: [
+        { lines: ['Personal'] },
+        { lines: ['Inter', 'Personal'] },
+        { lines: ['Contextual', 'Awareness'] },
+        { lines: ['Strategic', 'Thinking'] },
+      ],
+      clusterDescriptions: [
+        'Internal/Personal Qualities\u00a0form the foundation - you must first master yourself before leading change in society, others or even in the world.',
+        'Interpersonal Competencies\u00a0 build upon this foundation - enabling you to connect with, influence, and mobilize others toward shared goals.',
+        'Contextual Awareness\u00a0ensures responsible impact - grounding your efforts in ethical responsibility and global understanding.',
+        'Strategic Thinking\u00a0provides the intellectual framework - giving you the tools to analyze complex problems and develop innovative solutions.',
+      ],
+      howItWorksHeading: 'How does it work?',
+      howItWorksImagePath:
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/reallives-changemaker-image.svg',
+      experienceEmbedHeading: 'Experience RCMI',
+      demoIframeSrc:
+        'https://demo.arcade.software/i527E8HZo4YlXdSC8arb?embed&embed_mobile=tab&embed_desktop=inline&show_copy_link=true',
     },
+    empathyCanvasTab: empathyCanvasTabShared,
+    realBoardTab: realBoardTabShared,
     realAiTab: {
       brandLine: 'Real AI',
       tagline: 'Turning life stories into insights',
-      videoPath: '/assets/images/homeschooler/video/real-ai-video.mp4',
+      videoPath:
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/videos/real-ai-video.mp4',
       logoPath: '/assets/images/homeschooler/image/real-r-logo.svg',
       gridImages: [
         '/assets/images/homeschooler/image/first-reflection.svg',
         '/assets/images/homeschooler/image/key-life-value.svg',
         '/assets/images/homeschooler/image/sdg-challenge.svg',
-        '/assets/images/homeschooler/image/birth-story.svg',
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/birth-story.svg',
         '/assets/images/homeschooler/image/life-analysis.svg',
       ],
       empathyCanvasAnalysisHeading: 'Empathy Canvas analysis \nusing Real AI',
@@ -205,13 +263,15 @@ export const homeschoolerContent = {
         "The Empathy Canvas, powered by Real AI, is a unique tool that analyzes a user's emotional intelligence based on their responses to 9 carefully designed questions. Each response is processed using our Real AI engine to generate personalized AI reflections, providing deeper insights into the user’s emotional awareness and interpersonal understanding.",
         'Based on this analysis, users receive an overall Empathy Score out of 100, along with actionable feedback. This process helps individuals explore their capacity for empathy — a vital trait in changemaking. Real AI also powers the RealLives ChangeMaker Index and other interactive reports, making complex human values like empathy, resilience, and social connection measurable and meaningful.',
       ],
-      empathyCanvasImagePath: '/assets/images/homeschooler/image/emapthy_canvas_2.svg',
+      empathyCanvasImagePath:
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/empathy_canvas_2.svg',
       rcmiAnalysisHeading: 'RCMI analysis using Real AI',
       rcmiAnalysisParagraphs: [
         "The RealLives ChangeMaker Index (RCMI), powered by Real AI, measures a user's changemaking potential through their in-game decisions and responses. Based on their score, users are placed in one of five growth stages, Seed, Sprout, Sapling, Plant, or Fruit, reflecting their changemaker journey.",
         'The report also includes a Severity Index, which maps the complexity and risks associated with different changemaking domains. Ranging from 1 (low risk) to 10 (extreme risk), this index helps users understand the potential challenges in areas like Peace & Conflict, Human Rights, or Environmental Protection. By aligning RCMI scores with domain severity, Real AI offers personalized insights on where users can contribute meaningfully while preparing for the realities of changemaking work.',
       ],
-      rcmiReportImagePath: '/assets/images/homeschooler/image/RealLives_Changemaker_Report-images-0.svg',
+      rcmiReportImagePath:
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/RealLives_Changemaker_Report-images-0.svg',
     },
   },
 
@@ -310,6 +370,89 @@ export const homeschoolerContent = {
     closingSubtext: 'Your journey from understanding to impact starts now',
     closingButtonText: 'Become a ChangeMaker',
     heroBackgroundImagePath: '/assets/images/homeschooler/image/Chnage-maker-univercity-background.svg',
+    heroPrimaryCtaPath: '/reallives/homeschooler/pricing',
+    closingCtaPath: '/reallives/homeschooler/pricing',
+  },
+
+  foundation: {
+    hero: {
+      heading: 'RealLives Foundation',
+      tagline: 'Changing Education Through Lived Experience.',
+      body:
+        'We believe learning should not stop at memorizing facts, it should cultivate empathy, critical thinking, and real-world awareness. Through immersive simulations, students step into lives across different countries, cultures, and realities. They make decisions, face consequences, and reflect deeply.',
+      skills: [
+        'Empathy',
+        'Adaptability',
+        'Cultural awareness',
+        'Ethical Reasoning',
+        'Problem-solving skills',
+        'Leadership',
+      ],
+      donateCtaText: 'Invest in future ChangeMakers',
+      donateBtnText: 'Donate Now',
+      donateUrl: 'https://www.reallivesfoundation.org/donate',
+    },
+    educationalApproach: {
+      heading: 'Our Educational Approach',
+      body:
+        'We believe learning should not stop at memorizing facts, it should cultivate empathy, critical thinking, and real-world awareness.',
+      cards: [
+        {
+          title: 'Learning Through Experience',
+          description:
+            "Students don't just learn about global challenges, they live them through interactive simulations. This builds understanding far deeper than traditional instruction.",
+        },
+        {
+          title: 'Building Empathy',
+          description:
+            'By experiencing lives across socio-economic and cultural contexts, students develop compassion, perspective, and global awareness.',
+        },
+        {
+          title: 'Strengthening Critical Thinking',
+          description:
+            'Every decision has consequences. Students analyze situations, evaluate options, and understand complex systems.',
+        },
+        {
+          title: 'Empowering Students',
+          description:
+            'We help learners recognize that their choices matter in simulations and in real life. This fosters confidence, responsibility, and leadership.',
+        },
+      ],
+    },
+    globalImpact: {
+      heading: 'Our Global Impact',
+      subheading: 'RealLives has empowered students worldwide',
+      learnMoreText: 'Learn More about Our Impact',
+      learnMorePath: '/reallives/homeschooler/impact',
+    },
+    rcmi: {
+      heading: 'RealLives Changemaker Index (RCMI)',
+      subheading:
+        'To deepen impact beyond the simulation, we developed the RealLives Changemaker Index (RCMI) — a framework that helps students understand their growth as changemakers.',
+      competencies: [
+        'Empathy',
+        'Leadership',
+        'Self Awareness',
+        'Resilience',
+        'Problem Solving Skills',
+        'Critical Thinking',
+        'Ethical Responsibility',
+        'Adaptability',
+        'Emotional Intelligence',
+        'Initiative',
+        'Communication',
+        'Visionary Thinking',
+        'Social Awareness',
+        'Risk Taking',
+        'Global Awareness',
+        'Collaboration',
+        'Persistence',
+        'Creativity & Innovation',
+      ],
+      diagramImage: '/assets/images/common/rcmi-diagram.png',
+      learnMoreText: 'Learn More about RCMI',
+      learnMoreUrl: 'https://www.reallivesfoundation.org/rcmi',
+    },
   },
 
   impact: {
@@ -321,6 +464,8 @@ export const homeschoolerContent = {
     workshopSectionLabel: 'Impact home',
     ctaBannerHeading: 'Empower Your Students with Global Perspectives',
     ctaBannerButtonText: 'Bring RealLives to Your Campus',
+    ctaBannerButtonPath: '/reallives/homeschooler/pricing',
+    workshopLearnMorePath: '/reallives/homeschooler/contact',
     sliderImages: [
       '/assets/images/homeschooler/image/Final Business with Purpose 1.png',
       '/assets/images/homeschooler/image/school-1-image-slider.png',
@@ -486,7 +631,17 @@ export const homeschoolerContent = {
       institution: 'Institution',
       whatWasStudied: 'What was studied\u00a0',
     },
-    contactPromptButtonText: 'Bring This to Your School',
+    keyFindingsLabel: 'Key Findings\u00a0',
+    methodsLabel: 'Methods\u00a0',
+    goBackText: 'Go Back',
+    readPaperText: 'Read the Paper',
+    bringToSchoolText: 'Bring This to Your Family',
+    bringToSchoolPath: '/reallives/homeschooler/contact',
+    contactBannerHeading: 'Get in Touch',
+    contactBannerSubheading:
+      'Questions about our research or bringing RealLives to your family? We would love to hear from you.',
+    contactBannerButtonPath: '/reallives/homeschooler/contact',
+    contactPromptButtonText: 'Contact Us',
   },
 
   pricing: {
@@ -522,11 +677,17 @@ export const homeschoolerContent = {
         ctaText: 'Get Started',
       },
     ],
+    purchaseModal: {
+      heading: 'Continue to registration',
+      body:
+        'You will leave this site and open the family license registration page to complete your purchase.',
+      confirmText: 'Continue',
+    },
   },
 
   about: {
     heading: 'About Us',
-    tabs: ['History', 'The Team', 'Global Support', 'Inventor'],
+    tabs: ['History', 'Our Team', 'Working Team', 'Global Support'],
     history: {
       milestones: [
         {
@@ -559,7 +720,7 @@ export const homeschoolerContent = {
         {
           version: 'RealLives 2025',
           description:
-            'This cloud-based version of RealLives, released in October 2017, brought the experience online. With a revamped interface and updated global data, it works seamlessly on all modern browsers and operating systems.',
+            'The current RealLives release continues the cloud-first experience with refreshed flows, updated global datasets, and ongoing improvements to empathy-focused learning for families and homeschool settings worldwide.',
           badge: 'Current Version',
         },
       ],
@@ -640,7 +801,7 @@ export const homeschoolerContent = {
     },
     globalSupport: {
       specialThanksHeading: 'Special Thanks',
-      specialThanksPartners: [
+      specialThanks: [
         {
           imagePath: '/assets/images/homeschooler/global-support-image/thanks-ashoka-img.jpg',
           body:
@@ -701,8 +862,8 @@ export const homeschoolerContent = {
           imagePath: '/assets/images/homeschooler/global-support-image/Milind Desai-img.jpg',
         },
       ],
-      thanksSectionHeading: 'Thanks',
-      thanksTeamMembers: [
+      thanksHeading: 'Thanks',
+      thanksEntries: [
         { name: 'Natya Tatineni', location: 'Bangalore, India' },
         { name: 'Bob Runyan', location: 'Chico, CA, USA' },
         { name: 'Neelesh Kulkarni', location: 'Pune, India' },
@@ -735,8 +896,7 @@ export const homeschoolerContent = {
     addressLabel: 'Address',
     address: 'Pune, India',
     formLabels: {
-      firstName: 'First Name',
-      lastName: 'Last Name',
+      name: 'Name',
       email: 'Email Address',
       message: 'Message',
       messagePlaceholder: 'Tell us how we can help you...',

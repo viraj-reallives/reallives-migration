@@ -1,0 +1,17 @@
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(
+    180deg,
+    var(--color-gamer-bg-top) 0%,
+    var(--color-gamer-bg-bottom) 40%,
+    var(--color-gamer-bg-mid) 100%
+  );
+  color: var(--color-gamer-text);
+}
+
+.main {
+  flex: 1;
+  padding-top: 4.5rem;
+}

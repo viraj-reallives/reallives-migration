@@ -1,0 +1,506 @@
+.page {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* —— Section 1: Hero —— */
+.hero {
+  background: color-mix(in srgb, var(--color-brand-cyan) 14%, var(--color-bg-primary));
+  padding: var(--space-32) var(--space-16) var(--space-40);
+}
+
+.heroInner {
+  max-width: 72rem;
+  margin: 0 auto;
+  display: grid;
+  gap: var(--space-28);
+  grid-template-columns: 1fr;
+  align-items: center;
+}
+
+@media (min-width: 60rem) {
+  .heroInner {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-40);
+  }
+}
+
+.heroCopy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+
+.heroHeading {
+  margin: 0;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 800;
+  font-family: var(--font-ui);
+  color: var(--color-text-primary);
+  line-height: 1.15;
+}
+
+.heroTagline {
+  margin: 0;
+  font-size: clamp(1.125rem, 2.2vw, 1.35rem);
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  line-height: 1.4;
+}
+
+.heroBody {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--color-text-secondary);
+  max-width: 36rem;
+}
+
+.donateCluster {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-12);
+  margin-top: var(--space-8);
+}
+
+.donateLead {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0 var(--space-20);
+  border-radius: var(--radius-pill-lg);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  font-family: var(--font-ui);
+  color: var(--color-text-inverse);
+  background: color-mix(in srgb, var(--color-brand-blue-strong) 88%, var(--color-black));
+}
+
+.donateButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0 var(--space-20);
+  border-radius: var(--radius-pill);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  font-family: var(--font-ui);
+  text-decoration: none;
+  color: var(--color-text-primary);
+  background: color-mix(in srgb, var(--color-brand-cyan-bright) 55%, var(--color-white));
+  border: 1px solid color-mix(in srgb, var(--color-brand-cyan) 35%, transparent);
+}
+
+.donateButton:hover {
+  filter: brightness(1.05);
+}
+
+.skillGrid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-12);
+}
+
+@media (min-width: 30rem) {
+  .skillGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.skillCard {
+  margin: 0;
+  min-height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-12) var(--space-10);
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-family: var(--font-ui);
+  color: var(--color-brand-blue-strong);
+  background: color-mix(in srgb, var(--color-bg-primary) 72%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-brand-cyan) 28%, transparent);
+  border-radius: var(--radius-lg);
+}
+
+/* —— Section 2: Educational approach —— */
+.approach {
+  padding: var(--space-40) var(--space-16);
+  background: var(--color-bg-primary);
+}
+
+.approachInner {
+  max-width: 72rem;
+  margin: 0 auto;
+  display: grid;
+  gap: var(--space-28);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 60rem) {
+  .approachInner {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+    align-items: start;
+    gap: var(--space-40);
+  }
+}
+
+.approachCopy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+
+.sectionHeading {
+  margin: 0;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 800;
+  font-family: var(--font-ui);
+  color: var(--color-text-primary);
+}
+
+.approachBody {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--color-text-secondary);
+}
+
+.approachCards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-16);
+  padding: var(--space-24);
+  border-radius: var(--radius-2xl);
+  background: color-mix(in srgb, var(--color-brand-cyan) 10%, var(--color-bg-secondary));
+}
+
+@media (min-width: 40rem) {
+  .approachCards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.approachCard {
+  margin: 0;
+  padding: var(--space-20);
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xs);
+}
+
+.approachCardTitle {
+  margin: 0 0 var(--space-10);
+  font-size: 1.0625rem;
+  font-weight: 700;
+  font-family: var(--font-ui);
+  color: var(--color-text-primary);
+}
+
+.approachCardDesc {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: var(--color-text-muted);
+}
+
+/* —— Section 3: Global impact —— */
+.globalImpact {
+  padding: var(--space-40) var(--space-16);
+  background: color-mix(in srgb, var(--color-brand-cyan) 12%, var(--color-bg-primary));
+}
+
+.globalInner {
+  max-width: 72rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-24);
+}
+
+.globalHeading {
+  margin: 0;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 800;
+  font-family: var(--font-ui);
+  color: var(--color-text-primary);
+}
+
+.globalSub {
+  margin: 0;
+  font-size: 1.0625rem;
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+  max-width: 40rem;
+}
+
+.workshopGrid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-16);
+  text-align: start;
+}
+
+@media (min-width: 48rem) {
+  .workshopGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 64rem) {
+  .workshopGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.workshopCard {
+  margin: 0;
+  padding: var(--space-20);
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-lg);
+  min-height: 7rem;
+}
+
+.workshopTitle {
+  margin: 0 0 var(--space-8);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  font-family: var(--font-ui);
+  color: var(--color-text-primary);
+  line-height: 1.35;
+}
+
+.workshopLoc {
+  margin: 0 0 var(--space-6);
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  color: var(--color-text-muted);
+}
+
+.workshopDate {
+  margin: 0;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-text-subtle);
+}
+
+.impactCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0 var(--space-24);
+  margin-top: var(--space-8);
+  border-radius: var(--radius-pill);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  font-family: var(--font-ui);
+  text-decoration: none;
+  color: var(--color-white);
+  background: var(--color-site-brand);
+}
+
+.impactCta:hover {
+  filter: brightness(1.06);
+}
+
+/* —— Section 4: RCMI —— */
+.rcmi {
+  padding: var(--space-48) var(--space-16) var(--space-56);
+  background: color-mix(in srgb, var(--color-brand-amber) 22%, var(--color-bg-secondary));
+}
+
+.rcmiInner {
+  max-width: 52rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-24);
+  text-align: center;
+}
+
+.rcmiHeading {
+  margin: 0;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 800;
+  font-family: var(--font-ui);
+  color: var(--color-text-primary);
+}
+
+.rcmiSub {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  max-width: 38rem;
+}
+
+.rcmiDiagramWrap {
+  position: relative;
+  width: 100%;
+  max-width: 44rem;
+  min-height: 22rem;
+  margin: var(--space-24) 0;
+}
+
+.rcmiDiagram {
+  display: block;
+  width: min(52%, 15rem);
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.competency {
+  position: absolute;
+  z-index: 2;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  font-family: var(--font-ui);
+  line-height: 1.2;
+  color: var(--color-text-primary);
+  text-align: center;
+  max-width: 6.5rem;
+}
+
+@media (max-width: 47.9375rem) {
+  .rcmiDiagramWrap {
+    position: static;
+    min-height: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-10);
+  }
+
+  .rcmiDiagram {
+    width: min(70%, 14rem);
+    margin: 0;
+    flex: 0 0 100%;
+    text-align: center;
+  }
+
+  .competency {
+    position: static;
+    max-width: none;
+    font-size: 0.75rem;
+    padding: var(--space-6) var(--space-10);
+    background: color-mix(in srgb, var(--color-bg-elevated) 92%, transparent);
+    border-radius: var(--radius-pill);
+    border: 1px solid color-mix(in srgb, var(--color-brand-purple-soft) 25%, transparent);
+  }
+}
+
+/* Scattered positions (desktop): labels around diagram */
+.compPos0 {
+  top: 2%;
+  left: 4%;
+}
+.compPos1 {
+  top: 6%;
+  right: 6%;
+}
+.compPos2 {
+  top: 20%;
+  left: 0;
+}
+.compPos3 {
+  top: 16%;
+  right: 0;
+}
+.compPos4 {
+  top: 38%;
+  left: 2%;
+}
+.compPos5 {
+  top: 34%;
+  right: 4%;
+}
+.compPos6 {
+  top: 52%;
+  left: 0;
+}
+.compPos7 {
+  top: 50%;
+  right: 0;
+}
+.compPos8 {
+  bottom: 26%;
+  left: 8%;
+}
+.compPos9 {
+  bottom: 24%;
+  right: 10%;
+}
+.compPos10 {
+  bottom: 10%;
+  left: 18%;
+}
+.compPos11 {
+  bottom: 8%;
+  right: 16%;
+}
+.compPos12 {
+  top: 28%;
+  left: 22%;
+}
+.compPos13 {
+  top: 30%;
+  right: 22%;
+}
+.compPos14 {
+  bottom: 38%;
+  left: 28%;
+}
+.compPos15 {
+  bottom: 36%;
+  right: 26%;
+}
+.compPos16 {
+  top: 44%;
+  left: 12%;
+}
+.compPos17 {
+  top: 42%;
+  right: 14%;
+}
+
+.rcmiLearnMore {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0 var(--space-24);
+  margin-top: var(--space-8);
+  border-radius: var(--radius-pill);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  font-family: var(--font-ui);
+  text-decoration: none;
+  color: var(--color-text-primary);
+  background: color-mix(in srgb, var(--color-bg-elevated) 94%, transparent);
+  border: 1px solid var(--color-border);
+}
+
+.rcmiLearnMore:hover {
+  background: var(--color-bg-tertiary);
+}

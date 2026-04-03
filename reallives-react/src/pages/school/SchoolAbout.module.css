@@ -1,0 +1,424 @@
+.about {
+  padding: var(--spacing-xl, 2rem) var(--spacing-md, 1rem) var(--spacing-3xl, 4rem);
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+.heading {
+  font-family: var(--font-display, var(--sh-font-display, sans-serif));
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  color: var(--color-text-primary);
+  text-align: center;
+  margin: 0 0 var(--spacing-xl, 2rem);
+}
+
+.tabBar {
+  display: flex;
+  gap: 0.25rem;
+  margin-bottom: var(--spacing-xl, 2rem);
+  border-bottom: 1px solid var(--color-border);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border-muted) transparent;
+}
+
+.tabBar::-webkit-scrollbar {
+  height: 6px;
+}
+
+.tabBar::-webkit-scrollbar-thumb {
+  background: var(--color-border-muted);
+  border-radius: 3px;
+}
+
+.tab {
+  flex: 0 0 auto;
+  min-height: 44px;
+  padding: 0.75rem 1.25rem;
+  font-family: var(--font-ui, var(--font-primary));
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -1px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    color var(--transition-speed, 0.2s),
+    border-color var(--transition-speed, 0.2s),
+    background-color var(--transition-speed, 0.2s);
+}
+
+.tab:hover {
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-secondary);
+}
+
+.tab:focus-visible {
+  outline: 2px solid var(--color-border-accent);
+  outline-offset: 2px;
+}
+
+.tabActive {
+  color: var(--color-brand-blue);
+  border-bottom-color: var(--color-brand-blue);
+}
+
+.panel {
+  color: var(--color-text-secondary);
+}
+
+/* History */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(7rem, 1fr));
+  gap: var(--spacing-md, 1rem);
+  margin-bottom: var(--spacing-xl, 2rem);
+}
+
+.galleryImg {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  border-radius: var(--border-radius, 0.5rem);
+  background: var(--color-bg-secondary);
+  padding: var(--spacing-sm, 0.5rem);
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg, 1.5rem);
+}
+
+.milestone {
+  padding: var(--spacing-lg, 1.5rem);
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius, 0.5rem);
+}
+
+.milestoneHeader {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--spacing-sm, 0.5rem);
+  margin-bottom: var(--spacing-sm, 0.5rem);
+}
+
+.version {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  background: var(--color-brand-green);
+  color: var(--color-white);
+}
+
+.milestoneBody {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Team bios */
+.bioStack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2xl, 3rem);
+}
+
+.bioRow {
+  display: grid;
+  gap: var(--spacing-lg, 1.5rem);
+  align-items: start;
+}
+
+@media (min-width: 768px) {
+  .bioRow {
+    grid-template-columns: 1fr minmax(12rem, 18rem);
+  }
+
+  .bioRowReverse {
+    grid-template-columns: minmax(12rem, 18rem) 1fr;
+  }
+}
+
+.bioRole {
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-brand-blue);
+  margin: 0 0 0.25rem;
+}
+
+.bioName {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0 0 var(--spacing-md, 1rem);
+}
+
+.bioParagraph {
+  margin: 0 0 var(--spacing-md, 1rem);
+  line-height: 1.65;
+  font-size: 1rem;
+}
+
+.bioParagraph:last-child {
+  margin-bottom: 0;
+}
+
+.bioImageWrap {
+  border-radius: var(--border-radius, 0.5rem);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-tertiary);
+}
+
+.bioImage {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Working team */
+.subheading {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0 0 var(--spacing-md, 1rem);
+}
+
+.intro {
+  margin: 0 0 var(--spacing-md, 1rem);
+  line-height: 1.65;
+  font-size: 1rem;
+}
+
+.workingGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-md, 1rem);
+  margin-bottom: var(--spacing-2xl, 3rem);
+}
+
+@media (min-width: 640px) {
+  .workingGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .workingGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.memberCard {
+  padding: var(--spacing-md, 1rem);
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius, 0.5rem);
+}
+
+.memberName {
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0 0 0.25rem;
+  font-size: 1rem;
+}
+
+.memberRole {
+  margin: 0;
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+}
+
+.itinerantGrid {
+  display: grid;
+  gap: var(--spacing-lg, 1.5rem);
+  margin-top: var(--spacing-lg, 1.5rem);
+}
+
+@media (min-width: 768px) {
+  .itinerantGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.nameList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nameItem {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--color-border-soft);
+  color: var(--color-text-primary);
+  font-size: 0.9375rem;
+}
+
+.nameItem:last-child {
+  border-bottom: none;
+}
+
+/* Global support */
+.supportSection {
+  margin-bottom: var(--spacing-2xl, 3rem);
+}
+
+.supportSection:last-child {
+  margin-bottom: 0;
+}
+
+.supportHeading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  text-align: center;
+  margin: 0 0 var(--spacing-lg, 1.5rem);
+}
+
+.thanksRow {
+  display: grid;
+  gap: var(--spacing-xl, 2rem);
+  margin-bottom: var(--spacing-xl, 2rem);
+}
+
+.thanksCard {
+  display: grid;
+  gap: var(--spacing-md, 1rem);
+  align-items: start;
+}
+
+@media (min-width: 768px) {
+  .thanksCard {
+    grid-template-columns: minmax(10rem, 14rem) 1fr;
+  }
+}
+
+.thanksImg {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--border-radius, 0.5rem);
+  border: 1px solid var(--color-border);
+}
+
+.thanksBody {
+  margin: 0;
+  line-height: 1.65;
+  font-size: 1rem;
+}
+
+.gratefulGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-lg, 1.5rem);
+}
+
+@media (min-width: 640px) {
+  .gratefulGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .gratefulGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.gratefulCard {
+  display: grid;
+  grid-template-columns: 5rem 1fr;
+  gap: var(--spacing-md, 1rem);
+  padding: var(--spacing-md, 1rem);
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius, 0.5rem);
+}
+
+.gratefulThumb {
+  width: 5rem;
+  height: 5rem;
+  object-fit: cover;
+  border-radius: var(--border-radius, 0.5rem);
+  border: 1px solid var(--color-border);
+}
+
+.gratefulName {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0 0 0.125rem;
+}
+
+.gratefulLocation {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin: 0 0 var(--spacing-sm, 0.5rem);
+}
+
+.gratefulDesc {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.thanksListGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-md, 1rem);
+}
+
+@media (min-width: 640px) {
+  .thanksListGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .thanksListGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.thanksEntry {
+  padding: var(--spacing-md, 1rem);
+  background: var(--color-bg-secondary);
+  border-radius: var(--border-radius, 0.5rem);
+  border: 1px solid var(--color-border);
+}
+
+.thanksEntryName {
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0 0 0.25rem;
+  font-size: 1rem;
+}
+
+.thanksEntryLoc {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}

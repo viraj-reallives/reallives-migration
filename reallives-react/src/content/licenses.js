@@ -27,7 +27,6 @@ export const licensesContent = {
       },
     ],
     visitPath: '/reallives/school',
-    registerPath: '/reallives/register/school',
     registerUrl: 'https://reallivesworld.com/register-school',
   },
 
@@ -80,7 +79,6 @@ export const licensesContent = {
       },
     ],
     visitPath: '/reallives/university',
-    registerPath: '/reallives/register/university',
     registerUrl: 'https://reallivesworld.com/register-university',
   },
 
@@ -112,7 +110,6 @@ export const licensesContent = {
       },
     ],
     visitPath: '/reallives/homeschooler',
-    registerPath: '/reallives/register/homeschooler',
     registerUrl: 'https://reallivesworld.com/register-family',
   },
 
@@ -151,7 +148,6 @@ export const licensesContent = {
       },
     ],
     visitPath: '/reallives/gamer',
-    registerPath: '/reallives/register/gamer',
     registerUrl: 'https://reallivesworld.com/register-gamer',
   },
 };
