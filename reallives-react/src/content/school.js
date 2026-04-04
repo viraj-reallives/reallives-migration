@@ -122,7 +122,7 @@ export const schoolContent = {
         title: 'RealLives Simulation',
         description:
           'Experience life from birth to death in different countries and circumstances. Make decisions that shape your virtual life while learning about global inequalities and cultural differences.',
-        imagePath: '/assets/images/school/logo-image/real-r-logo.svg',
+        imagePath: 'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/logos/real-r-logo.svg',
         featureTags: ['Life Simulation', 'Cultural Awareness'],
         learnMoreLinkText: 'Learn More',
       },
@@ -130,7 +130,7 @@ export const schoolContent = {
         title: 'Empathy Canvas',
         description:
           'A structured reflection framework that helps students process their RealLives experiences and develop deeper empathy through guided self-reflection and peer discussion.',
-        imagePath: '/assets/images/school/logo-image/empathy-logo.svg',
+        imagePath: 'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/logos/empathy-logo.svg',
         featureTags: ['Reflection Tool', 'Empathy Building'],
         learnMoreLinkText: 'Learn More',
       },
@@ -138,7 +138,7 @@ export const schoolContent = {
         title: 'RealBoard',
         description:
           'A safe, private social platform where students can share their RealLives experiences, engage in meaningful discussions, and learn from diverse perspectives in a moderated environment.',
-        imagePath: '/assets/images/school/logo-image/realboard-logo.svg',
+        imagePath: 'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/logos/realboard-logo.svg',
         featureTags: ['Social Platform', 'Peer Learning'],
         learnMoreLinkText: 'Learn More',
       },
@@ -146,7 +146,7 @@ export const schoolContent = {
         title: 'ChangeMaker Index',
         description:
           'Revolutionary assessment tool that measures 18 global competencies through gameplay decisions rather than self-reporting, providing authentic insights into student development.',
-        imagePath: '/assets/images/school/logo-image/changemaker-logo.svg',
+        imagePath: 'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/logos/changemaker-logo.svg',
         featureTags: ['Assessment Tool', '18 Competencies'],
         learnMoreLinkText: 'Learn More',
       },
@@ -253,7 +253,7 @@ export const schoolContent = {
       tagline: 'Turning life stories into insights',
       videoPath:
         'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/videos/real-ai-video.mp4',
-      logoPath: '/assets/images/school/image/real-r-logo.svg',
+      logoPath: 'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/logos/real-r-logo.svg',
       gridImages: [
         'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/first-reflection.svg',
         'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/key-life-value.svg',
@@ -298,7 +298,8 @@ export const schoolContent = {
           'Build Empathy: Develop deep emotional understanding of global issues beyond statistics and headlines',
           'Identify Patterns: Recognize recurring themes and systemic problems that affect communities worldwide',
         ],
-        imagePath: '/assets/images/school/image/change-maker-1-img.svg',
+        imagePath:
+          'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-changemaker-project-page/change-maker-1-img.svg',
         transitionArrowPath: '/assets/images/school/image/left-arrow-svg.svg',
       },
       {
@@ -311,7 +312,8 @@ export const schoolContent = {
           'Build Empathy: Develop deep emotional understanding of global issues beyond statistics and headlines',
           'Identify Patterns: Recognize recurring themes and systemic problems that affect communities worldwide',
         ],
-        imagePath: '/assets/images/school/image/change-maker-2-img.svg',
+        imagePath:
+          'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-changemaker-project-page/change-maker-2-img.svg',
         transitionArrowPath: '/assets/images/school/image/arrow-right-2.svg',
       },
       {
@@ -349,8 +351,8 @@ export const schoolContent = {
           },
         ],
         images: [
-          '/assets/images/school/image/chnage-maker-3-img.svg',
-          '/assets/images/school/image/change-maker-4-img.svg',
+          'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-changemaker-project-page/change-maker-3-img.svg',
+          'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-changemaker-project-page/change-maker-4-img.svg',
         ],
       },
     ],
@@ -466,31 +468,31 @@ export const schoolContent = {
     globalStoryHeading: 'Our Global Impact Story',
     globalStoryBody:
       'RealLives has delivered six workshops across six countries, partnering with leading universities to bring global, experiential learning into classrooms. Students engage in real-world scenarios, make life-shaping decisions, explore global disparities, and build empathy for diverse human experiences. By integrating RealLives, institutions enrich courses in sociology, economics, and international relations while strengthening students’ critical thinking and problem-solving skills. Students report deeper understanding of global issues and a stronger connection to the world beyond their own borders.',
-    worldMapImagePath: '/assets/images/school/image/world-map.svg',
+    worldMapImagePath: 'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-impact-page/world-map.svg',
     workshopSectionLabel: 'Impact home',
     ctaBannerHeading: 'Empower Your Students with Global Perspectives',
     ctaBannerButtonText: 'Bring RealLives to Your Campus',
     ctaBannerButtonPath: '/reallives/school/pricing',
     workshopLearnMorePath: '/reallives/school/contact',
     sliderImages: [
-      '/assets/images/school/image/Final Business with Purpose 1.png',
-      '/assets/images/school/image/school-1-image-slider.png',
-      '/assets/images/school/image/school-2-image-slider.png',
-      '/assets/images/school/image/school-3-image-slider.png',
-      '/assets/images/school/image/school-4-image-slider.png',
-      '/assets/images/school/image/second-workshop-2.png',
-      '/assets/images/school/image/second-workshop-3.png',
-      '/assets/images/school/image/second-workshop-4.png',
-      '/assets/images/school/image/3-rd-workshop-first-image.jpeg',
-      '/assets/images/school/image/3-rd-workshop-2.png',
-      '/assets/images/school/image/3-rd-workshop-3.png',
-      '/assets/images/school/image/3-rd-workshop-4.png',
+      'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-impact-page/Final-Business-with-Purpose-1.png',
+      'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-impact-page/school-1-image-slider.png',
+      'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-impact-page/school-2-image-slider.png',
+      'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-impact-page/school-3-image-slider.png',
+      'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-impact-page/school-4-image-slider.png',
+      'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-impact-page/second-workshop-2.png',
+      'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-impact-page/second-workshop-3.png',
+      'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-impact-page/second-workshop-4.png',
+      'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-impact-page/3-rd-workshop-first-image.jpeg',
+      'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-impact-page/3-rd-workshop-2.png',
+      'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-impact-page/3-rd-workshop-3.png',
+      'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-impact-page/3-rd-workshop-4.png',
     ],
     cards: [
       {
         title: 'ETH Zurich Workshop',
         date: '27/06/2018',
-        imagePath: '/assets/images/school/image/Final Business with Purpose 1.png',
+        imagePath: 'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-impact-page/Final-Business-with-Purpose-1.png',
         university: 'ETH University Zurich, Switzerland',
         department: 'Department - Institute of Molecular Systems Biology',
         collaborationLabel: 'In collaboration with :',
@@ -506,7 +508,7 @@ export const schoolContent = {
       {
         title: 'Navamindradhiraj University Workshop',
         date: '20/09/2025',
-        imagePath: '/assets/images/school/image/second-workshop.png',
+        imagePath: 'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-impact-page/second-workshop.png',
         university: 'Navamindradhiraj University , Bangkok',
         department: 'Department - General Education',
         collaborationLabel: 'In collaboration with :',
@@ -522,7 +524,7 @@ export const schoolContent = {
       {
         title: 'KyungHee University SDG Workshop',
         date: '29/09/2025',
-        imagePath: '/assets/images/school/image/3-rd-workshop-first-image.jpeg',
+        imagePath: 'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-impact-page/3-rd-workshop-first-image.jpeg',
         university: 'Kyunghee University, Korea',
         department: 'Department - Social Sciences',
         collaborationLabel: 'In collaboration with :',
@@ -538,7 +540,7 @@ export const schoolContent = {
       {
         title: 'IIT Bombay Exploring SDG 1 through Empathy Workshop',
         date: '07/11/2024',
-        imagePath: '/assets/images/school/image/fourth_workshop-1-min.jpg',
+        imagePath: 'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-impact-page/fourth_workshop-1-min.jpg',
         university: 'IIT Bombay, India',
         department: 'Department - IDC School of Design',
         collaborationLabel: 'In collaboration with :',
@@ -574,7 +576,8 @@ export const schoolContent = {
     heading: 'Research-Backed Learning with RealLives',
     body:
       'RealLives Simulation has been independently studied by universities and educators worldwide.Peer-reviewed research demonstrates its impact on empathy, global citizenship, identity development, decision-making, and SDG-aligned learning outcomes across age groups.',
-    heroImagePath: '/assets/images/school/image/Korea Univercity img.svg',
+    heroImagePath:
+      'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/banner-page.svg',
     browseIntro:
       'Browse peer-reviewed studies, theoretical analyses,\nand classroom research on RealLives.',
     exploreButtonText: 'Explore',
@@ -595,9 +598,11 @@ export const schoolContent = {
         institution: 'Korea University (Republic of Korea)',
         whatWasStudied:
           'Evaluation of RealLives Simulation as a game-based empathy education tool for high school and university learners',
-        logoPath: '/assets/images/school/image/Korea-university.svg',
+        logoPath:
+          'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/Korea-university.svg',
         detail: {
-          heroImagePath: '/assets/images/school/image/research-image.png',
+          heroImagePath:
+            'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/research-image.png',
           heroTitle:
             'Effects of a Game-Based Empathy Education Program Linked to the SDGs',
           heroSubtitle:
@@ -618,9 +623,11 @@ export const schoolContent = {
         institution: 'University of the West of England, Bristol',
         whatWasStudied:
           'How probabilistic life modeling influences learning, empathy, and understanding of global inequality.',
-        logoPath: '/assets/images/school/image/uwe-bristol-img.svg',
+        logoPath:
+          'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/uwe-bristol-img.svg',
         detail: {
-          heroImagePath: '/assets/images/school/image/University-West-of-England.svg',
+          heroImagePath:
+            'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/University-West-of-England.svg',
           heroTitle: 'Real Lives 2004: The Devil You Know…',
           heroSubtitle:
             'How probabilistic life modeling influences learning, empathy, and understanding of global inequality.',
@@ -641,7 +648,8 @@ export const schoolContent = {
         institution: 'Korea University (Republic of Korea)',
         whatWasStudied:
           'How probabilistic life modeling influences learning, empathy, and understanding of global inequality.',
-        logoPath: '/assets/images/school/image/Santa-clara-university.svg',
+        logoPath:
+          'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/Santa-clara-university.svg',
         logoCaption: 'Santa Clara University',
         detail: {
           heroImagePath: '/assets/images/school/image/Santa-university-png.png',
@@ -669,7 +677,8 @@ export const schoolContent = {
         institution: 'State University of New York (SUNY) at Albany',
         whatWasStudied:
           'How probabilistic life modeling influences learning, empathy, and understanding of global inequality.',
-        logoPath: '/assets/images/school/image/University-Albany.svg',
+        logoPath:
+          'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/University-Albany.svg',
         detail: {
           heroImagePath: '/assets/images/school/image/University-albany-png.png',
           heroTitle:
@@ -695,10 +704,12 @@ export const schoolContent = {
         institution: 'Uppsala University, Department of Education, Sweden',
         whatWasStudied:
           'The study tested whether a migration simulation game (Real Lives) can improve students’ attitudes toward immigrants.',
-        logoPath: '/assets/images/school/image/Uppsala_University_logo.svg 2.svg',
+        logoPath:
+          'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/Uppsala_University_logo.svg-2.svg',
         logoCaption: 'Uppsala University Sweden',
         detail: {
-          heroImagePath: '/assets/images/school/image/ALB1-scaled 1.png',
+          heroImagePath:
+            'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/ALB1-scaled-1.png',
           heroTitle:
             'Gaining Tolerance of Immigrants through Simulating Migratory Experiences:',
           heroSubtitle:
@@ -724,7 +735,8 @@ export const schoolContent = {
           'Evaluation of RealLives Simulation as a game-based empathy education tool for high school and university learners',
         heading: 'Individual Research by Kallen Tsikalas',
         detail: {
-          heroImagePath: '/assets/images/school/image/Individual-Research-png.png',
+          heroImagePath:
+            'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/Individual-Research-png.png',
           heroTitle:
             'Computer-Based Life Simulations and Young Adolescents: Identity Exploration, Information Learning, and Sense-Making',
           heroSubtitle: 'How young adolescents learn while engaging in a computer-based life simulation.',
@@ -800,11 +812,11 @@ export const schoolContent = {
           description:
             'The first widely adopted version of RealLives that introduced players to a simulation of life across the globe. With a basic UI and limited data, this version laid the foundation for what would become a powerful learning tool on global diversity.',
           images: [
-            '/assets/images/school/image-add/reallives-light-1.svg',
-            '/assets/images/school/image-add/reallives-light-2.svg',
-            '/assets/images/school/image-add/reallives-light-3.svg',
-            '/assets/images/school/image/rl-logo-light.svg',
-            '/assets/images/school/image/rl-logo-light-ai.svg',
+            'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-about-us-page/reallives-light-1.svg',
+            'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-about-us-page/reallives-light-2.svg',
+            'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-about-us-page/reallives-light-3.svg',
+            'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-about-us-page/rl-logo-light.svg',
+            'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-about-us-page/rl-logo-light-ai.svg',
           ],
         },
         {
@@ -834,7 +846,8 @@ export const schoolContent = {
       leader: {
         role: 'Leader',
         name: 'Dr. Parag Mankeekar',
-        imagePath: '/assets/images/school/image-add/ceo-image.jpg',
+        imagePath:
+          'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-about-us-page/ceo-image.jpg',
         bioParagraphs: [
           'Dr. Parag Mankeeker is a social technology entrepreneur whose journey spans medicine, public health, and anthropology. His multidisciplinary expertise has driven him to tackle complex social challenges, from developing innovative hospitals to managing disaster response systems.',
           "Parag's work has taken him to the frontlines of understanding global conflicts, including terrorism research in India and Afghanistan. His commitment to positive change has earned him recognition as both an Ashoka Fellow and Salzburg Seminar Fellow.",
@@ -844,7 +857,8 @@ export const schoolContent = {
       academicResearchCoordinator: {
         role: 'Academic & Research Coordinator',
         name: 'Dr. Yogesh Deshpande',
-        imagePath: '/assets/images/school/image/YDD-2.png',
+        imagePath:
+          'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-about-us-page/YDD-2.png',
         bioParagraphs: [
           'Prof. (Dr.) Yogesh Deshpande is an accomplished and student-focused Professor of Information Technology with three decades of teaching, research, and leadership experience. Creates challenging and engaging learning experiences through appropriate use of educational technology tools and applications, inspiring students to pursue academic and personal excellence for becoming life-long learners. ',
           'Holds a Ph.D. in Human–Computer Interaction Design from IIT Guwahati. Expertise in curriculum development, evaluation methodologies, academic audits, and human-centred design, with proven leadership roles as Dean and Director in reputed institutions. ',
@@ -908,17 +922,20 @@ export const schoolContent = {
       specialThanksHeading: 'Special Thanks',
       specialThanks: [
         {
-          imagePath: '/assets/images/school/global-support-image/thanks-ashoka-img.jpg',
+          imagePath:
+            'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-about-us-page/thanks-ashoka-img.jpg',
           body:
             'We thank Ashoka for fostering empathy and social innovation worldwide. Their recognition of Dr. Parag Mankeeker as an Ashoka Fellow validated our mission and connected us with a global network of changemakers who share our vision of building cross-cultural understanding through transformative education.',
         },
         {
-          imagePath: '/assets/images/school/global-support-image/bmgi-img.jpg',
+          imagePath:
+            'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-about-us-page/bmgi-img.jpg',
           body:
             'We thank BMGI Global for their strategic partnership and management consulting expertise across India and the Asia Pacific region. Their professional guidance has helped us navigate complex markets while staying true to our mission of creating meaningful educational impact through technology.',
         },
         {
-          imagePath: '/assets/images/school/global-support-image/impact-world-img.png',
+          imagePath:
+            'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-about-us-page/impact-world-img.png',
           body:
             'We are grateful to Ashoka Globalizer for accelerating our worldwide impact. Their specialized support in scaling social innovations has been instrumental in helping RealLives reach new communities globally, amplifying our ability to foster empathy and understanding in classrooms around the world.',
         },
@@ -930,41 +947,47 @@ export const schoolContent = {
           location: 'Arizona, USA',
           description:
             'Nobel Laureate (2001), Nobel Prize in Physiology or Medicine',
-          imagePath: '/assets/images/school/global-support-image/Lee Hartwell-img.jpg',
+          imagePath:
+            'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-about-us-page/Lee-Hartwell-img.jpg',
         },
         {
           name: 'David Gibson',
           location: 'Perth, Australia',
           description:
             'Director | Learning Futures | Curtin Learning and Teaching, Australia.',
-          imagePath: '/assets/images/school/global-support-image/David Gibson-img.jpg',
+          imagePath:
+            'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-about-us-page/david-gibson-img.jpg',
         },
         {
           name: 'Laura Giadorou-Koch',
           location: 'NY, USA',
           description:
             'Practiced corporate law on Wall Street. System-level social entrepreneur and innovative educator & CEO',
-          imagePath: '/assets/images/school/global-support-image/Laura Giadorou-Koch-img.jpg',
+          imagePath:
+            'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-about-us-page/Laura-Giadorou-Koch-img.jpg',
         },
         {
           name: 'Naresh Shahani',
           location: 'Mumbai, India',
           description:
             'MD and Founder, BMGI India\u00a0Business Coach Innovation and Organic Growth with Consulting Experience',
-          imagePath: '/assets/images/school/global-support-image/Naresh Shahani-img.jpg',
+          imagePath:
+            'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-about-us-page/Naresh-Shahani-img.jpg',
         },
         {
           name: 'Abhay Nalawade',
           location: 'Pune, India',
           description:
             'Advisor for start-ups, technology companies, social organizations, Entrepreneur & Ex-MD/CEO of Thermax',
-          imagePath: '/assets/images/school/global-support-image/Abhay Nalawade-img.jpg',
+          imagePath:
+            'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-about-us-page/abhay-nalawade-img.jpg',
         },
         {
           name: 'Milind Desai',
           location: 'Mumbai, India',
           description: 'Advisor, Trackball Consultancy Services Private Limited',
-          imagePath: '/assets/images/school/global-support-image/Milind Desai-img.jpg',
+          imagePath:
+            'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-about-us-page/Milind-Desai-img.jpg',
         },
       ],
       thanksHeading: 'Thanks',
@@ -1003,8 +1026,8 @@ export const schoolContent = {
     tagline:
       'Empowering global citizens through immersive life simulation and educational experiences that build empathy, understanding, and changemaker skills.',
     organizationName: 'RealLives Foundation',
-    logo: '/assets/images/school/logo-image/real-r-logo.svg',
-    logoPath: '/assets/images/school/logo-image/real-r-logo.svg',
+    logo: 'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/logos/real-r-logo.svg',
+    logoPath: 'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/logos/real-r-logo.svg',
     socialLinks: [
       {
         platform: 'YouTube',

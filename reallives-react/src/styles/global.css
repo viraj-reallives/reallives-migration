@@ -87,6 +87,37 @@
   --gradient-surface-cool: linear-gradient(180deg, #ffffff 0%, #81e7f6 100%);
   --gradient-surface-warm: linear-gradient(180deg, #ffffff 0%, #ffdd93 100%);
   --gradient-surface-purple: linear-gradient(180deg, #ffffff 0%, #daa7e3 75.48%);
+  /* RCMI / RealLives ChangeMaker Index (Products) */
+  --gradient-rcmi-illustration: linear-gradient(165deg, #422006 0%, #7c2d12 48%, #c2410c 100%);
+  --color-rcmi-illustration-border: color-mix(in srgb, var(--color-brand-amber) 55%, transparent);
+  --shadow-rcmi-illustration: 0 16px 48px color-mix(in srgb, var(--color-brand-orange) 18%, transparent);
+  --color-rcmi-cluster-label-bg: color-mix(in srgb, var(--color-brand-orange) 10%, var(--color-bg-primary));
+  --color-rcmi-cluster-label-border: color-mix(in srgb, var(--color-brand-orange) 28%, var(--color-border));
+  --color-rcmi-cluster-desc-bg: color-mix(in srgb, var(--color-brand-orange) 6%, var(--color-bg-secondary));
+  --color-rcmi-cluster-desc-accent: color-mix(in srgb, var(--color-brand-orange) 82%, transparent);
+  --shadow-rcmi-cluster: 0 4px 20px color-mix(in srgb, var(--color-brand-orange) 8%, transparent);
+  --color-rcmi-highlight-fill: color-mix(in srgb, var(--color-brand-orange) 14%, var(--color-bg-secondary));
+  --color-rcmi-highlight-border: color-mix(in srgb, var(--color-brand-amber) 72%, transparent);
+  --color-rcmi-section-wash: color-mix(in srgb, var(--color-brand-orange) 5%, var(--color-bg-primary));
+  /* Products — RealBoard (slate / navy) */
+  --color-realboard-accent: #1e3a8a;
+  --color-realboard-accent-bright: #1d4ed8;
+  --color-realboard-wash: color-mix(in srgb, var(--color-realboard-accent) 7%, var(--color-bg-primary));
+  --color-realboard-surface: color-mix(in srgb, var(--color-realboard-accent) 9%, var(--color-bg-secondary));
+  --color-realboard-border: color-mix(in srgb, var(--color-realboard-accent) 30%, var(--color-border));
+  --shadow-realboard: 0 6px 24px color-mix(in srgb, var(--color-realboard-accent) 14%, transparent);
+  /* Products — Empathy Canvas (purple) */
+  --color-empathy-wash: color-mix(in srgb, var(--color-brand-purple) 5%, var(--color-bg-primary));
+  --color-empathy-surface: color-mix(in srgb, var(--color-brand-purple-soft) 11%, var(--color-bg-secondary));
+  --color-empathy-card-bg: color-mix(in srgb, var(--color-brand-purple-soft) 9%, var(--color-bg-primary));
+  --color-empathy-border: color-mix(in srgb, var(--color-brand-purple) 26%, var(--color-border));
+  --shadow-empathy: 0 6px 24px color-mix(in srgb, var(--color-brand-purple) 10%, transparent);
+  /* Products — Real AI (cyan) */
+  --color-realai-wash: color-mix(in srgb, var(--color-brand-cyan) 7%, var(--color-bg-primary));
+  --color-realai-surface: color-mix(in srgb, var(--color-brand-cyan) 10%, var(--color-bg-secondary));
+  --color-realai-border: color-mix(in srgb, var(--color-brand-cyan) 34%, var(--color-border));
+  --color-realai-accent-line: color-mix(in srgb, var(--color-brand-cyan-bright) 70%, transparent);
+  --shadow-realai: 0 6px 24px color-mix(in srgb, var(--color-brand-cyan) 12%, transparent);
   --gradient-overlay-dark: linear-gradient(360deg, rgba(0, 0, 0, 0.5) 10%, rgba(59, 59, 59, 0.5) 75%);
   /* Landing page footer (Home.html / background-new-color + accents) */
   --gradient-landing-footer: linear-gradient(0deg, #0f7482 12.25%, #000000 100%);
@@ -271,6 +302,33 @@
   --gradient-surface-cool: linear-gradient(180deg, #111827 0%, #0f172a 100%);
   --gradient-surface-warm: linear-gradient(180deg, #111827 0%, #3f2b17 100%);
   --gradient-surface-purple: linear-gradient(180deg, #111827 0%, #31253e 75.48%);
+  --gradient-rcmi-illustration: linear-gradient(165deg, #1c1917 0%, #431407 50%, #9a3412 100%);
+  --color-rcmi-illustration-border: color-mix(in srgb, var(--color-brand-orange) 42%, transparent);
+  --shadow-rcmi-illustration: 0 14px 44px rgba(0, 0, 0, 0.5);
+  --color-rcmi-cluster-label-bg: color-mix(in srgb, var(--color-brand-orange) 14%, var(--color-bg-secondary));
+  --color-rcmi-cluster-label-border: color-mix(in srgb, var(--color-brand-orange) 35%, var(--color-border));
+  --color-rcmi-cluster-desc-bg: color-mix(in srgb, var(--color-brand-orange) 8%, var(--color-bg-tertiary));
+  --color-rcmi-cluster-desc-accent: color-mix(in srgb, var(--color-brand-orange) 68%, transparent);
+  --shadow-rcmi-cluster: 0 6px 24px rgba(0, 0, 0, 0.32);
+  --color-rcmi-highlight-fill: color-mix(in srgb, var(--color-brand-orange) 18%, var(--color-bg-tertiary));
+  --color-rcmi-highlight-border: color-mix(in srgb, var(--color-brand-amber) 58%, transparent);
+  --color-rcmi-section-wash: color-mix(in srgb, var(--color-brand-orange) 8%, var(--color-bg-primary));
+  --color-realboard-accent: #93c5fd;
+  --color-realboard-accent-bright: #60a5fa;
+  --color-realboard-wash: color-mix(in srgb, var(--color-brand-blue) 14%, var(--color-bg-primary));
+  --color-realboard-surface: color-mix(in srgb, var(--color-brand-blue) 16%, var(--color-bg-secondary));
+  --color-realboard-border: color-mix(in srgb, var(--color-realboard-accent-bright) 28%, var(--color-border));
+  --shadow-realboard: 0 8px 28px rgba(0, 0, 0, 0.35);
+  --color-empathy-wash: color-mix(in srgb, var(--color-brand-purple) 10%, var(--color-bg-primary));
+  --color-empathy-surface: color-mix(in srgb, var(--color-brand-purple-soft) 14%, var(--color-bg-secondary));
+  --color-empathy-card-bg: color-mix(in srgb, var(--color-brand-purple) 8%, var(--color-bg-tertiary));
+  --color-empathy-border: color-mix(in srgb, var(--color-brand-purple-soft) 32%, var(--color-border));
+  --shadow-empathy: 0 8px 28px rgba(0, 0, 0, 0.32);
+  --color-realai-wash: color-mix(in srgb, var(--color-brand-cyan) 12%, var(--color-bg-primary));
+  --color-realai-surface: color-mix(in srgb, var(--color-brand-cyan) 14%, var(--color-bg-secondary));
+  --color-realai-border: color-mix(in srgb, var(--color-brand-cyan-bright) 28%, var(--color-border));
+  --color-realai-accent-line: color-mix(in srgb, var(--color-brand-cyan-bright) 55%, transparent);
+  --shadow-realai: 0 8px 28px rgba(0, 0, 0, 0.32);
   --gradient-overlay-dark: linear-gradient(360deg, rgba(0, 0, 0, 0.7) 10%, rgba(17, 24, 39, 0.75) 75%);
   --gradient-landing-footer: linear-gradient(0deg, #0f7482 12.25%, #000000 100%);
   --color-landing-footer-text: #d1d5db;

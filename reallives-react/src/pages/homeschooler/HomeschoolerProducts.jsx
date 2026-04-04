@@ -1,36 +1,68 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useSiteContent } from '@hooks/useSiteContent';
 import styles from '../school/SchoolProducts.module.css';
 
-function RealLivesSimPanel({ data }) {
+function RealLivesSimPanel({ data, isActive = true }) {
   const paths = data?.heroVideoPaths?.length ? data.heroVideoPaths : [];
   const labels = data?.videoTrackLabels?.length === paths.length ? data.videoTrackLabels : paths.map((_, i) => String(i + 1));
   const [videoIx, setVideoIx] = useState(0);
+  const stackRef = useRef(null);
+  const pathKey = paths.join('|');
+
+  useEffect(() => {
+    const root = stackRef.current;
+    if (!root || !data) return;
+    const vids = root.querySelectorAll('video');
+    vids.forEach((v, i) => {
+      if (!isActive) {
+        v.pause();
+        return;
+      }
+      if (i === videoIx) {
+        void v.play().catch(() => {});
+      } else {
+        v.pause();
+      }
+    });
+  }, [data, isActive, pathKey, videoIx]);
 
   if (!data) return null;
 
-  const src = paths[Math.min(videoIx, paths.length - 1)] || '';
+  const hasVideo = paths.length > 0;
 
   return (
     <div className={styles.panel}>
-      {src ? (
+      {hasVideo ? (
         <div className={styles.videoHero}>
-          <video key={src} className={styles.video} src={src} autoPlay muted loop playsInline />
-          {paths.length > 1 ? (
-            <div className={styles.videoControls}>
-              {paths.map((path, i) => (
-                <button
-                  key={path}
-                  type="button"
-                  className={`${styles.videoTrackBtn} ${i === videoIx ? styles.videoTrackActive : ''}`}
-                  onClick={() => setVideoIx(i)}
-                  aria-label={labels[i]}
-                >
-                  {labels[i]}
-                </button>
-              ))}
-            </div>
-          ) : null}
+          <div ref={stackRef} className={styles.videoStack}>
+            {paths.map((path, i) => (
+              <video
+                key={path}
+                className={`${styles.videoLayer} ${i === videoIx ? styles.videoLayerActive : ''}`}
+                src={path}
+                muted
+                loop
+                playsInline
+                preload="auto"
+              />
+            ))}
+            {paths.length > 1 ? (
+              <div className={styles.videoControls} role="group" aria-label="Choose video">
+                {paths.map((path, i) => (
+                  <button
+                    key={path}
+                    type="button"
+                    className={`${styles.videoTrackBtn} ${i === videoIx ? styles.videoTrackActive : ''}`}
+                    onClick={() => setVideoIx(i)}
+                    aria-pressed={i === videoIx}
+                    aria-label={labels[i] ? `Video ${labels[i]}` : `Video ${i + 1}`}
+                  >
+                    {labels[i]}
+                  </button>
+                ))}
+              </div>
+            ) : null}
+          </div>
         </div>
       ) : null}
 
@@ -118,7 +150,7 @@ function RcmiPanel({ data }) {
     <div className={styles.panel}>
       <div className={styles.rcmiHero}>
         {data.illustrationPath ? (
-          <div className={styles.mediaCard}>
+          <div className={styles.rcmiIllustrationCard}>
             <img src={data.illustrationPath} alt="" />
           </div>
         ) : null}
@@ -138,40 +170,47 @@ function RcmiPanel({ data }) {
         </div>
       </div>
 
-      {data.clustersHeading || data.clustersDescription ? (
-        <div className={styles.clusterIntro}>
-          {data.clustersHeading ? <h2>{data.clustersHeading}</h2> : null}
-          {data.clustersDescription ? <p>{data.clustersDescription}</p> : null}
-        </div>
-      ) : null}
+      {data.clustersHeading ||
+      data.clustersDescription ||
+      data.clusterLabels?.length ||
+      data.clusterDescriptions?.length ? (
+        <div className={styles.rcmiClustersSection}>
+          {data.clustersHeading || data.clustersDescription ? (
+            <div className={styles.clusterIntro}>
+              {data.clustersHeading ? <h2>{data.clustersHeading}</h2> : null}
+              {data.clustersDescription ? <p>{data.clustersDescription}</p> : null}
+            </div>
+          ) : null}
 
-      {data.clusterLabels?.length ? (
-        <div className={styles.clusterGrid}>
-          {data.clusterLabels.map((cl, i) => (
-            <div key={i} className={styles.clusterLabelBox}>
-              {cl.lines.map((line, li) => (
-                <span key={line}>
-                  {line}
-                  {li < cl.lines.length - 1 ? <br /> : null}
-                </span>
+          {data.clusterLabels?.length ? (
+            <div className={styles.clusterGrid}>
+              {data.clusterLabels.map((cl, i) => (
+                <div key={i} className={styles.clusterLabelBox}>
+                  {cl.lines.map((line, li) => (
+                    <span key={line}>
+                      {line}
+                      {li < cl.lines.length - 1 ? <br /> : null}
+                    </span>
+                  ))}
+                </div>
               ))}
             </div>
-          ))}
-        </div>
-      ) : null}
+          ) : null}
 
-      {data.clusterDescriptions?.length ? (
-        <div className={styles.clusterDescGrid}>
-          {data.clusterDescriptions.map((text) => (
-            <p key={text.slice(0, 40)} className={styles.clusterDescCard}>
-              {text}
-            </p>
-          ))}
+          {data.clusterDescriptions?.length ? (
+            <div className={styles.clusterDescGrid}>
+              {data.clusterDescriptions.map((text) => (
+                <p key={text.slice(0, 40)} className={styles.clusterDescCard}>
+                  {text}
+                </p>
+              ))}
+            </div>
+          ) : null}
         </div>
       ) : null}
 
       {data.howItWorksHeading || data.howItWorksImagePath ? (
-        <div className={styles.howItWorks}>
+        <div className={`${styles.howItWorks} ${styles.rcmiHowItWorks}`}>
           {data.howItWorksHeading ? <h2>{data.howItWorksHeading}</h2> : null}
           {data.howItWorksImagePath ? (
             <div className={styles.mediaCard}>
@@ -204,7 +243,7 @@ function EmpathyCanvasPanel({ data }) {
   if (!data) return null;
 
   return (
-    <div className={styles.panel}>
+    <div className={`${styles.panel} ${styles.empathyPanel}`}>
       {data.mainDiagramPath ? (
         <div className={styles.canvasHero}>
           <img src={data.mainDiagramPath} alt="" />
@@ -261,7 +300,7 @@ function RealBoardPanel({ data }) {
   const current = slides[safeIx];
 
   return (
-    <div className={styles.panel}>
+    <div className={`${styles.panel} ${styles.realboardPanel}`}>
       {data.bannerPath ? (
         <div className={styles.realboardBanner}>
           <img src={data.bannerPath} alt="" />
@@ -342,7 +381,7 @@ function RealAiPanel({ data }) {
   const empathyHeadingLines = data.empathyCanvasAnalysisHeading?.split('\n').filter(Boolean) ?? [];
 
   return (
-    <div className={styles.panel}>
+    <div className={`${styles.panel} ${styles.realAiPanel}`}>
       {data.videoPath ? (
         <div className={styles.aiVideoWrap}>
           <video className={styles.aiVideo} src={data.videoPath} autoPlay muted loop playsInline />
@@ -426,10 +465,11 @@ function RealAiPanel({ data }) {
   );
 }
 
-function ProductPanel({ activeId, products }) {
-  switch (activeId) {
+function renderProductTabPanel(tabId, activeId, products) {
+  const isActive = activeId === tabId;
+  switch (tabId) {
     case 'tab1':
-      return <RealLivesSimPanel data={products.realLivesSim} />;
+      return <RealLivesSimPanel data={products.realLivesSim} isActive={isActive} />;
     case 'tab2':
       return <RcmiPanel data={products.changeMakerIndexTab} />;
     case 'tab3':
@@ -476,8 +516,18 @@ export default function HomeschoolerProducts() {
           </div>
         ) : null}
 
-        <div role="tabpanel" aria-labelledby={`product-tab-${activeId}`}>
-          <ProductPanel activeId={activeId} products={products} />
+        <div className={styles.productPanels}>
+          {tabs.map((tab) => (
+            <div
+              key={tab.id}
+              role="tabpanel"
+              id={`product-panel-${tab.id}`}
+              hidden={activeId !== tab.id}
+              aria-labelledby={`product-tab-${tab.id}`}
+            >
+              {renderProductTabPanel(tab.id, activeId, products)}
+            </div>
+          ))}
         </div>
       </div>
     </section>

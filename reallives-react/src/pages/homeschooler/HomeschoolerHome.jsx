@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSiteContent } from '@hooks/useSiteContent';
 import styles from '../school/SchoolHome.module.css';
@@ -12,7 +12,20 @@ function CtaLink({ to, className, children }) {
   );
 }
 
-function WhoCanUsePanel({ supportingText, images }) {
+function WhoCanUsePanel({ supportingText, images, isActive = true }) {
+  const videoRef = useRef(null);
+  const videoUrl = images?.heroVideoUrl;
+
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!v) return;
+    if (!isActive) {
+      v.pause();
+      return;
+    }
+    void v.play().catch(() => {});
+  }, [isActive, videoUrl]);
+
   if (!supportingText || !images) return null;
 
   return (
@@ -20,12 +33,14 @@ function WhoCanUsePanel({ supportingText, images }) {
       <div className={styles.videoWrap}>
         {images.heroVideoUrl ? (
           <video
+            ref={videoRef}
             className={styles.video}
             src={images.heroVideoUrl}
             autoPlay
             muted
             loop
             playsInline
+            preload="auto"
           />
         ) : null}
       </div>
@@ -324,46 +339,14 @@ function SdgPanel({ data, images }) {
 }
 
 function ResourcesPanel({ data }) {
-  const [sub, setSub] = useState('academic');
-  if (!data?.resourceSubTabs?.length) return null;
-
-  const activeId = data.resourceSubTabs.some((t) => t.id === sub) ? sub : data.resourceSubTabs[0].id;
+  if (!data?.lessonPlansHeading) return null;
 
   return (
     <div className={styles.panel}>
       <div className={styles.resourceShell}>
-        <div className={styles.resourceTabBar} role="tablist" aria-label="Resources">
-          {data.resourceSubTabs.map((t) => (
-            <button
-              key={t.id}
-              type="button"
-              role="tab"
-              aria-selected={activeId === t.id}
-              className={`${styles.resourceTab} ${activeId === t.id ? styles.resourceTabActive : ''}`}
-              onClick={() => setSub(t.id)}
-            >
-              {t.label}
-            </button>
-          ))}
-        </div>
-
-        {activeId === 'academic' ? (
-          <div className={styles.paperGrid} role="tabpanel">
-            {data.academicPapers?.map((paper) => (
-              <article key={paper.pdfPath} className={styles.paperCard}>
-                <h3 className={styles.paperTitle}>{paper.title}</h3>
-                <p className={styles.paperAuthor}>{paper.author}</p>
-                <a className={styles.downloadLink} href={paper.pdfPath} download>
-                  Download →
-                </a>
-              </article>
-            ))}
-          </div>
-        ) : (
-          <p className={styles.comingSoon} role="tabpanel">
-            {data.lessonPlansHeading}
-          </p>
-        )}
+        <p className={styles.comingSoon} role="region" aria-label="Lesson plans">
+          {data.lessonPlansHeading}
+        </p>
       </div>
     </div>
   );
@@ -399,10 +382,20 @@ export default function HomeschoolerHome() {
         </div>
       ) : null}
 
-      {activeTab === 0 ? <WhoCanUsePanel supportingText={supportingText} images={images} /> : null}
-      {activeTab === 1 && extra[0] ? <SkillsPanel data={extra[0]} images={images} /> : null}
-      {activeTab === 2 && extra[1] ? <SdgPanel data={extra[1]} images={images} /> : null}
-      {activeTab === 3 && extra[2] ? <ResourcesPanel data={extra[2]} /> : null}
+      <div className={styles.homeTabPanels}>
+        <div role="tabpanel" id="home-section-panel-0" hidden={activeTab !== 0}>
+          <WhoCanUsePanel supportingText={supportingText} images={images} isActive={activeTab === 0} />
+        </div>
+        <div role="tabpanel" id="home-section-panel-1" hidden={activeTab !== 1}>
+          {extra[0] ? <SkillsPanel data={extra[0]} images={images} /> : null}
+        </div>
+        <div role="tabpanel" id="home-section-panel-2" hidden={activeTab !== 2}>
+          {extra[1] ? <SdgPanel data={extra[1]} images={images} /> : null}
+        </div>
+        <div role="tabpanel" id="home-section-panel-3" hidden={activeTab !== 3}>
+          {extra[2] ? <ResourcesPanel data={extra[2]} /> : null}
+        </div>
+      </div>
     </div>
   );
 }

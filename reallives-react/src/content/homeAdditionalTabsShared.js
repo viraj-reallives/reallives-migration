@@ -153,39 +153,6 @@ export function homeAdditionalTabsForBasePath(basePath) {
       },
     },
     {
-      resourceSubTabs: [
-        { id: 'academic', label: 'Academic Context' },
-        { id: 'lessons', label: 'Lesson Plans' },
-      ],
-      academicPapers: [
-        {
-          title:
-            'DEVELOPING INTERCULTURAL AWARENESS & SENSITIVITY THROUGH DIGITAL GAME PLAY',
-          author: 'By, Anika Strupert',
-          pdfPath: '/assets/documents/school/pdf/pdf-1.pdf',
-        },
-        {
-          title:
-            'SIMULATING REAL LIVES: PROMOTING GLOBAL EMPATHY AND INTEREST IN LEARNING THROUGH SIMULATION GAMES',
-          author: 'By, Christine M. Bachen',
-          pdfPath: '/assets/documents/school/pdf/pdf-2.pdf',
-        },
-        {
-          title: 'COMPUTER-BASED LIFE SIMULATIONS AND YOUNG ADOLESCENTS',
-          author: 'By, Kallen Tsikalas',
-          pdfPath: '/assets/documents/school/pdf/pdf-3.pdf',
-        },
-        {
-          title: 'USING VIDEO GAMES TO THINK ABOUT DISTRIBUTIVE JUSTICE',
-          author: 'By, Marcus Schulzke',
-          pdfPath: '/assets/documents/school/pdf/pdf-4.pdf',
-        },
-        {
-          title: 'REALLIVES 2004: THE DEVIL YOU KNOW',
-          author: 'By, Patrick Crogan',
-          pdfPath: '/assets/documents/school/pdf/pdf-5.pdf',
-        },
-      ],
       lessonPlansHeading: 'Coming Soon',
     },
   ];

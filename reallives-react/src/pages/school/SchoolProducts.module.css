@@ -129,6 +129,30 @@
   margin-bottom: var(--space-32);
 }
 
+/* Stacked videos: both stay loaded; only visibility toggles (no remount flash). */
+.videoStack {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.videoLayer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.videoLayerActive {
+  opacity: 1;
+  z-index: 1;
+  pointer-events: auto;
+}
+
 .video {
   display: block;
   width: 100%;
@@ -136,13 +160,20 @@
   object-fit: cover;
 }
 
+.productPanels {
+  position: relative;
+}
+
+/* Inside .videoStack so z-index stacks above .videoLayer (controls were hidden behind videos). */
 .videoControls {
   position: absolute;
   bottom: var(--space-16);
   left: 50%;
   transform: translateX(-50%);
+  z-index: 4;
   display: flex;
   gap: var(--space-10);
+  pointer-events: auto;
 }
 
 .videoTrackBtn {
@@ -154,19 +185,31 @@
   font-weight: 700;
   font-size: 0.9375rem;
   color: var(--color-text-primary);
-  background: var(--color-bg-elevated);
+  background: color-mix(in srgb, var(--color-bg-elevated) 92%, transparent);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border: 2px solid var(--color-border-accent);
   border-radius: var(--radius-full);
   cursor: pointer;
+  box-shadow: var(--shadow-sm);
   transition: background-color var(--transition-fast) ease;
 }
 
+/* :hover alone beats .videoTrackActive (1 class), so inactive hover was stealing
+   contrast and active+hover became white-on-gray. Chain .videoTrackBtn.videoTrackActive. */
 .videoTrackBtn:hover {
   background: var(--color-bg-secondary);
+  color: var(--color-text-primary);
 }
 
-.videoTrackActive {
+.videoTrackBtn.videoTrackActive {
   background: var(--color-brand-teal);
+  color: var(--color-white);
+  border-color: var(--color-brand-teal-deep);
+}
+
+.videoTrackBtn.videoTrackActive:hover {
+  background: var(--color-brand-teal-deep);
   color: var(--color-white);
   border-color: var(--color-brand-teal-deep);
 }
@@ -341,6 +384,22 @@
 }
 
 /* RCMI */
+.rcmiIllustrationCard {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  padding: var(--space-20);
+  background: var(--gradient-rcmi-illustration);
+  border: 1px solid var(--color-rcmi-illustration-border);
+  box-shadow: var(--shadow-rcmi-illustration);
+}
+
+.rcmiIllustrationCard img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+}
+
 .rcmiHero {
   display: grid;
   gap: var(--space-28);
@@ -355,42 +414,76 @@
 }
 
 .rcmiTitle {
+  position: relative;
+  padding-bottom: var(--space-14);
   margin: 0 0 var(--space-16);
   font-size: clamp(1.5rem, 3vw, 2rem);
   font-weight: 700;
   color: var(--color-text-primary);
 }
 
-.highlights {
+.rcmiTitle::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 3rem;
+  height: 0.1875rem;
+  border-radius: var(--radius-full);
+  background: linear-gradient(90deg, var(--color-brand-orange), var(--color-brand-amber));
+}
+
+.rcmiHero .highlights {
   display: flex;
   flex-direction: column;
   gap: var(--space-14);
   margin-top: var(--space-20);
 }
 
-.highlightRow {
+.rcmiHero .highlightRow {
   display: grid;
   grid-template-columns: auto 1fr;
   gap: var(--space-12);
   align-items: center;
 }
 
-.highlightDot {
+.rcmiHero .highlightDot {
   width: 2rem;
   height: 2rem;
+  flex-shrink: 0;
   border-radius: var(--radius-full);
-  background: var(--color-bg-tertiary);
-  border: 2px solid var(--color-brand-purple-soft);
+  background: var(--color-rcmi-highlight-fill);
+  border: 2px solid var(--color-rcmi-highlight-border);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-brand-orange) 12%, transparent);
 }
 
-.highlightText {
+.rcmiHero .highlightText {
   margin: 0;
   font-size: 0.9375rem;
   line-height: 1.5;
   color: var(--color-text-secondary);
 }
 
-.clusterIntro {
+.rcmiClustersSection {
+  margin-bottom: var(--space-32);
+  padding: var(--space-28) var(--space-20);
+  margin-left: calc(-1 * var(--space-16));
+  margin-right: calc(-1 * var(--space-16));
+  border-radius: var(--radius-xl);
+  background: var(--color-rcmi-section-wash);
+  border: 1px solid var(--color-rcmi-cluster-label-border);
+  box-shadow: var(--shadow-rcmi-cluster);
+}
+
+@media (min-width: 48rem) {
+  .rcmiClustersSection {
+    margin-left: calc(-1 * var(--space-32));
+    margin-right: calc(-1 * var(--space-32));
+    padding: var(--space-36) var(--space-32);
+  }
+}
+
+.rcmiClustersSection .clusterIntro {
   margin-bottom: var(--space-28);
   text-align: center;
   max-width: 52rem;
@@ -398,68 +491,85 @@
   margin-right: auto;
 }
 
-.clusterIntro h2 {
+.rcmiClustersSection .clusterIntro h2 {
+  position: relative;
+  padding-bottom: var(--space-14);
   margin: 0 0 var(--space-16);
   font-size: clamp(1.25rem, 2.5vw, 1.5rem);
   font-weight: 700;
   color: var(--color-text-primary);
 }
 
-.clusterIntro p {
+.rcmiClustersSection .clusterIntro h2::after {
+  content: '';
+  display: block;
+  width: 3.5rem;
+  height: 0.1875rem;
+  margin: var(--space-12) auto 0;
+  border-radius: var(--radius-full);
+  background: linear-gradient(90deg, var(--color-brand-orange), var(--color-brand-amber));
+}
+
+.rcmiClustersSection .clusterIntro p {
   margin: 0;
   font-size: 1rem;
   line-height: 1.6;
   color: var(--color-text-muted);
 }
 
-.clusterGrid {
+.rcmiClustersSection .clusterGrid {
   display: grid;
   gap: var(--space-12);
   margin-bottom: var(--space-24);
 }
 
 @media (min-width: 48rem) {
-  .clusterGrid {
+  .rcmiClustersSection .clusterGrid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 
-.clusterLabelBox {
+.rcmiClustersSection .clusterLabelBox {
   min-height: 3.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: var(--space-10);
+  padding: var(--space-12) var(--space-10);
   font-size: 0.8125rem;
   font-weight: 700;
   line-height: 1.35;
+  letter-spacing: 0.02em;
   color: var(--color-text-primary);
-  background: var(--color-bg-secondary);
-  border: 1px solid var(--color-border);
+  background: var(--color-rcmi-cluster-label-bg);
+  border: 1px solid var(--color-rcmi-cluster-label-border);
+  border-top: 3px solid var(--color-brand-orange);
   border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-rcmi-cluster);
 }
 
-.clusterDescGrid {
+.rcmiClustersSection .clusterDescGrid {
   display: grid;
   gap: var(--space-16);
 }
 
 @media (min-width: 48rem) {
-  .clusterDescGrid {
+  .rcmiClustersSection .clusterDescGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-.clusterDescCard {
+.rcmiClustersSection .clusterDescCard {
   margin: 0;
-  padding: var(--space-16);
+  padding: var(--space-18) var(--space-16);
   font-size: 0.9375rem;
   line-height: 1.55;
   color: var(--color-text-secondary);
-  background: var(--color-bg-secondary);
-  border: 1px solid var(--color-border);
+  background: var(--color-rcmi-cluster-desc-bg);
+  border: 1px solid var(--color-rcmi-cluster-label-border);
+  border-left: 4px solid var(--color-rcmi-cluster-desc-accent);
   border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-rcmi-cluster);
 }
 
 .howItWorks {
@@ -474,12 +584,33 @@
   color: var(--color-text-primary);
 }
 
+.rcmiHowItWorks {
+  padding: var(--space-28) var(--space-20);
+  border-radius: var(--radius-xl);
+  background: var(--color-rcmi-cluster-label-bg);
+  border: 1px solid var(--color-rcmi-cluster-label-border);
+  box-shadow: var(--shadow-rcmi-cluster);
+}
+
+.rcmiHowItWorks .mediaCard {
+  border-color: var(--color-rcmi-cluster-label-border);
+}
+
 .embedRcmi {
   margin-top: var(--space-24);
   padding: var(--space-24);
   border-radius: var(--radius-xl);
-  background: var(--color-bg-secondary);
-  border: 1px solid var(--color-border);
+  background: var(--color-rcmi-cluster-desc-bg);
+  border: 1px solid var(--color-rcmi-cluster-label-border);
+  box-shadow: var(--shadow-rcmi-cluster);
+}
+
+.embedRcmi .embedHeading {
+  color: var(--color-text-primary);
+}
+
+.embedRcmi .iframeWrap {
+  border-color: var(--color-rcmi-cluster-label-border);
 }
 
 /* Empathy Canvas */
@@ -888,4 +1019,147 @@
 
 .rcmiBg {
   background: var(--color-bg-tertiary);
+}
+
+/* Product tab themes — RealBoard (slate / navy), Empathy (purple), Real AI (cyan) */
+.realboardPanel .realboardBanner {
+  border-color: var(--color-realboard-border);
+  box-shadow: var(--shadow-realboard);
+}
+
+.realboardPanel .sliderShell {
+  background: var(--color-realboard-surface);
+  border: 1px solid var(--color-realboard-border);
+  border-top: 3px solid var(--color-realboard-accent-bright);
+  box-shadow: var(--shadow-realboard);
+}
+
+.realboardPanel .sideHeadingAccent {
+  color: var(--color-realboard-accent-bright);
+}
+
+.realboardPanel .slideImage {
+  border-color: var(--color-realboard-border);
+}
+
+.realboardPanel .arrowBtn {
+  color: var(--color-realboard-accent-bright);
+  border-color: var(--color-realboard-border);
+}
+
+.realboardPanel .arrowBtn:hover {
+  border-color: var(--color-realboard-accent-bright);
+  background: var(--color-realboard-wash);
+}
+
+.realboardPanel .arrowBtn:focus-visible {
+  outline-color: var(--color-realboard-accent-bright);
+}
+
+.realboardPanel .whyEducators {
+  background: var(--color-realboard-wash);
+  border: 1px solid var(--color-realboard-border);
+  box-shadow: var(--shadow-realboard);
+}
+
+.realboardPanel .benefitBlock {
+  border-bottom-color: var(--color-realboard-border);
+}
+
+.empathyPanel .canvasHero {
+  border-color: var(--color-empathy-border);
+  background: var(--color-empathy-surface);
+  box-shadow: var(--shadow-empathy);
+}
+
+.empathyPanel .sectionTitle {
+  position: relative;
+  padding-bottom: var(--space-12);
+}
+
+.empathyPanel .sectionTitle::after {
+  content: '';
+  display: block;
+  width: 3.25rem;
+  height: 0.1875rem;
+  margin: var(--space-12) auto 0;
+  border-radius: var(--radius-full);
+  background: linear-gradient(90deg, var(--color-brand-purple), var(--color-brand-purple-soft));
+}
+
+.empathyPanel .empathyCard {
+  background: var(--color-empathy-card-bg);
+  border: 1px solid var(--color-empathy-border);
+  border-top: 3px solid var(--color-brand-purple);
+  box-shadow: var(--shadow-empathy);
+}
+
+.empathyPanel .splitBanner {
+  background: var(--color-empathy-wash);
+  border-color: var(--color-empathy-border);
+  box-shadow: var(--shadow-empathy);
+}
+
+.empathyPanel .aiScoreBanner {
+  background: var(--color-empathy-wash);
+  border-color: var(--color-empathy-border);
+  box-shadow: var(--shadow-empathy);
+}
+
+.realAiPanel .aiVideoWrap {
+  border-color: var(--color-realai-border);
+  box-shadow: var(--shadow-realai);
+  background: color-mix(in srgb, var(--color-brand-cyan) 16%, var(--color-gray-900));
+}
+
+.realAiPanel .aiHeader {
+  padding: var(--space-24);
+  border-radius: var(--radius-xl);
+  background: var(--color-realai-wash);
+  border: 1px solid var(--color-realai-border);
+  box-shadow: var(--shadow-realai);
+}
+
+.realAiPanel .aiBrandText {
+  color: color-mix(in srgb, var(--color-brand-cyan) 42%, var(--color-text-primary));
+}
+
+.realAiPanel .tagline {
+  color: color-mix(in srgb, var(--color-brand-cyan) 28%, var(--color-text-muted));
+}
+
+.realAiPanel .aiGridCell {
+  border-color: var(--color-realai-border);
+  background: var(--color-realai-surface);
+  box-shadow: var(--shadow-realai);
+}
+
+.realAiPanel .analysisRow {
+  border-color: var(--color-realai-border);
+  box-shadow: var(--shadow-realai);
+  border-left: 4px solid var(--color-realai-accent-line);
+}
+
+.realAiPanel .analysisRow:not(.rcmiBg) {
+  background: var(--color-realai-surface);
+}
+
+.realAiPanel .analysisRow.rcmiBg {
+  background: color-mix(in srgb, var(--color-brand-cyan) 8%, var(--color-bg-tertiary));
+}
+
+.realAiPanel .analysisHeading {
+  position: relative;
+  padding-bottom: var(--space-12);
+}
+
+.realAiPanel .analysisHeading::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 2.75rem;
+  height: 0.1875rem;
+  border-radius: var(--radius-full);
+  background: linear-gradient(90deg, var(--color-brand-cyan), var(--color-brand-cyan-bright));
 }
