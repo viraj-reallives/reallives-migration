@@ -1,0 +1,10 @@
+.footer_description {
+    margin-top: 1rem !important;
+    line-height: 1.6 !important;
+    font-weight: 400 !important;
+    font-size: 1rem;
+}
+
+.top_footer_override{
+    grid-template-columns: auto auto !important;
+}

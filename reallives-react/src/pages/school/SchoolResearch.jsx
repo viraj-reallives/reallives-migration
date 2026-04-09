@@ -43,6 +43,7 @@ function ResearchCard({ item, labels, exploreText, isExpanded, onActivate, onExp
           <p className={styles.fieldValue}>{item.whatWasStudied}</p>
         </div>
         <button
+        
           type="button"
           className={styles.exploreBtn}
           onClick={(e) => {
