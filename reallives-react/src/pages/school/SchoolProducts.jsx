@@ -497,8 +497,8 @@ export default function SchoolProducts() {
       <div className={`${styles.inner} ${Style1.video_width_add}`}>
 
         <header className={styles.header}>
-          {/* {products.heading ? <h1 className={styles.title}>{products.heading}</h1> : null} */}
-          {/* {products.subheading ? <p className={styles.subtitle}>{products.subheading}</p> : null} */}
+          {products.heading ? <h1 className={styles.title}>{products.heading}</h1> : null}
+          {products.subheading ? <p className={styles.subtitle}>{products.subheading}</p> : null}
         </header>
 
         {tabs.length ? (
