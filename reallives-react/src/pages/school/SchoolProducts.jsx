@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useSiteContent } from '@hooks/useSiteContent';
 import styles from './SchoolProducts.module.css';
+import Style1 from '../../components/costom_css/schoolproduct_overide.module.css';
 
 function RealLivesSimPanel({ data, isActive = true }) {
   const paths = data?.heroVideoPaths?.length ? data.heroVideoPaths : [];
@@ -492,10 +493,12 @@ export default function SchoolProducts() {
 
   return (
     <section className={styles.section} id="products">
-      <div className={styles.inner}>
+
+      <div className={`${styles.inner} ${Style1.video_width_add}`}>
+
         <header className={styles.header}>
-          {products.heading ? <h1 className={styles.title}>{products.heading}</h1> : null}
-          {products.subheading ? <p className={styles.subtitle}>{products.subheading}</p> : null}
+          {/* {products.heading ? <h1 className={styles.title}>{products.heading}</h1> : null} */}
+          {/* {products.subheading ? <p className={styles.subtitle}>{products.subheading}</p> : null} */}
         </header>
 
         {tabs.length ? (

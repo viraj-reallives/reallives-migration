@@ -314,7 +314,8 @@ function SdgPanel({ data, images }) {
              <div className={`${styles.sdgGroups} ${Style1.sdg_grops_style}`}>
           {data.sdgImpact.relevanceGroups?.map((group) => (
             <div key={group.label}>
-              <p className={styles.sdgGroupLabel}>{group.label}</p>
+             
+              <p className={`${styles.sdgGroupLabel} ${Style1.color_white}`}>{group.label}</p>
               <div className={styles.sdgIconGrid}>
                 {group.goalImagePaths?.map((src) => (
                   <img className={Style1.sdg_logo_style} key={src} src={src} alt="" />
@@ -331,7 +332,7 @@ function SdgPanel({ data, images }) {
 
       </section>
 
-      <div className={styles.splitSection}>
+      <div className={`${styles.splitSection} ${Style1.container_work_2}`}>
         <div>
           <h2 className={styles.blockTitle}>{data.awarenessToAction.title}</h2>
           <p className={styles.mutedLead}>{data.awarenessToAction.lead}</p>
@@ -348,7 +349,7 @@ function SdgPanel({ data, images }) {
         ) : null}
       </div>
 
-      <section className={styles.benefitsSection}>
+      <section className={`${styles.benefitsSection} ${Style1.educational_benifit}`}>
         <div className={styles.benefitsInner}>
           <h2 className={styles.benefitsHeading}>
             {data.beyondClassroom.title}
@@ -365,7 +366,9 @@ function SdgPanel({ data, images }) {
         </div>
       </section>
 
-      <div className={styles.gettingStarted}>
+   
+
+      <div className={`${styles.gettingStarted} ${Style1.container_work_2}`}>
         <div>
           <h2 className={styles.blockTitle}>{data.closingCta.title}</h2>
           <p className={styles.paragraph}>{data.closingCta.body}</p>
@@ -373,7 +376,7 @@ function SdgPanel({ data, images }) {
             <div className={styles.ctaRow}>
               <CtaLink
                 to={data.closingCta.ctaPath}
-                className={`${styles.ctaButton} ${styles.ctaSdg}`}
+                className={`${styles.ctaButton} ${styles.ctaSdg} ${Style1.get_started_btn}`}
               >
                 {data.closingCta.ctaText}
               </CtaLink>
@@ -386,6 +389,7 @@ function SdgPanel({ data, images }) {
           </div>
         ) : null}
       </div>
+
     </div>
   );
 }
