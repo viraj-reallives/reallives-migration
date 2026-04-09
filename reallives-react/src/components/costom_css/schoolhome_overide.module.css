@@ -1,0 +1,85 @@
+.video_style_override {
+  max-height: none !important;
+  height: 80vh !important;
+}
+
+.video_inner_fit_override {
+  height: 100% !important;
+  max-height: none !important;
+}
+
+.tabBar_override_style {
+  position: absolute !important;
+  z-index: 1000;
+  width: 100%;
+  background-color: transparent;
+  border: none;
+}
+
+.container_work_in_classroome {
+  background: linear-gradient(
+    90deg,
+    rgba(161, 196, 253, 0.5) 0%,
+    rgba(194, 233, 251, 0.5) 100%
+  ) !important;
+  max-width: none !important;
+  padding: 1rem 9rem !important;
+  position: relative;
+}
+
+.educational_benifit {
+  border: none !important;
+  background-color: none !important;
+}
+
+.get_started_btn {
+  background-color: #d95f02 !important;
+  border-radius: 12px !important;
+  color: white !important;
+}
+
+.image_style_override {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  height: 400px !important;
+}
+
+.image_style_override > img {
+  height: 100% !important;
+}
+
+.container_work_2 {
+  background: linear-gradient(
+    90deg,
+    rgba(253, 203, 241, 0.5) 0%,
+    rgba(230, 222, 233, 0.5) 100%
+  ) !important;
+  max-width: none !important;
+  padding: 1rem 9rem !important;
+}
+
+.sdg_tab_override_style {
+  min-height: 80vh !important;
+  align-items: center !important ;
+  justify-content: end !important;
+}
+
+.sdg_tab_override_style > img {
+  height: 100% !important;
+  max-height: none !important;
+}
+
+.sdg_grops_style{
+    position: absolute;
+    top: 0;
+    padding: 1rem;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: repeat(3,1fr);
+}
+.sdg_logo_style{
+    width: 100px !important;
+    height: 90px !important;
+}

@@ -1,6 +1,9 @@
 import { Link } from 'react-router-dom';
 import { landingContent } from '@content/landing';
 import styles from './LandingFooter.module.css';
+import logo_reallives from "../../../add-image/realives-logo-footer.svg";
+import Style1  from '../../costom_css/LandingFooter_overide.module.css';   
+
 
 function SocialPlatformIcon({ icon, className }) {
   if (icon === 'youtube') {
@@ -62,19 +65,26 @@ export default function LandingFooter() {
 
   return (
     <footer className={styles.footer}>
+
       <div className={styles.container}>
-        <div className={styles.top}>
+       
+        <div className={`${styles.top} ${Style1.top_footer_override}`}>
+
           <div className={styles.brand}>
+
             {logo ? (
               <div className={styles.logoWrap}>
                 <img
-                  src={logo}
+                  src={logo_reallives}
                   alt={organizationName || 'RealLives'}
                   className={styles.logoImg}
                 />
               </div>
+
             ) : null}
-            {about ? <p className={styles.about}>{about}</p> : null}
+
+            {about ? <p className={`${styles.about} ${Style1.footer_description}`}>{about}</p> : null}
+            {/* ooter_description  */}
           </div>
 
           <div className={styles.sideColumns}>
