@@ -67,7 +67,9 @@ function RealLivesSimPanel({ data, isActive = true }) {
         </div>
       ) : null}
 
-      <div className={styles.whyGrid}>
+     
+
+      <div className={`${styles.whyGrid} ${Style1.padding_overide}`}>
         <div>
           {data.whyHeading ? <h2 className={styles.whyHeading}>{data.whyHeading}</h2> : null}
           {data.whyParagraphs?.map((p) => (
@@ -77,14 +79,16 @@ function RealLivesSimPanel({ data, isActive = true }) {
           ))}
         </div>
         {data.worldImagePath ? (
-          <div className={styles.mediaCard}>
+          <div className={`${styles.mediaCard} ${Style1.image_style_override}`}>
             <img src={data.worldImagePath} alt="" />
           </div>
         ) : null}
       </div>
 
       {data.fosterHeading || data.fosterDescription ? (
-        <div className={styles.foster}>
+
+        <div className={`${styles.foster} ${Style1.footer_empathy_experience}`}>
+
           {data.fosterHeading ? <h2 className={styles.fosterHeading}>{data.fosterHeading}</h2> : null}
           {data.fosterDescription ? <p className={styles.paragraph}>{data.fosterDescription}</p> : null}
         </div>
@@ -108,7 +112,7 @@ function RealLivesSimPanel({ data, isActive = true }) {
         <div className={styles.driven}>
           {data.drivenByDataText ? <p className={styles.drivenText}>{data.drivenByDataText}</p> : null}
           {data.dataLogos?.length ? (
-            <div className={styles.logoRow}>
+            <div className={`${styles.logoRow} ${Style1.logoRow_override}`}>
               {data.dataLogos.map((logoPath) => (
                 <img key={logoPath} src={logoPath} alt="" />
               ))}
@@ -117,7 +121,7 @@ function RealLivesSimPanel({ data, isActive = true }) {
         </div>
       ) : null}
 
-      <div className={styles.outcomesGrid}>
+      <div className={`${styles.outcomesGrid} ${Style1.grid_learning_outcome}`}>
         <div>
           {data.learningOutcomesHeading ? (
             <h2 className={styles.whyHeading}>{data.learningOutcomesHeading}</h2>
@@ -135,7 +139,7 @@ function RealLivesSimPanel({ data, isActive = true }) {
           </div>
         </div>
         {data.learningOutcomesImagePath ? (
-          <div className={styles.mediaCard}>
+          <div className={`${styles.mediaCard} ${Style1.image_style_override} ${Style1.image_style_override}`}>
             <img src={data.learningOutcomesImagePath} alt="" />
           </div>
         ) : null}
@@ -149,21 +153,28 @@ function RcmiPanel({ data }) {
 
   return (
     <div className={styles.panel}>
-      <div className={styles.rcmiHero}>
+
+      <div className={`${styles.rcmiHero} ${Style1.rcmi_hero_section}`}>
         {data.illustrationPath ? (
-          <div className={styles.rcmiIllustrationCard}>
+          
+         
+          <div className={`${styles.rcmiIllustrationCard} ${Style1.rcmiIllustrationCard_card_override_style}`}>
             <img src={data.illustrationPath} alt="" />
           </div>
+
         ) : null}
-        <div>
-          {data.title ? <h2 className={styles.rcmiTitle}>{data.title}</h2> : null}
-          {data.description ? <p className={styles.paragraph}>{data.description}</p> : null}
+
+        <div className={Style1.hight_100}>
+          
+          {data.title ? <h2 className={`${styles.rcmiTitle}  ${Style1.white_color}`}>{data.title}</h2> : null}
+          {data.description ? <p className={`${styles.paragraph} ${Style1.color_e1e1e1}`}>{data.description}</p> : null}
+          
           {data.highlights?.length ? (
             <div className={styles.highlights}>
               {data.highlights.map((text) => (
                 <div key={text} className={styles.highlightRow}>
                   <span className={styles.highlightDot} aria-hidden="true" />
-                  <p className={styles.highlightText}>{text}</p>
+                  <p className={`${styles.highlightText} ${Style1.color_e1e1e1}`}>{text}</p>
                 </div>
               ))}
             </div>
@@ -175,7 +186,8 @@ function RcmiPanel({ data }) {
       data.clustersDescription ||
       data.clusterLabels?.length ||
       data.clusterDescriptions?.length ? (
-        <div className={styles.rcmiClustersSection}>
+        
+        <div className={`${styles.rcmiClustersSection} ${Style1.rcmiClustersSection_override_container}`}>
           {data.clustersHeading || data.clustersDescription ? (
             <div className={styles.clusterIntro}>
               {data.clustersHeading ? <h2>{data.clustersHeading}</h2> : null}
@@ -214,7 +226,7 @@ function RcmiPanel({ data }) {
         <div className={`${styles.howItWorks} ${styles.rcmiHowItWorks}`}>
           {data.howItWorksHeading ? <h2>{data.howItWorksHeading}</h2> : null}
           {data.howItWorksImagePath ? (
-            <div className={styles.mediaCard}>
+            <div className={`${styles.mediaCard} ${Style1.p_1_rem}`}>
               <img src={data.howItWorksImagePath} alt="" />
             </div>
           ) : null}
@@ -226,7 +238,9 @@ function RcmiPanel({ data }) {
           {data.experienceEmbedHeading ? (
             <h2 className={styles.embedHeading}>{data.experienceEmbedHeading}</h2>
           ) : null}
-          <div className={styles.iframeWrap}>
+          
+          <div className={`${styles.iframeWrap} ${Style1.iframe_conntainer_override}`}>
+
             <iframe
               className={styles.iframe}
               src={data.demoIframeSrc}
@@ -234,6 +248,7 @@ function RcmiPanel({ data }) {
               allow="clipboard-write"
             />
           </div>
+
         </div>
       ) : null}
     </div>
@@ -244,7 +259,7 @@ function EmpathyCanvasPanel({ data }) {
   if (!data) return null;
 
   return (
-    <div className={`${styles.panel} ${styles.empathyPanel}`}>
+    <div className={`${styles.panel} ${styles.empathyPanel} `}>
       {data.mainDiagramPath ? (
         <div className={styles.canvasHero}>
           <img src={data.mainDiagramPath} alt="" />
@@ -275,14 +290,16 @@ function EmpathyCanvasPanel({ data }) {
       ))}
 
       {data.overviewImagePath ? (
-        <div className={styles.splitBanner}>
+
+        <div className={`${styles.splitBanner} ${Style1.empathyPanel_override }`}>
           {data.tailoredTitle ? <h2 className={styles.sectionTitle}>{data.tailoredTitle}</h2> : null}
-          <img src={data.overviewImagePath} alt="" />
+          <img className={Style1.splitBanne_img} src={data.overviewImagePath} alt="" />
         </div>
       ) : null}
 
       {data.realAiScoreImagePath || data.realAiScoreHeading ? (
-        <div className={styles.aiScoreBanner}>
+
+        <div className={`${styles.aiScoreBanner} ${Style1.empathyPanel_override}`}>
           {data.realAiScoreHeading ? <h2 className={styles.sectionTitle}>{data.realAiScoreHeading}</h2> : null}
           {data.realAiScoreImagePath ? <img src={data.realAiScoreImagePath} alt="" /> : null}
         </div>
@@ -304,12 +321,14 @@ function RealBoardPanel({ data }) {
     <div className={`${styles.panel} ${styles.realboardPanel}`}>
       {data.bannerPath ? (
         <div className={styles.realboardBanner}>
-          <img src={data.bannerPath} alt="" />
+        <img src={data.bannerPath} alt="" />
         </div>
       ) : null}
 
       {slides.length ? (
-        <div className={styles.sliderShell}>
+      
+        <div className={`${styles.sliderShell} ${Style1.sliderShell_override}`}>
+
           <div className={styles.sliderSide}>
             {data.platformHeadingLines?.map((line) => (
               <p key={line} className={styles.sideHeading}>
@@ -336,7 +355,8 @@ function RealBoardPanel({ data }) {
             <div className={styles.sliderCenter}>
               {current?.title ? <h4 className={styles.slideTitle}>{current.title}</h4> : null}
               {current?.imagePath ? (
-                <div className={styles.slideImage}>
+              
+                <div className={`${styles.slideImage} ${Style1.p_1_rem} ${Style1.card_image_override}`}>
                   <img src={current.imagePath} alt="" />
                 </div>
               ) : null}
@@ -351,6 +371,7 @@ function RealBoardPanel({ data }) {
               ›
             </button>
           </div>
+
         </div>
       ) : null}
 
