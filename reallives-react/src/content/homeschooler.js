@@ -8,6 +8,7 @@ export const homeschoolerContent = {
     { label: 'ChangeMaker Project', path: '/reallives/homeschooler/changemaker' },
     { label: 'Impact', path: '/reallives/homeschooler/impact' },
     { label: 'Research & Evidence', path: '/reallives/homeschooler/research' },
+    { label: 'Newsletters', path: '/reallives/homeschooler/newsletters' },
     { label: 'Pricing', path: '/reallives/homeschooler/pricing' },
     { label: 'Foundation', path: '/reallives/homeschooler/foundation' },
     { label: 'About Us', path: '/reallives/homeschooler/about' },

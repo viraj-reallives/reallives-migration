@@ -8,6 +8,7 @@ export const universityContent = {
     { label: 'ChangeMaker Project', path: '/reallives/university/changemaker' },
     { label: 'Impact', path: '/reallives/university/impact' },
     { label: 'Research & Evidence', path: '/reallives/university/research' },
+    { label: 'Newsletters', path: '/reallives/university/newsletters' },
     { label: 'Pricing', path: '/reallives/university/pricing' },
     { label: 'Foundation', path: '/reallives/university/foundation' },
     { label: 'About Us', path: '/reallives/university/about' },

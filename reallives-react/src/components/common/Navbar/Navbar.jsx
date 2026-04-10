@@ -94,6 +94,8 @@ export default function Navbar() {
         );
       case 'research':
         return isPathActive(`${basePath}/research`);
+      case 'newsletters':
+        return isPathActive(`${basePath}/newsletters`);
       case 'pricing':
         return isPathActive(`${basePath}/pricing`);
       case 'story':
@@ -463,6 +465,17 @@ export default function Navbar() {
                 type="button"
                 className={clsx(
                   styles.navItem,
+                  isNavItemActive('newsletters') && styles.navItemActive,
+                )}
+                onClick={() => handlePrimaryNavClick(`${basePath}/newsletters`)}
+              >
+                <span className={styles.navLabel}>Newsletters</span>
+              </button>
+
+              <button
+                type="button"
+                className={clsx(
+                  styles.navItem,
                   isNavItemActive('pricing') && styles.navItemActive,
                 )}
                 onClick={() => handlePrimaryNavClick(`${basePath}/pricing`)}
@@ -707,6 +720,17 @@ export default function Navbar() {
                     onClick={() => handlePrimaryNavClick(`${basePath}/research`)}
                   >
                     <span className={styles.navLabel}>Research</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    className={clsx(
+                      styles.mobileItem,
+                      isNavItemActive('newsletters') && styles.navItemActive,
+                    )}
+                    onClick={() => handlePrimaryNavClick(`${basePath}/newsletters`)}
+                  >
+                    <span className={styles.navLabel}>Newsletters</span>
                   </button>
 
                   <button

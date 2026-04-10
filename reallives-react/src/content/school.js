@@ -8,6 +8,7 @@ export const schoolContent = {
     { label: 'ChangeMaker Project', path: '/reallives/school/changemaker' },
     { label: 'Impact', path: '/reallives/school/impact' },
     { label: 'Research & Evidence', path: '/reallives/school/research' },
+    { label: 'Newsletters', path: '/reallives/school/newsletters' },
     { label: 'Pricing', path: '/reallives/school/pricing' },
     { label: 'Foundation', path: '/reallives/school/foundation' },
     { label: 'About Us', path: '/reallives/school/about' },
