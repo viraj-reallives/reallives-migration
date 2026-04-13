@@ -35,7 +35,7 @@ function WhoCanUsePanel({ supportingText, images, isActive = true }) {
           <video
             ref={videoRef}
             className={styles.video}
-            // src={images.heroVideoUrl}
+            src={images.heroVideoUrl}
             autoPlay
             muted
             loop
@@ -269,7 +269,7 @@ function SdgPanel({ data, images }) {
         <h2 className={styles.sdgImpactTitle}>{data.sdgImpact.title}</h2>
         {videoUrl ? (
           <div className={styles.videoFrame}>
-            {/* <video src={videoUrl} autoPlay muted loop playsInline /> */}
+            <video src={videoUrl} autoPlay muted loop playsInline />
           </div>
         ) : null}
         <div className={styles.sdgGroups}>

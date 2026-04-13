@@ -1,0 +1,13 @@
+.impact_graph_map_container{
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.map_edit_override{
+    border: none !important;
+    background-color: none !important;
+}
+
+.padding_manage_style{
+    padding: 0rem 3rem !important;
+}

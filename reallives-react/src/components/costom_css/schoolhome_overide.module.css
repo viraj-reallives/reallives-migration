@@ -29,7 +29,7 @@
 
 .educational_benifit {
   border: none !important;
-  background-color: none !important;
+  background: none !important;
 }
 
 .get_started_btn {
@@ -82,4 +82,8 @@
 .sdg_logo_style{
     width: 100px !important;
     height: 90px !important;
+}
+
+.color_white{
+    color: white !important;
 }

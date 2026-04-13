@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000;
+  z-index: 100000;
   background-color: var(--color-bg-primary);
   border-bottom: 1px solid var(--color-border-soft);
   transition: background-color var(--transition-base) ease,
