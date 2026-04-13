@@ -101,23 +101,63 @@
   max-width: 100% !important;
 }
 
-.white_color{
-    color: white !important;
+.white_color {
+  color: white !important;
 }
 
-.color_e1e1e1{
-    color: #e1e1e1 !important;
+.color_e1e1e1 {
+  color: #e1e1e1 !important;
 }
 
-.sliderShell_override{
-    display: grid !important;
-    grid-template-columns: 30% 1fr !important;
+.sliderShell_override {
+  display: grid !important;
+  grid-template-columns: 30% 1fr !important;
 }
 
-.card_image_override{
-    height: 80vh;
+.card_image_override {
+  height: 80vh;
 }
 
-.card_image_override>img{
- height: 100% !important;
+.card_image_override > img {
+  height: 100% !important;
 }
+
+.real_ai_structure_container {
+  /* height: 80vh !important; */
+  background-color: white;
+  margin-bottom: 2rem;
+  box-shadow: 0px 0px 12px 0px #00000040;
+  border-radius: 6px;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.turning_ai_story_box {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.first_image_grid_top {
+  padding: 10px 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image_real_grid {
+  height: auto;
+}
+
+.flex_center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.aiheader_override{
+    border: none !important;
+    background: none !important;
+    box-shadow: none !important;
+    margin: 0px !important;
+}
+

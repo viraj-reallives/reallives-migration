@@ -1,0 +1,237 @@
+.heroBgOverride {
+  opacity: 1 !important;
+}
+
+.impact_overlay_style {
+  position: absolute !important;
+  top: 50%;
+  width: 100%;
+  background: none !important;
+  padding: 0rem 2rem;
+}
+
+.heroGrid_override_style {
+  grid-template-columns: 1fr 26% !important;
+}
+
+.education_product_container {
+  background-color: #f9fafb;
+  padding: 2rem 2rem !important;
+}
+
+.container_education_inner {
+  /* background-color: lightpink; */
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 1rem;
+}
+
+.top_head_line_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.card_container_product {
+  /* border: 1px solid red; */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.section_title {
+  font-size: 1.5rem !important;
+  margin: 0px !important;
+}
+
+.section_subtitle_text {
+  font-size: 1.25rem !important;
+  text-align: center !important;
+  color: #4b5563 !important;
+  width: 45%;
+  margin: 0px !important;
+}
+
+.card_grid_product {
+  padding: 1rem;
+  background: white;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 15px;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 1rem;
+  cursor: pointer;
+  position: relative;
+}
+
+.card_head_top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.info_container_card_bottom {
+  display: grid;
+  grid-template-rows: 1fr auto auto auto;
+  gap: 13px;
+}
+.description_card_paragarph {
+  font-size: 1.1rem !important;
+  font-weight: 400;
+  color: #4b5563 !important;
+  text-align: center;
+  margin: 0px;
+}
+.product_capsule_box {
+  background-color: #f3f4f6 !important;
+  color: #374151 !important;
+  padding: 5px !important;
+  border-radius: 20px;
+  margin-bottom: 5px;
+  width: 95%;
+  font-size: 0.875rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product_features {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* gap: 1rem; */
+}
+
+.product_link_arrow {
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.product_title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0px !important;
+}
+
+.width_flex_class {
+  width: 100% !important;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.width_flex_class > img {
+  height: 100%;
+}
+
+.card_grid_product:nth-child(1)::before {
+  background-color: #00acc1;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.card_grid_product:nth-child(2)::before {
+  background-color: #cb6ce6;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.card_grid_product:nth-child(3)::before {
+  background-color: darkblue;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.card_grid_product:nth-child(4)::before {
+  background-color: #4444;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.card_grid_product:hover::before {
+  transform: scaleX(1);
+}
+
+.card_grid_product:hover {
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.background_color_orange {
+  background: linear-gradient(#f9b24d, #c67606) !important;
+}
+
+.arrow_icon {
+  height: 19px;
+}
+
+.cards_educatores_saying {
+  padding: 2rem 3rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.label_inner_educatores {
+  background: white;
+  border-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  gap: 1.5rem;
+}
+
+
+.label_p_style{
+ font-size: 1.125rem;
+    line-height: 1.6;
+    font-weight: 400;
+    font-style: italic;
+}
+
+
+.quote_icon{
+  color: #2563eb;
+
+}
