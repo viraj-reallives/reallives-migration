@@ -504,6 +504,7 @@ export const schoolContent = {
         skillsDevelopedLabel: 'Skills Developed',
         skills: ['Teamwork', 'Integrity and Work Ethics'],
         learnMoreText: 'Learn more',
+        learnMorePath: '/reallives/school/ethzurichworkshop'
       },
       {
         title: 'Navamindradhiraj University Workshop',
@@ -520,6 +521,7 @@ export const schoolContent = {
         skillsDevelopedLabel: 'Skills Developed',
         skills: ['21st Century Skills', 'Business Acumen'],
         learnMoreText: 'Learn more',
+        learnMorePath: '/reallives/school/Navamindradhiraj_Unniversity'
       },
       {
         title: 'KyungHee University SDG Workshop',
