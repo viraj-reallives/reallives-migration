@@ -104,7 +104,7 @@ export const universityContent = {
       sdgGlobalAction:
         'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/global-action-image.svg',
     },
-    homeTabLabels: ['Who Can Use?', '21st Century Skills', 'SDGs', 'Resources'],
+    homeTabLabels: ['Who Can Use?', '21st Century Skills', 'SDGs', 'Core Vision'],
     homeAdditionalTabs: homeAdditionalTabsForBasePath('/reallives/university'),
   },
 

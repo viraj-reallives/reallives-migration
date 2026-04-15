@@ -26,6 +26,15 @@ function isInlineImageBlock(block) {
   return typeof block === 'object' && block !== null && block.type === 'image';
 }
 
+function isExternalLinkBlock(block) {
+  return (
+    typeof block === 'object' &&
+    block !== null &&
+    block.type === 'link' &&
+    typeof block.href === 'string'
+  );
+}
+
 function renderHighlightedText(text) {
   const parts = text.split(/(\*\*[^*]+\*\*)/g);
   return parts.map((part, index) => {
@@ -173,6 +182,21 @@ export default function NewslettersPage() {
                   <figure key={`${selectedArticle.id}-image-${index}`} className={styles.inlineImageWrap}>
                     <img src={block.src} alt={block.alt} className={styles.inlineArticleImage} />
                   </figure>
+                );
+              }
+
+              if (isExternalLinkBlock(block)) {
+                return (
+                  <p key={`${selectedArticle.id}-link-${index}`}>
+                    <a
+                      href={block.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.inlineExternalLink}
+                    >
+                      {block.label || block.href}
+                    </a>
+                  </p>
                 );
               }
 

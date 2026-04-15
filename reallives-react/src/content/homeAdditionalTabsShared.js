@@ -1,5 +1,5 @@
 /**
- * Home page tabs: 21st Century Skills, SDGs, Resources — shared copy;
+ * Home page tabs: 21st Century Skills, SDGs, Core Vision — shared copy;
  * links are scoped per sub-site via basePath.
  *
  * @param {string} basePath - '/reallives/school' | '/reallives/university' | '/reallives/homeschooler'
@@ -153,7 +153,9 @@ export function homeAdditionalTabsForBasePath(basePath) {
       },
     },
     {
-      lessonPlansHeading: 'Coming Soon',
+      coreVisionHeading: 'Core Vision',
+      coreVisionBody:
+        'Discover the 15 foundational RealLives questions and definitions that explain empathy, global citizenship, systems thinking, SEL, equity, and changemaking.',
     },
   ];
 }

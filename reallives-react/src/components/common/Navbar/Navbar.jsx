@@ -59,6 +59,30 @@ function MailIcon() {
   );
 }
 
+function ThemeIcon({ isDark }) {
+  if (isDark) {
+    return (
+      <svg className={styles.themeIcon} viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 1 0 9.79 9.79z" />
+      </svg>
+    );
+  }
+
+  return (
+    <svg className={styles.themeIcon} viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <circle cx="12" cy="12" r="4.25" />
+      <line x1="12" y1="1.75" x2="12" y2="4.25" />
+      <line x1="12" y1="19.75" x2="12" y2="22.25" />
+      <line x1="1.75" y1="12" x2="4.25" y2="12" />
+      <line x1="19.75" y1="12" x2="22.25" y2="12" />
+      <line x1="4.75" y1="4.75" x2="6.5" y2="6.5" />
+      <line x1="17.5" y1="17.5" x2="19.25" y2="19.25" />
+      <line x1="17.5" y1="6.5" x2="19.25" y2="4.75" />
+      <line x1="4.75" y1="19.25" x2="6.5" y2="17.5" />
+    </svg>
+  );
+}
+
 export default function Navbar() {
   const { footer = {} } = useSiteContent();
   const location = useLocation();
@@ -507,7 +531,7 @@ export default function Navbar() {
             onClick={() => toggleTheme?.()}
             aria-label={theme === 'dark' ? 'Use light theme' : 'Use dark theme'}
           >
-            {theme === 'dark' ? 'Light' : 'Dark'}
+            <ThemeIcon isDark={theme !== 'dark'} />
           </button>
 
           <div className={styles.ctaRow}>

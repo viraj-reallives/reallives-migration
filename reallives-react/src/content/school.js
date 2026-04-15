@@ -103,7 +103,7 @@ export const schoolContent = {
       sdgGlobalAction:
         'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/global-action-image.svg',
     },
-    homeTabLabels: ['Who Can Use?', '21st Century Skills', "SDG's", 'Resources'],
+    homeTabLabels: ['Who Can Use?', '21st Century Skills', "SDG's", 'Core Vision'],
     homeAdditionalTabs: homeAdditionalTabsForBasePath('/reallives/school'),
   },
 
