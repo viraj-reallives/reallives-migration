@@ -5,6 +5,7 @@ import styles from "./SchoolFoundation.module.css";
 import Style1 from "../../components/costom_css/SchoolFoundation_override.module.css";
 
 /** Match Foundation page spec: ETH Zurich, IIT Bombay, Navamindradhiraj, KyungHee (order). */
+
 const WORKSHOP_TITLES_IN_ORDER = [
   "ETH Zurich Workshop",
   "IIT Bombay Exploring SDG 1 through Empathy Workshop",
@@ -31,10 +32,8 @@ export default function SchoolFoundation() {
 
   return (
     <div className={styles.page}>
-      <section
-        className={`${styles.hero} ${Style1.hero_conatiner}`}
-        aria-labelledby="foundation-hero-heading"
-      >
+      
+      <section className={`${styles.hero} ${Style1.hero_conatiner}`}aria-labelledby="foundation-hero-heading">
         <div className={`${styles.heroInner} ${Style1.h_100}`}>
           <div
             className={`${styles.heroCopy} ${Style1.heroCopy_override_style}`}
@@ -48,6 +47,7 @@ export default function SchoolFoundation() {
               <p className={styles.heroTagline}>{hero.tagline}</p>
             ) : null}
             {hero.body ? <p className={styles.heroBody}>{hero.body}</p> : null}
+    
             {/* {hero.donateUrl ? (
               <div className={styles.donateCluster}>
                 {hero.donateCtaText ? (
@@ -63,6 +63,7 @@ export default function SchoolFoundation() {
                 </a>
               </div>
             ) : null} */}
+
           </div>
 
           <div className={Style1.outer_card_style}>
@@ -117,12 +118,12 @@ export default function SchoolFoundation() {
         <div className={Style1.foundation_child_2}></div>
       </div> */}
 
-      <section
-        className={styles.approach}
-        aria-labelledby="foundation-approach-heading"
-      >
-        <div className={styles.approachInner}>
-          <div className={styles.approachCopy}>
+      <section className={styles.approach} aria-labelledby="foundation-approach-heading" >
+        <div className={`${styles.approachInner}  ${Style1.approachInner_overrid} `}>
+
+         
+
+          <div className={`${styles.approachCopy} `}>
             {educationalApproach.heading ? (
               <h2
                 id="foundation-approach-heading"
@@ -154,10 +155,8 @@ export default function SchoolFoundation() {
         </div>
       </section>
 
-      <section
-        className={styles.globalImpact}
-        aria-labelledby="foundation-global-heading"
-      >
+      <section className={styles.globalImpact} aria-labelledby="foundation-global-heading" >
+
         <div className={styles.globalInner}>
           {globalImpact.heading ? (
             <h2 id="foundation-global-heading" className={styles.globalHeading}>
@@ -188,12 +187,11 @@ export default function SchoolFoundation() {
             </Link>
           ) : null}
         </div>
+
       </section>
 
-      <section
-        className={styles.rcmi}
-        aria-labelledby="foundation-rcmi-heading"
-      >
+
+      {/* <section className={styles.rcmi} aria-labelledby="foundation-rcmi-heading">
         <div className={styles.rcmiInner}>
           {rcmi.heading ? (
             <h2 id="foundation-rcmi-heading" className={styles.rcmiHeading}>
@@ -234,7 +232,7 @@ export default function SchoolFoundation() {
             </a>
           ) : null}
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }

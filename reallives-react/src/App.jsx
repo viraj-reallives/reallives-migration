@@ -46,6 +46,8 @@ import GamerAbout from '@pages/gamer/GamerAbout';
 import GamerPricing from '@pages/gamer/GamerPricing';
 import GamerContact from '@pages/gamer/GamerContact';
 import NotFound from '@pages/NotFound';
+import EthZurichWorkshop from './pages/impact/EthZurichWorkshop';
+import Navamindradhiraj_Unniversity from './pages/impact/Navamindradhiraj_University'
 
 export default function App() {
   return (
@@ -76,6 +78,11 @@ export default function App() {
             <Route path="about" element={<SchoolAbout />} />
             <Route path="contact" element={<SchoolContact />} />
             <Route path="foundation" element={<SchoolFoundation />} />
+            <Route path="ethzurichworkshop" element={<EthZurichWorkshop/>}/>
+            <Route path="Navamindradhiraj_Unniversity" element={<Navamindradhiraj_Unniversity/>}/>
+
+
+
           </Route>
 
           <Route path="/reallives/university" element={<SubSiteLayout siteKey="university" />}>

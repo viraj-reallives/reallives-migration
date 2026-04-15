@@ -139,3 +139,7 @@
     background: #c9e6ff;
     color: #004b83;
 }
+
+.approachInner_overrid{
+  grid-template-columns: 37% 1fr !important;
+}
