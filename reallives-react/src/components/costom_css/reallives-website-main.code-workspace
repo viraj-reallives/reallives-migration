@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "../../../../../reallives-website-main"
+		},
+		{
+			"path": "../../../../../react-changemaker-website"
+		},
+		{
+			"path": "../../../.."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "reallives-website-main",
+		"liveServer.settings.port": 5501
+	}
+}

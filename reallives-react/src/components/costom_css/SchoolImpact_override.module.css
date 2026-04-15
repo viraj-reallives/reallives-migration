@@ -1,13 +1,30 @@
-.impact_graph_map_container{
-    display: flex !important;
-    flex-direction: column !important;
+.impact_graph_map_container {
+  display: flex !important;
+  flex-direction: column !important;
 }
 
-.map_edit_override{
-    border: none !important;
-    background-color: none !important;
+.map_edit_override {
+  border: none !important;
+  background-color: none !important;
 }
 
-.padding_manage_style{
-    padding: 0rem 3rem !important;
+.padding_manage_style {
+  padding: 0rem 3rem !important;
+}
+
+.impact_card_style {
+  grid-template-columns: 1fr 1fr !important;
+}
+
+.cardImage_override {
+  height: 100% !important;
+}
+
+.cardImage_override > img {
+  height: 100%;
+  max-height: none !important;
+}
+
+.background_change_color {
+  background: #ffc41f !important;
 }

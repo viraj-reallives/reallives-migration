@@ -9,104 +9,6 @@ const AUTO_MS = 5000;
 
 function ImpactImageSlider({ images, label }) {
 
-   const impact_home = [
-    {
-      id: 1,
-      card_title: "ETH Zurich Workshop",
-      card_date: "27 / 06 / 2018",
-      imgURL:
-        "https://d2jn82ki4w4ftn.cloudfront.net/changemaker-website/home-page/final-business-with-purpose.png",
-      university_text: "ETH University Zurich, Switzerland",
-      particepent_title: "Department - Institute of Molecular Systems Biology",
-      collaboration_text: "In collaboration with:",
-      name_card: "Prof. Dr. Ernst Hafen",
-      number_title: 120,
-      skill_devloped: "Skills Developed",
-      teamwork_title: "Teamwork",
-      intergrity_title: "Integrity and Work Ethics",
-      teamwork_bg: "#f9c1a5",
-      intergrity_bg: "#caecf1",
-      link: "/our-impact/eth-university",
-    },
-    {
-      id: 2,
-      card_title: "Navamindradhiraj University Workshop",
-      card_date: "20 / 09 / 2025",
-      imgURL:
-        "https://d2jn82ki4w4ftn.cloudfront.net/changemaker-website/our-impact-page/second-workshop.png",
-      university_text: "Navamindradhiraj University, Bangkok",
-      particepent_title: "Department - General Education",
-      collaboration_text: "In collaboration with:",
-      name_card: "Lecturer Krittanan Pensirisomboon",
-      number_title: 150,
-      skill_devloped: "Skills Developed",
-      teamwork_title: "21st Century Skills",
-      intergrity_title: "Business Acumen",
-      teamwork_bg: "#d4e8eb",
-      intergrity_bg: "#dff6c2",
-      link: "/our-impact/navamindradhiraj-university",
-    },
-    {
-      id: 3,
-      card_title: "KyungHee University SDG Workshop",
-      card_date: "29 / 09 / 2025",
-      imgURL:
-        "https://d2jn82ki4w4ftn.cloudfront.net/changemaker-website/our-impact-page/3-rd-workshop-first-image.jpg",
-      university_text: "Kyunghee University, Korea",
-      particepent_title: "Department - Social Sciences",
-      collaboration_text: "In collaboration with:",
-      name_card: "Prof. Dr. Utak Chang",
-      number_title: 30,
-      skill_devloped: "Skills Developed",
-      teamwork_title: "SDG Awareness",
-      intergrity_title: "ChangeMaking",
-      teamwork_bg: "#f7b4b4",
-      intergrity_bg: "#ffef9f ",
-      Used_Tools: "Empathy Canvas",
-      link: "/our-impact/kyunghee-university",
-    },
-
-    {
-      id: 4,
-      card_title: "IIT Bombay Exploring SDG 1 through Empathy Workshop",
-      card_date: "07 / 11 / 2024",
-      imgURL:
-        "https://d2jn82ki4w4ftn.cloudfront.net/changemaker-website/home-page/fourth_workshop-1.jpg",
-      university_text: "IIT Bombay, India",
-      particepent_title: "Department - IDC School of Design",
-      collaboration_text: "In collaboration with:",
-      name_card: "India HCI 2024",
-      number_title: 30,
-      skill_devloped: "Skills Developed",
-      teamwork_title: "SDG Awareness",
-      intergrity_title: "Social Entrepreneurship",
-      teamwork_bg: "#f7b4b4 ",
-      intergrity_bg: "#c4c1ff",
-      link: "/our-impact/iit-bombay",
-    },
-
-    {
-      id: 5,
-      card_title: "Chulalongkorn University Workshop",
-      card_date: "27/04/2024",
-      imgURL:
-        "https://d2jn82ki4w4ftn.cloudfront.net/changemaker-website/chula-workshop/fifth-work-shop.png",
-      university_text: "Chulalongkorn University, Bangkok, Thailand",
-      particepent_title: "Department - Faculty of Education / BAScii Program",
-      collaboration_text: "In collaboration with:",
-      name_card: "Dr. Sawaros Thanapornsangsuth",
-      number_title: 200,
-      skill_devloped: "Skills Developed",
-      empathy_title: "Empathy",
-      teamwork_title: "SDG Awareness",
-      intergrity_title: "Critical Thinking",
-      empathy_bg: "#F4B3FF ",
-      teamwork_bg: "#f7b4b4 ",
-      intergrity_bg: "#FFE396",
-        link: "/our-impact/Chulalongkorn-University",
-
-    },
-  ];
 
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
@@ -195,11 +97,15 @@ function WorkshopCard({ card, learnMorePath }) {
         {card.title ? <h2 className={styles.cardTitle}>{card.title}</h2> : null}
         {card.date ? <p className={styles.cardDate}>{card.date}</p> : null}
       </div>
-      <div className={styles.cardBody}>
+
+      <div className={`${styles.cardBody} ${Style1.impact_card_style}`}>
         {card.imagePath ? (
-          <div className={styles.cardImage}>
+
+
+          <div className={`${styles.cardImage} ${Style1.cardImage_override}`}>
             <img src={card.imagePath} alt="" />
           </div>
+
         ) : null}
         <div>
           {card.university || card.department ? (
@@ -303,7 +209,7 @@ export default function SchoolImpact() {
               impact.ctaBannerHeading &&
               impact.ctaBannerButtonText &&
               impact.ctaBannerButtonPath ? (
-                <CTABanner
+                <CTABanner className={Style1.background_change_color}
                   heading={impact.ctaBannerHeading}
                   buttonText={impact.ctaBannerButtonText}
                   buttonPath={impact.ctaBannerButtonPath}

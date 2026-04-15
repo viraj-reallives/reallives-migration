@@ -3,6 +3,7 @@ import Modal from '@components/common/Modal/Modal';
 import LicenseTierCard from '@components/common/LicenseTierCard/LicenseTierCard';
 import { useSiteContent } from '@hooks/useSiteContent';
 import styles from './SchoolPricing.module.css';
+import Styles1 from "../../components/costom_css/SchoolPricing_override.module.css"
 
 const SCHOOL_REGISTER_URL = 'https://reallivesworld.com/register-school';
 
@@ -47,14 +48,17 @@ export default function SchoolPricing() {
 
       {pricing.toolInfoNote ? <p className={styles.toolNote}>{pricing.toolInfoNote}</p> : null}
 
-      <div className={styles.grid}>
+      <div className={`${styles.grid} `}>
+
         {pricing.tiers?.map((tier) => (
           <LicenseTierCard
+          
             key={tier.name}
             tier={tierForCard(tier)}
             onBuy={() => setModalOpen(true)}
           />
         ))}
+
       </div>
 
       {modal ? (

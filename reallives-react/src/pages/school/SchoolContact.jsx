@@ -24,6 +24,7 @@ export default function SchoolContact() {
 
   return (
     <div className={styles.page}>
+      
       <PageHeader heading={contact.heading} />
 
       <div className={styles.grid}>

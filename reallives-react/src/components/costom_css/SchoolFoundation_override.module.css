@@ -1,0 +1,141 @@
+.foundation_first_container {
+  width: 100%;
+  background-color: #e4f4ff;
+  border-radius: 6px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  padding: 3rem 5rem;
+}
+
+.foundation_child_1 {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  /* border: 1px solid black; */
+}
+
+.foundation_child_2 {
+  padding: 1rem;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 10px;
+  border: 1px solid black;
+}
+
+.inner_title_section {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  color: black;
+}
+
+.inner_title_section > h1 {
+  font-weight: 500;
+  font-size: 48px;
+  margin: 0px;
+}
+
+.inner_title_section > p {
+  font-weight: 400;
+  font-size: 22px;
+  text-align: start;
+  margin: 0px;
+}
+
+.inner_title_section_2 {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  line-height: normal;
+  gap: 14px;
+  color: #333333;
+}
+
+.inner_title_section_2 > p {
+  font-weight: 400;
+  font-size: 17px;
+  text-align: start;
+  line-height: 28px;
+  margin: 0px;
+}
+
+.invest_in_chnagemaker_button {
+  height: 68px;
+  background-color: #004b83;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1rem;
+}
+
+.invest_in_chnagemaker_button > p {
+  font-weight: 500;
+  font-size: 17px;
+  color: white;
+  margin: 0px;
+}
+
+.donate_now_btn {
+  height: 50px;
+  background-color: #1397fc;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-decoration: none;
+  padding: 10px 10px;
+  color: white;
+  display: none;
+}
+
+/* inbuild override css   */
+
+.display_none {
+  display: none;
+}
+
+.hero_conatiner {
+  height: 60vh;
+}
+
+.h_100 {
+  height: 100%;
+}
+
+.heroCopy_override_style {
+  justify-content: center;
+  height: 100%;
+}
+
+.outer_card_style {
+    padding: 1rem;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 10px;
+  height: 100%;
+}
+
+.outer_card_style > p {
+  font-weight: 400;
+  font-size: 18px;
+  color: black;
+  text-align: center;
+}
+
+.skillGrid_override_style {
+  grid-template-columns: repeat(2, 1fr) !important;
+  grid-template-rows: repeat(3, 1fr) !important;
+  gap: 1rem;
+  padding: 0rem;
+  height: 100%;
+}
+
+
+.cards_box_foundation {
+    border: 1px solid #1397fc;
+    background: #c9e6ff;
+    color: #004b83;
+}
