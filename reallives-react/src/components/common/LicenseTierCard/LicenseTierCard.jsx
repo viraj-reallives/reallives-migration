@@ -1,4 +1,5 @@
 import styles from './LicenseTierCard.module.css';
+import Style1 from "../../costom_css/SchoolPricing_override.module.css"
 
 function parseMaxLives(benefits) {
   const list = Array.isArray(benefits) ? benefits : [];
@@ -18,11 +19,14 @@ export default function LicenseTierCard({ tier, onBuy }) {
   const maxLives = parseMaxLives(tier?.benefits);
 
   return (
-    <div className={styles.card} role="group" aria-label={tier?.name ?? 'License tier'}>
+    
+
+    <div className={`${styles.card} ${Style1.card_pricing_color}`} role="group" aria-label={tier?.name ?? 'License tier'}>
+
       <div className={styles.tierName}>{tier?.name}</div>
 
       <div className={styles.priceRow}>
-        <div className={styles.price}>{tier?.price}</div>
+        <div className={`${styles.price} ${Style1.title_text_price}`}>{tier?.price}</div>
       </div>
 
       <div className={styles.statsRow} aria-label="Validity and maximum lives">

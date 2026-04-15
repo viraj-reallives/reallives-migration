@@ -557,7 +557,7 @@ export const schoolContent = {
       {
         title: 'Chulalongkorn University Workshop',
         date: '27/04/2024',
-        imagePath: '/assets/images/school/background-css/images/fifth-work-shop.png',
+        imagePath: 'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-impact-page/fifth-work-shop-1.png',
         university: 'Chulalongkorn University, Bangkok, Thailand',
         department: 'Department - Faculty of Education / BAScii Program',
         collaborationLabel: 'In collaboration with :',
@@ -805,7 +805,7 @@ export const schoolContent = {
 
   about: {
     heading: 'About Us',
-    tabs: ['History', 'Our Team', 'Working Team', 'Global Support'],
+    tabs: ['History','Inventor', 'Our Team',  'Global Support',],
     history: {
       milestones: [
         {

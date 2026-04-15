@@ -1,0 +1,14 @@
+.card_pricing_color {
+    background: linear-gradient(180deg, #c8ecf0 29.81%, #68c8d4 100%) !important;
+    /* background: none !important; */
+}
+
+.card_default_color{
+    background: none !important;
+}
+
+.title_text_price{
+    color: #222222;
+    font-weight: 400;
+}
+
