@@ -560,6 +560,238 @@ function buildTenthArticle(siteKey) {
   };
 }
 
+function buildEleventhArticle(siteKey) {
+  return {
+    id: `${siteKey}-reallives-insights-sharing-workshop-hanyang-university`,
+    title:
+      "Reflections from the 'RealLives Insights Sharing Participatory Workshop of Korean Educators' at Hanyang University",
+    excerpt:
+      'A reflective account of the Hanyang University workshop exploring empathy-driven pedagogy, educator collaboration, and practical classroom integrations of RealLives.',
+    category: 'Case Studies',
+    tags: ['Empathy Education', 'Global Understanding', 'Education Innovation'],
+    author: 'Parag Mankeekar',
+    authorRole:
+      "Co-Founder @ RealLives Foundation | RealLives Simulation, Edupreneur, 'Games for Good & Changemaking' advocator",
+    authorAvatar:
+      'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-newsletter-page/ceo-image.jpg',
+    publishedOn: 'August 17, 2023',
+    readTime: '10 min read',
+    readMinutes: 10,
+    imagePath:
+      'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-newsletter-page/article-11-bg.jpg',
+    content: [
+      'Epilogue: The Elephant, The Seven Blind Men, RealLives, and Our Modern Classroom - A Pedagogical Parable',
+      "In an ancient tale, seven blind people encounter an elephant. Each touches a different part and describes the creature based on their singular experience. The results are vastly different, yet each is right from their own perspective. Drawing a parallel to 'RealLives', this simulation platform offers students the ability to experience various facets of life from different global perspectives. Just like each blind person had their unique description of the elephant, 'RealLives' allows each student to perceive and understand global challenges uniquely.",
+      "Today's educational landscape often mirrors this parable, but with a twist. Modern education sometimes feels as though it's been blindfolded by a restrictive, centrally driven syllabus. This confines educators, leaving them with limited room to innovate, to equip students with forward-thinking skills, or to make them aware of urgent issues such as sustainability in the face of an undeniable climate crisis.",
+      'Educators today need to be more than just passive conveyors of information; they need to inspire a generation of changemakers. And in this confined space, the true essence of education is sometimes lost. Education should be about self-discovery, about finding out "Who am I?" rather than conforming to societal molds or merely preparing oneself for a job.',
+      "Yet, amidst these challenges, tools like 'RealLives' emerge as beacons of hope. Much like the diverse interpretations of the elephant by the blind men, every educator, stemming from varied backgrounds and disciplines, seeks to understand the essence of 'RealLives' in their own distinct way. These myriad pedagogies, each different yet valid, exemplify how RealLives can be integrated across educational levels, from primary to MBA courses, providing the much-needed openness and innovation in contemporary education. Through 'RealLives', educators and students get a chance to touch and feel the vastness and diversity of the world, connecting them to the many facets of global realities, akin to the blind men connecting with different parts of the elephant.",
+      "Reflections from the 'RealLives Insights Sharing Participatory Workshop of Korean Educators' at Hanyang University",
+      "The horizon of education has been magnificently broadened this August, in Seoul, South Korea and RealLives Foundation team is both honoured and excited to bring you a comprehensive reflection of what unfolded during our transformative gathering at Hanyang University.",
+      'An Unprecedented Meeting of Minds:',
+      "The workshop, aimed at discussing and exploring the RealLives simulation platform's potential, was not just another academic event. It was a synthesis of shared experiences, rigorous ideation, and a clear vision for the future of education in a global context. It was a great partnership - Hanyang University, Ashoka Korea and RealLives Foundation which brought together this idea of the workshop.",
+      'Who Were the Torchbearers:',
+      'Among the brilliant minds that graced the event were luminaries like teacher Ms. Yang Mi-hyun and her 2 students Park Jun-hyung and Kim Ye-jung from Gwangju Salesio Middle School, Jeong Chan-phil, the Secretary-General of the Future Classroom Network & Ashoka Fellow from South Korea, Professor Yoo Nan-suk, Home Economics professor from Korea University, teacher Heo Young-sun from Cho-Yeon Middle School, Ms. Jisun Jung who represented Ashoka Korea, Ms. Jinhae Bae from Korea University and many more educators who were attending online session. We were also fortunate have a UNESCO representative from their APCEIU unit, Dr Go Sukyang who added perspectives and thinking of their domain called "Education for International Understanding" and added new dimension to the workshop. Each brought to the table their unique experiences and insights on RealLives and its impact they see, making discussions richer and more inclusive.',
+      {
+        type: 'image',
+        src: 'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-newsletter-page/article-11-img-1.jpg',
+        alt: 'Two students presenting their insights and learnings from RealLives',
+      },
+      '2 students presenting their insights and learnings from RealLives.',
+      {
+        type: 'image',
+        src: 'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-newsletter-page/article-11-img-2.jpg',
+        alt: 'Ms. Mihyun Yang presenting classroom integration of RealLives',
+      },
+      'Ms. Mihyun Yang presenting the way she has integrated RealLives in her classrooms.',
+      {
+        type: 'image',
+        src: 'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-newsletter-page/article-11-img-3.jpg',
+        alt: 'Prof. Nansook Yu presenting RealLives use in home economics classes',
+      },
+      'Prof. Nansook Yu, Professor of Home Economics @ Korea University, presenting how she uses RealLives in her classes of home economics.',
+      {
+        type: 'image',
+        src: 'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-newsletter-page/article-11-img-4.jpg',
+        alt: 'Teacher sharing RealLives insights from a Busan primary school',
+      },
+      'A teacher from Busan primary school sharing her insights.',
+      'Mr. Jung Chanpil, Ashoka Fellow, South Korea, presenting his experiences of using RealLives in the workshops he has designed.',
+      'Decoding RealLives:',
+      "RealLives, as many of you may know, is more than just an online platform. It's a bridge to global realities, providing an intricate understanding of international challenges, using real-world data from esteemed institutions like the UN, OECD, WHO, World Bank and 100+ other data sources. It truly embodies the essence of walking a digital mile in another person's shoes.",
+      'Workshop Takeaways:',
+      "At the core of our discussions was empathy. How do we cultivate it? How do we ensure our future leaders are equipped with the essential skills to understand, appreciate, and act in a world that's rapidly changing? We delved deep into the potential of incorporating RealLives in Korean educational institutions - from middle schools to universities. The shared experiences and case studies demonstrated the platform's transformative power in nurturing empathy and building robust global perspectives.",
+      'The Road Ahead:',
+      "This workshop is just a steppingstone in our continuous journey towards education that's holistic, inclusive, and reflective of global challenges. The synergy between Hanyang University, Ashoka Korea, and the RealLives Foundation promises more innovations and collaborative ventures soon.",
+      'A Clarion Call:',
+      "As we reflect on the successes of this workshop, our resolve to transform education and foster a globally connected, empathetic future generation only grows stronger. We beckon every educator, student, policymaker, and LinkedIn member to join this discourse, to collaborate, and to take the RealLives mission further. If you're inspired, curious, or wish to be part of this transformative journey, let's connect. Together, let's champion empathy-driven education for a brighter, more understanding future.",
+      'Stay inspired and keep pushing boundaries!',
+      '#EmpathyEducation #RealLives #GlobalUnderstanding #HanyangUniversity #AshokaKorea #EducationInnovation',
+    ],
+  };
+}
+
+function buildTwelfthArticle(siteKey) {
+  return {
+    id: `${siteKey}-empathy-ecology-stem-esteem-reallives`,
+    title: "Empathy and Ecology in STEM: The Power of the ESTEEM Model and RealLives' Authentic Integration",
+    excerpt:
+      'Why the ESTEEM model expands conventional STEM by integrating empathy and ecology through authentic, simulation-based learning.',
+    category: 'Teaching Strategy',
+    tags: ['ESTEEM', 'Empathy', 'Ecology'],
+    author: 'Parag Mankeekar',
+    authorRole:
+      "Co-Founder @ RealLives Foundation | RealLives Simulation, Edupreneur, 'Games for Good & Changemaking' advocator",
+    authorAvatar:
+      'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-newsletter-page/ceo-image.jpg',
+    publishedOn: 'August 23, 2023',
+    readTime: '8 min read',
+    readMinutes: 8,
+    imagePath:
+      'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-newsletter-page/article-12-bg.png',
+    content: [
+      "Today's rapid technological progress highlights the strength of the conventional STEM (Science-Technology-Engineering-Mathematics) curriculum. However, as we forge ahead, we must question: does this model encompass the multifaceted intricacies of human and planetary experiences?",
+      'Enter RealLives Simulation (@www.reallivesworld.com), which addresses this critical gap. While STEM robustly emphasizes the tenets of science and technology, it sometimes bypasses the nuanced human interactions and our deep connections with the environment. This is precisely where the ESTEEM model steps in.',
+      'Diving Deeper into ESTEEM',
+      'ESTEEM encapsulates Empathy, Science, Technology, Ecology, Environment, and Mathematics. Beyond its acronym, ESTEEM represents a philosophy striving for holistic education:',
+      '1. Empathy: This highlights the need for a genuine understanding of global experiences, ensuring that advancements remain inclusive.',
+      '2. Ecology and Environment: With global environmental challenges, it is imperative for our innovations to promote sustainability, reflecting the deep intertwining of planetary health with human well-being.',
+      'Enhancing Real-world Learning with ESTEEM',
+      "ESTEEM's strength lies in aligning learning with global complexities, fostering a deeper understanding of the world:",
+      '- Real-life Challenges Connection: An emphasis on empathy allows educators to present real-world challenges, deepening understanding and nurturing genuine concern.',
+      '- Environment in Action: Rather than theoretical discussions, hands-on projects can demonstrate the direct consequences of environmental decisions.',
+      'The RealLives Advantage',
+      {
+        type: 'image',
+        src: 'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-newsletter-page/article-12-img-1.png',
+        alt: 'The ESTEEM model integrated with RealLives simulation learning',
+      },
+      'RealLives elevates the ESTEEM model. Enriched by 40,000 data points from the SDGs, its simulations offer insights into the repercussions of diverse ecological and societal choices. Observing countries with low SDG scores, students delve deeper than mere statistics, grasping challenges faced by global families. This confluence of data and real-world scenarios molds enlightened global citizens.',
+      'Building Future-Ready Citizens',
+      "ESTEEM's promise is its potential to foster citizens who are conscious beneficiaries of science:",
+      '- Recognize the Dual Nature of Science: Acknowledge its marvels while being cautious of potential challenges.',
+      '- Advocate for Sustainability: Innovate harmoniously with nature, understanding the importance of ecological balance.',
+      '- Assume Global Responsibility: With heightened empathy, seek solutions benefitting the broader human spectrum, beyond isolated communities.',
+      "ESTEEM for Today's Educators: Key Takeaways and Implications",
+      "For educators steering through the 21st century's evolving landscape, ESTEEM provides invaluable insights:",
+      '1. Holistic Development: Focus on nurturing empathetic listeners and proactive change-makers, beyond just academic performance.',
+      "2. Empathy is Central: ESTEEM's core is about embracing and instilling empathy, especially in an interconnected world.",
+      '3. Interdisciplinary Approach: Reflecting the interwoven real world, ESTEEM underscores cross-disciplinary learning importance.',
+      '4. Stewardship of the Planet: Educators bear the responsibility to inculcate the significance of ecological balance.',
+      '5. Dynamic Learning Through Simulations: Championing experiential learning, RealLives under ESTEEM advocates for tangible, immersive educational experiences.',
+      '6. Crafting Future-ready Citizens: Focus beyond just job-readiness; foster global citizens ready to champion inclusivity and societal progression.',
+      '7. Embrace Evolution and Adaptability: Remain agile and receptive to evolving educational needs and methods.',
+      "In its essence, ESTEEM is not just an educational framework; it is a roadmap for the future. It points educators towards methodologies grounded in present-day realities, ensuring the emergence of holistic learners, thinkers, and global citizens.",
+      'Beyond Traditional Education: Embarking on an Authentic Journey with RealLives',
+      'Within the vast educational panorama, RealLives stands out as an agent of transformative change. By intertwining various authentic data sources into captivating simulations, it challenges educational norms. This platform beckons students to not just learn but to embark on an intricate global journey, seeing the intricate relationships shaping human narratives. With RealLives, education becomes an odyssey, an immersion, and a journey into global empathy-driven tales, fostering an enlightened, compassionate, and unified future generation.',
+    ],
+  };
+}
+
+function buildThirteenthArticle(siteKey) {
+  return {
+    id: `${siteKey}-bangkok-prep-empathy-global-citizenship-sustainable-generation`,
+    title:
+      'Empathy, Global Citizenship, and the Path to a Sustainable Generation: The Remarkable Journey of Bangkok Prep International School, Bangkok',
+    excerpt:
+      'A field narrative from Bangkok Prep showing how RealLives, SDG-centered culture, and visionary leadership can shape empathetic global citizens.',
+    category: 'Case Studies',
+    tags: ['Global Citizenship', 'Empathy', 'Sustainability'],
+    author: 'Parag Mankeekar',
+    authorRole:
+      "Co-Founder @ RealLives Foundation | RealLives Simulation, Edupreneur, 'Games for Good & Changemaking' advocator",
+    authorAvatar:
+      'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-newsletter-page/ceo-image.jpg',
+    publishedOn: 'September 27, 2023',
+    readTime: '10 min read',
+    readMinutes: 10,
+    imagePath:
+      'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-newsletter-page/article-13-bg.jpg',
+    content: [
+      "Roaring Through Ratchadamri: A Day with Bangkok's Moto-Taxis",
+      'Parag riding on bike taxi of Bangkok to reach Bangkok Prep International School.',
+      {
+        type: 'image',
+        src: 'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-newsletter-page/article-13-img-1.png',
+        alt: 'Parag riding a Bangkok moto-taxi through city traffic',
+      },
+      'At 7 a.m., with the first light of dawn reflecting off the Chao Phraya River, I found myself stepping out of my hotel, the ambient sounds of Bangkok waking up all around me. I had an important engagement: a visit to Bangkok Prep School. Instead of opting for a conventional taxi or navigating the public transport maze, I chose a more thrilling commute. I hailed down Arun, a moto-taxi driver. With his bright orange vest and the promise of a swift ride through the city\'s labyrinthine roads, I knew I was in for an authentic Bangkok experience.',
+      `The symphony of Bangkok's streets isn't complete without the distinctive hum of motorcycle engines. While tuk-tuks and buses have their charm, it's the fearless motorcycle bikers, or "moto-taxis," that truly capture the city's pulsating energy.`,
+      "Arun is one of Bangkok's many moto-taxi drivers. Sporting a vibrant orange vest, he's a knight of the roads, ready to dart through Bangkok's notorious traffic. As dawn paints the city's skyline, Arun's motorcycle roars to life, eager for the adventures of the day.",
+      'Bangkok Prep: Shaping Future Global Leaders',
+      "Bangkok Prep, formally known as Bangkok International Preparatory & Secondary School, stands as a beacon of educational excellence in the heart of Thailand's vibrant capital. With a rich tapestry of diverse students hailing from various corners of the globe, the school offers a comprehensive international curriculum that seamlessly blends rigorous academic standards with a wide array of co-curricular activities. At its core, Bangkok Prep values holistic development, fostering not only intellectual growth but also emotional, social, and ethical well-being. The state-of-the-art campus facilities complement an environment where critical thinking, creativity, and global awareness are nurtured, producing well-rounded individuals poised to face the challenges of our ever-evolving world. Through its commitment to excellence and its drive to cultivate an inclusive community, Bangkok Prep is truly shaping the global leaders of tomorrow.",
+      {
+        type: 'image',
+        src: 'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-newsletter-page/article-13-img-2.jpg',
+        alt: 'Bangkok Prep International Preparatory and Secondary School exterior',
+      },
+      "Bangkok Prep's Reception: A Gateway to Global Stewardship and Sustainability",
+      'The School Reception greets visitors with UN SDGs.',
+      {
+        type: 'image',
+        src: 'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-newsletter-page/article-13-img-3.jpg',
+        alt: 'Bangkok Prep reception area displaying UN SDG icons',
+      },
+      "Nestled prominently in the school's reception area, visitors are immediately greeted by the vibrant icons of the United Nations' Sustainable Development Goals (SDGs). This deliberate showcase serves not merely as decoration, but as a profound statement of Bangkok Prep's ethos. It tells every guest, student, and educator that this institution is forward-thinking, committed to cultivating a global mindset, and fervently believes in a sustainable future. The SDGs at the entrance set the tone, emphasizing that Bangkok Prep isn't just preparing students for academic excellence, but for global stewardship and responsible leadership in the face of tomorrow's challenges.",
+      "Empathy in Education: Introducing RealLives to Bangkok Prep's Vision for the Future",
+      "The landscape of global education is ever-evolving, with new tools and pedagogies offering innovative ways to impart knowledge and values. As someone deeply embedded in this space, Dr. Parag Mankeekar, Co-Founder of RealLives Foundation, was recently given the privilege to share insights at Bangkok Prep. Invited to deliver a keynote speech and subsequently engage in a hands-on workshop with the educators, I introduced RealLives simulation game's potential - a tool that offers revolutionary educational pedagogy through gamified world statistical data.",
+      'Parag, RealLives Foundation, interacting with students.',
+      {
+        type: 'image',
+        src: 'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-newsletter-page/article-13-img-4.jpg',
+        alt: 'Parag presenting RealLives keynote session to students in an auditorium',
+      },
+      "The primary objective was to explore how RealLives could complement Bangkok Prep's vision and further its mission of preparing students for the challenges and opportunities of the 21st century.",
+      "Embracing the Vision: Bangkok Prep's Holistic Approach",
+      "From the outset, it's clear that Bangkok Prep does not merely aim to educate but to instill a deep-seated ethos of global citizenship among its students. This is where the alignment with RealLives becomes almost serendipitous.",
+      'RealLives offers users the opportunity to virtually live thousands of diverse lives across the globe. In doing so, it promotes empathy, global understanding, and a real sense of interconnectedness - values that Bangkok Prep champions daily. By introducing students to varied global perspectives, both the school and RealLives empower them to think beyond their immediate environment and seek solutions to global challenges.',
+      "Mrs Patrada Yomnak, the Chairman of Bangkok Prep and an ex-teacher herself, with Ms. Varistha, happily showing SDGs in one of the school's lobbies.",
+      {
+        type: 'image',
+        src: 'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-newsletter-page/article-13-img-5.jpg',
+        alt: 'Mrs Patrada Yomnak and Ms Varistha with SDG wall display',
+      },
+      'The school library where SDGs are prominently displayed.',
+      {
+        type: 'image',
+        src: 'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-newsletter-page/article-13-img-6.jpg',
+        alt: 'Bangkok Prep library interior with SDG visual references',
+      },
+      "Within Bangkok Prep, the commitment to these values is not just theoretical. The United Nations' Sustainable Development Goals (SDGs) are represented throughout the campus - from classrooms and libraries to even the lifts - reminding students of their broader responsibilities as global citizens.",
+      'Revolutionizing Pedagogy with RealLives',
+      "Merging the dynamic interactive experiences of RealLives with Bangkok Prep's curriculum can lead to transformative educational outcomes. Students can immerse themselves in global narratives, fostering a profound sense of empathy and global citizenship. This approach can challenge them to think creatively and innovatively, traits that are essential in addressing the multifaceted challenges of our modern world.",
+      'Leadership with a Vision',
+      "The synergy between Bangkok Prep and RealLives is further strengthened by the school's visionary leadership. Director Mr. Duncan Stonehouse, with his disruptive mindset from the corporate realm, aligns perfectly with the innovative spirit of RealLives. His ambition to re-envision the traditional school paradigm to groom future-ready global leaders resonates deeply with the ethos of the simulation game.",
+      'Furthermore, the inclusion of Ms. Varistha Nakornthap-Yomnak, who worked with Ashoka Innovators for the public organisation in Thailand, solidifies the school\'s commitment to changemaking and empathy, attributes at the core of RealLives.',
+      'Ms. Varistha showing proudly how they have used every possible place in the school to endorse the vision and values for their students as well as visitors like me.',
+      {
+        type: 'image',
+        src: 'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-newsletter-page/article-13-img-7.jpg',
+        alt: 'Ms Varistha presenting values and culture visuals at Bangkok Prep',
+      },
+      'Ms. Varistha describing the school sustainability vision plan.',
+      {
+        type: 'image',
+        src: 'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-newsletter-page/article-13-img-8.jpg',
+        alt: 'Ms Varistha standing beside Bangkok Prep sustainability vision board',
+      },
+      'Integrating Global Insights: The RealLives Teacher Workshop at Bangkok Prep',
+      'Dr. Parag Mankeekar, Co-Founder of RealLives Foundation, leading the teacher workshop.',
+      {
+        type: 'image',
+        src: 'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-newsletter-page/article-13-img-9.jpg',
+        alt: 'Dr Parag Mankeekar leading RealLives workshop with Bangkok Prep teachers',
+      },
+      "Ms. Varistha brought her perspective to the teacher workshop as she herself experienced RealLives, sharing her character's story and learning insights with teachers.",
+      'During the teacher workshop at Bangkok Prep, educators were introduced to the dynamic world of the RealLives simulation. Each participant teacher was granted access to this immersive platform, allowing them to virtually live diverse lives from various global contexts. As they navigated through these simulated experiences, a profound discussion ensued, drawing parallels between the nuanced lessons of RealLives and the overarching vision of Bangkok Prep.',
+      'A consensus emerged: the educators recognized the invaluable potential of RealLives as a pedagogical tool. They appreciated its capacity to deliver unique, eye-opening experiences about global realities, effectively bridging classroom instruction with real-world complexities. Most teachers agreed that such a tool could significantly enhance their curriculum, enabling students to foster a deeper understanding and empathy toward global challenges and diversities. I must also mention teacher Dan O\'Shea, an English and Drama teacher at Bangkok Prep School.',
+      'The First of its Kind',
+      "Bangkok Prep's dedication reflects a pioneering fresh educational paradigm. As the institution leads the way in the ASEAN region, its mission is crystal clear: to transition from the last generation perpetuating existing challenges to the first generation that embodies sustainability.",
+      'Education, in this brave new world, is more than just the absorption of information.',
+      "Bangkok Prep's partnership with RealLives signals a new horizon in global education. Their combined vision showcases the immense potential of innovative pedagogies in cultivating a generation primed to face the challenges of the future. Through collaboration, vision, and unwavering dedication, we can indeed shape a world where students are not just learners but changemakers, ready to redefine the future.",
+    ],
+  };
+}
+
 export const newslettersContent = {
   school: {
     heading: 'Newsletters for Schools',
@@ -583,6 +815,9 @@ export const newslettersContent = {
       buildEighthArticle('school'),
       buildNinthArticle('school'),
       buildTenthArticle('school'),
+      buildEleventhArticle('school'),
+      buildTwelfthArticle('school'),
+      buildThirteenthArticle('school'),
     ],
   },
   university: {
@@ -607,6 +842,9 @@ export const newslettersContent = {
       buildEighthArticle('university'),
       buildNinthArticle('university'),
       buildTenthArticle('university'),
+      buildEleventhArticle('university'),
+      buildTwelfthArticle('university'),
+      buildThirteenthArticle('university'),
     ],
   },
   homeschooler: {
@@ -631,6 +869,9 @@ export const newslettersContent = {
       buildEighthArticle('homeschooler'),
       buildNinthArticle('homeschooler'),
       buildTenthArticle('homeschooler'),
+      buildEleventhArticle('homeschooler'),
+      buildTwelfthArticle('homeschooler'),
+      buildThirteenthArticle('homeschooler'),
     ],
   },
 };
