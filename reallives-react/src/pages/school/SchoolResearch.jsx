@@ -3,8 +3,10 @@ import { Link } from 'react-router-dom';
 import CTABanner from '@components/common/CTABanner/CTABanner';
 import { useSiteContent } from '@hooks/useSiteContent';
 import styles from './SchoolResearch.module.css';
+import { useNavigate } from "react-router-dom";
 
 function ResearchCard({ item, labels, exploreText, isExpanded, onActivate, onExploreClick }) {
+   const navigate = useNavigate();
   const activate = () => onActivate();
 
   const onKeyDown = (e) => {
@@ -42,18 +44,19 @@ function ResearchCard({ item, labels, exploreText, isExpanded, onActivate, onExp
           <p className={styles.fieldLabel}>{labels.whatWasStudied}</p>
           <p className={styles.fieldValue}>{item.whatWasStudied}</p>
         </div>
-        <button
-        
-          type="button"
-          className={styles.exploreBtn}
-          onClick={(e) => {
-            e.stopPropagation();
-            onExploreClick(item.id);
-          }}
-        >
-          {exploreText}
-          <span aria-hidden="true">→</span>
-        </button>
+
+         <button
+      type="button"
+      className={styles.exploreBtn}
+      onClick={(e) => {
+        e.stopPropagation();
+        navigate(item.detail.route); // ✅ ROUTE OPEN
+      }}
+    >
+      {exploreText}
+      <span aria-hidden="true">→</span>
+    </button>
+
       </div>
     </article>
   );

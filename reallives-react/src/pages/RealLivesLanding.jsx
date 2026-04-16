@@ -106,10 +106,11 @@ export default function RealLivesLanding() {
       </header>
 
       <section className={styles.carouselSection}>
+
         <div className={styles1.container_new_home}>
-          <div
-            className={`${styles1.outer_first_home_new} ${currentIndex === 0 ? styles1.slide_active : styles1.card_none}`}
-          >
+
+
+          <div className={`${styles1.outer_first_home_new} ${currentIndex === 0 ? styles1.slide_active : styles1.card_none}`}>
             <div className={styles1.inner_top_home_label}>
               <div className={styles1.manrope_text}>RealLives Builds</div>
               <div className={styles1.manrope_text}>21st Century Skills</div>
@@ -122,25 +123,8 @@ export default function RealLivesLanding() {
             </div>
           </div>
 
-          {/* <div className={`${styles1.outer_first_home_new} ${styles1.card_none}`} >
-
-            
-
-            <div className={styles1.inner_top_home_label}>
-              <div className={styles1.manrope_text}>RealLives Builds</div>
-              <div className={styles1.manrope_text}>21st Century Skills</div>
-            </div>
-
-            <div className={styles1.inner_mid_home_label}>
-              <div className={styles1.icon_rl_mid}>
-                <img src={rl_mid_logo} alt="RealLives Logo  " />
-              </div>
-            </div>
-
-
-          </div> */}
-
-          {/* <div className={`${styles1.pdf_container_home_new} ${styles1.card_none}`} >
+        
+          <div className={` ${styles1.pdf_container_home_new}  ${currentIndex === 1 ? styles1.slide_active : styles1.card_none}`} >
             <div className={styles1.inner_top_home_label}>
               <div className={styles1.manrope_text}>Powerful Learning,</div>
               <div className={styles1.manrope_text}>
@@ -164,7 +148,7 @@ export default function RealLivesLanding() {
                   </span>
 
                   <Link
-                    to="/reallives/school/research"
+                    to="/reallives/school/Research_Card1"
                     className={`${styles1.manrope_text} ${styles1.view_paper_btn}`}
                   >
                     View Paper
@@ -195,7 +179,7 @@ export default function RealLivesLanding() {
                   </span>
 
                   <Link
-                    to="/reallives/school/research"
+                    to="/reallives/school/Albany_University"
                     className={`${styles1.manrope_text} ${styles1.view_paper_btn}`}
                   >
                     View Paper
@@ -226,109 +210,7 @@ export default function RealLivesLanding() {
                   </span>
 
                   <Link
-                    to="/reallives/school/research"
-                    className={`${styles1.manrope_text} ${styles1.view_paper_btn}`}
-                  >
-                    View Paper
-                  </Link>
-                </div>
-
-                <div className={styles1.pdf_img_viwe}>
-                  <img src={therd_research_paper_1} alt="" />
-                </div>
-              </div>
-            </div>
-          </div> */}
-
-          <div
-            className={` ${styles1.pdf_container_home_new}  ${currentIndex === 1 ? styles1.slide_active : styles1.card_none}`}
-          >
-            <div className={styles1.inner_top_home_label}>
-              <div className={styles1.manrope_text}>Powerful Learning,</div>
-              <div className={styles1.manrope_text}>
-                Proven by Global Research
-              </div>
-            </div>
-
-            <div className={styles1.container_label_pdf_structure}>
-              <div className={styles1.label_card_new_str}>
-                <div className={styles1.head_view_logo_pdf}>
-                  <span className={styles1.icon_span_label_str}>
-                    <div className={styles1.icon_pdf_logo}>
-                      <img src={card_logo_university} alt="University Logo" />
-                    </div>
-
-                    <p
-                      className={`${styles1.manrope_text} ${styles1.title_card_text}`}
-                    >
-                      Korea University
-                    </p>
-                  </span>
-
-                  <Link
-                    to="/reallives/school/research"
-                    className={`${styles1.manrope_text} ${styles1.view_paper_btn}`}
-                  >
-                    View Paper
-                  </Link>
-                </div>
-
-                <div className={styles1.pdf_img_viwe}>
-                  <img src={card_banner_1} alt="" />
-                </div>
-              </div>
-
-              <div className={styles1.label_card_new_str}>
-                <div className={styles1.head_view_logo_pdf}>
-                  <span className={styles1.icon_span_label_str}>
-                    <div className={styles1.icon_pdf_logo}>
-                      <img
-                        className={styles1.image_fit}
-                        src={albany_university_logo_1}
-                        alt="Albany University Logo"
-                      />
-                    </div>
-
-                    <p
-                      className={`${styles1.manrope_text} ${styles1.title_card_text}`}
-                    >
-                      University at Albany
-                    </p>
-                  </span>
-
-                  <Link
-                    to="/reallives/school/research"
-                    className={`${styles1.manrope_text} ${styles1.view_paper_btn}`}
-                  >
-                    View Paper
-                  </Link>
-                </div>
-
-                <div className={styles1.pdf_img_viwe}>
-                  <img src={second_research_paper_1} alt="" />
-                </div>
-              </div>
-
-              <div className={styles1.label_card_new_str}>
-                <div className={styles1.head_view_logo_pdf}>
-                  <span className={styles1.icon_span_label_str}>
-                    <div className={styles1.icon_pdf_logo}>
-                      <img
-                        className={styles1.image_fit}
-                        src={uppsala_university_logo_1}
-                        alt="Uppsala University Logo"
-                      />
-                    </div>
-
-                    <p
-                      className={`${styles1.manrope_text} ${styles1.title_card_text}`}
-                    >
-                      Uppsala University
-                    </p>
-                  </span>
-
-                  <Link
-                    to="/reallives/school/research"
+                    to="/reallives/school/Uppsala_University"
                     className={`${styles1.manrope_text} ${styles1.view_paper_btn}`}
                   >
                     View Paper
@@ -342,49 +224,9 @@ export default function RealLivesLanding() {
             </div>
           </div>
 
-          {/* <div className={`${styles1.global_impact_container} ${styles1.card_none}`} >
-            <div className={styles1.inner_top_home_label}>
-              <p className={styles1.manrope_text}>Our Global Impact</p>
-            </div>
+        
 
-            <div className={styles1.global_impact_banner_container}>
-              <div className={styles1.image_banner_label_box_new}>
-                <div className={styles1.outer_wrapper_image}>
-                  <img
-                    className={styles1.image_cover_style}
-                    src={mumbai_workshop_1}
-                    alt=""
-                  />
-                </div>
-
-                <p
-                  className={`${styles1.title_university_text_new} ${styles1.manrope_text}`}
-                >
-                  IIT Bombay, India
-                </p>
-              </div>
-
-              <div className={styles1.image_banner_label_box_new}>
-                <div className={styles1.outer_wrapper_image}>
-                  <img
-                    className={styles1.image_cover_style}
-                    src={eth_workshop_1}
-                    alt=""
-                  />
-                </div>
-
-                <p
-                  className={`${styles1.title_university_text_new} ${styles1.manrope_text}`}
-                >
-                  ETH Zürich, Switzerland
-                </p>
-              </div>
-            </div>
-          </div> */}
-
-          <div
-            className={` ${styles1.global_impact_container}  ${currentIndex === 2 ? styles1.slide_active : styles1.card_none}`}
-          >
+          <div className={` ${styles1.global_impact_container}  ${currentIndex === 2 ? styles1.slide_active : styles1.card_none}`} >
             <div className={styles1.inner_top_home_label}>
               <p className={styles1.manrope_text}>Our Global Impact</p>
             </div>
@@ -424,49 +266,9 @@ export default function RealLivesLanding() {
             </div>
           </div>
 
-          {/* <div className={`${styles1.global_impact_container} ${styles1.card_none}`} >
-            <div className={styles1.inner_top_home_label}>
-              <p className={styles1.manrope_text}>RealLives Worldwide Impact</p>
-            </div>
+         
 
-            <div className={styles1.global_impact_banner_container}>
-              <div className={styles1.image_banner_label_box_new}>
-                <div className={styles1.outer_wrapper_image}>
-                  <img
-                    className={styles1.image_cover_style}
-                    src={kyungeeh_university_workshop_1}
-                    alt=""
-                  />
-                </div>
-
-                <p
-                  className={`${styles1.title_university_text_new} ${styles1.manrope_text}`}
-                >
-                  Kyunghee University, Korea
-                </p>
-              </div>
-
-              <div className={styles1.image_banner_label_box_new}>
-                <div className={styles1.outer_wrapper_image}>
-                  <img
-                    className={styles1.image_cover_style}
-                    src={navamindradhiraj_university_workshop_1}
-                    alt=""
-                  />
-                </div>
-
-                <p
-                  className={`${styles1.title_university_text_new} ${styles1.manrope_text}`}
-                >
-                  Navamindradhiraj University, Thailand
-                </p>
-              </div>
-            </div>
-          </div> */}
-
-          <div
-            className={` ${styles1.global_impact_container} ${currentIndex === 3 ? styles1.slide_active : styles1.card_none}`}
-          >
+          <div className={` ${styles1.global_impact_container} ${currentIndex === 3 ? styles1.slide_active : styles1.card_none}`}>
             <div className={styles1.inner_top_home_label}>
               <p className={styles1.manrope_text}>RealLives Worldwide Impact</p>
             </div>
@@ -506,21 +308,9 @@ export default function RealLivesLanding() {
             </div>
           </div>
 
-          {/* <div className={`${styles1.global_impact_container} ${styles1.card_none}`}>
-            <div className={styles1.inner_top_home_label}>
-              <p className={styles1.manrope_text}>
-                The RealLives Learning Ecosystem
-              </p>
-            </div>
+          
 
-            <div className={styles1.image_banner_full_new}>
-              <img className="" src={banner_home_5_card} alt="" />
-            </div>
-          </div> */}
-
-          <div
-            className={`${styles1.global_impact_container} ${currentIndex === 4 ? styles1.slide_active : styles1.card_none}`}
-          >
+          <div className={`${styles1.global_impact_container} ${currentIndex === 4 ? styles1.slide_active : styles1.card_none}`} >
             <div className={styles1.inner_top_home_label}>
               <p className={styles1.manrope_text}>
                 The RealLives Learning Ecosystem
@@ -532,34 +322,9 @@ export default function RealLivesLanding() {
             </div>
           </div>
 
-          {/* <div className={`${styles1.global_impact_container_last} ${styles1.card_none}`} >
-            <div className={styles1.inner_top_home_label}>
-              <p className={styles1.manrope_text}>
-                Live Billions of Lives <br />
-                Across the World
-              </p>
-            </div>
+         
 
-            <div className={styles1.image_banner_full_new}>
-              <img
-                className={styles1.earth_style_hight}
-                src={earth_banner_image}
-                alt=""
-              />
-
-              <span className={styles1.overflay_data_text_image}>
-                <p>
-                  Every one gets a unique life story, shaped by <br />
-                  real-world data and statistics from over 193 countries. <br />
-                  No two journeys are ever the same.
-                </p>
-              </span>
-            </div>
-          </div> */}
-
-          <div
-            className={`${styles1.global_impact_container_last}  ${currentIndex === 5 ? styles1.slide_active : styles1.card_none}`}
-          >
+          <div className={`${styles1.global_impact_container_last}  ${currentIndex === 5 ? styles1.slide_active : styles1.card_none}`} >
             <div className={styles1.inner_top_home_label}>
               <p className={styles1.manrope_text}>
                 Live Billions of Lives <br />
@@ -610,6 +375,7 @@ export default function RealLivesLanding() {
 
             {/* <button className={`${styles1.step_into_stories_btn} ${styles1.manrope_text}`}>Step into RealLives Stories <MoveRight /></button> */}
           </div>
+
         </div>
 
         {/* <Carousel slides={carousel.slides} /> */}

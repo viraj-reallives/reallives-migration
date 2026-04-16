@@ -4,6 +4,8 @@ import CTABanner from '@components/common/CTABanner/CTABanner';
 import { useSiteContent } from '@hooks/useSiteContent';
 import styles from './SchoolImpact.module.css';
 import Style1 from "../../components/costom_css/SchoolImpact_override.module.css"
+import "swiper/css";
+import "swiper/css/navigation";
 
 const AUTO_MS = 5000;
 

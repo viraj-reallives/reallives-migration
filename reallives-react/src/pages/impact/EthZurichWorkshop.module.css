@@ -1,5 +1,680 @@
+
+*{
+    margin: 0px ;
+    padding: 0px;
+    box-sizing: border-box;
+}
 .eth_tab_conatiner{
     width: 100%;
-    height: 100vh;
-    background-color: lightblue;
+}
+
+.first_university_container {
+  width: 100vw;
+  padding: 3rem 3rem;
+  padding-top: 5rem;
+}
+
+.dark .first_university_container {
+  background-color: #121212;
+}
+
+.dark .btn_top_slider {
+  color: white;
+}
+
+.dark .text_data_content_1,
+.dark .text_data_content_1 > p {
+  color: white;
+}
+
+.dark .participants_title_text {
+  color: white;
+}
+
+.dark .color_btn_font {
+  color: black;
+}
+
+.dark .global_student_title {
+  color: #222222;
+}
+
+.dark .larne_more_btn {
+  background-color: white !important;
+}
+
+.dark .impact_description_slide {
+  color: #d7cdcd;
+}
+.slider_wrapper {
+  width: 100%;
+}
+
+.mySwiper {
+  width: 100%;
+  height: 80vh;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.swiperSlide {
+  width: 100%;
+  height: 100%;
+}
+
+.slider_img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.mySwiper :global(.swiper-button-next),
+.mySwiper :global(.swiper-button-prev) {
+  color: white !important;
+  /* background: rgba(0, 0, 0, 0.4) !important; */
+  width: 35px !important;
+  height: 35px !important;
+  border-radius: 50% !important;
+  display: flex !important;
+}
+
+.mySwiper :global(.swiper-button-next::after),
+.mySwiper :global(.swiper-button-prev::after) {
+  font-size: 18px !important;
+  font-weight: bold;
+}
+
+.top_slider_imapct_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem 1rem;
+}
+
+.impact_text_slide {
+  font-weight: 600;
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.impact_description_slide {
+  font-weight: 400;
+  font-size: 16px;
+  color: #555;
+}
+
+.larne_more_btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.section_flex_button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn_top_slider {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+.active_color {
+  color: #0aaec5 !important;
+}
+
+.content_tab_container_imapct {
+  padding: 1rem 10rem;
+}
+
+.container_logo_box_impact {
+  padding: 1rem;
+}
+
+.sdg_container_imapct_tab {
+  height: 200px;
+  padding: 10px 10rem;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 1rem;
+}
+
+.student_testimonials_title {
+  font-weight: 400;
+  font-size: 28px;
+  color: #0aaec6;
+  text-align: start;
+}
+
+.grid_sdg_card_imapct {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 1rem;
+}
+
+.first_tab_style {
+  padding: 10px 9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.impact_left_data_box {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.student_testimonials_title {
+  font-weight: 400;
+  font-size: 28px;
+  color: #0aaec6;
+  text-align: start;
+}
+
+.text_data_content_1 {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  color: black;
+  text-align: start;
+}
+
+.text_data_content_1 > p {
+  width: 100%;
+  text-align: justify;
+  line-height: 27px;
+}
+
+.span_imapct_colume {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-left: 9rem;
+}
+
+.participants_title_text {
+  font-weight: 400;
+  font-size: 20px;
+  color: #444444;
+  text-align: start;
+}
+
+.wapper_show_btn {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.color_btn_font {
+  font-weight: 400;
+  font-size: 18px;
+  color: #000000;
+  background-color: #f9c1a5;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  padding: 0.6rem 1rem;
+}
+
+.empathy_btn_color {
+  background-color: #caecf1 !important;
+}
+
+.wrapper_footer_tab_padding {
+  padding: 0rem 9rem;
+}
+
+.first_tab_margin {
+  margin-top: 1.3rem;
+}
+.card_reallives_campus_box {
+  background-color: #feecba;
+  padding: 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.global_student_title {
+  font-weight: 400;
+  font-size: 24px;
+  color: black;
+  text-align: center;
+}
+
+.larne_more_btn {
+  width: max-content;
+  padding: 0.5rem 0.6rem;
+  font-weight: 400;
+  font-size: 18px;
+  color: #444444;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  outline: none;
+  border-radius: 6px;
+  background-color: transparent;
+  background-color: white !important;
+  border: none;
+}
+
+.university_text_title {
+  font-weight: 400;
+  font-size: 24px;
+  color: black;
+  text-align: start;
+}
+
+.span_imapct_colume_2 {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.participants_title_text {
+  font-weight: 400;
+  font-size: 20px;
+  color: #444444;
+  text-align: start;
+}
+
+.flex_align_start {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.wrapper_professior_data {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-left: 10rem;
+  margin-top: 10px;
+  margin-bottom: 1.2rem;
+}
+
+.dark .university_text_title {
+  color: white;
+}
+
+@media (max-width: 1368px) {
+  .wrapper_professior_data {
+    padding-left: 1rem;
+  }
+  .content_tab_container_imapct {
+    padding: 1rem 0rem;
+  }
+  .sdg_container_imapct_tab {
+    padding: 10px 1rem;
+  }
+  .first_tab_style {
+    padding: 10px 1rem;
+  }
+  .span_imapct_colume {
+    padding-left: 2rem;
+  }
+  .wrapper_footer_tab_padding {
+    padding: 0rem 1rem;
+  }
+}
+
+@media (max-width: 1280px) {
+  .wrapper_professior_data {
+    padding-left: 1rem;
+  }
+  .content_tab_container_imapct {
+    padding: 1rem 0rem;
+  }
+  .sdg_container_imapct_tab {
+    padding: 10px 1rem;
+  }
+  .first_tab_style {
+    padding: 10px 1rem;
+  }
+  .span_imapct_colume {
+    padding-left: 2rem;
+  }
+  .wrapper_footer_tab_padding {
+    padding: 0rem 8rem;
+  }
+}
+
+@media (max-width: 1180px) {
+  .wrapper_professior_data {
+    padding-left: 1rem;
+  }
+  .content_tab_container_imapct {
+    padding: 1rem 0rem;
+  }
+  .sdg_container_imapct_tab {
+    padding: 10px 1rem;
+  }
+  .first_tab_style {
+    padding: 10px 1rem;
+  }
+  .span_imapct_colume {
+    padding-left: 2rem;
+  }
+  .wrapper_footer_tab_padding {
+    padding: 0rem 3rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .impact_left_data_box {
+    padding: 0px;
+  }
+
+  .container_logo_box_impact > img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .first_university_container {
+    padding: 1.5rem 1rem;
+    padding-top: 5rem;
+  }
+
+  .mySwiper {
+    height: 55vh;
+  }
+
+  .content_tab_container_imapct {
+    padding: 0.75rem 1rem;
+  }
+
+  .sdg_container_imapct_tab {
+    padding: 10px 0rem;
+  }
+
+  .first_tab_style {
+    padding: 10px 0rem;
+  }
+
+  .span_imapct_colume {
+    padding-left: 0rem;
+  }
+
+  .wrapper_footer_tab_padding {
+    padding: 0rem 0rem;
+  }
+
+  .grid_sdg_card_imapct {
+    display: flex;
+    align-items: center;
+  }
+
+  .grid_sdg_card_imapct img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .student_testimonials_title {
+    font-size: 24px;
+  }
+
+  .participants_title_text {
+    font-size: 19px;
+  }
+
+  .btn_top_slider {
+    font-size: 17px;
+  }
+
+  .section_flex_button {
+    font-size: 17px;
+  }
+
+  .color_btn_font {
+    font-size: 17px;
+  }
+
+  .text_data_content_1 > p {
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  .global_student_title {
+    font-size: 22px;
+  }
+
+  .larne_more_btn {
+    font-size: 17px;
+    padding: 0.4rem 0.5rem;
+  }
+
+  .card_reallives_campus_box {
+    padding: 1rem 0.75rem;
+  }
+
+  .wapper_show_btn {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .wrapper_professior_data {
+    padding-left: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .university_text_title {
+    font-size: 22px;
+  }
+
+  .wrapper_professior_data {
+    padding-left: 0rem;
+  }
+
+  .impact_left_data_box {
+    padding: 0px;
+  }
+
+  .container_logo_box_impact > img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .first_university_container {
+    padding: 1.5rem 1rem;
+    padding-top: 5rem;
+  }
+
+  .mySwiper {
+    height: 42vh;
+  }
+
+  .content_tab_container_imapct {
+    padding: 0.75rem 1rem;
+  }
+
+  .sdg_container_imapct_tab {
+    padding: 10px 0rem;
+  }
+
+  .first_tab_style {
+    padding: 10px 0rem;
+  }
+
+  .span_imapct_colume {
+    padding-left: 0rem;
+  }
+
+  .wrapper_footer_tab_padding {
+    padding: 0rem 0rem;
+  }
+
+  .grid_sdg_card_imapct {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .grid_sdg_card_imapct img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .student_testimonials_title {
+    font-size: 20px;
+  }
+
+  .participants_title_text {
+    font-size: 17px;
+  }
+
+  .btn_top_slider {
+    font-size: 15px;
+  }
+
+  .section_flex_button {
+    font-size: 15px;
+  }
+
+  .color_btn_font {
+    font-size: 15px;
+  }
+
+  .text_data_content_1 > p {
+    font-size: 15px;
+    line-height: 24px;
+  }
+
+  .global_student_title {
+    font-size: 19px;
+  }
+
+  .larne_more_btn {
+    font-size: 15px;
+    padding: 0.4rem 0.5rem;
+  }
+
+  .card_reallives_campus_box {
+    padding: 1rem 0.75rem;
+  }
+
+  .wapper_show_btn {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .university_text_title {
+    font-size: 18px;
+  }
+
+  .wrapper_professior_data {
+    padding-left: 0rem;
+  }
+
+  .impact_left_data_box {
+    padding: 0px;
+  }
+
+  .container_logo_box_impact > img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .first_university_container {
+    padding: 1.5rem 1rem;
+    padding-top: 5rem;
+  }
+
+  .mySwiper {
+    height: 28vh;
+  }
+
+  .content_tab_container_imapct {
+    padding: 0.75rem 1rem;
+  }
+
+  .sdg_container_imapct_tab {
+    padding: 10px 0rem;
+  }
+
+  .first_tab_style {
+    padding: 10px 0rem;
+  }
+
+  .span_imapct_colume {
+    padding-left: 0rem;
+  }
+
+  .wrapper_footer_tab_padding {
+    padding: 0rem 0rem;
+  }
+
+  .grid_sdg_card_imapct {
+    display: flex;
+    align-items: center;
+  }
+
+  .grid_sdg_card_imapct img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .student_testimonials_title {
+    font-size: 17px;
+  }
+
+  .participants_title_text {
+    font-size: 15px;
+  }
+
+  .btn_top_slider {
+    font-size: 13px;
+  }
+
+  .section_flex_button {
+    font-size: 13px;
+  }
+
+  .color_btn_font {
+    font-size: 13px;
+  }
+
+  .text_data_content_1 > p {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .global_student_title {
+    font-size: 17px;
+  }
+
+  .larne_more_btn {
+    font-size: 14px;
+    padding: 0.4rem 0.5rem;
+  }
+
+  .card_reallives_campus_box {
+    padding: 1rem 0.75rem;
+  }
+
+  .wapper_show_btn {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
 }

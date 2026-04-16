@@ -512,7 +512,7 @@ export const schoolContent = {
         imagePath: 'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-impact-page/second-workshop.png',
         university: 'Navamindradhiraj University , Bangkok',
         department: 'Department - General Education',
-        collaborationLabel: 'In collaboration with :',
+        collaborationLabel: 'In collaboration with',
         collaborationName: 'Lecturer Krittanan Pensirisomboon',
         participantsLabel: 'Participants :',
         participantsNumber: '150',
@@ -538,6 +538,8 @@ export const schoolContent = {
         skillsDevelopedLabel: 'Skills Developed',
         skills: ['SDG Awareness', 'ChangeMaking'],
         learnMoreText: 'Learn more',
+        learnMorePath: '/reallives/school/KyungheeUniversity'
+        
       },
       {
         title: 'IIT Bombay Exploring SDG 1 through Empathy Workshop',
@@ -554,6 +556,8 @@ export const schoolContent = {
         skillsDevelopedLabel: 'Skills Developed',
         skills: ['SDG Awareness', 'Social Entrepreneurship'],
         learnMoreText: 'Learn more',
+        learnMorePath: '/reallives/school/IIT_Bombay_University'
+
       },
       {
         title: 'Chulalongkorn University Workshop',
@@ -570,6 +574,8 @@ export const schoolContent = {
         skillsDevelopedLabel: 'Skills Developed',
         skills: ['Empathy', 'SDG Awareness', 'Critical Thinking'],
         learnMoreText: 'Learn more',
+        learnMorePath: '/reallives/school/Chulalongkorn_University'
+
       },
     ],
   },
@@ -617,6 +623,7 @@ export const schoolContent = {
           methods:
             'Qualitative coding, language network analysis, topic modeling (NetMiner)',
           pdfPath: '/assets/documents/school/pdf/Kwon etal_2025_RealLives in HE class-2.pdf',
+          route: "/reallives/school/Research_Card1"
         },
       },
       {
@@ -641,6 +648,7 @@ export const schoolContent = {
           methods:
             'Conceptual examination of statistics, simulation, and educational game design. Interpretive analysis rather than empirical experimentation or user studies.',
           pdfPath: '/assets/documents/school/pdf/uwe-bristol.pdf',
+          route: "/reallives/school/UaeBristol"
         },
       },
       {
@@ -670,7 +678,9 @@ export const schoolContent = {
           methods:
             'Quasi-experimental classroom study. Participants: 301 high school students from three Northern California schools',
           pdfPath: '/assets/documents/school/pdf/Santa Clara University.pdf',
+           route: "/reallives/school/Santa_Clara"
         },
+        
       },
       {
         id: 'research2-content-4',
@@ -697,7 +707,9 @@ export const schoolContent = {
           methods:
             'Quasi-experimental classroom study. Participants: 301 high school students from three Northern California schools',
           pdfPath: '/assets/documents/school/pdf/albany.pdf',
+          route: "/reallives/school/Albany_University"
         },
+      
       },
       {
         id: 'research2-content-6',
@@ -726,6 +738,7 @@ export const schoolContent = {
           methods:
             'Quasi-experimental classroom study with secondary school students (ages 14–19). Participants played the Real Lives simulation, experiencing life as migrants from MENA regions.',
           pdfPath: '/assets/documents/school/pdf/ThomasNygrenResearchPaper-1.pdf',
+          route: "/reallives/school/Uppsala_University"
         },
       },
       {
@@ -752,7 +765,9 @@ export const schoolContent = {
           methods:
             'Descriptive mixed-methods study\u00a0combining qualitative and quantitative data. Analysis of\u00a063 simulated lives\u00a0played by 13 low-income, urban adolescents.',
           pdfPath: '/assets/documents/school/pdf/Kallen Tsikalas.pdf',
+           route: "/reallives/school/Individual_Research"
         },
+        
       },
     ],
     detailPanelLabels: {
