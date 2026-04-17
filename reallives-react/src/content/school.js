@@ -804,7 +804,7 @@ export const schoolContent = {
           ],
           methods:
             'Applied use of interactive simulation (RealLives) within a multicultural education context, combined with reflective frameworks (ChangeMaker Index). Experiential learning approach supported by observation of participant engagement and qualitative interpretation of learning outcomes.',
-          pdfPath: '/assets/documents/school/pdf/Kallen Tsikalas.pdf',
+          pdfPath: 'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/pdfs/RealLives-Foundation-Kame-Seoul-Korea.pdf',
            route: "/reallives/school/Kame_Research"
         },
         
