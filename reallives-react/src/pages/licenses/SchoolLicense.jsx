@@ -12,6 +12,7 @@ import Realboard_pricing_logo from "../../add-image/realboard.svg";
 
 function IncludedPanel() {
   return (
+    
     <aside
       className={`${styles.includedPanel} ${Style1.includedPanel_override_style}`}
       aria-label="What’s Included"
@@ -19,6 +20,8 @@ function IncludedPanel() {
       <h2 className={`${styles.includedTitle} ${Style1.color_cccccc}`}>
         What’s Included
       </h2>
+
+
 
       <p className={`${styles.includedDescription} ${Style1.color_cccccc}`}>
         All plans include the same core features. No hidden costs. Complete
@@ -28,6 +31,7 @@ function IncludedPanel() {
       <ul className={`${styles.includedList} ${Style1.includedList_override_style}`}>
 
         <li className={styles.includedItem}>
+
           <span className={Style1.box_product_container}>
 
             <div className={`${styles.includedItemTop} ${Style1.flex_center_gap_10px}`}>
@@ -43,8 +47,9 @@ function IncludedPanel() {
                 RealLives<br />Simulator
               </p>
             </div>
+           
 
-            <p className={styles.includedItemDesc}>
+            <p className={`${styles.includedItemDesc}  ${Style1.color_cccccc}` }>
               Live full life journeys across 193 countries, powered by
               real-world data and linked to UN SDGs. Build empathy through
               authentic global experiences.
@@ -66,7 +71,7 @@ function IncludedPanel() {
                 RealLives ChangeMaker <br /> Index
               </p>
             </div>
-            <p className={styles.includedItemDesc}>
+            <p className={`${styles.includedItemDesc} ${Style1.color_cccccc}`}>
               An advanced personality tracker measuring 18 competencies and
               generating a personalised ChangeMaker report based on your
               choices.
@@ -74,6 +79,7 @@ function IncludedPanel() {
           </div>
         </li>
 
+      
         <li className={styles.includedItem}>
           <span className={Style1.box_product_container}>
 
@@ -88,13 +94,14 @@ function IncludedPanel() {
                 Empathy Canvas
               </p>
             </div>
-            <p className={styles.includedItemDesc}>
+            <p className={`${styles.includedItemDesc}  ${Style1.color_cccccc}`}>
               Reflect on key life moments, capture insights, and deepen
               understanding through guided emotional reflections.
             </p>
           </span>
         </li>
 
+         
         <li className={styles.includedItem}>
           <span className={Style1.box_product_container}>
 
@@ -110,7 +117,7 @@ function IncludedPanel() {
               </p>
             </div>
 
-            <p className={styles.includedItemDesc}>
+            <p className={`${styles.includedItemDesc} ${Style1.color_cccccc}`}>
               A private social network for schools that boosts student
               collaboration, communication, and shared learning.
             </p>
@@ -131,7 +138,7 @@ function IncludedPanel() {
               </p>
             </div>
 
-            <p className={styles.includedItemDesc}>
+            <p className={`${styles.includedItemDesc} ${Style1.color_cccccc} `}>
               Live full life journeys across 193 countries, powered by
               real-world data and linked to UN SDGs. Build empathy through
               authentic global experiences.
@@ -173,13 +180,13 @@ export default function SchoolLicense() {
       <div className={`${styles.container} ${Style1.container_override_style}`}>
         <header className={styles.header}>
           <h1 className={styles.title}>{content.title}</h1>
-          <p className={styles.subtitle}>{content.description}</p>
+          <p className={`${styles.subtitle} ${Style1.color_cccccc}`}>{content.description}</p>
         </header>
 
         <div className={styles.topBackRow}>
           <button
             type="button"
-            className={styles.topBackBtn}
+            className={`${styles.topBackBtn} ${Style1.color_cccccc}`}
             onClick={() => navigate("/reallives/licenses")}
           >
             ← Back to Licenses

@@ -608,6 +608,7 @@ export const schoolContent = {
           'Evaluation of RealLives Simulation as a game-based empathy education tool for high school and university learners',
         logoPath:
           'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/Korea-university.svg',
+        disableCardClick: true,
         detail: {
           heroImagePath:
             'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/research-image.png',
@@ -634,6 +635,7 @@ export const schoolContent = {
           'How probabilistic life modeling influences learning, empathy, and understanding of global inequality.',
         logoPath:
           'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/uwe-bristol-img.svg',
+           disableCardClick: true,
         detail: {
           heroImagePath:
             'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/University-West-of-England.svg',
@@ -660,9 +662,10 @@ export const schoolContent = {
           'How probabilistic life modeling influences learning, empathy, and understanding of global inequality.',
         logoPath:
           'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/Santa-clara-university.svg',
+           disableCardClick: true,
         logoCaption: 'Santa Clara University',
         detail: {
-          heroImagePath: '/assets/images/school/image/Santa-university-png.png',
+          heroImagePath: 'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/Santa-university-png.png',
           heroTitle:
             'Simulating REAL LIVES: Promoting Global Empathy and Interest in Learning Through Simulation Games',
           heroSubtitle:
@@ -691,8 +694,9 @@ export const schoolContent = {
           'How probabilistic life modeling influences learning, empathy, and understanding of global inequality.',
         logoPath:
           'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/University-Albany.svg',
+           disableCardClick: true,
         detail: {
-          heroImagePath: '/assets/images/school/image/University-albany-png.png',
+          heroImagePath: 'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/University-albany-png.png',
           heroTitle:
             'Real Lives and the Problem of Distributive Justice Essay on video games, meritocracy, and justice',
           heroSubtitle:
@@ -711,6 +715,7 @@ export const schoolContent = {
         },
       
       },
+      
       {
         id: 'research2-content-6',
         paperTitle:
@@ -720,10 +725,12 @@ export const schoolContent = {
           'The study tested whether a migration simulation game (Real Lives) can improve students’ attitudes toward immigrants.',
         logoPath:
           'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/Uppsala_University_logo.svg-2.svg',
+          disableCardClick: true,
         logoCaption: 'Uppsala University Sweden',
         detail: {
           heroImagePath:
             'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/ALB1-scaled-1.png',
+
           heroTitle:
             'Gaining Tolerance of Immigrants through Simulating Migratory Experiences:',
           heroSubtitle:
@@ -741,7 +748,8 @@ export const schoolContent = {
           route: "/reallives/school/Uppsala_University"
         },
       },
-      {
+
+       {
         id: 'research2-content-5',
         paperTitle:
           'Computer-Based Life Simulations and Young Adolescents: Identity Exploration, Information Learning, and Sense-Making',
@@ -749,9 +757,11 @@ export const schoolContent = {
         whatWasStudied:
           'Evaluation of RealLives Simulation as a game-based empathy education tool for high school and university learners',
         heading: 'Individual Research by Kallen Tsikalas',
+        disableCardClick: true,
         detail: {
           heroImagePath:
             'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/Individual-Research-png.png',
+          
           heroTitle:
             'Computer-Based Life Simulations and Young Adolescents: Identity Exploration, Information Learning, and Sense-Making',
           heroSubtitle: 'How young adolescents learn while engaging in a computer-based life simulation.',
@@ -767,8 +777,39 @@ export const schoolContent = {
           pdfPath: '/assets/documents/school/pdf/Kallen Tsikalas.pdf',
            route: "/reallives/school/Individual_Research"
         },
+      },
+        {
+        id: 'research2-content-7',
+        paperTitle:
+          'Bridging Cultures: Immigration and Multicultural Education',
+        institution: 'RealLives Presented by Parag Mankeekar',
+        whatWasStudied:
+          'Use of RealLives simulation and the ChangeMaker Index as interactive tools to enhance multicultural education by enabling learners to experience diverse life scenarios and build empathy across cultures.',
+          heading: 'KAME 2025 Seoul Korea',
+        disableCardClick: true,
+        detail: {
+          heroImagePath:
+            'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/Individual-Research-png.png',
+          
+          heroTitle:
+            'Computer-Based Life Simulations and Young Adolescents: Identity Exploration, Information Learning, and Sense-Making',
+          heroSubtitle: 'How young adolescents learn while engaging in a computer-based life simulation.',
+          institution: 'Published as an individual academic research paper, mid-2000s',
+          whatWasStudied: 'How young adolescents learn while engaging in a computer-based life simulation.',
+          keyFindings: [
+            'Interactive life simulations like RealLives enable learners to experience diverse socio-economic realities, strengthening empathy and global perspective.',
+            'Simulation-based learning improves engagement by making abstract concepts like inequality and culture tangible.',
+            'Tools like the ChangeMaker Index help translate simulated experiences into measurable reflection and action.',
+              'Exposure to probabilistic life paths enhances understanding of systemic inequality rather than individual outcomes.',
+          ],
+          methods:
+            'Applied use of interactive simulation (RealLives) within a multicultural education context, combined with reflective frameworks (ChangeMaker Index). Experiential learning approach supported by observation of participant engagement and qualitative interpretation of learning outcomes.',
+          pdfPath: '/assets/documents/school/pdf/Kallen Tsikalas.pdf',
+           route: "/reallives/school/Kame_Research"
+        },
         
       },
+     
     ],
     detailPanelLabels: {
       paperTitle: 'Paper Title',

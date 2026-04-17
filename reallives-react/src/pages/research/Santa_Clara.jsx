@@ -1,14 +1,116 @@
-import React from 'react'
 import { useNavigate } from "react-router-dom";
+import { useSiteContent } from "@hooks/useSiteContent";
+import styles from "../school/SchoolResearch.module.css";
+import Style1 from "../../pages/research/Research_Card1.module.css";
 
 const Santa_Clara = () => {
-    const navigate = useNavigate(); 
-  return (
-    <div>
-        Santa_Clara
-        <button onClick={() => navigate("/reallives/school/research")}>Go Home</button>
-    </div>
-  )
-}
+  const navigate = useNavigate();
+  const { research } = useSiteContent();
 
-export default Santa_Clara
+  if (!research) return null;
+
+  // ✅ IMPORTANT: THIRD CARD ID
+  const item = research.items.find(
+    (i) => i.id === "research2-content-3"
+  );
+
+  if (!item || !item.detail) return null;
+
+  const d = item.detail;
+  const lb = research.detailPanelLabels;
+
+  return (
+    <div className={Style1.padding_research_container}>
+      <div className={styles.detailInner}>
+
+        {/* BACK BUTTON */}
+        <button
+          onClick={() => navigate("/reallives/school/research")}
+          className={`${styles.backBtn} ${Style1.back_btn_override}`}
+        >
+          ← {research.goBackText}
+        </button>
+
+        {/* HERO IMAGE */}
+        <div className={styles.detailHero}>
+          {d.heroImagePath && <img src={d.heroImagePath} alt="" />}
+          <div className={styles.detailHeroOverlay}>
+            {d.heroTitle && (
+              <h3 className={styles.detailHeroTitle}>{d.heroTitle}</h3>
+            )}
+            {d.heroSubtitle && (
+              <p className={styles.detailHeroSub}>{d.heroSubtitle}</p>
+            )}
+          </div>
+        </div>
+
+        {/* MAIN CONTENT */}
+        <div className={styles.detailMain}>
+          <div className={styles.detailGrid}>
+
+            {/* LEFT SIDE */}
+            <div>
+              <dl className={styles.detailDl}>
+                <div>
+                  <dt className={styles.detailDt}>{lb.paperTitle}</dt>
+                  <dd className={styles.detailDd}>{item.paperTitle}</dd>
+                </div>
+                <div>
+                  <dt className={styles.detailDt}>{lb.institution}</dt>
+                  <dd className={styles.detailDd}>{item.institution}</dd>
+                </div>
+                <div>
+                  <dt className={styles.detailDt}>{lb.whatWasStudied}</dt>
+                  <dd className={styles.detailDd}>
+                    {item.whatWasStudied}
+                  </dd>
+                </div>
+              </dl>
+            </div>
+
+            {/* RIGHT SIDE */}
+            <div>
+              {d.keyFindings?.length > 0 && (
+                <div>
+                  <p className={styles.detailColTitle}>
+                    {research.keyFindingsLabel}
+                  </p>
+                  <ul className={styles.findingsList}>
+                    {d.keyFindings.map((line, i) => (
+                      <li key={i}>{line}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {d.methods && (
+                <div className={styles.methodsBlock}>
+                  <p className={styles.detailColTitle}>
+                    {research.methodsLabel}
+                  </p>
+                  <p className={styles.methodsText}>{d.methods}</p>
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* PDF BUTTON */}
+          <div className={styles.detailActions}>
+            {d.pdfPath && research.readPaperText && (
+              <a
+                className={styles.pdfLink}
+                href={d.pdfPath}
+                download
+                rel="noopener noreferrer"
+              >
+                {research.readPaperText}
+              </a>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Santa_Clara;

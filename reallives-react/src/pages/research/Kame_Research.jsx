@@ -3,15 +3,13 @@ import { useSiteContent } from "@hooks/useSiteContent";
 import styles from "../school/SchoolResearch.module.css";
 import Style1 from "../../pages/research/Research_Card1.module.css";
 
-const Individual_Research = () => {
+const Kame_Research = () => {
   const navigate = useNavigate();
   const { research } = useSiteContent();
 
   if (!research) return null;
 
-  const item = research.items.find(
-    (i) => i.id === "research2-content-5"
-  );
+  const item = research.items.find((i) => i.id === "research2-content-7");
 
   if (!item || !item.detail) return null;
 
@@ -21,7 +19,6 @@ const Individual_Research = () => {
   return (
     <div className={Style1.padding_research_container}>
       <div className={styles.detailInner}>
-
         <button
           onClick={() => navigate("/reallives/school/research")}
           className={`${styles.backBtn} ${Style1.back_btn_override}`}
@@ -29,11 +26,12 @@ const Individual_Research = () => {
           ← {research.goBackText}
         </button>
 
+        {/* 🎯 HERO SECTION */}
         <div className={styles.detailHero}>
           {d.heroImagePath && <img src={d.heroImagePath} alt="" />}
           <div className={styles.detailHeroOverlay}>
             {d.heroTitle && (
-              <h3 className={`${styles.detailHeroTitle} ${Style1.Width_manage_class}`}>{d.heroTitle}</h3>
+              <h3 className={styles.detailHeroTitle}>{d.heroTitle}</h3>
             )}
             {d.heroSubtitle && (
               <p className={styles.detailHeroSub}>{d.heroSubtitle}</p>
@@ -41,9 +39,10 @@ const Individual_Research = () => {
           </div>
         </div>
 
+        {/* 📄 MAIN CONTENT */}
         <div className={styles.detailMain}>
           <div className={styles.detailGrid}>
-
+            {/* LEFT SIDE */}
             <div>
               <dl className={styles.detailDl}>
                 <div>
@@ -56,13 +55,12 @@ const Individual_Research = () => {
                 </div>
                 <div>
                   <dt className={styles.detailDt}>{lb.whatWasStudied}</dt>
-                  <dd className={styles.detailDd}>
-                    {item.whatWasStudied}
-                  </dd>
+                  <dd className={styles.detailDd}>{item.whatWasStudied}</dd>
                 </div>
               </dl>
             </div>
 
+            {/* RIGHT SIDE */}
             <div>
               {d.keyFindings?.length > 0 && (
                 <div>
@@ -87,12 +85,14 @@ const Individual_Research = () => {
               )}
             </div>
           </div>
+
+          {/* 📥 PDF LINK */}
           <div className={styles.detailActions}>
             {d.pdfPath && research.readPaperText && (
               <a
                 className={styles.pdfLink}
                 href={d.pdfPath}
-                download
+                target="_blank"
                 rel="noopener noreferrer"
               >
                 {research.readPaperText}
@@ -105,4 +105,4 @@ const Individual_Research = () => {
   );
 };
 
-export default Individual_Research;
+export default Kame_Research;

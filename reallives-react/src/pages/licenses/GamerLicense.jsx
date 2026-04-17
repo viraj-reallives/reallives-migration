@@ -4,82 +4,151 @@ import { licensesContent } from '@content/licenses';
 import LicenseTierCard from '@components/common/LicenseTierCard/LicenseTierCard';
 import Modal from '@components/common/Modal/Modal';
 import styles from './LicenseDetailPage.module.css';
+import Style1 from "../../pages/licenses/override_licences_css/LicenseHub_override.module.css";
+import Rcmi_pricing_logo from "../../add-image/RCMI-logo-pricing.svg";
+import Emapthy_pricing_logo from "../../add-image/empathy-logo-pricing.svg";
+import Rl_logo_pricing from "../../add-image/real-r-included.svg";
+import Realboard_pricing_logo from "../../add-image/realboard.svg";
 
 function IncludedPanel() {
   return (
-    <aside className={styles.includedPanel} aria-label="What’s Included">
-      <h2 className={styles.includedTitle}>What’s Included</h2>
-      <p className={styles.includedDescription}>
-        All plans include the same core features. No hidden costs. Complete transparency
+
+    <aside
+      className={`${styles.includedPanel} ${Style1.includedPanel_override_style}`}
+      aria-label="What’s Included"
+    >
+      <h2 className={`${styles.includedTitle} ${Style1.color_cccccc}`}>
+        What’s Included
+      </h2>
+
+
+
+      <p className={`${styles.includedDescription} ${Style1.color_cccccc}`}>
+        All plans include the same core features. No hidden costs. Complete
+        transparency
       </p>
 
-      <ul className={styles.includedList}>
+      <ul className={`${styles.includedList} ${Style1.includedList_override_style}`}>
+
         <li className={styles.includedItem}>
-          <div className={styles.includedItemTop}>
-            <div className={styles.includedIcon}>
-              <span aria-hidden="true">R</span>
+
+          <span className={Style1.box_product_container}>
+
+            <div className={`${styles.includedItemTop} ${Style1.flex_center_gap_10px}`}>
+
+              <div className={Style1.icon_row_box}>
+                <img
+                  src="https://res.cloudinary.com/dexw6sglh/image/upload/q_auto/f_auto/v1771840605/reallives-logo_v5cdkc.png"
+                  alt=""
+                />
+              </div>
+
+              <p className={`${styles.includedItemTitle} ${Style1.include_title_text}`}>
+                RealLives<br />Simulator
+              </p>
             </div>
-            <p className={styles.includedItemTitle}>RealLives Simulator</p>
-          </div>
-          <p className={styles.includedItemDesc}>
-            Live full life journeys across 193 countries, powered by real-world data and linked to UN
-            SDGs. Build empathy through authentic global experiences.
-          </p>
+           
+
+            <p className={`${styles.includedItemDesc}  ${Style1.color_cccccc}` }>
+              Live full life journeys across 193 countries, powered by
+              real-world data and linked to UN SDGs. Build empathy through
+              authentic global experiences.
+            </p>
+
+          </span>
         </li>
 
         <li className={styles.includedItem}>
-          <div className={styles.includedItemTop}>
-            <div className={`${styles.includedIcon} ${styles.includedIconPurple}`}>
-              <span aria-hidden="true">C</span>
+
+          <div className={Style1.box_product_container}>
+
+            <div className={`${styles.includedItemTop}  ${Style1.flex_center_gap_10px}`}>
+              <div className={Style1.icon_row_box}>
+                <img src={Rcmi_pricing_logo} alt="" />
+              </div>
+
+              <p className={`${styles.includedItemTitle} ${Style1.include_title_text}`}>
+                RealLives ChangeMaker <br /> Index
+              </p>
             </div>
-            <p className={styles.includedItemTitle}>RealLives ChangeMaker Index</p>
+            <p className={`${styles.includedItemDesc} ${Style1.color_cccccc}`}>
+              An advanced personality tracker measuring 18 competencies and
+              generating a personalised ChangeMaker report based on your
+              choices.
+            </p>
           </div>
-          <p className={styles.includedItemDesc}>
-            An advanced personality tracker measuring 18 competencies and generating a personalised
-            ChangeMaker report based on your choices.
-          </p>
         </li>
 
+      
         <li className={styles.includedItem}>
-          <div className={styles.includedItemTop}>
-            <div className={`${styles.includedIcon} ${styles.includedIconPink}`}>
-              <span aria-hidden="true">E</span>
+          <span className={Style1.box_product_container}>
+
+            <div className={`${styles.includedItemTop} ${Style1.flex_center_gap_10px}`}>
+              <div className={Style1.icon_row_box}>
+                <img src={Emapthy_pricing_logo} alt="" />
+              </div>
+
+              <p
+                className={`${styles.includedItemTitle} ${Style1.include_title_text}`}
+              >
+                Empathy Canvas
+              </p>
             </div>
-            <p className={styles.includedItemTitle}>Empathy Canvas</p>
-          </div>
-          <p className={styles.includedItemDesc}>
-            Reflect on key life moments, capture insights, and deepen understanding through guided
-            emotional reflections.
-          </p>
+            <p className={`${styles.includedItemDesc}  ${Style1.color_cccccc}`}>
+              Reflect on key life moments, capture insights, and deepen
+              understanding through guided emotional reflections.
+            </p>
+          </span>
         </li>
 
+         
         <li className={styles.includedItem}>
-          <div className={styles.includedItemTop}>
-            <div className={`${styles.includedIcon} ${styles.includedIconDeepTeal}`}>
-              <span aria-hidden="true">B</span>
+          <span className={Style1.box_product_container}>
+
+            <div className={`${styles.includedItemTop} ${Style1.flex_center_gap_10px}`}>
+              <div className={Style1.icon_row_box}>
+                <img src={Realboard_pricing_logo} alt="" />
+              </div>
+
+              <p
+                className={`${styles.includedItemTitle} ${Style1.include_title_text}`}
+              >
+                RealBoard
+              </p>
             </div>
-            <p className={styles.includedItemTitle}>RealBoard</p>
-          </div>
-          <p className={styles.includedItemDesc}>
-            A private social network for schools that boosts student collaboration, communication, and
-            shared learning.
-          </p>
+
+            <p className={`${styles.includedItemDesc} ${Style1.color_cccccc}`}>
+              A private social network for schools that boosts student
+              collaboration, communication, and shared learning.
+            </p>
+          </span>
         </li>
 
+      
         <li className={styles.includedItem}>
-          <div className={styles.includedItemTop}>
-            <div className={`${styles.includedIcon} ${styles.includedIconTeal}`}>
-              <span aria-hidden="true">A</span>
+          <span className={Style1.box_product_container}>
+            <div className={`${styles.includedItemTop} ${Style1.flex_center_gap_10px}`}>
+              <div className={Style1.icon_row_box}>
+                <img src={Rl_logo_pricing} alt="" />
+              </div>
+              <p
+                className={`${styles.includedItemTitle} ${Style1.include_title_text}`}
+              >
+                Real AI
+              </p>
             </div>
-            <p className={styles.includedItemTitle}>Real AI</p>
-          </div>
-          <p className={styles.includedItemDesc}>
-            Live full life journeys across 193 countries, powered by real-world data and linked to UN
-            SDGs. Build empathy through authentic global experiences.
-          </p>
+
+            <p className={`${styles.includedItemDesc} ${Style1.color_cccccc} `}>
+              Live full life journeys across 193 countries, powered by
+              real-world data and linked to UN SDGs. Build empathy through
+              authentic global experiences.
+            </p>
+          </span>
         </li>
+
       </ul>
     </aside>
+
   );
 }
 
@@ -109,23 +178,26 @@ export default function GamerLicense() {
 
   return (
     <main className={styles.page}>
-      <div className={styles.container}>
+
+      <div className={`${styles.container} ${Style1.license_conatier_main} ${Style1.max_width} ${Style1.container_override_style}`}>
         <header className={styles.header}>
           <h1 className={styles.title}>{content.title}</h1>
-          <p className={styles.subtitle}>{content.description}</p>
+          
+          <p className={`${styles.subtitle} ${Style1.color_cccccc } `}>{content.description}</p>
         </header>
 
         <div className={styles.topBackRow}>
           <button
             type="button"
-            className={styles.topBackBtn}
+            className={`${styles.topBackBtn} ${Style1.color_cccccc }`}
             onClick={() => navigate('/reallives/licenses')}
           >
             ← Back to Licenses
           </button>
         </div>
 
-        <section className={styles.mainGrid} aria-label="License tiers">
+         
+        <section className={`${styles.mainGrid} ${Style1.left_side_container}`} aria-label="License tiers">
           <div className={styles.tiersGrid}>
             {content.tiers.slice(0, 4).map(tier => (
               <LicenseTierCard key={tier.id} tier={tier} onBuy={onBuy} />

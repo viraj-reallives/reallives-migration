@@ -54,6 +54,7 @@ import Santa_Clara from './pages/research/Santa_Clara';
 import Albany_University from './pages/research/Albany_University';
 import Uppsala_University from './pages/research/Uppsala_University';
 import Individual_Research from './pages/research/Individual_Research';
+import Kame_Research from './pages/research/Kame_Research';
 
 export default function App() {
   return (
@@ -93,6 +94,9 @@ export default function App() {
             <Route path="Albany_University" element={<Albany_University/>}/>
             <Route path="Uppsala_University" element={<Uppsala_University/>}/>
             <Route path="Individual_Research" element={<Individual_Research/>}/>
+            <Route path="Kame_Research" element={<Kame_Research/>}/>
+
+            
 
           </Route>
 
