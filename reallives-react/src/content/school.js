@@ -617,7 +617,8 @@ export const schoolContent = {
           ],
           methods:
             'Qualitative coding, language network analysis, topic modeling (NetMiner)',
-          pdfPath: '/assets/documents/school/pdf/Kwon etal_2025_RealLives in HE class-2.pdf',
+          pdfPath:
+            'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/pdfs/Kwon-etal_2025_RealLives-in-HE-class-2.pdf',
         },
       },
       {
@@ -641,7 +642,8 @@ export const schoolContent = {
           ],
           methods:
             'Conceptual examination of statistics, simulation, and educational game design. Interpretive analysis rather than empirical experimentation or user studies.',
-          pdfPath: '/assets/documents/school/pdf/uwe-bristol.pdf',
+          pdfPath:
+            'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/pdfs/uwe-bristol.pdf',
         },
       },
       {
@@ -670,7 +672,8 @@ export const schoolContent = {
           ],
           methods:
             'Quasi-experimental classroom study. Participants: 301 high school students from three Northern California schools',
-          pdfPath: '/assets/documents/school/pdf/Santa Clara University.pdf',
+          pdfPath:
+            'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/pdfs/Santa-Clara-University.pdf',
         },
       },
       {
@@ -697,7 +700,8 @@ export const schoolContent = {
           ],
           methods:
             'Quasi-experimental classroom study. Participants: 301 high school students from three Northern California schools',
-          pdfPath: '/assets/documents/school/pdf/albany.pdf',
+          pdfPath:
+            'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/pdfs/albany.pdf',
         },
       },
       {
@@ -726,7 +730,8 @@ export const schoolContent = {
           ],
           methods:
             'Quasi-experimental classroom study with secondary school students (ages 14–19). Participants played the Real Lives simulation, experiencing life as migrants from MENA regions.',
-          pdfPath: '/assets/documents/school/pdf/ThomasNygrenResearchPaper-1.pdf',
+          pdfPath:
+            'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/pdfs/ThomasNygrenResearchPaper-1.pdf',
         },
       },
       {
@@ -752,7 +757,8 @@ export const schoolContent = {
           ],
           methods:
             'Descriptive mixed-methods study\u00a0combining qualitative and quantitative data. Analysis of\u00a063 simulated lives\u00a0played by 13 low-income, urban adolescents.',
-          pdfPath: '/assets/documents/school/pdf/Kallen Tsikalas.pdf',
+          pdfPath:
+            'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/pdfs/Kallen-Tsikalas.pdf',
         },
       },
     ],

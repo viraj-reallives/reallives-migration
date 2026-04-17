@@ -1,40 +1,8 @@
 import { useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import SiteContext from '@context/SiteContext';
-import { newslettersContent } from '@content/newsletters';
-import styles from './NewslettersPage.module.css';
-
-const NEWSLETTER_AUTHORS = [
-  {
-    name: 'Dr. Parag Mankeekar',
-    role:
-      "Co-Founder @ RealLives Foundation | RealLives Simulation, Edupreneur, 'Games for Good & Changemaking' advocator",
-    avatar: 'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-newsletter-page/ceo-image.jpg',
-    linkedin: 'https://www.linkedin.com/in/reallives/',
-  },
-];
-
-function getHeroImagePositionClass(articleId) {
-  if (articleId.includes('sir-ken-robinson')) {
-    return styles.heroFocusTop;
-  }
-
-  return styles.heroFocusCenter;
-}
-
-function isSubheadingLine(paragraph) {
-  const text = paragraph.trim();
-  if (!text || text.includes('http://') || text.includes('https://')) return false;
-  if (/^[*-]\s/.test(text)) return false;
-  if (text.length > 90) return false;
-  if (/^[0-9]+\./.test(text)) return true;
-  if (text.endsWith(':') || text.endsWith('?')) return true;
-  return !/[.!]$/.test(text);
-}
-
-function isInlineImageBlock(block) {
-  return typeof block === 'object' && block !== null && block.type === 'image';
-}
+import { technicalBlogsContent } from '@content/technicalBlogs';
+import styles from './TechnicalBlogsPage.module.css';
 
 function isExternalLinkBlock(block) {
   return (
@@ -45,14 +13,25 @@ function isExternalLinkBlock(block) {
   );
 }
 
-function renderHighlightedText(text) {
-  const parts = text.split(/(\*\*[^*]+\*\*)/g);
-  return parts.map((part, index) => {
-    if (/^\*\*[^*]+\*\*$/.test(part)) {
-      return <strong key={`${part}-${index}`}>{part.slice(2, -2)}</strong>;
-    }
-    return part;
-  });
+function isInlineImageBlock(block) {
+  return typeof block === 'object' && block !== null && block.type === 'image';
+}
+
+function isCodeBlock(block) {
+  return (
+    typeof block === 'object' &&
+    block !== null &&
+    block.type === 'code' &&
+    typeof block.code === 'string'
+  );
+}
+
+function isSubheadingLine(paragraph) {
+  const text = paragraph.trim();
+  if (!text || text.includes('http://') || text.includes('https://')) return false;
+  if (text.length > 95) return false;
+  if (/^[#]/.test(text)) return false;
+  return !/[.!]$/.test(text) || text.endsWith(':') || text.endsWith('?');
 }
 
 function ArticleCard({ article, compact = false }) {
@@ -60,7 +39,7 @@ function ArticleCard({ article, compact = false }) {
     <Link to={article.id} className={styles.cardLink}>
       <article className={`${styles.articleCard} ${compact ? styles.compactCard : ''}`}>
         <div className={styles.thumbWrap}>
-          <img src={article.imagePath} alt={article.title} className={styles.thumb} />
+          <img src={article.imagePath} alt={article.title} className={styles.thumb} loading="lazy" />
         </div>
         <div className={styles.articleBody}>
           <p className={styles.metaLine}>
@@ -71,7 +50,7 @@ function ArticleCard({ article, compact = false }) {
           {!compact ? <p className={styles.articleExcerpt}>{article.excerpt}</p> : null}
           <div className={styles.articleFooter}>
             <div className={styles.tagRow}>
-              <span className={styles.categoryPill}>{article.category}</span>
+              {article.category ? <span className={styles.categoryPill}>{article.category}</span> : null}
               {article.tags?.slice(0, 1).map((tag) => (
                 <span key={tag} className={styles.categoryPill}>
                   {tag}
@@ -92,14 +71,22 @@ function ArticleCard({ article, compact = false }) {
   );
 }
 
-export default function NewslettersPage() {
+export default function TechnicalBlogsPage() {
   const { siteKey } = useContext(SiteContext);
   const { articleId } = useParams();
-  const siteContent = newslettersContent[siteKey];
+  const siteContent = technicalBlogsContent[siteKey];
+  const newslettersPath = `/reallives/${siteKey}/newsletters`;
   const [query, setQuery] = useState('');
   const [selectedTag, setSelectedTag] = useState('');
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const filterRef = useRef(null);
+
+  const orderedArticles = useMemo(() => {
+    if (!siteContent?.articles?.length) return [];
+    return [...siteContent.articles].sort(
+      (first, second) => new Date(second.publishedOn) - new Date(first.publishedOn)
+    );
+  }, [siteContent]);
 
   const topTagFilters = useMemo(() => {
     if (!siteContent?.articles?.length) return [];
@@ -119,6 +106,8 @@ export default function NewslettersPage() {
       .slice(0, 5)
       .map(([tag, count]) => ({ tag, count }));
   }, [siteContent]);
+
+  if (!siteContent) return null;
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
@@ -158,34 +147,33 @@ export default function NewslettersPage() {
     if (!siteContent?.articles?.length) return [];
     const searchLower = query.trim().toLowerCase();
 
-    const filteredArticles = siteContent.articles.filter((article) => {
+    const filtered = siteContent.articles.filter((article) => {
       const textMatch =
         searchLower.length === 0 ||
         article.title.toLowerCase().includes(searchLower) ||
         article.excerpt.toLowerCase().includes(searchLower) ||
         article.author.toLowerCase().includes(searchLower);
       const tagMatch = selectedTag.length === 0 || article.tags?.includes(selectedTag);
-
       return textMatch && tagMatch;
     });
 
-    return filteredArticles.sort(
-      (first, second) => new Date(second.publishedOn) - new Date(first.publishedOn)
-    );
+    return filtered.sort((first, second) => new Date(second.publishedOn) - new Date(first.publishedOn));
   }, [query, selectedTag, siteContent]);
 
-  if (!siteContent) return null;
-
   if (articleId) {
-    const selectedArticle = siteContent.articles.find((article) => article.id === articleId);
+    const selectedArticle = orderedArticles.find((article) => article.id === articleId);
+
     if (!selectedArticle) {
       return (
         <section className={styles.articlePage}>
-          <div className={styles.articleContentWrap}>
+          <div className={styles.articleTopBar}>
             <Link to=".." relative="path" className={styles.backToListLink}>
-              ← Back to all posts
+              ← All posts
             </Link>
-            <p className={styles.emptyState}>Article not found for this newsletter section.</p>
+          </div>
+
+          <div className={styles.articleContentWrap}>
+            <p className={styles.emptyState}>Technical blog not found.</p>
           </div>
         </section>
       );
@@ -200,14 +188,11 @@ export default function NewslettersPage() {
           <p className={styles.articlePublished}>Published {selectedArticle.publishedOn}</p>
         </div>
 
-        <img
-          src={selectedArticle.imagePath}
-          alt={selectedArticle.title}
-          className={`${styles.articleHeroImage} ${getHeroImagePositionClass(selectedArticle.id)}`}
-        />
+        <img src={selectedArticle.imagePath} alt={selectedArticle.title} className={styles.articleHeroImage} />
 
         <div className={styles.articleContentWrap}>
           <h1 className={styles.articlePageTitle}>{selectedArticle.title}</h1>
+          {selectedArticle.subtitle ? <p className={styles.articleSubtitle}>{selectedArticle.subtitle}</p> : null}
 
           <div className={styles.articleMetaWrap}>
             <span className={styles.readMinutesPill}>{selectedArticle.readMinutes} min read</span>
@@ -218,11 +203,14 @@ export default function NewslettersPage() {
                     src={selectedArticle.authorAvatar}
                     alt={selectedArticle.author}
                     className={styles.authorAvatar}
+                    loading="lazy"
                   />
                 ) : null}
                 <div>
                   <p className={styles.authorName}>{selectedArticle.author}</p>
-                  <p className={styles.authorRole}>{selectedArticle.authorRole}</p>
+                  <p className={styles.authorRole}>
+                    {selectedArticle.authorRole || selectedArticle.category}
+                  </p>
                 </div>
               </div>
             </div>
@@ -242,9 +230,24 @@ export default function NewslettersPage() {
             {selectedArticle.content.map((block, index) => {
               if (isInlineImageBlock(block)) {
                 return (
-                  <figure key={`${selectedArticle.id}-image-${index}`} className={styles.inlineImageWrap}>
+                  <figure key={`${selectedArticle.id}-img-${index}`} className={styles.inlineImageWrap}>
                     <img src={block.src} alt={block.alt} className={styles.inlineArticleImage} />
                   </figure>
+                );
+              }
+
+              if (isCodeBlock(block)) {
+                return (
+                  <div key={`${selectedArticle.id}-code-${index}`} className={styles.codeBlockWrap}>
+                    {block.language ? (
+                      <div className={styles.codeBlockHeader}>
+                        <span className={styles.codeBlockLanguage}>{block.language}</span>
+                      </div>
+                    ) : null}
+                    <pre className={styles.codeBlock}>
+                      <code>{block.code}</code>
+                    </pre>
+                  </div>
                 );
               }
 
@@ -268,11 +271,19 @@ export default function NewslettersPage() {
                   key={`${selectedArticle.id}-text-${index}`}
                   className={isSubheadingLine(block) ? styles.articleSubheading : undefined}
                 >
-                  {renderHighlightedText(block)}
+                  {block}
                 </p>
               );
             })}
           </div>
+
+          {selectedArticle.galleryImages?.length ? (
+            <section className={styles.gallery}>
+              {selectedArticle.galleryImages.map((image) => (
+                <img key={image} src={image} alt={selectedArticle.title} className={styles.galleryImage} />
+              ))}
+            </section>
+          ) : null}
         </div>
       </article>
     );
@@ -286,7 +297,7 @@ export default function NewslettersPage() {
     <section className={styles.page}>
       <header className={styles.hero}>
         <div>
-          <p className={styles.kicker}>Newsletters</p>
+          <p className={styles.kicker}>Technical Blogs</p>
           <h1 className={styles.heading}>{siteContent.heading}</h1>
           <p className={styles.intro}>{siteContent.intro}</p>
         </div>
@@ -297,7 +308,7 @@ export default function NewslettersPage() {
             value={query}
             onChange={(event) => setQuery(event.target.value)}
             placeholder="Search articles, topics, authors..."
-            aria-label="Search newsletters"
+            aria-label="Search technical blogs"
           />
           <div className={styles.actionsRow}>
             {topTagFilters.length ? (
@@ -307,7 +318,7 @@ export default function NewslettersPage() {
                   className={`${styles.filterToggle} ${isFilterOpen ? styles.filterToggleActive : ''}`}
                   onClick={() => setIsFilterOpen((open) => !open)}
                   aria-expanded={isFilterOpen}
-                  aria-controls="newsletter-tag-filters"
+                  aria-controls="technical-blog-tag-filters"
                 >
                   <span className={styles.filterIcon} aria-hidden="true">
                     <svg viewBox="0 0 24 24" className={styles.filterIconSvg}>
@@ -345,7 +356,7 @@ export default function NewslettersPage() {
 
                 {isFilterOpen ? (
                   <div
-                    id="newsletter-tag-filters"
+                    id="technical-blog-tag-filters"
                     className={styles.filterPopover}
                     aria-label="Popular topic filters"
                   >
@@ -370,8 +381,8 @@ export default function NewslettersPage() {
               </div>
             ) : null}
 
-            <Link to={`/reallives/${siteKey}/technical-blogs`} className={styles.technicalBlogsCta}>
-              Technical Blogs
+            <Link to={newslettersPath} className={styles.newslettersCta}>
+              Newsletters
             </Link>
           </div>
         </div>
@@ -381,11 +392,7 @@ export default function NewslettersPage() {
         <section className={styles.featuredSection}>
           <Link to={featuredArticle.id} className={styles.cardLink}>
             <article className={styles.featuredCard}>
-              <img
-                src={featuredArticle.imagePath}
-                alt={featuredArticle.title}
-                className={styles.featuredImage}
-              />
+              <img src={featuredArticle.imagePath} alt={featuredArticle.title} className={styles.featuredImage} />
               <div className={styles.featuredBody}>
                 <p className={styles.sectionLabel}>Featured Post</p>
                 <h2 className={styles.featuredTitle}>{featuredArticle.title}</h2>
@@ -412,34 +419,8 @@ export default function NewslettersPage() {
               </div>
             </article>
           </Link>
+
           <aside className={styles.sideFeed}>
-            <section className={styles.authorsStrip} aria-label="Newsletter authors">
-              <p className={styles.authorsKicker}>Authors</p>
-              <div className={styles.authorsRow}>
-                {NEWSLETTER_AUTHORS.map((author) => (
-                  <a
-                    key={author.name}
-                    className={styles.authorChip}
-                    href={author.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`${author.name} on LinkedIn`}
-                    title={`${author.name} on LinkedIn`}
-                  >
-                    <img
-                      src={author.avatar}
-                      alt={author.name}
-                      className={styles.authorChipAvatar}
-                      loading="lazy"
-                    />
-                    <div className={styles.authorChipBody}>
-                      <p className={styles.authorChipName}>{author.name}</p>
-                      <p className={styles.authorChipRole}>{author.role}</p>
-                    </div>
-                  </a>
-                ))}
-              </div>
-            </section>
             <h3 className={styles.sideHeading}>Recent Highlights</h3>
             {sideList.map((article) => (
               <ArticleCard key={article.id} article={article} compact />
@@ -447,7 +428,7 @@ export default function NewslettersPage() {
           </aside>
         </section>
       ) : (
-        <p className={styles.emptyState}>No newsletters found for this filter.</p>
+        <p className={styles.emptyState}>No technical blogs found for this filter.</p>
       )}
 
       {gridCards.length ? (
@@ -457,21 +438,7 @@ export default function NewslettersPage() {
           ))}
         </section>
       ) : null}
-
-      <section className={styles.promoStrip}>
-        <div>
-          <p className={styles.sectionLabel}>{siteContent.highlightedCategory}</p>
-          <h3 className={styles.promoHeading}>{siteContent.featuredTitle}</h3>
-          <p className={styles.promoText}>{siteContent.featuredSummary}</p>
-        </div>
-        <div className={styles.promoCard}>
-          <h4 className={styles.promoCardTitle}>Why this section?</h4>
-          <p className={styles.promoCardText}>{siteContent.highlightedCategorySummary}</p>
-          <p className={styles.promoStat}>
-            <strong>{siteContent.articles.length}+</strong> planned articles
-          </p>
-        </div>
-      </section>
     </section>
   );
 }
+
