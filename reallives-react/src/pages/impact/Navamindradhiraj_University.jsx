@@ -1,8 +1,8 @@
-import React from 'react'
-import Style1 from "../impact/Navamindradhiraj_University.module.css"
+import React from "react";
+import Style1 from "../impact/Navamindradhiraj_University.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/navigation";
 import second_logo_slide from "../../add-image/second-logo-tab.svg";
@@ -13,8 +13,16 @@ import sdg_logo_3 from "../../add-image/E-WEB-Goal-04.svg";
 import { FaArrowRight, FaAngleRight } from "react-icons/fa6";
 
 const Navamindradhiraj_University = () => {
+  const location = useLocation();
 
-    const goToExternal = () => {
+  // Ye check karega ki current URL mein "school" word hai ya nahi
+  const isSchoolPath = location.pathname.includes("/school");
+
+  const dynamicBackPath = isSchoolPath
+    ? "/reallives/school/impact"
+    : "/reallives/university/impact";
+
+  const goToExternal = () => {
     window.location.href =
       "https://reallivesworld.com/reallives-website-main/license.html";
   };
@@ -22,7 +30,7 @@ const Navamindradhiraj_University = () => {
   return (
     <div className={`${Style1.first_university_container} `}>
       <span className={Style1.section_flex_button}>
-        <Link className={Style1.btn_top_slider} to="/reallives/school/impact">
+        <Link className={Style1.btn_top_slider} to={dynamicBackPath}>
           Impact Home
         </Link>
 
@@ -78,7 +86,7 @@ const Navamindradhiraj_University = () => {
             />
           </SwiperSlide>
 
-           <SwiperSlide className={Style1.swiperSlide}>
+          <SwiperSlide className={Style1.swiperSlide}>
             <img
               src="https://d2jn82ki4w4ftn.cloudfront.net/changemaker-website/our-impact-page/navamindradhiraj-workshop/nmu-slider-image-1.jpg"
               className={Style1.slider_img}
@@ -86,17 +94,13 @@ const Navamindradhiraj_University = () => {
             />
           </SwiperSlide>
 
-           <SwiperSlide className={Style1.swiperSlide}>
+          <SwiperSlide className={Style1.swiperSlide}>
             <img
               src="https://d2jn82ki4w4ftn.cloudfront.net/changemaker-website/our-impact-page/navamindradhiraj-workshop/nmu-slider-image-2.jpg"
               className={Style1.slider_img}
               alt="slide 3"
             />
           </SwiperSlide>
-
-
-
-          
         </Swiper>
       </div>
 
@@ -182,13 +186,13 @@ const Navamindradhiraj_University = () => {
               changemaking competencies through our proprietary assessment
               tools.
               <br />
-              <strong>Institutional Scale and Integration - </strong> This workshop was not just an
-              extracurricular activity; it was officially integrated into
-              Navamindradhiraj University’s mandatory "Metropolitan Studies"
-              curriculum. By embedding the RealLives simulation into the core
-              General Education module, the program successfully reached over
-              600 first-year students, operating at a massive institutional
-              scale.
+              <strong>Institutional Scale and Integration - </strong> This
+              workshop was not just an extracurricular activity; it was
+              officially integrated into Navamindradhiraj University’s mandatory
+              "Metropolitan Studies" curriculum. By embedding the RealLives
+              simulation into the core General Education module, the program
+              successfully reached over 600 first-year students, operating at a
+              massive institutional scale.
             </p>
           </span>
         </div>
@@ -233,13 +237,14 @@ const Navamindradhiraj_University = () => {
               challenges. The success at Navamindradhiraj University reinforces
               RealLives' effectiveness in transforming academic learning into
               actionable changemaking capabilities across diverse cultural and
-              educational contexts. <br /> <strong>Fostering Civic Empathy - </strong>For these
-              Thai students, the simulation served as a vital bridge between
-              local urban realities in Bangkok and global socio-economic
-              challenges. By stepping into the lives of individuals from vastly
-              different backgrounds, students developed crucial 21st century
-              civic competencies, shifting their perspective from passive
-              observation to active, empathy-driven problem solving.
+              educational contexts. <br />{" "}
+              <strong>Fostering Civic Empathy - </strong>For these Thai
+              students, the simulation served as a vital bridge between local
+              urban realities in Bangkok and global socio-economic challenges.
+              By stepping into the lives of individuals from vastly different
+              backgrounds, students developed crucial 21st century civic
+              competencies, shifting their perspective from passive observation
+              to active, empathy-driven problem solving.
             </p>
           </span>
         </div>
@@ -249,9 +254,7 @@ const Navamindradhiraj_University = () => {
         <p className={Style1.participants_title_text}>Skills Developed</p>
 
         <div className={Style1.wapper_show_btn}>
-          <button className={Style1.color_btn_font}>
-            21st Century Skills
-          </button>
+          <button className={Style1.color_btn_font}>21st Century Skills</button>
           <button
             className={`${Style1.color_btn_font} ${Style1.empathy_btn_color}`}
           >
@@ -268,11 +271,12 @@ const Navamindradhiraj_University = () => {
 
           <span class={Style1.text_data_content_1}>
             <p>
-              My name is Panjasuth Tangpanyapinit, 1st year student from the Faculty of Medicine, Navamindradhiraj University. Through this experience, I
-              learned that while none of us choose the circumstances we're born
-              into, rich or poor, we can always choose empathy, kindness, and
-              inclusion. Life has its ups and downs, so being flexible and ready
-              for change is essential.
+              My name is Panjasuth Tangpanyapinit, 1st year student from the
+              Faculty of Medicine, Navamindradhiraj University. Through this
+              experience, I learned that while none of us choose the
+              circumstances we're born into, rich or poor, we can always choose
+              empathy, kindness, and inclusion. Life has its ups and downs, so
+              being flexible and ready for change is essential.
             </p>
 
             <p>
@@ -334,7 +338,7 @@ const Navamindradhiraj_University = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Navamindradhiraj_University
+export default Navamindradhiraj_University;

@@ -75,7 +75,7 @@ export const universityContent = {
       ],
     },
     images: {
-      heroVideoUrl: '/assets/images/university/image/university-background-image.jpg',
+      heroVideoUrl: 'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/school/videos/background-video-student.mp4',
       illustration:
         'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-home-page/everyone-change-maker.svg',
       classroomDiagram:
@@ -374,7 +374,7 @@ export const universityContent = {
     closingSubtext: 'Your journey from understanding to impact starts now',
     closingButtonText: 'Become a ChangeMaker',
     heroBackgroundImagePath:
-      'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-impact-page/Changemaker-univercity-background.svg',
+      'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/school/changemaker-school-background.png',
   },
 
   foundation: {
@@ -499,6 +499,7 @@ export const universityContent = {
         skillsDevelopedLabel: 'Skills Developed',
         skills: ['Teamwork', 'Integrity and Work Ethics'],
         learnMoreText: 'Learn more',
+         learnMorePath: '/reallives/university/ethzurichworkshop'
       },
       {
         title: 'Navamindradhiraj University Workshop',
@@ -515,6 +516,7 @@ export const universityContent = {
         skillsDevelopedLabel: 'Skills Developed',
         skills: ["21'st Century Skills", 'Business Acumen'],
         learnMoreText: 'Learn more',
+        learnMorePath: '/reallives/university/Navamindradhiraj_Unniversity'
       },
       {
         title: 'KyungHee University SDG Workshop',
@@ -531,6 +533,7 @@ export const universityContent = {
         skillsDevelopedLabel: 'Skills Developed',
         skills: ['SDG Awareness', 'ChangeMaking'],
         learnMoreText: 'Learn more',
+         learnMorePath: '/reallives/university/KyungheeUniversity'
       },
       {
         title: 'IIT Bombay Exploring SDG 1 through Empathy Workshop',
@@ -547,11 +550,12 @@ export const universityContent = {
         skillsDevelopedLabel: 'Skills Developed',
         skills: ['SDG Awareness', 'Social Entrepreneurship'],
         learnMoreText: 'Learn more',
+         learnMorePath: '/reallives/university/IIT_Bombay_University'
       },
       {
         title: 'Chulalongkorn University Workshop',
         date: '27/04/2024',
-        imagePath: '/assets/images/university/background-css/images/fifth-work-shop.png',
+        imagePath: 'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-impact-page/fifth-work-shop-1.png',
         university: 'Chulalongkorn University, Bangkok, Thailand',
         department: 'Department - Faculty of Education / BAScii Program',
         collaborationLabel: 'In collaboration with :',
@@ -561,6 +565,7 @@ export const universityContent = {
         skillsDevelopedLabel: 'Skills Developed',
         skills: ['Empathy', 'SDG Awareness', 'Critical Thinking'],
         learnMoreText: 'Learn more',
+        learnMorePath: '/reallives/university/Chulalongkorn_University'
       },
     ],
   },

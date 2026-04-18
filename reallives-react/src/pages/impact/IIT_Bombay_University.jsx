@@ -1,8 +1,8 @@
-import React from 'react'
-import Style1 from "../../pages/impact/IIT_Bombay_University.module.css"
+import React from "react";
+import Style1 from "../../pages/impact/IIT_Bombay_University.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/navigation";
 import fourth_slide_logo from "../../add-image/iit_bom_rl.svg";
@@ -11,16 +11,24 @@ import { FaArrowRight } from "react-icons/fa6";
 import { FaAngleRight } from "react-icons/fa6";
 
 const IIT_Bombay_University = () => {
+  const location = useLocation();
 
-    const goToExternal = () => {
+  const isSchoolPath = location.pathname.includes("/school");
+
+  const dynamicBackPath = isSchoolPath
+    ? "/reallives/school/impact"
+    : "/reallives/university/impact";
+
+  const goToExternal = () => {
     window.location.href =
       "https://reallivesworld.com/reallives-website-main/license.html";
   };
 
   return (
-     <div className={`${Style1.first_university_container} `}>
+    <div className={`${Style1.first_university_container} `}>
       <span className={Style1.section_flex_button}>
-        <Link className={Style1.btn_top_slider} to="/reallives/school/impact">
+        
+        <Link className={Style1.btn_top_slider} to={dynamicBackPath}>
           Impact Home
         </Link>
 
@@ -213,9 +221,8 @@ const IIT_Bombay_University = () => {
           </button>
         </div>
       </div>
-      
     </div>
-  )
-}
+  );
+};
 
-export default IIT_Bombay_University
+export default IIT_Bombay_University;

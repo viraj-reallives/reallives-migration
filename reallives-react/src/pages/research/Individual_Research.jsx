@@ -20,6 +20,7 @@ const Individual_Research = () => {
 
   return (
     <div className={Style1.padding_research_container}>
+      
       <div className={styles.detailInner}>
 
         <button
@@ -101,6 +102,7 @@ const Individual_Research = () => {
           </div>
         </div>
       </div>
+
     </div>
   );
 };

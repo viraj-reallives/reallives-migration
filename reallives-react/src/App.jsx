@@ -96,8 +96,6 @@ export default function App() {
             <Route path="Individual_Research" element={<Individual_Research/>}/>
             <Route path="Kame_Research" element={<Kame_Research/>}/>
 
-            
-
           </Route>
 
           <Route path="/reallives/university" element={<SubSiteLayout siteKey="university" />}>
@@ -110,6 +108,18 @@ export default function App() {
             <Route path="about" element={<UniversityAbout />} />
             <Route path="contact" element={<UniversityContact />} />
             <Route path="foundation" element={<UniversityFoundation />} />
+             <Route path="ethzurichworkshop" element={<EthZurichWorkshop/>}/>
+            <Route path="Navamindradhiraj_Unniversity" element={<Navamindradhiraj_Unniversity/>}/>
+            <Route path="KyungheeUniversity" element={<KyungheeUniversity/>}/>
+            <Route path="IIT_Bombay_University" element={<IIT_Bombay_University/>}/>
+            <Route path="Chulalongkorn_University" element={<Chulalongkorn_University/>}/>
+            <Route path="Research_Card1" element={<Research_Card1/>}/>
+            <Route path="UaeBristol" element={<UaeBristol/>}/>
+            <Route path="Santa_Clara" element={<Santa_Clara/>}/>
+            <Route path="Albany_University" element={<Albany_University/>}/>
+            <Route path="Uppsala_University" element={<Uppsala_University/>}/>
+            <Route path="Individual_Research" element={<Individual_Research/>}/>
+            <Route path="Kame_Research" element={<Kame_Research/>}/>
           </Route>
 
           <Route path="/reallives/homeschooler" element={<SubSiteLayout siteKey="homeschooler" />}>

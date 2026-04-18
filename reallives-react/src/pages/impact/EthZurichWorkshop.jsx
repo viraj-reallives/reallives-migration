@@ -3,17 +3,23 @@ import Style1 from "../../pages/impact/EthZurichWorkshop.module.css";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/navigation";
 import first_logo_slide from "../../add-image/first-logo-tab.svg";
 import sdg_logo_1 from "../../add-image/E-WEB-Goal-01.svg";
 import sdg_logo_2 from "../../add-image/E-WEB-Goal-02.svg";
 import sdg_logo_3 from "../../add-image/E-WEB-Goal-04.svg";
-
 import { FaArrowRight, FaAngleRight } from "react-icons/fa6";
 
 const EthZurichWorkshop = () => {
+  const location = useLocation();
+
+  const isSchoolPath = location.pathname.includes("/school");
+
+  const dynamicBackPath = isSchoolPath
+    ? "/reallives/school/impact"
+    : "/reallives/university/impact";
 
   const goToExternal = () => {
     window.location.href =
@@ -21,12 +27,15 @@ const EthZurichWorkshop = () => {
   };
 
   return (
-    
     <div className={Style1.eth_tab_conatiner}>
       <div className={Style1.first_university_container}>
-       
         <span className={Style1.section_flex_button}>
-          <Link className={Style1.btn_top_slider} to="/reallives/school/impact">
+          
+          {/* <Link className={Style1.btn_top_slider} to="/reallives/school/impact">
+            Impact Home
+          </Link> */}
+
+          <Link className={Style1.btn_top_slider} to={dynamicBackPath}>
             Impact Home
           </Link>
 
@@ -41,7 +50,6 @@ const EthZurichWorkshop = () => {
           </button>
         </span>
 
-       
         <div className={Style1.slider_wrapper}>
           <Swiper
             modules={[Navigation]}
@@ -206,7 +214,6 @@ const EthZurichWorkshop = () => {
           </div>
         </div>
 
-       
         <div className={Style1.span_imapct_colume}>
           <p className={Style1.participants_title_text}>Skills Developed</p>
 
@@ -220,7 +227,6 @@ const EthZurichWorkshop = () => {
           </div>
         </div>
 
-    
         <div
           className={`${Style1.wrapper_footer_tab_padding} ${Style1.first_tab_margin}`}
         >

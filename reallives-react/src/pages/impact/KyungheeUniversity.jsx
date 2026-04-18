@@ -1,8 +1,8 @@
-import React from 'react'
-import Style1 from "../../pages/impact/KyungheeUniversity.module.css"
+import React from "react";
+import Style1 from "../../pages/impact/KyungheeUniversity.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/navigation";
 import therd_logo_slide from "../../add-image/3-rd-workshop-logo.svg";
@@ -13,14 +13,22 @@ import { FaArrowRight } from "react-icons/fa6";
 import { FaAngleRight } from "react-icons/fa6";
 
 const KyungheeUniversity = () => {
-   const goToExternal = () => {
+  const location = useLocation();
+
+  const isSchoolPath = location.pathname.includes("/school");
+
+  const dynamicBackPath = isSchoolPath
+    ? "/reallives/school/impact"
+    : "/reallives/university/impact";
+
+  const goToExternal = () => {
     window.location.href =
       "https://reallivesworld.com/reallives-website-main/license.html";
   };
   return (
-     <div className={`${Style1.first_university_container} `}>
+    <div className={`${Style1.first_university_container} `}>
       <span className={Style1.section_flex_button}>
-        <Link className={Style1.btn_top_slider} to="/reallives/school/impact">
+        <Link className={Style1.btn_top_slider} to={dynamicBackPath}>
           Impact Home
         </Link>
 
@@ -86,14 +94,11 @@ const KyungheeUniversity = () => {
         </Swiper>
       </div>
 
-
       <div className={Style1.content_tab_container_imapct}>
         <div className={Style1.container_logo_box_impact}>
           <img src={therd_logo_slide} alt="" />
         </div>
       </div>
-
-       
 
       <div className={Style1.sdg_container_imapct_tab}>
         <p className={Style1.student_testimonials_title}>
@@ -226,7 +231,7 @@ const KyungheeUniversity = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default KyungheeUniversity
+export default KyungheeUniversity;

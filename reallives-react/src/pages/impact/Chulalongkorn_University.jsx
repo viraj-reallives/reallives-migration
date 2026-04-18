@@ -1,15 +1,22 @@
-import React from 'react'
-import Style1 from "../../pages/impact/Chulalongkorn_University.module.css"
+import React from "react";
+import Style1 from "../../pages/impact/Chulalongkorn_University.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/navigation";
 import { FaArrowRight, FaAngleRight } from "react-icons/fa6";
 
 const Chulalongkorn_University = () => {
+  const location = useLocation();
 
-   const goToExternal = () => {
+  const isSchoolPath = location.pathname.includes("/school");
+
+  const dynamicBackPath = isSchoolPath
+    ? "/reallives/school/impact"
+    : "/reallives/university/impact";
+
+  const goToExternal = () => {
     window.location.href =
       "https://reallivesworld.com/reallives-website-main/license.html";
   };
@@ -17,7 +24,8 @@ const Chulalongkorn_University = () => {
   return (
     <div className={`${Style1.first_university_container} `}>
       <span className={Style1.section_flex_button}>
-        <Link className={Style1.btn_top_slider} to="/reallives/school/impact">
+        
+        <Link className={Style1.btn_top_slider} to={dynamicBackPath}>
           Impact Home
         </Link>
 
@@ -41,15 +49,13 @@ const Chulalongkorn_University = () => {
           speed={600}
           className={`${Style1.mySwiper} universitySlider`}
         >
-
-            <SwiperSlide className={Style1.swiperSlide}>
+          <SwiperSlide className={Style1.swiperSlide}>
             <img
               src="https://d2jn82ki4w4ftn.cloudfront.net/changemaker-website/our-impact-page/chula-workshop/fifth-work-shop-4.png"
               className={Style1.slider_img}
               alt="slide 1"
             />
           </SwiperSlide>
-
 
           <SwiperSlide className={Style1.swiperSlide}>
             <img
@@ -74,19 +80,21 @@ const Chulalongkorn_University = () => {
               alt="slide 1"
             />
 
-              <img
+            <img
               src="https://d2jn82ki4w4ftn.cloudfront.net/changemaker-website/our-impact-page/chula-workshop/fifth-work-shop.png"
               className={Style1.slider_img}
               alt="slide 2"
             />
-
           </SwiperSlide>
         </Swiper>
       </div>
 
       <div className={Style1.content_tab_container_imapct}>
         <div className={Style1.container_logo_box_impact}>
-          <img src="https://d2jn82ki4w4ftn.cloudfront.net/changemaker-website/chula-workshop/chula-rl.svg" alt="" />
+          <img
+            src="https://d2jn82ki4w4ftn.cloudfront.net/changemaker-website/chula-workshop/chula-rl.svg"
+            alt=""
+          />
         </div>
       </div>
 
@@ -96,7 +104,7 @@ const Chulalongkorn_University = () => {
             Chulalongkorn University, Thailand
           </p>
           <p className={Style1.participants_title_text}>
-           Department - Faculty of Education / BAScii Program
+            Department - Faculty of Education / BAScii Program
           </p>
         </span>
 
@@ -104,7 +112,9 @@ const Chulalongkorn_University = () => {
           <p className={Style1.participants_title_text}>
             In collaboration with:
           </p>
-          <p className={Style1.university_text_title}>Dr. Sawaros Thanapornsangsuth</p>
+          <p className={Style1.university_text_title}>
+            Dr. Sawaros Thanapornsangsuth
+          </p>
         </span>
       </div>
 
@@ -245,41 +255,38 @@ const Chulalongkorn_University = () => {
             Empathy Canvas Insights & Reflections
           </p>
 
-          <div class={Style1.goal_img_chula }>
-                  <img src="https://d2jn82ki4w4ftn.cloudfront.net/changemaker-website/our-impact-page/chula-workshop/first-goal-img-1.png" alt=""/>
+          <div class={Style1.goal_img_chula}>
+            <img
+              src="https://d2jn82ki4w4ftn.cloudfront.net/changemaker-website/our-impact-page/chula-workshop/first-goal-img-1.png"
+              alt=""
+            />
           </div>
-
-            
-
         </div>
 
-
-         <div className={Style1.impact_left_data_box}>
-         
-          <div class={Style1.goal_img_chula }>
-                  <img src="https://d2jn82ki4w4ftn.cloudfront.net/changemaker-website/our-impact-page/chula-workshop/second-goal-img-2.png" alt=""/>
+        <div className={Style1.impact_left_data_box}>
+          <div class={Style1.goal_img_chula}>
+            <img
+              src="https://d2jn82ki4w4ftn.cloudfront.net/changemaker-website/our-impact-page/chula-workshop/second-goal-img-2.png"
+              alt=""
+            />
           </div>
+        </div>
+
+        <div className={Style1.impact_left_data_box}>
+          <div class={Style1.goal_img_chula}>
+            <img
+              src="https://d2jn82ki4w4ftn.cloudfront.net/changemaker-website/our-impact-page/chula-workshop/therd-goal-img-3.png"
+              alt=""
+            />
           </div>
-
-
-          <div className={Style1.impact_left_data_box}>
-         
-          <div class={Style1.goal_img_chula }>
-                  <img src="https://d2jn82ki4w4ftn.cloudfront.net/changemaker-website/our-impact-page/chula-workshop/therd-goal-img-3.png" alt=""/>
-          </div>
-          </div>
-
-
+        </div>
       </div>
 
       <div className={Style1.span_imapct_colume}>
         <p className={Style1.participants_title_text}>Skills Developed</p>
 
         <div className={Style1.wapper_show_btn}>
-
-          <button className={Style1.color_btn_font}>
-            Empathy
-          </button>
+          <button className={Style1.color_btn_font}>Empathy</button>
 
           <button
             className={`${Style1.color_btn_font} ${Style1.empathy_btn_color}`}
@@ -287,10 +294,10 @@ const Chulalongkorn_University = () => {
             SDG Awareness
           </button>
 
-           <button
+          <button
             className={`${Style1.color_btn_font} ${Style1.critical_thinking}`}
           >
-           Critical Thinking
+            Critical Thinking
           </button>
         </div>
       </div>
@@ -309,7 +316,7 @@ const Chulalongkorn_University = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Chulalongkorn_University
+export default Chulalongkorn_University;

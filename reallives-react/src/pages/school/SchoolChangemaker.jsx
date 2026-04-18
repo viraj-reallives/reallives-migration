@@ -44,6 +44,7 @@ export default function SchoolChangemaker() {
 
   return (
     <div className={styles.page}>
+
       <header className={styles.hero}>
         {cm.heroBackgroundImagePath ? (
           <img
@@ -356,6 +357,7 @@ export default function SchoolChangemaker() {
               </div>
             </div>
           </div>
+          
         </div>
       </div>
 
