@@ -19,6 +19,8 @@ import SchoolAbout from '@pages/school/SchoolAbout';
 import SchoolContact from '@pages/school/SchoolContact';
 import SchoolPricing from '@pages/school/SchoolPricing';
 import SchoolFoundation from '@pages/school/SchoolFoundation';
+import SchoolNewsletters from '@pages/school/SchoolNewsletters';
+import SchoolTechnicalBlogs from '@pages/school/SchoolTechnicalBlogs';
 import UniversityHome from '@pages/university/UniversityHome';
 import UniversityProducts from '@pages/university/UniversityProducts';
 import UniversityChangemaker from '@pages/university/UniversityChangemaker';
@@ -28,6 +30,8 @@ import UniversityPricing from '@pages/university/UniversityPricing';
 import UniversityAbout from '@pages/university/UniversityAbout';
 import UniversityContact from '@pages/university/UniversityContact';
 import UniversityFoundation from '@pages/university/UniversityFoundation';
+import UniversityNewsletters from '@pages/university/UniversityNewsletters';
+import UniversityTechnicalBlogs from '@pages/university/UniversityTechnicalBlogs';
 import HomeschoolerHome from '@pages/homeschooler/HomeschoolerHome';
 import HomeschoolerProducts from '@pages/homeschooler/HomeschoolerProducts';
 import HomeschoolerChangemaker from '@pages/homeschooler/HomeschoolerChangemaker';
@@ -37,6 +41,8 @@ import HomeschoolerPricing from '@pages/homeschooler/HomeschoolerPricing';
 import HomeschoolerAbout from '@pages/homeschooler/HomeschoolerAbout';
 import HomeschoolerContact from '@pages/homeschooler/HomeschoolerContact';
 import HomeschoolerFoundation from '@pages/homeschooler/HomeschoolerFoundation';
+import HomeschoolerNewsletters from '@pages/homeschooler/HomeschoolerNewsletters';
+import HomeschoolerTechnicalBlogs from '@pages/homeschooler/HomeschoolerTechnicalBlogs';
 import GamerHome from '@pages/gamer/GamerHome';
 import GamerProducts from '@pages/gamer/GamerProducts';
 import GamerAbout from '@pages/gamer/GamerAbout';
@@ -79,6 +85,10 @@ export default function App() {
             <Route path="changemaker" element={<SchoolChangemaker />} />
             <Route path="impact" element={<SchoolImpact />} />
             <Route path="research" element={<SchoolResearch />} />
+            <Route path="newsletters" element={<SchoolNewsletters />} />
+            <Route path="newsletters/:articleId" element={<SchoolNewsletters />} />
+            <Route path="technical-blogs" element={<SchoolTechnicalBlogs />} />
+            <Route path="technical-blogs/:articleId" element={<SchoolTechnicalBlogs />} />
             <Route path="pricing" element={<SchoolPricing />} />
             <Route path="about" element={<SchoolAbout />} />
             <Route path="contact" element={<SchoolContact />} />
@@ -104,6 +114,10 @@ export default function App() {
             <Route path="changemaker" element={<UniversityChangemaker />} />
             <Route path="impact" element={<UniversityImpact />} />
             <Route path="research" element={<UniversityResearch />} />
+            <Route path="newsletters" element={<UniversityNewsletters />} />
+            <Route path="newsletters/:articleId" element={<UniversityNewsletters />} />
+            <Route path="technical-blogs" element={<UniversityTechnicalBlogs />} />
+            <Route path="technical-blogs/:articleId" element={<UniversityTechnicalBlogs />} />
             <Route path="pricing" element={<UniversityPricing />} />
             <Route path="about" element={<UniversityAbout />} />
             <Route path="contact" element={<UniversityContact />} />
@@ -128,6 +142,10 @@ export default function App() {
             <Route path="changemaker" element={<HomeschoolerChangemaker />} />
             <Route path="impact" element={<HomeschoolerImpact />} />
             <Route path="research" element={<HomeschoolerResearch />} />
+            <Route path="newsletters" element={<HomeschoolerNewsletters />} />
+            <Route path="newsletters/:articleId" element={<HomeschoolerNewsletters />} />
+            <Route path="technical-blogs" element={<HomeschoolerTechnicalBlogs />} />
+            <Route path="technical-blogs/:articleId" element={<HomeschoolerTechnicalBlogs />} />
             <Route path="pricing" element={<HomeschoolerPricing />} />
             <Route path="about" element={<HomeschoolerAbout />} />
             <Route path="contact" element={<HomeschoolerContact />} />

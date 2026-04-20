@@ -8,6 +8,7 @@ export const universityContent = {
     { label: 'ChangeMaker Project', path: '/reallives/university/changemaker' },
     { label: 'Impact', path: '/reallives/university/impact' },
     { label: 'Research & Evidence', path: '/reallives/university/research' },
+    { label: 'Newsletters', path: '/reallives/university/newsletters' },
     { label: 'Pricing', path: '/reallives/university/pricing' },
     { label: 'Foundation', path: '/reallives/university/foundation' },
     { label: 'About Us', path: '/reallives/university/about' },
@@ -103,7 +104,7 @@ export const universityContent = {
       sdgGlobalAction:
         'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/global-action-image.svg',
     },
-    homeTabLabels: ['Who Can Use?', '21st Century Skills', 'SDGs', 'Resources'],
+    homeTabLabels: ['Who Can Use?', '21st Century Skills', 'SDGs', 'Core Vision'],
     homeAdditionalTabs: homeAdditionalTabsForBasePath('/reallives/university'),
   },
 

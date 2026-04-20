@@ -1,0 +1,179 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-18);
+}
+
+.gridCompact {
+  margin-top: var(--space-20);
+}
+
+.card {
+  position: relative;
+  min-height: 14rem;
+  border: 1px solid color-mix(in srgb, var(--color-site-brand) 20%, var(--color-border));
+  background:
+    radial-gradient(
+      120% 150% at 0% 0%,
+      color-mix(in srgb, var(--color-site-brand) 8%, var(--color-bg-elevated)),
+      var(--color-bg-elevated)
+    );
+  border-radius: var(--radius-3xl);
+  padding: var(--space-22);
+  overflow: hidden;
+  cursor: pointer;
+  transition:
+    transform 0.26s ease,
+    box-shadow 0.26s ease,
+    border-color 0.26s ease;
+}
+
+.cardCompact {
+  min-height: 13.5rem;
+}
+
+.card:hover,
+.card:focus-within {
+  transform: translateY(-0.2rem);
+  border-color: color-mix(in srgb, var(--color-site-brand) 48%, var(--color-border));
+  box-shadow: 0 20px 36px color-mix(in srgb, var(--color-site-brand) 14%, transparent);
+}
+
+.cardFront {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.cardEyebrow {
+  margin: 0;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-site-brand);
+  font-weight: 700;
+}
+
+.cardTitle {
+  margin: var(--space-10) 0 0;
+  color: var(--color-text-primary);
+  font-size: clamp(1.15rem, 1.3vw, 1.35rem);
+  line-height: 1.45;
+  font-weight: 700;
+}
+
+.cardHint {
+  margin: auto 0 0;
+  color: var(--color-text-subtle);
+  font-size: 0.85rem;
+  letter-spacing: 0.01em;
+}
+
+.cardAnswer {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  padding: var(--space-20) var(--space-20) var(--space-18);
+  color: var(--color-text-primary);
+  background:
+    linear-gradient(
+      150deg,
+      color-mix(in srgb, var(--color-site-brand) 22%, var(--color-bg-elevated)),
+      color-mix(in srgb, var(--color-site-brand) 8%, var(--color-bg-elevated))
+    );
+  backdrop-filter: blur(2px);
+  opacity: 0;
+  transform: translateY(0.8rem) scale(0.99);
+  transition:
+    opacity 0.24s ease,
+    transform 0.24s ease;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-10);
+}
+
+.cardAnswerLabel {
+  margin: 0;
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: color-mix(in srgb, var(--color-text-primary) 90%, var(--color-site-brand));
+}
+
+.cardAnswerText {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.72;
+  overflow-y: auto;
+  padding-right: var(--space-6);
+}
+
+.card:hover .cardAnswer,
+.card:focus-within .cardAnswer,
+.card:focus-visible .cardAnswer {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.card:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--color-site-brand) 60%, transparent);
+  outline-offset: 0.15rem;
+}
+
+@media (min-width: 64rem) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .card {
+    min-height: 16.5rem;
+  }
+
+  .cardCompact {
+    min-height: 15rem;
+  }
+
+  .cardAnswerText {
+    max-height: 13rem;
+  }
+}
+
+@media (max-width: 48rem) {
+  .card {
+    min-height: 0;
+    padding: var(--space-18);
+  }
+
+  .cardAnswer {
+    position: static;
+    margin-top: var(--space-10);
+    padding: 0;
+    background: transparent;
+    opacity: 1;
+    transform: none;
+    color: var(--color-text-secondary);
+    backdrop-filter: none;
+  }
+
+  .card:hover,
+  .card:focus-within {
+    transform: none;
+  }
+
+  .cardHint {
+    display: none;
+  }
+
+  .cardTitle {
+    font-size: 1.08rem;
+  }
+
+  .cardAnswerText {
+    max-height: none;
+    overflow: visible;
+    padding-right: 0;
+  }
+}
