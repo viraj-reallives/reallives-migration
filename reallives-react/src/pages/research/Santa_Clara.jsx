@@ -6,6 +6,9 @@ import Style1 from "../../pages/research/Research_Card1.module.css";
 const Santa_Clara = () => {
   const navigate = useNavigate();
   const { research } = useSiteContent();
+      const isSchoolPath = location.pathname.includes("/school");
+const isHomeschoolerPath = location.pathname.includes("/homeschooler");
+  
 
   if (!research) return null;
 
@@ -24,8 +27,15 @@ const Santa_Clara = () => {
       <div className={styles.detailInner}>
 
         {/* BACK BUTTON */}
-        <button
+        {/* <button
           onClick={() => navigate("/reallives/school/research")}
+          className={`${styles.backBtn} ${Style1.back_btn_override}`}
+        >
+          ← {research.goBackText}
+        </button> */}
+
+         <button
+          onClick={() => navigate(dynamicBackPath)}
           className={`${styles.backBtn} ${Style1.back_btn_override}`}
         >
           ← {research.goBackText}

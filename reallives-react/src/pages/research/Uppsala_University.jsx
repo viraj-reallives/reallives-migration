@@ -5,7 +5,17 @@ import Style1 from "../../pages/research/Research_Card1.module.css";
 
 const Uppsala_University = () => {
   const navigate = useNavigate();
+
   const { research } = useSiteContent();
+   const isSchoolPath = location.pathname.includes("/school");
+const isHomeschoolerPath = location.pathname.includes("/homeschooler");
+
+const dynamicBackPath = isSchoolPath
+  ? "/reallives/school/research" // Research page par wapas jane ke liye
+  : isHomeschoolerPath
+    ? "/reallives/homeschooler/research"
+    : "/reallives/university/research";
+
 
   if (!research) return null;
 
@@ -22,8 +32,15 @@ const Uppsala_University = () => {
     <div className={Style1.padding_research_container}>
       <div className={styles.detailInner}>
 
-        <button
+        {/* <button
           onClick={() => navigate("/reallives/school/research")}
+          className={`${styles.backBtn} ${Style1.back_btn_override}`}
+        >
+          ← {research.goBackText}
+        </button> */}
+
+          <button
+          onClick={() => navigate(dynamicBackPath)}
           className={`${styles.backBtn} ${Style1.back_btn_override}`}
         >
           ← {research.goBackText}

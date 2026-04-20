@@ -16,10 +16,14 @@ const KyungheeUniversity = () => {
   const location = useLocation();
 
   const isSchoolPath = location.pathname.includes("/school");
+  const isHomeschoolerPath = location.pathname.includes("/homeschooler");
 
-  const dynamicBackPath = isSchoolPath
-    ? "/reallives/school/impact"
+    const dynamicBackPath = isSchoolPath
+  ? "/reallives/school/impact"
+  : isHomeschoolerPath
+    ? "/reallives/homeschooler/impact"
     : "/reallives/university/impact";
+
 
   const goToExternal = () => {
     window.location.href =
