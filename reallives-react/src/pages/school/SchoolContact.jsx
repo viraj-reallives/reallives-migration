@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import PageHeader from "@components/common/PageHeader/PageHeader";
 import { useSiteContent } from "@hooks/useSiteContent";
 import styles from "./SchoolContact.module.css";
-import Style1 from "../school/SchoolContact_override.module.css"
+import Style1 from "../school/SchoolContact_override.module.css";
 
 export default function SchoolContact() {
   const { contact } = useSiteContent();
@@ -20,15 +20,14 @@ export default function SchoolContact() {
   const [submitted, setSubmitted] = useState(false);
   const [isSending, setIsSending] = useState(false);
 
+  useEffect(() => {
+    generateCaptcha();
+  }, []);
+
   if (!contact) return null;
 
   const labels = contact.formLabels ?? {};
   const mailHref = contact.email ? `mailto:${contact.email}` : undefined;
-
-
-  useEffect(() => {
-    generateCaptcha();
-  }, []);
 
   const generateCaptcha = () => {
     const num1 = Math.floor(Math.random() * 10) + 1;
@@ -88,16 +87,14 @@ export default function SchoolContact() {
 
   return (
     <div className={styles.page}>
-      
       <PageHeader heading={contact.heading} />
 
       <div className={styles.grid}>
-        
-        {/* ✅ FORM */}
+        {/* ✅ FORM SECTION */}
         <div className={styles.formSection}>
           {submitted ? (
-            <div>
-              <h3 style={{ color: "green" }}>
+            <div style={{ textAlign: 'center', padding: '20px' }}>
+              <h3 style={{ color: "green", marginBottom: '15px' }}>
                 Response submitted successfully!
               </h3>
               <button
@@ -111,8 +108,7 @@ export default function SchoolContact() {
               </button>
             </div>
           ) : (
-            <form className={styles.form} onSubmit={handleSubmit}>
-              
+            <form className={styles.form} onSubmit={handleSubmit} noValidate>
               <div className={styles.field}>
                 <label className={styles.label}>{labels.name}</label>
                 <input
@@ -148,12 +144,11 @@ export default function SchoolContact() {
                 />
               </div>
 
-              
+              {/* CAPTCHA */}
               <div className={styles.field}>
-                <label>
+                <label className={styles.label}>
                   Security Check: <strong>{captchaQuestion}</strong>
                 </label>
-
                 <div style={{ display: "flex", gap: "10px" }}>
                   <input
                     type="number"
@@ -167,9 +162,8 @@ export default function SchoolContact() {
                     ↻
                   </button>
                 </div>
-
                 {captchaError && (
-                  <p style={{ color: "red" }}>{captchaError}</p>
+                  <p style={{ color: "red", fontSize: '0.9rem' }}>{captchaError}</p>
                 )}
               </div>
 
@@ -184,24 +178,38 @@ export default function SchoolContact() {
           )}
         </div>
 
-        
-        <aside className={`${styles.infoSection} ${Style1.infoSection_override_style}`}>
+        {/* ✅ INFO SECTION (WITH UNIVERSITY STYLE ICONS) */}
+        <aside className={`${styles.infoSection} ${Style1.infoSection_override_style}`} aria-label={contact.contactInformationHeading}>
           <h2 className={styles.infoTitle}>
             {contact.contactInformationHeading}
           </h2>
 
-          <div>
-            <h3>{contact.emailLabel}</h3>
-            {mailHref ? (
-              <a href={mailHref}>{contact.email}</a>
-            ) : (
-              <p>{contact.email}</p>
-            )}
+          {/* Email Item */}
+          <div className={styles.item}>
+            <svg className={styles.icon} aria-hidden viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+            </svg>
+            <div className={styles.itemBody}>
+              <h3 className={styles.itemLabel}>{contact.emailLabel}</h3>
+              {mailHref ? (
+                <a href={mailHref} className={styles.emailLink}>
+                  {contact.email}
+                </a>
+              ) : (
+                <p className={styles.addressText}>{contact.email}</p>
+              )}
+            </div>
           </div>
 
-          <div>
-            <h3>{contact.addressLabel}</h3>
-            <p>{contact.address}</p>
+          {/* Address Item */}
+          <div className={styles.item}>
+            <svg className={styles.icon} aria-hidden viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+            </svg>
+            <div className={styles.itemBody}>
+              <h3 className={styles.itemLabel}>{contact.addressLabel}</h3>
+              <p className={styles.addressText}>{contact.address}</p>
+            </div>
           </div>
         </aside>
       </div>

@@ -134,6 +134,7 @@ function ResearchDetail({ research, item, onBack }) {
         <span aria-hidden="true">←</span>
         {research.goBackText}
       </button>
+      
       <div className={styles.detailMain}>
         <div className={styles.detailGrid}>
           <div>

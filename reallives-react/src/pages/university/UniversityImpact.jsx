@@ -217,7 +217,6 @@ import { Fragment, useCallback, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import CTABanner from '@components/common/CTABanner/CTABanner';
 import { useSiteContent } from '@hooks/useSiteContent';
-
 // import styles from './SchoolImpact.module.css';
 import styles from "../school/SchoolImpact.module.css"
 import Style1 from "../../components/costom_css/SchoolImpact_override.module.css";
@@ -366,12 +365,14 @@ function WorkshopCard({ card, learnMorePath }) {
           ) : null}
 
           {/* Conditional path logic from SchoolImpact */}
+
           {(card.learnMorePath || learnMorePath) && card.learnMoreText ? (
             <Link to={card.learnMorePath || learnMorePath} className={styles.learnMore}>
               {card.learnMoreText}
               <span>→</span>
             </Link>
           ) : null}
+
         </div>
       </div>
     </article>
@@ -388,6 +389,7 @@ export default function UniversityImpact() {
 
   return (
     <div className={styles.page} id="impact">
+      
       <ImpactImageSlider images={sliderImages} label={impact.sectionTitle} />
 
       <section className={styles.story} aria-labelledby="global-impact-story">

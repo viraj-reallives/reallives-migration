@@ -15,12 +15,15 @@ import { FaArrowRight, FaAngleRight } from "react-icons/fa6";
 const Navamindradhiraj_University = () => {
   const location = useLocation();
 
-  // Ye check karega ki current URL mein "school" word hai ya nahi
   const isSchoolPath = location.pathname.includes("/school");
+  const isHomeschoolerPath = location.pathname.includes("/homeschooler");
 
-  const dynamicBackPath = isSchoolPath
-    ? "/reallives/school/impact"
+     const dynamicBackPath = isSchoolPath
+  ? "/reallives/school/impact"
+  : isHomeschoolerPath
+    ? "/reallives/homeschooler/impact"
     : "/reallives/university/impact";
+
 
   const goToExternal = () => {
     window.location.href =

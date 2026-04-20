@@ -361,6 +361,7 @@ export default function SchoolAbout() {
                 </div>
               </div>
             ) : null}
+            
           </div>
 
           <div className={Styles1.team_reallives_container}>
