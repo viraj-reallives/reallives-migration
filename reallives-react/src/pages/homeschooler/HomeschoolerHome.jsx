@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { useSiteContent } from '@hooks/useSiteContent';
 import CoreVisionCards from '@components/common/CoreVision/CoreVisionCards';
 import styles from '../school/SchoolHome.module.css';
+import Style1 from '../../components/costom_css/schoolhome_overide.module.css';
+import S_University from '../../components/costom_css/University_override.module.css';
 
 function CtaLink({ to, className, children }) {
   return (
