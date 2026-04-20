@@ -3,8 +3,10 @@ import { Link } from 'react-router-dom';
 import CTABanner from '@components/common/CTABanner/CTABanner';
 import { useSiteContent } from '@hooks/useSiteContent';
 import styles from './SchoolResearch.module.css';
+import { useNavigate } from "react-router-dom";
 
 function ResearchCard({ item, labels, exploreText, isExpanded, onActivate, onExploreClick }) {
+   const navigate = useNavigate();
   const activate = () => onActivate();
 
   const onKeyDown = (e) => {
@@ -15,47 +17,98 @@ function ResearchCard({ item, labels, exploreText, isExpanded, onActivate, onExp
   };
 
   return (
+    // <article
+    //   className={`${styles.card} ${isExpanded ? styles.cardExpanded : ''}`}
+    //   tabIndex={0}
+    //   role="button"
+    //   aria-expanded={isExpanded}
+    //   aria-label={item.paperTitle}
+    //   onClick={activate}
+    //   onKeyDown={onKeyDown}
+    // >
+    //   <div className={styles.cardHead}>
+    //     {item.logoPath ? <img src={item.logoPath} alt="" /> : null}
+    //     {!item.logoPath && item.heading ? <p className={styles.cardHeading}>{item.heading}</p> : null}
+    //     {item.logoCaption && item.logoPath ? <p className={styles.logoCaption}>{item.logoCaption}</p> : null}
+    //   </div>
+    //   <div className={styles.cardBody}>
+    //     <div className={styles.field}>
+    //       <p className={styles.fieldLabel}>{labels.paperTitle}</p>
+    //       <p className={styles.fieldValue}>{item.paperTitle}</p>
+    //     </div>
+    //     <div className={styles.field}>
+    //       <p className={styles.fieldLabel}>{labels.institution}</p>
+    //       <p className={styles.fieldValue}>{item.institution}</p>
+    //     </div>
+    //     <div className={styles.field}>
+    //       <p className={styles.fieldLabel}>{labels.whatWasStudied}</p>
+    //       <p className={styles.fieldValue}>{item.whatWasStudied}</p>
+    //     </div>
+
+    //      <button
+    //   type="button"
+    //   className={styles.exploreBtn}
+    //   onClick={(e) => {
+    //     e.stopPropagation();
+    //     navigate(item.detail.route); // ✅ ROUTE OPEN
+    //   }}
+    // >
+    //   {exploreText}
+    //   <span aria-hidden="true">→</span>
+    // </button>
+
+    //   </div>
+    // </article>
+
     <article
-      className={`${styles.card} ${isExpanded ? styles.cardExpanded : ''}`}
-      tabIndex={0}
-      role="button"
-      aria-expanded={isExpanded}
-      aria-label={item.paperTitle}
-      onClick={activate}
-      onKeyDown={onKeyDown}
+  className={`${styles.card} ${isExpanded ? styles.cardExpanded : ''}`}
+  tabIndex={item.disableCardClick ? -1 : 0}
+  role={item.disableCardClick ? "presentation" : "button"}
+  aria-expanded={isExpanded}
+  aria-label={item.paperTitle}
+  onClick={!item.disableCardClick ? activate : undefined}
+  onKeyDown={!item.disableCardClick ? onKeyDown : undefined}
+>
+  <div className={styles.cardHead}>
+    {item.logoPath ? <img src={item.logoPath} alt="" /> : null}
+    {!item.logoPath && item.heading ? (
+      <p className={styles.cardHeading}>{item.heading}</p>
+    ) : null}
+    {item.logoCaption && item.logoPath ? (
+      <p className={styles.logoCaption}>{item.logoCaption}</p>
+    ) : null}
+  </div>
+
+  <div className={styles.cardBody}>
+    <div className={styles.field}>
+      <p className={styles.fieldLabel}>{labels.paperTitle}</p>
+      <p className={styles.fieldValue}>{item.paperTitle}</p>
+    </div>
+
+    <div className={styles.field}>
+      <p className={styles.fieldLabel}>{labels.institution}</p>
+      <p className={styles.fieldValue}>{item.institution}</p>
+    </div>
+
+    <div className={styles.field}>
+      <p className={styles.fieldLabel}>{labels.whatWasStudied}</p>
+      <p className={styles.fieldValue}>{item.whatWasStudied}</p>
+    </div>
+
+    {/* ✅ ONLY WORKING BUTTON */}
+    <button
+      type="button"
+      className={styles.exploreBtn}
+      onClick={(e) => {
+        e.stopPropagation();
+        navigate(item.detail.route);
+      }}
     >
-      <div className={styles.cardHead}>
-        {item.logoPath ? <img src={item.logoPath} alt="" /> : null}
-        {!item.logoPath && item.heading ? <p className={styles.cardHeading}>{item.heading}</p> : null}
-        {item.logoCaption && item.logoPath ? <p className={styles.logoCaption}>{item.logoCaption}</p> : null}
-      </div>
-      <div className={styles.cardBody}>
-        <div className={styles.field}>
-          <p className={styles.fieldLabel}>{labels.paperTitle}</p>
-          <p className={styles.fieldValue}>{item.paperTitle}</p>
-        </div>
-        <div className={styles.field}>
-          <p className={styles.fieldLabel}>{labels.institution}</p>
-          <p className={styles.fieldValue}>{item.institution}</p>
-        </div>
-        <div className={styles.field}>
-          <p className={styles.fieldLabel}>{labels.whatWasStudied}</p>
-          <p className={styles.fieldValue}>{item.whatWasStudied}</p>
-        </div>
-        <button
-        
-          type="button"
-          className={styles.exploreBtn}
-          onClick={(e) => {
-            e.stopPropagation();
-            onExploreClick(item.id);
-          }}
-        >
-          {exploreText}
-          <span aria-hidden="true">→</span>
-        </button>
-      </div>
-    </article>
+      {exploreText}
+      <span aria-hidden="true">→</span>
+    </button>
+  </div>
+</article>
   );
 }
 
@@ -68,6 +121,7 @@ function ResearchDetail({ research, item, onBack }) {
   const studied = d.whatWasStudied ?? item.whatWasStudied;
 
   return (
+
     <div className={styles.detailInner}>
       <div className={styles.detailHero}>
         {d.heroImagePath ? <img src={d.heroImagePath} alt="" /> : null}
@@ -131,6 +185,8 @@ function ResearchDetail({ research, item, onBack }) {
         </div>
       </div>
     </div>
+
+
   );
 }
 

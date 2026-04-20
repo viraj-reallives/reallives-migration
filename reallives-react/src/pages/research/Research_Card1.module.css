@@ -1,0 +1,12 @@
+.back_btn_override{
+    position: absolute !important;
+    z-index: 100 !important;
+}
+
+.padding_research_container{
+    padding: 1rem 1rem !important;
+}
+
+.Width_manage_class{
+    width: 60%  !important;
+}

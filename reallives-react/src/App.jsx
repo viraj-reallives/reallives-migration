@@ -51,6 +51,16 @@ import GamerContact from '@pages/gamer/GamerContact';
 import NotFound from '@pages/NotFound';
 import EthZurichWorkshop from './pages/impact/EthZurichWorkshop';
 import Navamindradhiraj_Unniversity from './pages/impact/Navamindradhiraj_University'
+import KyungheeUniversity from './pages/impact/KyungheeUniversity';
+import IIT_Bombay_University from './pages/impact/IIT_Bombay_University';
+import Chulalongkorn_University from './pages/impact/Chulalongkorn_University';
+import Research_Card1 from './pages/research/Research_Card1';
+import UaeBristol from './pages/research/UaeBristol';
+import Santa_Clara from './pages/research/Santa_Clara';
+import Albany_University from './pages/research/Albany_University';
+import Uppsala_University from './pages/research/Uppsala_University';
+import Individual_Research from './pages/research/Individual_Research';
+import Kame_Research from './pages/research/Kame_Research';
 
 export default function App() {
   return (
@@ -85,8 +95,16 @@ export default function App() {
             <Route path="foundation" element={<SchoolFoundation />} />
             <Route path="ethzurichworkshop" element={<EthZurichWorkshop/>}/>
             <Route path="Navamindradhiraj_Unniversity" element={<Navamindradhiraj_Unniversity/>}/>
-
-
+            <Route path="KyungheeUniversity" element={<KyungheeUniversity/>}/>
+            <Route path="IIT_Bombay_University" element={<IIT_Bombay_University/>}/>
+            <Route path="Chulalongkorn_University" element={<Chulalongkorn_University/>}/>
+            <Route path="Research_Card1" element={<Research_Card1/>}/>
+            <Route path="UaeBristol" element={<UaeBristol/>}/>
+            <Route path="Santa_Clara" element={<Santa_Clara/>}/>
+            <Route path="Albany_University" element={<Albany_University/>}/>
+            <Route path="Uppsala_University" element={<Uppsala_University/>}/>
+            <Route path="Individual_Research" element={<Individual_Research/>}/>
+            <Route path="Kame_Research" element={<Kame_Research/>}/>
 
           </Route>
 
@@ -104,6 +122,18 @@ export default function App() {
             <Route path="about" element={<UniversityAbout />} />
             <Route path="contact" element={<UniversityContact />} />
             <Route path="foundation" element={<UniversityFoundation />} />
+             <Route path="ethzurichworkshop" element={<EthZurichWorkshop/>}/>
+            <Route path="Navamindradhiraj_Unniversity" element={<Navamindradhiraj_Unniversity/>}/>
+            <Route path="KyungheeUniversity" element={<KyungheeUniversity/>}/>
+            <Route path="IIT_Bombay_University" element={<IIT_Bombay_University/>}/>
+            <Route path="Chulalongkorn_University" element={<Chulalongkorn_University/>}/>
+            <Route path="Research_Card1" element={<Research_Card1/>}/>
+            <Route path="UaeBristol" element={<UaeBristol/>}/>
+            <Route path="Santa_Clara" element={<Santa_Clara/>}/>
+            <Route path="Albany_University" element={<Albany_University/>}/>
+            <Route path="Uppsala_University" element={<Uppsala_University/>}/>
+            <Route path="Individual_Research" element={<Individual_Research/>}/>
+            <Route path="Kame_Research" element={<Kame_Research/>}/>
           </Route>
 
           <Route path="/reallives/homeschooler" element={<SubSiteLayout siteKey="homeschooler" />}>
