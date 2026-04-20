@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { useSiteContent } from "@hooks/useSiteContent";
+import CoreVisionCards from "@components/common/CoreVision/CoreVisionCards";
 import styles from "./SchoolHome.module.css";
 import Style1 from "../../components/costom_css/schoolhome_overide.module.css";
 
@@ -394,19 +395,15 @@ function SdgPanel({ data, images }) {
   );
 }
 
-function ResourcesPanel({ data }) {
-  if (!data?.lessonPlansHeading) return null;
+function CoreVisionPanel({ data }) {
+  if (!data?.coreVisionHeading) return null;
 
   return (
     <div className={styles.panel}>
-      <div className={styles.resourceShell}>
-        <p
-          className={styles.comingSoon}
-          role="region"
-          aria-label="Lesson plans"
-        >
-          {data.lessonPlansHeading}
-        </p>
+      <div className={styles.coreVisionShell}>
+        <h2 className={styles.coreVisionTitle}>{data.coreVisionHeading}</h2>
+        <p className={styles.coreVisionBody}>{data.coreVisionBody}</p>
+        <CoreVisionCards compact />
       </div>
     </div>
   );
@@ -461,7 +458,7 @@ export default function SchoolHome() {
           {extra[1] ? <SdgPanel data={extra[1]} images={images} /> : null}
         </div>
         <div role="tabpanel" id="home-section-panel-3" hidden={activeTab !== 3}>
-          {extra[2] ? <ResourcesPanel data={extra[2]} /> : null}
+          {extra[2] ? <CoreVisionPanel data={extra[2]} /> : null}
         </div>
       </div>
     </div>

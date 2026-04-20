@@ -6,18 +6,16 @@ import {
 
 export const homeschoolerContent = {
   navLinks: [
-    { label: "Home", path: "/reallives/homeschooler" },
-    { label: "Products", path: "/reallives/homeschooler/products" },
-    {
-      label: "ChangeMaker Project",
-      path: "/reallives/homeschooler/changemaker",
-    },
-    { label: "Impact", path: "/reallives/homeschooler/impact" },
-    { label: "Research & Evidence", path: "/reallives/homeschooler/research" },
-    { label: "Pricing", path: "/reallives/homeschooler/pricing" },
-    { label: "Foundation", path: "/reallives/homeschooler/foundation" },
-    { label: "About Us", path: "/reallives/homeschooler/about" },
-    { label: "Contact", path: "/reallives/homeschooler/contact" },
+    { label: 'Home', path: '/reallives/homeschooler' },
+    { label: 'Products', path: '/reallives/homeschooler/products' },
+    { label: 'ChangeMaker Project', path: '/reallives/homeschooler/changemaker' },
+    { label: 'Impact', path: '/reallives/homeschooler/impact' },
+    { label: 'Research & Evidence', path: '/reallives/homeschooler/research' },
+    { label: 'Newsletters', path: '/reallives/homeschooler/newsletters' },
+    { label: 'Pricing', path: '/reallives/homeschooler/pricing' },
+    { label: 'Foundation', path: '/reallives/homeschooler/foundation' },
+    { label: 'About Us', path: '/reallives/homeschooler/about' },
+    { label: 'Contact', path: '/reallives/homeschooler/contact' },
   ],
 
   hero: {
@@ -108,10 +106,8 @@ export const homeschoolerContent = {
       sdgGlobalAction:
         "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/global-action-image.svg",
     },
-    homeTabLabels: ["Who Can Use?", "21st Century Skills", "SDGs", "Resources"],
-    homeAdditionalTabs: homeAdditionalTabsForBasePath(
-      "/reallives/homeschooler",
-    ),
+    homeTabLabels: ['Who Can Use?', '21st Century Skills', 'SDGs', 'Core Vision'],
+    homeAdditionalTabs: homeAdditionalTabsForBasePath('/reallives/homeschooler'),
   },
 
   products: {

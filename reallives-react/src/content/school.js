@@ -8,6 +8,7 @@ export const schoolContent = {
     { label: 'ChangeMaker Project', path: '/reallives/school/changemaker' },
     { label: 'Impact', path: '/reallives/school/impact' },
     { label: 'Research & Evidence', path: '/reallives/school/research' },
+    { label: 'Newsletters', path: '/reallives/school/newsletters' },
     { label: 'Pricing', path: '/reallives/school/pricing' },
     { label: 'Foundation', path: '/reallives/school/foundation' },
     { label: 'About Us', path: '/reallives/school/about' },
@@ -102,7 +103,7 @@ export const schoolContent = {
       sdgGlobalAction:
         'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/global-action-image.svg',
     },
-    homeTabLabels: ['Who Can Use?', '21st Century Skills', "SDG's", 'Resources'],
+    homeTabLabels: ['Who Can Use?', '21st Century Skills', "SDG's", 'Core Vision'],
     homeAdditionalTabs: homeAdditionalTabsForBasePath('/reallives/school'),
   },
 
@@ -623,8 +624,8 @@ export const schoolContent = {
           ],
           methods:
             'Qualitative coding, language network analysis, topic modeling (NetMiner)',
-          pdfPath: '/assets/documents/school/pdf/Kwon etal_2025_RealLives in HE class-2.pdf',
-          route: "/reallives/school/Research_Card1"
+          pdfPath:
+            'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/pdfs/Kwon-etal_2025_RealLives-in-HE-class-2.pdf',
         },
       },
       {
@@ -649,8 +650,8 @@ export const schoolContent = {
           ],
           methods:
             'Conceptual examination of statistics, simulation, and educational game design. Interpretive analysis rather than empirical experimentation or user studies.',
-          pdfPath: '/assets/documents/school/pdf/uwe-bristol.pdf',
-          route: "/reallives/school/UaeBristol"
+          pdfPath:
+            'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/pdfs/uwe-bristol.pdf',
         },
       },
       {
@@ -680,8 +681,8 @@ export const schoolContent = {
           ],
           methods:
             'Quasi-experimental classroom study. Participants: 301 high school students from three Northern California schools',
-          pdfPath: '/assets/documents/school/pdf/Santa Clara University.pdf',
-           route: "/reallives/school/Santa_Clara"
+          pdfPath:
+            'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/pdfs/Santa-Clara-University.pdf',
         },
         
       },
@@ -710,8 +711,8 @@ export const schoolContent = {
           ],
           methods:
             'Quasi-experimental classroom study. Participants: 301 high school students from three Northern California schools',
-          pdfPath: '/assets/documents/school/pdf/albany.pdf',
-          route: "/reallives/school/Albany_University"
+          pdfPath:
+            'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/pdfs/albany.pdf',
         },
       
       },
@@ -744,8 +745,8 @@ export const schoolContent = {
           ],
           methods:
             'Quasi-experimental classroom study with secondary school students (ages 14–19). Participants played the Real Lives simulation, experiencing life as migrants from MENA regions.',
-          pdfPath: '/assets/documents/school/pdf/ThomasNygrenResearchPaper-1.pdf',
-          route: "/reallives/school/Uppsala_University"
+          pdfPath:
+            'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/pdfs/ThomasNygrenResearchPaper-1.pdf',
         },
       },
 
