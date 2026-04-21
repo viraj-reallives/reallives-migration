@@ -161,3 +161,33 @@
     margin: 0px !important;
 }
 
+
+@media(max-width:360px){
+   .padding_overide{
+    margin: 0px !important;
+    gap: 0rem !important;
+   }
+
+   .tabList_custome_override{
+    padding-bottom: 1rem !important;
+    margin-left: 10px;
+   }
+
+   .logoRow_override>img{
+    height: 3rem !important;
+   }
+
+   .grid_learning_outcome{
+    grid-template-columns: 1fr !important;
+    gap: 0rem !important;
+    padding: 10px !important;
+   }
+   .video_width_add{
+    padding: 0rem !important;
+   }
+
+  .header_product_padding{
+    padding: 12px !important;
+  }
+
+}

@@ -40,12 +40,11 @@
   padding: 8px 1.5rem;
   width: 100%;
   background: rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    z-index: 999999;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 999999;
   z-index: 999999;
   border: none !important;
-
 }
 
 .rl_logo {
@@ -63,7 +62,6 @@
   border-radius: 8px;
   background-color: transparent;
   cursor: pointer;
-  
 }
 
 .outer_first_home_new {
@@ -396,9 +394,8 @@
   color: white;
 }
 
-
 .card_style_overide:nth-child(2):hover {
-    background: linear-gradient(360deg, #282828 14.86%, #065143 73.76%);
+  background: linear-gradient(360deg, #282828 14.86%, #065143 73.76%);
 }
 
 .card_style_overide:nth-child(2):hover .explor_btn_new {
@@ -427,22 +424,21 @@
   color: white;
 }
 
-.step_into_stories_btn{
-font-weight: 300;
-font-size: 18px;
-text-align: center;
-background-color: transparent !important;
-border: none;
-outline: none;
-cursor: pointer;
-position: absolute;
-right: 3%;
-color: #CCCCCC;
-display: flex;
-align-items: center;
-gap: 0.5rem;
+.step_into_stories_btn {
+  font-weight: 300;
+  font-size: 18px;
+  text-align: center;
+  background-color: transparent !important;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  position: absolute;
+  right: 3%;
+  color: #cccccc;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
-
 
 @keyframes typing {
   from {
@@ -470,7 +466,8 @@ gap: 0.5rem;
   justify-content: center;
   align-items: center;
   z-index: 999;
-  overflow: hidden;
+  overflow: hidden; 
+
 }
 
 .modal_content {
@@ -495,10 +492,129 @@ gap: 0.5rem;
   z-index: 10000000;
 }
 
-.slideImage{
- border-radius: 10px !important;
+.slideImage {
+  border-radius: 10px !important;
 }
 
 .modal_close:hover {
   background: #ddd;
+}
+
+@media (max-width: 360px) {
+
+  .fourth_hight_container{
+    height: auto !important;
+  }
+
+  .therd_hight_container{
+    height: 108vh !important;
+  }
+
+  .arrow_font{
+    width: 13px !important;
+  }
+
+  .inner_bottom_home_label{
+    bottom: 3%;
+  }
+
+  .cards_container_outer {
+    grid-template-columns: 1fr;
+    padding: 0rem 0rem;
+  }
+
+  .who_i_am_text {
+    padding: 0rem 0rem 0rem 0rem;
+    text-align: center;
+  }
+
+  .global_impact_banner_container {
+    grid-template-columns: 1fr;
+        padding: 0rem 1rem;
+        height: auto;
+  }
+
+  .manrope_text {
+    font-size: 25px;
+    line-height: 41px;
+    text-align: center;
+  }
+
+  .headerCtas_override_style {
+    flex-wrap: nowrap;
+  }
+
+  .icon_rl_mid {
+    width: 95%;
+  }
+
+  .home_btn_event {
+    font-size: 14px;
+    padding: 0.5rem 1rem 0.6rem 1rem !important;
+  }
+
+  .container_label_pdf_structure {
+    grid-template-columns: 1fr;
+    padding: 1rem 1rem;
+    gap: 2rem;
+  }
+
+  .container_new_home {
+    height: auto !important;
+  }
+
+  .pdf_container_home_new{
+    height: auto;
+  }
+
+  .title_card_text{
+    font-size: 15px !important;
+  }
+
+  .view_paper_btn{
+    font-size: 15px !important;
+  }
+  .label_card_new_str{
+    gap: 18px;
+  }
+
+   .global_impact_container{
+    height:95vh;
+   }
+
+   .image_banner_full_new{
+    height: 40vh;
+   }
+
+   .image_banner_full_new>img{
+    height: 300px;
+    padding: 1rem;
+   }
+
+   .inner_top_home_label{
+    margin-top: 3%;
+   }
+
+   .overflay_data_text_image{
+    width: 80%;
+    margin-top: 30%;
+   }
+
+   .overflay_data_text_image{
+    font-size: 17px;
+   }
+
+   .label_up_fill{
+    width: 31px;
+   }
+
+   .step_into_stories_btn{
+    margin-top: 70px !important;
+    font-size: 15px;
+    width: 100%;
+    background-color: lightslategray !important;
+    justify-content: center;
+    right: 0%;
+   }
+
 }

@@ -1,37 +1,52 @@
-import { useContext, useEffect, useRef, useState, useMemo } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import clsx from 'clsx';
-import { useSiteContent } from '@hooks/useSiteContent';
-import { useTheme } from '@context/ThemeContext';
-import SiteContext from '@context/SiteContext';
-import styles from './Navbar.module.css';
+import { useContext, useEffect, useRef, useState, useMemo } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import clsx from "clsx";
+import { useSiteContent } from "@hooks/useSiteContent";
+import { useTheme } from "@context/ThemeContext";
+import SiteContext from "@context/SiteContext";
+import styles from "./Navbar.module.css";
+
+var getHomePath = () => {
+  const path = typeof window !== "undefined" ? window.location.pathname : "";
+
+  if (path.includes("/school")) return "/school";
+  if (path.includes("/university")) return "/university";
+  if (path.includes("/homeschooler")) return "/homeschooler";
+
+  return "/"; // Default agar kuch match na kare
+};
 
 const SITE_CONFIG = {
   school: {
-    label: 'School',
-    description: 'Empowering classrooms with lived experience',
-    path: '/reallives/school',
+    label: "School",
+    description: "Empowering classrooms with lived experience",
+    path: "/reallives/school",
   },
   university: {
-    label: 'University',
-    description: 'Our impactful journey from the year 2004',
-    path: '/reallives/university',
+    label: "University",
+    description: "Our impactful journey from the year 2004",
+    path: "/reallives/university",
   },
   homeschooler: {
-    label: 'Home Schooler',
-    description: 'Flexible learning beyond the classroom',
-    path: '/reallives/homeschooler',
+    label: "Home Schooler",
+    description: "Flexible learning beyond the classroom",
+    path: "/reallives/homeschooler",
   },
   gamer: {
-    label: 'Gamer',
-    description: 'Live a billion lives, discover who you could be',
-    path: '/reallives/gamer',
+    label: "Gamer",
+    description: "Live a billion lives, discover who you could be",
+    path: "/reallives/gamer",
   },
 };
 
 function ImpactIcon() {
   return (
-    <svg className={styles.itemIcon} viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+    <svg
+      className={styles.itemIcon}
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      focusable="false"
+    >
       <rect x="3" y="11" width="4" height="9" rx="1" />
       <rect x="10" y="7" width="4" height="13" rx="1" />
       <rect x="17" y="3" width="4" height="17" rx="1" />
@@ -41,7 +56,12 @@ function ImpactIcon() {
 
 function GlobeIcon() {
   return (
-    <svg className={styles.itemIcon} viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+    <svg
+      className={styles.itemIcon}
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      focusable="false"
+    >
       <circle cx="12" cy="12" r="9" />
       <ellipse cx="12" cy="12" rx="4" ry="9" />
       <line x1="3" y1="12" x2="21" y2="12" />
@@ -52,7 +72,12 @@ function GlobeIcon() {
 
 function MailIcon() {
   return (
-    <svg className={styles.itemIcon} viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+    <svg
+      className={styles.itemIcon}
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      focusable="false"
+    >
       <rect x="3" y="5" width="18" height="14" rx="2" />
       <polyline points="4 6 12 12 20 6" />
     </svg>
@@ -62,14 +87,24 @@ function MailIcon() {
 function ThemeIcon({ isDark }) {
   if (isDark) {
     return (
-      <svg className={styles.themeIcon} viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <svg
+        className={styles.themeIcon}
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+        focusable="false"
+      >
         <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 1 0 9.79 9.79z" />
       </svg>
     );
   }
 
   return (
-    <svg className={styles.themeIcon} viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+    <svg
+      className={styles.themeIcon}
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      focusable="false"
+    >
       <circle cx="12" cy="12" r="4.25" />
       <line x1="12" y1="1.75" x2="12" y2="4.25" />
       <line x1="12" y1="19.75" x2="12" y2="22.25" />
@@ -99,41 +134,43 @@ export default function Navbar() {
   const rootRef = useRef(null);
 
   const basePath = useMemo(
-    () => (siteKey ? `/reallives/${siteKey}` : '/'),
+    () => (siteKey ? `/reallives/${siteKey}` : "/"),
     [siteKey],
   );
 
-  const logoSrc = footer.logo ?? footer.logoPath ?? '';
+  const logoSrc = footer.logo ?? footer.logoPath ?? "";
 
   const isPathActive = (path) => location.pathname.startsWith(path);
 
   const isNavItemActive = (key) => {
     if (!siteKey) return false;
     switch (key) {
-      case 'products':
+      case "products":
         return isPathActive(`${basePath}/products`);
-      case 'impact':
+      case "impact":
         return (
-          isPathActive(`${basePath}/changemaker`) || isPathActive(`${basePath}/impact`)
+          isPathActive(`${basePath}/changemaker`) ||
+          isPathActive(`${basePath}/impact`)
         );
-      case 'research':
+      case "research":
         return isPathActive(`${basePath}/research`);
-      case 'newsletters':
+      case "newsletters":
         return isPathActive(`${basePath}/newsletters`);
-      case 'pricing':
+      case "pricing":
         return isPathActive(`${basePath}/pricing`);
-      case 'story':
+      case "story":
         return (
-          isPathActive(`${basePath}/about`) || isPathActive(`${basePath}/contact`)
+          isPathActive(`${basePath}/about`) ||
+          isPathActive(`${basePath}/contact`)
         );
-      case 'foundation':
+      case "foundation":
         return isPathActive(`${basePath}/foundation`);
       default:
         return false;
     }
   };
 
-  const siteLabel = SITE_CONFIG[siteKey]?.label ?? 'RealLives';
+  const siteLabel = SITE_CONFIG[siteKey]?.label ?? "RealLives";
 
   const otherSites = useMemo(() => {
     return Object.entries(SITE_CONFIG)
@@ -151,18 +188,18 @@ export default function Navbar() {
     }
 
     function handleKeyDown(event) {
-      if (event.key === 'Escape') {
+      if (event.key === "Escape") {
         setSwitcherOpen(false);
         setOpenDropdown(null);
         setMenuOpen(false);
       }
     }
 
-    document.addEventListener('mousedown', handleClickOutside);
-    window.addEventListener('keydown', handleKeyDown);
+    document.addEventListener("mousedown", handleClickOutside);
+    window.addEventListener("keydown", handleKeyDown);
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-      window.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener("mousedown", handleClickOutside);
+      window.removeEventListener("keydown", handleKeyDown);
     };
   }, []);
 
@@ -183,7 +220,7 @@ export default function Navbar() {
     navigate(path);
   };
 
-  const isGamer = siteKey === 'gamer';
+  const isGamer = siteKey === "gamer";
   const isHomeIndex = siteKey && location.pathname === `/reallives/${siteKey}`;
 
   const desktopOurStory = (
@@ -192,19 +229,19 @@ export default function Navbar() {
         type="button"
         className={clsx(
           styles.navItem,
-          isNavItemActive('story') && styles.navItemActive,
+          isNavItemActive("story") && styles.navItemActive,
         )}
         onClick={() =>
-          setOpenDropdown((current) => (current === 'story' ? null : 'story'))
+          setOpenDropdown((current) => (current === "story" ? null : "story"))
         }
         aria-haspopup="menu"
-        aria-expanded={openDropdown === 'story'}
+        aria-expanded={openDropdown === "story"}
       >
         <span className={styles.navLabel}>Our Story</span>
         <span className={styles.navCaret} aria-hidden="true" />
       </button>
 
-      {openDropdown === 'story' && (
+      {openDropdown === "story" && (
         <div className={styles.dropdownPanel} role="menu">
           <button
             type="button"
@@ -251,7 +288,7 @@ export default function Navbar() {
         type="button"
         className={clsx(
           styles.mobileItem,
-          isNavItemActive('story') && styles.navItemActive,
+          isNavItemActive("story") && styles.navItemActive,
         )}
         onClick={() => setMobileStoryOpen((open) => !open)}
         aria-expanded={mobileStoryOpen}
@@ -311,7 +348,7 @@ export default function Navbar() {
             className={styles.logoButton}
             onClick={() => handlePrimaryNavClick(basePath)}
           >
-            {logoSrc ? (
+            {/* {logoSrc ? (
               <img
                 src={logoSrc}
                 alt={footer.organizationName ?? 'RealLives'}
@@ -319,7 +356,19 @@ export default function Navbar() {
               />
             ) : (
               <span className={styles.logoFallback}>RealLives</span>
-            )}
+            )} */}
+
+            <a href={getHomePath} className={styles.logoLink}>
+              {logoSrc ? (
+                <img
+                  src={logoSrc}
+                  alt={footer.organizationName ?? "RealLives"}
+                  className={styles.logoImg}
+                />
+              ) : (
+                <span className={styles.logoFallback}>RealLives</span>
+              )}
+            </a>
           </button>
 
           <div className={styles.siteSwitcher}>
@@ -348,10 +397,15 @@ export default function Navbar() {
                   >
                     <div className={styles.siteSwitcherItemTop}>
                       <span className={styles.siteSwitcherItemLabel}>
-                        {site.label} <span className={styles.itemArrow} aria-hidden="true">›</span>
+                        {site.label}{" "}
+                        <span className={styles.itemArrow} aria-hidden="true">
+                          ›
+                        </span>
                       </span>
                     </div>
-                    <p className={styles.siteSwitcherItemDescription}>{site.description}</p>
+                    <p className={styles.siteSwitcherItemDescription}>
+                      {site.description}
+                    </p>
                   </button>
                 ))}
               </div>
@@ -378,7 +432,7 @@ export default function Navbar() {
                 className={clsx(
                   styles.navItem,
                   styles.navItemLink,
-                  isNavItemActive('products') && styles.navItemActive,
+                  isNavItemActive("products") && styles.navItemActive,
                 )}
                 onClick={() => closeAllDropdowns()}
               >
@@ -389,7 +443,7 @@ export default function Navbar() {
                 className={clsx(
                   styles.navItem,
                   styles.navItemLink,
-                  isNavItemActive('pricing') && styles.navItemActive,
+                  isNavItemActive("pricing") && styles.navItemActive,
                 )}
                 onClick={() => closeAllDropdowns()}
               >
@@ -414,7 +468,7 @@ export default function Navbar() {
                 type="button"
                 className={clsx(
                   styles.navItem,
-                  isNavItemActive('products') && styles.navItemActive,
+                  isNavItemActive("products") && styles.navItemActive,
                 )}
                 onClick={() => handlePrimaryNavClick(`${basePath}/products`)}
               >
@@ -426,30 +480,36 @@ export default function Navbar() {
                   type="button"
                   className={clsx(
                     styles.navItem,
-                    isNavItemActive('impact') && styles.navItemActive,
+                    isNavItemActive("impact") && styles.navItemActive,
                   )}
                   onClick={() =>
-                    setOpenDropdown((current) => (current === 'impact' ? null : 'impact'))
+                    setOpenDropdown((current) =>
+                      current === "impact" ? null : "impact",
+                    )
                   }
                   aria-haspopup="menu"
-                  aria-expanded={openDropdown === 'impact'}
+                  aria-expanded={openDropdown === "impact"}
                 >
                   <span className={styles.navLabel}>Impact</span>
                   <span className={styles.navCaret} aria-hidden="true" />
                 </button>
 
-                {openDropdown === 'impact' && (
+                {openDropdown === "impact" && (
                   <div className={styles.dropdownPanel} role="menu">
                     <button
                       type="button"
                       className={styles.dropdownItem}
-                      onClick={() => handlePrimaryNavClick(`${basePath}/changemaker`)}
+                      onClick={() =>
+                        handlePrimaryNavClick(`${basePath}/changemaker`)
+                      }
                     >
                       <span className={styles.dropdownIconWrap}>
                         <ImpactIcon />
                       </span>
                       <div className={styles.dropdownItemBody}>
-                        <span className={styles.dropdownItemTitle}>ChangeMaker Project</span>
+                        <span className={styles.dropdownItemTitle}>
+                          ChangeMaker Project
+                        </span>
                         <span className={styles.dropdownItemDescription}>
                           The journey from awareness to action
                         </span>
@@ -458,13 +518,17 @@ export default function Navbar() {
                     <button
                       type="button"
                       className={styles.dropdownItem}
-                      onClick={() => handlePrimaryNavClick(`${basePath}/impact`)}
+                      onClick={() =>
+                        handlePrimaryNavClick(`${basePath}/impact`)
+                      }
                     >
                       <span className={styles.dropdownIconWrap}>
                         <GlobeIcon />
                       </span>
                       <div className={styles.dropdownItemBody}>
-                        <span className={styles.dropdownItemTitle}>Our Impact Stories</span>
+                        <span className={styles.dropdownItemTitle}>
+                          Our Impact Stories
+                        </span>
                         <span className={styles.dropdownItemDescription}>
                           7 Countries and over a hundred workshops
                         </span>
@@ -478,7 +542,7 @@ export default function Navbar() {
                 type="button"
                 className={clsx(
                   styles.navItem,
-                  isNavItemActive('research') && styles.navItemActive,
+                  isNavItemActive("research") && styles.navItemActive,
                 )}
                 onClick={() => handlePrimaryNavClick(`${basePath}/research`)}
               >
@@ -489,7 +553,7 @@ export default function Navbar() {
                 type="button"
                 className={clsx(
                   styles.navItem,
-                  isNavItemActive('newsletters') && styles.navItemActive,
+                  isNavItemActive("newsletters") && styles.navItemActive,
                 )}
                 onClick={() => handlePrimaryNavClick(`${basePath}/newsletters`)}
               >
@@ -500,7 +564,7 @@ export default function Navbar() {
                 type="button"
                 className={clsx(
                   styles.navItem,
-                  isNavItemActive('pricing') && styles.navItemActive,
+                  isNavItemActive("pricing") && styles.navItemActive,
                 )}
                 onClick={() => handlePrimaryNavClick(`${basePath}/pricing`)}
               >
@@ -514,7 +578,7 @@ export default function Navbar() {
                 className={clsx(
                   styles.navItemExternal,
                   styles.navItemLink,
-                  isNavItemActive('foundation') && styles.navItemActive,
+                  isNavItemActive("foundation") && styles.navItemActive,
                 )}
                 onClick={() => closeAllDropdowns()}
               >
@@ -529,9 +593,9 @@ export default function Navbar() {
             type="button"
             className={styles.themeToggle}
             onClick={() => toggleTheme?.()}
-            aria-label={theme === 'dark' ? 'Use light theme' : 'Use dark theme'}
+            aria-label={theme === "dark" ? "Use light theme" : "Use dark theme"}
           >
-            <ThemeIcon isDark={theme !== 'dark'} />
+            <ThemeIcon isDark={theme !== "dark"} />
           </button>
 
           <div className={styles.ctaRow}>
@@ -543,7 +607,10 @@ export default function Navbar() {
             >
               Log In
             </a>
-            <Link to={`/reallives/${siteKey}/pricing`} className={styles.primaryCta}>
+            <Link
+              to={`/reallives/${siteKey}/pricing`}
+              className={styles.primaryCta}
+            >
               Get Started
             </Link>
           </div>
@@ -592,7 +659,10 @@ export default function Navbar() {
                   aria-expanded={switcherOpen}
                 >
                   <span className={styles.siteSwitcherLabel}>{siteLabel}</span>
-                  <span className={styles.siteSwitcherArrow} aria-hidden="true" />
+                  <span
+                    className={styles.siteSwitcherArrow}
+                    aria-hidden="true"
+                  />
                 </button>
 
                 {switcherOpen && (
@@ -606,8 +676,11 @@ export default function Navbar() {
                       >
                         <div className={styles.siteSwitcherItemTop}>
                           <span className={styles.siteSwitcherItemLabel}>
-                            {site.label}{' '}
-                            <span className={styles.itemArrow} aria-hidden="true">
+                            {site.label}{" "}
+                            <span
+                              className={styles.itemArrow}
+                              aria-hidden="true"
+                            >
                               ›
                             </span>
                           </span>
@@ -641,7 +714,7 @@ export default function Navbar() {
                     className={clsx(
                       styles.mobileItem,
                       styles.navItemLink,
-                      isNavItemActive('products') && styles.navItemActive,
+                      isNavItemActive("products") && styles.navItemActive,
                     )}
                     onClick={() => setMenuOpen(false)}
                   >
@@ -652,7 +725,7 @@ export default function Navbar() {
                     className={clsx(
                       styles.mobileItem,
                       styles.navItemLink,
-                      isNavItemActive('pricing') && styles.navItemActive,
+                      isNavItemActive("pricing") && styles.navItemActive,
                     )}
                     onClick={() => setMenuOpen(false)}
                   >
@@ -677,9 +750,11 @@ export default function Navbar() {
                     type="button"
                     className={clsx(
                       styles.mobileItem,
-                      isNavItemActive('products') && styles.navItemActive,
+                      isNavItemActive("products") && styles.navItemActive,
                     )}
-                    onClick={() => handlePrimaryNavClick(`${basePath}/products`)}
+                    onClick={() =>
+                      handlePrimaryNavClick(`${basePath}/products`)
+                    }
                   >
                     <span className={styles.navLabel}>Products</span>
                   </button>
@@ -689,7 +764,7 @@ export default function Navbar() {
                       type="button"
                       className={clsx(
                         styles.mobileItem,
-                        isNavItemActive('impact') && styles.navItemActive,
+                        isNavItemActive("impact") && styles.navItemActive,
                       )}
                       onClick={() => setMobileImpactOpen((open) => !open)}
                       aria-expanded={mobileImpactOpen}
@@ -708,11 +783,15 @@ export default function Navbar() {
                         <button
                           type="button"
                           className={styles.mobileSubItem}
-                          onClick={() => handlePrimaryNavClick(`${basePath}/changemaker`)}
+                          onClick={() =>
+                            handlePrimaryNavClick(`${basePath}/changemaker`)
+                          }
                         >
                           <ImpactIcon />
                           <div className={styles.dropdownItemBody}>
-                            <span className={styles.dropdownItemTitle}>ChangeMaker Project</span>
+                            <span className={styles.dropdownItemTitle}>
+                              ChangeMaker Project
+                            </span>
                             <span className={styles.dropdownItemDescription}>
                               The journey from awareness to action
                             </span>
@@ -721,11 +800,15 @@ export default function Navbar() {
                         <button
                           type="button"
                           className={styles.mobileSubItem}
-                          onClick={() => handlePrimaryNavClick(`${basePath}/impact`)}
+                          onClick={() =>
+                            handlePrimaryNavClick(`${basePath}/impact`)
+                          }
                         >
                           <GlobeIcon />
                           <div className={styles.dropdownItemBody}>
-                            <span className={styles.dropdownItemTitle}>Our Impact Stories</span>
+                            <span className={styles.dropdownItemTitle}>
+                              Our Impact Stories
+                            </span>
                             <span className={styles.dropdownItemDescription}>
                               7 Countries and over a hundred workshops
                             </span>
@@ -739,9 +822,11 @@ export default function Navbar() {
                     type="button"
                     className={clsx(
                       styles.mobileItem,
-                      isNavItemActive('research') && styles.navItemActive,
+                      isNavItemActive("research") && styles.navItemActive,
                     )}
-                    onClick={() => handlePrimaryNavClick(`${basePath}/research`)}
+                    onClick={() =>
+                      handlePrimaryNavClick(`${basePath}/research`)
+                    }
                   >
                     <span className={styles.navLabel}>Research</span>
                   </button>
@@ -750,9 +835,11 @@ export default function Navbar() {
                     type="button"
                     className={clsx(
                       styles.mobileItem,
-                      isNavItemActive('newsletters') && styles.navItemActive,
+                      isNavItemActive("newsletters") && styles.navItemActive,
                     )}
-                    onClick={() => handlePrimaryNavClick(`${basePath}/newsletters`)}
+                    onClick={() =>
+                      handlePrimaryNavClick(`${basePath}/newsletters`)
+                    }
                   >
                     <span className={styles.navLabel}>Newsletters</span>
                   </button>
@@ -761,7 +848,7 @@ export default function Navbar() {
                     type="button"
                     className={clsx(
                       styles.mobileItem,
-                      isNavItemActive('pricing') && styles.navItemActive,
+                      isNavItemActive("pricing") && styles.navItemActive,
                     )}
                     onClick={() => handlePrimaryNavClick(`${basePath}/pricing`)}
                   >
@@ -776,7 +863,7 @@ export default function Navbar() {
                       styles.mobileItemExternal,
                       styles.mobileItem,
                       styles.navItemLink,
-                      isNavItemActive('foundation') && styles.navItemActive,
+                      isNavItemActive("foundation") && styles.navItemActive,
                     )}
                     onClick={() => setMenuOpen(false)}
                   >

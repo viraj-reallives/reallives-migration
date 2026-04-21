@@ -70,20 +70,638 @@
   max-height: none !important;
 }
 
-.sdg_grops_style{
-    position: absolute;
-    top: 0;
-    padding: 1rem;
-    width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template-rows: repeat(3,1fr);
+.sdg_grops_style {
+  position: absolute;
+  top: 0;
+  padding: 1rem;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
 }
-.sdg_logo_style{
-    width: 100px !important;
-    height: 90px !important;
+.sdg_logo_style {
+  width: 100px !important;
+  height: 90px !important;
 }
 
-.color_white{
-    color: white !important;
+.color_white {
+  color: white !important;
+}
+
+@media(max-width:700px){
+   .banner_21_skills {
+    height: 300px;
+  }
+
+  .banner_21_skills > img {
+    height: 100%;
+  }
+
+  .tabBar_override_style > button {
+    padding: 10px !important;
+    font-size: 13px !important;
+  }
+
+  .tabBar_override_style {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    padding: 8px 8px !important;
+  }
+
+  .gridtwo_override_style {
+    gap: 0rem !important;
+  }
+
+  .container_work_in_classroome {
+    padding: 1rem 1rem !important;
+  }
+
+  .image_style_override {
+    height: 330px !important;
+  }
+
+  .container_work_2 {
+    padding: 1rem 1rem !important;
+    gap: 0rem !important;
+  }
+
+  .sdgro_custome_conatiner {
+    margin: 0px !important;
+    padding: 1rem !important;
+    background-color: transparent;
+    padding-top: 5rem !important;
+  }
+
+  .sdgro_custome_conatiner > p {
+    font-size: 14px !important;
+  }
+
+  .sdg_icon_custom_grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+  }
+
+  .sdg_grops_style {
+    gap: 5px;
+    height: 100%;
+  }
+
+  .font_imapct_p {
+    font-size: 10px !important;
+    margin: 2px;
+  }
+  .sdg_icon_custom_grid {
+    width: auto !important;
+  }
+
+  .sdg_logo_style {
+    width: auto !important;
+    height: auto !important;
+  }
+
+  .padding_panel_custome {
+    padding-bottom: 0rem !important;
+  }
+}
+
+@media(max-width:670px){
+   .banner_21_skills {
+    height: 300px;
+  }
+
+  .banner_21_skills > img {
+    height: 100%;
+  }
+
+  .tabBar_override_style > button {
+    padding: 10px !important;
+    font-size: 13px !important;
+  }
+
+  .tabBar_override_style {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    padding: 8px 8px !important;
+  }
+
+  .gridtwo_override_style {
+    gap: 0rem !important;
+  }
+
+  .container_work_in_classroome {
+    padding: 1rem 1rem !important;
+  }
+
+  .image_style_override {
+    height: 330px !important;
+  }
+
+  .container_work_2 {
+    padding: 1rem 1rem !important;
+    gap: 0rem !important;
+  }
+
+  .sdgro_custome_conatiner {
+    margin: 0px !important;
+    padding: 1rem !important;
+    background-color: transparent;
+    padding-top: 5rem !important;
+  }
+
+  .sdgro_custome_conatiner > p {
+    font-size: 14px !important;
+  }
+
+  .sdg_icon_custom_grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+  }
+
+  .sdg_grops_style {
+    gap: 5px;
+    height: 100%;
+  }
+
+  .font_imapct_p {
+    font-size: 10px !important;
+    margin: 2px;
+  }
+  .sdg_icon_custom_grid {
+    width: auto !important;
+  }
+
+  .sdg_logo_style {
+    width: auto !important;
+    height: auto !important;
+  }
+
+  .padding_panel_custome {
+    padding-bottom: 0rem !important;
+  }
+}
+
+@media(max-width:600px){
+   .banner_21_skills {
+    height: 300px;
+  }
+
+  .banner_21_skills > img {
+    height: 100%;
+  }
+
+  .tabBar_override_style > button {
+    padding: 10px !important;
+    font-size: 12px !important;
+  }
+
+  .tabBar_override_style {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    padding: 8px 8px !important;
+  }
+
+  .gridtwo_override_style {
+    gap: 0rem !important;
+  }
+
+  .container_work_in_classroome {
+    padding: 1rem 1rem !important;
+  }
+
+  .image_style_override {
+    height: 330px !important;
+  }
+
+  .container_work_2 {
+    padding: 1rem 1rem !important;
+    gap: 0rem !important;
+  }
+
+  .sdgro_custome_conatiner {
+    margin: 0px !important;
+    padding: 1rem !important;
+    background-color: transparent;
+    padding-top: 5rem !important;
+  }
+
+  .sdgro_custome_conatiner > p {
+    font-size: 14px !important;
+  }
+
+  .sdg_icon_custom_grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+  }
+
+  .sdg_grops_style {
+    gap: 5px;
+    height: 100%;
+  }
+
+  .font_imapct_p {
+    font-size: 10px !important;
+    margin: 2px;
+  }
+  .sdg_icon_custom_grid {
+    width: auto !important;
+  }
+
+  .sdg_logo_style {
+    width: auto !important;
+    height: auto !important;
+  }
+
+  .padding_panel_custome {
+    padding-bottom: 0rem !important;
+  }
+}
+
+@media(max-width:560px){
+
+   .banner_21_skills {
+    height: 300px;
+  }
+
+  .banner_21_skills > img {
+    height: 100%;
+  }
+
+  .tabBar_override_style > button {
+    padding: 10px !important;
+    font-size: 12px !important;
+  }
+
+  .tabBar_override_style {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    padding: 8px 8px !important;
+  }
+
+  .gridtwo_override_style {
+    gap: 0rem !important;
+  }
+
+  .container_work_in_classroome {
+    padding: 1rem 1rem !important;
+  }
+
+  .image_style_override {
+    height: 320px !important;
+  }
+
+  .container_work_2 {
+    padding: 1rem 1rem !important;
+    gap: 0rem !important;
+  }
+
+  .sdgro_custome_conatiner {
+    margin: 0px !important;
+    padding: 1rem !important;
+    background-color: transparent;
+    padding-top: 5rem !important;
+  }
+
+  .sdgro_custome_conatiner > p {
+    font-size: 13px !important;
+  }
+
+  .sdg_icon_custom_grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+  }
+
+  .sdg_grops_style {
+    gap: 5px;
+    height: 100%;
+  }
+
+  .font_imapct_p {
+    font-size: 8px !important;
+    margin: 2px;
+  }
+  .sdg_icon_custom_grid {
+    width: auto !important;
+  }
+
+  .sdg_logo_style {
+    width: auto !important;
+    height: auto !important;
+  }
+
+  .padding_panel_custome {
+    padding-bottom: 0rem !important;
+  }
+}
+
+@media(max-width:500px){
+
+   .banner_21_skills {
+    height: 300px;
+  }
+
+  .banner_21_skills > img {
+    height: 100%;
+  }
+
+  .tabBar_override_style > button {
+    padding: 10px !important;
+    font-size: 12px !important;
+  }
+
+  .tabBar_override_style {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    padding: 8px 8px !important;
+  }
+
+  .gridtwo_override_style {
+    gap: 0rem !important;
+  }
+
+  .container_work_in_classroome {
+    padding: 1rem 1rem !important;
+  }
+
+  .image_style_override {
+    height: auto !important;
+  }
+
+  .container_work_2 {
+    padding: 1rem 1rem !important;
+    gap: 0rem !important;
+  }
+
+  .sdgro_custome_conatiner {
+    margin: 0px !important;
+    padding: 1rem !important;
+    background-color: transparent;
+    padding-top: 5rem !important;
+  }
+
+  .sdgro_custome_conatiner > p {
+    font-size: 13px !important;
+  }
+
+  .sdg_icon_custom_grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+  }
+
+  .sdg_grops_style {
+    gap: 5px;
+    height: 100%;
+  }
+
+  .font_imapct_p {
+    font-size: 8px !important;
+    margin: 2px;
+  }
+  .sdg_icon_custom_grid {
+    width: auto !important;
+  }
+
+  .sdg_logo_style {
+    width: auto !important;
+    height: auto !important;
+  }
+
+  .padding_panel_custome {
+    padding-bottom: 0rem !important;
+  }
+}
+
+@media (max-width: 460px) {
+  .banner_21_skills {
+    height: 300px;
+  }
+
+  .banner_21_skills > img {
+    height: 100%;
+  }
+
+  .tabBar_override_style > button {
+    padding: 10px !important;
+    font-size: 12px !important;
+  }
+
+  .tabBar_override_style {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    padding: 8px 8px !important;
+  }
+
+  .gridtwo_override_style {
+    gap: 0rem !important;
+  }
+
+  .container_work_in_classroome {
+    padding: 1rem 1rem !important;
+  }
+
+  .image_style_override {
+    height: auto !important;
+  }
+
+  .container_work_2 {
+    padding: 1rem 1rem !important;
+    gap: 0rem !important;
+  }
+
+  .sdgro_custome_conatiner {
+    margin: 0px !important;
+    padding: 1rem !important;
+    background-color: transparent;
+    padding-top: 5rem !important;
+  }
+
+  .sdgro_custome_conatiner > p {
+    font-size: 12px !important;
+  }
+
+  .sdg_icon_custom_grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+  }
+
+  .sdg_grops_style {
+    gap: 5px;
+    height: 100%;
+  }
+
+  .font_imapct_p {
+    font-size: 8px !important;
+    margin: 2px;
+  }
+  .sdg_icon_custom_grid {
+    width: auto !important;
+  }
+
+  .sdg_logo_style {
+    width: auto !important;
+    height: auto !important;
+  }
+
+  .padding_panel_custome {
+    padding-bottom: 0rem !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .banner_21_skills {
+    height: 300px;
+  }
+
+  .banner_21_skills > img {
+    height: 100%;
+  }
+
+  .tabBar_override_style > button {
+    padding: 10px !important;
+    font-size: 12px !important;
+  }
+
+  .tabBar_override_style {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    padding: 8px 8px !important;
+  }
+
+  .gridtwo_override_style {
+    gap: 0rem !important;
+  }
+
+  .container_work_in_classroome {
+    padding: 1rem 1rem !important;
+  }
+
+  .image_style_override {
+    height: auto !important;
+  }
+
+  .container_work_2 {
+    padding: 1rem 1rem !important;
+    gap: 0rem !important;
+  }
+
+  .sdgro_custome_conatiner {
+    margin: 0px !important;
+    padding: 1rem !important;
+    background-color: transparent;
+    padding-top: 5rem !important;
+  }
+
+  .sdgro_custome_conatiner > p {
+    font-size: 12px !important;
+  }
+
+  .sdg_icon_custom_grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+  }
+
+  .sdg_grops_style {
+    gap: 5px;
+    height: 100%;
+  }
+
+  .font_imapct_p {
+    font-size: 8px !important;
+    margin: 2px;
+  }
+  .sdg_icon_custom_grid {
+    width: auto !important;
+  }
+
+  .sdg_logo_style {
+    width: auto !important;
+    height: auto !important;
+  }
+
+  .padding_panel_custome {
+    padding-bottom: 0rem !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .banner_21_skills {
+    height: 300px;
+  }
+
+  .banner_21_skills > img {
+    height: 100%;
+  }
+
+  .tabBar_override_style > button {
+    padding: 10px !important;
+    font-size: 12px !important;
+  }
+
+  .tabBar_override_style {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    padding: 8px 8px !important;
+  }
+
+  .gridtwo_override_style {
+    gap: 0rem !important;
+  }
+
+  .container_work_in_classroome {
+    padding: 1rem 1rem !important;
+  }
+
+  .image_style_override {
+    height: auto !important;
+  }
+
+  .container_work_2 {
+    padding: 1rem 1rem !important;
+    gap: 0rem !important;
+  }
+
+  .sdgro_custome_conatiner {
+    margin: 0px !important;
+    padding: 1rem !important;
+    background-color: transparent;
+    padding-top: 5rem !important;
+  }
+
+  .sdgro_custome_conatiner > p {
+    font-size: 12px !important;
+  }
+
+  .sdg_icon_custom_grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+  }
+
+  .sdg_grops_style {
+    gap: 5px;
+    height: 100%;
+  }
+
+  .font_imapct_p {
+    font-size: 8px !important;
+    margin: 2px;
+  }
+  .sdg_icon_custom_grid {
+    width: auto !important;
+  }
+
+  .sdg_logo_style {
+    width: auto !important;
+    height: auto !important;
+  }
+
+  .padding_panel_custome {
+    padding-bottom: 0rem !important;
+  }
 }
