@@ -161,8 +161,22 @@
     margin: 0px !important;
 }
 
+.gap_override_0{
+  gap: 0px !important;
+}
 
 @media(max-width:360px){
+   
+    .flex_center{
+       flex-direction: column;
+       justify-content: start;
+    }
+
+    .first_image_grid_top{
+      flex-direction: column;
+      padding: 10px 1rem;
+    }
+
    .padding_overide{
     margin: 0px !important;
     gap: 0rem !important;
@@ -189,5 +203,53 @@
   .header_product_padding{
     padding: 12px !important;
   }
+   .footer_empathy_experience{
+    border: none;
+    border-radius: 0px;
+    padding: 10px;
+   }
+   .rcmi_hero_section{
+    grid-template-columns: 1fr;
+    height: max-content !important;
+    gap: 1rem;
+   }
+
+   .padding_pannel{
+    padding: 4px !important;
+   }
+
+   .hight_100{
+    padding: 10px !important;
+   }
+
+   .card_row_override_style{
+    padding: 1rem;
+   }
+
+   .empathyCard_custome{
+    margin: 0px;
+    max-width: 100%;
+   }
+
+   .sliderShell_override{
+    grid-template-columns: 1fr !important;
+   }
+
+    .card_image_override{
+     height: auto;
+    }
+    .p_1_rem{
+      padding: 1rem 1rem !important;
+    }
+
+    .real_ai_structure_container{
+          height: auto;
+    display: flex;
+    flex-direction: column;
+    }
+     
+    .turning_ai_story_box{
+      grid-template-rows: 1fr;
+    }
 
 }
