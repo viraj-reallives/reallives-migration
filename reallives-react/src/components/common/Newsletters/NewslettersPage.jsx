@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import SiteContext from '@context/SiteContext';
 import { newslettersContent } from '@content/newsletters';
 import styles from './NewslettersPage.module.css';
+import Style1 from "../Newsletters/NewsletterPage_override..module.css"
 
 const NEWSLETTER_AUTHORS = [
   {
@@ -58,7 +59,7 @@ function renderHighlightedText(text) {
 function ArticleCard({ article, compact = false }) {
   return (
     <Link to={article.id} className={styles.cardLink}>
-      <article className={`${styles.articleCard} ${compact ? styles.compactCard : ''}`}>
+      <article className={`${styles.articleCard} ${compact ? styles.compactCard : ''} ${Style1.compactcard_style_grid}`}>
         <div className={styles.thumbWrap}>
           <img src={article.imagePath} alt={article.title} className={styles.thumb} />
         </div>
@@ -412,7 +413,7 @@ export default function NewslettersPage() {
               </div>
             </article>
           </Link>
-          <aside className={styles.sideFeed}>
+          <aside className={`${styles.sideFeed} ${Style1.sideFeed_container_style}`}>
             <section className={styles.authorsStrip} aria-label="Newsletter authors">
               <p className={styles.authorsKicker}>Authors</p>
               <div className={styles.authorsRow}>

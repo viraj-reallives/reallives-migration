@@ -600,6 +600,7 @@ export const schoolContent = {
     contactBannerSubheading:
       'Questions about our research or bringing RealLives to your school? We would love to hear from you.',
     contactBannerButtonPath: '/reallives/school/contact',
+
     items: [
       {
         id: 'research2-content-1',
@@ -626,7 +627,9 @@ export const schoolContent = {
             'Qualitative coding, language network analysis, topic modeling (NetMiner)',
           pdfPath:
             'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/pdfs/Kwon-etal_2025_RealLives-in-HE-class-2.pdf',
+             route: "/reallives/school/Research_Card1",
         },
+        
       },
       {
         id: 'research2-content-2',
@@ -652,6 +655,7 @@ export const schoolContent = {
             'Conceptual examination of statistics, simulation, and educational game design. Interpretive analysis rather than empirical experimentation or user studies.',
           pdfPath:
             'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/pdfs/uwe-bristol.pdf',
+             route: "/reallives/school/UaeBristol"
         },
       },
       {
@@ -683,6 +687,7 @@ export const schoolContent = {
             'Quasi-experimental classroom study. Participants: 301 high school students from three Northern California schools',
           pdfPath:
             'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/pdfs/Santa-Clara-University.pdf',
+            route: "/reallives/school/Santa_Clara"
         },
         
       },
@@ -713,6 +718,7 @@ export const schoolContent = {
             'Quasi-experimental classroom study. Participants: 301 high school students from three Northern California schools',
           pdfPath:
             'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/pdfs/albany.pdf',
+             route: "/reallives/school/Albany_University"
         },
       
       },
@@ -747,6 +753,7 @@ export const schoolContent = {
             'Quasi-experimental classroom study with secondary school students (ages 14–19). Participants played the Real Lives simulation, experiencing life as migrants from MENA regions.',
           pdfPath:
             'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/pdfs/ThomasNygrenResearchPaper-1.pdf',
+            route: "/reallives/school/Uppsala_University"
         },
       },
 
@@ -812,6 +819,7 @@ export const schoolContent = {
       },
      
     ],
+    
     detailPanelLabels: {
       paperTitle: 'Paper Title',
       institution: 'Institution',

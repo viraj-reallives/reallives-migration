@@ -149,12 +149,12 @@ function SkillsPanel({ data, images }) {
   return (
     <div className={styles.panel}>
       {images.empathy21CenturyBanner ? (
-        <div className={styles.bannerFull}>
+        <div className={`${styles.bannerFull} ${Style1.banner_21_skills}`}>
           <img src={images.empathy21CenturyBanner} alt="" />
         </div>
       ) : null}
 
-      <div className={styles.gridTwo}>
+      <div className={`${styles.gridTwo} ${Style1.gridtwo_override_style}`}>
         <div className={styles.stack}>
           <section>
             <h2 className={styles.blockTitle}>
@@ -264,13 +264,13 @@ function SdgPanel({ data, images }) {
   const videoUrl = images.sdgImpactVideo;
 
   return (
-    <div className={styles.panel}>
+    <div className={`${styles.panel} `}>
 
       <div className={`${styles.sdgHero} ${Style1.sdg_tab_override_style}`}>
         {images.sdgBackground ? (
           <img className={styles.sdgHeroBg} src={images.sdgBackground} alt="" />
         ) : null}
-        <div className={styles.sdgHeroOverlay}>
+        <div className={`${styles.sdgHeroOverlay} ${Style1.sdgro_custome_conatiner}`}>
           <h2>{data.sdgHeroOverlay.title}</h2>
           {data.sdgHeroOverlay.paragraphs?.map((p) => (
             <p key={p.slice(0, 40)}>{p}</p>
@@ -278,7 +278,7 @@ function SdgPanel({ data, images }) {
         </div>
       </div>
 
-      <div className={styles.gridTwo}>
+      <div className={`${styles.gridTwo}  ${Style1.gridtwo_override_style}`}>
         <div className={styles.stack}>
           <section>
             <h2 className={styles.blockTitle}>{data.sdgMain.title}</h2>
@@ -312,15 +312,18 @@ function SdgPanel({ data, images }) {
           <div className={styles.videoFrame}>
             <video src={videoUrl} autoPlay muted loop playsInline />
 
-             <div className={`${styles.sdgGroups} ${Style1.sdg_grops_style}`}>
+             <div className={`${styles.sdgGroups} ${Style1.sdg_grops_style} `}>
           {data.sdgImpact.relevanceGroups?.map((group) => (
             <div key={group.label}>
              
-              <p className={`${styles.sdgGroupLabel} ${Style1.color_white}`}>{group.label}</p>
-              <div className={styles.sdgIconGrid}>
+              <p className={`${styles.sdgGroupLabel} ${Style1.color_white} ${Style1.font_imapct_p}`}>{group.label}</p>
+
+              <div className={`${styles.sdgIconGrid} ${Style1.sdg_icon_custom_grid}`}>
+
                 {group.goalImagePaths?.map((src) => (
                   <img className={Style1.sdg_logo_style} key={src} src={src} alt="" />
                 ))}
+
               </div>
             </div>
           ))}
@@ -444,23 +447,31 @@ export default function SchoolHome() {
       ) : null}
 
       <div className={styles.homeTabPanels}>
+        
         <div role="tabpanel" id="home-section-panel-0" hidden={activeTab !== 0}>
           <WhoCanUsePanel
             supportingText={supportingText}
             images={images}
             isActive={activeTab === 0}
+            
           />
+
         </div>
+
         <div role="tabpanel" id="home-section-panel-1" hidden={activeTab !== 1}>
           {extra[0] ? <SkillsPanel data={extra[0]} images={images} /> : null}
         </div>
+
         <div role="tabpanel" id="home-section-panel-2" hidden={activeTab !== 2}>
           {extra[1] ? <SdgPanel data={extra[1]} images={images} /> : null}
         </div>
+
         <div role="tabpanel" id="home-section-panel-3" hidden={activeTab !== 3}>
           {extra[2] ? <CoreVisionPanel data={extra[2]} /> : null}
         </div>
+
       </div>
+
     </div>
   );
 }

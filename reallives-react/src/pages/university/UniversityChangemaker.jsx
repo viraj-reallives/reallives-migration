@@ -223,10 +223,10 @@ export default function UniversityChangemaker() {
     : ["Ready to lead the change?"];
 
   return (
-    <div className={styles.page}>
+    <div className={`${styles.page} ${Style1.page_padding_container}`}>
       
       {/* HERO SECTION */}
-      <header className={styles.hero}>
+      <header className={`${styles.hero} ${Style1.changemaker_banner_container}`}>
         {data.heroBackgroundImagePath && (
           <img
             className={`${styles.heroBg} ${Style1.heroBgOverride}`}
@@ -240,17 +240,17 @@ export default function UniversityChangemaker() {
             
             {/* Left Content */}
             <div>
-              <h1 className={styles.heroTitle}>
+              <h1 className={`${styles.heroTitle} ${Style1.changemaker_hero_title}`}>
                 {data.heading || "University Changemaker"}
               </h1>
-              <p className={styles.heroBody}>
+              <p className={`${styles.heroBody} ${Style1.changemaker_herbody_p}`}>
                 {data.body || "Empowering students through immersive global simulation."}
               </p>
             </div>
 
-            {/* Right Side: CTA Card (Always Renders) */}
+            {/* Right Side: CTA Card */}
             <div className={styles.ctaCard}>
-              <p className={styles.ctaSchoolHeading}>
+              <p className={`${styles.ctaSchoolHeading} ${Style1.ctashoolheading_container}`}>
                 {ctaHeadingLines.map((line, index) => (
                   <span key={index}>
                     {line}
@@ -340,7 +340,7 @@ export default function UniversityChangemaker() {
         </section>
       )}
 
-      {/* CLOSING SECTION - FIXED FOOTER */}
+      {/* CLOSING SECTION */}
       <footer className={styles.closing}>
         <h2 className={styles.closingHeading}>
           {data.closingHeading || "Bring RealLives to Your University"}
@@ -350,7 +350,6 @@ export default function UniversityChangemaker() {
           {data.closingSubtext || "Join a global network of educators fostering empathy and changemaking."}
         </p>
 
-        {/* Forced render with fallback text if data is missing */}
         <CtaLink 
           href={data.closingCtaPath || "/contact"} 
           className={styles.btnOutline}
@@ -359,163 +358,131 @@ export default function UniversityChangemaker() {
         </CtaLink>
       </footer>
 
-      {/* PRODUCTS SECTION (STATIC UI) */}
+      {/* PRODUCTS SECTION (STATIC UI WITH STYLE1) */}
       <div className={Style1.education_product_container}>
         <div className={Style1.container_education_inner}>
           <div className={Style1.top_head_line_container}>
             <h2 className={Style1.section_title}>Our Educational Products</h2>
             <p className={Style1.section_subtitle_text}>
-              Comprehensive tools designed to build empathy and global awareness.
+              Comprehensive tools designed to build empathy, global awareness,
+              and changemaker skills through immersive educational experiences.
             </p>
           </div>
 
-         <div className={Style1.card_container_product}>
+          <div className={Style1.card_container_product}>
+            {/* RealLives Simulation */}
             <div className={Style1.card_grid_product}>
               <div className={Style1.card_head_top}>
                 <div className={Style1.width_flex_class}>
                   <img
                     src="https://res.cloudinary.com/dexw6sglh/image/upload/q_auto/f_auto/v1771840605/reallives-logo_v5cdkc.png"
-                    alt=""
+                    alt="RealLives"
                   />
                 </div>
-
                 <h3 className={Style1.product_title}>RealLives Simulation</h3>
               </div>
-
               <div className={Style1.info_container_card_bottom}>
                 <p className={Style1.description_card_paragarph}>
                   Experience life from birth to death in different countries and
-                  circumstances. Make decisions that shape your virtual life
-                  while learning about global inequalities and cultural
-                  differences.
+                  circumstances. Make decisions that shape your virtual life.
                 </p>
-
                 <div className={Style1.product_features}>
-                  <div className={Style1.product_capsule_box}>
-                    Life Simulation
-                  </div>
-                  <div className={Style1.product_capsule_box}>
-                    Cultural Awareness
-                  </div>
+                  <div className={Style1.product_capsule_box}>Life Simulation</div>
+                  <div className={Style1.product_capsule_box}>Cultural Awareness</div>
                 </div>
-
                 <div className={Style1.product_link_arrow}>
                   Learn More <ArrowRight className={Style1.arrow_icon} />
                 </div>
               </div>
             </div>
 
+            {/* Empathy Canvas */}
             <div className={Style1.card_grid_product}>
               <div className={Style1.card_head_top}>
                 <div className={Style1.width_flex_class}>
-                  <img src={emapthy_icon} alt="" />
+                  <img src={emapthy_icon} alt="Empathy Canvas" />
                 </div>
-
                 <h3 className={Style1.product_title}>Empathy Canvas</h3>
               </div>
-
               <div className={Style1.info_container_card_bottom}>
                 <p className={Style1.description_card_paragarph}>
                   A structured reflection framework that helps students process
-                  their RealLives experiences and develop deeper empathy through
-                  guided self-reflection and peer discussion.
+                  their RealLives experiences and develop deeper empathy.
                 </p>
-
                 <div className={Style1.product_features}>
-                  <div className={Style1.product_capsule_box}>
-                    Reflection Tool
-                  </div>
-                  <div className={Style1.product_capsule_box}>
-                    Empathy Building
-                  </div>
+                  <div className={Style1.product_capsule_box}>Reflection Tool</div>
+                  <div className={Style1.product_capsule_box}>Empathy Building</div>
                 </div>
-
                 <div className={Style1.product_link_arrow}>
                   Learn More <ArrowRight className={Style1.arrow_icon} />
                 </div>
               </div>
             </div>
 
+            {/* RealBoard */}
             <div className={Style1.card_grid_product}>
               <div className={Style1.card_head_top}>
                 <div className={Style1.width_flex_class}>
-                  <img src={rl_board_icon} alt="" />
+                  <img src={rl_board_icon} alt="RealBoard" />
                 </div>
-
                 <h3 className={Style1.product_title}>RealBoard</h3>
               </div>
-
               <div className={Style1.info_container_card_bottom}>
                 <p className={Style1.description_card_paragarph}>
                   A safe, private social platform where students can share their
-                  RealLives experiences, engage in meaningful discussions, and
-                  learn from diverse perspectives in a moderated environment.
+                  RealLives experiences and engage in meaningful discussions.
                 </p>
-
                 <div className={Style1.product_features}>
-                  <div className={Style1.product_capsule_box}>
-                    Social Platform
-                  </div>
-                  <div className={Style1.product_capsule_box}>
-                    Peer Learning
-                  </div>
+                  <div className={Style1.product_capsule_box}>Social Platform</div>
+                  <div className={Style1.product_capsule_box}>Peer Learning</div>
                 </div>
-
                 <div className={Style1.product_link_arrow}>
-                  Learn More <ArrowRight className={Style1.arrow_icon} />{" "}
+                  Learn More <ArrowRight className={Style1.arrow_icon} />
                 </div>
               </div>
             </div>
 
-            <div
-              className={`${Style1.card_grid_product} ${Style1.background_color_orange}`}
-            >
+            {/* ChangeMaker Index */}
+            <div className={`${Style1.card_grid_product} ${Style1.background_color_orange}`}>
               <div className={Style1.card_head_top}>
                 <div className={Style1.width_flex_class}>
-                  <img src={changemaker_icon} alt="" />
+                  <img src={changemaker_icon} alt="ChangeMaker Index" />
                 </div>
-
                 <h3 className={Style1.product_title}>ChangeMaker Index</h3>
               </div>
-
               <div className={Style1.info_container_card_bottom}>
                 <p className={Style1.description_card_paragarph}>
                   Revolutionary assessment tool that measures 18 global
-                  competencies through gameplay decisions rather than
-                  self-reporting, providing authentic insights into student
-                  development.
+                  competencies through gameplay decisions.
                 </p>
-
                 <div className={Style1.product_features}>
-                  <div className={Style1.product_capsule_box}>
-                    Assessment Tool
-                  </div>
-                  <div className={Style1.product_capsule_box}>
-                    18 Competencies
-                  </div>
+                  <div className={Style1.product_capsule_box}>Assessment Tool</div>
+                  <div className={Style1.product_capsule_box}>18 Competencies</div>
                 </div>
-
                 <div className={Style1.product_link_arrow}>
                   Learn More <ArrowRight className={Style1.arrow_icon} />
                 </div>
               </div>
             </div>
           </div>
-
         </div>
       </div>
 
-      {/* TESTIMONIALS */}
+      {/* TESTIMONIALS SECTION */}
       <div className={Style1.education_product_container}>
         <div className={Style1.container_education_inner}>
           <div className={Style1.top_head_line_container}>
             <h2 className={Style1.section_title}>What Educators Are Saying</h2>
+            <p className={Style1.section_subtitle_text}>
+              Hear from teachers and students who have transformed their
+              learning experiences.
+            </p>
           </div>
           <div className={Style1.cards_educatores_saying}>
             {[
-              { name: "David Laborie", quote: "I just played my first character to the end, and the experience is incredible." },
-              { name: "Amanda Levin", quote: "No curriculum has moved our students the way RealLives has." },
-              { name: "Sydney Smith", quote: "Every middle and high school should have this fascinating program." }
+              { name: "David Laborie", quote: "I just played my first character to the end, and the experience is incredible. I was in tears at the end" },
+              { name: "Amanda Levin", quote: "No curriculum has moved our students the way RealLives has. It is a very effective medium for teaching." },
+              { name: "Sydney Smith", quote: "Every middle and high school should have this fascinating program. It’s a life simulation that enables students to live." }
             ].map((t, idx) => (
               <div key={idx} className={Style1.label_inner_educatores}>
                 <div className={Style1.quote_icon}>

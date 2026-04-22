@@ -817,6 +817,7 @@ export const universityContent = {
         },
       },
     ],
+    
     detailPanelLabels: {
       paperTitle: "Paper Title",
       institution: "Institution",

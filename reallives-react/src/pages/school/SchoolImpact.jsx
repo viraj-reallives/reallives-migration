@@ -242,7 +242,7 @@ export default function SchoolImpact() {
   const cards = impact.cards ?? [];
 
   return (
-    <div className={styles.page} id="impact">
+    <div className={`${styles.page} ${Style1.padding_impact_style}`} id="impact">
       <ImpactImageSlider images={sliderImages} label={impact.sectionTitle} />
 
       <section className={styles.story} aria-labelledby="global-impact-story">

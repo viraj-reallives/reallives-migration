@@ -42,8 +42,9 @@ function RealLivesSimPanel({ data, isActive = true }) {
   return (
     <div className={styles.panel}>
       {hasVideo ? (
-        <div className={styles.videoHero}>
-          <div ref={stackRef} className={styles.videoStack}>
+        <div className={`${styles.videoHero} ${Style1.video_custome_oerride}`}>
+
+           <div ref={stackRef} className={`${styles.videoStack} `}>
             {paths.map((path, i) => (
               <video
                 key={path}
@@ -78,11 +79,12 @@ function RealLivesSimPanel({ data, isActive = true }) {
               </div>
             ) : null}
           </div>
+      
         </div>
       ) : null}
 
       <div className={`${styles.whyGrid} ${Style1.padding_overide}`}>
-        <div>
+        <div className={Style1.header_product_padding}>
           {data.whyHeading ? (
             <h2 className={styles.whyHeading}>{data.whyHeading}</h2>
           ) : null}
@@ -108,6 +110,7 @@ function RealLivesSimPanel({ data, isActive = true }) {
             <p className={styles.paragraph}>{data.fosterDescription}</p>
           ) : null}
         </div>
+        
       ) : null}
 
       {data.demoIframeSrc ? (
@@ -180,7 +183,7 @@ function RcmiPanel({ data }) {
   if (!data) return null;
 
   return (
-    <div className={styles.panel}>
+    <div className={`${styles.panel} ${Style1.padding_pannel}`}>
       <div className={`${styles.rcmiHero} ${Style1.rcmi_hero_section}`}>
         {data.illustrationPath ? (
           <div
@@ -309,13 +312,13 @@ function EmpathyCanvasPanel({ data }) {
       ) : null}
 
       {data.questionCardRows?.map((row, ri) => (
-        <div key={ri} className={styles.cardRows}>
+        <div key={ri} className={`${styles.cardRows} ${Style1.gap_override_0}`} >
           {data.tailoredTitle ? (
             <h2 className={styles.sectionTitle}>{data.tailoredTitle}</h2>
           ) : null}
-          <div className={styles.cardRow}>
+          <div className={`${styles.cardRow} ${Style1.card_row_override_style}`}>
             {row.map((card) => (
-              <div key={card.imagePath} className={styles.empathyCard}>
+              <div key={card.imagePath} className={`${styles.empathyCard} ${Style1.empathyCard_custome}`} >
                 {card.questionLines?.length ? (
                   <p>
                     {card.questionLines.map((line, li) => (
@@ -636,9 +639,9 @@ export default function SchoolProducts() {
   if (!products) return null;
 
   return (
-    <section className={styles.section} id="products">
+    <section className={`${styles.section} ${Style1.padding_pannel}`} id="products">
       <div className={`${styles.inner} ${Style1.video_width_add}`}>
-        <header className={styles.header}>
+        <header className={`${styles.header} ${Style1.header_product_padding}`}>
           {products.heading ? (
             <h1 className={styles.title}>{products.heading}</h1>
           ) : null}
@@ -648,7 +651,7 @@ export default function SchoolProducts() {
         </header>
 
         {tabs.length ? (
-          <div className={styles.tabList} role="tablist" aria-label="Products">
+          <div className={`${styles.tabList} ${Style1.tabList_custome_override} `} role="tablist" aria-label="Products">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
