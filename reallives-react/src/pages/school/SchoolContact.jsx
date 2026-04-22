@@ -86,10 +86,11 @@ export default function SchoolContact() {
     formData.name && formData.email && formData.message && userCaptchaInput;
 
   return (
-    <div className={styles.page}>
+    <div className={`${styles.page} ${Style1.padding_bottom_page_style}`}>
+
       <PageHeader heading={contact.heading} />
 
-      <div className={styles.grid}>
+      <div className={`${styles.grid} ${Style1.grid_style_override}`}>
         {/* ✅ FORM SECTION */}
         <div className={styles.formSection}>
           {submitted ? (

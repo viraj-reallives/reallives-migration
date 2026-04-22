@@ -209,7 +209,7 @@ export default function SchoolResearch() {
   const activeItem = items.find((i) => i.id === expandedId);
 
   return (
-    <div className={styles.page} id="research">
+    <div className={`${styles.page} `} id="research">
       <header className={styles.hero}>
         <div>
           {research.heading ? <h1 className={styles.heroTitle}>{research.heading}</h1> : null}

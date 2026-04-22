@@ -400,13 +400,13 @@
 //   );
 // }
 
-
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { useSiteContent } from "@hooks/useSiteContent";
 import styles from "../school/SchoolHome.module.css";
+import CoreVisionCards from "@components/common/CoreVision/CoreVisionCards";
 import Style1 from "../../components/costom_css/schoolhome_overide.module.css";
-import S_University from "../../components/costom_css/University_override.module.css"
+import S_University from "../../components/costom_css/University_override.module.css";
 
 function CtaLink({ to, className, children }) {
   return (
@@ -452,7 +452,6 @@ function WhoCanUsePanel({ supportingText, images, isActive = true }) {
 
       {/* WHY */}
       <div className={styles.gridTwo}>
-
         <div className={`${styles.stack} `}>
           <h2 className={styles.blockTitle}>
             {supportingText.whySchoolsHeading}
@@ -474,7 +473,9 @@ function WhoCanUsePanel({ supportingText, images, isActive = true }) {
       </div>
 
       {/* HOW IT WORKS */}
-      <div className={`${styles.splitSection} ${styles.splitReverse} ${Style1.container_work_in_classroome}`}>
+      <div
+        className={`${styles.splitSection} ${styles.splitReverse} ${Style1.container_work_in_classroome}`}
+      >
         {images.classroomDiagram && (
           <div className={`${styles.mediaCard} ${Style1.image_style_override}`}>
             <img src={images.classroomDiagram} alt="" />
@@ -499,7 +500,9 @@ function WhoCanUsePanel({ supportingText, images, isActive = true }) {
       </div>
 
       {/* BENEFITS */}
-      <section className={`${styles.benefitsSection} ${Style1.educational_benifit}`}>
+      <section
+        className={`${styles.benefitsSection} ${Style1.educational_benifit}`}
+      >
         <div className={styles.benefitsInner}>
           <h2 className={styles.benefitsHeading}>
             {supportingText.educationalBenefitsHeading}
@@ -515,7 +518,9 @@ function WhoCanUsePanel({ supportingText, images, isActive = true }) {
       </section>
 
       {/* GET STARTED */}
-      <div className={`${styles.gettingStarted} ${Style1.container_work_in_classroome}`}>
+      <div
+        className={`${styles.gettingStarted} ${Style1.container_work_in_classroome}`}
+      >
         <div>
           <h2 className={styles.blockTitle}>
             {supportingText.gettingStartedHeading}
@@ -557,31 +562,27 @@ function SkillsPanel({ data, images }) {
   if (!data || !images) return null;
 
   return (
-
     <div className={styles.panel}>
       {images.empathy21CenturyBanner && (
-        <div className={styles.bannerFull}>
+        <div className={`${styles.bannerFull} ${Style1.banner_21_skills}`}>
           <img src={images.empathy21CenturyBanner} alt="" />
         </div>
       )}
 
-      
-
       <div className={styles.gridTwo}>
-
         <div className={`${styles.stack} ${S_University.gap_stack_override}`}>
-          <h2 className={styles.blockTitle}>
-            {data.introColumns.left.title}
-          </h2>
+          <h2 className={styles.blockTitle}>{data.introColumns.left.title}</h2>
           {data.introColumns.left.paragraphs?.map((p, i) => (
-            <p key={i} className={styles.paragraph}>{p}</p>
+            <p key={i} className={styles.paragraph}>
+              {p}
+            </p>
           ))}
 
-          <h2 className={styles.blockTitle}>
-            {data.introColumns.right.title}
-          </h2>
+          <h2 className={styles.blockTitle}>{data.introColumns.right.title}</h2>
           {data.introColumns.right.paragraphs?.map((p, i) => (
-            <p key={i} className={styles.paragraph}>{p}</p>
+            <p key={i} className={styles.paragraph}>
+              {p}
+            </p>
           ))}
         </div>
 
@@ -646,29 +647,41 @@ function SkillsPanel({ data, images }) {
         </div>
       </div>
 
+      <div className={`${styles.gettingStarted} ${Style1.container_work_2}`}>
+        <div>
+          <h2 className={styles.blockTitle}>{data.closingCta.title}</h2>
+          <p className={styles.paragraph}>{data.closingCta.body}</p>
+          {data.closingCta.ctaPath ? (
+            <div className={styles.ctaRow}>
+              <CtaLink
+                to={data.closingCta.ctaPath}
+                className={`${styles.ctaButton} ${Style1.get_started_btn}`}
+              >
+                {data.closingCta.ctaText}
+              </CtaLink>
+            </div>
+          ) : null}
+        </div>
+        {images.readyToTransform ? (
+          <div className={`${styles.mediaCard} ${Style1.image_style_override}`}>
+            <img src={images.readyToTransform} alt="" />
+          </div>
+        ) : null}
+      </div>
+    </div>
+  );
+}
 
-         <div className={`${styles.gettingStarted} ${Style1.container_work_2}`}>
-           <div>
-             <h2 className={styles.blockTitle}>{data.closingCta.title}</h2>
-             <p className={styles.paragraph}>{data.closingCta.body}</p>
-             {data.closingCta.ctaPath ? (
-               <div className={styles.ctaRow}>
-                 <CtaLink
-                   to={data.closingCta.ctaPath}
-                   className={`${styles.ctaButton} ${Style1.get_started_btn}`}
-                 >
-                   {data.closingCta.ctaText}
-                 </CtaLink>
-               </div>
-             ) : null}
-           </div>
-           {images.readyToTransform ? (
-             <div className={`${styles.mediaCard} ${Style1.image_style_override}`}>
-               <img src={images.readyToTransform} alt="" />
-             </div>
-           ) : null}
-         </div>
+function CoreVisionPanel({ data }) {
+  if (!data?.coreVisionHeading) return null;
 
+  return (
+    <div className={styles.panel}>
+      <div className={styles.coreVisionShell}>
+        <h2 className={styles.coreVisionTitle}>{data.coreVisionHeading}</h2>
+        <p className={styles.coreVisionBody}>{data.coreVisionBody}</p>
+        <CoreVisionCards compact />
+      </div>
     </div>
   );
 }
@@ -679,15 +692,16 @@ function SdgPanel({ data, images }) {
   if (!data || !images) return null;
   const videoUrl = images?.sdgImpactVideo;
 
-
   return (
     <div className={styles.panel}>
-       
-       <div className={`${styles.sdgHero} ${Style1.sdg_tab_override_style}`}>
+      <div className={`${styles.sdgHero} ${Style1.sdg_tab_override_style}`}>
         {images.sdgBackground ? (
           <img className={styles.sdgHeroBg} src={images.sdgBackground} alt="" />
         ) : null}
-        <div className={styles.sdgHeroOverlay}>
+
+        <div
+          className={`${styles.sdgHeroOverlay} ${Style1.sdgro_custome_conatiner}`}
+        >
           <h2>{data.sdgHeroOverlay.title}</h2>
           {data.sdgHeroOverlay.paragraphs?.map((p) => (
             <p key={p.slice(0, 40)}>{p}</p>
@@ -695,7 +709,7 @@ function SdgPanel({ data, images }) {
         </div>
       </div>
 
-        <div className={styles.gridTwo}>
+      <div className={styles.gridTwo}>
         <div className={styles.stack}>
           <section>
             <h2 className={styles.blockTitle}>{data.sdgMain.title}</h2>
@@ -719,34 +733,42 @@ function SdgPanel({ data, images }) {
             <img src={images.sdgEarth} alt="" />
           </div>
         ) : null}
-       </div>
+      </div>
 
-        <section className={`${styles.sdgImpact} ${Style1.container_work_in_classroome}`}>
+      <section
+        className={`${styles.sdgImpact} ${Style1.container_work_in_classroome}`}
+      >
         <h2 className={styles.sdgImpactTitle}>{data.sdgImpact.title}</h2>
         {videoUrl ? (
           <div className={styles.videoFrame}>
             <video src={videoUrl} autoPlay muted loop playsInline />
 
-             <div className={`${styles.sdgGroups} ${Style1.sdg_grops_style}`}>
-          {data.sdgImpact.relevanceGroups?.map((group) => (
-            <div key={group.label}>
-             
-              <p className={`${styles.sdgGroupLabel} ${Style1.color_white}`}>{group.label}</p>
-              <div className={styles.sdgIconGrid}>
-                {group.goalImagePaths?.map((src) => (
-                  <img className={Style1.sdg_logo_style} key={src} src={src} alt="" />
-                ))}
-              </div>
+            <div className={`${styles.sdgGroups} ${Style1.sdg_grops_style}`}>
+              {data.sdgImpact.relevanceGroups?.map((group) => (
+                <div key={group.label}>
+                  <p
+                    className={`${styles.sdgGroupLabel} ${Style1.color_white} ${Style1.font_imapct_p}`}
+                  >
+                    {group.label}
+                  </p>
+                  <div
+                    className={`${styles.sdgIconGrid} ${Style1.sdg_icon_custom_grid}`}
+                  >
+                    {group.goalImagePaths?.map((src) => (
+                      <img
+                        className={Style1.sdg_logo_style}
+                        key={src}
+                        src={src}
+                        alt=""
+                      />
+                    ))}
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
-             </div>
-        
           </div>
         ) : null}
-
-       
-
-      </section> 
+      </section>
 
       <div className={`${styles.splitSection} ${Style1.container_work_2}`}>
         <div>
@@ -765,7 +787,9 @@ function SdgPanel({ data, images }) {
         ) : null}
       </div>
 
-        <section className={`${styles.benefitsSection} ${Style1.educational_benifit}`}>
+      <section
+        className={`${styles.benefitsSection} ${Style1.educational_benifit}`}
+      >
         <div className={styles.benefitsInner}>
           <h2 className={styles.benefitsHeading}>
             {data.beyondClassroom.title}
@@ -780,7 +804,7 @@ function SdgPanel({ data, images }) {
             ))}
           </ul>
         </div>
-       </section>
+      </section>
 
       <div className={`${styles.gettingStarted} ${Style1.container_work_2}`}>
         <div>
@@ -808,7 +832,6 @@ function SdgPanel({ data, images }) {
 }
 
 /* ================= MAIN ================= */
-
 
 function ResourcesPanel({ data }) {
   if (!data?.lessonPlansHeading) return null;
@@ -855,7 +878,7 @@ export default function UniversityHome() {
         </div>
       )}
 
-      <div className={styles.homeTabPanels}>
+      {/* <div className={styles.homeTabPanels}>
         <div hidden={activeTab !== 0}>
           <WhoCanUsePanel supportingText={supportingText} images={images} isActive />
         </div>
@@ -871,9 +894,37 @@ export default function UniversityHome() {
          <div role="tabpanel" id="home-section-panel-3" hidden={activeTab !== 3}>
           {extra[2] ? <ResourcesPanel data={extra[2]} /> : null}
         </div>
+
+         <div role="tabpanel" id="home-section-panel-3" hidden={activeTab !== 3}>
+          {extra[2] ? <CoreVisionPanel data={extra[2]} /> : null}
+        </div>
+
+        
+
+       
+      </div> */}
+
+      <div className={styles.homeTabPanels}>
+        <div role="tabpanel" id="home-section-panel-0" hidden={activeTab !== 0}>
+          <WhoCanUsePanel
+            supportingText={supportingText}
+            images={images}
+            isActive={activeTab === 0}
+          />
+        </div>
+
+        <div role="tabpanel" id="home-section-panel-1" hidden={activeTab !== 1}>
+          {extra[0] ? <SkillsPanel data={extra[0]} images={images} /> : null}
+        </div>
+
+        <div role="tabpanel" id="home-section-panel-2" hidden={activeTab !== 2}>
+          {extra[1] ? <SdgPanel data={extra[1]} images={images} /> : null}
+        </div>
+
+        <div role="tabpanel" id="home-section-panel-3" hidden={activeTab !== 3}>
+          {extra[2] ? <CoreVisionPanel data={extra[2]} /> : null}
+        </div>
       </div>
     </div>
   );
 }
-
-

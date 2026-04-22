@@ -143,3 +143,54 @@
 .approachInner_overrid{
   grid-template-columns: 37% 1fr !important;
 }
+
+@media(max-width:560px){
+  .hero_conatiner{
+    height: auto;
+  }
+
+  .approachInner_overrid{
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media(max-width:500px){
+  .hero_conatiner{
+    height: auto;
+  }
+
+  .approachInner_overrid{
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media(max-width:460px){
+  .hero_conatiner{
+    height: auto;
+  }
+
+  .approachInner_overrid{
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media(max-width:400px){
+  .hero_conatiner{
+    height: auto;
+  }
+
+  .approachInner_overrid{
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media(max-width:360px){
+   
+  .hero_conatiner{
+    height: auto;
+  }
+
+  .approachInner_overrid{
+    grid-template-columns: 1fr !important;
+  }
+}

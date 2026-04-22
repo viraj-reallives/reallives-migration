@@ -1,0 +1,85 @@
+
+@media(max-width:600px){
+    .detailhero_override_style{
+        font-size: 15px !important;
+    }
+
+    .detailhero_sub_override_text{
+        font-size: 13px !important;
+    }
+
+    .back_btn_override{
+        font-size: 13px  !important;
+    }
+}
+
+@media(max-width:560px){
+    .detailhero_override_style{
+        font-size: 15px !important;
+    }
+
+    .detailhero_sub_override_text{
+        font-size: 13px !important;
+    }
+
+    .back_btn_override{
+        font-size: 13px  !important;
+    }
+}
+
+@media(max-width:500px){
+    .detailhero_override_style{
+        font-size: 15px !important;
+    }
+
+    .detailhero_sub_override_text{
+        font-size: 13px !important;
+    }
+
+    .back_btn_override{
+        font-size: 13px  !important;
+    }
+}
+
+@media(max-width:460px){
+    .detailhero_override_style{
+        font-size: 14px !important;
+    }
+
+    .detailhero_sub_override_text{
+        font-size: 12px !important;
+    }
+
+    .back_btn_override{
+        font-size: 12px  !important;
+    }
+}
+
+@media(max-width:400px){
+    .detailhero_override_style{
+        font-size: 14px !important;
+    }
+
+    .detailhero_sub_override_text{
+        font-size: 12px !important;
+    }
+
+    .back_btn_override{
+        font-size: 12px  !important;
+    }
+}
+
+@media(max-width:360px){
+
+    .detailhero_override_style{
+        font-size: 14px !important;
+    }
+
+    .detailhero_sub_override_text{
+        font-size: 12px !important;
+    }
+
+    .back_btn_override{
+        font-size: 12px  !important;
+    }
+}

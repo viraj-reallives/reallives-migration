@@ -230,8 +230,325 @@
     font-style: italic;
 }
 
-
 .quote_icon{
   color: #2563eb;
+
+}
+@media(max-width:600px){
+  .heroGrid_override_style{
+    grid-template-columns: 1fr !important;
+  }
+  .heroBgOverride{
+    height: 100%;
+  }
+
+  .changemaker_banner_container{
+    height: 80vh;
+  }
+
+   .impact_overlay_style{
+     top: 13%;
+   }
+
+   .changemaker_hero_title{
+    font-size: 1.1rem;
+   }
+
+   .changemaker_herbody_p{
+    font-size: 15px;
+   }
+
+   .ctashoolheading_container{
+     font-size: 14px;
+     text-align: center;
+   }
+
+   .card_container_product{
+        grid-template-columns:1fr;
+        padding: 0rem !important;
+   }
+
+   .section_subtitle_text{
+    width: 100%;
+   }
+
+    .education_product_container{
+      padding: 1rem 1rem !important;
+    }
+
+    .cards_educatores_saying{
+      grid-template-columns: 1fr;
+      padding: 0rem 0rem;
+    }
+
+    .page_padding_container{
+      padding-bottom: 0rem !important;
+    }
+
+}
+
+@media(max-width:560px){
+  .heroGrid_override_style{
+    grid-template-columns: 1fr !important;
+  }
+  .heroBgOverride{
+    height: 100%;
+  }
+
+  .changemaker_banner_container{
+    height: 80vh;
+  }
+
+   .impact_overlay_style{
+     top: 13%;
+   }
+
+   .changemaker_hero_title{
+    font-size: 1.1rem;
+   }
+
+   .changemaker_herbody_p{
+    font-size: 15px;
+   }
+
+   .ctashoolheading_container{
+     font-size: 14px;
+     text-align: center;
+   }
+
+   .card_container_product{
+        grid-template-columns:1fr;
+        padding: 0rem !important;
+   }
+
+   .section_subtitle_text{
+    width: 100%;
+   }
+
+    .education_product_container{
+      padding: 1rem 1rem !important;
+    }
+
+    .cards_educatores_saying{
+      grid-template-columns: 1fr;
+      padding: 0rem 0rem;
+    }
+
+    .page_padding_container{
+      padding-bottom: 0rem !important;
+    }
+
+}
+
+@media(max-width:500px){
+  .heroGrid_override_style{
+    grid-template-columns: 1fr !important;
+  }
+  .heroBgOverride{
+    height: 100%;
+  }
+
+  .changemaker_banner_container{
+    height: 80vh;
+  }
+
+   .impact_overlay_style{
+     top: 13%;
+   }
+
+   .changemaker_hero_title{
+    font-size: 1.1rem;
+   }
+
+   .changemaker_herbody_p{
+    font-size: 15px;
+   }
+
+   .ctashoolheading_container{
+     font-size: 14px;
+     text-align: center;
+   }
+
+   .card_container_product{
+        grid-template-columns:1fr;
+        padding: 0rem !important;
+   }
+
+   .section_subtitle_text{
+    width: 100%;
+   }
+
+    .education_product_container{
+      padding: 1rem 1rem !important;
+    }
+
+    .cards_educatores_saying{
+      grid-template-columns: 1fr;
+      padding: 0rem 0rem;
+    }
+
+    .page_padding_container{
+      padding-bottom: 0rem !important;
+    }
+
+}
+
+@media(max-width:460px){
+  .heroGrid_override_style{
+    grid-template-columns: 1fr !important;
+  }
+  .heroBgOverride{
+    height: 100%;
+  }
+
+  .changemaker_banner_container{
+    height: 80vh;
+  }
+
+   .impact_overlay_style{
+     top: 13%;
+   }
+
+   .changemaker_hero_title{
+    font-size: 1.1rem;
+   }
+
+   .changemaker_herbody_p{
+    font-size: 15px;
+   }
+
+   .ctashoolheading_container{
+     font-size: 14px;
+     text-align: center;
+   }
+
+   .card_container_product{
+        grid-template-columns:1fr;
+        padding: 0rem !important;
+   }
+
+   .section_subtitle_text{
+    width: 100%;
+   }
+
+    .education_product_container{
+      padding: 1rem 1rem !important;
+    }
+
+    .cards_educatores_saying{
+      grid-template-columns: 1fr;
+      padding: 0rem 0rem;
+    }
+
+    .page_padding_container{
+      padding-bottom: 0rem !important;
+    }
+
+}
+
+@media(max-width:400px){
+  .heroGrid_override_style{
+    grid-template-columns: 1fr !important;
+  }
+  .heroBgOverride{
+    height: 100%;
+  }
+
+  .changemaker_banner_container{
+    height: 80vh;
+  }
+
+   .impact_overlay_style{
+     top: 13%;
+   }
+
+   .changemaker_hero_title{
+    font-size: 1.1rem;
+   }
+
+   .changemaker_herbody_p{
+    font-size: 15px;
+   }
+
+   .ctashoolheading_container{
+     font-size: 14px;
+     text-align: center;
+   }
+
+   .card_container_product{
+        grid-template-columns:1fr;
+        padding: 0rem !important;
+   }
+
+   .section_subtitle_text{
+    width: 100%;
+   }
+
+    .education_product_container{
+      padding: 1rem 1rem !important;
+    }
+
+    .cards_educatores_saying{
+      grid-template-columns: 1fr;
+      padding: 0rem 0rem;
+    }
+
+    .page_padding_container{
+      padding-bottom: 0rem !important;
+    }
+
+}
+
+@media(max-width:360px){
+  .heroGrid_override_style{
+    grid-template-columns: 1fr !important;
+  }
+  .heroBgOverride{
+    height: 100%;
+  }
+
+  .changemaker_banner_container{
+    height: 80vh;
+  }
+
+   .impact_overlay_style{
+     top: 13%;
+   }
+
+   .changemaker_hero_title{
+    font-size: 1.1rem;
+   }
+
+   .changemaker_herbody_p{
+    font-size: 15px;
+   }
+
+   .ctashoolheading_container{
+     font-size: 14px;
+     text-align: center;
+   }
+
+   .card_container_product{
+        grid-template-columns:1fr;
+        padding: 0rem !important;
+   }
+
+   .section_subtitle_text{
+    width: 100%;
+   }
+
+    .education_product_container{
+      padding: 1rem 1rem !important;
+    }
+
+    .cards_educatores_saying{
+      grid-template-columns: 1fr;
+      padding: 0rem 0rem;
+    }
+
+    .page_padding_container{
+      padding-bottom: 0rem !important;
+    }
+
 
 }

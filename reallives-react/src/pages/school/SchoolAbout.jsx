@@ -84,7 +84,7 @@ export default function SchoolAbout() {
   const firstMilestoneImages = history?.milestones?.[0]?.images;
 
   return (
-    <section className={styles.about} aria-labelledby="school-about-heading">
+    <section className={`${styles.about} ${Styles1.about_padding_override}`} aria-labelledby="school-about-heading">
       <h1 id="school-about-heading" className={styles.heading}>
         {about.heading}
       </h1>

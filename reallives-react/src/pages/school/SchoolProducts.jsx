@@ -312,8 +312,7 @@ function EmpathyCanvasPanel({ data }) {
       ) : null}
 
       {data.questionCardRows?.map((row, ri) => (
-        
-        <div key={ri} className={`${styles.cardRows} ${Style1.gap_override_0}`}>
+        <div key={ri} className={`${styles.cardRows} ${Style1.gap_override_0}`} >
           {data.tailoredTitle ? (
             <h2 className={styles.sectionTitle}>{data.tailoredTitle}</h2>
           ) : null}

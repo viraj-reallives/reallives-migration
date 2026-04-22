@@ -8,6 +8,13 @@ const Santa_Clara = () => {
   const { research } = useSiteContent();
       const isSchoolPath = location.pathname.includes("/school");
 const isHomeschoolerPath = location.pathname.includes("/homeschooler");
+
+const dynamicBackPath = isSchoolPath
+  ? "/reallives/school/research" 
+  : isHomeschoolerPath
+    ? "/reallives/homeschooler/research"
+    : "/reallives/university/research";
+
   
 
   if (!research) return null;
@@ -46,10 +53,10 @@ const isHomeschoolerPath = location.pathname.includes("/homeschooler");
           {d.heroImagePath && <img src={d.heroImagePath} alt="" />}
           <div className={styles.detailHeroOverlay}>
             {d.heroTitle && (
-              <h3 className={styles.detailHeroTitle}>{d.heroTitle}</h3>
+              <h3 className={`${styles.detailHeroTitle} ${Style1.detailhero_override_style}`}>{d.heroTitle}</h3>
             )}
             {d.heroSubtitle && (
-              <p className={styles.detailHeroSub}>{d.heroSubtitle}</p>
+              <p className={`${styles.detailHeroSub} ${Style1.detailhero_sub_override_text}`}>{d.heroSubtitle}</p>
             )}
           </div>
         </div>

@@ -655,7 +655,7 @@ export const schoolContent = {
             'Conceptual examination of statistics, simulation, and educational game design. Interpretive analysis rather than empirical experimentation or user studies.',
           pdfPath:
             'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/pdfs/uwe-bristol.pdf',
-             route: "/reallives/school/Albany_University"
+             route: "/reallives/school/UaeBristol"
         },
       },
       {
@@ -687,7 +687,7 @@ export const schoolContent = {
             'Quasi-experimental classroom study. Participants: 301 high school students from three Northern California schools',
           pdfPath:
             'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/pdfs/Santa-Clara-University.pdf',
-            route: "/reallives/school/Albany_University"
+            route: "/reallives/school/Santa_Clara"
         },
         
       },

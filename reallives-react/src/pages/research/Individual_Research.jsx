@@ -10,7 +10,7 @@ const Individual_Research = () => {
 const isHomeschoolerPath = location.pathname.includes("/homeschooler");
 
 const dynamicBackPath = isSchoolPath
-  ? "/reallives/school/research" // Research page par wapas jane ke liye
+  ? "/reallives/school/research" 
   : isHomeschoolerPath
     ? "/reallives/homeschooler/research"
     : "/reallives/university/research";

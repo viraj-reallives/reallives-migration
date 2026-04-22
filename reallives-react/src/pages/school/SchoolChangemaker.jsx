@@ -43,9 +43,9 @@ export default function SchoolChangemaker() {
     cm.ctaSchoolHeading?.split("\n").filter(Boolean) ?? [];
 
   return (
-    <div className={styles.page}>
+    <div className={`${styles.page} ${Style1.page_padding_container}`}>
 
-      <header className={styles.hero}>
+      <header className={`${styles.hero} ${Style1.changemaker_banner_container}`}>
         {cm.heroBackgroundImagePath ? (
           <img
             className={`${styles.heroBg} ${Style1.heroBgOverride}`}
@@ -62,15 +62,15 @@ export default function SchoolChangemaker() {
           >
             <div>
               {cm.heading ? (
-                <h1 className={styles.heroTitle}>{cm.heading}</h1>
+                <h1 className={`${styles.heroTitle} ${Style1.changemaker_hero_title}`}>{cm.heading}</h1>
               ) : null}
-              {cm.body ? <p className={styles.heroBody}>{cm.body}</p> : null}
+              {cm.body ? <p className={`${styles.heroBody} ${Style1.changemaker_herbody_p}`}>{cm.body}</p> : null}
             </div>
             {cm.heroPrimaryCtaPath &&
             (ctaHeadingLines.length || cm.ctaButtonText) ? (
               <div className={styles.ctaCard}>
                 {ctaHeadingLines.length ? (
-                  <p className={styles.ctaSchoolHeading}>
+                  <p className={`${styles.ctaSchoolHeading} ${Style1.ctashoolheading_container}`}>
                     {ctaHeadingLines.map((line) => (
                       <span key={line}>
                         {line}

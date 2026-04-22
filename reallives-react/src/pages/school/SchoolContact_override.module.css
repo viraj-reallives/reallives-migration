@@ -7,3 +7,43 @@
     margin-top: 8%;
 }
 
+@media(max-width:560px){
+
+    .padding_bottom_page_style{
+        padding-bottom: 10px  !important;
+    }
+    
+}
+
+@media(max-width:500px){
+
+    .padding_bottom_page_style{
+        padding-bottom: 10px  !important;
+    }
+    
+}
+
+
+@media(max-width:460px){
+
+    .padding_bottom_page_style{
+        padding-bottom: 10px  !important;
+    }
+    
+}
+
+@media(max-width:400px){
+
+    .padding_bottom_page_style{
+        padding-bottom: 10px  !important;
+    }
+    
+}
+
+@media(max-width:360px){
+
+    .padding_bottom_page_style{
+        padding-bottom: 10px  !important;
+    }
+    
+}
