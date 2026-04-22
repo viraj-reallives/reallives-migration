@@ -31,10 +31,14 @@
 }
 
 .grid_learning_outcome {
-  background: linear-gradient(180deg, #ffffff 0%, #81e7f6 100%) !important;
+  background: linear-gradient(180deg, #ffffff 0%, #81e7f6 100%);
   padding: 2rem 2rem;
   display: grid !important;
   grid-template-columns: repeat(2, 1fr) !important;
+}
+
+[data-theme="dark"] .grid_learning_outcome {
+ background: #0b0f14 ;
 }
 
 .image_style_override {

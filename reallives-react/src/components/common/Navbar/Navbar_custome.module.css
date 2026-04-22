@@ -1,0 +1,11 @@
+
+
+
+[data-theme="dark"] .dark_mode_pannel {
+ background: #1a1717 ;
+}
+
+
+[data-theme="light"] .dark_mode_pannel {
+ background: white ;
+}

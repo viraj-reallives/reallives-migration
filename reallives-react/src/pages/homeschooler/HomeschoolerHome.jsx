@@ -154,7 +154,7 @@ function SkillsPanel({ data, images }) {
   return (
     <div className={styles.panel}>
       {images.empathy21CenturyBanner && (
-        <div className={styles.bannerFull}>
+        <div className={`${styles.bannerFull} ${Style1.banner_21_skills}`}>
           <img src={images.empathy21CenturyBanner} alt="" />
         </div>
       )}
@@ -269,7 +269,8 @@ function SdgPanel({ data, images }) {
         {images.sdgBackground && (
           <img className={styles.sdgHeroBg} src={images.sdgBackground} alt="" />
         )}
-        <div className={styles.sdgHeroOverlay}>
+        
+        <div className={`${styles.sdgHeroOverlay} ${Style1.sdgro_custome_conatiner}`}>
           <h2>{data.sdgHeroOverlay.title}</h2>
           {data.sdgHeroOverlay.paragraphs?.map((p, i) => (
             <p key={i}>{p}</p>
@@ -305,8 +306,9 @@ function SdgPanel({ data, images }) {
             <div className={`${styles.sdgGroups} ${Style1.sdg_grops_style}`}>
               {data.sdgImpact.relevanceGroups?.map((group) => (
                 <div key={group.label}>
-                  <p className={`${styles.sdgGroupLabel} ${Style1.color_white}`}>{group.label}</p>
-                  <div className={styles.sdgIconGrid}>
+                  <p className={`${styles.sdgGroupLabel} ${Style1.color_white} ${Style1.font_imapct_p}`}>{group.label}</p>
+                  
+                  <div className={`${styles.sdgIconGrid} ${Style1.sdg_icon_custom_grid}`}>
                     {group.goalImagePaths?.map((src) => (
                       <img className={Style1.sdg_logo_style} key={src} src={src} alt="" />
                     ))}

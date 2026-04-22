@@ -5,6 +5,7 @@ import { useSiteContent } from "@hooks/useSiteContent";
 import { useTheme } from "@context/ThemeContext";
 import SiteContext from "@context/SiteContext";
 import styles from "./Navbar.module.css";
+import Style1 from "../Navbar/Navbar_custome.module.css"
 
 var getHomePath = () => {
   const path = typeof window !== "undefined" ? window.location.pathname : "";
@@ -644,7 +645,7 @@ export default function Navbar() {
             onClick={() => setMenuOpen(false)}
           />
           <div
-            className={styles.mobilePanel}
+            className={`${styles.mobilePanel} ${Style1.dark_mode_pannel}`}
             role="dialog"
             aria-modal="true"
             aria-label="Site navigation"

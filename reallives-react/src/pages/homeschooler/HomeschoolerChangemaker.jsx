@@ -174,7 +174,7 @@
 
 import { Link } from "react-router-dom";
 import { useSiteContent } from "@hooks/useSiteContent";
-import styles from "../school/SchoolChangemaker.module.css"; 
+import styles from "../school/SchoolChangemaker.module.css";
 import Style1 from "../../components/costom_css/ProductChangemaker_override.module.css";
 import { ArrowRight } from "lucide-react";
 
@@ -225,10 +225,11 @@ export default function HomeschoolerChangemaker() {
   if (!cm) return null;
 
   return (
-    <div className={styles.page}>
-      
+    <div className={`${styles.page} ${Style1.page_padding_container}`}>
       {/* HERO SECTION */}
-      <header className={styles.hero}>
+      <header
+        className={`${styles.hero} ${Style1.changemaker_banner_container}`}
+      >
         {data.heroBackgroundImagePath && (
           <img
             className={`${styles.heroBg} ${Style1.heroBgOverride}`}
@@ -238,18 +239,27 @@ export default function HomeschoolerChangemaker() {
         )}
 
         <div className={`${styles.heroOverlay} ${Style1.impact_overlay_style}`}>
-          <div className={`${styles.heroGrid} ${Style1.heroGrid_override_style}`}>
+          <div
+            className={`${styles.heroGrid} ${Style1.heroGrid_override_style}`}
+          >
             <div>
-              <h1 className={styles.heroTitle}>
+              <h1
+                className={`${styles.heroTitle} ${Style1.changemaker_hero_title}`}
+              >
                 {data.heading || "Homeschooler Changemaker"}
               </h1>
-              <p className={styles.heroBody}>
-                {data.body || "Empowering students through immersive global simulation."}
+              <p
+                className={`${styles.heroBody} ${Style1.changemaker_herbody_p}`}
+              >
+                {data.body ||
+                  "Empowering students through immersive global simulation."}
               </p>
             </div>
 
             <div className={styles.ctaCard}>
-              <p className={styles.ctaSchoolHeading}>
+              <p
+                className={`${styles.ctaSchoolHeading} ${Style1.ctashoolheading_container}`}
+              >
                 {ctaHeadingLines.map((line, index) => (
                   <span key={index}>
                     {line}
@@ -257,7 +267,7 @@ export default function HomeschoolerChangemaker() {
                   </span>
                 ))}
               </p>
-              
+
               <CtaLink
                 href={data.heroPrimaryCtaPath || "/contact"}
                 className={styles.btnPrimary}
@@ -277,28 +287,42 @@ export default function HomeschoolerChangemaker() {
       {data.phases?.map((phase, phaseIndex) => {
         const phaseId = `changemaker-phase-${phaseIndex}`;
         const imageColumn = (
-          <div className={`${styles.phaseImageWrap} ${phase.images?.length > 1 ? styles.phaseImageStack : ""}`}>
-            {phase.images?.length
-              ? phase.images.map((src) => <img key={src} src={src} alt="" />)
-              : phase.imagePath ? <img src={phase.imagePath} alt="" /> : null}
+          <div
+            className={`${styles.phaseImageWrap} ${phase.images?.length > 1 ? styles.phaseImageStack : ""}`}
+          >
+            {phase.images?.length ? (
+              phase.images.map((src) => <img key={src} src={src} alt="" />)
+            ) : phase.imagePath ? (
+              <img src={phase.imagePath} alt="" />
+            ) : null}
           </div>
         );
-        
+
         const contentColumn = (
           <div className={styles.phaseContent}>
-            {phase.title && <h3 className={styles.phaseTitle} id={phaseId}>{phase.title}</h3>}
+            {phase.title && (
+              <h3 className={styles.phaseTitle} id={phaseId}>
+                {phase.title}
+              </h3>
+            )}
             {phase.intro && <p className={styles.phaseIntro}>{phase.intro}</p>}
             {phase.bullets?.length > 0 && (
               <ul className={styles.bulletList}>
-                {phase.bullets.map((item, idx) => <li key={idx}>{item}</li>)}
+                {phase.bullets.map((item, idx) => (
+                  <li key={idx}>{item}</li>
+                ))}
               </ul>
             )}
             {phase.sections?.map((sec, idx) => (
               <div key={idx} className={styles.sectionBlock}>
-                {sec.title && <p className={styles.sectionTitle}>{sec.title}</p>}
+                {sec.title && (
+                  <p className={styles.sectionTitle}>{sec.title}</p>
+                )}
                 {sec.bullets?.length > 0 && (
                   <ul className={styles.nestedList}>
-                    {sec.bullets.map((b, bIdx) => <li key={bIdx}>{b}</li>)}
+                    {sec.bullets.map((b, bIdx) => (
+                      <li key={bIdx}>{b}</li>
+                    ))}
                   </ul>
                 )}
               </div>
@@ -312,12 +336,22 @@ export default function HomeschoolerChangemaker() {
         );
 
         return (
-          <section key={phaseIndex} className={styles.phase} aria-labelledby={phaseId}>
+          <section
+            key={phaseIndex}
+            className={styles.phase}
+            aria-labelledby={phaseId}
+          >
             <div className={styles.phaseGrid}>
               {phaseIndex === 1 ? (
-                <>{contentColumn}{imageColumn}</>
+                <>
+                  {contentColumn}
+                  {imageColumn}
+                </>
               ) : (
-                <>{imageColumn}{contentColumn}</>
+                <>
+                  {imageColumn}
+                  {contentColumn}
+                </>
               )}
             </div>
           </section>
@@ -329,13 +363,19 @@ export default function HomeschoolerChangemaker() {
         <section className={styles.whySection}>
           <div className={styles.whyInner}>
             {data.whyJourneyMattersHeading && (
-              <h2 className={styles.whyHeading}>{data.whyJourneyMattersHeading}</h2>
+              <h2 className={styles.whyHeading}>
+                {data.whyJourneyMattersHeading}
+              </h2>
             )}
             <div className={styles.gapGrid}>
               {data.gaps?.map((gap, idx) => (
                 <article key={idx} className={styles.gapCard}>
-                  {gap.title && <h3 className={styles.gapTitle}>{gap.title}</h3>}
-                  {gap.description && <p className={styles.gapDesc}>{gap.description}</p>}
+                  {gap.title && (
+                    <h3 className={styles.gapTitle}>{gap.title}</h3>
+                  )}
+                  {gap.description && (
+                    <p className={styles.gapDesc}>{gap.description}</p>
+                  )}
                 </article>
               ))}
             </div>
@@ -349,26 +389,29 @@ export default function HomeschoolerChangemaker() {
           {data.closingHeading || "Bring RealLives to Your Homeschool"}
         </h2>
         <p className={styles.closingSub}>
-          {data.closingSubtext || "Join a global network of educators fostering empathy and changemaking."}
+          {data.closingSubtext ||
+            "Join a global network of educators fostering empathy and changemaking."}
         </p>
-        <CtaLink href={data.closingCtaPath || "/contact"} className={styles.btnOutline}>
+        <CtaLink
+          href={data.closingCtaPath || "/contact"}
+          className={styles.btnOutline}
+        >
           {data.closingButtonText || "Contact Us"}
         </CtaLink>
       </footer>
 
-      {/* PRODUCTS SECTION (STATIC UI) - FULL DATA ADDED */}
+      {/* PRODUCTS SECTION (STATIC UI) */}
       <div className={Style1.education_product_container}>
         <div className={Style1.container_education_inner}>
           <div className={Style1.top_head_line_container}>
             <h2 className={Style1.section_title}>Our Educational Products</h2>
             <p className={Style1.section_subtitle_text}>
-              Comprehensive tools designed to build empathy and global awareness.
+              Comprehensive tools designed to build empathy, global awareness,
+              and changemaker skills through immersive educational experiences.
             </p>
           </div>
 
           <div className={Style1.card_container_product}>
-            
-            {/* Card 1: RealLives Simulation */}
             <div className={Style1.card_grid_product}>
               <div className={Style1.card_head_top}>
                 <div className={Style1.width_flex_class}>
@@ -389,8 +432,12 @@ export default function HomeschoolerChangemaker() {
                 </p>
 
                 <div className={Style1.product_features}>
-                  <div className={Style1.product_capsule_box}>Life Simulation</div>
-                  <div className={Style1.product_capsule_box}>Cultural Awareness</div>
+                  <div className={Style1.product_capsule_box}>
+                    Life Simulation
+                  </div>
+                  <div className={Style1.product_capsule_box}>
+                    Cultural Awareness
+                  </div>
                 </div>
 
                 <div className={Style1.product_link_arrow}>
@@ -399,7 +446,6 @@ export default function HomeschoolerChangemaker() {
               </div>
             </div>
 
-            {/* Card 2: Empathy Canvas */}
             <div className={Style1.card_grid_product}>
               <div className={Style1.card_head_top}>
                 <div className={Style1.width_flex_class}>
@@ -416,8 +462,12 @@ export default function HomeschoolerChangemaker() {
                 </p>
 
                 <div className={Style1.product_features}>
-                  <div className={Style1.product_capsule_box}>Reflection Tool</div>
-                  <div className={Style1.product_capsule_box}>Empathy Building</div>
+                  <div className={Style1.product_capsule_box}>
+                    Reflection Tool
+                  </div>
+                  <div className={Style1.product_capsule_box}>
+                    Empathy Building
+                  </div>
                 </div>
 
                 <div className={Style1.product_link_arrow}>
@@ -426,7 +476,6 @@ export default function HomeschoolerChangemaker() {
               </div>
             </div>
 
-            {/* Card 3: RealBoard */}
             <div className={Style1.card_grid_product}>
               <div className={Style1.card_head_top}>
                 <div className={Style1.width_flex_class}>
@@ -443,8 +492,12 @@ export default function HomeschoolerChangemaker() {
                 </p>
 
                 <div className={Style1.product_features}>
-                  <div className={Style1.product_capsule_box}>Social Platform</div>
-                  <div className={Style1.product_capsule_box}>Peer Learning</div>
+                  <div className={Style1.product_capsule_box}>
+                    Social Platform
+                  </div>
+                  <div className={Style1.product_capsule_box}>
+                    Peer Learning
+                  </div>
                 </div>
 
                 <div className={Style1.product_link_arrow}>
@@ -453,8 +506,9 @@ export default function HomeschoolerChangemaker() {
               </div>
             </div>
 
-            {/* Card 4: ChangeMaker Index */}
-            <div className={`${Style1.card_grid_product} ${Style1.background_color_orange}`}>
+            <div
+              className={`${Style1.card_grid_product} ${Style1.background_color_orange}`}
+            >
               <div className={Style1.card_head_top}>
                 <div className={Style1.width_flex_class}>
                   <img src={changemaker_icon} alt="ChangeMaker" />
@@ -471,8 +525,12 @@ export default function HomeschoolerChangemaker() {
                 </p>
 
                 <div className={Style1.product_features}>
-                  <div className={Style1.product_capsule_box}>Assessment Tool</div>
-                  <div className={Style1.product_capsule_box}>18 Competencies</div>
+                  <div className={Style1.product_capsule_box}>
+                    Assessment Tool
+                  </div>
+                  <div className={Style1.product_capsule_box}>
+                    18 Competencies
+                  </div>
                 </div>
 
                 <div className={Style1.product_link_arrow}>
@@ -480,7 +538,6 @@ export default function HomeschoolerChangemaker() {
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>
@@ -490,17 +547,42 @@ export default function HomeschoolerChangemaker() {
         <div className={Style1.container_education_inner}>
           <div className={Style1.top_head_line_container}>
             <h2 className={Style1.section_title}>What Educators Are Saying</h2>
+            <p className={Style1.section_subtitle_text}>
+              Hear from teachers and students who have transformed their
+              learning experiences with RealLives educational tools.
+            </p>
           </div>
           <div className={Style1.cards_educatores_saying}>
             {[
-              { name: "David Laborie", quote: "I just played my first character to the end, and the experience is incredible." },
-              { name: "Amanda Levin", quote: "No curriculum has moved our students the way RealLives has." },
-              { name: "Sydney Smith", quote: "Every middle and high school should have this fascinating program." }
+              {
+                name: "David Laborie",
+                quote:
+                  "I just played my first character to the end, and the experience is incredible. I was in tears at the end",
+              },
+              {
+                name: "Amanda Levin",
+                quote:
+                  "No curriculum has moved our students the way RealLives has. It is a very effective medium for teaching about the human experience.",
+              },
+              {
+                name: "Sydney Smith",
+                quote:
+                  "Every middle and high school should have this fascinating program. It’s a life simulation that enables students to live one of billions of lives.",
+              },
             ].map((t, idx) => (
               <div key={idx} className={Style1.label_inner_educatores}>
                 <div className={Style1.quote_icon}>
-                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 8C8.686 8 6 10.686 6 14c0 3.314 2.686 6 6 6 1.657 0 3 1.343 3 3s-1.343 3-3 3c-4.971 0-9-4.029-9-9 0-6.627 5.373-12 12-12v3zm14 0c-3.314 0-6 2.686-6 6 0 3.314 2.686 6 6 6 1.657 0 3 1.343 3 3s-1.343 3-3 3c-4.971 0-9-4.029-9-9 0-6.627 5.373-12 12-12v3z" fill="currentColor"></path>
+                  <svg
+                    width="32"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12 8C8.686 8 6 10.686 6 14c0 3.314 2.686 6 6 6 1.657 0 3 1.343 3 3s-1.343 3-3 3c-4.971 0-9-4.029-9-9 0-6.627 5.373-12 12-12v3zm14 0c-3.314 0-6 2.686-6 6 0 3.314 2.686 6 6 6 1.657 0 3 1.343 3 3s-1.343 3-3 3c-4.971 0-9-4.029-9-9 0-6.627 5.373-12 12-12v3z"
+                      fill="currentColor"
+                    ></path>
                   </svg>
                 </div>
                 <p className={Style1.label_p_style}>"{t.quote}"</p>
@@ -510,7 +592,6 @@ export default function HomeschoolerChangemaker() {
           </div>
         </div>
       </div>
-
     </div>
   );
 }
