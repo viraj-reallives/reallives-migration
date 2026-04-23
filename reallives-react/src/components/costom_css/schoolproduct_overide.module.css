@@ -23,6 +23,14 @@
   text-align: center;
 }
 
+[data-theme="dark"] .footer_empathy_experience{
+ background: #0b0f14 !important;
+}
+
+[data-theme="dark"] .real_ai_structure_container{
+ background: #0b0f14 !important;
+}
+
 .logoRow_override>img {
   height: 4rem !important;
   object-fit: contain;
@@ -167,6 +175,705 @@
 
 .gap_override_0{
   gap: 0px !important;
+}
+
+
+
+@media(max-width:860px){}
+
+@media(max-width:800px){
+   .flex_center{
+       flex-direction: column;
+       justify-content: start;
+    }
+
+    .first_image_grid_top{
+      flex-direction: column;
+      padding: 10px 1rem;
+    }
+
+   .padding_overide{
+    margin: 0px !important;
+    gap: 0rem !important;
+   }
+
+   .tabList_custome_override{
+    padding-bottom: 1rem !important;
+    margin-left: 10px;
+   }
+
+   .logoRow_override>img{
+    height: 3rem !important;
+   }
+
+   .grid_learning_outcome{
+    grid-template-columns: 1fr !important;
+    gap: 0rem !important;
+    padding: 10px !important;
+   }
+   .video_width_add{
+    padding: 0rem !important;
+   }
+
+  .header_product_padding{
+    padding: 12px !important;
+  }
+   .footer_empathy_experience{
+    border: none;
+    border-radius: 0px;
+    padding: 10px;
+   }
+   .rcmi_hero_section{
+    grid-template-columns: 1fr;
+    height: max-content !important;
+    gap: 1rem;
+   }
+
+   .padding_pannel{
+    padding: 4px !important;
+   }
+
+   .hight_100{
+    padding: 10px !important;
+   }
+
+   .card_row_override_style{
+    padding: 1rem;
+   }
+
+   .empathyCard_custome{
+    margin: 0px;
+    max-width: 100%;
+   }
+
+   .sliderShell_override{
+    grid-template-columns: 1fr !important;
+   }
+
+    .card_image_override{
+     height: auto;
+    }
+    .p_1_rem{
+      padding: 1rem 1rem !important;
+    }
+
+    .real_ai_structure_container{
+          height: auto;
+    display: flex;
+    flex-direction: column;
+    }
+     
+    .turning_ai_story_box{
+      grid-template-rows: 1fr;
+    }
+}
+
+@media(max-width:760px){
+   .flex_center{
+       flex-direction: column;
+       justify-content: start;
+    }
+
+    .first_image_grid_top{
+      flex-direction: column;
+      padding: 10px 1rem;
+    }
+
+   .padding_overide{
+    margin: 0px !important;
+    gap: 0rem !important;
+   }
+
+   .tabList_custome_override{
+    padding-bottom: 1rem !important;
+    margin-left: 10px;
+   }
+
+   .logoRow_override>img{
+    height: 3rem !important;
+   }
+
+   .grid_learning_outcome{
+    grid-template-columns: 1fr !important;
+    gap: 0rem !important;
+    padding: 10px !important;
+   }
+   .video_width_add{
+    padding: 0rem !important;
+   }
+
+  .header_product_padding{
+    padding: 12px !important;
+  }
+   .footer_empathy_experience{
+    border: none;
+    border-radius: 0px;
+    padding: 10px;
+   }
+   .rcmi_hero_section{
+    grid-template-columns: 1fr;
+    height: max-content !important;
+    gap: 1rem;
+   }
+
+   .padding_pannel{
+    padding: 4px !important;
+   }
+
+   .hight_100{
+    padding: 10px !important;
+   }
+
+   .card_row_override_style{
+    padding: 1rem;
+   }
+
+   .empathyCard_custome{
+    margin: 0px;
+    max-width: 100%;
+   }
+
+   .sliderShell_override{
+    grid-template-columns: 1fr !important;
+   }
+
+    .card_image_override{
+     height: auto;
+    }
+    .p_1_rem{
+      padding: 1rem 1rem !important;
+    }
+
+    .real_ai_structure_container{
+          height: auto;
+    display: flex;
+    flex-direction: column;
+    }
+     
+    .turning_ai_story_box{
+      grid-template-rows: 1fr;
+    }
+}
+
+@media(max-width:700px){
+   .flex_center{
+       flex-direction: column;
+       justify-content: start;
+    }
+
+    .first_image_grid_top{
+      flex-direction: column;
+      padding: 10px 1rem;
+    }
+
+   .padding_overide{
+    margin: 0px !important;
+    gap: 0rem !important;
+   }
+
+   .tabList_custome_override{
+    padding-bottom: 1rem !important;
+    margin-left: 10px;
+   }
+
+   .logoRow_override>img{
+    height: 3rem !important;
+   }
+
+   .grid_learning_outcome{
+    grid-template-columns: 1fr !important;
+    gap: 0rem !important;
+    padding: 10px !important;
+   }
+   .video_width_add{
+    padding: 0rem !important;
+   }
+
+  .header_product_padding{
+    padding: 12px !important;
+  }
+   .footer_empathy_experience{
+    border: none;
+    border-radius: 0px;
+    padding: 10px;
+   }
+   .rcmi_hero_section{
+    grid-template-columns: 1fr;
+    height: max-content !important;
+    gap: 1rem;
+   }
+
+   .padding_pannel{
+    padding: 4px !important;
+   }
+
+   .hight_100{
+    padding: 10px !important;
+   }
+
+   .card_row_override_style{
+    padding: 1rem;
+   }
+
+   .empathyCard_custome{
+    margin: 0px;
+    max-width: 100%;
+   }
+
+   .sliderShell_override{
+    grid-template-columns: 1fr !important;
+   }
+
+    .card_image_override{
+     height: auto;
+    }
+    .p_1_rem{
+      padding: 1rem 1rem !important;
+    }
+
+    .real_ai_structure_container{
+          height: auto;
+    display: flex;
+    flex-direction: column;
+    }
+     
+    .turning_ai_story_box{
+      grid-template-rows: 1fr;
+    }
+}
+
+@media(max-width:660px){
+   .flex_center{
+       flex-direction: column;
+       justify-content: start;
+    }
+
+    .first_image_grid_top{
+      flex-direction: column;
+      padding: 10px 1rem;
+    }
+
+   .padding_overide{
+    margin: 0px !important;
+    gap: 0rem !important;
+   }
+
+   .tabList_custome_override{
+    padding-bottom: 1rem !important;
+    margin-left: 10px;
+   }
+
+   .logoRow_override>img{
+    height: 3rem !important;
+   }
+
+   .grid_learning_outcome{
+    grid-template-columns: 1fr !important;
+    gap: 0rem !important;
+    padding: 10px !important;
+   }
+   .video_width_add{
+    padding: 0rem !important;
+   }
+
+  .header_product_padding{
+    padding: 12px !important;
+  }
+   .footer_empathy_experience{
+    border: none;
+    border-radius: 0px;
+    padding: 10px;
+   }
+   .rcmi_hero_section{
+    grid-template-columns: 1fr;
+    height: max-content !important;
+    gap: 1rem;
+   }
+
+   .padding_pannel{
+    padding: 4px !important;
+   }
+
+   .hight_100{
+    padding: 10px !important;
+   }
+
+   .card_row_override_style{
+    padding: 1rem;
+   }
+
+   .empathyCard_custome{
+    margin: 0px;
+    max-width: 100%;
+   }
+
+   .sliderShell_override{
+    grid-template-columns: 1fr !important;
+   }
+
+    .card_image_override{
+     height: auto;
+    }
+    .p_1_rem{
+      padding: 1rem 1rem !important;
+    }
+
+    .real_ai_structure_container{
+          height: auto;
+    display: flex;
+    flex-direction: column;
+    }
+     
+    .turning_ai_story_box{
+      grid-template-rows: 1fr;
+    }
+}
+
+@media(max-width:600px){
+   .flex_center{
+       flex-direction: column;
+       justify-content: start;
+    }
+
+    .first_image_grid_top{
+      flex-direction: column;
+      padding: 10px 1rem;
+    }
+
+   .padding_overide{
+    margin: 0px !important;
+    gap: 0rem !important;
+   }
+
+   .tabList_custome_override{
+    padding-bottom: 1rem !important;
+    margin-left: 10px;
+   }
+
+   .logoRow_override>img{
+    height: 3rem !important;
+   }
+
+   .grid_learning_outcome{
+    grid-template-columns: 1fr !important;
+    gap: 0rem !important;
+    padding: 10px !important;
+   }
+   .video_width_add{
+    padding: 0rem !important;
+   }
+
+  .header_product_padding{
+    padding: 12px !important;
+  }
+   .footer_empathy_experience{
+    border: none;
+    border-radius: 0px;
+    padding: 10px;
+   }
+   .rcmi_hero_section{
+    grid-template-columns: 1fr;
+    height: max-content !important;
+    gap: 1rem;
+   }
+
+   .padding_pannel{
+    padding: 4px !important;
+   }
+
+   .hight_100{
+    padding: 10px !important;
+   }
+
+   .card_row_override_style{
+    padding: 1rem;
+   }
+
+   .empathyCard_custome{
+    margin: 0px;
+    max-width: 100%;
+   }
+
+   .sliderShell_override{
+    grid-template-columns: 1fr !important;
+   }
+
+    .card_image_override{
+     height: auto;
+    }
+    .p_1_rem{
+      padding: 1rem 1rem !important;
+    }
+
+    .real_ai_structure_container{
+          height: auto;
+    display: flex;
+    flex-direction: column;
+    }
+     
+    .turning_ai_story_box{
+      grid-template-rows: 1fr;
+    }
+}
+
+@media(max-width:560px){
+   .flex_center{
+       flex-direction: column;
+       justify-content: start;
+    }
+
+    .first_image_grid_top{
+      flex-direction: column;
+      padding: 10px 1rem;
+    }
+
+   .padding_overide{
+    margin: 0px !important;
+    gap: 0rem !important;
+   }
+
+   .tabList_custome_override{
+    padding-bottom: 1rem !important;
+    margin-left: 10px;
+   }
+
+   .logoRow_override>img{
+    height: 3rem !important;
+   }
+
+   .grid_learning_outcome{
+    grid-template-columns: 1fr !important;
+    gap: 0rem !important;
+    padding: 10px !important;
+   }
+   .video_width_add{
+    padding: 0rem !important;
+   }
+
+  .header_product_padding{
+    padding: 12px !important;
+  }
+   .footer_empathy_experience{
+    border: none;
+    border-radius: 0px;
+    padding: 10px;
+   }
+   .rcmi_hero_section{
+    grid-template-columns: 1fr;
+    height: max-content !important;
+    gap: 1rem;
+   }
+
+   .padding_pannel{
+    padding: 4px !important;
+   }
+
+   .hight_100{
+    padding: 10px !important;
+   }
+
+   .card_row_override_style{
+    padding: 1rem;
+   }
+
+   .empathyCard_custome{
+    margin: 0px;
+    max-width: 100%;
+   }
+
+   .sliderShell_override{
+    grid-template-columns: 1fr !important;
+   }
+
+    .card_image_override{
+     height: auto;
+    }
+    .p_1_rem{
+      padding: 1rem 1rem !important;
+    }
+
+    .real_ai_structure_container{
+          height: auto;
+    display: flex;
+    flex-direction: column;
+    }
+     
+    .turning_ai_story_box{
+      grid-template-rows: 1fr;
+    }
+}
+
+@media(max-width:500px){
+   .flex_center{
+       flex-direction: column;
+       justify-content: start;
+    }
+
+    .first_image_grid_top{
+      flex-direction: column;
+      padding: 10px 1rem;
+    }
+
+   .padding_overide{
+    margin: 0px !important;
+    gap: 0rem !important;
+   }
+
+   .tabList_custome_override{
+    padding-bottom: 1rem !important;
+    margin-left: 10px;
+   }
+
+   .logoRow_override>img{
+    height: 3rem !important;
+   }
+
+   .grid_learning_outcome{
+    grid-template-columns: 1fr !important;
+    gap: 0rem !important;
+    padding: 10px !important;
+   }
+   .video_width_add{
+    padding: 0rem !important;
+   }
+
+  .header_product_padding{
+    padding: 12px !important;
+  }
+   .footer_empathy_experience{
+    border: none;
+    border-radius: 0px;
+    padding: 10px;
+   }
+   .rcmi_hero_section{
+    grid-template-columns: 1fr;
+    height: max-content !important;
+    gap: 1rem;
+   }
+
+   .padding_pannel{
+    padding: 4px !important;
+   }
+
+   .hight_100{
+    padding: 10px !important;
+   }
+
+   .card_row_override_style{
+    padding: 1rem;
+   }
+
+   .empathyCard_custome{
+    margin: 0px;
+    max-width: 100%;
+   }
+
+   .sliderShell_override{
+    grid-template-columns: 1fr !important;
+   }
+
+    .card_image_override{
+     height: auto;
+    }
+    .p_1_rem{
+      padding: 1rem 1rem !important;
+    }
+
+    .real_ai_structure_container{
+          height: auto;
+    display: flex;
+    flex-direction: column;
+    }
+     
+    .turning_ai_story_box{
+      grid-template-rows: 1fr;
+    }
+}
+@media(max-width:460px){
+   .flex_center{
+       flex-direction: column;
+       justify-content: start;
+    }
+
+    .first_image_grid_top{
+      flex-direction: column;
+      padding: 10px 1rem;
+    }
+
+   .padding_overide{
+    margin: 0px !important;
+    gap: 0rem !important;
+   }
+
+   .tabList_custome_override{
+    padding-bottom: 1rem !important;
+    margin-left: 10px;
+   }
+
+   .logoRow_override>img{
+    height: 3rem !important;
+   }
+
+   .grid_learning_outcome{
+    grid-template-columns: 1fr !important;
+    gap: 0rem !important;
+    padding: 10px !important;
+   }
+   .video_width_add{
+    padding: 0rem !important;
+   }
+
+  .header_product_padding{
+    padding: 12px !important;
+  }
+   .footer_empathy_experience{
+    border: none;
+    border-radius: 0px;
+    padding: 10px;
+   }
+   .rcmi_hero_section{
+    grid-template-columns: 1fr;
+    height: max-content !important;
+    gap: 1rem;
+   }
+
+   .padding_pannel{
+    padding: 4px !important;
+   }
+
+   .hight_100{
+    padding: 10px !important;
+   }
+
+   .card_row_override_style{
+    padding: 1rem;
+   }
+
+   .empathyCard_custome{
+    margin: 0px;
+    max-width: 100%;
+   }
+
+   .sliderShell_override{
+    grid-template-columns: 1fr !important;
+   }
+
+    .card_image_override{
+     height: auto;
+    }
+    .p_1_rem{
+      padding: 1rem 1rem !important;
+    }
+
+    .real_ai_structure_container{
+          height: auto;
+    display: flex;
+    flex-direction: column;
+    }
+     
+    .turning_ai_story_box{
+      grid-template-rows: 1fr;
+    }
 }
 
 @media(max-width:400px){

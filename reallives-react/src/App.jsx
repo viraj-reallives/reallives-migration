@@ -61,10 +61,14 @@ import Albany_University from './pages/research/Albany_University';
 import Uppsala_University from './pages/research/Uppsala_University';
 import Individual_Research from './pages/research/Individual_Research';
 import Kame_Research from './pages/research/Kame_Research';
+import ScrollToTop from './pages/ScrollFunction/Scroll';
 
 export default function App() {
   return (
     <BrowserRouter>
+    
+    <ScrollToTop/>
+
       <Routes>
         <Route element={<RootLayout />}>
           <Route path="/" element={<Portal />} />
@@ -175,6 +179,7 @@ export default function App() {
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
+      
     </BrowserRouter>
   );
 }

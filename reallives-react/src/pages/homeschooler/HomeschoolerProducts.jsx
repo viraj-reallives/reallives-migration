@@ -622,7 +622,7 @@ function RealLivesSimPanel({ data, isActive = true }) {
       ) : null}
 
       <div className={`${styles.whyGrid} ${Style1.padding_overide}`}>
-        <div>
+        <div className={Style1.header_product_padding}>
           {data.whyHeading ? (
             <h2 className={styles.whyHeading}>{data.whyHeading}</h2>
           ) : null}
@@ -1146,9 +1146,11 @@ export default function HomeschoolerProducts() {
   if (!products) return null;
 
   return (
-    <section className={styles.section} id="products">
+    <section className={`${styles.section} ${Style1.padding_pannel}`} id="products">
       <div className={`${styles.inner} ${Style1.video_width_add}`}>
-        <header className={styles.header}>
+       
+        <header className={`${styles.header}  ${Style1.header_product_padding}`}>
+
           {products.heading ? (
             <h1 className={styles.title}>{products.heading}</h1>
           ) : null}
@@ -1158,7 +1160,7 @@ export default function HomeschoolerProducts() {
         </header>
 
         {tabs.length ? (
-          <div className={styles.tabList} role="tablist" aria-label="Products">
+          <div className={`${styles.tabList}  ${Style1.tabList_custome_override}`} role="tablist" aria-label="Products">
             {tabs.map((tab) => (
               <button
                 key={tab.id}

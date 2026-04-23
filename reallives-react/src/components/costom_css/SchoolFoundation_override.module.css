@@ -144,6 +144,77 @@
   grid-template-columns: 37% 1fr !important;
 }
 
+
+@media(max-width:990px){
+  .hero_conatiner{
+    height: auto;
+  }
+
+  .approachInner_overrid{
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media(max-width:860px){
+  .hero_conatiner{
+    height: auto;
+  }
+
+  .approachInner_overrid{
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media(max-width:800px){
+  .hero_conatiner{
+    height: auto;
+  }
+
+  .approachInner_overrid{
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media(max-width:760px){
+  .hero_conatiner{
+    height: auto;
+  }
+
+  .approachInner_overrid{
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media(max-width:700px){
+  .hero_conatiner{
+    height: auto;
+  }
+
+  .approachInner_overrid{
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media(max-width:660px){
+  .hero_conatiner{
+    height: auto;
+  }
+
+  .approachInner_overrid{
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media(max-width:600px){
+  .hero_conatiner{
+    height: auto;
+  }
+
+  .approachInner_overrid{
+    grid-template-columns: 1fr !important;
+  }
+}
+
 @media(max-width:560px){
   .hero_conatiner{
     height: auto;

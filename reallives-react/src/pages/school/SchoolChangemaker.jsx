@@ -184,7 +184,7 @@ export default function SchoolChangemaker() {
               </h2>
             ) : null}
             {cm.gaps?.length ? (
-              <div className={styles.gapGrid}>
+              <div className={`${styles.gapGrid} ${Style1.gap_grid_style}`}>
                 {cm.gaps.map((gap) => (
                   <article key={gap.title} className={styles.gapCard}>
                     {gap.title ? (

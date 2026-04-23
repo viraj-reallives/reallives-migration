@@ -367,7 +367,7 @@ export default function HomeschoolerChangemaker() {
                 {data.whyJourneyMattersHeading}
               </h2>
             )}
-            <div className={styles.gapGrid}>
+            <div className={`${styles.gapGrid} ${Style1.gap_grid_style}`}>
               {data.gaps?.map((gap, idx) => (
                 <article key={idx} className={styles.gapCard}>
                   {gap.title && (
