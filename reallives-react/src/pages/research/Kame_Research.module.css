@@ -1,0 +1,124 @@
+.kame_override_style {
+  background: linear-gradient(180deg, #a395c6 0%, #4f4860 100%) !important;
+  display: grid;
+  grid-template-columns: 1fr 30% !important;
+}
+
+.hight_kame_container {
+  height: 60vh;
+}
+
+.firstcontent_research_tab {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+}
+
+.content_sub_container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.content_sub_container > img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+
+@media (max-width: 700px) {
+    .kame_override_style {
+    grid-template-columns: 1fr !important;
+    padding-top: 4rem;
+    gap: 10px;
+  }
+
+  .content_sub_container {
+    height: 35vh;
+  }
+}
+@media (max-width: 660px) {
+    .kame_override_style {
+    grid-template-columns: 1fr !important;
+    padding-top: 4rem;
+    gap: 10px;
+  }
+
+  .content_sub_container {
+    height: 32vh;
+  }
+}
+@media (max-width: 600px) {
+    .kame_override_style {
+    grid-template-columns: 1fr !important;
+    padding-top: 4rem;
+    gap: 10px;
+  }
+
+  .content_sub_container {
+    height: 30vh;
+  }
+}
+
+@media (max-width: 560px) {
+    .kame_override_style {
+    grid-template-columns: 1fr !important;
+    padding-top: 4rem;
+    gap: 10px;
+  }
+
+  .content_sub_container {
+    height: 30vh;
+  }
+}
+@media (max-width: 500px) {
+    .kame_override_style {
+    grid-template-columns: 1fr !important;
+    padding-top: 4rem;
+    gap: 10px;
+  }
+
+  .content_sub_container {
+    height: 30vh;
+  }
+}
+@media (max-width: 460px) {
+    .kame_override_style {
+    grid-template-columns: 1fr !important;
+    padding-top: 4rem;
+    gap: 10px;
+  }
+
+  .content_sub_container {
+    height: 30vh;
+  }
+}
+@media (max-width: 400px) {
+    .kame_override_style {
+    grid-template-columns: 1fr !important;
+    padding-top: 4rem;
+    gap: 10px;
+  }
+
+  .content_sub_container {
+    height: 30vh;
+  }
+}
+
+@media (max-width: 360px) {
+
+  .kame_override_style {
+    grid-template-columns: 1fr !important;
+    padding-top: 4rem;
+    gap: 10px;
+  }
+
+  .content_sub_container {
+    height: 30vh;
+  }
+}

@@ -800,8 +800,8 @@ export const schoolContent = {
             'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/Individual-Research-png.png',
           
           heroTitle:
-            'Computer-Based Life Simulations and Young Adolescents: Identity Exploration, Information Learning, and Sense-Making',
-          heroSubtitle: 'How young adolescents learn while engaging in a computer-based life simulation.',
+            'Bridging Cultures: Immigration and  Multicultural Education',
+          heroSubtitle: 'Use of RealLives and the ChangeMaker Index to enhance empathy and multicultural understanding through simulated life experiences.',
           institution: 'Published as an individual academic research paper, mid-2000s',
           whatWasStudied: 'How young adolescents learn while engaging in a computer-based life simulation.',
           keyFindings: [
