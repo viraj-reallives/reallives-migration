@@ -212,15 +212,16 @@
 //   );
 // }
 
-import { Fragment, useCallback, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import CTABanner from '@components/common/CTABanner/CTABanner';
-import { useSiteContent } from '@hooks/useSiteContent';
+import { Fragment, useCallback, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import CTABanner from "@components/common/CTABanner/CTABanner";
+import { useSiteContent } from "@hooks/useSiteContent";
 import styles from "../school/SchoolImpact.module.css";
 import Style1 from "../../components/costom_css/SchoolImpact_override.module.css";
 
 import "swiper/css";
 import "swiper/css/navigation";
+import { GlobalMap } from "../../pages/GlobalMap/GlobalMap";
 
 const AUTO_MS = 5000;
 
@@ -253,17 +254,22 @@ function ImpactImageSlider({ images, label }) {
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       aria-roledescription="carousel"
-      aria-label={label || 'Workshop photos'}
+      aria-label={label || "Workshop photos"}
     >
       <div className={styles.sliderViewport}>
         {label ? <p className={styles.sliderLabel}>{label}</p> : null}
         {images.map((src, i) => (
           <div
             key={src}
-            className={`${styles.sliderSlide} ${i === index ? styles.sliderSlideActive : ''}`}
+            className={`${styles.sliderSlide} ${i === index ? styles.sliderSlideActive : ""}`}
             aria-hidden={i !== index}
           >
-            <img className={styles.sliderImage} src={src} alt="" loading={i === 0 ? 'eager' : 'lazy'} />
+            <img
+              className={styles.sliderImage}
+              src={src}
+              alt=""
+              loading={i === 0 ? "eager" : "lazy"}
+            />
           </div>
         ))}
       </div>
@@ -286,7 +292,11 @@ function ImpactImageSlider({ images, label }) {
           >
             ›
           </button>
-          <div className={styles.dots} role="tablist" aria-label="Slide indicators">
+          <div
+            className={styles.dots}
+            role="tablist"
+            aria-label="Slide indicators"
+          >
             {images.map((_, i) => (
               <button
                 key={i}
@@ -294,7 +304,7 @@ function ImpactImageSlider({ images, label }) {
                 role="tab"
                 aria-selected={i === index}
                 aria-label={`Image ${i + 1} of ${len}`}
-                className={`${styles.dot} ${i === index ? styles.dotActive : ''}`}
+                className={`${styles.dot} ${i === index ? styles.dotActive : ""}`}
                 onClick={() => setIndex(i)}
               />
             ))}
@@ -323,8 +333,12 @@ function WorkshopCard({ card, learnMorePath }) {
         <div>
           {card.university || card.department ? (
             <div className={styles.metaBlock}>
-              {card.university ? <p className={styles.university}>{card.university}</p> : null}
-              {card.department ? <p className={styles.department}>{card.department}</p> : null}
+              {card.university ? (
+                <p className={styles.university}>{card.university}</p>
+              ) : null}
+              {card.department ? (
+                <p className={styles.department}>{card.department}</p>
+              ) : null}
             </div>
           ) : null}
 
@@ -351,7 +365,9 @@ function WorkshopCard({ card, learnMorePath }) {
 
           {card.skillsDevelopedLabel && card.skills?.length ? (
             <div>
-              <p className={styles.skillsHeading}>{card.skillsDevelopedLabel}</p>
+              <p className={styles.skillsHeading}>
+                {card.skillsDevelopedLabel}
+              </p>
               <div className={styles.skillRow}>
                 {card.skills.map((skill) => (
                   <span key={skill} className={styles.skillPill}>
@@ -363,7 +379,10 @@ function WorkshopCard({ card, learnMorePath }) {
           ) : null}
 
           {(card.learnMorePath || learnMorePath) && card.learnMoreText ? (
-            <Link to={card.learnMorePath || learnMorePath} className={styles.learnMore}>
+            <Link
+              to={card.learnMorePath || learnMorePath}
+              className={styles.learnMore}
+            >
               {card.learnMoreText}
               <span>→</span>
             </Link>
@@ -384,28 +403,43 @@ export default function HomeschoolerImpact() {
 
   return (
     <div className={styles.page} id="impact">
-      
       <ImpactImageSlider images={sliderImages} label={impact.sectionTitle} />
 
       <section className={styles.story} aria-labelledby="global-impact-story">
-        <div className={`${styles.storyGrid} ${Style1.impact_graph_map_container}`}>
+        <div
+          className={`${styles.storyGrid} ${Style1.impact_graph_map_container}`}
+        >
           <div className={Style1.padding_manage_style}>
             {impact.globalStoryHeading ? (
-              <h2 className={`${styles.storyHeading} ${Style1.text_align_center}`} id="global-impact-story">
+              <h2
+                className={`${styles.storyHeading} ${Style1.text_align_center}`}
+                id="global-impact-story"
+              >
                 {impact.globalStoryHeading}
               </h2>
             ) : null}
-            {impact.globalStoryBody ? <p className={styles.storyBody}>{impact.globalStoryBody}</p> : null}
+            {impact.globalStoryBody ? (
+              <p className={styles.storyBody}>{impact.globalStoryBody}</p>
+            ) : null}
           </div>
-          {impact.worldMapImagePath ? (
+
+          {/* {impact.worldMapImagePath ? (
             <div className={`${styles.mapWrap} ${Style1.map_edit_override}`}>
               <img src={impact.worldMapImagePath} alt="" />
             </div>
-          ) : null}
+          ) : null} */}
+
+          <div className={Style1.global_image_section}>
+            <GlobalMap />
+          </div>
+
         </div>
       </section>
 
-      <section className={styles.workshops} aria-labelledby="workshop-section-label">
+      <section
+        className={styles.workshops}
+        aria-labelledby="workshop-section-label"
+      >
         {impact.workshopSectionLabel ? (
           <h2 className={styles.workshopsLabel} id="workshop-section-label">
             {impact.workshopSectionLabel}
@@ -414,12 +448,15 @@ export default function HomeschoolerImpact() {
         <div className={styles.cards}>
           {cards.map((card, i) => (
             <Fragment key={`${card.title}-${card.date}`}>
-              <WorkshopCard card={card} learnMorePath={impact.workshopLearnMorePath} />
+              <WorkshopCard
+                card={card}
+                learnMorePath={impact.workshopLearnMorePath}
+              />
               {i === 1 &&
               impact.ctaBannerHeading &&
               impact.ctaBannerButtonText &&
               impact.ctaBannerButtonPath ? (
-                <CTABanner 
+                <CTABanner
                   className={Style1.background_change_color}
                   heading={impact.ctaBannerHeading}
                   buttonText={impact.ctaBannerButtonText}

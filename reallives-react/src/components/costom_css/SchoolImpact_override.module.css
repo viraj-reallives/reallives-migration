@@ -39,6 +39,14 @@ box-sizing: border-box;
   text-align: center !important;
 }
 
+
+.global_image_section {
+  height: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 @media(max-width:670px){
   .padding_manage_style{
         padding: 0rem 0rem !important;

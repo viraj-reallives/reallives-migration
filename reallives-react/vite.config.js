@@ -1,20 +1,65 @@
+// import { defineConfig } from 'vite';
+// import react from '@vitejs/plugin-react';
+// import path from 'path';
+// import { fileURLToPath } from 'url';
+
+// const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+// export default defineConfig({
+//   plugins: [react()],
+//   resolve: {
+//     alias: {
+//       '@': path.resolve(__dirname, './src'),
+//       '@components': path.resolve(__dirname, './src/components'),
+//       '@pages': path.resolve(__dirname, './src/pages'),
+//       '@content': path.resolve(__dirname, './src/content'),
+//       '@hooks': path.resolve(__dirname, './src/hooks'),
+//       '@context': path.resolve(__dirname, './src/context'),
+//     },
+//   },
+// });
+
+
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { viteCommonjs } from '@originjs/vite-plugin-commonjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    viteCommonjs()
+  ],
+  
+  optimizeDeps: {
+    include: ['react-simple-maps', 'prop-types'],
+  },
+
   resolve: {
     alias: {
+      // @ represents src folder
       '@': path.resolve(__dirname, './src'),
+      
+      // Error solving aliases
       '@components': path.resolve(__dirname, './src/components'),
       '@pages': path.resolve(__dirname, './src/pages'),
-      '@content': path.resolve(__dirname, './src/content'),
       '@hooks': path.resolve(__dirname, './src/hooks'),
+      
+      // In folders ka path check karein:
       '@context': path.resolve(__dirname, './src/context'),
+      '@content': path.resolve(__dirname, './src/content'),
+      
+      // Compatibility fix
+      'prop-types': path.resolve(__dirname, 'node_modules/prop-types'),
+    },
+  },
+
+  build: {
+    commonjsOptions: {
+      transformMixedEsModules: true,
     },
   },
 });

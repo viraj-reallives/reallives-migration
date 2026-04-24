@@ -220,6 +220,9 @@ import { useSiteContent } from '@hooks/useSiteContent';
 // import styles from './SchoolImpact.module.css';
 import styles from "../school/SchoolImpact.module.css"
 import Style1 from "../../components/costom_css/SchoolImpact_override.module.css";
+import "swiper/css";
+import "swiper/css/navigation";
+import { GlobalMap } from "../../pages/GlobalMap/GlobalMap";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -402,11 +405,19 @@ export default function UniversityImpact() {
             ) : null}
             {impact.globalStoryBody ? <p className={styles.storyBody}>{impact.globalStoryBody}</p> : null}
           </div>
-          {impact.worldMapImagePath ? (
+
+
+          {/* {impact.worldMapImagePath ? (
             <div className={`${styles.mapWrap} ${Style1.map_edit_override}`}>
               <img src={impact.worldMapImagePath} alt="" />
             </div>
-          ) : null}
+          ) : null} */}
+
+            <div className={Style1.global_image_section}>
+            <GlobalMap />
+          </div>
+
+
         </div>
       </section>
 

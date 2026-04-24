@@ -1,7 +1,7 @@
 .first_university_container {
   width: 100vw;
   padding: 3rem 3rem;
-  padding-top: 5rem;
+  padding-top: 0rem;
 }
 
 .dark .first_university_container {
@@ -426,7 +426,7 @@
 
   .first_university_container {
     padding: 1.5rem 1rem;
-    padding-top: 5rem;
+    padding-top: 0rem;
   }
 
   .mySwiper {
@@ -531,7 +531,7 @@
 
   .first_university_container {
     padding: 1.5rem 1rem;
-    padding-top: 5rem;
+    padding-top: 0rem;
   }
 
   .mySwiper {
@@ -641,7 +641,7 @@
 
   .first_university_container {
     padding: 1.5rem 1rem;
-    padding-top: 5rem;
+    padding-top: 0rem;
   }
 
   .mySwiper {
