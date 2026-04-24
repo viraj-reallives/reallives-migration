@@ -64,7 +64,7 @@ export default function LandingFooter() {
   const hasContact = Boolean(email || phone || address);
 
   return (
-    <footer className={styles.footer}>
+    <footer className={`${styles.footer} ${Style1.padding_footer_manange}`}>
 
       <div className={styles.container}>
        
@@ -87,7 +87,7 @@ export default function LandingFooter() {
             {/* ooter_description  */}
           </div>
 
-          <div className={styles.sideColumns}>
+          <div className={`${styles.sideColumns} ${Style1.side_colume_style}`}>
             {links.length > 0 ? (
               <div className={styles.column}>
                 <h4 className={styles.columnTitle}>{linksColumnTitle}</h4>

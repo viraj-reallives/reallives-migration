@@ -5,7 +5,7 @@ import { useSiteContent } from "@hooks/useSiteContent";
 import { useTheme } from "@context/ThemeContext";
 import SiteContext from "@context/SiteContext";
 import styles from "./Navbar.module.css";
-import Style1 from "../Navbar/Navbar_custome.module.css"
+import Style1 from "../Navbar/Navbar_custome.module.css";
 
 var getHomePath = () => {
   const path = typeof window !== "undefined" ? window.location.pathname : "";
@@ -344,20 +344,12 @@ export default function Navbar() {
     <header className={styles.header} ref={rootRef}>
       <div className={styles.inner}>
         <div className={styles.leftCluster}>
-          <button
+          {/* <button
             type="button"
             className={styles.logoButton}
             onClick={() => handlePrimaryNavClick(basePath)}
           >
-            {/* {logoSrc ? (
-              <img
-                src={logoSrc}
-                alt={footer.organizationName ?? 'RealLives'}
-                className={styles.logoImg}
-              />
-            ) : (
-              <span className={styles.logoFallback}>RealLives</span>
-            )} */}
+           
 
             <a href={getHomePath} className={styles.logoLink}>
               {logoSrc ? (
@@ -370,6 +362,22 @@ export default function Navbar() {
                 <span className={styles.logoFallback}>RealLives</span>
               )}
             </a>
+          </button> */}
+
+          <button
+            type="button"
+            className={styles.logoButton}
+            onClick={() => navigate("/reallives")}
+          >
+            {logoSrc ? (
+              <img
+                src={logoSrc}
+                alt={footer.organizationName ?? "RealLives"}
+                className={styles.logoImg}
+              />
+            ) : (
+              <span className={styles.logoFallback}>RealLives</span>
+            )}
           </button>
 
           <div className={styles.siteSwitcher}>

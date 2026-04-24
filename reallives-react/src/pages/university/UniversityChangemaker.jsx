@@ -328,7 +328,7 @@ export default function UniversityChangemaker() {
             {data.whyJourneyMattersHeading && (
               <h2 className={styles.whyHeading}>{data.whyJourneyMattersHeading}</h2>
             )}
-            <div className={styles.gapGrid}>
+            <div className={`${styles.gapGrid} ${Style1.gap_grid_style}`}>
               {data.gaps?.map((gap, idx) => (
                 <article key={idx} className={styles.gapCard}>
                   {gap.title && <h3 className={styles.gapTitle}>{gap.title}</h3>}

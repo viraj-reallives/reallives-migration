@@ -40,9 +40,9 @@
   padding: 8px 1.5rem;
   width: 100%;
   background: rgba(0, 0, 0, 0.1);
+  /* background: rgb(11 7 0 / 60%); */
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  z-index: 999999;
   z-index: 999999;
   border: none !important;
 }
@@ -58,11 +58,16 @@
   line-height: 100%;
   text-align: center;
   color: #ffffff;
-  border: 1px solid #cacaca;
   border-radius: 8px;
   background-color: transparent;
   cursor: pointer;
+  border: none;
+   border: 1px solid #cacaca;
 }
+
+/* .home_btn_event:hover{
+   border: 1px solid #cacaca;
+} */
 
 .outer_first_home_new {
   display: grid;
@@ -302,6 +307,7 @@
 
 .section_second_style {
   background-color: black !important;
+  gap: 1rem;
   /* height: 100vh; */
 }
 
@@ -466,8 +472,7 @@
   justify-content: center;
   align-items: center;
   z-index: 999;
-  overflow: hidden; 
-
+  overflow: hidden;
 }
 
 .modal_content {
@@ -500,21 +505,211 @@
   background: #ddd;
 }
 
-@media (max-width: 360px) {
+@media(max-width:1180px){
+    .cards_container_outer{
+    padding: 0rem 3rem;
+  }
 
-  .fourth_hight_container{
+  .who_i_am_text{
+    padding: 0rem 0rem 0rem 3rem;
+  }
+}
+
+@media(max-width:1024px){
+  .cards_container_outer{
+    padding: 0rem 3rem;
+  }
+
+  .who_i_am_text{
+    padding: 0rem 0rem 0rem 3rem;
+  }
+}
+
+
+@media (max-width: 991px) {
+
+   .cards_container_outer{
+    padding: 0rem 1rem;
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .who_i_am_text{
+    padding: 0rem 0rem 0rem 1rem;
+    font-size: 35px;
+  }
+
+  .section_second_style{
+    gap: 1rem;
+  }
+
+  .global_impact_banner_container{
+       padding: 0rem 1rem;
+  }
+
+  .manrope_text{
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 860px) {
+
+   .cards_container_outer{
+    padding: 0rem 1rem;
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .who_i_am_text{
+    padding: 0rem 0rem 0rem 1rem;
+    font-size: 35px;
+  }
+
+  .section_second_style{
+    gap: 1rem;
+  }
+
+  .global_impact_banner_container{
+       padding: 0rem 1rem;
+  }
+
+  .manrope_text{
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 800px) {
+
+    .cards_container_outer{
+    padding: 0rem 1rem;
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .who_i_am_text{
+    padding: 0rem 0rem 0rem 1rem;
+    font-size: 35px;
+  }
+
+  .section_second_style{
+    gap: 1rem;
+  }
+
+  .global_impact_banner_container{
+       padding: 0rem 1rem;
+  }
+
+  .manrope_text{
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 760px) {
+
+
+    .cards_container_outer{
+    padding: 0rem 1rem;
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .who_i_am_text{
+    padding: 0rem 0rem 0rem 1rem;
+    font-size: 35px;
+  }
+
+  .section_second_style{
+    gap: 1rem;
+  }
+
+  .global_impact_banner_container{
+       padding: 0rem 1rem;
+  }
+
+  .manrope_text{
+    font-size: 24px;
+  }
+}
+
+
+@media (max-width: 700px) {
+
+    .cards_container_outer{
+    padding: 0rem 1rem;
+    grid-template-columns: 1fr;
+  }
+
+  .who_i_am_text{
+    padding: 0rem 0rem 0rem 1rem;
+    font-size: 35px;
+  }
+
+  .section_second_style{
+    gap: 1rem;
+  }
+
+  .global_impact_banner_container{
+       padding: 0rem 1rem;
+  }
+
+  .manrope_text{
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 660px) {
+
+  .cards_container_outer{
+    padding: 0rem 1rem;
+    grid-template-columns: 1fr;
+  }
+
+  .who_i_am_text{
+    padding: 0rem 0rem 0rem 1rem;
+    font-size: 35px;
+  }
+
+  .section_second_style{
+    gap: 1rem;
+  }
+
+  .global_impact_banner_container{
+       padding: 0rem 1rem;
+  }
+
+  .manrope_text{
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 600px) {
+
+
+   .image_banner_label_box_new {
+    gap: 3px;
+  }
+
+  .title_university_text_new {
+    font-size: 19px;
+  }
+
+  .header_transparent_background {
+    padding: 8px 8px;
+  }
+
+  .rl_logo {
+    height: 2.9rem !important;
+  }
+
+  .fourth_hight_container {
     height: auto !important;
   }
 
-  .therd_hight_container{
+  .therd_hight_container {
     height: 108vh !important;
   }
 
-  .arrow_font{
+  .arrow_font {
     width: 13px !important;
   }
 
-  .inner_bottom_home_label{
+  .inner_bottom_home_label {
     bottom: 3%;
   }
 
@@ -525,17 +720,18 @@
 
   .who_i_am_text {
     padding: 0rem 0rem 0rem 0rem;
-    text-align: center;
+    text-align: start;
   }
 
   .global_impact_banner_container {
     grid-template-columns: 1fr;
-        padding: 0rem 1rem;
-        height: auto;
+    padding: 0rem 1rem;
+    height: auto;
+    gap: 1rem;
   }
 
   .manrope_text {
-    font-size: 25px;
+    font-size: 21px;
     line-height: 41px;
     text-align: center;
   }
@@ -561,60 +757,841 @@
 
   .container_new_home {
     height: auto !important;
+    padding-top: 3rem;
   }
 
-  .pdf_container_home_new{
+  .pdf_container_home_new {
     height: auto;
   }
 
-  .title_card_text{
+  .title_card_text {
     font-size: 15px !important;
   }
 
-  .view_paper_btn{
+  .view_paper_btn {
     font-size: 15px !important;
   }
-  .label_card_new_str{
+  .label_card_new_str {
     gap: 18px;
   }
 
-   .global_impact_container{
-    height:95vh;
-   }
+  .global_impact_container {
+    height: 137vh !important;
+  }
 
-   .image_banner_full_new{
+  .image_banner_full_new {
     height: 40vh;
-   }
+  }
 
-   .image_banner_full_new>img{
+  .image_banner_full_new > img {
     height: 300px;
     padding: 1rem;
-   }
+  }
 
-   .inner_top_home_label{
+  .inner_top_home_label {
     margin-top: 3%;
-   }
+  }
 
-   .overflay_data_text_image{
+  .overflay_data_text_image {
     width: 80%;
     margin-top: 30%;
-   }
+  }
 
-   .overflay_data_text_image{
+  .overflay_data_text_image {
     font-size: 17px;
-   }
+  }
 
-   .label_up_fill{
+  .label_up_fill {
     width: 31px;
-   }
+  }
 
-   .step_into_stories_btn{
+  .step_into_stories_btn {
     margin-top: 70px !important;
     font-size: 15px;
     width: 100%;
     background-color: lightslategray !important;
     justify-content: center;
     right: 0%;
-   }
+  }
+}
 
+@media (max-width: 560px) {
+
+   
+     .who_i_am_text {
+    padding: 0rem 0rem 0rem 0rem;
+    text-align: start;
+  }
+
+  .explor_btn_new{
+    width: 100%;
+    font-size: 20px !important;
+  }
+
+  .title_text_cards{
+    font-size: 25px;
+  }
+
+  .title_text_number{
+    font-size: 16px !important;
+  }
+
+  .robot_text{
+    font-size: 20px !important;
+  }
+   
+   .image_banner_label_box_new {
+    gap: 3px;
+  }
+
+  .title_university_text_new {
+    font-size: 19px;
+  }
+
+  .header_transparent_background {
+    padding: 8px 8px;
+  }
+
+  .rl_logo {
+    height: 2.9rem !important;
+  }
+
+  .fourth_hight_container {
+    height: auto !important;
+  }
+
+  .therd_hight_container {
+    height: 108vh !important;
+  }
+
+  .arrow_font {
+    width: 13px !important;
+  }
+
+  .inner_bottom_home_label {
+    bottom: 3%;
+  }
+
+  .cards_container_outer {
+    grid-template-columns: 1fr;
+    padding: 0rem 0rem;
+  }
+
+  
+
+  .global_impact_banner_container {
+    grid-template-columns: 1fr;
+    padding: 0rem 1rem;
+    height: auto;
+    gap: 1rem;
+  }
+
+  .manrope_text {
+    font-size: 21px;
+    line-height: 41px;
+    text-align: center;
+  }
+
+  .headerCtas_override_style {
+    flex-wrap: nowrap;
+  }
+
+  .icon_rl_mid {
+    width: 95%;
+  }
+
+  .home_btn_event {
+    font-size: 14px;
+    padding: 0.5rem 1rem 0.6rem 1rem !important;
+  }
+
+  .container_label_pdf_structure {
+    grid-template-columns: 1fr;
+    padding: 1rem 1rem;
+    gap: 2rem;
+  }
+
+  .container_new_home {
+    height: auto !important;
+    padding-top: 3rem;
+  }
+
+  .pdf_container_home_new {
+    height: auto;
+  }
+
+  .title_card_text {
+    font-size: 15px !important;
+  }
+
+  .view_paper_btn {
+    font-size: 15px !important;
+  }
+  .label_card_new_str {
+    gap: 18px;
+  }
+
+  .global_impact_container {
+    height: 124vh !important;
+  }
+
+  .image_banner_full_new {
+    height: 40vh;
+  }
+
+  .image_banner_full_new > img {
+    height: 300px;
+    padding: 1rem;
+  }
+
+  .inner_top_home_label {
+    margin-top: 3%;
+  }
+
+  .overflay_data_text_image {
+    width: 80%;
+    margin-top: 30%;
+  }
+
+  .overflay_data_text_image {
+    font-size: 17px;
+  }
+
+  .label_up_fill {
+    width: 31px;
+  }
+
+  .step_into_stories_btn {
+    margin-top: 70px !important;
+    font-size: 15px;
+    width: 100%;
+    background-color: lightslategray !important;
+    justify-content: center;
+    right: 0%;
+  }
+}
+
+@media (max-width: 500px) {
+
+
+     .who_i_am_text {
+    padding: 0rem 0rem 0rem 0rem;
+    text-align: start;
+  }
+
+  .explor_btn_new{
+    width: 100%;
+    font-size: 20px !important;
+  }
+
+  .title_text_cards{
+    font-size: 25px;
+  }
+
+  .title_text_number{
+    font-size: 16px !important;
+  }
+
+  .robot_text{
+    font-size: 20px !important;
+  }
+ 
+   .image_banner_label_box_new {
+    gap: 3px;
+  }
+
+  .title_university_text_new {
+    font-size: 19px;
+  }
+
+  .header_transparent_background {
+    padding: 8px 8px;
+  }
+
+  .rl_logo {
+    height: 2.9rem !important;
+  }
+
+  .fourth_hight_container {
+    height: auto !important;
+  }
+
+  .therd_hight_container {
+    height: 108vh !important;
+  }
+
+  .arrow_font {
+    width: 13px !important;
+  }
+
+  .inner_bottom_home_label {
+    bottom: 3%;
+  }
+
+  .cards_container_outer {
+    grid-template-columns: 1fr;
+    padding: 0rem 0rem;
+  }
+
+  .who_i_am_text {
+    padding: 0rem 0rem 0rem 0rem;
+    text-align: center;
+  }
+
+  .global_impact_banner_container {
+    grid-template-columns: 1fr;
+    padding: 0rem 1rem;
+    height: auto;
+    gap: 1rem;
+  }
+
+  .manrope_text {
+    font-size: 21px;
+    line-height: 41px;
+    text-align: center;
+  }
+
+  .headerCtas_override_style {
+    flex-wrap: nowrap;
+  }
+
+  .icon_rl_mid {
+    width: 95%;
+  }
+
+  .home_btn_event {
+    font-size: 14px;
+    padding: 0.5rem 1rem 0.6rem 1rem !important;
+  }
+
+  .container_label_pdf_structure {
+    grid-template-columns: 1fr;
+    padding: 1rem 1rem;
+    gap: 2rem;
+  }
+
+  .container_new_home {
+    height: auto !important;
+    padding-top: 3rem;
+  }
+
+  .pdf_container_home_new {
+    height: auto;
+  }
+
+  .title_card_text {
+    font-size: 15px !important;
+  }
+
+  .view_paper_btn {
+    font-size: 15px !important;
+  }
+  .label_card_new_str {
+    gap: 18px;
+  }
+
+  .global_impact_container {
+    height: 116vh !important;
+  }
+
+  .image_banner_full_new {
+    height: 40vh;
+  }
+
+  .image_banner_full_new > img {
+    height: 300px;
+    padding: 1rem;
+  }
+
+  .inner_top_home_label {
+    margin-top: 3%;
+  }
+
+  .overflay_data_text_image {
+    width: 80%;
+    margin-top: 30%;
+  }
+
+  .overflay_data_text_image {
+    font-size: 17px;
+  }
+
+  .label_up_fill {
+    width: 31px;
+  }
+
+  .step_into_stories_btn {
+    margin-top: 70px !important;
+    font-size: 15px;
+    width: 100%;
+    background-color: lightslategray !important;
+    justify-content: center;
+    right: 0%;
+  }
+}
+
+@media (max-width: 460px) {
+
+   
+     .who_i_am_text {
+    padding: 0rem 0rem 0rem 0rem;
+    text-align: start;
+  }
+
+  .explor_btn_new{
+    width: 100%;
+    font-size: 20px !important;
+  }
+
+  .title_text_cards{
+    font-size: 25px;
+  }
+
+  .title_text_number{
+    font-size: 16px !important;
+  }
+
+  .robot_text{
+    font-size: 20px !important;
+  }
+
+   .image_banner_label_box_new {
+    gap: 3px;
+  }
+
+  .title_university_text_new {
+    font-size: 19px;
+  }
+
+  .header_transparent_background {
+    padding: 8px 8px;
+  }
+
+  .rl_logo {
+    height: 2.9rem !important;
+  }
+
+  .fourth_hight_container {
+    height: auto !important;
+  }
+
+  .therd_hight_container {
+    height: 113vh !important;
+  }
+
+  .arrow_font {
+    width: 13px !important;
+  }
+
+  .inner_bottom_home_label {
+    bottom: 3%;
+  }
+
+  .cards_container_outer {
+    grid-template-columns: 1fr;
+    padding: 0rem 0rem;
+  }
+
+
+  .global_impact_banner_container {
+    grid-template-columns: 1fr;
+    padding: 0rem 1rem;
+    height: auto;
+    gap: 1rem;
+  }
+
+  .manrope_text {
+    font-size: 21px;
+    line-height: 41px;
+    text-align: center;
+  }
+
+  .headerCtas_override_style {
+    flex-wrap: nowrap;
+  }
+
+  .icon_rl_mid {
+    width: 95%;
+  }
+
+  .home_btn_event {
+    font-size: 14px;
+    padding: 0.5rem 1rem 0.6rem 1rem !important;
+  }
+
+  .container_label_pdf_structure {
+    grid-template-columns: 1fr;
+    padding: 1rem 1rem;
+    gap: 2rem;
+  }
+
+  .container_new_home {
+    height: auto !important;
+    padding-top: 5rem;
+  }
+
+  .pdf_container_home_new {
+    height: auto;
+  }
+
+  .title_card_text {
+    font-size: 15px !important;
+  }
+
+  .view_paper_btn {
+    font-size: 15px !important;
+  }
+  .label_card_new_str {
+    gap: 18px;
+  }
+
+  .global_impact_container {
+    height: 95vh;
+  }
+
+  .image_banner_full_new {
+    height: 40vh;
+  }
+
+  .image_banner_full_new > img {
+    height: 300px;
+    padding: 1rem;
+  }
+
+  .inner_top_home_label {
+    margin-top: 3%;
+  }
+
+  .overflay_data_text_image {
+    width: 80%;
+    margin-top: 30%;
+  }
+
+  .overflay_data_text_image {
+    font-size: 17px;
+  }
+
+  .label_up_fill {
+    width: 31px;
+  }
+
+  .step_into_stories_btn {
+    margin-top: 70px !important;
+    font-size: 15px;
+    width: 100%;
+    background-color: lightslategray !important;
+    justify-content: center;
+    right: 0%;
+  }
+}
+
+@media (max-width: 400px) {
+
+     .who_i_am_text {
+    padding: 0rem 0rem 0rem 0rem;
+    text-align: start;
+  }
+
+  .explor_btn_new{
+    width: 100%;
+    font-size: 20px !important;
+  }
+
+  .title_text_cards{
+    font-size: 25px;
+  }
+
+  .title_text_number{
+    font-size: 16px !important;
+  }
+
+  .robot_text{
+    font-size: 20px !important;
+  }
+
+
+  .image_banner_label_box_new {
+    gap: 3px;
+  }
+
+  .title_university_text_new {
+    font-size: 19px;
+  }
+
+  .header_transparent_background {
+    padding: 8px 8px;
+  }
+
+  .rl_logo {
+    height: 2.9rem !important;
+  }
+
+  .fourth_hight_container {
+    height: auto !important;
+  }
+
+  .therd_hight_container {
+    height: 108vh !important;
+  }
+
+  .arrow_font {
+    width: 13px !important;
+  }
+
+  .inner_bottom_home_label {
+    bottom: 3%;
+  }
+
+  .cards_container_outer {
+    grid-template-columns: 1fr;
+    padding: 0rem 0rem;
+  }
+
+  
+
+  .global_impact_banner_container {
+    grid-template-columns: 1fr;
+    padding: 0rem 1rem;
+    height: auto;
+    gap: 1rem;
+  }
+
+  .manrope_text {
+    font-size: 21px;
+    line-height: 41px;
+    text-align: center;
+  }
+
+  .headerCtas_override_style {
+    flex-wrap: nowrap;
+  }
+
+  .icon_rl_mid {
+    width: 95%;
+  }
+
+  .home_btn_event {
+    font-size: 14px;
+    padding: 0.5rem 1rem 0.6rem 1rem !important;
+  }
+
+  .container_label_pdf_structure {
+    grid-template-columns: 1fr;
+    padding: 1rem 1rem;
+    gap: 2rem;
+  }
+
+  .container_new_home {
+    height: auto !important;
+    padding-top: 5rem;
+  }
+
+  .pdf_container_home_new {
+    height: auto;
+  }
+
+  .title_card_text {
+    font-size: 15px !important;
+  }
+
+  .view_paper_btn {
+    font-size: 15px !important;
+  }
+  .label_card_new_str {
+    gap: 18px;
+  }
+
+  .global_impact_container {
+    height: 95vh;
+  }
+
+  .image_banner_full_new {
+    height: 40vh;
+  }
+
+  .image_banner_full_new > img {
+    height: 300px;
+    padding: 1rem;
+  }
+
+  .inner_top_home_label {
+    margin-top: 3%;
+  }
+
+  .overflay_data_text_image {
+    width: 80%;
+    margin-top: 30%;
+  }
+
+  .overflay_data_text_image {
+    font-size: 17px;
+  }
+
+  .label_up_fill {
+    width: 31px;
+  }
+
+  .step_into_stories_btn {
+    margin-top: 70px !important;
+    font-size: 15px;
+    width: 100%;
+    background-color: lightslategray !important;
+    justify-content: center;
+    right: 0%;
+  }
+}
+
+@media (max-width: 360px) {
+
+   .who_i_am_text {
+    padding: 0rem 0rem 0rem 0rem;
+    text-align: start;
+  }
+
+  .explor_btn_new{
+    width: 100%;
+    font-size: 18px;
+  }
+
+  .title_text_cards{
+    font-size: 25px;
+  }
+
+  .title_text_number{
+    font-size: 16px !important;
+  }
+
+  .robot_text{
+    font-size: 18px !important;
+  }
+
+
+  .image_banner_label_box_new {
+    gap: 3px;
+  }
+
+  .title_university_text_new {
+    font-size: 19px;
+  }
+
+  .header_transparent_background {
+    padding: 8px 8px;
+  }
+
+  .rl_logo {
+    height: 2.9rem !important;
+  }
+
+  .fourth_hight_container {
+    height: auto !important;
+  }
+
+  .therd_hight_container {
+    height: 108vh !important;
+  }
+
+  .arrow_font {
+    width: 13px !important;
+  }
+
+  .inner_bottom_home_label {
+    bottom: 3%;
+  }
+
+  .cards_container_outer {
+    grid-template-columns: 1fr;
+    padding: 0rem 0rem;
+  }
+
+ 
+  .global_impact_banner_container {
+    grid-template-columns: 1fr;
+    padding: 0rem 1rem;
+    height: auto;
+    gap: 1rem;
+  }
+
+  .manrope_text {
+    font-size: 21px;
+    line-height: 41px;
+    text-align: center;
+  }
+
+  .headerCtas_override_style {
+    flex-wrap: nowrap;
+  }
+
+  .icon_rl_mid {
+    width: 95%;
+  }
+
+  .home_btn_event {
+    font-size: 14px;
+    padding: 0.5rem 1rem 0.6rem 1rem !important;
+  }
+
+  .container_label_pdf_structure {
+    grid-template-columns: 1fr;
+    padding: 1rem 1rem;
+    gap: 2rem;
+  }
+
+  .container_new_home {
+    height: auto !important;
+    padding-top: 5rem;
+  }
+
+  .pdf_container_home_new {
+    height: auto;
+  }
+
+  .title_card_text {
+    font-size: 15px !important;
+  }
+
+  .view_paper_btn {
+    font-size: 15px !important;
+  }
+  .label_card_new_str {
+    gap: 18px;
+  }
+
+  .global_impact_container {
+    height: 95vh;
+  }
+
+  .image_banner_full_new {
+    height: 40vh;
+  }
+
+  .image_banner_full_new > img {
+    height: 300px;
+    padding: 1rem;
+  }
+
+  .inner_top_home_label {
+    margin-top: 3%;
+  }
+
+  .overflay_data_text_image {
+    width: 80%;
+    margin-top: 30%;
+  }
+
+  .overflay_data_text_image {
+    font-size: 17px;
+  }
+
+  .label_up_fill {
+    width: 31px;
+  }
+
+  .step_into_stories_btn {
+    margin-top: 70px !important;
+    font-size: 15px;
+    width: 100%;
+    background-color: lightslategray !important;
+    justify-content: center;
+    right: 0%;
+  }
 }

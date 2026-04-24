@@ -109,7 +109,6 @@
 
 //         <div className={styles1.container_new_home}>
 
-
 //           <div className={`${styles1.outer_first_home_new} ${currentIndex === 0 ? styles1.slide_active : styles1.card_none}`}>
 //             <div className={styles1.inner_top_home_label}>
 //               <div className={styles1.manrope_text}>RealLives Builds</div>
@@ -123,7 +122,6 @@
 //             </div>
 //           </div>
 
-        
 //           <div className={` ${styles1.pdf_container_home_new}  ${currentIndex === 1 ? styles1.slide_active : styles1.card_none}`} >
 //             <div className={styles1.inner_top_home_label}>
 //               <div className={styles1.manrope_text}>Powerful Learning,</div>
@@ -224,8 +222,6 @@
 //             </div>
 //           </div>
 
-        
-
 //           <div className={` ${styles1.global_impact_container}  ${currentIndex === 2 ? styles1.slide_active : styles1.card_none}`} >
 //             <div className={styles1.inner_top_home_label}>
 //               <p className={styles1.manrope_text}>Our Global Impact</p>
@@ -264,9 +260,7 @@
 //                 </p>
 //               </div>
 //             </div>
-//           </div> 
-
-         
+//           </div>
 
 //           <div className={` ${styles1.global_impact_container} ${currentIndex === 3 ? styles1.slide_active : styles1.card_none}`}>
 //             <div className={styles1.inner_top_home_label}>
@@ -308,8 +302,6 @@
 //             </div>
 //           </div>
 
-          
-
 //           <div className={`${styles1.global_impact_container} ${currentIndex === 4 ? styles1.slide_active : styles1.card_none}`} >
 //             <div className={styles1.inner_top_home_label}>
 //               <p className={styles1.manrope_text}>
@@ -321,8 +313,6 @@
 //               <img src={banner_home_5_card} alt="" />
 //             </div>
 //           </div>
-
-         
 
 //           <div className={`${styles1.global_impact_container_last}  ${currentIndex === 5 ? styles1.slide_active : styles1.card_none}`} >
 //             <div className={styles1.inner_top_home_label}>
@@ -357,7 +347,7 @@
 //                 onClick={() => setCurrentIndex(index)}
 //               >
 //                 <div
-//                   key={currentIndex} 
+//                   key={currentIndex}
 //                   className={`${styles1.fill}
 //               ${index === currentIndex ? styles1.active : ""}
 //               ${index < currentIndex ? styles1.filled : ""}
@@ -378,8 +368,6 @@
 
 //         </div>
 
-       
-
 //         {isModalOpen && (
 //           <div
 //             className={styles1.modal_overlay}
@@ -389,7 +377,7 @@
 //               className={styles1.modal_content}
 //               onClick={(e) => e.stopPropagation()}
 //             >
-             
+
 //               <button
 //                 className={styles1.modal_close}
 //                 onClick={() => setIsModalOpen(false)}
@@ -401,10 +389,8 @@
 //             </div>
 //           </div>
 //         )}
-        
-//       </section>
 
-     
+//       </section>
 
 //       <section
 //         className={`${styles.cardsSection} ${styles1.section_second_style}`}
@@ -449,7 +435,6 @@
 //     </div>
 //   );
 // }
-
 
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -507,6 +492,7 @@ export default function RealLivesLanding() {
   };
 
   // Auto-slide Timer logic for the top banner
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setCurrentIndex((prev) => (prev === total - 1 ? 0 : prev + 1));
@@ -520,7 +506,9 @@ export default function RealLivesLanding() {
   return (
     <div className={styles.page}>
       <header className={styles.header}>
-        <div className={`${styles.headerInner} ${styles1.header_transparent_background}`}>
+        <div
+          className={`${styles.headerInner} ${styles1.header_transparent_background}`}
+        >
           <Link to="/" className={styles.logoLink} aria-label="RealLives Home">
             <img
               src={logo_rl}
@@ -529,7 +517,9 @@ export default function RealLivesLanding() {
             />
           </Link>
 
-          <div className={`${styles.headerCtas} ${styles1.headerCtas_override_style}`}>
+          <div
+            className={`${styles.headerCtas} ${styles1.headerCtas_override_style}`}
+          >
             <Link
               to={ctas.buyLicense.path}
               className={`${styles.ctaBtn} ${styles1.home_btn_event}`}
@@ -550,9 +540,9 @@ export default function RealLivesLanding() {
 
       <section className={styles.carouselSection}>
         <div className={styles1.container_new_home}>
-          
-          
-          <div className={`${styles1.outer_first_home_new} ${currentIndex === 0 ? styles1.slide_active : styles1.card_none}`}>
+          <div
+            className={`${styles1.outer_first_home_new} ${currentIndex === 0 ? styles1.slide_active : styles1.card_none}`}
+          >
             <div className={styles1.inner_top_home_label}>
               <div className={styles1.manrope_text}>RealLives Builds</div>
               <div className={styles1.manrope_text}>21st Century Skills</div>
@@ -564,124 +554,229 @@ export default function RealLivesLanding() {
             </div>
           </div>
 
-          
-          <div className={`${styles1.pdf_container_home_new} ${currentIndex === 1 ? styles1.slide_active : styles1.card_none}`}>
+          <div
+            className={`${styles1.pdf_container_home_new} ${currentIndex === 1 ? styles1.slide_active : styles1.card_none}`}
+          >
             <div className={styles1.inner_top_home_label}>
-              <div className={styles1.manrope_text}>Powerful Learning, Proven by Global Research</div>
+              <div className={styles1.manrope_text}>
+                Powerful Learning, Proven by Global Research
+              </div>
             </div>
             <div className={styles1.container_label_pdf_structure}>
               <div className={styles1.label_card_new_str}>
                 <div className={styles1.head_view_logo_pdf}>
                   <span className={styles1.icon_span_label_str}>
-                    <div className={styles1.icon_pdf_logo}><img src={card_logo_university} alt="Korea Univ" /></div>
+                    <div className={styles1.icon_pdf_logo}>
+                      <img src={card_logo_university} alt="Korea Univ" />
+                    </div>
                     <p className={styles1.title_card_text}>Korea University</p>
                   </span>
-                  <Link to="/reallives/school/Research_Card1" className={styles1.view_paper_btn}>View Paper</Link>
+                  <Link
+                    to="/reallives/school/Research_Card1"
+                    className={styles1.view_paper_btn}
+                  >
+                    View Paper
+                  </Link>
                 </div>
-                <div className={styles1.pdf_img_viwe}><img src={card_banner_1} alt="Card Banner" /></div>
+                <div className={styles1.pdf_img_viwe}>
+                  <img src={card_banner_1} alt="Card Banner" />
+                </div>
               </div>
 
               <div className={styles1.label_card_new_str}>
                 <div className={styles1.head_view_logo_pdf}>
                   <span className={styles1.icon_span_label_str}>
-                    <div className={styles1.icon_pdf_logo}><img className={styles1.image_fit} src={albany_university_logo_1} alt="Albany Univ" /></div>
-                    <p className={styles1.title_card_text}>University at Albany</p>
+                    <div className={styles1.icon_pdf_logo}>
+                      <img
+                        className={styles1.image_fit}
+                        src={albany_university_logo_1}
+                        alt="Albany Univ"
+                      />
+                    </div>
+                    <p className={styles1.title_card_text}>
+                      University at Albany
+                    </p>
                   </span>
-                  <Link to="/reallives/school/Albany_University" className={styles1.view_paper_btn}>View Paper</Link>
+                  <Link
+                    to="/reallives/school/Albany_University"
+                    className={styles1.view_paper_btn}
+                  >
+                    View Paper
+                  </Link>
                 </div>
-                <div className={styles1.pdf_img_viwe}><img src={second_research_paper_1} alt="Research Paper" /></div>
+                <div className={styles1.pdf_img_viwe}>
+                  <img src={second_research_paper_1} alt="Research Paper" />
+                </div>
               </div>
 
               <div className={styles1.label_card_new_str}>
                 <div className={styles1.head_view_logo_pdf}>
                   <span className={styles1.icon_span_label_str}>
-                    <div className={styles1.icon_pdf_logo}><img className={styles1.image_fit} src={uppsala_university_logo_1} alt="Uppsala Univ" /></div>
-                    <p className={styles1.title_card_text}>Uppsala University</p>
+                    <div className={styles1.icon_pdf_logo}>
+                      <img
+                        className={styles1.image_fit}
+                        src={uppsala_university_logo_1}
+                        alt="Uppsala Univ"
+                      />
+                    </div>
+                    <p className={styles1.title_card_text}>
+                      Uppsala University
+                    </p>
                   </span>
-                  <Link to="/reallives/school/Uppsala_University" className={styles1.view_paper_btn}>View Paper</Link>
+                  <Link
+                    to="/reallives/school/Uppsala_University"
+                    className={styles1.view_paper_btn}
+                  >
+                    View Paper
+                  </Link>
                 </div>
-                <div className={styles1.pdf_img_viwe}><img src={therd_research_paper_1} alt="Research Paper" /></div>
+                <div className={styles1.pdf_img_viwe}>
+                  <img src={therd_research_paper_1} alt="Research Paper" />
+                </div>
               </div>
             </div>
           </div>
 
-         
-          <div className={`${styles1.global_impact_container} ${currentIndex === 2 ? styles1.slide_active : styles1.card_none}`}>
+          <div
+            className={`${styles1.global_impact_container} ${currentIndex === 2 ? styles1.slide_active : styles1.card_none}`}
+          >
             <div className={styles1.inner_top_home_label}>
               <p className={styles1.manrope_text}>Our Global Impact</p>
             </div>
             <div className={styles1.global_impact_banner_container}>
               <div className={styles1.image_banner_label_box_new}>
-                <div className={styles1.outer_wrapper_image}><img className={styles1.image_cover_style} src={mumbai_workshop_1} alt="Mumbai" /></div>
-                <p className={styles1.title_university_text_new}>IIT Bombay, India</p>
+                <div className={styles1.outer_wrapper_image}>
+                  <img
+                    className={styles1.image_cover_style}
+                    src={mumbai_workshop_1}
+                    alt="Mumbai"
+                  />
+                </div>
+                <p className={styles1.title_university_text_new}>
+                  IIT Bombay, India
+                </p>
               </div>
               <div className={styles1.image_banner_label_box_new}>
-                <div className={styles1.outer_wrapper_image}><img className={styles1.image_cover_style} src={eth_workshop_1} alt="ETH Zurich" /></div>
-                <p className={styles1.title_university_text_new}>ETH Zürich, Switzerland</p>
+                <div className={styles1.outer_wrapper_image}>
+                  <img
+                    className={styles1.image_cover_style}
+                    src={eth_workshop_1}
+                    alt="ETH Zurich"
+                  />
+                </div>
+                <p className={styles1.title_university_text_new}>
+                  ETH Zürich, Switzerland
+                </p>
               </div>
             </div>
           </div>
 
-        
-          <div className={`${styles1.global_impact_container} ${styles1.therd_hight_container} ${currentIndex === 3 ? styles1.slide_active : styles1.card_none}`}>
+          <div
+            className={`${styles1.global_impact_container} ${styles1.therd_hight_container} ${currentIndex === 3 ? styles1.slide_active : styles1.card_none}`}
+          >
             <div className={styles1.inner_top_home_label}>
               <p className={styles1.manrope_text}>RealLives Worldwide Impact</p>
             </div>
             <div className={styles1.global_impact_banner_container}>
               <div className={styles1.image_banner_label_box_new}>
-                <div className={styles1.outer_wrapper_image}><img className={styles1.image_cover_style} src={kyungeeh_university_workshop_1} alt="Korea" /></div>
-                <p className={styles1.title_university_text_new}>Kyunghee University, Korea</p>
+                <div className={styles1.outer_wrapper_image}>
+                  <img
+                    className={styles1.image_cover_style}
+                    src={kyungeeh_university_workshop_1}
+                    alt="Korea"
+                  />
+                </div>
+                <p className={styles1.title_university_text_new}>
+                  Kyunghee University, Korea
+                </p>
               </div>
               <div className={styles1.image_banner_label_box_new}>
-                <div className={styles1.outer_wrapper_image}><img className={styles1.image_cover_style} src={navamindradhiraj_university_workshop_1} alt="Thailand" /></div>
-                <p className={styles1.title_university_text_new}>Navamindradhiraj University, Thailand</p>
+                <div className={styles1.outer_wrapper_image}>
+                  <img
+                    className={styles1.image_cover_style}
+                    src={navamindradhiraj_university_workshop_1}
+                    alt="Thailand"
+                  />
+                </div>
+                <p className={styles1.title_university_text_new}>
+                  Navamindradhiraj University, Thailand
+                </p>
               </div>
             </div>
           </div>
 
-        
-          <div className={`${styles1.global_impact_container} ${styles1.fourth_hight_container} ${currentIndex === 4 ? styles1.slide_active : styles1.card_none}`}>
+          <div
+            className={`${styles1.global_impact_container} ${styles1.fourth_hight_container} ${currentIndex === 4 ? styles1.slide_active : styles1.card_none}`}
+          >
             <div className={styles1.inner_top_home_label}>
-              <p className={styles1.manrope_text}>The RealLives Learning Ecosystem</p>
-            </div>
-            <div className={styles1.image_banner_full_new}><img src={banner_home_5_card} alt="Ecosystem" /></div>
-          </div>
-
-          
-          <div className={`${styles1.global_impact_container_last} ${currentIndex === 5 ? styles1.slide_active : styles1.card_none}`}>
-            <div className={styles1.inner_top_home_label}>
-              <p className={styles1.manrope_text}>Live Billions of Lives <br /> Across the World</p>
+              <p className={styles1.manrope_text}>
+                The RealLives Learning Ecosystem
+              </p>
             </div>
             <div className={styles1.image_banner_full_new}>
-              <img className={styles1.earth_style_hight} src={earth_banner_image} alt="Earth" />
+              <img src={banner_home_5_card} alt="Ecosystem" />
+            </div>
+          </div>
+
+          <div
+            className={`${styles1.global_impact_container_last} ${currentIndex === 5 ? styles1.slide_active : styles1.card_none}`}
+          >
+            <div className={styles1.inner_top_home_label}>
+              <p className={styles1.manrope_text}>
+                Live Billions of Lives <br /> Across the World
+              </p>
+            </div>
+            <div className={styles1.image_banner_full_new}>
+              <img
+                className={styles1.earth_style_hight}
+                src={earth_banner_image}
+                alt="Earth"
+              />
               <span className={styles1.overflay_data_text_image}>
-                <p>Every one gets a unique life story, shaped by real-world data and statistics from over 193 countries.</p>
+                <p>
+                  Every one gets a unique life story, shaped by real-world data
+                  and statistics from over 193 countries.
+                </p>
               </span>
             </div>
           </div>
 
-         
           <div className={styles1.inner_bottom_home_label}>
             {[...Array(total)].map((_, index) => (
-              <div key={index} className={styles1.label_up_fill} onClick={() => setCurrentIndex(index)}>
-                <div className={`${styles1.fill} ${index === currentIndex ? styles1.active : ""} ${index < currentIndex ? styles1.filled : ""}`}></div>
+              <div
+                key={index}
+                className={styles1.label_up_fill}
+                onClick={() => setCurrentIndex(index)}
+              >
+                <div
+                  className={`${styles1.fill} ${index === currentIndex ? styles1.active : ""} ${index < currentIndex ? styles1.filled : ""}`}
+                ></div>
               </div>
             ))}
             <button
               className={`${styles1.step_into_stories_btn} ${styles1.manrope_text}`}
               onClick={() => setIsModalOpen(true)}
             >
-              Step into RealLives Stories <MoveRight className={styles1.arrow_font} />
+              Step into RealLives Stories{" "}
+              <MoveRight className={styles1.arrow_font} />
             </button>
           </div>
-
         </div>
 
         {/* MODAL PORTAL */}
         {isModalOpen && (
-          <div className={styles1.modal_overlay} onClick={() => setIsModalOpen(false)}>
-            <div className={styles1.modal_content} onClick={(e) => e.stopPropagation()}>
-              <button className={styles1.modal_close} onClick={() => setIsModalOpen(false)}>
+          <div
+            className={styles1.modal_overlay}
+            onClick={() => setIsModalOpen(false)}
+          >
+            <div
+              className={styles1.modal_content}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                className={styles1.modal_close}
+                onClick={() => setIsModalOpen(false)}
+              >
                 <X size={22} color="black" />
               </button>
               {carousel?.slides && <Carousel slides={carousel.slides} />}
@@ -691,7 +786,7 @@ export default function RealLivesLanding() {
       </section>
 
       {/* WHO AM I SECTION */}
-      <section className={`${styles.cardsSection} ${styles1.section_second_style}`}>
+      {/* <section className={`${styles.cardsSection} ${styles1.section_second_style}`}>
         <p className={`${styles1.who_i_am_text} ${styles1.noto_sans_text}`}>Who am I?</p>
         <div className={`${styles.cardsContainer} ${styles1.cards_container_outer}`}>
           {entryCards.map((card) => {
@@ -705,13 +800,51 @@ export default function RealLivesLanding() {
                 </p>
                 <p className={styles1.title_text_number}>{card.description}</p>
                 <button className={styles1.explor_btn_new}>
-                  Explore <MoveRight />
+                  Explore  <MoveRight />
+                </button>
+              </Link>
+            );
+          })}
+        </div>
+      </section> */}
+
+      <section className={`${styles.cardsSection} ${styles1.section_second_style}`}>
+        <p className={`${styles1.who_i_am_text} ${styles1.noto_sans_text}`}>
+          Who am I?
+        </p>
+
+        <div
+          className={`${styles.cardsContainer} ${styles1.cards_container_outer}`}
+        >
+          {entryCards.map((card) => {
+            const texts = Array.isArray(card.title_robot)
+              ? card.title_robot
+              : [card.title_robot];
+            const typedText = useTypewriter(texts);
+
+            return (
+              <Link
+                key={card.path}
+                to={card.path}
+                className={`${styles.entryCard} ${styles1.card_style_overide}`}
+              >
+                <h3 className={styles1.title_text_cards}>{card.label}</h3>
+
+                <p className={styles1.description_text_title}>
+                  <span className={styles1.robot_text}>{typedText}</span>
+                </p>
+
+                <p className={styles1.title_text_number}>{card.description}</p>
+
+                <button className={styles1.explor_btn_new}>
+                  Explore {card.label} <MoveRight />
                 </button>
               </Link>
             );
           })}
         </div>
       </section>
+      
     </div>
   );
 }

@@ -232,12 +232,44 @@
 
 .quote_icon{
   color: #2563eb;
-
 }
-@media(max-width:600px){
-  .heroGrid_override_style{
-    grid-template-columns: 1fr !important;
+
+
+[data-theme="dark"] .education_product_container {
+ background: #0b0f14 !important;
+}
+
+[data-theme="dark"] .card_grid_product {
+ background: #222222 !important;
+}
+
+
+[data-theme="dark"] .product_title {
+ color: white !important;
+}
+
+[data-theme="dark"] .label_inner_educatores {
+ background: #222222 !important;
+}
+
+
+
+
+
+
+
+
+@media(max-width:1024px){
+    .heroGrid_override_style{
+    grid-template-columns: 1fr 1fr !important;
   }
+
+  .gap_grid_style{
+    grid-template-columns: repeat(3,1fr) !important;
+  }
+
+
+
   .heroBgOverride{
     height: 100%;
   }
@@ -264,7 +296,7 @@
    }
 
    .card_container_product{
-        grid-template-columns:1fr;
+        grid-template-columns: repeat(2, 1fr) !important;
         padding: 0rem !important;
    }
 
@@ -277,17 +309,373 @@
     }
 
     .cards_educatores_saying{
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(2, 1fr) !important;
       padding: 0rem 0rem;
     }
 
     .page_padding_container{
       padding-bottom: 0rem !important;
     }
-
 }
 
-@media(max-width:560px){
+@media(max-width:991px){
+    .heroGrid_override_style{
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .gap_grid_style{
+    grid-template-columns: repeat(3,1fr) !important;
+  }
+
+
+
+  .heroBgOverride{
+    height: 100%;
+  }
+
+  .changemaker_banner_container{
+    height: 80vh;
+  }
+
+   .impact_overlay_style{
+     top: 13%;
+   }
+
+   .changemaker_hero_title{
+    font-size: 1.1rem;
+   }
+
+   .changemaker_herbody_p{
+    font-size: 15px;
+   }
+
+   .ctashoolheading_container{
+     font-size: 14px;
+     text-align: center;
+   }
+
+   .card_container_product{
+        grid-template-columns: repeat(2, 1fr) !important;
+        padding: 0rem !important;
+   }
+
+   .section_subtitle_text{
+    width: 100%;
+   }
+
+    .education_product_container{
+      padding: 1rem 1rem !important;
+    }
+
+    .cards_educatores_saying{
+      grid-template-columns: repeat(2, 1fr) !important;
+      padding: 0rem 0rem;
+    }
+
+    .page_padding_container{
+      padding-bottom: 0rem !important;
+    }
+}
+
+@media(max-width:880px){
+    .heroGrid_override_style{
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .gap_grid_style{
+    grid-template-columns: repeat(3,1fr) !important;
+  }
+
+
+
+  .heroBgOverride{
+    height: 100%;
+  }
+
+  .changemaker_banner_container{
+    height: 80vh;
+  }
+
+   .impact_overlay_style{
+     top: 13%;
+   }
+
+   .changemaker_hero_title{
+    font-size: 1.1rem;
+   }
+
+   .changemaker_herbody_p{
+    font-size: 15px;
+   }
+
+   .ctashoolheading_container{
+     font-size: 14px;
+     text-align: center;
+   }
+
+   .card_container_product{
+        grid-template-columns: repeat(2, 1fr) !important;
+        padding: 0rem !important;
+   }
+
+   .section_subtitle_text{
+    width: 100%;
+   }
+
+    .education_product_container{
+      padding: 1rem 1rem !important;
+    }
+
+    .cards_educatores_saying{
+      grid-template-columns: repeat(2, 1fr) !important;
+      padding: 0rem 0rem;
+    }
+
+    .page_padding_container{
+      padding-bottom: 0rem !important;
+    }
+}
+
+@media(max-width:800px){
+    .heroGrid_override_style{
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .gap_grid_style{
+    grid-template-columns: repeat(3,1fr) !important;
+  }
+
+
+
+  .heroBgOverride{
+    height: 100%;
+  }
+
+  .changemaker_banner_container{
+    height: 80vh;
+  }
+
+   .impact_overlay_style{
+     top: 13%;
+   }
+
+   .changemaker_hero_title{
+    font-size: 1.1rem;
+   }
+
+   .changemaker_herbody_p{
+    font-size: 15px;
+   }
+
+   .ctashoolheading_container{
+     font-size: 14px;
+     text-align: center;
+   }
+
+   .card_container_product{
+        grid-template-columns: repeat(2, 1fr) !important;
+        padding: 0rem !important;
+   }
+
+   .section_subtitle_text{
+    width: 100%;
+   }
+
+    .education_product_container{
+      padding: 1rem 1rem !important;
+    }
+
+    .cards_educatores_saying{
+      grid-template-columns: repeat(2, 1fr) !important;
+      padding: 0rem 0rem;
+    }
+
+    .page_padding_container{
+      padding-bottom: 0rem !important;
+    }
+}
+
+@media(max-widtH:760px){
+    .heroGrid_override_style{
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .gap_grid_style{
+    grid-template-columns: repeat(3,1fr) !important;
+  }
+
+
+
+  .heroBgOverride{
+    height: 100%;
+  }
+
+  .changemaker_banner_container{
+    height: 80vh;
+  }
+
+   .impact_overlay_style{
+     top: 13%;
+   }
+
+   .changemaker_hero_title{
+    font-size: 1.1rem;
+   }
+
+   .changemaker_herbody_p{
+    font-size: 15px;
+   }
+
+   .ctashoolheading_container{
+     font-size: 14px;
+     text-align: center;
+   }
+
+   .card_container_product{
+        grid-template-columns: repeat(2, 1fr) !important;
+        padding: 0rem !important;
+   }
+
+   .section_subtitle_text{
+    width: 100%;
+   }
+
+    .education_product_container{
+      padding: 1rem 1rem !important;
+    }
+
+    .cards_educatores_saying{
+      grid-template-columns: repeat(2, 1fr) !important;
+      padding: 0rem 0rem;
+    }
+
+    .page_padding_container{
+      padding-bottom: 0rem !important;
+    }
+}
+
+@media(max-width:700px){
+   .heroGrid_override_style{
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .gap_grid_style{
+    grid-template-columns: repeat(3,1fr) !important;
+  }
+
+
+
+  .heroBgOverride{
+    height: 100%;
+  }
+
+  .changemaker_banner_container{
+    height: 80vh;
+  }
+
+   .impact_overlay_style{
+     top: 13%;
+   }
+
+   .changemaker_hero_title{
+    font-size: 1.1rem;
+   }
+
+   .changemaker_herbody_p{
+    font-size: 15px;
+   }
+
+   .ctashoolheading_container{
+     font-size: 14px;
+     text-align: center;
+   }
+
+   .card_container_product{
+        grid-template-columns: repeat(2, 1fr) !important;
+        padding: 0rem !important;
+   }
+
+   .section_subtitle_text{
+    width: 100%;
+   }
+
+    .education_product_container{
+      padding: 1rem 1rem !important;
+    }
+
+    .cards_educatores_saying{
+      grid-template-columns: repeat(2, 1fr) !important;
+      padding: 0rem 0rem;
+    }
+
+    .page_padding_container{
+      padding-bottom: 0rem !important;
+    }
+}
+
+@media(max-width:660px){
+
+   .gap_grid_style{
+    grid-template-columns: repeat(3,1fr) !important;
+  }
+
+   .heroGrid_override_style{
+    grid-template-columns: 1fr !important;
+  }
+  .heroBgOverride{
+    height: 100%;
+  }
+
+  .changemaker_banner_container{
+    height: 80vh;
+  }
+
+   .impact_overlay_style{
+     top: 13%;
+   }
+
+   .changemaker_hero_title{
+    font-size: 1.1rem;
+   }
+
+   .changemaker_herbody_p{
+    font-size: 15px;
+   }
+
+   .ctashoolheading_container{
+     font-size: 14px;
+     text-align: center;
+   }
+
+   .card_container_product{
+        grid-template-columns: repeat(2, 1fr) !important;
+        padding: 0rem !important;
+   }
+
+   .section_subtitle_text{
+    width: 100%;
+   }
+
+    .education_product_container{
+      padding: 1rem 1rem !important;
+    }
+
+    .cards_educatores_saying{
+      grid-template-columns: repeat(2, 1fr) !important;
+      padding: 0rem 0rem;
+    }
+
+    .page_padding_container{
+      padding-bottom: 0rem !important;
+    }
+}
+
+@media(max-width:600px){
+
+    .gap_grid_style{
+    grid-template-columns: 1fr !important;
+  }
+
   .heroGrid_override_style{
     grid-template-columns: 1fr !important;
   }
@@ -317,7 +705,65 @@
    }
 
    .card_container_product{
-        grid-template-columns:1fr;
+        grid-template-columns:1fr !important;
+        padding: 0rem !important;
+   }
+
+   .section_subtitle_text{
+    width: 100%;
+   }
+
+    .education_product_container{
+      padding: 1rem 1rem !important;
+    }
+
+    .cards_educatores_saying{
+      grid-template-columns: 1fr !important;
+      padding: 0rem 0rem;
+    }
+
+    .page_padding_container{
+      padding-bottom: 0rem !important;
+    }
+
+}
+
+@media(max-width:560px){
+
+    .gap_grid_style{
+    grid-template-columns: 1fr !important;
+  }
+
+  .heroGrid_override_style{
+    grid-template-columns: 1fr !important;
+  }
+  .heroBgOverride{
+    height: 100%;
+  }
+
+  .changemaker_banner_container{
+    height: 80vh;
+  }
+
+   .impact_overlay_style{
+     top: 13%;
+   }
+
+   .changemaker_hero_title{
+    font-size: 1.1rem;
+   }
+
+   .changemaker_herbody_p{
+    font-size: 15px;
+   }
+
+   .ctashoolheading_container{
+     font-size: 14px;
+     text-align: center;
+   }
+
+   .card_container_product{
+        grid-template-columns:1fr !important;
         padding: 0rem !important;
    }
 
@@ -341,6 +787,11 @@
 }
 
 @media(max-width:500px){
+
+    .gap_grid_style{
+    grid-template-columns: 1fr !important;
+  }
+
   .heroGrid_override_style{
     grid-template-columns: 1fr !important;
   }
@@ -370,7 +821,7 @@
    }
 
    .card_container_product{
-        grid-template-columns:1fr;
+        grid-template-columns:1fr !important;
         padding: 0rem !important;
    }
 
@@ -394,6 +845,11 @@
 }
 
 @media(max-width:460px){
+
+    .gap_grid_style{
+    grid-template-columns: 1fr !important;
+  }
+
   .heroGrid_override_style{
     grid-template-columns: 1fr !important;
   }
@@ -423,7 +879,7 @@
    }
 
    .card_container_product{
-        grid-template-columns:1fr;
+        grid-template-columns:1fr !important;
         padding: 0rem !important;
    }
 
@@ -447,6 +903,11 @@
 }
 
 @media(max-width:400px){
+
+    .gap_grid_style{
+    grid-template-columns: 1fr !important;
+  }
+
   .heroGrid_override_style{
     grid-template-columns: 1fr !important;
   }
@@ -476,7 +937,7 @@
    }
 
    .card_container_product{
-        grid-template-columns:1fr;
+        grid-template-columns:1fr !important;
         padding: 0rem !important;
    }
 
@@ -500,6 +961,11 @@
 }
 
 @media(max-width:360px){
+
+    .gap_grid_style{
+    grid-template-columns: 1fr !important;
+  }
+
   .heroGrid_override_style{
     grid-template-columns: 1fr !important;
   }
@@ -529,7 +995,7 @@
    }
 
    .card_container_product{
-        grid-template-columns:1fr;
+        grid-template-columns:1fr !important;
         padding: 0rem !important;
    }
 

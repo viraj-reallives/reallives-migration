@@ -247,9 +247,10 @@ export const landingContent = {
         icon: "linkedin",
       },
     ],
+    
     links: [
-      { label: "About Us", path: "/reallives/about" },
-      { label: "Contact Us", path: "/reallives/contact" },
+      { label: "About Us", path: "/reallives/school/about" },
+      { label: "Contact Us", path: "/reallives/school/contact" },
     ],
   },
 };

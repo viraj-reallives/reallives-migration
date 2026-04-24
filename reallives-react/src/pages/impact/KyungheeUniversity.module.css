@@ -281,6 +281,22 @@
 }
 
 
+[data-theme="dark"] .btn_top_slider {
+ color: white !important;
+}
+
+[data-theme="dark"] .university_text_title {
+ color: white !important;
+}
+
+[data-theme="dark"] .participants_title_text {
+ color: white !important;
+}
+
+[data-theme="dark"] .text_data_content_1 {
+ color: white !important;
+}
+
 
 
 
