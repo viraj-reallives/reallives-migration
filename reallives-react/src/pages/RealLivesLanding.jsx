@@ -456,7 +456,7 @@ import kyungeeh_university_workshop_1 from "../add-image/3-rd-workshop-2.png";
 import navamindradhiraj_university_workshop_1 from "../add-image/second-workshop-2.png";
 import banner_home_5_card from "../add-image/banner-home-card.png";
 import earth_banner_image from "../add-image/earth-banner-card.png";
-import { X, MoveRight } from "lucide-react";
+import { X, MoveRight, ArrowBigDown } from "lucide-react";
 
 export default function RealLivesLanding() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -502,6 +502,10 @@ export default function RealLivesLanding() {
 
   const { carousel, entryCards, ctas, footer } = landingContent;
   const logoSrc = footer?.logo ?? "";
+
+  const [isVisible, setIsVisible] = useState(true);
+
+  if (!isVisible) return null;
 
   return (
     <div className={styles.page}>
@@ -761,6 +765,37 @@ export default function RealLivesLanding() {
               <MoveRight className={styles1.arrow_font} />
             </button>
           </div>
+
+          <button
+
+            onClick={(e) => {
+              const section = document.querySelector(
+                '[class*="section_second_style"]',
+              );
+
+              if (section) {
+                section.scrollIntoView({ behavior: "smooth", block: "start" });
+                e.currentTarget.style.display = "none";
+              }
+            }}
+            
+            style={{
+              position: "fixed",
+              bottom: "0.5%",
+              right: "20px",
+              zIndex: 1000,
+              background: "#11e2ff",
+              color: "#fff",
+              border: "none",
+              borderRadius: "50%",
+              padding: "10px",
+              cursor: "pointer",
+            }}
+          >
+            <ArrowBigDown size={30} />
+
+          </button>
+
         </div>
 
         {/* MODAL PORTAL */}
@@ -808,7 +843,9 @@ export default function RealLivesLanding() {
         </div>
       </section> */}
 
-      <section className={`${styles.cardsSection} ${styles1.section_second_style}`}>
+      <section
+        className={`${styles.cardsSection} ${styles1.section_second_style}`}
+      >
         <p className={`${styles1.who_i_am_text} ${styles1.noto_sans_text}`}>
           Who am I?
         </p>
@@ -844,7 +881,6 @@ export default function RealLivesLanding() {
           })}
         </div>
       </section>
-      
     </div>
   );
 }

@@ -47,6 +47,8 @@ box-sizing: border-box;
   justify-content: center;
 }
 
+
+
 @media(max-width:670px){
   .padding_manage_style{
         padding: 0rem 0rem !important;
