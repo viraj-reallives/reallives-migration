@@ -304,6 +304,13 @@ color: white !important;
 color: white !important;
 }
 
+[data-theme="dark"] .reallives_text_version{
+ color: white !important;
+}
+
+[data-theme="dark"] .reallives_description_text{
+ color: white !important;
+}
 
 
 @keyframes slideFade {

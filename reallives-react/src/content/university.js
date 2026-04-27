@@ -252,7 +252,7 @@ export const universityContent = {
         "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/reallives-changemaker-image.svg",
       experienceEmbedHeading: "Experience RCMI",
       demoIframeSrc:
-        "https://demo.arcade.software/i527E8HZo4YlXdSC8arb?embed&embed_mobile=tab&embed_desktop=inline&show_copy_link=true",
+        "https://demo.arcade.software/T3kOXgmqRKrPgCzTcKQF?embed&embed_mobile=tab&embed_desktop=inline&show_copy_link=true",
     },
     empathyCanvasTab: empathyCanvasTabShared,
     realBoardTab: realBoardTabShared,

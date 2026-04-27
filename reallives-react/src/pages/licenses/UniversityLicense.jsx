@@ -185,20 +185,22 @@ export default function UniversityLicense() {
 
     <main className={`${styles.page} ${Style1.license_conatier_main} `}>
 
+      
+
       <div className={`${styles.container} ${Style1.container_override_style}`}>
         <header className={styles.header}>
-          <h1 className={styles.title}>{content.title}</h1>
+          <h1 className={`${styles.title} ${Style1.top_title_style}`}>{content.title}</h1>
           <p className={`${styles.subtitle} ${Style1.color_cccccc}` }>{content.description}</p>
         </header>
 
         <div className={styles.topBackRow}>
-          <button
+          {/* <button
             type="button"
             className={`${styles.topBackBtn} ${Style1.color_cccccc}`}
             onClick={() => navigate('/reallives/licenses')}
           >
             ← Back to Licenses
-          </button>
+          </button> */}
         </div>
 
        

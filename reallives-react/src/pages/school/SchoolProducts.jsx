@@ -113,12 +113,13 @@ function RealLivesSimPanel({ data, isActive = true }) {
         
       ) : null}
 
+
       {data.demoIframeSrc ? (
         <div className={styles.embedBlock}>
           {data.experienceHeading ? (
             <h2 className={styles.embedHeading}>{data.experienceHeading}</h2>
           ) : null}
-          <div className={styles.iframeWrap}>
+          <div className={`${styles.iframeWrap} ${Style1.hight_iframe_style}`}>
             <iframe
               className={styles.iframe}
               src={data.demoIframeSrc}
@@ -143,6 +144,7 @@ function RealLivesSimPanel({ data, isActive = true }) {
           ) : null}
         </div>
       ) : null}
+
 
       <div className={`${styles.outcomesGrid} ${Style1.grid_learning_outcome}`}>
         <div>

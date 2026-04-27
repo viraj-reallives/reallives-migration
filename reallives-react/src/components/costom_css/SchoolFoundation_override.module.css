@@ -144,6 +144,10 @@
   grid-template-columns: 37% 1fr !important;
 }
 
+[data-theme="dark"] .outer_card_style>p{
+ color: white !important;
+}
+
 
 @media(max-width:990px){
   .hero_conatiner{
