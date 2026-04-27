@@ -6,7 +6,8 @@
   z-index: 100000;
   background-color: var(--color-bg-primary);
   border-bottom: 1px solid var(--color-border-soft);
-  transition: background-color var(--transition-base) ease,
+  transition:
+    background-color var(--transition-base) ease,
     border-color var(--transition-base) ease;
 }
 
@@ -117,7 +118,11 @@
 }
 
 .siteSwitcherItem:hover {
-  background-color: color-mix(in srgb, var(--color-bg-secondary) 90%, transparent);
+  background-color: color-mix(
+    in srgb,
+    var(--color-bg-secondary) 90%,
+    transparent
+  );
 }
 
 .siteSwitcherItemTop {
@@ -197,6 +202,12 @@
   border-top: 0.25rem solid currentColor;
 }
 
+[data-theme="dark"] .navCaret {
+  border-left: 0.25rem solid transparent;
+  border-right: 0.25rem solid transparent;
+  border-top: 0.4rem solid white;
+}
+
 .navItemExternal {
   display: inline-flex;
   align-items: center;
@@ -262,7 +273,11 @@
   align-items: center;
   justify-content: center;
   border-radius: 0.5rem;
-  background-color: color-mix(in srgb, var(--color-site-brand) 10%, transparent);
+  background-color: color-mix(
+    in srgb,
+    var(--color-site-brand) 10%,
+    transparent
+  );
 }
 
 .itemIcon {
@@ -329,7 +344,11 @@
   min-height: 2.75rem;
   border-radius: var(--radius-pill);
   border: 1px solid var(--color-border-soft);
-  background-color: color-mix(in srgb, var(--color-bg-secondary) 88%, transparent);
+  background-color: color-mix(
+    in srgb,
+    var(--color-bg-secondary) 88%,
+    transparent
+  );
   color: var(--color-text-primary);
   font-family: var(--font-ui);
   font-size: 0.9375rem;
@@ -368,8 +387,10 @@
   font-weight: 600;
   font-family: var(--font-ui);
   cursor: pointer;
-  transition: background-color var(--transition-fast) ease,
-    border-color var(--transition-fast) ease, color var(--transition-fast) ease;
+  transition:
+    background-color var(--transition-fast) ease,
+    border-color var(--transition-fast) ease,
+    color var(--transition-fast) ease;
 }
 
 .themeToggle:hover {
@@ -499,7 +520,11 @@
   text-align: start;
   padding: var(--space-8);
   border-radius: var(--radius-lg);
-  background-color: color-mix(in srgb, var(--color-bg-secondary) 65%, transparent);
+  background-color: color-mix(
+    in srgb,
+    var(--color-bg-secondary) 65%,
+    transparent
+  );
   display: grid;
   grid-template-columns: auto 1fr;
   gap: var(--space-8);

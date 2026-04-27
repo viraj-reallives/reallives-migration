@@ -113,6 +113,7 @@ function RealLivesSimPanel({ data, isActive = true }) {
         
       ) : null}
 
+
       {data.demoIframeSrc ? (
         <div className={styles.embedBlock}>
           {data.experienceHeading ? (
@@ -143,6 +144,7 @@ function RealLivesSimPanel({ data, isActive = true }) {
           ) : null}
         </div>
       ) : null}
+
 
       <div className={`${styles.outcomesGrid} ${Style1.grid_learning_outcome}`}>
         <div>
