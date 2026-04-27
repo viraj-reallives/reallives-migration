@@ -91,7 +91,7 @@ export default function Portal() {
           <p className={`${styles.exploreTitle} ${styles1.explore_title_starter}`}>Explore Lives. Create Impact.</p>
         </div>
 
-        <div className={styles.cards}>
+        <div className={`${styles.cards} ${styles1.card_style_container}`}>
 
           <Link to="/reallives" className={styles.cardLink} aria-label="RealLives">
 

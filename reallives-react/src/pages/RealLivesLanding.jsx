@@ -509,6 +509,7 @@ export default function RealLivesLanding() {
 
   return (
     <div className={styles.page}>
+      
       <header className={styles.header}>
         <div
           className={`${styles.headerInner} ${styles1.header_transparent_background}`}
@@ -543,10 +544,10 @@ export default function RealLivesLanding() {
       </header>
 
       <section className={styles.carouselSection}>
+
         <div className={styles1.container_new_home}>
-          <div
-            className={`${styles1.outer_first_home_new} ${currentIndex === 0 ? styles1.slide_active : styles1.card_none}`}
-          >
+
+          <div className={`${styles1.outer_first_home_new} ${currentIndex === 0 ? styles1.slide_active : styles1.card_none}`}>
             <div className={styles1.inner_top_home_label}>
               <div className={styles1.manrope_text}>RealLives Builds</div>
               <div className={styles1.manrope_text}>21st Century Skills</div>
@@ -558,9 +559,7 @@ export default function RealLivesLanding() {
             </div>
           </div>
 
-          <div
-            className={`${styles1.pdf_container_home_new} ${currentIndex === 1 ? styles1.slide_active : styles1.card_none}`}
-          >
+          <div className={`${styles1.pdf_container_home_new} ${currentIndex === 1 ? styles1.slide_active : styles1.card_none}`} >
             <div className={styles1.inner_top_home_label}>
               <div className={styles1.manrope_text}>
                 Powerful Learning, Proven by Global Research
@@ -641,9 +640,7 @@ export default function RealLivesLanding() {
             </div>
           </div>
 
-          <div
-            className={`${styles1.global_impact_container} ${currentIndex === 2 ? styles1.slide_active : styles1.card_none}`}
-          >
+          <div className={`${styles1.global_impact_container} ${currentIndex === 2 ? styles1.slide_active : styles1.card_none}`} >
             <div className={styles1.inner_top_home_label}>
               <p className={styles1.manrope_text}>Our Global Impact</p>
             </div>
@@ -675,9 +672,7 @@ export default function RealLivesLanding() {
             </div>
           </div>
 
-          <div
-            className={`${styles1.global_impact_container} ${styles1.therd_hight_container} ${currentIndex === 3 ? styles1.slide_active : styles1.card_none}`}
-          >
+          <div className={`${styles1.global_impact_container} ${styles1.therd_hight_container} ${currentIndex === 3 ? styles1.slide_active : styles1.card_none}`} >
             <div className={styles1.inner_top_home_label}>
               <p className={styles1.manrope_text}>RealLives Worldwide Impact</p>
             </div>
@@ -709,9 +704,7 @@ export default function RealLivesLanding() {
             </div>
           </div>
 
-          <div
-            className={`${styles1.global_impact_container} ${styles1.fourth_hight_container} ${currentIndex === 4 ? styles1.slide_active : styles1.card_none}`}
-          >
+          <div className={`${styles1.global_impact_container} ${styles1.fourth_hight_container} ${currentIndex === 4 ? styles1.slide_active : styles1.card_none}`}>
             <div className={styles1.inner_top_home_label}>
               <p className={styles1.manrope_text}>
                 The RealLives Learning Ecosystem
@@ -722,9 +715,7 @@ export default function RealLivesLanding() {
             </div>
           </div>
 
-          <div
-            className={`${styles1.global_impact_container_last} ${currentIndex === 5 ? styles1.slide_active : styles1.card_none}`}
-          >
+          <div className={`${styles1.global_impact_container_last} ${currentIndex === 5 ? styles1.slide_active : styles1.card_none}`} >
             <div className={styles1.inner_top_home_label}>
               <p className={styles1.manrope_text}>
                 Live Billions of Lives <br /> Across the World
