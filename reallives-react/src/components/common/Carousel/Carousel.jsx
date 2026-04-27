@@ -1,5 +1,6 @@
-import { useCallback, useEffect, useState } from 'react';
-import styles from './Carousel.module.css';
+import { useCallback, useEffect, useState } from "react";
+import styles from "./Carousel.module.css";
+import Style1 from  "../Carousel/Carsouleoverride.module.css"
 
 const AUTO_MS = 5000;
 
@@ -9,9 +10,9 @@ export default function Carousel({ slides = [] }) {
   const len = slides.length;
 
   const go = useCallback(
-    dir => {
+    (dir) => {
       if (len < 1) return;
-      setIndex(i => (i + dir + len) % len);
+      setIndex((i) => (i + dir + len) % len);
     },
     [len],
   );
@@ -19,7 +20,7 @@ export default function Carousel({ slides = [] }) {
   useEffect(() => {
     if (len <= 1 || paused) return undefined;
     const id = window.setInterval(() => {
-      setIndex(i => (i + 1) % len);
+      setIndex((i) => (i + 1) % len);
     }, AUTO_MS);
     return () => window.clearInterval(id);
   }, [len, paused]);
@@ -34,7 +35,7 @@ export default function Carousel({ slides = [] }) {
       aria-roledescription="carousel"
       aria-label="Featured slides"
     >
-      <div className={styles.viewport}>
+      {/* <div className={styles.viewport}>
         {slides.map((slide, i) => (
           <div
             key={`carousel-slide-${i}`}
@@ -53,6 +54,42 @@ export default function Carousel({ slides = [] }) {
             <div className={styles.caption}>
               {slide.heading ? <h2 className={styles.heading}>{slide.heading}</h2> : null}
               {slide.subheading ? <p className={styles.subheading}>{slide.subheading}</p> : null}
+            </div>
+          </div>
+        ))}
+      </div> */}
+
+      <div className={styles.viewport}>
+        {slides.map((slide, i) => (
+          <div
+            key={`carousel-slide-${i}`}
+            className={`${styles.slide} ${i === index ? styles.slideActive : ""}`}
+            aria-hidden={i !== index}
+          >
+            <picture>
+              {slide.mobileImage && (
+                <source media="(max-width: 768px)" srcSet={slide.mobileImage} />
+              )}
+
+              {/* Default desktop image */}
+              {slide.image ? (
+                <img
+                  src={slide.image}
+                  alt={slide.alt || ""}
+                  className={styles.slideImage}
+                  loading={i === 0 ? "eager" : "lazy"}
+                />
+              ) : null}
+            </picture>
+
+            <div className={styles.slideOverlay} aria-hidden="true" />
+            <div className={styles.caption}>
+              {slide.heading ? (
+                <h2 className={styles.heading}>{slide.heading}</h2>
+              ) : null}
+              {slide.subheading ? (
+                <p className={styles.subheading}>{slide.subheading}</p>
+              ) : null}
             </div>
           </div>
         ))}
@@ -81,7 +118,11 @@ export default function Carousel({ slides = [] }) {
             </span>
           </button>
 
-          <div className={styles.dots} role="tablist" aria-label="Slide indicators">
+          <div
+            className={`${styles.dots} ${Style1.mobile_width}`}
+            role="tablist"
+            aria-label="Slide indicators"
+          >
             {slides.map((_, i) => (
               <button
                 key={i}
@@ -89,7 +130,7 @@ export default function Carousel({ slides = [] }) {
                 role="tab"
                 aria-selected={i === index}
                 aria-label={`Go to slide ${i + 1} of ${len}`}
-                className={`${styles.dot} ${i === index ? styles.dotActive : ''}`}
+                className={`${styles.dot} ${i === index ? styles.dotActive : ""}`}
                 onClick={() => setIndex(i)}
               />
             ))}

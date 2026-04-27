@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useSiteContent } from "@hooks/useSiteContent";
 import styles from "../school/SchoolResearch.module.css";
 import Style1 from "../../pages/research/Research_Card1.module.css";
+import Style2 from "../../pages/research/Kame_Research.module.css"
 
 const Kame_Research = () => {
   const navigate = useNavigate();
@@ -43,16 +44,33 @@ const dynamicBackPath = isSchoolPath
         </button>
 
         {/* 🎯 HERO SECTION */}
-        <div className={styles.detailHero}>
-          {d.heroImagePath && <img src={d.heroImagePath} alt="" />}
-          <div className={styles.detailHeroOverlay}>
+        <div className={`${styles.detailHero} ${Style2.hight_kame_container}`}>
+
+
+          <div className={`${styles.detailHeroOverlay}  ${Style2.kame_override_style}`}>
+
+            <div className={`${Style2.firstcontent_research_tab}`}>
+
+
             {d.heroTitle && (
               <h3 className={`${styles.detailHeroTitle} ${Style1.detailhero_override_style}`}>{d.heroTitle}</h3>
             )}
+
             {d.heroSubtitle && (
               <p className={`${styles.detailHeroSub} ${Style1.detailhero_sub_override_text}`}>{d.heroSubtitle}</p>
             )}
+
+
+            </div>
+           
+            <div className={Style2.content_sub_container}>
+              <img src="https://res.cloudinary.com/dexw6sglh/image/upload/v1777026287/world-map-card_1_mmffbz.png" alt="" />
+            </div>
+
+
           </div>
+
+
         </div>
 
         {/* 📄 MAIN CONTENT */}

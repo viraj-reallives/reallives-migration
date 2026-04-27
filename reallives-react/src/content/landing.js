@@ -1,155 +1,322 @@
 export const landingContent = {
-  carousel: {
-    slides: [
-      {
-        image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_01.jpg",
-        alt: "",
-        heading: "Life doesn’t always give you equal opportunities",
-        subheading: "",
-      },
-      {
-        image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_02.jpg",
-        alt: "",
-        heading: "Jump into a life face whatever comes your way",
-        subheading: "",
-      },
-      {
-        image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_04.jpg",
-        alt: "",
-        heading: "Live a life in a different country Face what comes your way",
-        subheading: "",
-      },
-      {
-        image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_05.jpg",
-        alt: "",
-        heading: "You are the world",
-        subheading: "",
-      },
-      {
-        image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_06.jpg",
-        alt: "",
-        heading: "Experience life with interactive role-play",
-        subheading: "",
-      },
-      {
-        image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_07.jpg",
-        alt: "",
-        heading:
-          "Live a character, the one who does not have control on starting position in life",
-        subheading: "",
-      },
-      {
-        image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_08.jpg",
-        alt: "",
-        heading:
-          "Experience how even the most fortunate are trapped by circumstances",
-        subheading: "",
-      },
-      {
-        image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_09.jpg",
-        alt: "",
-        heading:
-          "Enjoy the randomness of being born in any country and any culture",
-        subheading: "",
-      },
-      {
-        image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_10.jpg",
-        alt: "",
-        heading: "Design any character that you wish to be",
-        subheading: "",
-      },
-      {
-        image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_11.jpg",
-        alt: "",
-        heading:
-          "Guide your character through a life of tribulations, events & choices",
-        subheading: "",
-      },
-      {
-        image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_12.jpg",
-        alt: "",
-        heading: "Life rarely begins with equal opportunities",
-        subheading: "",
-      },
-      {
-        image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_13.jpg",
-        alt: "",
-        heading: "Take a chance on living a random life on earth",
-        subheading: "",
-      },
+  // carousel: {
+  //   slides: [
+  //     {
+  //       image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_01.jpg",
+  //       alt: "",
+  //       heading: "Life doesn’t always give you equal opportunities",
+  //       subheading: "",
+  //     },
+  //     {
+  //       image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_02.jpg",
+  //       alt: "",
+  //       heading: "Jump into a life face whatever comes your way",
+  //       subheading: "",
+  //     },
+  //     {
+  //       image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_04.jpg",
+  //       alt: "",
+  //       heading: "Live a life in a different country Face what comes your way",
+  //       subheading: "",
+  //     },
+  //     {
+  //       image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_05.jpg",
+  //       alt: "",
+  //       heading: "You are the world",
+  //       subheading: "",
+  //     },
+  //     {
+  //       image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_06.jpg",
+  //       alt: "",
+  //       heading: "Experience life with interactive role-play",
+  //       subheading: "",
+  //     },
+  //     {
+  //       image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_07.jpg",
+  //       alt: "",
+  //       heading:
+  //         "Live a character, the one who does not have control on starting position in life",
+  //       subheading: "",
+  //     },
+  //     {
+  //       image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_08.jpg",
+  //       alt: "",
+  //       heading:
+  //         "Experience how even the most fortunate are trapped by circumstances",
+  //       subheading: "",
+  //     },
+  //     {
+  //       image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_09.jpg",
+  //       alt: "",
+  //       heading:
+  //         "Enjoy the randomness of being born in any country and any culture",
+  //       subheading: "",
+  //     },
+  //     {
+  //       image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_10.jpg",
+  //       alt: "",
+  //       heading: "Design any character that you wish to be",
+  //       subheading: "",
+  //     },
+  //     {
+  //       image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_11.jpg",
+  //       alt: "",
+  //       heading:
+  //         "Guide your character through a life of tribulations, events & choices",
+  //       subheading: "",
+  //     },
+  //     {
+  //       image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_12.jpg",
+  //       alt: "",
+  //       heading: "Life rarely begins with equal opportunities",
+  //       subheading: "",
+  //     },
+  //     {
+  //       image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_13.jpg",
+  //       alt: "",
+  //       heading: "Take a chance on living a random life on earth",
+  //       subheading: "",
+  //     },
 
-      {
-        image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_14.jpg",
-        alt: "",
-        heading: "Experience and live the life of an ordinary person!",
-        subheading: "",
-      },
-      {
-        image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_15.jpg",
-        alt: "",
-        heading: "Live and experience a trillion human life stories",
-        subheading: "",
-      },
-      {
-        image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_16.jpg",
-        alt: "",
-        heading: "In the real world not everything is possible for every one",
-        subheading: "",
-      },
-      {
-        image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_17.jpg",
-        alt: "",
-        heading: "An eye opener on how life is lived in various cultures",
-        subheading: "",
-      },
-      {
-        image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_18.jpg",
-        alt: "",
-        heading:
-          "One’s abilities and choices are contingent upon one’s context",
-        subheading: "",
-      },
-      {
-        image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_19.jpg",
-        alt: "",
-        heading: "Surprisingly informative and enlightening",
-        subheading: "",
-      },
-      {
-        image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_20.jpg",
-        alt: "",
-        heading: "Informative time-sink",
-        subheading: "",
-      },
-      {
-        image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_21.jpg",
-        alt: "",
-        heading:
-          "Experience how the millions of unfortunate are trapped by circumstances",
-        subheading: "",
-      },
-      {
-        image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_22.jpg",
-        alt: "",
-        heading:
-          "Best way to learn about life in other countries short of going there!",
-        subheading: "",
-      },
-      {
-        image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_23.jpg",
-        alt: "",
-        heading:
-          "Some one at some point has probably led a life similar to the one you are playing",
-        subheading: "",
-      },
-      {
-        image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_24.jpg",
-        alt: "",
-        heading: "Face factors beyond your control",
-        subheading: "",
-      },
-    ],
-  },
+  //     {
+  //       image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_14.jpg",
+  //       alt: "",
+  //       heading: "Experience and live the life of an ordinary person!",
+  //       subheading: "",
+  //     },
+  //     {
+  //       image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_15.jpg",
+  //       alt: "",
+  //       heading: "Live and experience a trillion human life stories",
+  //       subheading: "",
+  //     },
+  //     {
+  //       image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_16.jpg",
+  //       alt: "",
+  //       heading: "In the real world not everything is possible for every one",
+  //       subheading: "",
+  //     },
+  //     {
+  //       image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_17.jpg",
+  //       alt: "",
+  //       heading: "An eye opener on how life is lived in various cultures",
+  //       subheading: "",
+  //     },
+  //     {
+  //       image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_18.jpg",
+  //       alt: "",
+  //       heading:
+  //         "One’s abilities and choices are contingent upon one’s context",
+  //       subheading: "",
+  //     },
+  //     {
+  //       image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_19.jpg",
+  //       alt: "",
+  //       heading: "Surprisingly informative and enlightening",
+  //       subheading: "",
+  //     },
+  //     {
+  //       image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_20.jpg",
+  //       alt: "",
+  //       heading: "Informative time-sink",
+  //       subheading: "",
+  //     },
+  //     {
+  //       image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_21.jpg",
+  //       alt: "",
+  //       heading:
+  //         "Experience how the millions of unfortunate are trapped by circumstances",
+  //       subheading: "",
+  //     },
+  //     {
+  //       image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_22.jpg",
+  //       alt: "",
+  //       heading:
+  //         "Best way to learn about life in other countries short of going there!",
+  //       subheading: "",
+  //     },
+  //     {
+  //       image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_23.jpg",
+  //       alt: "",
+  //       heading:
+  //         "Some one at some point has probably led a life similar to the one you are playing",
+  //       subheading: "",
+  //     },
+  //     {
+  //       image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_24.jpg",
+  //       alt: "",
+  //       heading: "Face factors beyond your control",
+  //       subheading: "",
+  //     },
+  //   ],
+  // },
+
+  carousel: {
+  slides: [
+    {
+      image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_01.jpg",
+      mobileImage: "https://reallivesfrontend.s3.us-east-1.amazonaws.com/iPhone+16+Pro+Max+-+5.png",
+      alt: "Life opportunities",
+      heading: "Life doesn’t always give you equal opportunities",
+      subheading: "",
+    },
+    {
+      image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_02.jpg",
+      mobileImage: "https://reallivesfrontend.s3.us-east-1.amazonaws.com/iPhone+16+Pro+Max+-+22.png",
+      alt: "Face challenges",
+      heading: "Jump into a life face whatever comes your way",
+      subheading: "",
+    },
+    {
+      image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_04.jpg",
+      mobileImage: "https://reallivesfrontend.s3.us-east-1.amazonaws.com/iPhone+16+Pro+Max+-+23.png",
+      alt: "Different country",
+      heading: "Live a life in a different country Face what comes your way",
+      subheading: "",
+    },
+    {
+      image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_05.jpg",
+      mobileImage: "image/mobilehomescreen/iPhone 16 Pro Max - 24.png",
+      alt: "World",
+      heading: "You are the world",
+      subheading: "",
+    },
+    {
+      image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_06.jpg",
+      mobileImage: "image/mobilehomescreen/iPhone 16 Pro Max - 25.png",
+      alt: "Interactive role-play",
+      heading: "Experience life with interactive role-play",
+      subheading: "",
+    },
+    {
+      image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_07.jpg",
+      mobileImage: "image/mobilehomescreen/iPhone 16 Pro Max - 26.png",
+      alt: "Starting position",
+      heading: "Live a character, the one who does not have control on starting position in life",
+      subheading: "",
+    },
+    {
+      image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_08.jpg",
+      mobileImage: "image/mobilehomescreen/iPhone 16 Pro Max - 27.png",
+      alt: "Circumstances",
+      heading: "Experience how even the most fortunate are trapped by circumstances",
+      subheading: "",
+    },
+    {
+      image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_09.jpg",
+      mobileImage: "image/mobilehomescreen/iPhone 16 Pro Max - 27.png", // Same mapping as per your list
+      alt: "Randomness",
+      heading: "Enjoy the randomness of being born in any country and any culture",
+      subheading: "",
+    },
+    {
+      image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_10.jpg",
+      mobileImage: "image/mobilehomescreen/iPhone 16 Pro Max - 28.png",
+      alt: "Design character",
+      heading: "Design any character that you wish to be",
+      subheading: "",
+    },
+    {
+      image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_11.jpg",
+      mobileImage: "image/mobilehomescreen/iPhone 16 Pro Max - 29.png",
+      alt: "Tribulations",
+      heading: "Guide your character through a life of tribulations, events & choices",
+      subheading: "",
+    },
+    {
+      image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_12.jpg",
+      mobileImage: "image/mobilehomescreen/iPhone 16 Pro Max - 29.png",
+      alt: "Equal opportunities",
+      heading: "Life rarely begins with equal opportunities",
+      subheading: "",
+    },
+    {
+      image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_13.jpg",
+      mobileImage: "image/mobilehomescreen/iPhone 16 Pro Max - 30.png",
+      alt: "Random life",
+      heading: "Take a chance on living a random life on earth",
+      subheading: "",
+    },
+    {
+      image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_14.jpg",
+      mobileImage: "image/mobilehomescreen/iPhone 16 Pro Max - 31.png",
+      alt: "Ordinary person",
+      heading: "Experience and live the life of an ordinary person!",
+      subheading: "",
+    },
+    {
+      image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_15.jpg",
+      mobileImage: "image/mobilehomescreen/iPhone 16 Pro Max - 32.png",
+      alt: "Life stories",
+      heading: "Live and experience a trillion human life stories",
+      subheading: "",
+    },
+    {
+      image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_16.jpg",
+      mobileImage: "image/mobilehomescreen/iPhone 16 Pro Max - 33.png",
+      alt: "Real world",
+      heading: "In the real world not everything is possible for every one",
+      subheading: "",
+    },
+    {
+      image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_17.jpg",
+      mobileImage: "image/mobilehomescreen/iPhone 16 Pro Max - 34.png",
+      alt: "Cultures",
+      heading: "An eye opener on how life is lived in various cultures",
+      subheading: "",
+    },
+    {
+      image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_18.jpg",
+      mobileImage: "image/mobilehomescreen/iPhone 16 Pro Max - 35.png",
+      alt: "Abilities",
+      heading: "One’s abilities and choices are contingent upon one’s context",
+      subheading: "",
+    },
+    {
+      image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_19.jpg",
+      mobileImage: "image/mobilehomescreen/iPhone 16 Pro Max - 36.png",
+      alt: "Enlightening",
+      heading: "Surprisingly informative and enlightening",
+      subheading: "",
+    },
+    {
+      image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_20.jpg",
+      mobileImage: "image/mobilehomescreen/iPhone 16 Pro Max - 37.png",
+      alt: "Time-sink",
+      heading: "Informative time-sink",
+      subheading: "",
+    },
+    {
+      image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_21.jpg",
+      mobileImage: "image/mobilehomescreen/iPhone 16 Pro Max - 38.png",
+      alt: "Millions",
+      heading: "Experience how the millions of unfortunate are trapped by circumstances",
+      subheading: "",
+    },
+    {
+      image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_22.jpg",
+      mobileImage: "image/mobilehomescreen/iPhone 16 Pro Max - 39.png",
+      alt: "Learn countries",
+      heading: "Best way to learn about life in other countries short of going there!",
+      subheading: "",
+    },
+    {
+      image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_23.jpg",
+      mobileImage: "image/mobilehomescreen/iPhone 16 Pro Max - 39.png",
+      alt: "Similar life",
+      heading: "Some one at some point has probably led a life similar to the one you are playing",
+      subheading: "",
+    },
+    {
+      image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_24.jpg",
+      mobileImage: "image/mobilehomescreen/iPhone 16 Pro Max - 39.png", // Added a fallback for the last one
+      alt: "Factors",
+      heading: "Face factors beyond your control",
+      subheading: "",
+    },
+  ],
+},
+
 
   entryCards: [
     {

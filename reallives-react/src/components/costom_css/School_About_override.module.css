@@ -284,6 +284,28 @@
   animation-delay: 6s;
 }
 
+[data-theme="dark"] .inventor_container>p{
+color: white !important;
+}
+
+[data-theme="dark"] .descritpion_container_founder>p{
+color: white !important;
+}
+
+[data-theme="dark"] .team_content>h3{
+color: black !important;
+}
+
+[data-theme="dark"] .descritpion_container_founder_2>p{
+color: white !important;
+}
+
+[data-theme="dark"] .inerant_description_container >h1{
+color: white !important;
+}
+
+
+
 @keyframes slideFade {
   0% {
     opacity: 0;

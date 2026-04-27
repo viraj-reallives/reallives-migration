@@ -134,3 +134,493 @@
 }
 
 
+@media(max-width:991px){
+  .card_style_container{
+     grid-template-columns: repeat(2,1fr) !important;
+   }
+     
+   .head_starter_box{
+    height: 140px;
+  }
+
+  .head_color_changemaker{
+    height: 140px;
+  }
+
+  .button_continue_card_changemaker{
+    font-size: 13px !important;
+    gap: 4px !important;
+  }
+  .button_continue_card{
+    font-size: 13px !important;
+    gap: 4px !important;
+  }
+
+  .choose_title_starter{
+    font-size: 28px !important;
+  }
+
+  .explore_title_starter{
+    font-size: 18px !important;
+  }
+
+  .grid_cards_style{
+        grid-template-rows: auto auto auto auto !important;
+  }
+
+  .head_logo_reallives{
+    height: 60px;
+  }
+}
+
+@media(max-width:860px){
+   
+  .card_style_container{
+     grid-template-columns: repeat(2,1fr) !important;
+   }
+     
+   .head_starter_box{
+    height: 140px;
+  }
+
+  .head_color_changemaker{
+    height: 140px;
+  }
+
+  .button_continue_card_changemaker{
+    font-size: 13px !important;
+    gap: 4px !important;
+  }
+  .button_continue_card{
+    font-size: 13px !important;
+    gap: 4px !important;
+  }
+
+  .choose_title_starter{
+    font-size: 28px !important;
+  }
+
+  .explore_title_starter{
+    font-size: 18px !important;
+  }
+
+  .grid_cards_style{
+        grid-template-rows: auto auto auto auto !important;
+  }
+
+  .head_logo_reallives{
+    height: 60px;
+  }
+}
+
+@media(max-width:800px){
+
+  .card_style_container{
+     grid-template-columns: 1fr !important;
+   }
+     
+   .head_starter_box{
+    height: 140px;
+  }
+
+  .head_color_changemaker{
+    height: 140px;
+  }
+
+  .button_continue_card_changemaker{
+    font-size: 13px !important;
+    gap: 4px !important;
+  }
+  .button_continue_card{
+    font-size: 13px !important;
+    gap: 4px !important;
+  }
+
+  .choose_title_starter{
+    font-size: 28px !important;
+  }
+
+  .explore_title_starter{
+    font-size: 18px !important;
+  }
+
+  .grid_cards_style{
+        grid-template-rows: auto auto auto auto !important;
+  }
+
+  .head_logo_reallives{
+    height: 60px;
+  }
+}
+
+@media(max-width:770px){
+
+  .card_style_container{
+     grid-template-columns: 1fr !important;
+   }
+     
+   .head_starter_box{
+    height: 140px;
+  }
+
+  .head_color_changemaker{
+    height: 140px;
+  }
+
+  .button_continue_card_changemaker{
+    font-size: 13px !important;
+    gap: 4px !important;
+  }
+  .button_continue_card{
+    font-size: 13px !important;
+    gap: 4px !important;
+  }
+
+  .choose_title_starter{
+    font-size: 28px !important;
+  }
+
+  .explore_title_starter{
+    font-size: 18px !important;
+  }
+
+  .grid_cards_style{
+        grid-template-rows: auto auto auto auto !important;
+  }
+
+  .head_logo_reallives{
+    height: 60px;
+  }
+}
+
+@media(max-width:700px){
+
+  .card_style_container{
+     grid-template-columns: 1fr !important;
+   }
+     
+   .head_starter_box{
+    height: 140px;
+  }
+
+  .head_color_changemaker{
+    height: 140px;
+  }
+
+  .button_continue_card_changemaker{
+    font-size: 13px !important;
+    gap: 4px !important;
+  }
+  .button_continue_card{
+    font-size: 13px !important;
+    gap: 4px !important;
+  }
+
+  .choose_title_starter{
+    font-size: 28px !important;
+  }
+
+  .explore_title_starter{
+    font-size: 18px !important;
+  }
+
+  .grid_cards_style{
+        grid-template-rows: auto auto auto auto !important;
+  }
+
+  .head_logo_reallives{
+    height: 60px;
+  }
+
+}
+
+@media(max-width:660px){
+
+  .card_style_container{
+     grid-template-columns: 1fr !important;
+   }
+     
+   .head_starter_box{
+    height: 140px;
+  }
+
+  .head_color_changemaker{
+    height: 140px;
+  }
+
+  .button_continue_card_changemaker{
+    font-size: 13px !important;
+    gap: 4px !important;
+  }
+  .button_continue_card{
+    font-size: 13px !important;
+    gap: 4px !important;
+  }
+
+  .choose_title_starter{
+    font-size: 28px !important;
+  }
+
+  .explore_title_starter{
+    font-size: 18px !important;
+  }
+
+  .grid_cards_style{
+        grid-template-rows: auto auto auto auto !important;
+  }
+
+  .head_logo_reallives{
+    height: 60px;
+  }
+
+}
+
+@media(max-width:600px){
+
+    .card_style_container{
+     grid-template-columns: 1fr !important;
+   }
+     
+   .head_starter_box{
+    height: 160px;
+  }
+
+  .head_color_changemaker{
+    height: 160px;
+  }
+
+  .button_continue_card_changemaker{
+    font-size: 13px !important;
+    gap: 4px !important;
+  }
+  .button_continue_card{
+    font-size: 13px !important;
+    gap: 4px !important;
+  }
+
+  .choose_title_starter{
+    font-size: 28px !important;
+  }
+
+  .explore_title_starter{
+    font-size: 18px !important;
+  }
+
+  .grid_cards_style{
+        grid-template-rows: auto auto auto auto !important;
+  }
+
+  .head_logo_reallives{
+    height: 60px;
+  }
+
+}
+
+@media(max-width:560px){
+
+   .card_style_container{
+     grid-template-columns: 1fr !important;
+   }
+
+  .head_starter_box{
+    height: 160px;
+  }
+
+  .head_color_changemaker{
+    height: 160px;
+  }
+
+  .button_continue_card_changemaker{
+    font-size: 13px !important;
+    gap: 4px !important;
+  }
+  .button_continue_card{
+    font-size: 13px !important;
+    gap: 4px !important;
+  }
+
+  .choose_title_starter{
+    font-size: 28px !important;
+  }
+
+  .explore_title_starter{
+    font-size: 18px !important;
+  }
+
+  .grid_cards_style{
+        grid-template-rows: auto auto auto auto !important;
+  }
+
+  .head_logo_reallives{
+    height: 60px;
+  }
+
+}
+
+@media(max-width:500px){
+
+  .card_style_container{
+     grid-template-columns: 1fr !important;
+   }
+
+  .head_starter_box{
+    height: 160px;
+  }
+
+  .head_color_changemaker{
+    height: 160px;
+  }
+
+  .button_continue_card_changemaker{
+    font-size: 13px !important;
+    gap: 4px !important;
+  }
+  .button_continue_card{
+    font-size: 13px !important;
+    gap: 4px !important;
+  }
+
+  .choose_title_starter{
+    font-size: 28px !important;
+  }
+
+  .explore_title_starter{
+    font-size: 18px !important;
+  }
+
+  .grid_cards_style{
+        grid-template-rows: auto auto auto auto !important;
+  }
+
+  .head_logo_reallives{
+    height: 60px;
+  }
+
+}
+
+@media(max-width:460px){
+
+   .card_style_container{
+     grid-template-columns: 1fr !important;
+   }
+
+  .head_starter_box{
+    height: 200px;
+  }
+
+  .head_color_changemaker{
+    height: 200px;
+  }
+
+  .button_continue_card_changemaker{
+    font-size: 13px !important;
+    gap: 4px !important;
+  }
+  .button_continue_card{
+    font-size: 13px !important;
+    gap: 4px !important;
+  }
+
+  .choose_title_starter{
+    font-size: 23px !important;
+  }
+
+  .explore_title_starter{
+    font-size: 18px !important;
+  }
+
+  .grid_cards_style{
+        grid-template-rows: auto auto auto auto !important;
+  }
+
+  .head_logo_reallives{
+    height: 60px;
+  }
+}
+
+@media(max-width:400px){
+
+  .card_style_container{
+     grid-template-columns: 1fr !important;
+   }
+
+  .head_starter_box{
+    height: 140px;
+  }
+
+  .head_color_changemaker{
+    height: 140px;
+  }
+
+  .button_continue_card_changemaker{
+    font-size: 13px !important;
+    gap: 4px !important;
+  }
+  .button_continue_card{
+    font-size: 13px !important;
+    gap: 4px !important;
+  }
+
+  .choose_title_starter{
+    font-size: 23px !important;
+  }
+
+  .explore_title_starter{
+    font-size: 18px !important;
+  }
+
+  .grid_cards_style{
+        grid-template-rows: auto auto auto auto !important;
+  }
+
+  .head_logo_reallives{
+    height: 50px;
+  }
+
+
+}
+
+@media(max-width:360px){
+
+   .card_style_container{
+     grid-template-columns: 1fr !important;
+   }
+
+  .head_starter_box{
+    height: 110px !important;
+  }
+
+  .head_color_changemaker{
+    height: 110px;
+  }
+
+  .button_continue_card_changemaker{
+    font-size: 12px !important;
+    gap: 4px !important;
+  }
+  .button_continue_card{
+    font-size: 13px !important;
+    gap: 4px !important;
+  }
+
+  .choose_title_starter{
+    font-size: 23px !important;
+  }
+
+  .explore_title_starter{
+    font-size: 18px !important;
+  }
+
+  .grid_cards_style{
+        grid-template-rows: auto auto auto auto !important;
+  }
+
+  .head_logo_reallives{
+    height: 50px;
+  }
+
+
+}
+
+
+

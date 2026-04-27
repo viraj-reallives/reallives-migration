@@ -13,12 +13,11 @@
 }
 
 
-
-
 [data-theme="dark"] .card_pricing_color {
  background: #222222 !important;
 }
 [data-theme="dark"] .title_text_price {
  color: white !important;
 }
+
 

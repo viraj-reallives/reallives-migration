@@ -70,10 +70,13 @@ export default function App() {
     <ScrollToTop/>
 
       <Routes>
+
         <Route element={<RootLayout />}>
+
           <Route path="/" element={<Portal />} />
 
           <Route element={<LandingLayout />}>
+
             <Route path="/reallives" element={<RealLivesLanding />} />
 
             <Route path="/reallives/licenses" element={<LicenseHub />} />
@@ -81,9 +84,11 @@ export default function App() {
             <Route path="/reallives/licenses/university" element={<UniversityLicense />} />
             <Route path="/reallives/licenses/homeschooler" element={<HomeschoolerLicense />} />
             <Route path="/reallives/licenses/gamer" element={<GamerLicense />} />
+
           </Route>
 
           <Route path="/reallives/school" element={<SubSiteLayout siteKey="school" />}>
+
             <Route index element={<SchoolHome />} />
             <Route path="products" element={<SchoolProducts />} />
             <Route path="changemaker" element={<SchoolChangemaker />} />
@@ -177,7 +182,9 @@ export default function App() {
           </Route>
 
           <Route path="*" element={<NotFound />} />
+
         </Route>
+        
       </Routes>
       
     </BrowserRouter>

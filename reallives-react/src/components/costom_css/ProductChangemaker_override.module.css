@@ -51,9 +51,17 @@
 .section_subtitle_text {
   font-size: 1.25rem !important;
   text-align: center !important;
-  color: #4b5563 !important;
+  color: #4b5563 ;
   width: 45%;
   margin: 0px !important;
+}
+
+[data-theme="dark"] .section_subtitle_text{
+color: white !important;
+}
+
+[data-theme="dark"] .description_card_paragarph{
+color: white !important;
 }
 
 .card_grid_product {
@@ -251,9 +259,6 @@
 [data-theme="dark"] .label_inner_educatores {
  background: #222222 !important;
 }
-
-
-
 
 
 

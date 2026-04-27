@@ -458,6 +458,7 @@ export default function Navbar() {
               >
                 <span className={styles.navLabel}>Pricing</span>
               </Link>
+
               {desktopOurStory}
             </>
           ) : (
@@ -578,6 +579,7 @@ export default function Navbar() {
                 onClick={() => handlePrimaryNavClick(`${basePath}/pricing`)}
               >
                 <span className={styles.navLabel}>Pricing</span>
+
               </button>
 
               {desktopOurStory}
