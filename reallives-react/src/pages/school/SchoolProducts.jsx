@@ -118,7 +118,7 @@ function RealLivesSimPanel({ data, isActive = true }) {
           {data.experienceHeading ? (
             <h2 className={styles.embedHeading}>{data.experienceHeading}</h2>
           ) : null}
-          <div className={styles.iframeWrap}>
+          <div className={`${styles.iframeWrap} ${Style1.hight_iframe_style}`}>
             <iframe
               className={styles.iframe}
               src={data.demoIframeSrc}

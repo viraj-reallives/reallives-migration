@@ -509,8 +509,10 @@ export default function RealLivesLanding() {
 
   return (
     <div className={styles.page}>
+
       
-      <header className={styles.header}>
+      
+      <header className={`${styles.header} ${styles1.header_border_none}`}>
         <div
           className={`${styles.headerInner} ${styles1.header_transparent_background}`}
         >

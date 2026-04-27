@@ -536,7 +536,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useSiteContent } from "@hooks/useSiteContent";
-import styles from "../school/SchoolProducts.module.css"; 
+import styles from "../school/SchoolProducts.module.css";
 import Style1 from "../../components/costom_css/schoolproduct_overide.module.css";
 
 // Images
@@ -650,17 +650,45 @@ function RealLivesSimPanel({ data, isActive = true }) {
         </div>
       ) : null}
 
-      {data.demoIframeSrc ? (
+      {/* {data.demoIframeSrc ? (
         <div className={styles.embedBlock}>
           {data.experienceHeading ? (
             <h2 className={styles.embedHeading}>{data.experienceHeading}</h2>
           ) : null}
-          <div className={styles.iframeWrap}>
+          <div className={`${styles.iframeWrap}  ${Style1.hight_iframe_style}`}>
             <iframe
               className={styles.iframe}
               src={data.demoIframeSrc}
               title={data.experienceHeading || "RealLives demo"}
               allow="clipboard-write"
+            />
+          </div>
+        </div>
+      ) : null} */}
+
+      {data?.demoIframeSrc ||
+      "https://demo.arcade.software/T3kOXgmqRKrPgCzTcKQF?embed" ? (
+        <div className={styles.embedBlock}>
+          {data?.experienceEmbedHeading || data?.experienceHeading ? (
+            <h2 className={styles.embedHeading}>
+              {data?.experienceEmbedHeading || data?.experienceHeading}
+            </h2>
+          ) : null}
+
+          <div className={`${styles.iframeWrap} ${Style1.hight_iframe_style}`}>
+            <iframe
+              className={`${styles.iframe} ${Style1.reallives_demo_style}`}
+              src={
+                data?.demoIframeSrc ||
+                "https://demo.arcade.software/T3kOXgmqRKrPgCzTcKQF?embed"
+              }
+              title={
+                data?.experienceEmbedHeading ||
+                data?.experienceHeading ||
+                "RealLives demo"
+              }
+              allow="clipboard-write"
+              style={{ width: "100%", height: "500px", border: "none" }}
             />
           </div>
         </div>
@@ -705,9 +733,7 @@ function RealLivesSimPanel({ data, isActive = true }) {
           </div>
         </div>
         {data.learningOutcomesImagePath ? (
-          <div
-            className={`${styles.mediaCard} ${Style1.image_style_override}`}
-          >
+          <div className={`${styles.mediaCard} ${Style1.image_style_override}`}>
             <img src={data.learningOutcomesImagePath} alt="" />
           </div>
         ) : null}
@@ -1032,22 +1058,22 @@ function RealAiPanel({ data }) {
         <div className={Style1.turning_ai_story_box}>
           <div className={Style1.first_image_grid_top}>
             <div className={Style1.image_real_grid}>
-              <img src={reflection_emmpathy} alt=""/>
+              <img src={reflection_emmpathy} alt="" />
             </div>
             <div className={Style1.image_real_grid}>
-              <img src={key_life_value} alt=""/>
+              <img src={key_life_value} alt="" />
             </div>
             <div className={Style1.image_real_grid}>
-              <img src={sdg_challanges_image} alt=""/>
+              <img src={sdg_challanges_image} alt="" />
             </div>
           </div>
 
-          <div className={Style1.flex_center }>
+          <div className={Style1.flex_center}>
             <div className={Style1.image_real_grid}>
-              <img src={birthday_image_svg} alt=""/>
+              <img src={birthday_image_svg} alt="" />
             </div>
             <div className={Style1.image_real_grid}>
-              <img src={life_analysis_image} alt=""/>
+              <img src={life_analysis_image} alt="" />
             </div>
           </div>
         </div>
@@ -1146,11 +1172,14 @@ export default function HomeschoolerProducts() {
   if (!products) return null;
 
   return (
-    <section className={`${styles.section} ${Style1.padding_pannel}`} id="products">
+    <section
+      className={`${styles.section} ${Style1.padding_pannel}`}
+      id="products"
+    >
       <div className={`${styles.inner} ${Style1.video_width_add}`}>
-       
-        <header className={`${styles.header}  ${Style1.header_product_padding}`}>
-
+        <header
+          className={`${styles.header}  ${Style1.header_product_padding}`}
+        >
           {products.heading ? (
             <h1 className={styles.title}>{products.heading}</h1>
           ) : null}
@@ -1160,7 +1189,11 @@ export default function HomeschoolerProducts() {
         </header>
 
         {tabs.length ? (
-          <div className={`${styles.tabList}  ${Style1.tabList_custome_override}`} role="tablist" aria-label="Products">
+          <div
+            className={`${styles.tabList}  ${Style1.tabList_custome_override}`}
+            role="tablist"
+            aria-label="Products"
+          >
             {tabs.map((tab) => (
               <button
                 key={tab.id}

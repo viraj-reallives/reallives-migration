@@ -10,6 +10,10 @@
   padding-top: 5rem;
 }
 
+.header_border_none{
+  border-bottom: none !important;
+}
+
 .manrope_text {
   font-family: "Manrope", sans-serif !important;
   margin: 0px !important;
