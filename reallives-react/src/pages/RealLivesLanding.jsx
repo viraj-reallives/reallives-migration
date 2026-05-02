@@ -360,10 +360,10 @@
 //               className={`${styles1.step_into_stories_btn} ${styles1.manrope_text}`}
 //               onClick={() => setIsModalOpen(true)}
 //             >
-//               Step into RealLives Stories <MoveRight />
+//               RealLives in Real Life <MoveRight />
 //             </button>
 
-//             <button className={`${styles1.step_into_stories_btn} ${styles1.manrope_text}`}>Step into RealLives Stories <MoveRight /></button>
+//             <button className={`${styles1.step_into_stories_btn} ${styles1.manrope_text}`}>RealLives in Real Life <MoveRight /></button>
 //           </div>
 
 //         </div>
@@ -465,6 +465,9 @@ const ECOSYSTEM_BANNER_URL =
 const ECOSYSTEM_BANNER_MOBILE_URL =
   "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/landing-page/exosystem-mobile.svg";
 
+/** Pause on each landing hero slide before auto-advance (ms). */
+const HERO_CAROUSEL_INTERVAL_MS = 8000;
+
 export default function RealLivesLanding() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -504,9 +507,9 @@ export default function RealLivesLanding() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setCurrentIndex((prev) => (prev === total - 1 ? 0 : prev + 1));
-    }, 3000);
+    }, HERO_CAROUSEL_INTERVAL_MS);
     return () => clearTimeout(timer);
-  }, [currentIndex]);
+  }, [currentIndex, total]);
 
   const { carousel, entryCards, ctas, footer } = landingContent;
   const logoSrc = footer?.logo ?? "";
@@ -764,7 +767,12 @@ export default function RealLivesLanding() {
             </div>
           </div>
 
-          <div className={styles1.inner_bottom_home_label}>
+          <div
+            className={styles1.inner_bottom_home_label}
+            style={{
+              "--hero-carousel-duration": `${HERO_CAROUSEL_INTERVAL_MS}ms`,
+            }}
+          >
             {[...Array(total)].map((_, index) => (
               <div
                 key={index}
@@ -780,7 +788,7 @@ export default function RealLivesLanding() {
               className={`${styles1.step_into_stories_btn} ${styles1.manrope_text}`}
               onClick={() => setIsModalOpen(true)}
             >
-              Step into RealLives Stories{" "}
+              RealLives in Real Life{" "}
               <MoveRight className={styles1.arrow_font} />
             </button>
           </div>

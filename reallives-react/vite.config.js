@@ -28,7 +28,11 @@ import { viteCommonjs } from '@originjs/vite-plugin-commonjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-export default defineConfig({
+/** Production deploy folder under Laravel `public/` (omit leading slash duplicates). */
+const PRODUCTION_BASE = '/reallives-website-main/';
+
+export default defineConfig(({ mode }) => ({
+  base: mode === 'production' ? PRODUCTION_BASE : '/',
   plugins: [
     react(),
     viteCommonjs()
@@ -62,4 +66,4 @@ export default defineConfig({
       transformMixedEsModules: true,
     },
   },
-});
+}));

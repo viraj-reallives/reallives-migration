@@ -141,7 +141,8 @@
 }
 
 .active {
-  animation: fillBar 3s linear forwards;
+  /* Duration set from RealLivesLanding via --hero-carousel-duration (matches slide interval). */
+  animation: fillBar var(--hero-carousel-duration, 8s) linear forwards;
 }
 
 .filled {

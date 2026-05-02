@@ -2,7 +2,11 @@ import { useState } from "react";
 import clsx from "clsx";
 import { useSiteContent } from "@hooks/useSiteContent";
 import LinkedInGlyph from "../../components/icons/LinkedInGlyph";
-import { workingTeamMembers } from "../../data/workingTeamMembers";
+import {
+  advisorTeamMembers,
+  internTeamMembers,
+  workingTeamMembers,
+} from "../../data/workingTeamMembers";
 import styles from "./SchoolAbout.module.css";
 import Styles1 from "../../components/costom_css/School_About_override.module.css";
 
@@ -303,11 +307,87 @@ export default function SchoolAbout() {
             
           </div>
 
-          <div className={Styles1.team_reallives_container}>
-            <h1 className={Styles1.working_team_h1}>Working Team</h1>
+          <div
+            className={Styles1.team_reallives_container}
+            aria-labelledby="our-advisors-heading"
+          >
+            <h2 id="our-advisors-heading" className={Styles1.working_team_h1}>
+              {team?.advisorsHeading ?? "Our Advisors"}
+            </h2>
+            <div className={Styles1.team_container}>
+              {advisorTeamMembers.map((item) => (
+                <div key={item.name} className={Styles1.team_card}>
+                  <img
+                    src={item.img}
+                    alt={item.name}
+                    className={Styles1.team_img}
+                  />
+                  <div className={Styles1.team_content}>
+                    <h3>{item.name}</h3>
+                    <p>{item.desc}</p>
+                    <a
+                      href={item.linkedinUrl}
+                      className={Styles1.teamLinkedinBtn}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`${item.name} on LinkedIn`}
+                    >
+                      <LinkedInGlyph size={16} />
+                      LinkedIn
+                    </a>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div
+            className={Styles1.team_reallives_container}
+            aria-labelledby="working-team-heading"
+          >
+            <h2
+              id="working-team-heading"
+              className={Styles1.working_team_h1}
+            >
+              {team?.workingTeamHeading ?? "Working Team"}
+            </h2>
 
             <div className={Styles1.team_container}>
               {workingTeamMembers.map((item) => (
+                <div key={item.name} className={Styles1.team_card}>
+                  <img
+                    src={item.img}
+                    alt={item.name}
+                    className={Styles1.team_img}
+                  />
+                  <div className={Styles1.team_content}>
+                    <h3>{item.name}</h3>
+                    <p>{item.desc}</p>
+                    <a
+                      href={item.linkedinUrl}
+                      className={Styles1.teamLinkedinBtn}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`${item.name} on LinkedIn`}
+                    >
+                      <LinkedInGlyph size={16} />
+                      LinkedIn
+                    </a>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div
+            className={Styles1.team_reallives_container}
+            aria-labelledby="our-interns-heading"
+          >
+            <h2 id="our-interns-heading" className={Styles1.working_team_h1}>
+              {team?.internsHeading ?? "Our Interns"}
+            </h2>
+            <div className={Styles1.team_container}>
+              {internTeamMembers.map((item) => (
                 <div key={item.name} className={Styles1.team_card}>
                   <img
                     src={item.img}

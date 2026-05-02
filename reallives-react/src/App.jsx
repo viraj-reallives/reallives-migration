@@ -63,9 +63,12 @@ import Individual_Research from './pages/research/Individual_Research';
 import Kame_Research from './pages/research/Kame_Research';
 import ScrollToTop from './pages/ScrollFunction/Scroll';
 
+const routerBasename =
+  import.meta.env.BASE_URL.replace(/\/+$/, '') || undefined;
+
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={routerBasename}>
     
     <ScrollToTop/>
 
