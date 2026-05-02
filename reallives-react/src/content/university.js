@@ -449,8 +449,9 @@ export const universityContent = {
       donateUrl: "https://www.reallivesfoundation.org/donate",
     },
     taxExemption: {
-      pdfUrl: "/documents/reallives-foundation-tax-exemption.pdf",
-      linkText: "View tax-exemption certificate (PDF)",
+      pdfUrl:
+        "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-foundation-page/RealLives_Foundation_Tax-Exemption.pdf",
+      linkText: "View Indian Tax-Exemption Certificate (PDF)",
     },
     stats: [
       { value: "Experiential Learning", label: "Learn by living real-world scenarios" },
