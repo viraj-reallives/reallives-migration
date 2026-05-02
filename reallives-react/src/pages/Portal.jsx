@@ -137,7 +137,7 @@ export default function Portal() {
           </Link>
 
           <a
-            href="https://changemakerindex.com/"
+            href="https://changemakerindex.com/home-page"
             className={styles.cardLink}
             target="_blank"
             rel="noopener noreferrer"

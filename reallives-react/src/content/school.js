@@ -223,22 +223,62 @@ export const schoolContent = {
         'Personalized profile of your changemaker strengths',
         'Future-ready skills for real-world impact',
       ],
+      statsLine: '18 competencies · 4 skill clusters · 5 growth stages',
+      heroSecondary:
+        'Your choices map to competencies across four clusters—personal, interpersonal, contextual awareness, and strategic thinking—so educators and learners see depth and balance in the changemaker profile.',
+      learnMoreUrl: 'https://changemakerindex.com/how-rcmi-works',
+      learnMoreLabel: 'Explore the RCMI framework',
+      illustrationAlt:
+        'RealLives ChangeMaker Index diagram with competency labels around a central framework.',
       clustersHeading: 'RCMI Clusters',
       clustersDescription:
         'RCMI is built on the foundation that effective changemakers excel across four interconnected domains. The assessment system recognizes that true changemaking ability emerges from the balance and integration of these four essential clusters:',
       illustrationPath:
         'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/real-change-maker.svg',
-      clusterLabels: [
-        { lines: ['Personal'] },
-        { lines: ['Inter', 'Personal'] },
-        { lines: ['Contextual', 'Awareness'] },
-        { lines: ['Strategic', 'Thinking'] },
-      ],
-      clusterDescriptions: [
-        'Internal/Personal Qualities\u00a0form the foundation - you must first master yourself before leading change in society, others or even in the world.',
-        'Interpersonal Competencies\u00a0 build upon this foundation - enabling you to connect with, influence, and mobilize others toward shared goals.',
-        'Contextual Awareness\u00a0ensures responsible impact - grounding your efforts in ethical responsibility and global understanding.',
-        'Strategic Thinking\u00a0provides the intellectual framework - giving you the tools to analyze complex problems and develop innovative solutions.',
+      clusters: [
+        {
+          title: 'Internal/Personal Qualities',
+          description:
+            'Internal/Personal Qualities form the foundation—you must first master yourself before leading change in society, with others, or in the world.',
+          competencies: [
+            'Self-Awareness',
+            'Resilience',
+            'Adaptability',
+            'Persistence',
+            'Emotional Intelligence',
+          ],
+        },
+        {
+          title: 'Interpersonal Competencies',
+          description:
+            'Interpersonal Competencies build upon this foundation—enabling you to connect with, influence, and mobilize others toward shared goals.',
+          competencies: [
+            'Empathy',
+            'Communication Skills',
+            'Collaboration',
+            'Leadership',
+            'Social Awareness',
+          ],
+        },
+        {
+          title: 'Strategic Thinking',
+          description:
+            'Strategic Thinking provides the intellectual framework—giving you the tools to analyze complex problems and develop innovative solutions.',
+          competencies: [
+            'Visionary Thinking',
+            'Creativity & Innovation',
+            'Problem-Solving Skills',
+            'Initiative',
+            'Risk-Taking',
+            'Critical Thinking',
+          ],
+        },
+        {
+          title: 'Contextual Awareness',
+          description:
+            'Contextual Awareness ensures responsible impact—grounding your efforts in ethical responsibility and global understanding.',
+          competencies: ['Global Awareness', 'Ethical Responsibility'],
+        },
       ],
       howItWorksHeading: 'How does it work?',
       howItWorksImagePath:
@@ -274,8 +314,10 @@ export const schoolContent = {
         "The RealLives ChangeMaker Index (RCMI), powered by Real AI, measures a user's changemaking potential through their in-game decisions and responses. Based on their score, users are placed in one of five growth stages, Seed, Sprout, Sapling, Plant, or Fruit, reflecting their changemaker journey.",
         'The report also includes a Severity Index, which maps the complexity and risks associated with different changemaking domains. Ranging from 1 (low risk) to 10 (extreme risk), this index helps users understand the potential challenges in areas like Peace & Conflict, Human Rights, or Environmental Protection. By aligning RCMI scores with domain severity, Real AI offers personalized insights on where users can contribute meaningfully while preparing for the realities of changemaking work.',
       ],
-      rcmiReportImagePath:
-        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/RealLives_Changemaker_Report-images-0.svg',
+      rcmiReportPdfUrl:
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/bilime5710-changemaker-report.pdf',
+      rcmiReportPdfPreviewLabel: 'Sample Changemaker report',
+      rcmiReportPdfOpenLabel: 'Open full PDF',
     },
   },
 

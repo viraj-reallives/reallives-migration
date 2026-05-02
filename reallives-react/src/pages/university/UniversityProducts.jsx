@@ -752,11 +752,17 @@ function RcmiPanel({ data }) {
           <div
             className={`${styles.rcmiIllustrationCard} ${Style1.rcmiIllustrationCard_card_override_style}`}
           >
-            <img src={data.illustrationPath} alt="" />
+            <div className={styles.rcmiGraphicWrap}>
+              <img
+                className={styles.rcmiGraphicImg}
+                src={data.illustrationPath}
+                alt={data.illustrationAlt ?? ""}
+              />
+            </div>
           </div>
         ) : null}
 
-        <div className={Style1.hight_100}>
+        <div className={`${styles.rcmiHeroText} ${Style1.hight_100}`}>
           {data.title ? (
             <h2 className={`${styles.rcmiTitle}  ${Style1.white_color}`}>
               {data.title}
@@ -766,6 +772,10 @@ function RcmiPanel({ data }) {
             <p className={`${styles.paragraph} ${Style1.color_e1e1e1}`}>
               {data.description}
             </p>
+          ) : null}
+
+          {data.statsLine ? (
+            <p className={styles.rcmiStatsLine}>{data.statsLine}</p>
           ) : null}
 
           {data.highlights?.length ? (
@@ -782,13 +792,29 @@ function RcmiPanel({ data }) {
               ))}
             </div>
           ) : null}
+
+          {data.heroSecondary ? (
+            <p className={`${styles.rcmiSecondary} ${Style1.color_e1e1e1}`}>
+              {data.heroSecondary}
+            </p>
+          ) : null}
+
+          {data.learnMoreUrl ? (
+            <a
+              className={styles.rcmiHeroCta}
+              href={data.learnMoreUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {data.learnMoreLabel ?? "Learn more about RCMI"}
+            </a>
+          ) : null}
         </div>
       </div>
 
       {data.clustersHeading ||
       data.clustersDescription ||
-      data.clusterLabels?.length ||
-      data.clusterDescriptions?.length ? (
+      data.clusters?.length ? (
         <div
           className={`${styles.rcmiClustersSection} ${Style1.rcmiClustersSection_override_container}`}
         >
@@ -801,27 +827,28 @@ function RcmiPanel({ data }) {
             </div>
           ) : null}
 
-          {data.clusterLabels?.length ? (
-            <div className={styles.clusterGrid}>
-              {data.clusterLabels.map((cl, i) => (
-                <div key={i} className={styles.clusterLabelBox}>
-                  {cl.lines.map((line, li) => (
-                    <span key={line}>
-                      {line}
-                      {li < cl.lines.length - 1 ? <br /> : null}
-                    </span>
-                  ))}
-                </div>
-              ))}
-            </div>
-          ) : null}
-
-          {data.clusterDescriptions?.length ? (
-            <div className={styles.clusterDescGrid}>
-              {data.clusterDescriptions.map((text) => (
-                <p key={text.slice(0, 40)} className={styles.clusterDescCard}>
-                  {text}
-                </p>
+          {data.clusters?.length ? (
+            <div className={styles.rcmiClustersGrid}>
+              {data.clusters.map((cluster) => (
+                <article
+                  key={cluster.title}
+                  className={styles.rcmiClusterCard}
+                >
+                  <h3 className={styles.rcmiClusterTitle}>{cluster.title}</h3>
+                  {cluster.description ? (
+                    <p className={styles.rcmiClusterBody}>{cluster.description}</p>
+                  ) : null}
+                  {cluster.competencies?.length ? (
+                    <ul
+                      className={styles.rcmiClusterList}
+                      aria-label={`${cluster.title} competencies`}
+                    >
+                      {cluster.competencies.map((item) => (
+                        <li key={item}>{item}</li>
+                      ))}
+                    </ul>
+                  ) : null}
+                </article>
               ))}
             </div>
           ) : null}
@@ -956,16 +983,36 @@ function RealBoardPanel({ data }) {
       {slides.length ? (
         <div className={`${styles.sliderShell} ${Style1.sliderShell_override}`}>
           <div className={styles.sliderSide}>
-            {data.platformHeadingLines?.map((line) => (
-              <p key={line} className={styles.sideHeading}>
-                {line}
-              </p>
-            ))}
-            {data.useCasesHeadingLines?.map((line) => (
-              <p key={line} className={styles.sideHeadingAccent}>
-                {line}
-              </p>
-            ))}
+            <div className={styles.realboardSideCopy}>
+              {data.platformHeadingLines?.length ? (
+                <h3 className={styles.realboardMainHeading}>
+                  {data.platformHeadingLines.map((line, idx) => (
+                    <span
+                      key={line}
+                      className={styles.realboardMainHeadingLine}
+                    >
+                      {line}
+                      {idx < data.platformHeadingLines.length - 1 ? (
+                        <br />
+                      ) : null}
+                    </span>
+                  ))}
+                </h3>
+              ) : null}
+              {data.useCasesHeadingLines?.length ? (
+                <div
+                  className={styles.realboardTagline}
+                  role="group"
+                  aria-label="Platform highlights"
+                >
+                  {data.useCasesHeadingLines.map((line) => (
+                    <span key={line} className={styles.realboardTaglineLine}>
+                      {line}
+                    </span>
+                  ))}
+                </div>
+              ) : null}
+            </div>
           </div>
 
           <div className={styles.sliderRail}>
@@ -980,17 +1027,17 @@ function RealBoardPanel({ data }) {
               ‹
             </button>
 
-            <div className={styles.sliderCenter}>
-              {current?.title ? (
-                <h4 className={styles.slideTitle}>{current.title}</h4>
-              ) : null}
-              {current?.imagePath ? (
-                <div
-                  className={`${styles.slideImage} ${Style1.p_1_rem} ${Style1.card_image_override}`}
-                >
-                  <img src={current.imagePath} alt="" />
-                </div>
-              ) : null}
+            <div className={styles.sliderStage}>
+              <div className={styles.sliderCard}>
+                {current?.title ? (
+                  <h4 className={styles.slideTitle}>{current.title}</h4>
+                ) : null}
+                {current?.imagePath ? (
+                  <div className={styles.slideImage}>
+                    <img src={current.imagePath} alt="" />
+                  </div>
+                ) : null}
+              </div>
             </div>
 
             <button
@@ -1007,20 +1054,48 @@ function RealBoardPanel({ data }) {
 
       {data.whyHeadingLines?.length || data.educatorBenefits?.length ? (
         <div className={styles.whyEducators}>
-          <h3>
-            {data.whyHeadingLines?.map((line) => (
-              <span key={line}>
-                {line}
-                <br />
-              </span>
-            ))}
-          </h3>
-          {data.educatorBenefits?.map((b) => (
-            <div key={b.title} className={styles.benefitBlock}>
-              {b.title ? <h4>{b.title}</h4> : null}
-              {b.body ? <p>{b.body}</p> : null}
-            </div>
-          ))}
+          {data.whyHeadingLines?.length ? (
+            <header className={styles.whyEducatorsHeader}>
+              <h3
+                id="realboard-why-educators-heading"
+                className={styles.whyEducatorsTitle}
+              >
+                {data.whyHeadingLines.map((line) => (
+                  <span key={line}>
+                    {line}
+                    <br />
+                  </span>
+                ))}
+              </h3>
+            </header>
+          ) : null}
+          {data.educatorBenefits?.length ? (
+            <ol
+              className={styles.benefitList}
+              aria-labelledby="realboard-why-educators-heading"
+            >
+              {data.educatorBenefits.map((b, index) => {
+                const displayTitle = (b.title ?? "")
+                  .replace(/^\d+\)\s*/, "")
+                  .trim();
+                return (
+                  <li key={b.title} className={styles.benefitCard}>
+                    <span className={styles.benefitIndex} aria-hidden="true">
+                      {index + 1}
+                    </span>
+                    <div className={styles.benefitCardBody}>
+                      {displayTitle ? (
+                        <h4 className={styles.benefitTitle}>{displayTitle}</h4>
+                      ) : null}
+                      {b.body ? (
+                        <p className={styles.benefitText}>{b.body}</p>
+                      ) : null}
+                    </div>
+                  </li>
+                );
+              })}
+            </ol>
+          ) : null}
         </div>
       ) : null}
     </div>
@@ -1085,6 +1160,53 @@ function RealAiPanel({ data }) {
         </div>
       </div>
 
+      {data.rcmiAnalysisParagraphs?.length || data.rcmiReportPdfUrl ? (
+        <div
+          className={`${styles.analysisRow} ${styles.rcmiBg} ${
+            !data.rcmiReportPdfUrl ? styles.analysisRowFull : ""
+          }`}
+        >
+          {data.rcmiReportPdfUrl ? (
+            <div className={styles.rcmiPdfPreview}>
+              <div className={styles.rcmiPdfChrome}>
+                <span className={styles.rcmiPdfChromeTitle}>
+                  {data.rcmiReportPdfPreviewLabel ?? "Sample Changemaker report"}
+                </span>
+                <a
+                  href={data.rcmiReportPdfUrl}
+                  className={styles.rcmiPdfOpenLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {data.rcmiReportPdfOpenLabel ?? "Open full PDF"}
+                </a>
+              </div>
+              <div className={styles.rcmiPdfFrameShell}>
+                <iframe
+                  title="ChangeMaker sample report PDF preview"
+                  className={styles.rcmiPdfFrame}
+                  src={`${data.rcmiReportPdfUrl}#view=FitH`}
+                />
+              </div>
+            </div>
+          ) : null}
+          <div>
+            {data.rcmiAnalysisHeading ? (
+              <h3 className={styles.analysisHeading}>
+                {data.rcmiAnalysisHeading}
+              </h3>
+            ) : null}
+            <div>
+              {data.rcmiAnalysisParagraphs?.map((p) => (
+                <p key={p.slice(0, 48)} className={styles.paragraph}>
+                  {p}
+                </p>
+              ))}
+            </div>
+          </div>
+        </div>
+      ) : null}
+
       {data.empathyCanvasAnalysisParagraphs?.length ||
       data.empathyCanvasImagePath ? (
         <div className={styles.analysisRow}>
@@ -1100,7 +1222,7 @@ function RealAiPanel({ data }) {
               </h3>
             ) : null}
             <div>
-              {data.empathyCanvasAnalysisParagraphs.map((p) => (
+              {data.empathyCanvasAnalysisParagraphs?.map((p) => (
                 <p key={p.slice(0, 48)} className={styles.paragraph}>
                   {p}
                 </p>
@@ -1114,32 +1236,6 @@ function RealAiPanel({ data }) {
               alt=""
             />
           ) : null}
-        </div>
-      ) : null}
-
-      {data.rcmiAnalysisParagraphs?.length || data.rcmiReportImagePath ? (
-        <div className={`${styles.analysisRow} ${styles.rcmiBg}`}>
-          {data.rcmiReportImagePath ? (
-            <img
-              className={styles.analysisImg}
-              src={data.rcmiReportImagePath}
-              alt=""
-            />
-          ) : null}
-          <div>
-            {data.rcmiAnalysisHeading ? (
-              <h3 className={styles.analysisHeading}>
-                {data.rcmiAnalysisHeading}
-              </h3>
-            ) : null}
-            <div>
-              {data.rcmiAnalysisParagraphs.map((p) => (
-                <p key={p.slice(0, 48)} className={styles.paragraph}>
-                  {p}
-                </p>
-              ))}
-            </div>
-          </div>
         </div>
       ) : null}
     </div>

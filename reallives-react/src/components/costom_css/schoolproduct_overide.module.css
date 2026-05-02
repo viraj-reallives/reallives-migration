@@ -100,7 +100,10 @@
     #113845 6.73%,
     rgba(228, 135, 7, 0.9) 100%
   ) !important;
-  height: 75vh !important;
+  height: auto !important;
+  min-height: clamp(22rem, 52vh, 36rem) !important;
+  padding: clamp(1.75rem, 4.5vw, 3rem) clamp(1.25rem, 3vw, 2.25rem) !important;
+  align-items: stretch !important;
   border-radius: 6px;
   overflow: hidden;
 }
@@ -109,7 +112,11 @@
   background: #081b2180 !important;
   border: none !important;
   box-shadow: none !important;
-  height: 100% !important;
+  min-height: clamp(18rem, 38vmin, 28rem) !important;
+  height: auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
   border-radius: 0px !important;
 }
 
@@ -133,15 +140,20 @@
 
 .sliderShell_override {
   display: grid !important;
-  grid-template-columns: 30% 1fr !important;
+  align-items: start !important;
+  grid-template-columns: minmax(17.5rem, 36%) 1fr !important;
 }
 
 .card_image_override {
-  height: 80vh;
+  height: auto !important;
+  max-height: min(32rem, 68vh) !important;
 }
 
 .card_image_override > img {
-  height: 100% !important;
+  height: auto !important;
+  max-height: min(32rem, 68vh) !important;
+  width: 100% !important;
+  object-fit: contain !important;
 }
 
 .real_ai_structure_container {
