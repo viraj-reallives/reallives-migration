@@ -583,7 +583,7 @@ export const gamerContent = {
         icon: 'linkedin',
       },
     ],
-    copyright: '© 2025 RealLives Foundation. All rights reserved.',
+    copyright: '© 2026 RealLives Foundation. All rights reserved.',
     columns: [
       {
         title: 'Company',

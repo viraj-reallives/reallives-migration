@@ -464,6 +464,7 @@ export default function RealLivesLanding() {
   const total = 6;
 
   // Typewriter Hook Logic
+
   const useTypewriter = (texts, speed = 80, delay = 1200) => {
     const [textIndex, setTextIndex] = useState(0);
     const [displayText, setDisplayText] = useState("");
@@ -510,12 +511,10 @@ export default function RealLivesLanding() {
   return (
     <div className={styles.page}>
 
-      
-      
       <header className={`${styles.header} ${styles1.header_border_none}`}>
-        <div
-          className={`${styles.headerInner} ${styles1.header_transparent_background}`}
-        >
+
+        <div  className={`${styles.headerInner} ${styles1.header_transparent_background}`} >
+
           <Link to="/" className={styles.logoLink} aria-label="RealLives Home">
             <img
               src={logo_rl}
@@ -524,8 +523,7 @@ export default function RealLivesLanding() {
             />
           </Link>
 
-          <div
-            className={`${styles.headerCtas} ${styles1.headerCtas_override_style}`}
+          <div className={`${styles.headerCtas} ${styles1.headerCtas_override_style}`}
           >
             <Link
               to={ctas.buyLicense.path}
@@ -533,6 +531,7 @@ export default function RealLivesLanding() {
             >
               Buy License
             </Link>
+
             <a
               href={ctas.login.url}
               className={`${styles.ctaBtn} ${styles1.home_btn_event}`}
@@ -541,6 +540,7 @@ export default function RealLivesLanding() {
             >
               Login
             </a>
+
           </div>
         </div>
       </header>
@@ -572,7 +572,7 @@ export default function RealLivesLanding() {
                 <div className={styles1.head_view_logo_pdf}>
                   <span className={styles1.icon_span_label_str}>
                     <div className={styles1.icon_pdf_logo}>
-                      <img src={card_logo_university} alt="Korea Univ" />
+                      <img src={card_logo_university} alt="Korea University" />
                     </div>
                     <p className={styles1.title_card_text}>Korea University</p>
                   </span>
@@ -595,7 +595,7 @@ export default function RealLivesLanding() {
                       <img
                         className={styles1.image_fit}
                         src={albany_university_logo_1}
-                        alt="Albany Univ"
+                        alt="Albany University"
                       />
                     </div>
                     <p className={styles1.title_card_text}>
@@ -621,7 +621,7 @@ export default function RealLivesLanding() {
                       <img
                         className={styles1.image_fit}
                         src={uppsala_university_logo_1}
-                        alt="Uppsala Univ"
+                        alt="Uppsala University"
                       />
                     </div>
                     <p className={styles1.title_card_text}>
@@ -792,6 +792,7 @@ export default function RealLivesLanding() {
         </div>
 
         {/* MODAL PORTAL */}
+
         {isModalOpen && (
           <div
             className={styles1.modal_overlay}
@@ -809,6 +810,7 @@ export default function RealLivesLanding() {
               </button>
               {carousel?.slides && <Carousel slides={carousel.slides} />}
             </div>
+
           </div>
         )}
       </section>
@@ -836,16 +838,11 @@ export default function RealLivesLanding() {
         </div>
       </section> */}
 
-      <section
-        className={`${styles.cardsSection} ${styles1.section_second_style}`}
-      >
-        <p className={`${styles1.who_i_am_text} ${styles1.noto_sans_text}`}>
-          Who am I?
-        </p>
+      <section  className={`${styles.cardsSection} ${styles1.section_second_style}`} >
 
-        <div
-          className={`${styles.cardsContainer} ${styles1.cards_container_outer}`}
-        >
+        <p className={`${styles1.who_i_am_text} ${styles1.noto_sans_text}`}> Who am I? </p>
+
+        <div className={`${styles.cardsContainer} ${styles1.cards_container_outer}`} >
           {entryCards.map((card) => {
             const texts = Array.isArray(card.title_robot)
               ? card.title_robot
@@ -873,6 +870,7 @@ export default function RealLivesLanding() {
             );
           })}
         </div>
+
       </section>
     </div>
   );
