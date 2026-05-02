@@ -34,7 +34,7 @@ export default function LicenseHub() {
         </section>
 
         {/* Keeping a tiny internal link for accessibility/testing */}
-        <div className={styles.backRow}>
+        <div className={`${styles.backRow} ${styles.margin_top_style}`}>
           <Link to="/" className={styles.backLink}>
             Back to Portal
           </Link>

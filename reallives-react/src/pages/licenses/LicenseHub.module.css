@@ -65,3 +65,6 @@
   color: var(--color-text-primary);
 }
 
+.margin_top_style{
+  margin-top: 6% !important;
+}
