@@ -1281,7 +1281,7 @@
   font-size: 0.875rem;
   font-weight: 600;
   text-decoration: none;
-  color: var(--color-brand-cyan-bright);
+  color: #333;
   background: color-mix(in srgb, var(--color-brand-cyan) 14%, transparent);
   border: 1px solid color-mix(in srgb, var(--color-brand-cyan) 35%, var(--color-border));
   border-radius: var(--radius-md);

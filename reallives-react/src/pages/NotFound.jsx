@@ -8,9 +8,6 @@ export default function NotFound() {
   return (
     <div className={styles.wrap}>
       <div className={styles.inner}>
-        <span className={styles.cat} aria-hidden="true">
-          🐱
-        </span>
         <h1 className={styles.heading}>404 — Page Not Found</h1>
         <p className={styles.pathLabel}>You tried to open</p>
         <div className={styles.pathBox}>

@@ -110,8 +110,8 @@ const dynamicBackPath = isSchoolPath
             {d.pdfPath && research.readPaperText && (
               <a
                 className={styles.pdfLink}
-                href={d.pdfPath}
-                download
+                href={encodeURI(d.pdfPath)}
+                target="_blank"
                 rel="noopener noreferrer"
               >
                 {research.readPaperText}

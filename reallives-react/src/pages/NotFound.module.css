@@ -14,14 +14,6 @@
   text-align: center;
 }
 
-.cat {
-  display: block;
-  font-size: clamp(3rem, 12vw, 4.5rem);
-  line-height: 1;
-  margin: 0 0 var(--space-16, 1rem);
-  user-select: none;
-}
-
 .heading {
   margin: 0 0 var(--space-12, 0.75rem);
   font-family: var(--font-display, var(--font-ui)), var(--font-ui), sans-serif;

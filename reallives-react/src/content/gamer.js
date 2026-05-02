@@ -562,7 +562,7 @@ export const gamerContent = {
       brandLine: 'Real AI',
       tagline: 'Turning life stories into insights',
       videoPath:
-        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/videos/real-ai-video.mp4',
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/videos/real-ai-video-30secs.mp4',
       logoPath: 'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/logos/real-r-logo.svg',
       gridImages: [
         'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/first-reflection.svg',

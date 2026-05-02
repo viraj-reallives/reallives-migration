@@ -1,73 +1,12 @@
 import { useState } from "react";
 import clsx from "clsx";
 import { useSiteContent } from "@hooks/useSiteContent";
+import LinkedInGlyph from "../../components/icons/LinkedInGlyph";
+import { workingTeamMembers } from "../../data/workingTeamMembers";
 import styles from "./SchoolAbout.module.css";
 import Styles1 from "../../components/costom_css/School_About_override.module.css";
 
 export default function SchoolAbout() {
-  const teamData = [
-    {
-      name: "Parag Mankeekar",
-      desc: "Team Leader",
-      img: "https://res.cloudinary.com/dexw6sglh/image/upload/v1776234167/user_image_y4pcl1.jpg",
-    },
-    {
-      name: "Ravi Gulhane",
-      desc: "CTO",
-      img: "https://res.cloudinary.com/dexw6sglh/image/upload/v1776234167/user_image_y4pcl1.jpg",
-    },
-    {
-      name: "Ajit Ghanekar",
-      desc: "Chief Stasitician",
-      img: "https://res.cloudinary.com/dexw6sglh/image/upload/v1776234167/user_image_y4pcl1.jpg",
-    },
-    {
-      name: "Atharva Nijampurkar",
-      desc: "Senior Backend Developer",
-      img: "https://res.cloudinary.com/dexw6sglh/image/upload/v1776234167/user_image_y4pcl1.jpg",
-    },
-    {
-      name: "Pankaj Sapkal",
-      desc: "Chief Strategist",
-      img: "https://res.cloudinary.com/dexw6sglh/image/upload/v1776234167/user_image_y4pcl1.jpg",
-    },
-    {
-      name: "Vidya Mankeekar",
-      desc: "Account and HR",
-      img: "https://res.cloudinary.com/dexw6sglh/image/upload/v1776234167/user_image_y4pcl1.jpg",
-    },
-
-    {
-      name: "Viraj Kabbur",
-      desc: "Product Manager",
-      img: "https://res.cloudinary.com/dexw6sglh/image/upload/v1776234167/user_image_y4pcl1.jpg",
-    },
-
-    {
-      name: "Adarsh Vishwakarma",
-      desc: "Frontend Developer",
-      img: "https://res.cloudinary.com/dexw6sglh/image/upload/v1776234167/user_image_y4pcl1.jpg",
-    },
-
-    {
-      name: "Janhavi Desai",
-      desc: "Translation Intern",
-      img: "https://res.cloudinary.com/dexw6sglh/image/upload/v1776234167/user_image_y4pcl1.jpg",
-    },
-
-    {
-      name: "Sakshi Kulkarni",
-      desc: "Translation Intern",
-      img: "https://res.cloudinary.com/dexw6sglh/image/upload/v1776234167/user_image_y4pcl1.jpg",
-    },
-
-    {
-      name: "Bhoomi Luniya",
-      desc: "AI Intern",
-      img: "https://res.cloudinary.com/dexw6sglh/image/upload/v1776234167/user_image_y4pcl1.jpg",
-    },
-  ];
-
   const { about } = useSiteContent();
   const [activeTab, setActiveTab] = useState(0);
 
@@ -368,8 +307,8 @@ export default function SchoolAbout() {
             <h1 className={Styles1.working_team_h1}>Working Team</h1>
 
             <div className={Styles1.team_container}>
-              {teamData.map((item, index) => (
-                <div key={index} className={Styles1.team_card}>
+              {workingTeamMembers.map((item) => (
+                <div key={item.name} className={Styles1.team_card}>
                   <img
                     src={item.img}
                     alt={item.name}
@@ -378,6 +317,16 @@ export default function SchoolAbout() {
                   <div className={Styles1.team_content}>
                     <h3>{item.name}</h3>
                     <p>{item.desc}</p>
+                    <a
+                      href={item.linkedinUrl}
+                      className={Styles1.teamLinkedinBtn}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`${item.name} on LinkedIn`}
+                    >
+                      <LinkedInGlyph size={16} />
+                      LinkedIn
+                    </a>
                   </div>
                 </div>
               ))}

@@ -298,7 +298,7 @@ export const homeschoolerContent = {
       brandLine: "Real AI",
       tagline: "Turning life stories into insights",
       videoPath:
-        "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/videos/real-ai-video.mp4",
+        "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/videos/real-ai-video-30secs.mp4",
       logoPath:
         "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/logos/real-r-logo.svg",
       gridImages: [
@@ -425,7 +425,7 @@ export const homeschoolerContent = {
     heroBackgroundImagePath:
       "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/school/changemaker-school-background.png",
     heroPrimaryCtaPath: "/reallives/homeschooler/pricing",
-    closingCtaPath: "/reallives/homeschooler/pricing",
+    closingCtaPath: "https://changemakerindex.com/home-page",
   },
 
   foundation: {
@@ -433,6 +433,8 @@ export const homeschoolerContent = {
       heading: "RealLives Foundation",
       tagline: "Changing Education Through Lived Experience.",
       body: "We believe learning should not stop at memorizing facts, it should cultivate empathy, critical thinking, and real-world awareness. Through immersive simulations, students step into lives across different countries, cultures, and realities. They make decisions, face consequences, and reflect deeply.",
+      skillsIntro:
+        "The future requires more than academic knowledge. Tomorrow's leaders need:",
       skills: [
         "Empathy",
         "Adaptability",
@@ -445,9 +447,26 @@ export const homeschoolerContent = {
       donateBtnText: "Donate Now",
       donateUrl: "https://www.reallivesfoundation.org/donate",
     },
+    taxExemption: {
+      pdfUrl: "/documents/reallives-foundation-tax-exemption.pdf",
+      linkText: "View tax-exemption certificate (PDF)",
+    },
+    stats: [
+      { value: "Experiential Learning", label: "Learn by living real-world scenarios" },
+      { value: "190+ Countries", label: "Real-world data powering every life" },
+      { value: "Dynamic Simulation", label: "Every choice shapes your life journey" },
+    ],
+    mission: {
+      eyebrow: "Why we exist",
+      heading: "Education that prepares hearts as well as minds",
+      paragraphs: [
+        "RealLives Foundation helps educators build classrooms where facts meet lived understanding—where students connect global patterns to real human stories, not only headlines.",
+        "We partner with schools and universities to weave experiential simulation into sociology, economics, design, and international relations—so learners practice empathy, ethics, and judgment in context.",
+      ],
+    },
     educationalApproach: {
       heading: "Our Educational Approach",
-      body: "We believe learning should not stop at memorizing facts, it should cultivate empathy, critical thinking, and real-world awareness.",
+      body: "Our pedagogy is built on experiential learning: guided simulation, structured reflection, and discussion that links each choice to systems and values. Learners move from observation to analysis to action—building habits they carry beyond the screen.",
       cards: [
         {
           title: "Learning Through Experience",
@@ -660,7 +679,7 @@ export const homeschoolerContent = {
           methods:
             "Qualitative coding, language network analysis, topic modeling (NetMiner)",
           pdfPath:
-            "/assets/documents/school/pdf/Kwon etal_2025_RealLives in HE class-2.pdf",
+            "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/pdfs/Kwon-etal_2025_RealLives-in-HE-class-2.pdf",
           route: "/reallives/homeschooler/Research_Card1",
         },
       },
@@ -687,7 +706,8 @@ export const homeschoolerContent = {
           ],
           methods:
             "Conceptual examination of statistics, simulation, and educational game design. Interpretive analysis rather than empirical experimentation or user studies.",
-          pdfPath: "/assets/documents/school/pdf/uwe-bristol.pdf",
+          pdfPath:
+            "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/pdfs/uwe-bristol.pdf",
           route: "/reallives/homeschooler/UaeBristol",
         },
       },
@@ -696,9 +716,9 @@ export const homeschoolerContent = {
         id: "research2-content-3",
         paperTitle:
           "Simulating REAL LIVES: Promoting Global Empathy and Interest in Learning Through Simulation Games",
-        institution: "Korea University (Republic of Korea)",
+        institution: "Santa Clara University, California, USA",
         whatWasStudied:
-          "How probabilistic life modeling influences learning, empathy, and understanding of global inequality.",
+          "How role-playing simulated lives from different countries affects students’ affective and motivational learning outcomes. ",
         logoPath:
           "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/Santa-clara-university.svg",
         disableCardClick: true,
@@ -720,7 +740,8 @@ export const homeschoolerContent = {
           ],
           methods:
             "Quasi-experimental classroom study. Participants: 301 high school students from three Northern California schools",
-          pdfPath: "/assets/documents/school/pdf/Santa Clara University.pdf",
+          pdfPath:
+            "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/pdfs/Santa-Clara-University.pdf",
           route: "/reallives/homeschooler/Santa_Clara",
         },
       },
@@ -731,9 +752,9 @@ export const homeschoolerContent = {
           "Real Lives and the Problem of Distributive Justice (Essay on video games, meritocracy, and justice)",
         institution: "State University of New York (SUNY) at Albany",
         whatWasStudied:
-          "How probabilistic life modeling influences learning, empathy, and understanding of global inequality.",
+          "The pedagogical potential of life-simulation games to introduce players to debates on distributive justice, luck, and social inequality. ",
         logoPath:
-          "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/University-Albany.svg",
+          "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/UAlbany_Minerva_Formal_Left_PurpleBlack.png",
         disableCardClick: true,
         detail: {
           heroImagePath:
@@ -751,7 +772,8 @@ export const homeschoolerContent = {
           ],
           methods:
             "Quasi-experimental classroom study. Participants: 301 high school students from three Northern California schools",
-          pdfPath: "/assets/documents/school/pdf/albany.pdf",
+          pdfPath:
+            "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/pdfs/albany.pdf",
           route: "/reallives/homeschooler/Albany_University",
         },
       },
@@ -785,7 +807,7 @@ export const homeschoolerContent = {
           methods:
             "Quasi-experimental classroom study with secondary school students (ages 14–19). Participants played the Real Lives simulation, experiencing life as migrants from MENA regions.",
           pdfPath:
-            "/assets/documents/school/pdf/ThomasNygrenResearchPaper-1.pdf",
+            "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/pdfs/ThomasNygrenResearchPaper-1.pdf",
           route: "/reallives/homeschooler/Uppsala_University",
         },
       },
@@ -794,9 +816,9 @@ export const homeschoolerContent = {
         id: "research2-content-5",
         paperTitle:
           "Computer-Based Life Simulations and Young Adolescents: Identity Exploration, Information Learning, and Sense-Making",
-        institution: "State University of New York (SUNY) at Albany",
+        institution: "Public School, New York City, USA",
         whatWasStudied:
-          "Evaluation of RealLives Simulation as a game-based empathy education tool for high school and university learners",
+          " How young adolescents learn while engaging in a computer-based life simulation. ",
         heading: "Individual Research by Kallen Tsikalas",
         disableCardClick: true,
         detail: {
@@ -818,7 +840,8 @@ export const homeschoolerContent = {
           ],
           methods:
             "Descriptive mixed-methods study\u00a0combining qualitative and quantitative data. Analysis of\u00a063 simulated lives\u00a0played by 13 low-income, urban adolescents.",
-          pdfPath: "/assets/documents/school/pdf/Kallen Tsikalas.pdf",
+          pdfPath:
+            "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/pdfs/Kallen-Tsikalas.pdf",
           route: "/reallives/homeschooler/Individual_Research",
         },
       },

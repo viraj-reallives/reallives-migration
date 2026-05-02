@@ -535,6 +535,7 @@
 // }
 
 import { useEffect, useRef, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import { useSiteContent } from "@hooks/useSiteContent";
 import styles from "../school/SchoolProducts.module.css";
 import Style1 from "../../components/costom_css/schoolproduct_overide.module.css";
@@ -1262,8 +1263,12 @@ function renderProductTabPanel(tabId, activeId, products) {
 
 export default function HomeschoolerProducts() {
   const { products } = useSiteContent();
+  const [searchParams, setSearchParams] = useSearchParams();
   const tabs = products?.productTabs ?? [];
-  const [activeId, setActiveId] = useState(tabs[0]?.id ?? "tab1");
+  const defaultId = tabs[0]?.id ?? "tab1";
+  const tabParam = searchParams.get("tab");
+  const activeId =
+    tabParam && tabs.some((t) => t.id === tabParam) ? tabParam : defaultId;
 
   if (!products) return null;
 
@@ -1298,7 +1303,13 @@ export default function HomeschoolerProducts() {
                 aria-selected={activeId === tab.id}
                 id={`product-tab-${tab.id}`}
                 className={`${styles.tab} ${activeId === tab.id ? styles.tabActive : ""}`}
-                onClick={() => setActiveId(tab.id)}
+                onClick={() => {
+                  setSearchParams((prev) => {
+                    const next = new URLSearchParams(prev);
+                    next.set("tab", tab.id);
+                    return next;
+                  });
+                }}
               >
                 {tab.label}
               </button>

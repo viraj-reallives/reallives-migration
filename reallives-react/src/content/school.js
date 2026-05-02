@@ -293,7 +293,7 @@ export const schoolContent = {
       brandLine: 'Real AI',
       tagline: 'Turning life stories into insights',
       videoPath:
-        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/videos/real-ai-video.mp4',
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/videos/real-ai-video-30secs.mp4',
       logoPath: 'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/logos/real-r-logo.svg',
       gridImages: [
         'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/first-reflection.svg',
@@ -420,7 +420,7 @@ export const schoolContent = {
     closingHeading: 'Ready to Become a ChangeMaker?',
     closingSubtext: 'Your journey from understanding to impact starts now',
     closingButtonText: 'Become a ChangeMaker',
-    closingCtaPath: '/reallives/school/products',
+    closingCtaPath: 'https://changemakerindex.com/home-page',
     heroBackgroundImagePath:
       'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/school/changemaker-school-background.png',
   },
@@ -431,6 +431,8 @@ export const schoolContent = {
       tagline: 'Changing Education Through Lived Experience.',
       body:
         'We believe learning should not stop at memorizing facts, it should cultivate empathy, critical thinking, and real-world awareness. Through immersive simulations, students step into lives across different countries, cultures, and realities. They make decisions, face consequences, and reflect deeply.',
+      skillsIntro:
+        "The future requires more than academic knowledge. Tomorrow's leaders need:",
       skills: [
         'Empathy',
         'Adaptability',
@@ -443,10 +445,27 @@ export const schoolContent = {
       donateBtnText: 'Donate Now',
       donateUrl: 'https://www.reallivesfoundation.org/donate',
     },
+    taxExemption: {
+      pdfUrl: '/documents/reallives-foundation-tax-exemption.pdf',
+      linkText: 'View tax-exemption certificate (PDF)',
+    },
+    stats: [
+      { value: "Experential Learning", label: "Learn by living real-world scenarios" },
+      { value: "190+ Countries", label: "Real-world data powering every life" },
+      { value: "Dynamic Simulation", label: "Every choice shapes your life journey" },
+    ],
+    mission: {
+      eyebrow: 'Why we exist',
+      heading: 'Education that prepares hearts as well as minds',
+      paragraphs: [
+        'RealLives Foundation helps educators build classrooms where facts meet lived understanding—where students connect global patterns to real human stories, not only headlines.',
+        'We partner with schools and universities to weave experiential simulation into sociology, economics, design, and international relations—so learners practice empathy, ethics, and judgment in context.',
+      ],
+    },
     educationalApproach: {
       heading: 'Our Educational Approach',
       body:
-        'We believe learning should not stop at memorizing facts, it should cultivate empathy, critical thinking, and real-world awareness.',
+        'Our pedagogy is built on experiential learning: guided simulation, structured reflection, and discussion that links each choice to systems and values. Learners move from observation to analysis to action—building habits they carry beyond the screen.',
       cards: [
         {
           title: 'Learning Through Experience',
@@ -704,9 +723,9 @@ export const schoolContent = {
         id: 'research2-content-3',
         paperTitle:
           'Simulating REAL LIVES: Promoting Global Empathy and Interest in Learning Through Simulation Games',
-        institution: 'Korea University (Republic of Korea)',
+        institution: 'Santa Clara University, California, USA',
         whatWasStudied:
-          'How probabilistic life modeling influences learning, empathy, and understanding of global inequality.',
+          'How role-playing simulated lives from different countries affects students’ affective and motivational learning outcomes. ',
         logoPath:
           'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/Santa-clara-university.svg',
            disableCardClick: true,
@@ -739,9 +758,9 @@ export const schoolContent = {
           'Real Lives and the Problem of Distributive Justice (Essay on video games, meritocracy, and justice)',
         institution: 'State University of New York (SUNY) at Albany',
         whatWasStudied:
-          'How probabilistic life modeling influences learning, empathy, and understanding of global inequality.',
+          'The pedagogical potential of life-simulation games to introduce players to debates on distributive justice, luck, and social inequality. ',
         logoPath:
-          'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/University-Albany.svg',
+          'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/UAlbany_Minerva_Formal_Left_PurpleBlack.png',
            disableCardClick: true,
         detail: {
           heroImagePath: 'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/University-albany-png.png',
@@ -803,9 +822,9 @@ export const schoolContent = {
         id: 'research2-content-5',
         paperTitle:
           'Computer-Based Life Simulations and Young Adolescents: Identity Exploration, Information Learning, and Sense-Making',
-        institution: 'State University of New York (SUNY) at Albany',
+        institution: 'Public School, New York City, USA',
         whatWasStudied:
-          'Evaluation of RealLives Simulation as a game-based empathy education tool for high school and university learners',
+          ' How young adolescents learn while engaging in a computer-based life simulation. ',
         heading: 'Individual Research by Kallen Tsikalas',
         disableCardClick: true,
         detail: {
@@ -824,7 +843,8 @@ export const schoolContent = {
           ],
           methods:
             'Descriptive mixed-methods study\u00a0combining qualitative and quantitative data. Analysis of\u00a063 simulated lives\u00a0played by 13 low-income, urban adolescents.',
-          pdfPath: '/assets/documents/school/pdf/Kallen Tsikalas.pdf',
+          pdfPath:
+            'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/pdfs/Kallen-Tsikalas.pdf',
            route: "/reallives/school/Individual_Research"
         },
       },

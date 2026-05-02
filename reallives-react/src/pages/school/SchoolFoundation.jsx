@@ -1,8 +1,18 @@
 import { Link } from "react-router-dom";
-import clsx from "clsx";
+import {
+  Award,
+  BookOpen,
+  Brain,
+  FileText,
+  Globe,
+  Heart,
+  Puzzle,
+  RefreshCw,
+  Scale,
+  Sparkles,
+} from "lucide-react";
 import { useSiteContent } from "@hooks/useSiteContent";
 import styles from "./SchoolFoundation.module.css";
-import Style1 from "../../components/costom_css/SchoolFoundation_override.module.css";
 
 /** Match Foundation page spec: ETH Zurich, IIT Bombay, Navamindradhiraj, KyungHee (order). */
 
@@ -12,6 +22,22 @@ const WORKSHOP_TITLES_IN_ORDER = [
   "Navamindradhiraj University Workshop",
   "KyungHee University SDG Workshop",
 ];
+
+const SKILL_ICON_BY_LABEL = {
+  Empathy: Heart,
+  Adaptability: RefreshCw,
+  "Cultural awareness": Globe,
+  "Ethical Reasoning": Scale,
+  "Problem-solving skills": Puzzle,
+  Leadership: Award,
+};
+
+const APPROACH_ICON_BY_TITLE = {
+  "Learning Through Experience": BookOpen,
+  "Building Empathy": Heart,
+  "Strengthening Critical Thinking": Brain,
+  "Empowering Students": Sparkles,
+};
 
 function pickWorkshopCards(cards) {
   if (!cards?.length) return [];
@@ -27,17 +53,29 @@ export default function SchoolFoundation() {
     return null;
   }
 
-  const { hero, educationalApproach, globalImpact, rcmi } = foundation;
+  const {
+    hero,
+    educationalApproach,
+    globalImpact,
+    stats,
+    mission,
+    taxExemption,
+  } = foundation;
   const workshopCards = pickWorkshopCards(impact?.cards);
+
+  const skillsIntro =
+    hero.skillsIntro ??
+    "The future requires more than academic knowledge. Tomorrow's leaders need:";
 
   return (
     <div className={styles.page}>
-      
-      <section className={`${styles.hero} ${Style1.hero_conatiner}`}aria-labelledby="foundation-hero-heading">
-        <div className={`${styles.heroInner} ${Style1.h_100}`}>
-          <div
-            className={`${styles.heroCopy} ${Style1.heroCopy_override_style}`}
-          >
+      <section
+        className={styles.hero}
+        aria-labelledby="foundation-hero-heading"
+      >
+        <div className={styles.heroInner}>
+          <div className={styles.heroCopy}>
+            <p className={styles.heroEyebrow}>Nonprofit · Global education</p>
             {hero.heading ? (
               <h1 id="foundation-hero-heading" className={styles.heroHeading}>
                 {hero.heading}
@@ -47,83 +85,94 @@ export default function SchoolFoundation() {
               <p className={styles.heroTagline}>{hero.tagline}</p>
             ) : null}
             {hero.body ? <p className={styles.heroBody}>{hero.body}</p> : null}
-    
-            {/* {hero.donateUrl ? (
-              <div className={styles.donateCluster}>
-                {hero.donateCtaText ? (
-                  <span className={styles.donateLead}>{hero.donateCtaText}</span>
-                ) : null}
-                <a
-                  className={`${styles.donateButton} ${Style1.display_none}`}
-                  href={hero.donateUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {hero.donateBtnText ?? 'Donate'}
-                </a>
-              </div>
-            ) : null} */}
-
+            {taxExemption?.pdfUrl ? (
+              <a
+                href={taxExemption.pdfUrl}
+                className={styles.taxExemptionLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FileText size={17} strokeWidth={1.75} aria-hidden />
+                <span>
+                  {taxExemption.linkText ??
+                    "View tax-exemption certificate (PDF)"}
+                </span>
+              </a>
+            ) : null}
           </div>
 
-          <div className={Style1.outer_card_style}>
-            <p>
-              The future requires more than academic knowledge. Students need -
-            </p>
-
+          <div className={styles.skillsPanel}>
+            <p className={styles.skillsPanelIntro}>{skillsIntro}</p>
             {hero.skills?.length ? (
               <ul
-                className={`${styles.skillGrid} ${Style1.skillGrid_override_style}`}
-                aria-label="Foundation skills"
+                className={styles.skillGrid}
+                aria-label="Capabilities students develop"
               >
-                {hero.skills.map((skill) => (
-                  <li key={skill} className={`${styles.skillCard} ${Style1.cards_box_foundation }`}>
-                    {skill}
-                  </li>
-                ))}
+                {hero.skills.map((skill) => {
+                  const Icon = SKILL_ICON_BY_LABEL[skill] ?? Sparkles;
+                  return (
+                    <li key={skill} className={styles.skillCard}>
+                      <span className={styles.skillIcon} aria-hidden>
+                        <Icon size={20} strokeWidth={1.75} />
+                      </span>
+                      <span className={styles.skillLabel}>{skill}</span>
+                    </li>
+                  );
+                })}
               </ul>
             ) : null}
           </div>
         </div>
       </section>
 
-      {/* <div className={Style1.foundation_first_container}>
-        <div className={Style1.foundation_child_1}>
-          <span className={Style1.inner_title_section}>
-            <h1>RealLives Foundation</h1>
-            <p>Changing Education Through Lived Experience.</p>
-          </span>
+      {stats?.length ? (
+        <section
+          className={styles.statStrip}
+          aria-label="Foundation highlights"
+        >
+          <ul className={styles.statList}>
+            {stats.map((item) => (
+              <li key={item.label} className={styles.statItem}>
+                <span className={styles.statValue}>{item.value}</span>
+                <span className={styles.statLabel}>{item.label}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
 
-          <span className={Style1.inner_title_section_2}>
-            <p>
-              We believe learning should not stop at memorizing facts, it should
-              cultivate empathy, critical thinking, and real-world awareness.
-            </p>
-
-            <p>
-              Through immersive simulations, students step into lives across
-              different countries, cultures, and realities. They make decisions,
-              face consequences, and reflect deeply.
-            </p>
-          </span>
-
-          <div className={Style1.invest_in_chnagemaker_button}>
-            <p>Invest in future ChangeMakers</p>
-            <a href="#" className={Style1.donate_now_btn}>
-              Donate Now.
-            </a>
+      {mission?.paragraphs?.length ? (
+        <section
+          className={styles.mission}
+          aria-labelledby="foundation-mission-heading"
+        >
+          <div className={styles.missionInner}>
+            {mission.eyebrow ? (
+              <p className={styles.missionEyebrow}>{mission.eyebrow}</p>
+            ) : null}
+            {mission.heading ? (
+              <h2
+                id="foundation-mission-heading"
+                className={styles.missionHeading}
+              >
+                {mission.heading}
+              </h2>
+            ) : null}
+            <div className={styles.missionBody}>
+              {mission.paragraphs.map((p, i) => (
+                <p key={`mission-p-${i}`}>{p}</p>
+              ))}
+            </div>
           </div>
-        </div>
+        </section>
+      ) : null}
 
-        <div className={Style1.foundation_child_2}></div>
-      </div> */}
-
-      <section className={styles.approach} aria-labelledby="foundation-approach-heading" >
-        <div className={`${styles.approachInner}  ${Style1.approachInner_overrid} `}>
-
-         
-
-          <div className={`${styles.approachCopy} `}>
+      <section
+        className={styles.approach}
+        aria-labelledby="foundation-approach-heading"
+      >
+        <div className={styles.approachInner}>
+          <div className={styles.approachCopy}>
             {educationalApproach.heading ? (
               <h2
                 id="foundation-approach-heading"
@@ -138,25 +187,33 @@ export default function SchoolFoundation() {
           </div>
           {educationalApproach.cards?.length ? (
             <div className={styles.approachCards}>
-              {educationalApproach.cards.map((card) => (
-                <article key={card.title} className={styles.approachCard}>
-                  {card.title ? (
-                    <h3 className={styles.approachCardTitle}>{card.title}</h3>
-                  ) : null}
-                  {card.description ? (
-                    <p className={styles.approachCardDesc}>
-                      {card.description}
-                    </p>
-                  ) : null}
-                </article>
-              ))}
+              {educationalApproach.cards.map((card) => {
+                const Icon = APPROACH_ICON_BY_TITLE[card.title] ?? BookOpen;
+                return (
+                  <article key={card.title} className={styles.approachCard}>
+                    <div className={styles.approachCardIcon} aria-hidden>
+                      <Icon size={22} strokeWidth={1.75} />
+                    </div>
+                    {card.title ? (
+                      <h3 className={styles.approachCardTitle}>{card.title}</h3>
+                    ) : null}
+                    {card.description ? (
+                      <p className={styles.approachCardDesc}>
+                        {card.description}
+                      </p>
+                    ) : null}
+                  </article>
+                );
+              })}
             </div>
           ) : null}
         </div>
       </section>
 
-      <section className={styles.globalImpact} aria-labelledby="foundation-global-heading" >
-
+      <section
+        className={styles.globalImpact}
+        aria-labelledby="foundation-global-heading"
+      >
         <div className={styles.globalInner}>
           {globalImpact.heading ? (
             <h2 id="foundation-global-heading" className={styles.globalHeading}>
@@ -168,17 +225,50 @@ export default function SchoolFoundation() {
           ) : null}
           {workshopCards.length ? (
             <ul className={styles.workshopGrid}>
-              {workshopCards.map((card) => (
-                <li key={card.title} className={styles.workshopCard}>
-                  <h3 className={styles.workshopTitle}>{card.title}</h3>
-                  {card.university ? (
-                    <p className={styles.workshopLoc}>{card.university}</p>
-                  ) : null}
-                  {card.date ? (
-                    <p className={styles.workshopDate}>{card.date}</p>
-                  ) : null}
-                </li>
-              ))}
+              {workshopCards.map((card) => {
+                const body = (
+                  <>
+                    {card.imagePath ? (
+                      <div className={styles.workshopThumb}>
+                        <img
+                          src={card.imagePath}
+                          alt=""
+                          className={styles.workshopImage}
+                          loading="lazy"
+                        />
+                      </div>
+                    ) : null}
+                    <div className={styles.workshopCardBody}>
+                      <h3 className={styles.workshopTitle}>{card.title}</h3>
+                      {card.university ? (
+                        <p className={styles.workshopLoc}>{card.university}</p>
+                      ) : null}
+                      {card.date ? (
+                        <p className={styles.workshopDate}>{card.date}</p>
+                      ) : null}
+                      <span className={styles.workshopCardCta}>
+                        Workshop details
+                      </span>
+                    </div>
+                  </>
+                );
+
+                return (
+                  <li key={card.title} className={styles.workshopItem}>
+                    {card.learnMorePath ? (
+                      <Link
+                        className={styles.workshopCard}
+                        to={card.learnMorePath}
+                        aria-label={`${card.title} — open workshop in Impact`}
+                      >
+                        {body}
+                      </Link>
+                    ) : (
+                      <div className={styles.workshopCard}>{body}</div>
+                    )}
+                  </li>
+                );
+              })}
             </ul>
           ) : null}
           {globalImpact.learnMorePath ? (
@@ -187,52 +277,7 @@ export default function SchoolFoundation() {
             </Link>
           ) : null}
         </div>
-
       </section>
-
-
-      {/* <section className={styles.rcmi} aria-labelledby="foundation-rcmi-heading">
-        <div className={styles.rcmiInner}>
-          {rcmi.heading ? (
-            <h2 id="foundation-rcmi-heading" className={styles.rcmiHeading}>
-              {rcmi.heading}
-            </h2>
-          ) : null}
-          {rcmi.subheading ? (
-            <p className={styles.rcmiSub}>{rcmi.subheading}</p>
-          ) : null}
-
-          <div className={styles.rcmiDiagramWrap}>
-            {rcmi.diagramImage ? (
-              <img
-                className={styles.rcmiDiagram}
-                src={rcmi.diagramImage}
-                alt=""
-                loading="lazy"
-              />
-            ) : null}
-            {rcmi.competencies?.map((label, i) => (
-              <span
-                key={`${label}-${i}`}
-                className={clsx(styles.competency, styles[`compPos${i}`])}
-              >
-                {label}
-              </span>
-            ))}
-          </div>
-
-          {rcmi.learnMoreUrl ? (
-            <a
-              className={styles.rcmiLearnMore}
-              href={rcmi.learnMoreUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {rcmi.learnMoreText ?? "Learn More"}
-            </a>
-          ) : null}
-        </div>
-      </section> */}
     </div>
   );
 }

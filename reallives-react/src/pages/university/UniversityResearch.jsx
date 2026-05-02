@@ -339,7 +339,12 @@ function ResearchDetail({ research, item, onBack }) {
         </div>
         <div className={styles.detailActions}>
           {d.pdfPath && research.readPaperText ? (
-            <a className={styles.pdfLink} href={d.pdfPath} download rel="noopener noreferrer">
+            <a
+              className={styles.pdfLink}
+              href={d.pdfPath}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {research.readPaperText}
             </a>
           ) : null}

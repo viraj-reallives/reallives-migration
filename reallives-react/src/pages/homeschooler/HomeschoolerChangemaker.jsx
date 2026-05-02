@@ -172,7 +172,9 @@
 //   );
 // }
 
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import SiteContext from "@context/SiteContext";
 import { useSiteContent } from "@hooks/useSiteContent";
 import styles from "../school/SchoolChangemaker.module.css";
 import Style1 from "../../components/costom_css/ProductChangemaker_override.module.css";
@@ -214,7 +216,11 @@ function CtaLink({ href, className, children }) {
 }
 
 export default function HomeschoolerChangemaker() {
+  const { siteKey } = useContext(SiteContext);
   const { changemaker: cm } = useSiteContent();
+
+  const productTabHref = (tabId) =>
+    `/reallives/${siteKey}/products?tab=${encodeURIComponent(tabId)}`;
 
   const data = cm || {};
 
@@ -440,9 +446,12 @@ export default function HomeschoolerChangemaker() {
                   </div>
                 </div>
 
-                <div className={Style1.product_link_arrow}>
+                <Link
+                  to={productTabHref("tab1")}
+                  className={Style1.product_link_arrow}
+                >
                   Learn More <ArrowRight className={Style1.arrow_icon} />
-                </div>
+                </Link>
               </div>
             </div>
 
@@ -470,9 +479,12 @@ export default function HomeschoolerChangemaker() {
                   </div>
                 </div>
 
-                <div className={Style1.product_link_arrow}>
+                <Link
+                  to={productTabHref("tab3")}
+                  className={Style1.product_link_arrow}
+                >
                   Learn More <ArrowRight className={Style1.arrow_icon} />
-                </div>
+                </Link>
               </div>
             </div>
 
@@ -500,9 +512,12 @@ export default function HomeschoolerChangemaker() {
                   </div>
                 </div>
 
-                <div className={Style1.product_link_arrow}>
+                <Link
+                  to={productTabHref("tab4")}
+                  className={Style1.product_link_arrow}
+                >
                   Learn More <ArrowRight className={Style1.arrow_icon} />
-                </div>
+                </Link>
               </div>
             </div>
 
@@ -533,9 +548,12 @@ export default function HomeschoolerChangemaker() {
                   </div>
                 </div>
 
-                <div className={Style1.product_link_arrow}>
+                <Link
+                  to={productTabHref("tab2")}
+                  className={Style1.product_link_arrow}
+                >
                   Learn More <ArrowRight className={Style1.arrow_icon} />
-                </div>
+                </Link>
               </div>
             </div>
           </div>
