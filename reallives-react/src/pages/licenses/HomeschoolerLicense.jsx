@@ -110,9 +110,7 @@ function IncludedPanel() {
                 <img src={Realboard_pricing_logo} alt="" />
               </div>
 
-              <p
-                className={`${styles.includedItemTitle} ${Style1.include_title_text}`}
-              >
+              <p className={`${styles.includedItemTitle} ${Style1.include_title_text}`} >
                 RealBoard
               </p>
             </div>
@@ -126,14 +124,13 @@ function IncludedPanel() {
 
       
         <li className={styles.includedItem}>
+
           <span className={Style1.box_product_container}>
             <div className={`${styles.includedItemTop} ${Style1.flex_center_gap_10px}`}>
               <div className={Style1.icon_row_box}>
                 <img src={Rl_logo_pricing} alt="" />
               </div>
-              <p
-                className={`${styles.includedItemTitle} ${Style1.include_title_text}`}
-              >
+              <p className={`${styles.includedItemTitle} ${Style1.include_title_text}`}>
                 Real AI
               </p>
             </div>
@@ -143,10 +140,13 @@ function IncludedPanel() {
               real-world data and linked to UN SDGs. Build empathy through
               authentic global experiences.
             </p>
+
           </span>
+
         </li>
 
       </ul>
+
     </aside>
    
   );
@@ -177,7 +177,10 @@ export default function HomeschoolerLicense() {
   };
 
   return (
-    <main className={styles.page}>
+
+    
+
+    <main className={`${styles.page} ${Style1.license_conatier_main}`}>
 
       <div className={`${styles.container} ${Style1.license_conatier_main} ${Style1.max_width} ${Style1.container_override_style}`}>
         <header className={styles.header}>

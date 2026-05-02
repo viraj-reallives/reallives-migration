@@ -1,3 +1,11 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+
+
 .license_conatier_main {
   background-color: black !important;
 }
@@ -42,7 +50,7 @@
 
 .container_override_style {
   gap: 0rem !important;
-  height: 100vh;
+  /* height: 100vh; */
 }
 
 .icon_row_box {
