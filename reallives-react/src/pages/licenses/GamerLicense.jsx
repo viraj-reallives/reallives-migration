@@ -177,7 +177,9 @@ export default function GamerLicense() {
   };
 
   return (
-    <main className={styles.page}>
+
+    
+    <main className={`${styles.page} ${Style1.license_conatier_main}`}>
 
       <div className={`${styles.container} ${Style1.license_conatier_main} ${Style1.max_width} ${Style1.container_override_style}`}>
         <header className={styles.header}>
