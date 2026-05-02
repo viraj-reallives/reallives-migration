@@ -445,20 +445,25 @@ import styles1 from "../components/costom_css/realliveslanding.coustome.module.c
 import logo_rl from "../add-image/logo.svg";
 import rl_mid_logo from "../add-image/mid-rl-logo.svg";
 import card_logo_university from "../add-image/logo-card-rl.svg";
-import card_banner_1 from "../add-image/card_banner_1.png";
 import albany_university_logo_1 from "../add-image/albany-universty-logo.svg";
 import uppsala_university_logo_1 from "../add-image/Uppsala_University_logo-card.svg";
-import second_research_paper_1 from "../add-image/second_research_paper.png";
-import therd_research_paper_1 from "../add-image/therd-research-paper.png";
 import mumbai_workshop_1 from "../add-image/mumbai_workshop_1.png";
 import eth_workshop_1 from "../add-image/school-3-image-slider.png";
 import kyungeeh_university_workshop_1 from "../add-image/3-rd-workshop-2.png";
 import navamindradhiraj_university_workshop_1 from "../add-image/second-workshop-2.png";
 import earth_banner_image from "../add-image/earth-banner-card.png";
-import { X, MoveRight, ArrowBigDown } from "lucide-react";
+import { X, MoveRight, ChevronsDown } from "lucide-react";
 
+const RESEARCH_PREVIEW_KOREA_URL =
+  "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/landing-page/korea.jpg";
+const RESEARCH_PREVIEW_ALBANY_URL =
+  "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/landing-page/albany.jpg";
+const RESEARCH_PREVIEW_UPPSALA_URL =
+  "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/landing-page/uppsala.jpg";
 const ECOSYSTEM_BANNER_URL =
   "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/landing-page/ecosystem.svg";
+const ECOSYSTEM_BANNER_MOBILE_URL =
+  "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/landing-page/exosystem-mobile.svg";
 
 export default function RealLivesLanding() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -586,7 +591,10 @@ export default function RealLivesLanding() {
                   </Link>
                 </div>
                 <div className={styles1.pdf_img_viwe}>
-                  <img src={card_banner_1} alt="Card Banner" />
+                  <img
+                    src={RESEARCH_PREVIEW_KOREA_URL}
+                    alt="Korea University research paper preview"
+                  />
                 </div>
               </div>
 
@@ -612,7 +620,10 @@ export default function RealLivesLanding() {
                   </Link>
                 </div>
                 <div className={styles1.pdf_img_viwe}>
-                  <img src={second_research_paper_1} alt="Research Paper" />
+                  <img
+                    src={RESEARCH_PREVIEW_ALBANY_URL}
+                    alt="University at Albany research paper preview"
+                  />
                 </div>
               </div>
 
@@ -638,7 +649,10 @@ export default function RealLivesLanding() {
                   </Link>
                 </div>
                 <div className={styles1.pdf_img_viwe}>
-                  <img src={therd_research_paper_1} alt="Research Paper" />
+                  <img
+                    src={RESEARCH_PREVIEW_UPPSALA_URL}
+                    alt="Uppsala University research paper preview"
+                  />
                 </div>
               </div>
             </div>
@@ -715,7 +729,17 @@ export default function RealLivesLanding() {
               </p>
             </div>
             <div className={styles1.image_banner_full_new}>
-              <img src={ECOSYSTEM_BANNER_URL} alt="Ecosystem" />
+              <picture>
+                <source
+                  media="(max-width: 768px)"
+                  srcSet={ECOSYSTEM_BANNER_MOBILE_URL}
+                  type="image/svg+xml"
+                />
+                <img
+                  src={ECOSYSTEM_BANNER_URL}
+                  alt="RealLives learning ecosystem: Real AI, RealBoard, Empathy Canvas, languages, ChangeMaker Index, and SDGs"
+                />
+              </picture>
             </div>
           </div>
 
@@ -762,7 +786,9 @@ export default function RealLivesLanding() {
           </div>
 
           <button
-
+            type="button"
+            aria-label="Scroll to content below"
+            className={styles.scrollPastHeroBtn}
             onClick={(e) => {
               const section = document.querySelector(
                 '[class*="section_second_style"]',
@@ -773,22 +799,12 @@ export default function RealLivesLanding() {
                 e.currentTarget.style.display = "none";
               }
             }}
-            
-            style={{
-              position: "fixed",
-              bottom: "0.5%",
-              right: "20px",
-              zIndex: 1000,
-              background: "#11e2ff",
-              color: "#fff",
-              border: "none",
-              borderRadius: "50%",
-              padding: "10px",
-              cursor: "pointer",
-            }}
           >
-            <ArrowBigDown size={30} />
-
+            <ChevronsDown
+              className={styles.scrollPastHeroIcon}
+              strokeWidth={1.75}
+              aria-hidden
+            />
           </button>
 
         </div>

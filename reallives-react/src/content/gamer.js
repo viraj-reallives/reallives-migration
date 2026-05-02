@@ -280,10 +280,6 @@ export const gamerContent = {
 
   pricing: {
     sectionHeading: 'RealLives Licenses',
-    savingsNote: {
-      text: 'You Save $600 with this plan',
-      adjacentTierId: 'trailblazer',
-    },
     tiers: [
       {
         id: 'wanderer',
@@ -328,7 +324,7 @@ export const gamerContent = {
         title: 'RealLives Simulation',
         description:
           'Experience life from birth to death in different countries and circumstances. Make decisions that shape your virtual life while learning about global inequalities and cultural differences.',
-        imagePath: '/assets/images/gamer/logo-image/real-r-logo.svg',
+        imagePath: 'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/logos/real-r-logo.svg',
         featureTags: ['Life Simulation', 'Cultural Awareness'],
         learnMoreLinkText: 'Learn More',
         productTabId: 'tab1',
@@ -337,7 +333,7 @@ export const gamerContent = {
         title: 'Empathy Canvas',
         description:
           'A structured reflection framework that helps students process their RealLives experiences and develop deeper empathy through guided self-reflection and peer discussion.',
-        imagePath: '/assets/images/gamer/logo-image/empathy-logo.svg',
+        imagePath: 'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/logos/empathy-logo.svg',
         featureTags: ['Reflection Tool', 'Empathy Building'],
         learnMoreLinkText: 'Learn More',
         productTabId: 'tab3',
@@ -346,7 +342,7 @@ export const gamerContent = {
         title: 'RealBoard',
         description:
           'A safe, private social platform where students can share their RealLives experiences, engage in meaningful discussions, and learn from diverse perspectives in a moderated environment.',
-        imagePath: '/assets/images/gamer/logo-image/realboard-logo.svg',
+        imagePath: 'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/logos/realboard-logo.svg',
         featureTags: ['Social Platform', 'Peer Learning'],
         learnMoreLinkText: 'Learn More',
         productTabId: 'tab4',
@@ -355,7 +351,7 @@ export const gamerContent = {
         title: 'ChangeMaker Index',
         description:
           'Revolutionary assessment tool that measures 18 global competencies through gameplay decisions rather than self-reporting, providing authentic insights into student development.',
-        imagePath: '/assets/images/gamer/logo-image/changemaker-logo.svg',
+        imagePath: 'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/logos/changemaker-logo.svg',
         featureTags: ['Assessment Tool', '18 Competencies'],
         learnMoreLinkText: 'Learn More',
         productTabId: 'tab2',

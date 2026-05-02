@@ -2,17 +2,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
 
 .container_new_home {
-  box-sizing: border-box;
-  min-height: 100dvh;
-  height: 100dvh;
+  height: 100vh !important;
   background: linear-gradient(0deg, #006e7d 0%, #001f23 84.12%) !important;
-  /* One row — carousel dots/button are absolutely positioned (18% row was empty) */
   display: grid;
-  grid-template-rows: minmax(0, 1fr);
-  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: 1fr 18%;
   position: relative;
-  padding-top: clamp(4.75rem, 11vh, 6rem);
-  padding-bottom: clamp(6rem, 14vh, 8.5rem);
+  padding-top: 5rem;
 }
 
 .header_border_none{
@@ -80,11 +75,12 @@
 
 .outer_first_home_new {
   display: grid;
-  grid-template-rows: auto minmax(0, 1fr);
-  align-items: center;
-  min-height: 0;
-  height: 100%;
-  max-height: none;
+  grid-template-rows: auto 1fr;
+  /* gap: 2rem; */
+  height: 90vh;
+  /* opacity: 0; */
+  /* transition: opacity 0.3s ease-in-out; */
+  /* background-color: #242421; */
 }
 
 .inner_top_home_label {
@@ -93,56 +89,37 @@
   justify-content: center;
   flex-direction: column;
   font-weight: 500;
-  font-size: clamp(1.95rem, 4.2vw, 3rem);
-  line-height: 1.2;
+  font-size: 55px;
+  line-height: 69px;
   color: #ffffff;
-  flex-shrink: 0;
-}
-
-.pdf_container_home_new > .inner_top_home_label .manrope_text {
-  font-size: clamp(1.35rem, 3.2vw, 2.45rem);
-  line-height: 1.28;
 }
 
 .inner_mid_home_label {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 0;
-  width: 100%;
+  height: 550px;
 }
 
 .icon_rl_mid {
-  width: min(240px, 42vw);
-  max-width: 100%;
-  height: auto;
-  max-height: min(20vh, 180px);
-  flex: 0 1 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 38%;
+  height: 100%;
 }
 
 .icon_rl_mid > img {
   width: 100%;
-  height: auto;
-  max-height: min(20vh, 180px);
+  height: 100%;
   object-fit: contain;
 }
 
 .inner_bottom_home_label {
   width: 100%;
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: clamp(2.75rem, 7vh, 4.5rem);
+  bottom: 8%;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  padding-inline: clamp(1rem, 4vw, 2rem);
-  padding-bottom: 0.35rem;
-  box-sizing: border-box;
 }
 
 .label_up_fill {
@@ -186,36 +163,24 @@
 
 .pdf_container_home_new {
   display: grid;
-  grid-template-rows: auto minmax(0, 1fr);
-  gap: clamp(1.1rem, 2.4vh, 2rem);
-  min-height: 0;
-  height: 100%;
-  max-height: none;
-  align-content: start;
+  grid-template-rows: auto 1fr;
+  gap: 1rem;
+  height: 90vh;
 }
 
 .container_label_pdf_structure {
-  padding: 0 clamp(0.5rem, 1.75vw, 1.25rem);
+  padding: 0rem 10rem;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(1rem, 2.2vw, 2.25rem);
-  margin-top: 0;
-  min-height: 0;
-  width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
-  height: 100%;
-  align-items: stretch;
-  align-content: start;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4rem;
+  margin-top: 6%;
 }
 
 .label_card_new_str {
   display: grid;
-  grid-template-rows: auto minmax(0, 1fr);
-  gap: 0.5rem;
-  min-height: 0;
-  height: 100%;
-  max-height: none;
+  grid-template-rows: auto 1fr;
+  gap: 7px;
+  max-height: 450px;
 }
 
 .head_view_logo_pdf {
@@ -253,42 +218,28 @@
 }
 
 .pdf_img_viwe {
-  min-height: 0;
-  height: 100%;
-  max-height: min(52vh, 520px);
-  padding: 0 6px;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.06);
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  max-height: 380px;
+  padding: 0px 8px;
 }
 
 .pdf_img_viwe > img {
-  display: block;
   width: 100%;
-  height: auto;
-  max-height: min(52vh, 520px);
-  object-fit: contain;
+  height: 100%;
+  object-fit: cover;
 }
 
 .global_impact_container {
   display: grid;
-  grid-template-rows: auto minmax(0, 1fr);
+  grid-template-rows: 13% 1fr;
   gap: 1rem;
-  height: 100%;
-  min-height: 0;
-  max-height: none;
+  height: 90vh;
 }
 
 .global_impact_container_last {
   display: grid;
-  grid-template-rows: auto minmax(0, 1fr);
+  grid-template-rows: auto 1fr;
   gap: 1rem;
-  height: 100%;
-  min-height: 0;
-  max-height: none;
+  height: 90vh;
 }
 
 .global_impact_banner_container {
@@ -326,7 +277,13 @@
   margin-top: 1%;
 }
 
-.image_banner_full_new > img {
+.image_banner_full_new > picture {
+  display: block;
+  width: 100%;
+}
+
+.image_banner_full_new > img,
+.image_banner_full_new > picture img {
   height: 500px;
   width: 100%;
   object-fit: contain;
@@ -560,7 +517,25 @@
 }
 
 
+@media(max-width:1440px){
+.pdf_img_viwe{
+   max-height: 100%;
+}
+}
+
+@media(max-width:1368px){
+
+  .pdf_img_viwe{
+   max-height: 100%;
+}
+
+}
+
 @media (max-width: 1180px) {
+
+     .pdf_img_viwe{
+   max-height:380px;
+}
 
   .cards_container_outer {
     padding: 0rem 3rem;
@@ -573,6 +548,10 @@
 
 @media (max-width: 1024px) {
 
+      .pdf_img_viwe{
+   max-height:380px;
+}
+
   .cards_container_outer {
     padding: 0rem 3rem;
   }
@@ -583,6 +562,10 @@
 }
 
 @media (max-width: 991px) {
+
+      .pdf_img_viwe{
+   max-height:380px;
+}
 
   .cards_container_outer {
     padding: 0rem 1rem;
@@ -608,6 +591,10 @@
 }
 
 @media (max-width: 860px) {
+
+      .pdf_img_viwe{
+   max-height:380px;
+}
 
   .image_banner_label_box_new {
     gap: 3px;
@@ -669,16 +656,7 @@
   }
 
   .icon_rl_mid {
-    width: min(200px, 56vw);
-    max-height: min(22vh, 165px);
-    max-width: 100%;
-    height: auto;
-    flex: 0 1 auto;
-  }
-
-  .icon_rl_mid > img {
-    height: auto;
-    max-height: min(22vh, 165px);
+    width: 95%;
   }
 
   .home_btn_event {
@@ -720,7 +698,8 @@
     height: 40vh;
   }
 
-  .image_banner_full_new > img {
+  .image_banner_full_new > img,
+  .image_banner_full_new > picture img {
     height: 300px;
     padding: 1rem;
   }
@@ -776,6 +755,10 @@
 
 @media (max-width: 800px) {
 
+      .pdf_img_viwe{
+   max-height:380px;
+}
+
   .image_banner_label_box_new {
     gap: 3px;
   }
@@ -836,16 +819,7 @@
   }
 
   .icon_rl_mid {
-    width: min(200px, 56vw);
-    max-height: min(22vh, 165px);
-    max-width: 100%;
-    height: auto;
-    flex: 0 1 auto;
-  }
-
-  .icon_rl_mid > img {
-    height: auto;
-    max-height: min(22vh, 165px);
+    width: 95%;
   }
 
   .home_btn_event {
@@ -887,7 +861,8 @@
     height: 40vh;
   }
 
-  .image_banner_full_new > img {
+  .image_banner_full_new > img,
+  .image_banner_full_new > picture img {
     height: 300px;
     padding: 1rem;
   }
@@ -943,6 +918,10 @@
 
 @media (max-width: 760px) {
 
+      .pdf_img_viwe{
+   max-height:380px;
+}
+
   .image_banner_label_box_new {
     gap: 3px;
   }
@@ -1003,16 +982,7 @@
   }
 
   .icon_rl_mid {
-    width: min(200px, 56vw);
-    max-height: min(22vh, 165px);
-    max-width: 100%;
-    height: auto;
-    flex: 0 1 auto;
-  }
-
-  .icon_rl_mid > img {
-    height: auto;
-    max-height: min(22vh, 165px);
+    width: 95%;
   }
 
   .home_btn_event {
@@ -1054,7 +1024,8 @@
     height: 40vh;
   }
 
-  .image_banner_full_new > img {
+  .image_banner_full_new > img,
+  .image_banner_full_new > picture img {
     height: 300px;
     padding: 1rem;
   }
@@ -1110,6 +1081,10 @@
 
 @media (max-width: 700px) {
 
+      .pdf_img_viwe{
+   max-height:380px;
+}
+
   .image_banner_label_box_new {
     gap: 3px;
   }
@@ -1170,16 +1145,7 @@
   }
 
   .icon_rl_mid {
-    width: min(200px, 56vw);
-    max-height: min(22vh, 165px);
-    max-width: 100%;
-    height: auto;
-    flex: 0 1 auto;
-  }
-
-  .icon_rl_mid > img {
-    height: auto;
-    max-height: min(22vh, 165px);
+    width: 95%;
   }
 
   .home_btn_event {
@@ -1221,7 +1187,8 @@
     height: 40vh;
   }
 
-  .image_banner_full_new > img {
+  .image_banner_full_new > img,
+  .image_banner_full_new > picture img {
     height: 300px;
     padding: 1rem;
   }
@@ -1278,6 +1245,10 @@
 
 @media (max-width: 660px) {
 
+      .pdf_img_viwe{
+   max-height:380px;
+}
+
   .image_banner_label_box_new {
     gap: 3px;
   }
@@ -1338,16 +1309,7 @@
   }
 
   .icon_rl_mid {
-    width: min(200px, 56vw);
-    max-height: min(22vh, 165px);
-    max-width: 100%;
-    height: auto;
-    flex: 0 1 auto;
-  }
-
-  .icon_rl_mid > img {
-    height: auto;
-    max-height: min(22vh, 165px);
+    width: 95%;
   }
 
   .home_btn_event {
@@ -1389,7 +1351,8 @@
     height: 40vh;
   }
 
-  .image_banner_full_new > img {
+  .image_banner_full_new > img,
+  .image_banner_full_new > picture img {
     height: 300px;
     padding: 1rem;
   }
@@ -1445,6 +1408,10 @@
 
 @media (max-width: 600px) {
 
+      .pdf_img_viwe{
+   max-height:380px;
+}
+
   .image_banner_label_box_new {
     gap: 3px;
   }
@@ -1505,16 +1472,7 @@
   }
 
   .icon_rl_mid {
-    width: min(200px, 56vw);
-    max-height: min(22vh, 165px);
-    max-width: 100%;
-    height: auto;
-    flex: 0 1 auto;
-  }
-
-  .icon_rl_mid > img {
-    height: auto;
-    max-height: min(22vh, 165px);
+    width: 95%;
   }
 
   .home_btn_event {
@@ -1556,7 +1514,8 @@
     height: 40vh;
   }
 
-  .image_banner_full_new > img {
+  .image_banner_full_new > img,
+  .image_banner_full_new > picture img {
     height: 300px;
     padding: 1rem;
   }
@@ -1589,6 +1548,10 @@
 }
 
 @media (max-width: 560px) {
+
+      .pdf_img_viwe{
+   max-height:380px;
+}
 
   .who_i_am_text {
     padding: 0rem 0rem 0rem 0rem;
@@ -1667,16 +1630,7 @@
   }
 
   .icon_rl_mid {
-    width: min(200px, 56vw);
-    max-height: min(22vh, 165px);
-    max-width: 100%;
-    height: auto;
-    flex: 0 1 auto;
-  }
-
-  .icon_rl_mid > img {
-    height: auto;
-    max-height: min(22vh, 165px);
+    width: 95%;
   }
 
   .home_btn_event {
@@ -1718,7 +1672,8 @@
     height: 40vh;
   }
 
-  .image_banner_full_new > img {
+  .image_banner_full_new > img,
+  .image_banner_full_new > picture img {
     height: 300px;
     padding: 1rem;
   }
@@ -1756,6 +1711,10 @@
     gap: 1rem !important;
     grid-template-rows: auto auto auto auto;
   }
+
+      .pdf_img_viwe{
+   max-height:380px;
+}
 
   .who_i_am_text {
     padding: 0rem 0rem 0rem 0rem;
@@ -1839,16 +1798,7 @@
   }
 
   .icon_rl_mid {
-    width: min(200px, 56vw);
-    max-height: min(22vh, 165px);
-    max-width: 100%;
-    height: auto;
-    flex: 0 1 auto;
-  }
-
-  .icon_rl_mid > img {
-    height: auto;
-    max-height: min(22vh, 165px);
+    width: 95%;
   }
 
   .home_btn_event {
@@ -1890,7 +1840,8 @@
     height: 40vh;
   }
 
-  .image_banner_full_new > img {
+  .image_banner_full_new > img,
+  .image_banner_full_new > picture img {
     height: 300px;
     padding: 1rem;
   }
@@ -1928,6 +1879,10 @@
     gap: 1rem !important;
     grid-template-rows: auto auto auto auto;
   }
+
+      .pdf_img_viwe{
+   max-height:380px;
+}
 
   .who_i_am_text {
     padding: 0rem 0rem 0rem 0rem;
@@ -2006,16 +1961,7 @@
   }
 
   .icon_rl_mid {
-    width: min(200px, 56vw);
-    max-height: min(22vh, 165px);
-    max-width: 100%;
-    height: auto;
-    flex: 0 1 auto;
-  }
-
-  .icon_rl_mid > img {
-    height: auto;
-    max-height: min(22vh, 165px);
+    width: 95%;
   }
 
   .home_btn_event {
@@ -2057,7 +2003,8 @@
     height: 40vh;
   }
 
-  .image_banner_full_new > img {
+  .image_banner_full_new > img,
+  .image_banner_full_new > picture img {
     height: 300px;
     padding: 1rem;
   }
@@ -2095,6 +2042,10 @@
     gap: 1rem !important;
     grid-template-rows: auto auto auto auto;
   }
+
+      .pdf_img_viwe{
+   max-height:380px;
+}
 
   .who_i_am_text {
     padding: 0rem 0rem 0rem 0rem;
@@ -2173,16 +2124,7 @@
   }
 
   .icon_rl_mid {
-    width: min(200px, 56vw);
-    max-height: min(22vh, 165px);
-    max-width: 100%;
-    height: auto;
-    flex: 0 1 auto;
-  }
-
-  .icon_rl_mid > img {
-    height: auto;
-    max-height: min(22vh, 165px);
+    width: 95%;
   }
 
   .home_btn_event {
@@ -2224,7 +2166,8 @@
     height: 40vh;
   }
 
-  .image_banner_full_new > img {
+  .image_banner_full_new > img,
+  .image_banner_full_new > picture img {
     height: 300px;
     padding: 1rem;
   }
@@ -2262,6 +2205,10 @@
     gap: 1rem !important;
     grid-template-rows: auto auto auto auto;
   }
+
+      .pdf_img_viwe{
+   max-height:380px;
+}
 
   .who_i_am_text {
     padding: 0rem 0rem 0rem 0rem;
@@ -2340,16 +2287,7 @@
   }
 
   .icon_rl_mid {
-    width: min(200px, 56vw);
-    max-height: min(22vh, 165px);
-    max-width: 100%;
-    height: auto;
-    flex: 0 1 auto;
-  }
-
-  .icon_rl_mid > img {
-    height: auto;
-    max-height: min(22vh, 165px);
+    width: 95%;
   }
 
   .home_btn_event {
@@ -2391,7 +2329,8 @@
     height: 40vh;
   }
 
-  .image_banner_full_new > img {
+  .image_banner_full_new > img,
+  .image_banner_full_new > picture img {
     height: 300px;
     padding: 1rem;
   }
