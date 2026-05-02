@@ -190,7 +190,7 @@ export default function Portal() {
         </div>
          
         <p className={`${styles.copyright} ${styles1.no_copy_write_title}`}>
-          © 2025 RealLives World. All rights reserved.
+          © 2026 RealLives World. All rights reserved.
         </p>
       </div>
     </main>
