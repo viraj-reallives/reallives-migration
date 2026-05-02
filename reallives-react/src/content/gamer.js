@@ -1,3 +1,6 @@
+import { empathyCanvasTabShared, realBoardTabShared } from './productsEmpathyRealBoardShared';
+import { schoolContent } from './school';
+
 export const gamerContent = {
   navLinks: [
     { label: 'Home', path: '/reallives/gamer' },
@@ -24,7 +27,7 @@ export const gamerContent = {
       closing: 'of all',
     },
     welcomeParagraph:
-      "Welcome to The Largest Gamified Simulation Engine of Human Experience on the Planet. We're revolutionizing gaming by bringing back the power of imagination through immersive text based simulations",
+      'RealLives Simulation is revolutionizing gaming by bringing back the power of imagination through immersive text based simulations',
     bottomTagline:
       'The Largest Gamified Simulation Engine of Human Experience on the Planet',
     gameplay: {
@@ -70,7 +73,9 @@ export const gamerContent = {
     },
   },
 
-  about: {
+  about: schoolContent.about,
+
+  aboutLegacy: {
     heading: 'About Us',
     tabs: ['History', 'The Team', 'Global Support', 'Inventor'],
     history: {
@@ -367,6 +372,9 @@ export const gamerContent = {
   },
 
   products: {
+    heading: 'Our Educational Products',
+    subheading:
+      'Comprehensive tools designed to build empathy, global awareness, and changemaker skills through immersive educational experiences.',
     productTabs: [
       { id: 'tab1', label: 'RealLives Sim' },
       { id: 'tab2', label: 'RL ChangeMaker Index' },
@@ -380,19 +388,20 @@ export const gamerContent = {
         'Using real-world demographic and economic data, the simulation places students in authentic scenarios where they make decisions about school, work, family, health, and more. Every choice leads to realistic consequences, shaped by global inequality, access, and opportunity.',
         "RealLives isn’t just a game—it’s a window into the lived experience of people across the globe. Whether you’re born into a wealthy family in Sweden or a struggling household in rural India, the simulation challenges you to navigate life based on real-world constraints and possibilities.",
       ],
-      worldImagePath: '/assets/images/gamer/image-add/reallives-world-img.svg',
+      worldImagePath:
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/reallives-world-img.svg',
       fosterHeading: 'Foster Empathy Through Experience',
       fosterDescription:
         'By making choices and living consequences, students organically develop empathy. They begin to ask: What would I do in this situation? What opportunities would I miss or gain just by being born elsewhere?',
       experienceHeading: 'Experience RealLives',
-      arcadeEmbedUrl:
+      demoIframeSrc:
         'https://demo.arcade.software/T3kOXgmqRKrPgCzTcKQF?embed&embed_mobile=tab&embed_desktop=inline&show_copy_link=true',
       drivenByDataText: 'RealLives is driven by real world data',
       dataLogos: [
-        '/assets/images/gamer/logo-image/united nations.svg',
-        '/assets/images/gamer/logo-image/world bank group.svg',
-        '/assets/images/gamer/logo-image/lonely planet.svg',
-        '/assets/images/gamer/logo-image/birds logo.svg',
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/united-nations.svg',
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/world-bank-group.svg',
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/lonely-planet.svg',
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/birds-logo.svg',
       ],
       learningOutcomesHeading: 'Learning Outcomes',
       learningOutcomes: [
@@ -427,12 +436,11 @@ export const gamerContent = {
             'Build awareness of diverse perspectives, reflect on equity and resilience, and embrace interdependence.',
         },
       ],
-      learningOutcomesImagePath: '/assets/images/gamer/image/larning-outcome-image.svg',
-      heroVideoPath: '/assets/images/gamer/video/RL STEM DARK.mp4',
-      alternateHeroVideoPath: '/assets/images/gamer/video/RL 21ST CENTURY SKILLS DARK.mp4',
+      learningOutcomesImagePath:
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/learning-outcome-image.svg',
       heroVideoPaths: [
-        '/assets/images/gamer/video/RL STEM DARK.mp4',
-        '/assets/images/gamer/video/RL 21ST CENTURY SKILLS DARK.mp4',
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/gamer/videos/RL-STEM-DARK.mp4',
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/gamer/videos/RL-21ST-CENTURY-SKILLS-DARK.mp4',
       ],
       videoTrackLabels: ['1', '2'],
     },
@@ -445,31 +453,38 @@ export const gamerContent = {
         'Personalized profile of your changemaker strengths',
         'Future-ready skills for real-world impact',
       ],
-      illustrationPath: '/assets/images/gamer/image/real-change-maker.svg',
+      illustrationPath:
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/real-change-maker.svg',
       clustersHeading: 'RCMI Clusters',
       clustersDescription:
         'RCMI is built on the foundation that effective changemakers excel across four interconnected domains. The assessment system recognizes that true changemaking ability emerges from the balance and integration of these four essential clusters:',
-      clusterColumnLabels: ['Personal', 'Inter\nPersonal', 'Contextual\nAwareness', 'Strategic\nThinking'],
-      clusterColumnDescriptions: [
+      clusterLabels: [
+        { lines: ['Personal'] },
+        { lines: ['Inter', 'Personal'] },
+        { lines: ['Contextual', 'Awareness'] },
+        { lines: ['Strategic', 'Thinking'] },
+      ],
+      clusterDescriptions: [
         'Internal/Personal Qualities\u00a0form the foundation - you must first master yourself before leading change in society, others or even in the world.',
         'Interpersonal Competencies\u00a0 build upon this foundation - enabling you to connect with, influence, and mobilize others toward shared goals.',
         'Contextual Awareness\u00a0ensures responsible impact - grounding your efforts in ethical responsibility and global understanding.',
         'Strategic Thinking\u00a0provides the intellectual framework - giving you the tools to analyze complex problems and develop innovative solutions.',
       ],
       howItWorksHeading: 'How does it work?',
-      howItWorksDiagramPath: '/assets/images/gamer/image/rcmi-dark-gamer.svg',
-      experienceRcmiHeading: 'Experience RCMI',
-      experienceRcmiArcadeUrl:
+      howItWorksImagePath:
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/reallives-changemaker-image.svg',
+      experienceEmbedHeading: 'Experience RCMI',
+      demoIframeSrc:
         'https://demo.arcade.software/i527E8HZo4YlXdSC8arb?embed&embed_mobile=tab&embed_desktop=inline&show_copy_link=true',
     },
-    empathyCanvasTab: {
+    empathyCanvasTabLegacy: {
       bannerImagePath: '/assets/images/gamer/image/empathy_canvas.svg',
       tailoredHeading: 'Our Empathy Canvas has been tailored for RealLives',
       tailoredImagePath: '/assets/images/gamer/image/emapthy_canvas_1.svg',
       personalisedHeading: 'Get a personalised Empathy Score using Real AI',
       personalisedImagePath: '/assets/images/gamer/image/emapthy_canvas_2.svg',
     },
-    realBoardTab: {
+    realBoardTabLegacy: {
       bannerImagePath: '/assets/images/gamer/image/RealBoard_Banner.svg',
       sidebarPrimaryHeadingLines: ['What you can do ', 'on RealBoard?'],
       sidebarSecondaryHeadingLines: ['One Platform ', 'Multiple Use Cases'],
@@ -506,28 +521,33 @@ export const gamerContent = {
     realAiTab: {
       brandLine: 'Real AI',
       tagline: 'Turning life stories into insights',
-      videoPath: '/assets/images/gamer/video/real-ai-video.mp4',
-      logoPath: '/assets/images/gamer/image/real-r-logo.svg',
+      videoPath:
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/videos/real-ai-video.mp4',
+      logoPath: 'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/logos/real-r-logo.svg',
       gridImages: [
-        '/assets/images/gamer/image/first-reflection.svg',
-        '/assets/images/gamer/image/key-life-value.svg',
-        '/assets/images/gamer/image/sdg-challenge.svg',
-        '/assets/images/gamer/image/birth-story.svg',
-        '/assets/images/gamer/image/life-analysis.svg',
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/first-reflection.svg',
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/key-life-value.svg',
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/sdg-challenge.svg',
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/birth-story.svg',
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/life-analysis.svg',
       ],
       empathyCanvasAnalysisHeading: 'Empathy Canvas analysis \nusing Real AI',
       empathyCanvasAnalysisParagraphs: [
         "The Empathy Canvas, powered by Real AI, is a unique tool that analyzes a user's emotional intelligence based on their responses to 9 carefully designed questions. Each response is processed using our Real AI engine to generate personalized AI reflections, providing deeper insights into the user’s emotional awareness and interpersonal understanding.",
         'Based on this analysis, users receive an overall Empathy Score out of 100, along with actionable feedback. This process helps individuals explore their capacity for empathy — a vital trait in changemaking. Real AI also powers the RealLives ChangeMaker Index and other interactive reports, making complex human values like empathy, resilience, and social connection measurable and meaningful.',
       ],
-      empathyCanvasImagePath: '/assets/images/gamer/image/emapthy_canvas_2.svg',
+      empathyCanvasImagePath:
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/empathy_canvas_2.svg',
       rcmiAnalysisHeading: 'RCMI analysis using Real AI',
       rcmiAnalysisParagraphs: [
         "The RealLives ChangeMaker Index (RCMI), powered by Real AI, measures a user's changemaking potential through their in-game decisions and responses. Based on their score, users are placed in one of five growth stages, Seed, Sprout, Sapling, Plant, or Fruit, reflecting their changemaker journey.",
         'The report also includes a Severity Index, which maps the complexity and risks associated with different changemaking domains. Ranging from 1 (low risk) to 10 (extreme risk), this index helps users understand the potential challenges in areas like Peace & Conflict, Human Rights, or Environmental Protection. By aligning RCMI scores with domain severity, Real AI offers personalized insights on where users can contribute meaningfully while preparing for the realities of changemaking work.',
       ],
-      rcmiReportImagePath: '/assets/images/gamer/image/RealLives_Changemaker_Report-images-0.svg',
+      rcmiReportImagePath:
+        'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/RealLives_Changemaker_Report-images-0.svg',
     },
+    empathyCanvasTab: empathyCanvasTabShared,
+    realBoardTab: realBoardTabShared,
   },
 
   contact: {
@@ -549,8 +569,8 @@ export const gamerContent = {
   footer: {
     tagline:
       "The Largest Gamified Simulation Engine of Human Experience on the Planet. We're revolutionizing gaming by bringing back the power of imagination through immersive text-based simulations.",
-    logo: '/assets/images/gamer/logo-image/reallives-white-logo.svg',
-    logoPath: '/assets/images/gamer/logo-image/reallives-white-logo.svg',
+    logo: 'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/logos/real-r-logo.svg',
+    logoPath: 'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/logos/real-r-logo.svg',
     socialLinks: [
       {
         platform: 'YouTube',

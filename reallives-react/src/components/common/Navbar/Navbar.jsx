@@ -6,6 +6,7 @@ import { useTheme } from "@context/ThemeContext";
 import SiteContext from "@context/SiteContext";
 import styles from "./Navbar.module.css";
 import Style1 from "../Navbar/Navbar_custome.module.css";
+import homeLogo from "../../../add-image/logo.svg";
 
 var getHomePath = () => {
   const path = typeof window !== "undefined" ? window.location.pathname : "";
@@ -85,6 +86,21 @@ function MailIcon() {
   );
 }
 
+function StoryIcon() {
+  return (
+    <svg
+      className={styles.itemIcon}
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <path d="M5 4.5h10.5a2 2 0 0 1 2 2V19l-4-2-4 2-4-2-4 2V6.5a2 2 0 0 1 2-2H5z" />
+      <line x1="7.5" y1="9" x2="15.5" y2="9" />
+      <line x1="7.5" y1="12" x2="15.5" y2="12" />
+    </svg>
+  );
+}
+
 function ThemeIcon({ isDark }) {
   if (isDark) {
     return (
@@ -138,8 +154,6 @@ export default function Navbar() {
     () => (siteKey ? `/reallives/${siteKey}` : "/"),
     [siteKey],
   );
-
-  const logoSrc = footer.logo ?? footer.logoPath ?? "";
 
   const isPathActive = (path) => location.pathname.startsWith(path);
 
@@ -250,11 +264,7 @@ export default function Navbar() {
             onClick={() => handlePrimaryNavClick(`${basePath}/about`)}
           >
             <span className={styles.dropdownIconWrap}>
-              {logoSrc ? (
-                <img src={logoSrc} alt="" className={styles.dropdownLogoIcon} />
-              ) : (
-                <span className={styles.itemDot} aria-hidden="true" />
-              )}
+              <StoryIcon />
             </span>
             <div className={styles.dropdownItemBody}>
               <span className={styles.dropdownItemTitle}>About Us</span>
@@ -310,11 +320,7 @@ export default function Navbar() {
             className={styles.mobileSubItem}
             onClick={() => handlePrimaryNavClick(`${basePath}/about`)}
           >
-            {logoSrc ? (
-              <img src={logoSrc} alt="" className={styles.dropdownLogoIcon} />
-            ) : (
-              <span className={styles.itemDot} aria-hidden="true" />
-            )}
+            <StoryIcon />
             <div className={styles.dropdownItemBody}>
               <span className={styles.dropdownItemTitle}>About Us</span>
               <span className={styles.dropdownItemDescription}>
@@ -369,15 +375,7 @@ export default function Navbar() {
             className={styles.logoButton}
             onClick={() => navigate("/reallives")}
           >
-            {logoSrc ? (
-              <img
-                src={logoSrc}
-                alt={footer.organizationName ?? "RealLives"}
-                className={styles.logoImg}
-              />
-            ) : (
-              <span className={styles.logoFallback}>RealLives</span>
-            )}
+            <img src={homeLogo} alt={footer.organizationName ?? "RealLives"} className={styles.logoImg} />
           </button>
 
           <div className={styles.siteSwitcher}>
@@ -600,14 +598,16 @@ export default function Navbar() {
         </nav>
 
         <div className={styles.rightCluster}>
-          <button
-            type="button"
-            className={styles.themeToggle}
-            onClick={() => toggleTheme?.()}
-            aria-label={theme === "dark" ? "Use light theme" : "Use dark theme"}
-          >
-            <ThemeIcon isDark={theme !== "dark"} />
-          </button>
+          {!isGamer ? (
+            <button
+              type="button"
+              className={styles.themeToggle}
+              onClick={() => toggleTheme?.()}
+              aria-label={theme === "dark" ? "Use light theme" : "Use dark theme"}
+            >
+              <ThemeIcon isDark={theme !== "dark"} />
+            </button>
+          ) : null}
 
           <div className={styles.ctaRow}>
             <a

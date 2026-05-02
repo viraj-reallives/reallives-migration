@@ -57,6 +57,11 @@
   position: relative;
   display: flex;
   align-items: stretch;
+  border-radius: 0.7rem;
+  border: 1px solid color-mix(in srgb, var(--color-site-brand) 26%, var(--color-border-soft));
+  box-shadow:
+    0 4px 14px rgba(2, 12, 30, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
 .siteSwitcherButton {
@@ -64,16 +69,32 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--space-8);
-  padding: 0 var(--space-16);
-  min-height: 3rem;
+  padding: 0.125rem var(--space-16) 0;
+  min-height: 2.75rem;
   border: none;
-  border-radius: 0;
-  background-color: var(--color-site-brand);
+  border-radius: 0.65rem;
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--color-site-brand) 58%, #10192f) 0%,
+    color-mix(in srgb, var(--color-site-brand) 42%, #0d1530) 100%
+  );
   color: var(--color-white);
   font-family: var(--font-ui);
-  font-size: 0.9375rem;
-  font-weight: 600;
+  font-size: 0.875rem;
+  font-weight: 650;
+  letter-spacing: 0.01em;
   cursor: pointer;
+  transition:
+    filter 0.2s ease,
+    transform 0.2s ease;
+}
+
+.siteSwitcherButton:hover {
+  filter: brightness(1.06);
+}
+
+.siteSwitcherButton:active {
+  transform: translateY(1px);
 }
 
 .siteSwitcherLabel {
@@ -92,15 +113,17 @@
   position: absolute;
   top: 100%;
   inset-inline-start: 0;
-  margin-top: var(--space-4);
+  margin-top: var(--space-8);
   width: 17.5rem;
   max-height: calc(100vh - 4rem);
   overflow-y: auto;
-  background-color: var(--color-bg-elevated);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-pop);
-  border: 1px solid var(--color-border-soft);
-  padding: var(--space-8) 0;
+  background-color: color-mix(in srgb, var(--color-bg-elevated) 94%, #061127);
+  border-radius: 0.9rem;
+  box-shadow:
+    0 14px 30px rgba(0, 0, 0, 0.28),
+    0 2px 8px rgba(0, 0, 0, 0.16);
+  border: 1px solid color-mix(in srgb, var(--color-site-brand) 28%, var(--color-border-soft));
+  padding: var(--space-8);
   z-index: 1200;
   opacity: 1;
   transform: translateY(0);
@@ -110,19 +133,23 @@
 .siteSwitcherItem {
   width: 100%;
   border: none;
-  background: transparent;
+  background: color-mix(in srgb, var(--color-bg-secondary) 36%, transparent);
   text-align: start;
-  padding: var(--space-12) var(--space-16);
+  padding: var(--space-12) var(--space-14);
   cursor: pointer;
   display: block;
+  border-radius: 0.65rem;
+  border: 1px solid transparent;
+  transition:
+    background-color 0.18s ease,
+    border-color 0.18s ease,
+    transform 0.18s ease;
 }
 
 .siteSwitcherItem:hover {
-  background-color: color-mix(
-    in srgb,
-    var(--color-bg-secondary) 90%,
-    transparent
-  );
+  background-color: color-mix(in srgb, var(--color-site-brand) 11%, var(--color-bg-secondary));
+  border-color: color-mix(in srgb, var(--color-site-brand) 38%, transparent);
+  transform: translateY(-1px);
 }
 
 .siteSwitcherItemTop {
@@ -133,15 +160,48 @@
 
 .siteSwitcherItemLabel {
   font-size: 0.9375rem;
-  font-weight: 700;
+  font-weight: 650;
   color: var(--color-text-primary);
 }
 
 .siteSwitcherItemDescription {
   margin: var(--space-4) 0 0;
-  font-size: 0.8125rem;
+  font-size: 0.78rem;
   line-height: 1.4;
   color: var(--color-text-muted);
+}
+
+[data-theme='light'] .siteSwitcher {
+  border-color: color-mix(in srgb, var(--color-site-brand) 34%, #d5dfec);
+  box-shadow:
+    0 6px 16px rgba(20, 47, 84, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.45);
+}
+
+[data-theme='light'] .siteSwitcherButton {
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--color-site-brand) 34%, #f5f9ff) 0%,
+    color-mix(in srgb, var(--color-site-brand) 24%, #e9f2ff) 100%
+  );
+  color: color-mix(in srgb, var(--color-site-brand) 58%, #0b2b4e);
+}
+
+[data-theme='light'] .siteSwitcherDropdown {
+  background-color: #f9fcff;
+  border-color: color-mix(in srgb, var(--color-site-brand) 20%, #d3deea);
+  box-shadow:
+    0 14px 26px rgba(17, 43, 77, 0.18),
+    0 2px 8px rgba(17, 43, 77, 0.08);
+}
+
+[data-theme='light'] .siteSwitcherItem {
+  background: #f4f9ff;
+}
+
+[data-theme='light'] .siteSwitcherItem:hover {
+  background-color: color-mix(in srgb, var(--color-site-brand) 12%, #ecf5ff);
+  border-color: color-mix(in srgb, var(--color-site-brand) 30%, #bdd2ea);
 }
 
 .itemArrow {

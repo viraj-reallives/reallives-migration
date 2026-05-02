@@ -5,6 +5,34 @@
   margin-top: auto;
 }
 
+[data-site='gamer'] .footer {
+  background:
+    radial-gradient(120% 90% at 50% -20%, rgba(0, 191, 255, 0.12) 0%, transparent 56%),
+    linear-gradient(180deg, #020812 0%, #02060f 46%, #01040c 100%);
+  color: #9fb5cf;
+}
+
+[data-site='gamer'] .bottom {
+  border-top-color: rgba(76, 108, 143, 0.4);
+}
+
+[data-site='gamer'] .columnTitle,
+[data-site='gamer'] .orgName {
+  color: #e8f3ff;
+}
+
+[data-site='gamer'] .tagline,
+[data-site='gamer'] .copyright,
+[data-site='gamer'] .columnLink,
+[data-site='gamer'] .socialLink {
+  color: #9fb5cf;
+}
+
+[data-site='gamer'] .columnLink:hover,
+[data-site='gamer'] .socialLink:hover {
+  color: #38d9ff;
+}
+
 .container {
   max-width: 75rem;
   margin: 0 auto;

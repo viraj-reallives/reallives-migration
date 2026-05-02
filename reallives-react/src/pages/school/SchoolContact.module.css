@@ -161,3 +161,79 @@
   line-height: 1.5;
   color: var(--color-text-secondary);
 }
+
+[data-site='gamer'] .page {
+  background:
+    radial-gradient(130% 90% at 50% -12%, rgba(0, 209, 255, 0.1) 0%, transparent 56%),
+    linear-gradient(180deg, #020b18 0%, #061a2d 100%);
+}
+
+[data-site='gamer'] .grid {
+  max-width: 70rem;
+  gap: var(--space-28, 1.75rem);
+}
+
+[data-site='gamer'] .form {
+  gap: var(--space-20, 1.25rem);
+}
+
+[data-site='gamer'] .label {
+  color: #d8e8f8;
+  font-weight: 600;
+}
+
+[data-site='gamer'] .input,
+[data-site='gamer'] .textarea {
+  background: rgba(2, 10, 22, 0.88);
+  color: #eef7ff;
+  border: 1px solid rgba(82, 126, 178, 0.42);
+  border-radius: 0.65rem;
+}
+
+[data-site='gamer'] .input::placeholder,
+[data-site='gamer'] .textarea::placeholder {
+  color: #7f9bbc;
+}
+
+[data-site='gamer'] .input:focus,
+[data-site='gamer'] .textarea:focus {
+  border-color: #38d9ff;
+  box-shadow: 0 0 0 3px rgba(56, 217, 255, 0.2);
+}
+
+[data-site='gamer'] .submit {
+  background: linear-gradient(90deg, #00cfff 0%, #41e6ff 100%);
+  color: #021324;
+  font-weight: 800;
+  border-radius: 0.7rem;
+}
+
+[data-site='gamer'] .submit:hover {
+  background: linear-gradient(90deg, #21d8ff 0%, #68ecff 100%);
+}
+
+[data-site='gamer'] .infoSection {
+  background: linear-gradient(180deg, rgba(9, 20, 40, 0.92) 0%, rgba(7, 17, 36, 0.92) 100%);
+  border: 1px solid rgba(82, 126, 178, 0.38);
+  border-radius: 0.75rem;
+}
+
+[data-site='gamer'] .infoTitle {
+  color: #e7f3ff;
+}
+
+[data-site='gamer'] .icon {
+  color: #38d9ff;
+}
+
+[data-site='gamer'] .itemLabel {
+  color: #dbe9f8;
+}
+
+[data-site='gamer'] .emailLink {
+  color: #65dfff;
+}
+
+[data-site='gamer'] .addressText {
+  color: #9db8d1;
+}

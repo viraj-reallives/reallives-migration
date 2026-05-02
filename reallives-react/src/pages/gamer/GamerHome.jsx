@@ -1,9 +1,9 @@
 import { useSiteContent } from '@hooks/useSiteContent';
 import styles from './GamerHome.module.css';
 
-function ReviewCard({ quote, author, role }) {
+function ReviewCard({ quote, author, role, tone = 'default' }) {
   return (
-    <div className={styles.reviewCard}>
+    <div className={`${styles.reviewCard} ${tone === 'hot' ? styles.reviewCardHot : ''}`}>
       <p className={styles.reviewQuote}>{quote}</p>
       {author ? <div className={styles.reviewAuthor}>{author}</div> : null}
       {role ? <p className={styles.reviewRole}>{role}</p> : null}
@@ -27,38 +27,39 @@ export default function GamerHome() {
         {hero.backgroundImagePath ? (
           <img src={hero.backgroundImagePath} alt="" className={styles.heroBg} />
         ) : null}
+        <div className={styles.heroNebula} aria-hidden="true" />
         <div className={styles.heroOverlay}>
           <div className={styles.heroInner}>
-            <div className={styles.titleBlock}>
-              {hero.bracketDecorationPath ? (
-                <img
-                  src={hero.bracketDecorationPath}
-                  alt=""
-                  className={`${styles.bracket} ${styles.bracketTL}`}
-                />
-              ) : null}
-              {headline?.life ? <h1 className={styles.life}>{headline.life}</h1> : null}
-              {headline?.midLine ? <p className={styles.midLine}>{headline.midLine}</p> : null}
-              {headline?.gameWord || headline?.closing ? (
-                <p className={styles.footLine}>
-                  <span className={styles.gameWord}>{headline.gameWord}</span> {headline.closing}
-                </p>
-              ) : null}
-              {hero.bracketDecorationPath ? (
-                <img
-                  src={hero.bracketDecorationPath}
-                  alt=""
-                  className={`${styles.bracket} ${styles.bracketBR}`}
-                />
-              ) : null}
+            <div className={styles.heroTop}>
+              <div className={styles.heroLeft}>
+                {headline?.life ? (
+                  <div className={styles.lifeRow}>
+                    <span className={styles.quoteMark} aria-hidden="true">
+                      "
+                    </span>
+                    <h1 className={styles.life}>{headline.life}</h1>
+                  </div>
+                ) : null}
+                {headline?.midLine ? <p className={styles.midLine}>{headline.midLine}</p> : null}
+                {headline?.gameWord || headline?.closing ? (
+                  <p className={styles.footLine}>
+                    <span className={styles.gameWord}>{headline.gameWord}</span> {headline.closing}
+                    <span className={styles.quoteMarkEnd} aria-hidden="true">
+                      "
+                    </span>
+                  </p>
+                ) : null}
+              </div>
+              <div className={styles.heroRight}>
+                {hero.welcomeParagraph ? <p className={styles.welcome}>{hero.welcomeParagraph}</p> : null}
+              </div>
             </div>
-            {hero.welcomeParagraph ? <p className={styles.welcome}>{hero.welcomeParagraph}</p> : null}
             {hero.bottomTagline ? <p className={styles.bottomTag}>{hero.bottomTagline}</p> : null}
           </div>
         </div>
       </section>
 
-      <section className={styles.section} aria-labelledby="gameplay-heading">
+      <section className={styles.section} aria-labelledby="gameplay-heading" id="gamer-gameplay">
         {gameplay?.titleImagePath ? (
           <img
             id="gameplay-heading"
@@ -85,9 +86,11 @@ export default function GamerHome() {
       </section>
 
       <section className={styles.section} aria-labelledby="reviews-heading">
+        <h2 id="reviews-heading" className={styles.reviewsHeading}>
+          What Gamers Have to Say
+        </h2>
         {whatGamersSay?.titleImagePath ? (
           <img
-            id="reviews-heading"
             src={whatGamersSay.titleImagePath}
             alt=""
             className={styles.reviewsTitle}
@@ -97,12 +100,18 @@ export default function GamerHome() {
           <div className={styles.reviewsGrid}>
             <div className={styles.reviewCol}>
               {reviews.leftColumn?.map((r, i) => (
-                <ReviewCard key={`l-${i}`} quote={r.quote} author={r.author} role={r.role} />
+                <ReviewCard
+                  key={`l-${i}`}
+                  quote={r.quote}
+                  author={r.author}
+                  role={r.role}
+                  tone={i === 0 ? 'hot' : 'default'}
+                />
               ))}
             </div>
             <div className={`${styles.reviewCol} ${styles.centerCard}`}>
               {reviews.centerColumn?.map((r, i) => (
-                <ReviewCard key={`c-${i}`} quote={r.quote} author={r.author} role={r.role} />
+                <ReviewCard key={`c-${i}`} quote={r.quote} author={r.author} role={r.role} tone="hot" />
               ))}
             </div>
             <div className={styles.reviewCol}>

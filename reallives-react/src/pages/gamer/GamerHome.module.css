@@ -1,14 +1,18 @@
 .page {
   width: 100%;
   overflow-x: hidden;
+  background:
+    radial-gradient(120% 80% at 50% -10%, rgba(7, 179, 255, 0.16) 0%, transparent 55%),
+    linear-gradient(180deg, rgba(1, 7, 21, 0.98) 0%, rgba(1, 10, 28, 1) 42%, rgba(2, 13, 36, 1) 100%);
 }
 
 .hero {
   position: relative;
-  min-height: min(85vh, 52rem);
+  min-height: min(88svh, 52rem);
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-top: 4.5rem;
 }
 
 .heroBg {
@@ -18,92 +22,188 @@
   height: 100%;
   object-fit: cover;
   z-index: 0;
+  filter: saturate(1.2) contrast(1.08);
+}
+
+.heroNebula {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    radial-gradient(68% 58% at 50% 86%, rgba(0, 219, 255, 0.24) 0%, transparent 68%),
+    radial-gradient(64% 48% at 50% 26%, rgba(0, 150, 255, 0.13) 0%, transparent 72%),
+    radial-gradient(circle at 18% 24%, rgba(255, 255, 255, 0.09) 0 1px, transparent 2px),
+    radial-gradient(circle at 72% 36%, rgba(255, 255, 255, 0.07) 0 1px, transparent 2px);
+  background-size: auto, auto, 180px 180px, 220px 220px;
 }
 
 .heroOverlay {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   width: 100%;
-  padding: var(--space-32, 2rem) var(--space-16, 1rem);
-  background: var(--gradient-gamer-hero-overlay);
+  padding: 1.25rem var(--space-16, 1rem) 1.75rem;
+  min-height: inherit;
+  display: flex;
+  align-items: center;
 }
 
 .heroInner {
-  max-width: 56rem;
+  max-width: 76rem;
   margin: 0 auto;
-  text-align: center;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.titleBlock {
+.heroTop {
+  display: grid;
+  grid-template-columns: minmax(18rem, 1.1fr) minmax(16rem, 1fr);
+  gap: 2.25rem;
+  align-items: start;
+  margin-top: 1.25rem;
+}
+
+.heroLeft {
+  max-width: 34rem;
+}
+
+.lifeRow {
+  display: flex;
+  align-items: baseline;
+  gap: 0.45rem;
   position: relative;
-  display: inline-block;
-  margin-bottom: var(--space-24, 1.5rem);
+  padding-left: 1.25rem;
 }
 
-.bracket {
+.heroRight {
+  max-width: 30rem;
+  align-self: center;
+}
+
+.quoteMark,
+.quoteMarkEnd {
+  font-size: clamp(2rem, 6vw, 3.4rem);
+  line-height: 1;
+  font-weight: 700;
+  color: rgba(232, 242, 251, 0.78);
+}
+
+.quoteMark {
+  margin: 0;
   position: absolute;
-  width: min(18vw, 6.5rem);
-  height: auto;
-  opacity: 0.85;
-  pointer-events: none;
+  left: 0;
+  top: 0.45rem;
+  align-self: flex-start;
 }
 
-.bracketTL {
-  top: -0.75rem;
-  left: -1rem;
-}
-
-.bracketBR {
-  bottom: -0.75rem;
-  right: -1rem;
-  transform: rotate(180deg);
+.quoteMarkEnd {
+  margin-left: 0.35rem;
+  vertical-align: middle;
 }
 
 .life {
   margin: 0;
-  font-size: clamp(3.5rem, 14vw, 8rem);
+  font-size: clamp(4.6rem, 14vw, 9rem);
   font-weight: 800;
-  line-height: 0.95;
-  letter-spacing: 0.04em;
+  line-height: 0.9;
+  letter-spacing: 0.02em;
   color: var(--color-white);
-  text-shadow: 0 4px 24px var(--color-shadow-gamer-text);
+  text-shadow: 0 8px 26px rgba(0, 0, 0, 0.42);
+  animation: popIn 0.7s ease both;
 }
 
 .midLine {
-  margin: 0.35rem 0 0;
-  font-size: clamp(1.125rem, 3.5vw, 1.75rem);
+  margin: 0.45rem 0 0 1.25rem;
+  font-size: clamp(2.25rem, 4.6vw, 3.4rem);
   font-weight: 500;
-  color: var(--color-gamer-text-muted);
+  color: #d4e3f1;
+  line-height: 1.05;
 }
 
 .footLine {
-  margin: 0.5rem 0 0;
-  font-size: clamp(1.25rem, 4vw, 2rem);
+  margin: 0.7rem 0 0 1.25rem;
+  font-size: clamp(2.25rem, 4.8vw, 3.5rem);
   font-weight: 600;
-  color: var(--color-white);
+  color: #eaf4fc;
+  line-height: 1.05;
 }
 
 .gameWord {
-  color: var(--color-brand-cyan-bright);
+  color: #f5fbff;
   font-weight: 800;
+  text-shadow: none;
 }
 
 .welcome {
-  margin: 0 auto;
-  max-width: 40rem;
-  font-size: clamp(0.9375rem, 2.2vw, 1.125rem);
-  line-height: 1.65;
-  color: var(--color-gamer-text-welcome);
+  margin: 0;
+  max-width: 30rem;
+  font-size: clamp(1.1rem, 1.9vw, 1.45rem);
+  line-height: 1.6;
+  color: #e7f2fc;
+  letter-spacing: 0.01em;
 }
 
 .bottomTag {
-  margin: var(--space-24, 1.5rem) auto 0;
-  max-width: 36rem;
-  font-size: 0.9375rem;
+  margin: 8rem auto 0;
+  text-align: center;
+  max-width: 50rem;
+  font-size: clamp(1.2rem, 2.1vw, 1.9rem);
+  font-weight: 500;
+  color: #e5f0fb;
+  text-transform: none;
+  letter-spacing: 0;
+  animation: slideFadeIn 1s ease 0.25s both;
+}
+
+.heroCtas {
+  margin-top: var(--space-24, 1.5rem);
+  display: flex;
+  gap: 0.875rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.primaryCta,
+.secondaryCta {
+  min-height: 2.9rem;
+  padding: 0.75rem 1.3rem;
+  border-radius: 999px;
+  text-decoration: none;
   font-weight: 600;
-  color: var(--color-brand-cyan-bright);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.primaryCta {
+  color: #dff5ff;
+  background: linear-gradient(90deg, #0e5f7f 0%, #13759a 100%);
+  box-shadow: 0 8px 20px rgba(4, 31, 49, 0.35);
+}
+
+.secondaryCta {
+  color: #d8e8f8;
+  border: 1px solid rgba(123, 153, 184, 0.35);
+  background: rgba(9, 21, 38, 0.45);
+}
+
+.primaryCta:hover,
+.secondaryCta:hover {
+  transform: translateY(-2px);
+}
+
+.primaryCta:hover {
+  box-shadow: 0 10px 24px rgba(6, 40, 61, 0.44);
+}
+
+.secondaryCta:hover {
+  background: rgba(17, 33, 56, 0.6);
 }
 
 .section {
@@ -156,6 +256,18 @@
   height: auto;
 }
 
+.reviewsHeading {
+  margin: 0 auto var(--space-12, 0.75rem);
+  text-align: center;
+  font-size: clamp(1.5rem, 3.6vw, 2.4rem);
+  line-height: 1.1;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  color: #eaf5ff;
+  text-transform: uppercase;
+  text-shadow: 0 0 22px rgba(56, 217, 255, 0.32);
+}
+
 .reviewsGrid {
   display: grid;
   gap: var(--space-20, 1.25rem);
@@ -165,6 +277,45 @@
 @media (min-width: 60rem) {
   .reviewsGrid {
     grid-template-columns: 1fr 1.15fr 1fr;
+  }
+}
+
+@media (max-width: 48rem) {
+  .hero {
+    min-height: min(78svh, 42rem);
+    padding-top: 3.9rem;
+  }
+
+  .heroOverlay {
+    padding-top: 1rem;
+    padding-bottom: 1.25rem;
+  }
+
+  .heroTop {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin-top: 0;
+  }
+
+  .welcome,
+  .heroRight,
+  .heroLeft {
+    max-width: 100%;
+  }
+
+  .life {
+    font-size: clamp(3.1rem, 16vw, 5rem);
+  }
+
+  .midLine,
+  .footLine {
+    margin-left: 1.1rem;
+    font-size: clamp(1.75rem, 8.5vw, 2.4rem);
+  }
+
+  .bottomTag {
+    margin-top: 2rem;
+    font-size: 1.05rem;
   }
 }
 
@@ -179,6 +330,21 @@
   border-radius: var(--radius-lg, 0.75rem);
   background: color-mix(in srgb, var(--color-gamer-card-surface) 88%, transparent);
   border: 1px solid color-mix(in srgb, var(--color-white) 12%, transparent);
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.reviewCard:hover {
+  transform: translateY(-4px);
+  border-color: color-mix(in srgb, var(--color-brand-cyan-bright) 45%, transparent);
+  box-shadow: 0 16px 34px rgba(1, 12, 31, 0.52);
+}
+
+.reviewCardHot {
+  border-color: color-mix(in srgb, var(--color-brand-cyan-bright) 65%, transparent);
+  box-shadow: 0 12px 28px rgba(0, 209, 255, 0.18);
 }
 
 .reviewQuote {
@@ -202,4 +368,38 @@
 
 .centerCard .reviewQuote {
   font-size: 0.9375rem;
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: translateY(18px) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes slideFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseSpotlight {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.95;
+  }
+  50% {
+    transform: scale(1.03);
+    opacity: 1;
+  }
 }
