@@ -769,7 +769,7 @@ export const universityContent = {
         disableCardClick: true,
         detail: {
           heroImagePath:
-            "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/University-albany-png.png",
+            "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/University-albany.png",
           heroTitle:
             "Real Lives and the Problem of Distributive Justice Essay on video games, meritocracy, and justice",
           heroSubtitle:

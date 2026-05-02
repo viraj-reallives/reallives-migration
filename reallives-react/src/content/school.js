@@ -763,7 +763,7 @@ export const schoolContent = {
           'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/UAlbany_Minerva_Formal_Left_PurpleBlack.png',
            disableCardClick: true,
         detail: {
-          heroImagePath: 'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/University-albany-png.png',
+          heroImagePath: 'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/University-albany.png',
           heroTitle:
             'Real Lives and the Problem of Distributive Justice Essay on video games, meritocracy, and justice',
           heroSubtitle:

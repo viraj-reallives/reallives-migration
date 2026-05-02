@@ -454,9 +454,11 @@ import mumbai_workshop_1 from "../add-image/mumbai_workshop_1.png";
 import eth_workshop_1 from "../add-image/school-3-image-slider.png";
 import kyungeeh_university_workshop_1 from "../add-image/3-rd-workshop-2.png";
 import navamindradhiraj_university_workshop_1 from "../add-image/second-workshop-2.png";
-import banner_home_5_card from "../add-image/banner-home-card.png";
 import earth_banner_image from "../add-image/earth-banner-card.png";
 import { X, MoveRight, ArrowBigDown } from "lucide-react";
+
+const ECOSYSTEM_BANNER_URL =
+  "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/landing-page/ecosystem.svg";
 
 export default function RealLivesLanding() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -713,7 +715,7 @@ export default function RealLivesLanding() {
               </p>
             </div>
             <div className={styles1.image_banner_full_new}>
-              <img src={banner_home_5_card} alt="Ecosystem" />
+              <img src={ECOSYSTEM_BANNER_URL} alt="Ecosystem" />
             </div>
           </div>
 
