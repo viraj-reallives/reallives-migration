@@ -567,7 +567,7 @@ export const schoolContent = {
         skillsDevelopedLabel: 'Skills Developed',
         skills: ['Teamwork', 'Integrity and Work Ethics'],
         learnMoreText: 'Learn more',
-        learnMorePath: '/reallives/school/ethzurichworkshop'
+        learnMorePath: '/reallives/school/ETH-Zurich-Workshop'
       },
       {
         title: 'Navamindradhiraj University Workshop',
@@ -584,7 +584,7 @@ export const schoolContent = {
         skillsDevelopedLabel: 'Skills Developed',
         skills: ['21st Century Skills', 'Business Acumen'],
         learnMoreText: 'Learn more',
-        learnMorePath: '/reallives/school/Navamindradhiraj_Unniversity'
+        learnMorePath: '/reallives/school/Navamindradhiraj-University-Workshop'
       },
       {
         title: 'KyungHee University SDG Workshop',
@@ -601,7 +601,7 @@ export const schoolContent = {
         skillsDevelopedLabel: 'Skills Developed',
         skills: ['SDG Awareness', 'ChangeMaking'],
         learnMoreText: 'Learn more',
-        learnMorePath: '/reallives/school/KyungheeUniversity'
+        learnMorePath: '/reallives/school/Kyung-Hee-University-Workshop'
         
       },
       {
@@ -619,7 +619,7 @@ export const schoolContent = {
         skillsDevelopedLabel: 'Skills Developed',
         skills: ['SDG Awareness', 'Social Entrepreneurship'],
         learnMoreText: 'Learn more',
-        learnMorePath: '/reallives/school/IIT_Bombay_University'
+        learnMorePath: '/reallives/school/IIT-Bombay-Workshop'
 
       },
       {
@@ -637,7 +637,7 @@ export const schoolContent = {
         skillsDevelopedLabel: 'Skills Developed',
         skills: ['Empathy', 'SDG Awareness', 'Critical Thinking'],
         learnMoreText: 'Learn more',
-        learnMorePath: '/reallives/school/Chulalongkorn_University'
+        learnMorePath: '/reallives/school/Chulalongkorn-University-Workshop'
 
       },
     ],
@@ -689,7 +689,7 @@ export const schoolContent = {
             'Qualitative coding, language network analysis, topic modeling (NetMiner)',
           pdfPath:
             'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/pdfs/Kwon-etal_2025_RealLives-in-HE-class-2.pdf',
-             route: "/reallives/school/Research_Card1",
+             route: "/reallives/school/Korea-University-Research",
         },
         
       },
@@ -717,7 +717,7 @@ export const schoolContent = {
             'Conceptual examination of statistics, simulation, and educational game design. Interpretive analysis rather than empirical experimentation or user studies.',
           pdfPath:
             'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/pdfs/uwe-bristol.pdf',
-             route: "/reallives/school/UaeBristol"
+             route: "/reallives/school/UWE-Bristol-Research"
         },
       },
       {
@@ -749,7 +749,7 @@ export const schoolContent = {
             'Quasi-experimental classroom study. Participants: 301 high school students from three Northern California schools',
           pdfPath:
             'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/pdfs/Santa-Clara-University.pdf',
-            route: "/reallives/school/Santa_Clara"
+            route: "/reallives/school/Santa-Clara-University-Research"
         },
         
       },
@@ -780,7 +780,7 @@ export const schoolContent = {
             'Quasi-experimental classroom study. Participants: 301 high school students from three Northern California schools',
           pdfPath:
             'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/pdfs/albany.pdf',
-             route: "/reallives/school/Albany_University"
+             route: "/reallives/school/SUNY-Albany-Research"
         },
       
       },
@@ -815,7 +815,7 @@ export const schoolContent = {
             'Quasi-experimental classroom study with secondary school students (ages 14–19). Participants played the Real Lives simulation, experiencing life as migrants from MENA regions.',
           pdfPath:
             'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/pdfs/ThomasNygrenResearchPaper-1.pdf',
-            route: "/reallives/school/Uppsala_University"
+            route: "/reallives/school/Uppsala-University-Research"
         },
       },
 
@@ -846,7 +846,7 @@ export const schoolContent = {
             'Descriptive mixed-methods study\u00a0combining qualitative and quantitative data. Analysis of\u00a063 simulated lives\u00a0played by 13 low-income, urban adolescents.',
           pdfPath:
             'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/pdfs/Kallen-Tsikalas.pdf',
-           route: "/reallives/school/Individual_Research"
+           route: "/reallives/school/Kallen-Tsikalas-Youth-Simulation-Research"
         },
       },
         {
@@ -876,7 +876,7 @@ export const schoolContent = {
           methods:
             'Applied use of interactive simulation (RealLives) within a multicultural education context, combined with reflective frameworks (ChangeMaker Index). Experiential learning approach supported by observation of participant engagement and qualitative interpretation of learning outcomes.',
           pdfPath: 'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/pdfs/RealLives-Foundation-Kame-Seoul-Korea.pdf',
-           route: "/reallives/school/Kame_Research"
+           route: "/reallives/school/KAME-Seoul-Multicultural-Research"
         },
         
       },

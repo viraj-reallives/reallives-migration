@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import RootLayout from './layouts/RootLayout';
 import LandingLayout from './layouts/LandingLayout';
 import SubSiteLayout from './layouts/SubSiteLayout';
@@ -105,18 +105,132 @@ export default function App() {
             <Route path="about" element={<SchoolAbout />} />
             <Route path="contact" element={<SchoolContact />} />
             <Route path="foundation" element={<SchoolFoundation />} />
-            <Route path="ethzurichworkshop" element={<EthZurichWorkshop/>}/>
-            <Route path="Navamindradhiraj_Unniversity" element={<Navamindradhiraj_Unniversity/>}/>
-            <Route path="KyungheeUniversity" element={<KyungheeUniversity/>}/>
-            <Route path="IIT_Bombay_University" element={<IIT_Bombay_University/>}/>
-            <Route path="Chulalongkorn_University" element={<Chulalongkorn_University/>}/>
-            <Route path="Research_Card1" element={<Research_Card1/>}/>
-            <Route path="UaeBristol" element={<UaeBristol/>}/>
-            <Route path="Santa_Clara" element={<Santa_Clara/>}/>
-            <Route path="Albany_University" element={<Albany_University/>}/>
-            <Route path="Uppsala_University" element={<Uppsala_University/>}/>
-            <Route path="Individual_Research" element={<Individual_Research/>}/>
-            <Route path="Kame_Research" element={<Kame_Research/>}/>
+            <Route path="ETH-Zurich-Workshop" element={<EthZurichWorkshop />} />
+            <Route
+              path="ethzurichworkshop"
+              element={
+                <Navigate to="/reallives/school/ETH-Zurich-Workshop" replace />
+              }
+            />
+            <Route
+              path="Navamindradhiraj-University-Workshop"
+              element={<Navamindradhiraj_Unniversity />}
+            />
+            <Route
+              path="Navamindradhiraj_Unniversity"
+              element={
+                <Navigate
+                  to="/reallives/school/Navamindradhiraj-University-Workshop"
+                  replace
+                />
+              }
+            />
+            <Route path="Kyung-Hee-University-Workshop" element={<KyungheeUniversity />} />
+            <Route
+              path="KyungheeUniversity"
+              element={
+                <Navigate
+                  to="/reallives/school/Kyung-Hee-University-Workshop"
+                  replace
+                />
+              }
+            />
+            <Route path="IIT-Bombay-Workshop" element={<IIT_Bombay_University />} />
+            <Route
+              path="IIT_Bombay_University"
+              element={
+                <Navigate to="/reallives/school/IIT-Bombay-Workshop" replace />
+              }
+            />
+            <Route
+              path="Chulalongkorn-University-Workshop"
+              element={<Chulalongkorn_University />}
+            />
+            <Route
+              path="Chulalongkorn_University"
+              element={
+                <Navigate
+                  to="/reallives/school/Chulalongkorn-University-Workshop"
+                  replace
+                />
+              }
+            />
+            <Route path="Korea-University-Research" element={<Research_Card1 />} />
+            <Route
+              path="Research_Card1"
+              element={
+                <Navigate
+                  to="/reallives/school/Korea-University-Research"
+                  replace
+                />
+              }
+            />
+            <Route path="UWE-Bristol-Research" element={<UaeBristol />} />
+            <Route
+              path="UaeBristol"
+              element={
+                <Navigate to="/reallives/school/UWE-Bristol-Research" replace />
+              }
+            />
+            <Route
+              path="Santa-Clara-University-Research"
+              element={<Santa_Clara />}
+            />
+            <Route
+              path="Santa_Clara"
+              element={
+                <Navigate
+                  to="/reallives/school/Santa-Clara-University-Research"
+                  replace
+                />
+              }
+            />
+            <Route path="SUNY-Albany-Research" element={<Albany_University />} />
+            <Route
+              path="Albany_University"
+              element={
+                <Navigate to="/reallives/school/SUNY-Albany-Research" replace />
+              }
+            />
+            <Route
+              path="Uppsala-University-Research"
+              element={<Uppsala_University />}
+            />
+            <Route
+              path="Uppsala_University"
+              element={
+                <Navigate
+                  to="/reallives/school/Uppsala-University-Research"
+                  replace
+                />
+              }
+            />
+            <Route
+              path="Kallen-Tsikalas-Youth-Simulation-Research"
+              element={<Individual_Research />}
+            />
+            <Route
+              path="Individual_Research"
+              element={
+                <Navigate
+                  to="/reallives/school/Kallen-Tsikalas-Youth-Simulation-Research"
+                  replace
+                />
+              }
+            />
+            <Route
+              path="KAME-Seoul-Multicultural-Research"
+              element={<Kame_Research />}
+            />
+            <Route
+              path="Kame_Research"
+              element={
+                <Navigate
+                  to="/reallives/school/KAME-Seoul-Multicultural-Research"
+                  replace
+                />
+              }
+            />
 
           </Route>
 
@@ -134,18 +248,141 @@ export default function App() {
             <Route path="about" element={<UniversityAbout />} />
             <Route path="contact" element={<UniversityContact />} />
             <Route path="foundation" element={<UniversityFoundation />} />
-             <Route path="ethzurichworkshop" element={<EthZurichWorkshop/>}/>
-            <Route path="Navamindradhiraj_Unniversity" element={<Navamindradhiraj_Unniversity/>}/>
-            <Route path="KyungheeUniversity" element={<KyungheeUniversity/>}/>
-            <Route path="IIT_Bombay_University" element={<IIT_Bombay_University/>}/>
-            <Route path="Chulalongkorn_University" element={<Chulalongkorn_University/>}/>
-            <Route path="Research_Card1" element={<Research_Card1/>}/>
-            <Route path="UaeBristol" element={<UaeBristol/>}/>
-            <Route path="Santa_Clara" element={<Santa_Clara/>}/>
-            <Route path="Albany_University" element={<Albany_University/>}/>
-            <Route path="Uppsala_University" element={<Uppsala_University/>}/>
-            <Route path="Individual_Research" element={<Individual_Research/>}/>
-            <Route path="Kame_Research" element={<Kame_Research/>}/>
+            <Route path="ETH-Zurich-Workshop" element={<EthZurichWorkshop />} />
+            <Route
+              path="ethzurichworkshop"
+              element={
+                <Navigate to="/reallives/university/ETH-Zurich-Workshop" replace />
+              }
+            />
+            <Route
+              path="Navamindradhiraj-University-Workshop"
+              element={<Navamindradhiraj_Unniversity />}
+            />
+            <Route
+              path="Navamindradhiraj_Unniversity"
+              element={
+                <Navigate
+                  to="/reallives/university/Navamindradhiraj-University-Workshop"
+                  replace
+                />
+              }
+            />
+            <Route path="Kyung-Hee-University-Workshop" element={<KyungheeUniversity />} />
+            <Route
+              path="KyungheeUniversity"
+              element={
+                <Navigate
+                  to="/reallives/university/Kyung-Hee-University-Workshop"
+                  replace
+                />
+              }
+            />
+            <Route path="IIT-Bombay-Workshop" element={<IIT_Bombay_University />} />
+            <Route
+              path="IIT_Bombay_University"
+              element={
+                <Navigate
+                  to="/reallives/university/IIT-Bombay-Workshop"
+                  replace
+                />
+              }
+            />
+            <Route
+              path="Chulalongkorn-University-Workshop"
+              element={<Chulalongkorn_University />}
+            />
+            <Route
+              path="Chulalongkorn_University"
+              element={
+                <Navigate
+                  to="/reallives/university/Chulalongkorn-University-Workshop"
+                  replace
+                />
+              }
+            />
+            <Route path="Korea-University-Research" element={<Research_Card1 />} />
+            <Route
+              path="Research_Card1"
+              element={
+                <Navigate
+                  to="/reallives/university/Korea-University-Research"
+                  replace
+                />
+              }
+            />
+            <Route path="UWE-Bristol-Research" element={<UaeBristol />} />
+            <Route
+              path="UaeBristol"
+              element={
+                <Navigate
+                  to="/reallives/university/UWE-Bristol-Research"
+                  replace
+                />
+              }
+            />
+            <Route
+              path="Santa-Clara-University-Research"
+              element={<Santa_Clara />}
+            />
+            <Route
+              path="Santa_Clara"
+              element={
+                <Navigate
+                  to="/reallives/university/Santa-Clara-University-Research"
+                  replace
+                />
+              }
+            />
+            <Route path="SUNY-Albany-Research" element={<Albany_University />} />
+            <Route
+              path="Albany_University"
+              element={
+                <Navigate
+                  to="/reallives/university/SUNY-Albany-Research"
+                  replace
+                />
+              }
+            />
+            <Route
+              path="Uppsala-University-Research"
+              element={<Uppsala_University />}
+            />
+            <Route
+              path="Uppsala_University"
+              element={
+                <Navigate
+                  to="/reallives/university/Uppsala-University-Research"
+                  replace
+                />
+              }
+            />
+            <Route
+              path="Kallen-Tsikalas-Youth-Simulation-Research"
+              element={<Individual_Research />}
+            />
+            <Route
+              path="Individual_Research"
+              element={
+                <Navigate
+                  to="/reallives/university/Kallen-Tsikalas-Youth-Simulation-Research"
+                  replace
+                />
+              }
+            />
+            <Route
+              path="KAME-Seoul-Multicultural-Research"
+              element={<Kame_Research />}
+            />
+            <Route
+              path="Kame_Research"
+              element={
+                <Navigate
+                  to="/reallives/university/KAME-Seoul-Multicultural-Research"
+                  replace
+                />
+              }
+            />
           </Route>
 
           <Route path="/reallives/homeschooler" element={<SubSiteLayout siteKey="homeschooler" />}>
@@ -162,18 +399,144 @@ export default function App() {
             <Route path="about" element={<HomeschoolerAbout />} />
             <Route path="contact" element={<HomeschoolerContact />} />
             <Route path="foundation" element={<HomeschoolerFoundation />} />
-             <Route path="ethzurichworkshop" element={<EthZurichWorkshop/>}/>
-            <Route path="Navamindradhiraj_Unniversity" element={<Navamindradhiraj_Unniversity/>}/>
-            <Route path="KyungheeUniversity" element={<KyungheeUniversity/>}/>
-            <Route path="IIT_Bombay_University" element={<IIT_Bombay_University/>}/>
-            <Route path="Chulalongkorn_University" element={<Chulalongkorn_University/>}/>
-            <Route path="Research_Card1" element={<Research_Card1/>}/>
-            <Route path="UaeBristol" element={<UaeBristol/>}/>
-            <Route path="Santa_Clara" element={<Santa_Clara/>}/>
-            <Route path="Albany_University" element={<Albany_University/>}/>
-            <Route path="Uppsala_University" element={<Uppsala_University/>}/>
-            <Route path="Individual_Research" element={<Individual_Research/>}/>
-            <Route path="Kame_Research" element={<Kame_Research/>}/>
+            <Route path="ETH-Zurich-Workshop" element={<EthZurichWorkshop />} />
+            <Route
+              path="ethzurichworkshop"
+              element={
+                <Navigate
+                  to="/reallives/homeschooler/ETH-Zurich-Workshop"
+                  replace
+                />
+              }
+            />
+            <Route
+              path="Navamindradhiraj-University-Workshop"
+              element={<Navamindradhiraj_Unniversity />}
+            />
+            <Route
+              path="Navamindradhiraj_Unniversity"
+              element={
+                <Navigate
+                  to="/reallives/homeschooler/Navamindradhiraj-University-Workshop"
+                  replace
+                />
+              }
+            />
+            <Route path="Kyung-Hee-University-Workshop" element={<KyungheeUniversity />} />
+            <Route
+              path="KyungheeUniversity"
+              element={
+                <Navigate
+                  to="/reallives/homeschooler/Kyung-Hee-University-Workshop"
+                  replace
+                />
+              }
+            />
+            <Route path="IIT-Bombay-Workshop" element={<IIT_Bombay_University />} />
+            <Route
+              path="IIT_Bombay_University"
+              element={
+                <Navigate
+                  to="/reallives/homeschooler/IIT-Bombay-Workshop"
+                  replace
+                />
+              }
+            />
+            <Route
+              path="Chulalongkorn-University-Workshop"
+              element={<Chulalongkorn_University />}
+            />
+            <Route
+              path="Chulalongkorn_University"
+              element={
+                <Navigate
+                  to="/reallives/homeschooler/Chulalongkorn-University-Workshop"
+                  replace
+                />
+              }
+            />
+            <Route path="Korea-University-Research" element={<Research_Card1 />} />
+            <Route
+              path="Research_Card1"
+              element={
+                <Navigate
+                  to="/reallives/homeschooler/Korea-University-Research"
+                  replace
+                />
+              }
+            />
+            <Route path="UWE-Bristol-Research" element={<UaeBristol />} />
+            <Route
+              path="UaeBristol"
+              element={
+                <Navigate
+                  to="/reallives/homeschooler/UWE-Bristol-Research"
+                  replace
+                />
+              }
+            />
+            <Route
+              path="Santa-Clara-University-Research"
+              element={<Santa_Clara />}
+            />
+            <Route
+              path="Santa_Clara"
+              element={
+                <Navigate
+                  to="/reallives/homeschooler/Santa-Clara-University-Research"
+                  replace
+                />
+              }
+            />
+            <Route path="SUNY-Albany-Research" element={<Albany_University />} />
+            <Route
+              path="Albany_University"
+              element={
+                <Navigate
+                  to="/reallives/homeschooler/SUNY-Albany-Research"
+                  replace
+                />
+              }
+            />
+            <Route
+              path="Uppsala-University-Research"
+              element={<Uppsala_University />}
+            />
+            <Route
+              path="Uppsala_University"
+              element={
+                <Navigate
+                  to="/reallives/homeschooler/Uppsala-University-Research"
+                  replace
+                />
+              }
+            />
+            <Route
+              path="Kallen-Tsikalas-Youth-Simulation-Research"
+              element={<Individual_Research />}
+            />
+            <Route
+              path="Individual_Research"
+              element={
+                <Navigate
+                  to="/reallives/homeschooler/Kallen-Tsikalas-Youth-Simulation-Research"
+                  replace
+                />
+              }
+            />
+            <Route
+              path="KAME-Seoul-Multicultural-Research"
+              element={<Kame_Research />}
+            />
+            <Route
+              path="Kame_Research"
+              element={
+                <Navigate
+                  to="/reallives/homeschooler/KAME-Seoul-Multicultural-Research"
+                  replace
+                />
+              }
+            />
           </Route>
 
           <Route path="/reallives/gamer" element={<GamerLayout />}>

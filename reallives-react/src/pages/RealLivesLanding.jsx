@@ -146,7 +146,7 @@
 //                   </span>
 
 //                   <Link
-//                     to="/reallives/school/Research_Card1"
+//                     to="/reallives/school/Korea-University-Research"
 //                     className={`${styles1.manrope_text} ${styles1.view_paper_btn}`}
 //                   >
 //                     View Paper
@@ -177,7 +177,7 @@
 //                   </span>
 
 //                   <Link
-//                     to="/reallives/school/Albany_University"
+//                     to="/reallives/school/SUNY-Albany-Research"
 //                     className={`${styles1.manrope_text} ${styles1.view_paper_btn}`}
 //                   >
 //                     View Paper
@@ -208,7 +208,7 @@
 //                   </span>
 
 //                   <Link
-//                     to="/reallives/school/Uppsala_University"
+//                     to="/reallives/school/Uppsala-University-Research"
 //                     className={`${styles1.manrope_text} ${styles1.view_paper_btn}`}
 //                   >
 //                     View Paper
@@ -587,7 +587,7 @@ export default function RealLivesLanding() {
                     <p className={styles1.title_card_text}>Korea University</p>
                   </span>
                   <Link
-                    to="/reallives/school/Research_Card1"
+                    to="/reallives/school/Korea-University-Research"
                     className={styles1.view_paper_btn}
                   >
                     View Paper
@@ -616,7 +616,7 @@ export default function RealLivesLanding() {
                     </p>
                   </span>
                   <Link
-                    to="/reallives/school/Albany_University"
+                    to="/reallives/school/SUNY-Albany-Research"
                     className={styles1.view_paper_btn}
                   >
                     View Paper
@@ -645,7 +645,7 @@ export default function RealLivesLanding() {
                     </p>
                   </span>
                   <Link
-                    to="/reallives/school/Uppsala_University"
+                    to="/reallives/school/Uppsala-University-Research"
                     className={styles1.view_paper_btn}
                   >
                     View Paper
