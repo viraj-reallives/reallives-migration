@@ -401,7 +401,7 @@ export const landingContent = {
       address: "",
     },
     logo: "/assets/images/home/logo-image/realives-logo 1 1.svg",
-    copyright: "© 2025 RealLives Foundation. All rights reserved.",
+    copyright: "© 2026 RealLives Foundation. All rights reserved.",
     socialLinks: [
       {
         platform: "YouTube",
