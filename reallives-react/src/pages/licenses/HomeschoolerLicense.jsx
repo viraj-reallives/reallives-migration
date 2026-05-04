@@ -71,6 +71,7 @@ function IncludedPanel() {
                 RealLives ChangeMaker <br /> Index
               </p>
             </div>
+            
             <p className={`${styles.includedItemDesc} ${Style1.color_cccccc}`}>
               An advanced personality tracker measuring 18 competencies and
               generating a personalised ChangeMaker report based on your
@@ -81,6 +82,7 @@ function IncludedPanel() {
 
       
         <li className={styles.includedItem}>
+
           <span className={Style1.box_product_container}>
 
             <div className={`${styles.includedItemTop} ${Style1.flex_center_gap_10px}`}>
