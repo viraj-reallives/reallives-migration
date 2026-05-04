@@ -448,8 +448,9 @@ export const homeschoolerContent = {
       donateUrl: "https://www.reallivesfoundation.org/donate",
     },
     taxExemption: {
-      pdfUrl: "/documents/reallives-foundation-tax-exemption.pdf",
-      linkText: "View tax-exemption certificate (PDF)",
+      pdfUrl:
+        "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-foundation-page/RealLives_Foundation_Tax-Exemption.pdf",
+      linkText: "View Indian Tax-Exemption Certificate (PDF)",
     },
     stats: [
       { value: "Experiential Learning", label: "Learn by living real-world scenarios" },
@@ -569,7 +570,7 @@ export const homeschoolerContent = {
         skillsDevelopedLabel: "Skills Developed",
         skills: ["Teamwork", "Integrity and Work Ethics"],
         learnMoreText: "Learn more",
-        learnMorePath: "/reallives/homeschooler/ethzurichworkshop",
+        learnMorePath: "/reallives/homeschooler/ETH-Zurich-Workshop",
       },
       {
         title: "Navamindradhiraj University Workshop",
@@ -587,7 +588,7 @@ export const homeschoolerContent = {
         skillsDevelopedLabel: "Skills Developed",
         skills: ["21\u2019st Century Skills", "Business Acumen"],
         learnMoreText: "Learn more",
-        learnMorePath: "/reallives/homeschooler/Navamindradhiraj_Unniversity",
+        learnMorePath: "/reallives/homeschooler/Navamindradhiraj-University-Workshop",
       },
       {
         title: "KyungHee University SDG Workshop",
@@ -605,7 +606,7 @@ export const homeschoolerContent = {
         skillsDevelopedLabel: "Skills Developed",
         skills: ["SDG Awareness", "ChangeMaking"],
         learnMoreText: "Learn more",
-        learnMorePath: "/reallives/homeschooler/KyungheeUniversity",
+        learnMorePath: "/reallives/homeschooler/Kyung-Hee-University-Workshop",
       },
       {
         title: "IIT Bombay Exploring SDG 1 through Empathy Workshop",
@@ -623,7 +624,7 @@ export const homeschoolerContent = {
         skillsDevelopedLabel: "Skills Developed",
         skills: ["SDG Awareness", "Social Entrepreneurship"],
         learnMoreText: "Learn more",
-        learnMorePath: "/reallives/homeschooler/IIT_Bombay_University",
+        learnMorePath: "/reallives/homeschooler/IIT-Bombay-Workshop",
       },
       {
         title: "Chulalongkorn University Workshop",
@@ -639,7 +640,7 @@ export const homeschoolerContent = {
         skillsDevelopedLabel: "Skills Developed",
         skills: ["Empathy", "SDG Awareness", "Critical Thinking"],
         learnMoreText: "Learn more",
-        learnMorePath: "/reallives/homeschooler/Chulalongkorn_University",
+        learnMorePath: "/reallives/homeschooler/Chulalongkorn-University-Workshop",
       },
     ],
   },
@@ -680,7 +681,7 @@ export const homeschoolerContent = {
             "Qualitative coding, language network analysis, topic modeling (NetMiner)",
           pdfPath:
             "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/pdfs/Kwon-etal_2025_RealLives-in-HE-class-2.pdf",
-          route: "/reallives/homeschooler/Research_Card1",
+          route: "/reallives/homeschooler/Korea-University-Research",
         },
       },
 
@@ -708,7 +709,7 @@ export const homeschoolerContent = {
             "Conceptual examination of statistics, simulation, and educational game design. Interpretive analysis rather than empirical experimentation or user studies.",
           pdfPath:
             "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/pdfs/uwe-bristol.pdf",
-          route: "/reallives/homeschooler/UaeBristol",
+          route: "/reallives/homeschooler/UWE-Bristol-Research",
         },
       },
 
@@ -742,7 +743,7 @@ export const homeschoolerContent = {
             "Quasi-experimental classroom study. Participants: 301 high school students from three Northern California schools",
           pdfPath:
             "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/pdfs/Santa-Clara-University.pdf",
-          route: "/reallives/homeschooler/Santa_Clara",
+          route: "/reallives/homeschooler/Santa-Clara-University-Research",
         },
       },
 
@@ -758,7 +759,7 @@ export const homeschoolerContent = {
         disableCardClick: true,
         detail: {
           heroImagePath:
-            "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/University-albany-png.png",
+            "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/University-albany.png",
           heroTitle:
             "Real Lives and the Problem of Distributive Justice Essay on video games, meritocracy, and justice",
           heroSubtitle:
@@ -774,7 +775,7 @@ export const homeschoolerContent = {
             "Quasi-experimental classroom study. Participants: 301 high school students from three Northern California schools",
           pdfPath:
             "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/pdfs/albany.pdf",
-          route: "/reallives/homeschooler/Albany_University",
+          route: "/reallives/homeschooler/SUNY-Albany-Research",
         },
       },
 
@@ -808,7 +809,7 @@ export const homeschoolerContent = {
             "Quasi-experimental classroom study with secondary school students (ages 14–19). Participants played the Real Lives simulation, experiencing life as migrants from MENA regions.",
           pdfPath:
             "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/pdfs/ThomasNygrenResearchPaper-1.pdf",
-          route: "/reallives/homeschooler/Uppsala_University",
+          route: "/reallives/homeschooler/Uppsala-University-Research",
         },
       },
 
@@ -842,7 +843,7 @@ export const homeschoolerContent = {
             "Descriptive mixed-methods study\u00a0combining qualitative and quantitative data. Analysis of\u00a063 simulated lives\u00a0played by 13 low-income, urban adolescents.",
           pdfPath:
             "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/pdfs/Kallen-Tsikalas.pdf",
-          route: "/reallives/homeschooler/Individual_Research",
+          route: "/reallives/homeschooler/Kallen-Tsikalas-Youth-Simulation-Research",
         },
       },
 
@@ -877,7 +878,7 @@ export const homeschoolerContent = {
             "Applied use of interactive simulation (RealLives) within a multicultural education context, combined with reflective frameworks (ChangeMaker Index). Experiential learning approach supported by observation of participant engagement and qualitative interpretation of learning outcomes.",
           pdfPath:
             "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-research-page/pdfs/RealLives-Foundation-Kame-Seoul-Korea.pdf",
-          route: "/reallives/homeschooler/Kame_Research",
+          route: "/reallives/homeschooler/KAME-Seoul-Multicultural-Research",
         },
       },
     ],
@@ -1002,19 +1003,25 @@ export const homeschoolerContent = {
           "Taught a diverse portfolio of courses including Human–Computer Interaction (HCI), Augmented and Virtual Reality (AR/VR), Data Mining, and Applied Statistics, and successfully supervised six Ph.D. scholars in emerging technology domains.",
         ],
       },
+      advisorsHeading: "Our Advisors",
+      advisorsTeam: [
+        { name: "Pankaj Sapkal", role: "Chief Strategist" },
+        { name: "Ajit Ghanekar", role: "Chief Stasitician" },
+      ],
       workingTeamHeading: "Working Team",
       workingTeam: [
         { name: "Parag Mankeekar", role: "Team Leader" },
         { name: "Ravi Gulhane", role: "CTO" },
-        { name: "Ajit Ghanekar", role: "Chief Stasitician" },
         { name: "Atharva Nijampurkar", role: "Senior Backend Developer" },
-        { name: "Pankaj Sapkal", role: "Chief Strategist" },
-        { name: "Vidya Mankeekar", role: "Account and HR" },
+        { name: "Vidya Mankeekar", role: "Human Resources" },
         { name: "Adarsh Vishwakarma", role: "Frontend Developer" },
         { name: "Viraj Kabbur", role: "Product Manager" },
+      ],
+      internsHeading: "Our Interns",
+      internsTeam: [
+        { name: "Bhoomi Luniya", role: "AI Intern" },
         { name: "Janhavi Desai", role: "Translation Intern" },
         { name: "Sakshi Kulkarni", role: "Translation Intern" },
-        { name: "Bhoomi Luniya", role: "AI Intern" },
       ],
       itinerantHeading: "Itinerant Team Members",
       itinerantIntroParagraphs: [

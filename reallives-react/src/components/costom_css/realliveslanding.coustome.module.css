@@ -98,7 +98,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 450px;
+  height: 550px;
 }
 
 .icon_rl_mid {
@@ -141,7 +141,8 @@
 }
 
 .active {
-  animation: fillBar 3s linear forwards;
+  /* Duration set from RealLivesLanding via --hero-carousel-duration (matches slide interval). */
+  animation: fillBar var(--hero-carousel-duration, 8s) linear forwards;
 }
 
 .filled {
@@ -173,7 +174,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 4rem;
-  margin-top: 2%;
+  margin-top: 6%;
 }
 
 .label_card_new_str {
@@ -277,7 +278,13 @@
   margin-top: 1%;
 }
 
-.image_banner_full_new > img {
+.image_banner_full_new > picture {
+  display: block;
+  width: 100%;
+}
+
+.image_banner_full_new > img,
+.image_banner_full_new > picture img {
   height: 500px;
   width: 100%;
   object-fit: contain;
@@ -692,7 +699,8 @@
     height: 40vh;
   }
 
-  .image_banner_full_new > img {
+  .image_banner_full_new > img,
+  .image_banner_full_new > picture img {
     height: 300px;
     padding: 1rem;
   }
@@ -854,7 +862,8 @@
     height: 40vh;
   }
 
-  .image_banner_full_new > img {
+  .image_banner_full_new > img,
+  .image_banner_full_new > picture img {
     height: 300px;
     padding: 1rem;
   }
@@ -1016,7 +1025,8 @@
     height: 40vh;
   }
 
-  .image_banner_full_new > img {
+  .image_banner_full_new > img,
+  .image_banner_full_new > picture img {
     height: 300px;
     padding: 1rem;
   }
@@ -1178,7 +1188,8 @@
     height: 40vh;
   }
 
-  .image_banner_full_new > img {
+  .image_banner_full_new > img,
+  .image_banner_full_new > picture img {
     height: 300px;
     padding: 1rem;
   }
@@ -1341,7 +1352,8 @@
     height: 40vh;
   }
 
-  .image_banner_full_new > img {
+  .image_banner_full_new > img,
+  .image_banner_full_new > picture img {
     height: 300px;
     padding: 1rem;
   }
@@ -1503,7 +1515,8 @@
     height: 40vh;
   }
 
-  .image_banner_full_new > img {
+  .image_banner_full_new > img,
+  .image_banner_full_new > picture img {
     height: 300px;
     padding: 1rem;
   }
@@ -1660,7 +1673,8 @@
     height: 40vh;
   }
 
-  .image_banner_full_new > img {
+  .image_banner_full_new > img,
+  .image_banner_full_new > picture img {
     height: 300px;
     padding: 1rem;
   }
@@ -1827,7 +1841,8 @@
     height: 40vh;
   }
 
-  .image_banner_full_new > img {
+  .image_banner_full_new > img,
+  .image_banner_full_new > picture img {
     height: 300px;
     padding: 1rem;
   }
@@ -1989,7 +2004,8 @@
     height: 40vh;
   }
 
-  .image_banner_full_new > img {
+  .image_banner_full_new > img,
+  .image_banner_full_new > picture img {
     height: 300px;
     padding: 1rem;
   }
@@ -2151,7 +2167,8 @@
     height: 40vh;
   }
 
-  .image_banner_full_new > img {
+  .image_banner_full_new > img,
+  .image_banner_full_new > picture img {
     height: 300px;
     padding: 1rem;
   }
@@ -2313,7 +2330,8 @@
     height: 40vh;
   }
 
-  .image_banner_full_new > img {
+  .image_banner_full_new > img,
+  .image_banner_full_new > picture img {
     height: 300px;
     padding: 1rem;
   }

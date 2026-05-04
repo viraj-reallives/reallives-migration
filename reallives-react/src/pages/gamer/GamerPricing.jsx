@@ -90,7 +90,10 @@ export default function GamerPricing() {
                     </div>
                   ) : null}
                   {card.learnMoreLinkText && card.productTabId ? (
-                    <Link to={`/reallives/gamer/products#${card.productTabId}`} className={styles.learnMore}>
+                    <Link
+                      to={`/reallives/gamer/products?tab=${encodeURIComponent(card.productTabId)}`}
+                      className={styles.learnMore}
+                    >
                       {card.learnMoreLinkText}
                     </Link>
                   ) : null}

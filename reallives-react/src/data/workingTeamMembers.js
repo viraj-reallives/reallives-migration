@@ -10,6 +10,44 @@ const CDN =
 
 const COMPANY_LI = "https://www.linkedin.com/company/reallives-foundation/";
 
+/** Above Working Team (order: Pankaj, Ajit per site copy). */
+export const advisorTeamMembers = [
+  {
+    name: "Pankaj Sapkal",
+    desc: "Chief Strategist",
+    img: `${CDN}/pankaj-sapkal.jpg`,
+    linkedinUrl: COMPANY_LI,
+  },
+  {
+    name: "Ajit Ghanekar",
+    desc: "Chief Stasitician",
+    img: `${CDN}/ajit-ghanekar.jpg`,
+    linkedinUrl: "https://www.linkedin.com/in/ajit-ghanekar/",
+  },
+];
+
+/** Shown under Working Team on About → Our Story (ordered: Bhoomi, Janhavi, Sakshi). */
+export const internTeamMembers = [
+  {
+    name: "Bhoomi Luniya",
+    desc: "AI Intern",
+    img: `${CDN}/bhoomi.jpeg`,
+    linkedinUrl: "https://www.linkedin.com/in/bhoomi-luniya-3393aa371/",
+  },
+  {
+    name: "Janhavi Desai",
+    desc: "Translation Intern",
+    img: `${CDN}/janhavi.png`,
+    linkedinUrl: "https://www.linkedin.com/in/janhavi-hemant-desai-330442281/",
+  },
+  {
+    name: "Sakshi Kulkarni",
+    desc: "Translation Intern",
+    img: `${CDN}/sakshi.png`,
+    linkedinUrl: "https://www.linkedin.com/in/sakshi-kulkarni-b16460313/",
+  },
+];
+
 export const workingTeamMembers = [
   {
     name: "Parag Mankeekar",
@@ -24,26 +62,14 @@ export const workingTeamMembers = [
     linkedinUrl: "https://www.linkedin.com/in/ravigulhane/",
   },
   {
-    name: "Ajit Ghanekar",
-    desc: "Chief Stasitician",
-    img: `${CDN}/ajit-ghanekar.jpg`,
-    linkedinUrl: "https://www.linkedin.com/in/ajit-ghanekar/",
-  },
-  {
     name: "Atharva Nijampurkar",
     desc: "Senior Backend Developer",
     img: `${CDN}/atharva.jpg`,
     linkedinUrl: "https://www.linkedin.com/in/atharva-nijampurkar-973674195/",
   },
   {
-    name: "Pankaj Sapkal",
-    desc: "Chief Strategist",
-    img: `${CDN}/pankaj-sapkal.jpg`,
-    linkedinUrl: COMPANY_LI,
-  },
-  {
     name: "Vidya Mankeekar",
-    desc: "Account and HR",
+    desc: "Human Resources",
     img: PLACEHOLDER_IMG,
     linkedinUrl: COMPANY_LI,
   },
@@ -58,23 +84,5 @@ export const workingTeamMembers = [
     desc: "Frontend Developer",
     img: `${CDN}/adarsh.jpeg`,
     linkedinUrl: COMPANY_LI,
-  },
-  {
-    name: "Janhavi Desai",
-    desc: "Translation Intern",
-    img: `${CDN}/janhavi.png`,
-    linkedinUrl: "https://www.linkedin.com/in/janhavi-hemant-desai-330442281/",
-  },
-  {
-    name: "Sakshi Kulkarni",
-    desc: "Translation Intern",
-    img: `${CDN}/sakshi.png`,
-    linkedinUrl: "https://www.linkedin.com/in/sakshi-kulkarni-b16460313/",
-  },
-  {
-    name: "Bhoomi Luniya",
-    desc: "AI Intern",
-    img: `${CDN}/bhoomi.jpeg`,
-    linkedinUrl: "https://www.linkedin.com/in/bhoomi-luniya-3393aa371/",
   },
 ];

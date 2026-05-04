@@ -95,7 +95,7 @@ export default function SchoolFoundation() {
                 <FileText size={17} strokeWidth={1.75} aria-hidden />
                 <span>
                   {taxExemption.linkText ??
-                    "View tax-exemption certificate (PDF)"}
+                    "View Indian Tax-Exemption Certificate (PDF)"}
                 </span>
               </a>
             ) : null}

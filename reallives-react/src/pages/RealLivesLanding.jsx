@@ -146,7 +146,7 @@
 //                   </span>
 
 //                   <Link
-//                     to="/reallives/school/Research_Card1"
+//                     to="/reallives/school/Korea-University-Research"
 //                     className={`${styles1.manrope_text} ${styles1.view_paper_btn}`}
 //                   >
 //                     View Paper
@@ -177,7 +177,7 @@
 //                   </span>
 
 //                   <Link
-//                     to="/reallives/school/Albany_University"
+//                     to="/reallives/school/SUNY-Albany-Research"
 //                     className={`${styles1.manrope_text} ${styles1.view_paper_btn}`}
 //                   >
 //                     View Paper
@@ -208,7 +208,7 @@
 //                   </span>
 
 //                   <Link
-//                     to="/reallives/school/Uppsala_University"
+//                     to="/reallives/school/Uppsala-University-Research"
 //                     className={`${styles1.manrope_text} ${styles1.view_paper_btn}`}
 //                   >
 //                     View Paper
@@ -360,10 +360,10 @@
 //               className={`${styles1.step_into_stories_btn} ${styles1.manrope_text}`}
 //               onClick={() => setIsModalOpen(true)}
 //             >
-//               Step into RealLives Stories <MoveRight />
+//               RealLives in Real Life <MoveRight />
 //             </button>
 
-//             <button className={`${styles1.step_into_stories_btn} ${styles1.manrope_text}`}>Step into RealLives Stories <MoveRight /></button>
+//             <button className={`${styles1.step_into_stories_btn} ${styles1.manrope_text}`}>RealLives in Real Life <MoveRight /></button>
 //           </div>
 
 //         </div>
@@ -445,18 +445,28 @@ import styles1 from "../components/costom_css/realliveslanding.coustome.module.c
 import logo_rl from "../add-image/logo.svg";
 import rl_mid_logo from "../add-image/mid-rl-logo.svg";
 import card_logo_university from "../add-image/logo-card-rl.svg";
-import card_banner_1 from "../add-image/card_banner_1.png";
 import albany_university_logo_1 from "../add-image/albany-universty-logo.svg";
 import uppsala_university_logo_1 from "../add-image/Uppsala_University_logo-card.svg";
-import second_research_paper_1 from "../add-image/second_research_paper.png";
-import therd_research_paper_1 from "../add-image/therd-research-paper.png";
 import mumbai_workshop_1 from "../add-image/mumbai_workshop_1.png";
 import eth_workshop_1 from "../add-image/school-3-image-slider.png";
 import kyungeeh_university_workshop_1 from "../add-image/3-rd-workshop-2.png";
 import navamindradhiraj_university_workshop_1 from "../add-image/second-workshop-2.png";
-import banner_home_5_card from "../add-image/banner-home-card.png";
 import earth_banner_image from "../add-image/earth-banner-card.png";
-import { X, MoveRight, ArrowBigDown } from "lucide-react";
+import { X, MoveRight, ChevronsDown } from "lucide-react";
+
+const RESEARCH_PREVIEW_KOREA_URL =
+  "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/landing-page/korea.jpg";
+const RESEARCH_PREVIEW_ALBANY_URL =
+  "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/landing-page/albany.jpg";
+const RESEARCH_PREVIEW_UPPSALA_URL =
+  "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/landing-page/uppsala.jpg";
+const ECOSYSTEM_BANNER_URL =
+  "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/landing-page/ecosystem.svg";
+const ECOSYSTEM_BANNER_MOBILE_URL =
+  "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/landing-page/exosystem-mobile.svg";
+
+/** Pause on each landing hero slide before auto-advance (ms). */
+const HERO_CAROUSEL_INTERVAL_MS = 8000;
 
 export default function RealLivesLanding() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -497,9 +507,9 @@ export default function RealLivesLanding() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setCurrentIndex((prev) => (prev === total - 1 ? 0 : prev + 1));
-    }, 3000);
+    }, HERO_CAROUSEL_INTERVAL_MS);
     return () => clearTimeout(timer);
-  }, [currentIndex]);
+  }, [currentIndex, total]);
 
   const { carousel, entryCards, ctas, footer } = landingContent;
   const logoSrc = footer?.logo ?? "";
@@ -577,14 +587,17 @@ export default function RealLivesLanding() {
                     <p className={styles1.title_card_text}>Korea University</p>
                   </span>
                   <Link
-                    to="/reallives/school/Research_Card1"
+                    to="/reallives/school/Korea-University-Research"
                     className={styles1.view_paper_btn}
                   >
                     View Paper
                   </Link>
                 </div>
                 <div className={styles1.pdf_img_viwe}>
-                  <img src={card_banner_1} alt="Card Banner" />
+                  <img
+                    src={RESEARCH_PREVIEW_KOREA_URL}
+                    alt="Korea University research paper preview"
+                  />
                 </div>
               </div>
 
@@ -603,14 +616,17 @@ export default function RealLivesLanding() {
                     </p>
                   </span>
                   <Link
-                    to="/reallives/school/Albany_University"
+                    to="/reallives/school/SUNY-Albany-Research"
                     className={styles1.view_paper_btn}
                   >
                     View Paper
                   </Link>
                 </div>
                 <div className={styles1.pdf_img_viwe}>
-                  <img src={second_research_paper_1} alt="Research Paper" />
+                  <img
+                    src={RESEARCH_PREVIEW_ALBANY_URL}
+                    alt="University at Albany research paper preview"
+                  />
                 </div>
               </div>
 
@@ -629,14 +645,17 @@ export default function RealLivesLanding() {
                     </p>
                   </span>
                   <Link
-                    to="/reallives/school/Uppsala_University"
+                    to="/reallives/school/Uppsala-University-Research"
                     className={styles1.view_paper_btn}
                   >
                     View Paper
                   </Link>
                 </div>
                 <div className={styles1.pdf_img_viwe}>
-                  <img src={therd_research_paper_1} alt="Research Paper" />
+                  <img
+                    src={RESEARCH_PREVIEW_UPPSALA_URL}
+                    alt="Uppsala University research paper preview"
+                  />
                 </div>
               </div>
             </div>
@@ -713,7 +732,17 @@ export default function RealLivesLanding() {
               </p>
             </div>
             <div className={styles1.image_banner_full_new}>
-              <img src={banner_home_5_card} alt="Ecosystem" />
+              <picture>
+                <source
+                  media="(max-width: 768px)"
+                  srcSet={ECOSYSTEM_BANNER_MOBILE_URL}
+                  type="image/svg+xml"
+                />
+                <img
+                  src={ECOSYSTEM_BANNER_URL}
+                  alt="RealLives learning ecosystem: Real AI, RealBoard, Empathy Canvas, languages, ChangeMaker Index, and SDGs"
+                />
+              </picture>
             </div>
           </div>
 
@@ -738,7 +767,12 @@ export default function RealLivesLanding() {
             </div>
           </div>
 
-          <div className={styles1.inner_bottom_home_label}>
+          <div
+            className={styles1.inner_bottom_home_label}
+            style={{
+              "--hero-carousel-duration": `${HERO_CAROUSEL_INTERVAL_MS}ms`,
+            }}
+          >
             {[...Array(total)].map((_, index) => (
               <div
                 key={index}
@@ -754,13 +788,15 @@ export default function RealLivesLanding() {
               className={`${styles1.step_into_stories_btn} ${styles1.manrope_text}`}
               onClick={() => setIsModalOpen(true)}
             >
-              Step into RealLives Stories{" "}
+              RealLives in Real Life{" "}
               <MoveRight className={styles1.arrow_font} />
             </button>
           </div>
 
           <button
-
+            type="button"
+            aria-label="Scroll to content below"
+            className={styles.scrollPastHeroBtn}
             onClick={(e) => {
               const section = document.querySelector(
                 '[class*="section_second_style"]',
@@ -771,22 +807,12 @@ export default function RealLivesLanding() {
                 e.currentTarget.style.display = "none";
               }
             }}
-            
-            style={{
-              position: "fixed",
-              bottom: "0.5%",
-              right: "20px",
-              zIndex: 1000,
-              background: "#11e2ff",
-              color: "#fff",
-              border: "none",
-              borderRadius: "50%",
-              padding: "10px",
-              cursor: "pointer",
-            }}
           >
-            <ArrowBigDown size={30} />
-
+            <ChevronsDown
+              className={styles.scrollPastHeroIcon}
+              strokeWidth={1.75}
+              aria-hidden
+            />
           </button>
 
         </div>
