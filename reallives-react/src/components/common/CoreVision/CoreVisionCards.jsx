@@ -20,3 +20,4 @@ export default function CoreVisionCards({ compact = false }) {
     </div>
   );
 }
+

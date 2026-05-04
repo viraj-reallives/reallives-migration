@@ -18,7 +18,7 @@ export const gamerContent = {
 
   /** Gamer landing: hero visual, gameplay embed, and reviews (matches original gamer home). */
   hero: {
-    backgroundImagePath: '/assets/images/gamer/image/background-gamer-image.jpg',
+    // backgroundImagePath: '/assets/images/gamer/image/background-gamer-image.jpg',
     bracketDecorationPath: '/assets/images/gamer/image/top-bracetes.png',
     headline: {
       life: 'LIFE',

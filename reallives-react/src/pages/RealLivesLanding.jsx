@@ -767,8 +767,7 @@ export default function RealLivesLanding() {
             </div>
           </div>
 
-          <div
-            className={styles1.inner_bottom_home_label}
+          <div  className={styles1.inner_bottom_home_label}
             style={{
               "--hero-carousel-duration": `${HERO_CAROUSEL_INTERVAL_MS}ms`,
             }}

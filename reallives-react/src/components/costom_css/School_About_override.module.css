@@ -377,6 +377,9 @@ color: white !important;
  color: white !important;
 }
 
+[data-theme="dark"] .working_team_h1{
+ color: white !important;
+}
 
 @keyframes slideFade {
   0% {
