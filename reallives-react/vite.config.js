@@ -66,4 +66,19 @@ export default defineConfig(({ mode }) => ({
       transformMixedEsModules: true,
     },
   },
+
+  server: {
+    proxy: {
+      // Dev-only proxy for the RealLives licensing pricing API. The backend's
+      // CORS allowlist doesn't include arbitrary localhost ports, so we proxy
+      // through Vite to keep the request same-origin in dev. Production hits
+      // the real URL directly.
+      '/sls-api': {
+        target: 'https://slsapi.reallivesworld.com',
+        changeOrigin: true,
+        secure: true,
+        rewrite: (p) => p.replace(/^\/sls-api/, ''),
+      },
+    },
+  },
 }));

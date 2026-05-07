@@ -892,36 +892,135 @@ export const schoolContent = {
   },
 
   pricing: {
-    heading: 'Pricing Licenses',
-    includedHeading: 'What’s Included?',
-    includedDescription:
-      'All plans include the same core features No hidden costs. Complete transparency',
-    toolInfoNote:
-      'Based on your requirements, we recommend the most suitable license plan, plus show an alternative option for comparison. All features remain the same across plans - only student capacity and life credits differ',
-    tiers: [
+    eyebrow: 'School Pricing',
+    sectionHeading: 'One license for your entire school.',
+    sectionSubheading:
+      'Give every student access to RealLives through a flexible, institution-wide license. Start with a Base License, add the credits your school needs, and distribute them across classes and grades however you choose — with no per-student licensing limits.',
+    howItWorks: {
+      heading: 'How RealLives School licensing works',
+      steps: [
+        {
+          number: '01',
+          title: 'Activate your School License',
+          description:
+            'A single annual Base License unlocks the RealLives platform for your entire institution, whether you have 50 students or 5,000. No separate teacher or classroom licenses required.',
+        },
+        {
+          number: '02',
+          title: 'Add Credits for student gameplay',
+          description:
+            'Credits power gameplay experiences. 1 life credit = 1 simulated life. Your school’s credits are shared institution-wide, so educators can allocate them across classes, programs, and grade levels as needed.',
+        },
+        {
+          number: '03',
+          title: 'Unused credits carry forward',
+          description:
+            'Credits never expire while your license remains active. Any unused credits automatically roll over into the next academic year when you renew your Base License.',
+        },
+      ],
+    },
+    baseLicense: {
+      tagline: 'Required for the institution',
+      includedLine: 'Base platform access for the full academic year.',
+      bullets: [
+        '1 year of full RealLives Simulation access',
+        'Unlimited teachers and students on a single license',
+        'Curriculum-aligned lesson plans and teacher resources',
+        'No per-student cap — serve 50 or 5,000 on the same license',
+      ],
+      ctaText: 'Buy Base License',
+      policyHeading: 'Good to know',
+      policyNotes: [
+        'First-time customers purchase the Base License together with at least one Credit Pack — the license cannot be bought on its own.',
+        'No credit is charged when a simulated character dies before the age of 10.',
+        'Credits are pooled at the institution level — your team allocates them across students and grades.',
+        'Unused credits roll over to the next academic year as long as you renew your Base License.',
+      ],
+    },
+    creditPacks: {
+      heading: 'Choose a Credit Pack',
+      subheading:
+        'All packs use the same feature set — only the number of credits (lives) differs. Buy more anytime during the year as needs grow.',
+      bestValueLabel: 'Best Value',
+      perCreditLabel: 'per credit',
+      ctaText: 'Buy License',
+      // ~20 lives per student per year is the standard recommendation per the
+      // RealLives licensing policy. Used to surface a "covers ~N students" hint.
+      livesPerStudent: 20,
+      coversStudentsLabel: 'Covers ~',
+    },
+    rolloverPolicy: {
+      heading: 'Credit rollover, in plain English',
+      points: [
+        'Credits unused at the end of the year do not expire automatically.',
+        'Unused credits roll over to the next year, but only if your Base License is renewed.',
+        'Without renewal, rolled-over credits are frozen — never lost. They unlock again the moment you renew.',
+        'School credits are pooled across the entire institution; teachers decide how to allocate them.',
+      ],
+    },
+    faqs: [
       {
-        name: 'ChangeMaker School - Small',
-        price: '$599',
-        period: '/1 Year',
-        studentCount: '500 Students',
-        features: ['1 year validity', '$599 on renewal'],
-        ctaText: 'Get Started',
+        question: 'Why is there a separate Base License?',
+        answer:
+          'The Base License unlocks the platform itself — student accounts, teacher dashboards, lesson plans, and reporting. Credit Packs are the fuel for gameplay. Both are required, and pricing each separately keeps the model flexible for schools of any size.',
       },
       {
-        name: 'ChangeMaker School - Medium',
-        price: '$799',
-        period: '/1 Year',
-        studentCount: '800 Students',
-        features: ['1 year validity', '$799 on renewal'],
-        ctaText: 'Get Started',
+        question: 'How are credits distributed across students?',
+        answer:
+          'Credits are pooled at the school level — your team decides. Our recommendation is ~20 lives per student per year (about 2 per month, excluding holidays), but schools are free to spend differently.',
       },
       {
-        name: 'ChangeMaker School - Big',
-        price: '$1199',
-        period: '/1 Year',
-        studentCount: '1100 Students',
-        features: ['1 year validity', '$1199 on renewal'],
-        ctaText: 'Get Started',
+        question: 'Is there a cap on the number of students or teachers?',
+        answer:
+          'No. One Base License covers the entire institution. You can run RealLives across as many classrooms, teachers, and students as you need.',
+      },
+      {
+        question: 'What if we run out of credits mid-year?',
+        answer:
+          'Buy another Credit Pack at any time during the active license year. Packs stack — there’s no limit on how many you can purchase.',
+      },
+    ],
+    whatsIncluded: {
+      heading: 'What every license includes',
+      description:
+        'All plans include the same core features. No hidden costs. Complete transparency.',
+    },
+    includedProductCards: [
+      {
+        title: 'RealLives Simulation',
+        description:
+          'Students live simulated lives in nearly 200 countries — making real-world decisions about education, work, family, and health, then seeing the consequences play out.',
+        imagePath: 'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/logos/real-r-logo.svg',
+        featureTags: ['Life Simulation', 'Cultural Awareness'],
+        learnMoreLinkText: 'Learn More',
+        productTabId: 'tab1',
+      },
+      {
+        title: 'Empathy Canvas',
+        description:
+          'A structured reflection framework that helps students process their RealLives experiences and develop deeper empathy through guided self-reflection.',
+        imagePath: 'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/logos/empathy-logo.svg',
+        featureTags: ['Reflection Tool', 'Empathy Building'],
+        learnMoreLinkText: 'Learn More',
+        productTabId: 'tab3',
+      },
+      {
+        title: 'RealBoard',
+        description:
+          'A safe, private school-only social platform where students share their RealLives experiences and engage in moderated peer discussion.',
+        imagePath: 'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/logos/realboard-logo.svg',
+        featureTags: ['Social Platform', 'Peer Learning'],
+        learnMoreLinkText: 'Learn More',
+        productTabId: 'tab4',
+      },
+      {
+        title: 'ChangeMaker Index',
+        description:
+          'Assessment tool that measures 18 global competencies through gameplay decisions rather than self-reporting — providing authentic insights into student development.',
+        imagePath: 'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/logos/changemaker-logo.svg',
+        featureTags: ['Assessment Tool', '18 Competencies'],
+        learnMoreLinkText: 'Learn More',
+        productTabId: 'tab2',
       },
     ],
     purchaseModal: {

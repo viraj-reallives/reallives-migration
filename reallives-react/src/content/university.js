@@ -903,60 +903,149 @@ export const universityContent = {
   },
 
   pricing: {
-    heading: "Pricing Licenses",
-    includedHeading: "What’s Included?",
-    includedDescription:
-      "All plans include the same core features No hidden costs. Complete transparency",
-    toolInfoNote:
-      "Based on your requirements, we recommend the most suitable license plan, plus show an alternative option for comparison. All features remain the same across plans - only student capacity and life credits differ",
-    tiers: [
+    eyebrow: "University Pricing",
+    sectionHeading: "Built for higher-ed scale.",
+    sectionSubheading:
+      "Bring RealLives across courses, departments, and research programs with a flexible institution-wide license. Start with a Base License, add the credits your university needs, and distribute them across cohorts, classrooms, and initiatives without per-student restrictions.",
+    howItWorks: {
+      heading: "How RealLives University licensing works",
+      steps: [
+        {
+          number: "01",
+          title: "Activate your University License",
+          description:
+            "One annual Base License provides access for your faculty, department, or institution — enabling educators and administrators to run RealLives across multiple courses and programs without individual student licensing.",
+        },
+        {
+          number: "02",
+          title: "Add Credits for experiential learning",
+          description:
+            "Credits power simulation experiences. 1 credit = 1 simulated life. Credits are pooled at the institutional level, allowing your team to allocate usage across courses, cohorts, workshops, and research initiatives as needed.",
+        },
+        {
+          number: "03",
+          title: "Credits roll forward with renewal",
+          description:
+            "Unused credits remain available year to year as long as your Base License stays active. There’s no need to repurchase unused credits during renewal.",
+        },
+      ],
+    },
+    baseLicense: {
+      tagline: "Required for the institution",
+      includedLine: "Base platform access for the full academic year.",
+      bullets: [
+        "1 year of full RealLives Simulation access",
+        "Unlimited faculty and students on a single license",
+        "Course-ready lesson plans, syllabi, and assessment rubrics",
+        "Use across multiple courses and departments — no extra fees",
+      ],
+      ctaText: "Buy Base License",
+      policyHeading: "Good to know",
+      policyNotes: [
+        "First-time customers purchase the Base License together with at least one Credit Pack — the license cannot be bought on its own.",
+        "No credit is charged when a simulated character dies before the age of 10.",
+        "Credits are pooled at the institution level — your team allocates them across courses, programs, and research projects.",
+        "Unused credits roll over to the next academic year as long as you renew your Base License.",
+      ],
+    },
+    creditPacks: {
+      heading: "Choose a Credit Pack",
+      subheading:
+        "All packs use the same feature set — only the number of credits (lives) differs. Buy more anytime during the year as needs grow.",
+      bestValueLabel: "Best Value",
+      perCreditLabel: "per credit",
+      ctaText: "Buy License",
+      // Used to surface a "covers ~N students" hint per pack.
+      livesPerStudent: 20,
+      coversStudentsLabel: "Covers ~",
+    },
+    // Shown when the API returns no UNIVERSITY definitions yet (initial launch).
+    // When the catalog adds them, the page auto-populates with no code change.
+    comingSoon: {
+      eyebrow: "Coming Soon",
+      heading: "Localized pricing for your region is on the way.",
+      body:
+        "We're rolling out country-tiered pricing for universities to keep RealLives affordable everywhere. In the meantime, get in touch and we'll quote you directly.",
+      ctaText: "Contact our team",
+      ctaHref: "/reallives/university/contact",
+    },
+    rolloverPolicy: {
+      heading: "Credit rollover, in plain English",
+      points: [
+        "Credits unused at the end of the year do not expire automatically.",
+        "Unused credits roll over to the next year, but only if your Base License is renewed.",
+        "Without renewal, rolled-over credits are frozen — never lost. They unlock again the moment you renew.",
+        "University credits are pooled across the entire institution; faculty decide how to allocate them.",
+      ],
+    },
+    faqs: [
       {
-        name: "RL Pack 50",
-        price: "$299",
-        period: "/1 Year",
-        studentCount: "50 Students",
-        features: ["1 year validity", "$249 on renewal"],
-        ctaText: "Get Started",
+        question: "Why is there a separate Base License?",
+        answer:
+          "The Base License unlocks the platform itself — student accounts, faculty dashboards, course resources, and reporting. Credit Packs are the fuel for gameplay. Both are required, and pricing each separately keeps the model flexible for institutions of any size.",
       },
       {
-        name: "RL Pack 100",
-        price: "$499",
-        period: "/1 Year",
-        studentCount: "100 Students",
-        features: ["1 year validity", "$449 on renewal"],
-        ctaText: "Get Started",
+        question: "How are credits distributed across courses and students?",
+        answer:
+          "Credits are pooled at the institution level — your team decides. We recommend ~20 lives per student per year as a starting baseline; faculty are free to allocate more or less per course.",
       },
       {
-        name: "RL Pack 150",
-        price: "$749",
-        period: "/1 Year",
-        studentCount: "150 Students",
-        features: ["1 year validity", "$749 on renewal"],
-        ctaText: "Get Started",
+        question: "Is there a cap on the number of students or faculty?",
+        answer:
+          "No. One Base License covers the entire institution. You can run RealLives across as many courses, faculty members, and students as you need.",
       },
       {
-        name: "RL Pack 200",
-        price: "$999",
-        period: "/1 Year",
-        studentCount: "200 Students",
-        features: ["1 year validity", "$999 on renewal"],
-        ctaText: "Get Started",
+        question: "Can multiple departments share one license?",
+        answer:
+          "Yes. The Base License is institutional. Sociology, education, public health, and any other department can run RealLives on the shared license and credit pool.",
       },
       {
-        name: "RL Pack 250",
-        price: "$1249",
-        period: "/1 Year",
-        studentCount: "250 Students",
-        features: ["1 year validity", "$1249 on renewal"],
-        ctaText: "Get Started",
+        question: "What if we run out of credits mid-semester?",
+        answer:
+          "Buy another Credit Pack at any time during the active license year. Packs stack — there’s no limit on how many you can purchase.",
+      },
+    ],
+    whatsIncluded: {
+      heading: "What every license includes",
+      description:
+        "All plans include the same core features. No hidden costs. Complete transparency.",
+    },
+    includedProductCards: [
+      {
+        title: "RealLives Simulation",
+        description:
+          "Students live simulated lives in nearly 200 countries — making real-world decisions about education, work, family, and health, then seeing the consequences play out.",
+        imagePath: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/logos/real-r-logo.svg",
+        featureTags: ["Life Simulation", "Cultural Awareness"],
+        learnMoreLinkText: "Learn More",
+        productTabId: "tab1",
       },
       {
-        name: "RL Pack 300",
-        price: "$1499",
-        period: "/1 Year",
-        studentCount: "300 Students",
-        features: ["1 year validity", "$1499 on renewal"],
-        ctaText: "Get Started",
+        title: "Empathy Canvas",
+        description:
+          "A structured reflection framework that helps students process their RealLives experiences and develop deeper empathy through guided self-reflection.",
+        imagePath: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/logos/empathy-logo.svg",
+        featureTags: ["Reflection Tool", "Empathy Building"],
+        learnMoreLinkText: "Learn More",
+        productTabId: "tab3",
+      },
+      {
+        title: "RealBoard",
+        description:
+          "A safe, private cohort-only social platform where students share their RealLives experiences and engage in moderated peer discussion.",
+        imagePath: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/logos/realboard-logo.svg",
+        featureTags: ["Social Platform", "Peer Learning"],
+        learnMoreLinkText: "Learn More",
+        productTabId: "tab4",
+      },
+      {
+        title: "ChangeMaker Index",
+        description:
+          "Assessment tool that measures 18 global competencies through gameplay decisions rather than self-reporting — providing authentic insights into student development.",
+        imagePath: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/logos/changemaker-logo.svg",
+        featureTags: ["Assessment Tool", "18 Competencies"],
+        learnMoreLinkText: "Learn More",
+        productTabId: "tab2",
       },
     ],
     purchaseModal: {

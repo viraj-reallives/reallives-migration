@@ -285,45 +285,105 @@ export const gamerContent = {
   },
 
   pricing: {
-    sectionHeading: 'RealLives Licenses',
-    tiers: [
+    eyebrow: 'Gamer Pricing',
+    sectionHeading: 'Play at your own pace.',
+    sectionSubheading:
+      'Start with a one-year Base License and experience lives from around the world through RealLives. Add Credit Packs whenever you want more gameplay — your credits stay with your account and roll over as long as your license remains active.',
+    countryNote: {
+      detectedPrefix: 'Showing prices for',
+      fallback: 'Showing default international pricing',
+    },
+    howItWorks: {
+      heading: 'How RealLives Gamer licensing works',
+      steps: [
+        {
+          number: '01',
+          title: 'Activate your Base License',
+          description:
+            'Your Base License unlocks full access to the RealLives platform for one year and includes starter lives so you can begin exploring immediately.',
+        },
+        {
+          number: '02',
+          title: 'Add Credits anytime',
+          description:
+            '1 credit = 1 simulated life. Need more lives? Pick up a Credit Pack whenever you want. Credits are tied to your personal account, and you can stack as many as you like over time.',
+        },
+        {
+          number: '03',
+          title: 'Keep unused credits with renewal',
+          description:
+            'Unused credits never disappear. As long as your Base License remains active, your remaining credits carry forward into the next year automatically.',
+        },
+      ],
+    },
+    baseLicense: {
+      tagline: 'Required to play',
+      includedLine:
+        '5 life credits included — start playing the moment you sign up.',
+      bullets: [
+        '1 year of full RealLives Simulation access',
+        '5 simulated lives bundled with the license',
+        'Unlimited country and life-event content updates',
+        'Use credits whenever you play — no monthly commitment',
+      ],
+      ctaText: 'Buy License',
+      policyHeading: 'Good to know',
+      policyNotes: [
+        'The Base License works on its own — you can start with the 5 included lives and add Credit Packs whenever you want more.',
+        'No credit is charged when your simulated character dies before the age of 10.',
+        'Credits never expire — unused credits roll over to your next renewal year automatically.',
+        'Stack multiple Credit Packs anytime during the year as you need more lives.',
+      ],
+    },
+    creditPacks: {
+      heading: 'Choose a Credit Pack',
+      subheading:
+        'All packs use the same base feature set — only the number of credits (lives) differs. Stack multiple packs anytime during the year.',
+      bestValueLabel: 'Best Value',
+      perCreditLabel: 'per credit',
+      ctaText: 'Buy License',
+      bundledHint: 'Includes Base License + Credits',
+    },
+    additionalCredits: {
+      heading: 'Buy additional credits',
+      subheading:
+        'Stack a Credit Pack on top of your Base License for more lives. Pick one and we\'ll add it to your order — credits never expire.',
+      tileCtaText: 'Get Credit Pack',
+    },
+    rolloverPolicy: {
+      heading: 'Credit rollover, in plain English',
+      points: [
+        'Credits unused at the end of the year do not expire automatically.',
+        'Unused credits roll over to the next year, but only if your Base License is renewed.',
+        'If the Base License is not renewed, rolled-over credits are frozen — they’re not lost, they unlock again the moment you renew.',
+      ],
+    },
+    faqs: [
       {
-        id: 'wanderer',
-        name: 'Wanderer',
-        price: '$7.99',
-        validityLabel: '/1 Year Validity',
-        maxLivesLabel: 'Max Lives : 50',
-        ctaText: 'Get Started',
+        question: 'Do I really need the Base License?',
+        answer:
+          'Yes — the Base License is what unlocks the platform itself. It comes with 5 starter lives so you can begin playing right away. Credit Packs are optional add-ons for more lives whenever you need them.',
       },
       {
-        id: 'explore',
-        name: 'Explore',
-        price: '$9.99',
-        validityLabel: '/ 1 Year Validity',
-        maxLivesLabel: 'Max Lives : 100',
-        ctaText: 'Get Started',
+        question: 'How long is one credit good for?',
+        answer:
+          'One credit equals one simulated life — from birth to end. There’s no time limit on a single life; play it across many sessions if you like.',
       },
       {
-        id: 'voyager',
-        name: 'Voyager',
-        price: '$12.99',
-        validityLabel: '/2 Year Validity',
-        maxLivesLabel: 'Max Lives : 200',
-        ctaText: 'Get Started',
+        question: 'Why do prices differ by country?',
+        answer:
+          'We tier prices by country using purchasing-power adjustments so RealLives stays affordable everywhere. Your displayed price already includes any local taxes and checkout charges that apply in your region.',
       },
       {
-        id: 'trailblazer',
-        name: 'Trailblazer',
-        price: '$19.99',
-        validityLabel: '/3 Year Validity',
-        maxLivesLabel: 'Max Lives : 1000',
-        ctaText: 'Get Started',
+        question: 'What happens to leftover credits when my year ends?',
+        answer:
+          'They’re held safely on your account. Renew the Base License and they unlock again. Skip renewal and they stay frozen until you come back — they’re never deleted.',
       },
     ],
     whatsIncluded: {
       heading: 'What’s Included?',
       description:
-        'All plans include the same core features No hidden costs. Complete transparency',
+        'All plans include the same core features. No hidden costs. Complete transparency.',
     },
     includedProductCards: [
       {

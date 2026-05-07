@@ -1,0 +1,1448 @@
+/* =====================================================================
+   Shared Pricing Page — split-screen "Base License + Credit Pack" model.
+
+   This single stylesheet powers the pricing pages for gamer, school,
+   university (and any future tenant). It uses generic surface/text
+   tokens that automatically flip in dark mode (gamer is forced dark by
+   GamerLayout) and `--color-site-brand` which is set per sub-site via
+   `[data-site="..."]` in global.css.
+
+   Anchored layout:
+     hero
+     howItWorks
+     splitSection (LEFT: base license card • RIGHT: pack selector + summary)
+     policySection
+     includedSection
+     faqSection
+   ===================================================================== */
+
+/* ----------------------------- Page wrap ----------------------------- */
+
+.page {
+  width: 100%;
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: var(--space-32) var(--space-20) var(--space-60);
+  color: var(--color-text-primary);
+}
+
+/* -------------------------------- Hero ------------------------------- */
+
+.hero {
+  text-align: center;
+  padding: var(--space-32) var(--space-16) var(--space-40);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-12);
+}
+
+.eyebrow {
+  display: inline-block;
+  padding: 0.3rem 0.85rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-site-brand);
+  background: color-mix(in srgb, var(--color-site-brand) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-site-brand) 35%, transparent);
+  border-radius: var(--radius-pill);
+}
+
+.heroTitle {
+  margin: 0;
+  font-size: clamp(1.75rem, 4.5vw, 2.75rem);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  max-width: 50rem;
+  color: var(--color-text-primary);
+}
+
+.heroSubtitle {
+  margin: 0;
+  max-width: 42rem;
+  font-size: clamp(1rem, 1.7vw, 1.125rem);
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+
+/* --------------------------- How it works ---------------------------- */
+
+.howItWorks {
+  margin: 3rem 0 6rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+}
+
+.sectionHeading {
+  margin: 0;
+  font-size: clamp(1.375rem, 2.5vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: -0.005em;
+  color: var(--color-text-primary);
+  text-align: center;
+}
+
+.stepsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-16);
+}
+
+@media (min-width: 640px) {
+  .stepsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .stepsGrid {
+    /* auto-fit so 3 cards span the full width as 3 equal columns;
+       a future page with 4 steps would rebalance into 4 columns. */
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  }
+}
+
+.stepCard {
+  position: relative;
+  padding: var(--space-24) var(--space-20);
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-10);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.stepCard:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--color-site-brand) 40%, var(--color-border));
+  box-shadow: 0 10px 30px color-mix(in srgb, var(--color-site-brand) 10%, transparent);
+}
+
+.stepNumber {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: var(--radius-circle);
+  background: color-mix(in srgb, var(--color-site-brand) 15%, transparent);
+  color: var(--color-site-brand);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border: 1px solid color-mix(in srgb, var(--color-site-brand) 35%, transparent);
+}
+
+.stepTitle {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.stepDesc {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--color-text-muted);
+}
+
+/* ============================ SPLIT SECTION =========================== */
+
+.splitSection {
+  margin-block: var(--space-40);
+}
+
+.splitGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-24);
+  align-items: stretch;
+}
+
+@media (min-width: 1024px) {
+  .splitGrid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: var(--space-32);
+  }
+}
+
+/* ----------------------------- LEFT: Base ---------------------------- */
+
+.splitLeft {
+  display: flex;
+  flex-direction: column;
+}
+
+.baseCard {
+  position: relative;
+  flex: 1;
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-3xl);
+  padding: var(--space-32);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-20);
+  overflow: hidden;
+}
+
+/* Subtle brand wash so this card reads as the headline product */
+.baseCard::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--color-site-brand) 8%, transparent),
+    transparent 55%
+  );
+  pointer-events: none;
+}
+
+.baseCard > * {
+  position: relative;
+}
+
+.baseHeader {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-10);
+}
+
+.requiredPill {
+  align-self: flex-start;
+  padding: 0.28rem 0.75rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-site-brand);
+  background: color-mix(in srgb, var(--color-site-brand) 14%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-site-brand) 36%, transparent);
+  border-radius: var(--radius-pill);
+}
+
+.baseTitle {
+  margin: 0;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--color-text-primary);
+}
+
+.baseLead {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+
+.baseBullets {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-10);
+}
+
+.baseBullets li {
+  position: relative;
+  padding-left: 1.85rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+}
+
+.baseBullets li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.18rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: var(--radius-circle);
+  background: color-mix(in srgb, var(--color-site-brand) 20%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-site-brand) 50%, transparent);
+}
+
+/* Anchor the tick on the circle's geometric center (left + width/2,
+   top + height/2) and let `translate(-50%, -50%)` pull the rotated box
+   back so the checkmark sits visually centered inside the circle. */
+.baseBullets li::after {
+  content: "";
+  position: absolute;
+  left: 0.625rem;
+  top: 0.805rem;
+  width: 0.55rem;
+  height: 0.3rem;
+  border-left: 2px solid var(--color-site-brand);
+  border-bottom: 2px solid var(--color-site-brand);
+  transform: translate(-50%, -55%) rotate(-45deg);
+}
+
+.basePriceBlock {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.basePriceMain {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-8);
+  flex-wrap: wrap;
+}
+
+.basePriceAmount {
+  font-size: clamp(1.875rem, 4vw, 2.5rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--color-text-primary);
+  line-height: 1;
+}
+
+.basePricePeriod {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.basePriceCharges {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+}
+
+/* ------------------------ Policy notes (rules) ----------------------- */
+
+.basePolicy {
+  margin-top: var(--space-8);
+  padding-top: var(--space-20);
+  border-top: 1px dashed var(--color-border);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+.basePolicyHeading {
+  margin: 0;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.basePolicyList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-10);
+}
+
+.basePolicyItem {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-12);
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--color-text-secondary);
+}
+
+.basePolicyDot {
+  flex-shrink: 0;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-top: 0.5rem;
+  border-radius: var(--radius-circle);
+  background: var(--color-site-brand);
+  box-shadow: 0 0 0 3px
+    color-mix(in srgb, var(--color-site-brand) 18%, transparent);
+}
+
+/* Subtle text-based CTA below the policy notes that scrolls the page
+   to the FAQ section. Low-emphasis on purpose — secondary affordance. */
+.learnMoreLink {
+  align-self: flex-start;
+  margin-top: var(--space-6);
+  padding: 0.25rem 0;
+  background: none;
+  border: none;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  text-decoration: underline;
+  text-decoration-color: color-mix(
+    in srgb,
+    var(--color-text-muted) 45%,
+    transparent
+  );
+  text-underline-offset: 3px;
+  transition: color 0.18s ease, text-decoration-color 0.18s ease;
+}
+
+.learnMoreLink:hover,
+.learnMoreLink:focus-visible {
+  color: var(--color-site-brand);
+  text-decoration-color: var(--color-site-brand);
+  outline: none;
+}
+
+.learnMoreArrow {
+  display: inline-block;
+  font-size: 0.82rem;
+  line-height: 1;
+  transition: transform 0.18s ease;
+}
+
+.learnMoreLink:hover .learnMoreArrow,
+.learnMoreLink:focus-visible .learnMoreArrow {
+  transform: translateY(2px);
+}
+
+/* ------------------------- RIGHT: Pack picker ------------------------ */
+
+.splitRight {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-20);
+}
+
+.packsHeader {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.packsTitle {
+  margin: 0;
+  font-size: clamp(1.25rem, 2.4vw, 1.5rem);
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.packsSubheading {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--color-text-muted);
+}
+
+/* ---- Pack option list (radio-style cards) ---- */
+
+.packList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+.packOption {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: var(--space-16);
+  padding: var(--space-18) var(--space-20);
+  background: var(--color-bg-elevated);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+  color: var(--color-text-primary);
+  transition: border-color 0.18s ease, background-color 0.18s ease,
+    box-shadow 0.18s ease, transform 0.12s ease;
+}
+
+.packOption:hover {
+  border-color: color-mix(in srgb, var(--color-site-brand) 50%, var(--color-border));
+  background: color-mix(in srgb, var(--color-site-brand) 4%, var(--color-bg-elevated));
+}
+
+.packOption:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-site-brand) 30%, transparent);
+}
+
+.packOptionSelected {
+  border-color: var(--color-site-brand);
+  background: color-mix(in srgb, var(--color-site-brand) 7%, var(--color-bg-elevated));
+  box-shadow: 0 6px 22px color-mix(in srgb, var(--color-site-brand) 14%, transparent);
+}
+
+.packRadio {
+  width: 1.35rem;
+  height: 1.35rem;
+  border-radius: var(--radius-circle);
+  border: 2px solid var(--color-border-strong);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: border-color 0.18s ease, background-color 0.18s ease;
+}
+
+.packRadio::after {
+  content: "";
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: var(--radius-circle);
+  background: var(--color-site-brand);
+  transform: scale(0);
+  transition: transform 0.18s ease;
+}
+
+.packOptionSelected .packRadio {
+  border-color: var(--color-site-brand);
+  background: color-mix(in srgb, var(--color-site-brand) 12%, transparent);
+}
+
+.packOptionSelected .packRadio::after {
+  transform: scale(1);
+}
+
+.packMain {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+}
+
+.packNameRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  flex-wrap: wrap;
+}
+
+.packName {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--color-text-primary);
+}
+
+.bestBadge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.18rem 0.55rem;
+  color: var(--color-site-brand);
+  background: color-mix(in srgb, var(--color-site-brand) 14%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-site-brand) 38%, transparent);
+  border-radius: var(--radius-pill);
+}
+
+.packMeta {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.packMetaDot {
+  display: inline-block;
+  width: 0.18rem;
+  height: 0.18rem;
+  border-radius: var(--radius-circle);
+  background: var(--color-text-muted);
+  opacity: 0.6;
+}
+
+.packCoverage {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+.packPriceCol {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  flex-shrink: 0;
+}
+
+.packPrice {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  white-space: nowrap;
+}
+
+.packCharge {
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+}
+
+/* ------------------------ Order summary panel ------------------------ */
+
+.summaryCard {
+  margin-top: auto;
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-20) var(--space-24);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+.summaryEmpty {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+}
+
+.summaryEmptyIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: var(--radius-circle);
+  background: color-mix(in srgb, var(--color-site-brand) 16%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-site-brand) 38%, transparent);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-site-brand);
+  font-weight: 700;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.summaryHeading {
+  margin: 0;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-12);
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+}
+
+.summaryRowLabel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.summaryRowName {
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.summaryRowMeta {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+}
+
+/* Compact inline meta — renders in parentheses next to the row name */
+.summaryRowMetaInline {
+  font-weight: 500;
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  letter-spacing: 0;
+}
+
+.summaryRowAmount {
+  font-weight: 600;
+  color: var(--color-text-primary);
+  white-space: nowrap;
+}
+
+.summaryDivider {
+  height: 1px;
+  background: var(--color-border);
+}
+
+.summaryTotalRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-12);
+}
+
+.summaryTotalLabel {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.summaryTotalAmount {
+  font-size: clamp(1rem, 2.2vw, 1.5rem);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--color-text-primary);
+}
+
+.summaryNote {
+  margin: 0;
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+/* Buy License CTA */
+.summaryCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-8);
+  padding: var(--space-14) var(--space-20);
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  border-radius: var(--radius-pill);
+  border: none;
+  cursor: pointer;
+  background: var(--color-site-brand);
+  color: var(--color-white);
+  transition: transform 0.12s ease, box-shadow 0.18s ease, opacity 0.18s ease,
+    background-color 0.18s ease;
+}
+
+.summaryCta:not(:disabled):hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 30px color-mix(in srgb, var(--color-site-brand) 32%, transparent);
+}
+
+.summaryCta:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+  background: var(--color-border-strong);
+}
+
+.summaryCtaArrow {
+  transition: transform 0.2s ease;
+  display: inline-block;
+}
+
+.summaryCta:not(:disabled):hover .summaryCtaArrow {
+  transform: translateX(3px);
+}
+
+/* ------------------------ Loading / unavailable ---------------------- */
+
+.priceSkeletonWrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.priceSkeletonBig,
+.priceSkeletonSmall {
+  height: 2rem;
+  border-radius: var(--radius-md);
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--color-text-muted) 10%, transparent) 0%,
+    color-mix(in srgb, var(--color-text-muted) 18%, transparent) 50%,
+    color-mix(in srgb, var(--color-text-muted) 10%, transparent) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.4s linear infinite;
+}
+
+.priceSkeletonSmall {
+  height: 1rem;
+  width: 60%;
+}
+
+.packSkeleton {
+  height: 4.5rem;
+  border-radius: var(--radius-2xl);
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--color-text-muted) 8%, transparent) 0%,
+    color-mix(in srgb, var(--color-text-muted) 16%, transparent) 50%,
+    color-mix(in srgb, var(--color-text-muted) 8%, transparent) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.4s linear infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.priceUnavailable {
+  padding: var(--space-16) var(--space-20);
+  font-size: 0.92rem;
+  color: var(--color-text-muted);
+  background: var(--color-bg-secondary);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-2xl);
+  text-align: center;
+}
+
+/* --------------------- Coming soon (university only) ----------------- */
+
+.comingSoonCard {
+  background: var(--color-bg-elevated);
+  border: 1px dashed color-mix(in srgb, var(--color-site-brand) 50%, var(--color-border));
+  border-radius: var(--radius-3xl);
+  padding: var(--space-32);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+  align-items: flex-start;
+}
+
+.comingSoonEyebrow {
+  align-self: flex-start;
+  padding: 0.28rem 0.75rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-site-brand);
+  background: color-mix(in srgb, var(--color-site-brand) 14%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-site-brand) 36%, transparent);
+  border-radius: var(--radius-pill);
+}
+
+.comingSoonHeading {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.comingSoonBody {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+
+.comingSoonCta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
+  padding: var(--space-12) var(--space-20);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  color: var(--color-white);
+  background: var(--color-site-brand);
+  border-radius: var(--radius-pill);
+  transition: transform 0.12s ease, box-shadow 0.18s ease;
+}
+
+.comingSoonCta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 26px color-mix(in srgb, var(--color-site-brand) 30%, transparent);
+}
+
+.packsComingSoon {
+  padding: var(--space-24);
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  background: var(--color-bg-secondary);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-2xl);
+  text-align: center;
+  line-height: 1.6;
+}
+
+.packsContactLink {
+  color: var(--color-site-brand);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* ------------------------- Rollover policy --------------------------- */
+
+.policySection {
+  margin-block: var(--space-48);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-20);
+}
+
+.policyList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-12);
+}
+
+@media (min-width: 768px) {
+  .policyList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.policyItem {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-12);
+  padding: var(--space-16) var(--space-18);
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--color-text-secondary);
+}
+
+.policyCheck {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: var(--radius-circle);
+  background: color-mix(in srgb, var(--color-site-brand) 18%, transparent);
+  color: var(--color-site-brand);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+/* ----------------------- What's included cards ----------------------- */
+
+.includedSection {
+  margin-block: var(--space-48);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-20);
+}
+
+.includedDescription {
+  margin: 0 auto;
+  max-width: 50rem;
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--color-text-muted);
+}
+
+.productCards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-20);
+  margin-top: var(--space-12);
+}
+
+@media (min-width: 768px) {
+  .productCards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.productCard {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-16);
+  align-items: flex-start;
+  padding: var(--space-20);
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  transition: border-color 0.18s ease, transform 0.18s ease;
+}
+
+.productCard:hover {
+  border-color: color-mix(in srgb, var(--color-site-brand) 40%, var(--color-border));
+  transform: translateY(-2px);
+}
+
+.productThumb {
+  width: 3rem;
+  height: 3rem;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.productTitle {
+  margin: 0 0 0.4rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.productDesc {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--color-text-muted);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: var(--space-10);
+}
+
+.tag {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.18rem 0.55rem;
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--color-site-brand) 10%, transparent);
+  color: var(--color-site-brand);
+  border: 1px solid color-mix(in srgb, var(--color-site-brand) 28%, transparent);
+}
+
+.learnMore {
+  display: inline-block;
+  margin-top: var(--space-10);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-site-brand);
+  text-decoration: none;
+}
+
+.learnMore:hover {
+  text-decoration: underline;
+}
+
+/* ---------------------------------- FAQs ----------------------------- */
+
+.faqSection {
+  /* Leaves breathing room above the heading so the fixed Navbar
+     (position: fixed, ~64–72px tall) doesn't cover the section title
+     when "Learn more" smooth-scrolls the user here. */
+  scroll-margin-top: 6rem;
+  margin-block: var(--space-48);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-20);
+}
+
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-10);
+}
+
+.faqItem {
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-16) var(--space-20);
+  transition: border-color 0.18s ease;
+}
+
+.faqItem[open] {
+  border-color: color-mix(in srgb, var(--color-site-brand) 40%, var(--color-border));
+}
+
+.faqQuestion {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-12);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.faqQuestion::-webkit-details-marker {
+  display: none;
+}
+
+.faqQuestion::after {
+  content: "";
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: var(--radius-circle);
+  background-color: color-mix(in srgb, var(--color-site-brand) 16%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-site-brand) 38%, transparent);
+  flex-shrink: 0;
+  background-image:
+    linear-gradient(var(--color-site-brand), var(--color-site-brand)),
+    linear-gradient(var(--color-site-brand), var(--color-site-brand));
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 0.7rem 0.12rem, 0.12rem 0.7rem;
+  transition: background-size 0.2s ease, transform 0.2s ease;
+}
+
+.faqItem[open] .faqQuestion::after {
+  background-size: 0.7rem 0.12rem, 0 0;
+  transform: rotate(180deg);
+}
+
+.faqAnswer {
+  margin: var(--space-10) 0 0;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--color-text-muted);
+}
+
+/* =====================================================================
+   STACKED MODE  (gamer)
+   Horizontal Base License card on top + horizontal "additional credits"
+   card below. Pack is OPTIONAL — base license can be bought standalone.
+   ===================================================================== */
+
+.stackedSection {
+  margin-block: var(--space-40);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+}
+
+/* ---- TOP card: horizontal base license with embedded right panel ---- */
+
+.baseHorizontalCard {
+  position: relative;
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-3xl);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.baseHorizontalCard::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--color-site-brand) 8%, transparent),
+    transparent 55%
+  );
+  pointer-events: none;
+}
+
+@media (min-width: 1024px) {
+  .baseHorizontalCard {
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  }
+}
+
+.baseHorizontalLeft {
+  position: relative;
+  padding: var(--space-24) var(--space-28);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-14);
+}
+
+.baseHorizontalRight {
+  position: relative;
+  padding: var(--space-22) var(--space-28);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+  background: color-mix(
+    in srgb,
+    var(--color-site-brand) 5%,
+    var(--color-bg-elevated)
+  );
+  border-top: 1px solid
+    color-mix(in srgb, var(--color-site-brand) 22%, var(--color-border));
+}
+
+@media (min-width: 1024px) {
+  .baseHorizontalRight {
+    border-top: none;
+    border-left: 1px solid
+      color-mix(in srgb, var(--color-site-brand) 22%, var(--color-border));
+  }
+}
+
+/* "Remove credit pack" tertiary link below the CTA when a pack is active */
+.removePackLink {
+  margin: 0 auto;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  text-decoration: underline;
+  text-decoration-color: color-mix(
+    in srgb,
+    var(--color-text-muted) 50%,
+    transparent
+  );
+  text-underline-offset: 3px;
+  padding: 0.3rem 0.6rem;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
+
+.removePackLink:hover {
+  color: var(--color-site-brand);
+  text-decoration-color: var(--color-site-brand);
+}
+
+/* "Or add a Credit Pack" — informational caption below the Buy License
+   CTA when no pack is selected. Deliberately styled as muted body copy
+   (not a pill / not a button) so users understand it's a hint, not an
+   action. */
+.packHintNote {
+  margin: var(--space-6) 0 0;
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+/* ---- BOTTOM card: horizontal "Buy additional credits" container ---- */
+
+.packsHorizontalCard {
+  /* Leaves headroom for the fixed Navbar (~64–72px) so the
+     "Buy additional credits" title stays visible when the
+     `packHintCta` smoothly scrolls users to this card. */
+  scroll-margin-top: 6rem;
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-3xl);
+  padding: var(--space-24) var(--space-28);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-18);
+}
+
+.packsHorizontalHeader {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.packTilesGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-16);
+}
+
+@media (min-width: 600px) {
+  .packTilesGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .packTilesGrid {
+    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  }
+}
+
+/* ---- Individual pack tile (stacked vertical mini card) ---- */
+
+.packTile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  padding: var(--space-16) var(--space-18);
+  /* Subtle brand-tinted lift above the parent card so each tile reads as
+     its own actionable surface rather than blending into the background. */
+  background: linear-gradient(
+    150deg,
+    color-mix(in srgb, var(--color-site-brand) 9%, var(--color-bg-elevated)),
+    color-mix(in srgb, var(--color-site-brand) 2%, var(--color-bg-elevated))
+      55%
+  );
+  border: 1px solid
+    color-mix(in srgb, var(--color-site-brand) 26%, var(--color-border));
+  border-radius: var(--radius-2xl);
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+  color: var(--color-text-primary);
+  box-shadow: 0 1px 0 color-mix(in srgb, var(--color-site-brand) 8%, transparent)
+    inset;
+  transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease,
+    transform 0.15s ease;
+}
+
+.packTile:hover {
+  border-color: color-mix(
+    in srgb,
+    var(--color-site-brand) 60%,
+    var(--color-border)
+  );
+  transform: translateY(-3px);
+  background: linear-gradient(
+    150deg,
+    color-mix(in srgb, var(--color-site-brand) 18%, var(--color-bg-elevated)),
+    color-mix(in srgb, var(--color-site-brand) 6%, var(--color-bg-elevated))
+      60%
+  );
+  box-shadow: 0 14px 28px
+      color-mix(in srgb, var(--color-site-brand) 22%, transparent),
+    0 1px 0 color-mix(in srgb, var(--color-site-brand) 12%, transparent) inset;
+}
+
+.packTile:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px
+      color-mix(in srgb, var(--color-site-brand) 35%, transparent),
+    0 1px 0 color-mix(in srgb, var(--color-site-brand) 12%, transparent) inset;
+}
+
+.packTileSelected {
+  border-color: var(--color-site-brand);
+  background: linear-gradient(
+    150deg,
+    color-mix(in srgb, var(--color-site-brand) 28%, var(--color-bg-elevated)),
+    color-mix(in srgb, var(--color-site-brand) 10%, var(--color-bg-elevated))
+      65%
+  );
+  box-shadow: 0 16px 36px
+      color-mix(in srgb, var(--color-site-brand) 30%, transparent),
+    0 0 0 1px var(--color-site-brand);
+}
+
+.packTileSelected:hover {
+  background: linear-gradient(
+    150deg,
+    color-mix(in srgb, var(--color-site-brand) 32%, var(--color-bg-elevated)),
+    color-mix(in srgb, var(--color-site-brand) 12%, var(--color-bg-elevated))
+      65%
+  );
+}
+
+.packTileBadge {
+  position: absolute;
+  top: var(--space-12);
+  right: var(--space-12);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.18rem 0.5rem;
+  color: var(--color-site-brand);
+  background: color-mix(in srgb, var(--color-site-brand) 14%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-site-brand) 38%, transparent);
+  border-radius: var(--radius-pill);
+}
+
+.packTileName {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-text-primary);
+}
+
+.packTileCredits {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.packTilePerCredit {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+}
+
+.packTilePrice {
+  margin-top: var(--space-4);
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--color-text-primary);
+}
+
+.packTileCharge {
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+}
+
+.packTileCta {
+  margin-top: auto;
+  padding-top: var(--space-12);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-site-brand);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  letter-spacing: 0.01em;
+}
+
+.packTileCtaSelected {
+  color: var(--color-site-brand);
+  font-weight: 700;
+}
+
+/* ---- Stacked-mode policy notes (lifted out of the base card) ----
+   Renders below the packs card as a compact, low-emphasis grid so the
+   primary decision UI (base + packs + summary + CTA) stays in one
+   viewport without scrolling. */
+
+.stackedPolicy {
+  background: color-mix(
+    in srgb,
+    var(--color-site-brand) 3%,
+    var(--color-bg-elevated)
+  );
+  border: 1px dashed
+    color-mix(in srgb, var(--color-site-brand) 28%, var(--color-border));
+  border-radius: var(--radius-2xl);
+  padding: var(--space-18) var(--space-24);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+.stackedPolicyGrid {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-10) var(--space-24);
+}
+
+@media (min-width: 720px) {
+  .stackedPolicyGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .stackedPolicyGrid {
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  }
+}
+

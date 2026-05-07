@@ -901,38 +901,106 @@ export const homeschoolerContent = {
   },
 
   pricing: {
-    heading: "Pricing Licenses",
-    includedHeading: "What’s Included?",
-    includedDescription:
-      "All plans include the same core features No hidden costs. Complete transparency",
-    toolInfoNote:
-      "Based on your requirements, we recommend the most suitable license plan, plus show an alternative option for comparison. All features remain the same across plans - only student capacity and life credits differ",
-    tiers: [
+    eyebrow: "Family Pricing",
+    heading: "Bring RealLives home for your family.",
+    sectionHeading: "Bring RealLives home for your family.",
+    sectionSubheading:
+      "One Base License covers your household for a year. Add a Credit Pack so every child has plenty of simulated lives to explore — credits are pooled across the family and never expire.",
+    howItWorks: {
+      heading: "How RealLives Family licensing works",
+      steps: [
+        {
+          number: "01",
+          title: "Activate one Base License",
+          description:
+            "A single Base License covers your whole household for a year — every parent and every child plays on the same license.",
+        },
+        {
+          number: "02",
+          title: "Pick a Credit Pack for your kids",
+          description:
+            "1 credit = 1 simulated life. Credits are pooled across the family so anyone in the household can play whenever they want.",
+        },
+        {
+          number: "03",
+          title: "Credits roll over with renewal",
+          description:
+            "Unused credits never expire. They carry into next year as long as you renew your Base License — no Credit Pack repurchase required at renewal.",
+        },
+      ],
+    },
+    baseLicense: {
+      tagline: "Required for the household",
+      includedLine: "Family-wide platform access for the full year.",
+      bullets: [
+        "1 year of full RealLives Simulation access",
+        "Covers all parents and children in your household",
+        "Age-appropriate life events curated for kids and teens",
+        "Reflection prompts parents can use for family discussions",
+      ],
+      ctaText: "Buy Base License",
+      policyHeading: "Good to know",
+      policyNotes: [
+        "First-time customers purchase the Base License together with at least one Credit Pack — the license cannot be bought on its own.",
+        "No credit is charged when a simulated character dies before the age of 10.",
+        "Credits are pooled at the family level — your kids share them however you decide.",
+        "Unused credits roll over to the next year as long as you renew your Base License.",
+      ],
+    },
+    creditPacks: {
+      heading: "Choose a Credit Pack",
+      subheading:
+        "Every pack uses the same feature set — only the number of simulated lives differs. Stack multiple packs anytime as your family explores more.",
+      bestValueLabel: "Best Value",
+      perCreditLabel: "per credit",
+      ctaText: "Buy License",
+      // Rough average lives per child per year — used to render
+      // "Covers ~N children at 10 lives each" hints in the pack rows.
+      livesPerStudent: 10,
+      coversStudentsLabel: "Covers ~",
+    },
+    rolloverPolicy: {
+      heading: "Credit rollover, in plain English",
+      points: [
+        "Credits unused at the end of the year do not expire automatically.",
+        "Unused credits roll over to the next year, but only if your Base License is renewed.",
+        "If the Base License is not renewed, rolled-over credits are paused — they're not lost, they unlock again the moment you renew.",
+      ],
+    },
+    faqs: [
       {
-        name: "Family 1",
-        price: "$50.00",
-        period: "/1 Year",
-        studentCount: "2 Parents + 1 Child (13+)",
-        features: ["1 Year Validity", "Max Lives : 50"],
-        ctaText: "Get Started",
+        question: "How many kids can use one license?",
+        answer:
+          "Every parent and child in your household plays on the same Base License — there is no per-user fee. Your Credit Pack determines how many simulated lives the family can play in a year.",
       },
       {
-        name: "Family 2",
-        price: "$75.00",
-        period: "/1 Year",
-        studentCount: "2 Parents + 2 Children (13+)",
-        features: ["1 Year Validity", "Max Lives : 75"],
-        ctaText: "Get Started",
+        question: "Are the simulations safe for younger kids?",
+        answer:
+          "Yes — RealLives content is age-appropriate. Younger players see softer life events; older kids and teens get richer, more nuanced scenarios. Any character that dies before age 10 doesn't cost a credit, so families can experiment freely with younger characters.",
       },
       {
-        name: "Family 3",
-        price: "$100.00",
-        period: "/1 Year",
-        studentCount: "2 Parents + 3 Children (13+)",
-        features: ["1 Year Validity", "Max Lives : 100"],
-        ctaText: "Get Started",
+        question: "Why do prices differ by country?",
+        answer:
+          "We tier prices by country using purchasing-power adjustments so RealLives stays affordable for families everywhere. Your displayed price already includes any local taxes and checkout charges that apply in your region.",
+      },
+      {
+        question: "What happens to leftover credits when our year ends?",
+        answer:
+          "They're held safely on your family account. Renew the Base License and they unlock again. Skip renewal and they stay paused until you come back — they're never deleted.",
       },
     ],
+    comingSoon: {
+      eyebrow: "Family pricing — launching soon",
+      heading: "We're finalizing family pricing for your region.",
+      body: "RealLives Family licensing is being prepared with purchasing-power adjustments so it stays affordable everywhere. We'll have prices live for your country shortly. In the meantime, talk to us and we'll quote you directly.",
+      ctaText: "Contact us",
+      ctaHref: "/reallives/homeschooler/contact",
+    },
+    whatsIncluded: {
+      heading: "What's included with every Base License",
+      description:
+        "Every family license unlocks the full RealLives experience — simulations, reflection tools, and age-appropriate content for kids and teens.",
+    },
     purchaseModal: {
       heading: "Continue to registration",
       body: "You will leave this site and open the family license registration page to complete your purchase.",
