@@ -1,14 +1,13 @@
 import { useEffect } from 'react';
-import styles from './GamerGoogleTag.module.css';
+import styles from './GoogleTag.module.css';
 
 const GTAG_ID = 'AW-16856549656';
-const SCRIPT_MARKER = 'data-reallives-gamer-gtag';
+const SCRIPT_MARKER = 'data-reallives-gtag';
 
 /**
- * Injects the Google tag for Google Ads (gtag.js) into document.head while the
- * gamer sub-site is mounted. Matches Google’s recommended snippet order.
+ * Google Ads gtag.js — injected once at app root. Matches Google’s snippet order.
  */
-export default function GamerGoogleTag() {
+export default function GoogleTag() {
   useEffect(() => {
     const script = document.createElement('script');
     script.async = true;

@@ -3,7 +3,6 @@ import { Outlet } from 'react-router-dom';
 import SiteContext from '@context/SiteContext';
 import Navbar from '@components/common/Navbar/Navbar';
 import Footer from '@components/common/Footer/Footer';
-import GamerGoogleTag from '@components/gamer/GamerGoogleTag/GamerGoogleTag';
 import styles from './GamerLayout.module.css';
 
 export default function GamerLayout() {
@@ -14,7 +13,6 @@ export default function GamerLayout() {
 
   return (
     <SiteContext.Provider value={{ siteKey: 'gamer' }}>
-      <GamerGoogleTag />
       <div className={styles.layout} data-site="gamer">
         <Navbar />
         <main className={styles.main}>
