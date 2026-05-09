@@ -325,6 +325,7 @@ export const gamerContent = {
         '5 simulated lives bundled with the license',
         'Unlimited country and life-event content updates',
         'Use credits whenever you play — no monthly commitment',
+        '5 credits to start with',
       ],
       ctaText: 'Buy License',
       policyHeading: 'Good to know',
