@@ -34,6 +34,7 @@ function WhoCanUsePanel({ supportingText, images, isActive = true }) {
 
   const reviews = [
     {
+      id: 1,
       name: "Alex",
       title: "Interactive Learning",
       image: "https://randomuser.me/api/portraits/men/31.jpg",
@@ -43,6 +44,7 @@ function WhoCanUsePanel({ supportingText, images, isActive = true }) {
     },
 
     {
+      id: 2,
       name: "Sophia",
       title: "Creative Experience",
       image: "https://randomuser.me/api/portraits/women/65.jpg",
@@ -52,6 +54,7 @@ function WhoCanUsePanel({ supportingText, images, isActive = true }) {
     },
 
     {
+      id: 3,
       name: "Daniel",
       title: "Global Perspective",
       image: "https://randomuser.me/api/portraits/men/52.jpg",
@@ -61,6 +64,7 @@ function WhoCanUsePanel({ supportingText, images, isActive = true }) {
     },
 
     {
+      id: 4,
       name: "Emma",
       title: "Modern Education",
       image: "https://randomuser.me/api/portraits/women/44.jpg",
@@ -70,12 +74,62 @@ function WhoCanUsePanel({ supportingText, images, isActive = true }) {
     },
 
     {
+      id: 5,
       name: "Liam",
       title: "Human Stories",
       image: "https://randomuser.me/api/portraits/men/11.jpg",
-       stars: "★★★",
+      stars: "★★★",
       review:
         "This platform builds empathy through realistic and emotional simulations.",
+    },
+
+    {
+      id: 6,
+      name: "Olivia",
+      title: "Deep Engagement",
+      image: "https://randomuser.me/api/portraits/women/22.jpg",
+      stars: "★★★★",
+      review:
+        "Every story feels real and keeps you fully engaged from start to end.",
+    },
+
+    {
+      id: 7,
+      name: "Noah",
+      title: "Immersive Design",
+      image: "https://randomuser.me/api/portraits/men/18.jpg",
+      stars: "★★★★★",
+      review:
+        "UI/UX is top-notch and makes learning feel like an interactive game.",
+    },
+
+    {
+      id: 8,
+      name: "Ava",
+      title: "Emotional Learning",
+      image: "https://randomuser.me/api/portraits/women/12.jpg",
+      stars: "★★★",
+      review:
+        "It connects emotionally and makes concepts easier to understand.",
+    },
+
+    {
+      id: 9,
+      name: "Ethan",
+      title: "Real World Insight",
+      image: "https://randomuser.me/api/portraits/men/41.jpg",
+      stars: "★★★★",
+      review:
+        "Great platform for understanding real-world problems in a simple way.",
+    },
+
+    {
+      id: 10,
+      name: "Mia",
+      title: "Modern Storytelling",
+      image: "https://randomuser.me/api/portraits/women/36.jpg",
+      stars: "★★★★★",
+      review: "Beautiful storytelling combined with strong educational value.",
     },
   ];
 
@@ -250,7 +304,6 @@ function WhoCanUsePanel({ supportingText, images, isActive = true }) {
       </div>
 
       <div className={Style1.main}>
-      
         <div className={Style1.headingBox}>
           <p className={Style1.smallHeading}>GLOBAL COMMUNITY</p>
 
@@ -261,26 +314,28 @@ function WhoCanUsePanel({ supportingText, images, isActive = true }) {
           </h1>
         </div>
 
-        <div ref={slider1}  data-hover="false" onMouseEnter={() => handleMouseEnter(slider1)} onMouseLeave={() => handleMouseLeave(slider1)}className={Style1.slider} >
+        <div
+          ref={slider1}
+          data-hover="false"
+          onMouseEnter={() => handleMouseEnter(slider1)}
+          onMouseLeave={() => handleMouseLeave(slider1)}
+          className={Style1.slider}
+        >
           <div className={Style1.cardInner_grid_review}>
-            {duplicatedReviews.map((item, index) => (
-              <div className={Style1.card} key={index}>
+            {duplicatedReviews.slice(0, 5).map((item) => (
+              <div className={Style1.card} key={item.id}>
                 <div>
-          
-
                   <div className={Style1.userBox}>
                     <img src={item.image} alt="" className={Style1.userImage} />
 
                     <div>
                       <h3 className={Style1.userName}>{item.name}</h3>
-
                       <p className={Style1.userTitle}>{item.title}</p>
                     </div>
                   </div>
 
                   <div className={Style1.line} />
 
-                  {/* <div className={Style1.stars}>★★★★</div> */}
                   <div className={Style1.stars}>{item.stars}</div>
 
                   <p className={Style1.reviewText}>{item.review}</p>
@@ -290,28 +345,29 @@ function WhoCanUsePanel({ supportingText, images, isActive = true }) {
           </div>
         </div>
 
-      
-        <div  ref={slider2} data-hover="false"  onMouseEnter={() => handleMouseEnter(slider2)}onMouseLeave={() => handleMouseLeave(slider2)} className={Style1.slider}  >
+        <div
+          ref={slider2}
+          data-hover="false"
+          onMouseEnter={() => handleMouseEnter(slider2)}
+          onMouseLeave={() => handleMouseLeave(slider2)}
+          className={Style1.slider}
+        >
           <div className={Style1.cardInner_grid_review}>
-            {duplicatedReviews.map((item, index) => (
-              <div className={Style1.card} key={index}>
+            {duplicatedReviews.slice(5, 10).map((item) => (
+              <div className={Style1.card} key={item.id}>
                 <div>
-                
                   <div className={Style1.userBox}>
                     <img src={item.image} alt="" className={Style1.userImage} />
 
                     <div>
                       <h3 className={Style1.userName}>{item.name}</h3>
-
                       <p className={Style1.userTitle}>{item.title}</p>
                     </div>
                   </div>
 
                   <div className={Style1.line} />
-                  
-                  <div className={Style1.stars}>{item.stars}</div>
 
-                  {/* <div className={Style1.stars}>★★★★★</div> */}
+                  <div className={Style1.stars}>{item.stars}</div>
 
                   <p className={Style1.reviewText}>{item.review}</p>
                 </div>
@@ -319,7 +375,6 @@ function WhoCanUsePanel({ supportingText, images, isActive = true }) {
             ))}
           </div>
         </div>
-
       </div>
     </div>
   );
