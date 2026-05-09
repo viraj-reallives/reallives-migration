@@ -30,8 +30,174 @@ function WhoCanUsePanel({ supportingText, images, isActive = true }) {
 
   if (!supportingText || !images) return null;
 
+  // review section function start
+
+  const reviews = [
+    {
+      id: 1,
+      name: "Alex",
+      title: "Interactive Learning",
+      image: "https://randomuser.me/api/portraits/men/31.jpg",
+      stars: "★★",
+      review:
+        "Amazing platform with immersive storytelling and engaging educational experiences.",
+    },
+
+    {
+      id: 2,
+      name: "Sophia",
+      title: "Creative Experience",
+      image: "https://randomuser.me/api/portraits/women/65.jpg",
+      stars: "★★★",
+      review:
+        "The design and animations create a beautiful and emotional learning journey.",
+    },
+
+    {
+      id: 3,
+      name: "Daniel",
+      title: "Global Perspective",
+      image: "https://randomuser.me/api/portraits/men/52.jpg",
+      stars: "★★★★",
+      review:
+        "A unique way to understand cultures and real-world challenges interactively.",
+    },
+
+    {
+      id: 4,
+      name: "Emma",
+      title: "Modern Education",
+      image: "https://randomuser.me/api/portraits/women/44.jpg",
+      stars: "★★★★★",
+      review:
+        "Smooth interface, cinematic visuals, and meaningful educational experiences.",
+    },
+
+    {
+      id: 5,
+      name: "Liam",
+      title: "Human Stories",
+      image: "https://randomuser.me/api/portraits/men/11.jpg",
+      stars: "★★★",
+      review:
+        "This platform builds empathy through realistic and emotional simulations.",
+    },
+
+    {
+      id: 6,
+      name: "Olivia",
+      title: "Deep Engagement",
+      image: "https://randomuser.me/api/portraits/women/22.jpg",
+      stars: "★★★★",
+      review:
+        "Every story feels real and keeps you fully engaged from start to end.",
+    },
+
+    {
+      id: 7,
+      name: "Noah",
+      title: "Immersive Design",
+      image: "https://randomuser.me/api/portraits/men/18.jpg",
+      stars: "★★★★★",
+      review:
+        "UI/UX is top-notch and makes learning feel like an interactive game.",
+    },
+
+    {
+      id: 8,
+      name: "Ava",
+      title: "Emotional Learning",
+      image: "https://randomuser.me/api/portraits/women/12.jpg",
+      stars: "★★★",
+      review:
+        "It connects emotionally and makes concepts easier to understand.",
+    },
+
+    {
+      id: 9,
+      name: "Ethan",
+      title: "Real World Insight",
+      image: "https://randomuser.me/api/portraits/men/41.jpg",
+      stars: "★★★★",
+      review:
+        "Great platform for understanding real-world problems in a simple way.",
+    },
+
+    {
+      id: 10,
+      name: "Mia",
+      title: "Modern Storytelling",
+      image: "https://randomuser.me/api/portraits/women/36.jpg",
+      stars: "★★★★★",
+      review: "Beautiful storytelling combined with strong educational value.",
+    },
+  ];
+
+  // const duplicatedReviews = [...reviews, ...reviews];
+
+  const firstRow = reviews.slice(0, 5);
+  const secondRow = reviews.slice(5, 10);
+
+  const startAutoScroll = (sliderRef, direction, speed = 0.7) => {
+    let animation;
+
+    const animate = () => {
+      if (sliderRef.current) {
+        const slider = sliderRef.current;
+
+        if (slider.dataset.hover !== "true") {
+          if (direction === "left") {
+            slider.scrollLeft += speed;
+
+            if (slider.scrollLeft >= slider.scrollWidth / 2) {
+              slider.scrollLeft = 0;
+            }
+          }
+
+          if (direction === "right") {
+            slider.scrollLeft -= speed;
+
+            if (slider.scrollLeft <= 0) {
+              slider.scrollLeft = slider.scrollWidth / 2;
+            }
+          }
+        }
+      }
+
+      animation = requestAnimationFrame(animate);
+    };
+
+    animate();
+
+    return () => cancelAnimationFrame(animation);
+  };
+
+  const handleMouseEnter = (sliderRef) => {
+    sliderRef.current.dataset.hover = "true";
+  };
+
+  const handleMouseLeave = (sliderRef) => {
+    sliderRef.current.dataset.hover = "false";
+  };
+
+  const slider1 = useRef(null);
+  const slider2 = useRef(null);
+
+  useEffect(() => {
+    const stopSlider1 = startAutoScroll(slider1, "left");
+
+    const stopSlider2 = startAutoScroll(slider2, "right");
+
+    return () => {
+      stopSlider1();
+      stopSlider2();
+    };
+  }, []);
+
+  // review section function end
+
   return (
-    <div className={styles.panel}>
+    <div className={`${styles.panel} ${Style1.padding_pannel_0}`}>
       <div className={`${styles.hero} ${Style1.video_style_override}`}>
         {images.heroVideoUrl ? (
           <video
@@ -139,6 +305,74 @@ function WhoCanUsePanel({ supportingText, images, isActive = true }) {
           </div>
         ) : null}
       </div>
+
+      <div className={Style1.main}>
+        <div className={Style1.headingBox}>
+          <p className={Style1.smallHeading}>GLOBAL COMMUNITY</p>
+
+          <h1 className={Style1.heading}>
+            Reviews By
+            <br />
+            Global Students
+          </h1>
+        </div>
+
+        <div
+          ref={slider1}
+          data-hover="false"
+          onMouseEnter={() => handleMouseEnter(slider1)}
+          onMouseLeave={() => handleMouseLeave(slider1)}
+          className={Style1.slider}
+        >
+          <div className={Style1.cardInner_grid_review}>
+            {[...firstRow, ...firstRow].map((item) => (
+              <div className={Style1.card} key={`${item.id}-1`}>
+                <div>
+                  <div className={Style1.userBox}>
+                    <img src={item.image} className={Style1.userImage} />
+                    <div>
+                      <h3 className={Style1.userName}>{item.name}</h3>
+                      <p className={Style1.userTitle}>{item.title}</p>
+                    </div>
+                  </div>
+
+                  <div className={Style1.line} />
+                  <div className={Style1.stars}>{item.stars}</div>
+                  <p className={Style1.reviewText}>{item.review}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div
+          ref={slider2}
+          data-hover="false"
+          onMouseEnter={() => handleMouseEnter(slider2)}
+          onMouseLeave={() => handleMouseLeave(slider2)}
+          className={Style1.slider}
+        >
+          <div className={Style1.cardInner_grid_review}>
+            {[...secondRow, ...secondRow].map((item) => (
+              <div className={Style1.card} key={`${item.id}-2`}>
+                <div>
+                  <div className={Style1.userBox}>
+                    <img src={item.image} className={Style1.userImage} />
+                    <div>
+                      <h3 className={Style1.userName}>{item.name}</h3>
+                      <p className={Style1.userTitle}>{item.title}</p>
+                    </div>
+                  </div>
+
+                  <div className={Style1.line} />
+                  <div className={Style1.stars}>{item.stars}</div>
+                  <p className={Style1.reviewText}>{item.review}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
@@ -223,7 +457,6 @@ function SkillsPanel({ data, images }) {
             <div className={styles.ctaRow}>
               <CtaLink
                 to={data.empathyCanvas.learnMorePath}
-                
                 className={`${styles.ctaButton} ${styles.ctaSecondary} ${Style1.get_started_btn}`}
               >
                 {data.empathyCanvas.learnMoreText}
@@ -265,12 +498,13 @@ function SdgPanel({ data, images }) {
 
   return (
     <div className={`${styles.panel} `}>
-
       <div className={`${styles.sdgHero} ${Style1.sdg_tab_override_style}`}>
         {images.sdgBackground ? (
           <img className={styles.sdgHeroBg} src={images.sdgBackground} alt="" />
         ) : null}
-        <div className={`${styles.sdgHeroOverlay} ${Style1.sdgro_custome_conatiner}`}>
+        <div
+          className={`${styles.sdgHeroOverlay} ${Style1.sdgro_custome_conatiner}`}
+        >
           <h2>{data.sdgHeroOverlay.title}</h2>
           {data.sdgHeroOverlay.paragraphs?.map((p) => (
             <p key={p.slice(0, 40)}>{p}</p>
@@ -304,36 +538,42 @@ function SdgPanel({ data, images }) {
         ) : null}
       </div>
 
-    {/* container_work_in_classroome */}
+      {/* container_work_in_classroome */}
 
-      <section className={`${styles.sdgImpact} ${Style1.container_work_in_classroome}`}>
+      <section
+        className={`${styles.sdgImpact} ${Style1.container_work_in_classroome}`}
+      >
         <h2 className={styles.sdgImpactTitle}>{data.sdgImpact.title}</h2>
         {videoUrl ? (
           <div className={styles.videoFrame}>
             <video src={videoUrl} autoPlay muted loop playsInline />
 
-             <div className={`${styles.sdgGroups} ${Style1.sdg_grops_style} `}>
-          {data.sdgImpact.relevanceGroups?.map((group) => (
-            <div key={group.label}>
-             
-              <p className={`${styles.sdgGroupLabel} ${Style1.color_white} ${Style1.font_imapct_p}`}>{group.label}</p>
+            <div className={`${styles.sdgGroups} ${Style1.sdg_grops_style} `}>
+              {data.sdgImpact.relevanceGroups?.map((group) => (
+                <div key={group.label}>
+                  <p
+                    className={`${styles.sdgGroupLabel} ${Style1.color_white} ${Style1.font_imapct_p}`}
+                  >
+                    {group.label}
+                  </p>
 
-              <div className={`${styles.sdgIconGrid} ${Style1.sdg_icon_custom_grid}`}>
-
-                {group.goalImagePaths?.map((src) => (
-                  <img className={Style1.sdg_logo_style} key={src} src={src} alt="" />
-                ))}
-
-              </div>
+                  <div
+                    className={`${styles.sdgIconGrid} ${Style1.sdg_icon_custom_grid}`}
+                  >
+                    {group.goalImagePaths?.map((src) => (
+                      <img
+                        className={Style1.sdg_logo_style}
+                        key={src}
+                        src={src}
+                        alt=""
+                      />
+                    ))}
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
-             </div>
-        
           </div>
         ) : null}
-
-       
-
       </section>
 
       <div className={`${styles.splitSection} ${Style1.container_work_2}`}>
@@ -353,7 +593,9 @@ function SdgPanel({ data, images }) {
         ) : null}
       </div>
 
-      <section className={`${styles.benefitsSection} ${Style1.educational_benifit}`}>
+      <section
+        className={`${styles.benefitsSection} ${Style1.educational_benifit}`}
+      >
         <div className={styles.benefitsInner}>
           <h2 className={styles.benefitsHeading}>
             {data.beyondClassroom.title}
@@ -369,8 +611,6 @@ function SdgPanel({ data, images }) {
           </ul>
         </div>
       </section>
-
-   
 
       <div className={`${styles.gettingStarted} ${Style1.container_work_2}`}>
         <div>
@@ -393,7 +633,6 @@ function SdgPanel({ data, images }) {
           </div>
         ) : null}
       </div>
-
     </div>
   );
 }
@@ -447,15 +686,12 @@ export default function SchoolHome() {
       ) : null}
 
       <div className={styles.homeTabPanels}>
-        
         <div role="tabpanel" id="home-section-panel-0" hidden={activeTab !== 0}>
           <WhoCanUsePanel
             supportingText={supportingText}
             images={images}
             isActive={activeTab === 0}
-            
           />
-
         </div>
 
         <div role="tabpanel" id="home-section-panel-1" hidden={activeTab !== 1}>
@@ -469,9 +705,7 @@ export default function SchoolHome() {
         <div role="tabpanel" id="home-section-panel-3" hidden={activeTab !== 3}>
           {extra[2] ? <CoreVisionPanel data={extra[2]} /> : null}
         </div>
-
       </div>
-
     </div>
   );
 }
