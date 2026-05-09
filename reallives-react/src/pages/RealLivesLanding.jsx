@@ -466,6 +466,7 @@ const ECOSYSTEM_BANNER_MOBILE_URL =
   "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/landing-page/exosystem-mobile.svg";
 
 /** Pause on each landing hero slide before auto-advance (ms). */
+
 const HERO_CAROUSEL_INTERVAL_MS = 8000;
 
 export default function RealLivesLanding() {
@@ -520,11 +521,10 @@ export default function RealLivesLanding() {
 
   return (
     <div className={styles.page}>
-
       <header className={`${styles.header} ${styles1.header_border_none}`}>
-
-        <div  className={`${styles.headerInner} ${styles1.header_transparent_background}`} >
-
+        <div
+          className={`${styles.headerInner} ${styles1.header_transparent_background}`}
+        >
           <Link to="/" className={styles.logoLink} aria-label="RealLives Home">
             <img
               src={logo_rl}
@@ -533,7 +533,8 @@ export default function RealLivesLanding() {
             />
           </Link>
 
-          <div className={`${styles.headerCtas} ${styles1.headerCtas_override_style}`}
+          <div
+            className={`${styles.headerCtas} ${styles1.headerCtas_override_style}`}
           >
             <Link
               to={ctas.buyLicense.path}
@@ -550,20 +551,20 @@ export default function RealLivesLanding() {
             >
               Login
             </a>
-
           </div>
         </div>
       </header>
 
       <section className={styles.carouselSection}>
-
         <div className={styles1.container_new_home}>
-
-          <div className={`${styles1.outer_first_home_new} ${currentIndex === 0 ? styles1.slide_active : styles1.card_none}`}>
+          <div
+            className={`${styles1.outer_first_home_new} ${currentIndex === 0 ? styles1.slide_active : styles1.card_none}`}
+          >
             <div className={styles1.inner_top_home_label}>
               <div className={styles1.manrope_text}>RealLives Builds</div>
               <div className={styles1.manrope_text}>21st Century Skills</div>
             </div>
+
             <div className={styles1.inner_mid_home_label}>
               <div className={styles1.icon_rl_mid}>
                 <img src={rl_mid_logo} alt="RealLives Logo" />
@@ -571,7 +572,9 @@ export default function RealLivesLanding() {
             </div>
           </div>
 
-          <div className={`${styles1.pdf_container_home_new} ${currentIndex === 1 ? styles1.slide_active : styles1.card_none}`} >
+          <div
+            className={`${styles1.pdf_container_home_new} ${currentIndex === 1 ? styles1.slide_active : styles1.card_none}`}
+          >
             <div className={styles1.inner_top_home_label}>
               <div className={styles1.manrope_text}>
                 Powerful Learning, Proven by Global Research
@@ -661,7 +664,9 @@ export default function RealLivesLanding() {
             </div>
           </div>
 
-          <div className={`${styles1.global_impact_container} ${currentIndex === 2 ? styles1.slide_active : styles1.card_none}`} >
+          <div
+            className={`${styles1.global_impact_container} ${currentIndex === 2 ? styles1.slide_active : styles1.card_none}`}
+          >
             <div className={styles1.inner_top_home_label}>
               <p className={styles1.manrope_text}>Our Global Impact</p>
             </div>
@@ -693,7 +698,9 @@ export default function RealLivesLanding() {
             </div>
           </div>
 
-          <div className={`${styles1.global_impact_container} ${styles1.therd_hight_container} ${currentIndex === 3 ? styles1.slide_active : styles1.card_none}`} >
+          <div
+            className={`${styles1.global_impact_container} ${styles1.therd_hight_container} ${currentIndex === 3 ? styles1.slide_active : styles1.card_none}`}
+          >
             <div className={styles1.inner_top_home_label}>
               <p className={styles1.manrope_text}>RealLives Worldwide Impact</p>
             </div>
@@ -725,13 +732,16 @@ export default function RealLivesLanding() {
             </div>
           </div>
 
-          <div className={`${styles1.global_impact_container} ${styles1.fourth_hight_container} ${currentIndex === 4 ? styles1.slide_active : styles1.card_none}`}>
+          <div
+            className={`${styles1.global_impact_container} ${styles1.fourth_hight_container} ${currentIndex === 4 ? styles1.slide_active : styles1.card_none}`}
+          >
             <div className={styles1.inner_top_home_label}>
               <p className={styles1.manrope_text}>
                 The RealLives Learning Ecosystem
               </p>
             </div>
             <div className={styles1.image_banner_full_new}>
+
               <picture>
                 <source
                   media="(max-width: 768px)"
@@ -743,10 +753,13 @@ export default function RealLivesLanding() {
                   alt="RealLives learning ecosystem: Real AI, RealBoard, Empathy Canvas, languages, ChangeMaker Index, and SDGs"
                 />
               </picture>
+              
             </div>
           </div>
 
-          <div className={`${styles1.global_impact_container_last} ${currentIndex === 5 ? styles1.slide_active : styles1.card_none}`} >
+          <div
+            className={`${styles1.global_impact_container_last} ${currentIndex === 5 ? styles1.slide_active : styles1.card_none}`}
+          >
             <div className={styles1.inner_top_home_label}>
               <p className={styles1.manrope_text}>
                 Live Billions of Lives <br /> Across the World
@@ -767,7 +780,8 @@ export default function RealLivesLanding() {
             </div>
           </div>
 
-          <div  className={styles1.inner_bottom_home_label}
+          <div
+            className={styles1.inner_bottom_home_label}
             style={{
               "--hero-carousel-duration": `${HERO_CAROUSEL_INTERVAL_MS}ms`,
             }}
@@ -813,7 +827,6 @@ export default function RealLivesLanding() {
               aria-hidden
             />
           </button>
-
         </div>
 
         {/* MODAL PORTAL */}
@@ -835,7 +848,6 @@ export default function RealLivesLanding() {
               </button>
               {carousel?.slides && <Carousel slides={carousel.slides} />}
             </div>
-
           </div>
         )}
       </section>
@@ -863,11 +875,17 @@ export default function RealLivesLanding() {
         </div>
       </section> */}
 
-      <section  className={`${styles.cardsSection} ${styles1.section_second_style}`} >
+      <section
+        className={`${styles.cardsSection} ${styles1.section_second_style}`}
+      >
+        <p className={`${styles1.who_i_am_text} ${styles1.noto_sans_text}`}>
+          {" "}
+          Who am I?{" "}
+        </p>
 
-        <p className={`${styles1.who_i_am_text} ${styles1.noto_sans_text}`}> Who am I? </p>
-
-        <div className={`${styles.cardsContainer} ${styles1.cards_container_outer}`} >
+        <div
+          className={`${styles.cardsContainer} ${styles1.cards_container_outer}`}
+        >
           {entryCards.map((card) => {
             const texts = Array.isArray(card.title_robot)
               ? card.title_robot
@@ -895,7 +913,6 @@ export default function RealLivesLanding() {
             );
           })}
         </div>
-
       </section>
     </div>
   );

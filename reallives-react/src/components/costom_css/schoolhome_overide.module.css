@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
 .video_style_override {
   max-height: none !important;
   height: 80vh !important;
@@ -88,20 +90,232 @@
   color: white !important;
 }
 
-
-
 [data-theme="dark"] .container_work_in_classroome {
- background: #0b0f14 !important;
+  background: #0b0f14 !important;
+}
+
+[data-theme="dark"] .container_work_2 {
+  background: #222222 !important;
+}
+
+/* review section css start  */
+
+.cardInner_grid_review {
+  display: flex;
+  gap: 1.5rem;
+  width: max-content; /* IMPORTANT */
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+[data-theme="dark"] .main {
+  background: #0b0f14 !important;
+}
+
+.main {
+  background: #f2f0f0;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: 25px 15px;
+  font-family: sans-serif;
+}
+
+.headingBox {
+  text-align: center;
+  margin-bottom: 35px;
 }
 
 
-[data-theme="dark"] .container_work_2{
- background: #0b0f14 !important;
+[data-theme="dark"] .smallHeading {
+    display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 32px;
+  border: 1px solid rgba(255, 77, 77, 0.3);
+  background: rgba(255, 77, 77, 0.08);
+  backdrop-filter: blur(6px);
+  border-radius: 4px;
+  color: #ff4d4d;
+  letter-spacing: 4px;
+  font-size: 14px;
+  margin-bottom: 20px;
+  text-transform: upp
 }
 
+.smallHeading {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 32px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 77, 77, 0.25);
+  border-radius: 6px;
+  box-shadow:
+    0 4px 12px rgba(255, 77, 77, 0.12),
+    0 2px 6px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(8px);
+  color: #ff4d4d;
+  letter-spacing: 4px;
+  font-size: 14px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: 300;
+}
 
-@media(max-width:700px){
-   .banner_21_skills {
+.heading {
+  color: #222222;
+  font-size: 55px;
+  line-height: 1.1;
+  margin: 0;
+  font-weight: 800;
+  font-family: "Inter", sans-serif;
+}
+
+[data-theme="dark"] .userName {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .reviewText {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .main {
+  background: #121213 !important;
+}
+
+[data-theme="dark"] .heading {
+  color: white;
+}
+
+.slider {
+  overflow: hidden;
+  width: 100%;
+  margin-bottom: 28px;
+  position: relative;
+}
+/* 
+.card {
+  width: 390px;
+  height: 320px;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(25, 0, 0, 0.95),
+    rgba(8, 0, 0, 0.95)
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 28px;
+  padding: 28px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.08);
+
+  transition: 0.4s;
+  margin-top:1rem;
+} */
+
+.card {
+  width: 390px;
+  height: 280px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 28px;
+  padding: 28px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: 0.4s;
+  margin-top: 1rem;
+}
+
+[data-theme="dark"] .card {
+  background: linear-gradient(rgba(25, 0, 0, 0.95), rgba(8, 0, 0, 0.95));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 28px;
+  padding: 28px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: rgba(255, 0, 0, 0.08) 0px 0px 25px;
+  transition: 0.4s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+.userBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.userImage {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: none;
+}
+
+.userName {
+  margin: 0;
+  color: #222222;
+  font-size: 22px;
+  text-align: center;
+}
+
+.userTitle {
+  color: #8f8f8f;
+  margin-top: 6px;
+  font-size: 15px;
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  margin-bottom: 18px;
+}
+
+.stars {
+  color: #ffd700;
+  font-size: 18px;
+  margin-bottom: 16px;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.reviewText {
+  color: #222222;
+  font-size: 17px;
+  line-height: 1.7;
+  margin: 0;
+  min-height: 80px;
+  text-align: center;
+}
+
+.padding_pannel_0 {
+  padding-bottom: 0px !important;
+}
+
+/* review section css end  */
+
+
+@media (max-width: 700px) {
+  .banner_21_skills {
     height: 300px;
   }
 
@@ -177,8 +391,8 @@
   }
 }
 
-@media(max-width:670px){
-   .banner_21_skills {
+@media (max-width: 670px) {
+  .banner_21_skills {
     height: 300px;
   }
 
@@ -254,8 +468,28 @@
   }
 }
 
-@media(max-width:600px){
-   .banner_21_skills {
+@media (max-width: 600px) {
+
+      .card{
+  height:  250px;
+  }
+
+  .smallHeading{
+   font-size: 9px !important;
+  }
+
+  .heading{
+    font-size: 40px;
+    line-height: 1.2;
+  }
+
+  .reviewText{
+    font-size: 14px;
+  }
+  
+
+  
+  .banner_21_skills {
     height: 300px;
   }
 
@@ -331,9 +565,28 @@
   }
 }
 
-@media(max-width:560px){
+@media (max-width: 560px) {
 
-   .banner_21_skills {
+      .card{
+  height:  250px;
+  }
+
+  .smallHeading{
+   font-size: 9px !important;
+  }
+
+  .heading{
+    font-size: 40px;
+    line-height: 1.2;
+  }
+
+  .reviewText{
+    font-size: 14px;
+  }
+  
+
+
+  .banner_21_skills {
     height: 300px;
   }
 
@@ -409,11 +662,28 @@
   }
 }
 
-@media(max-width:500px){
+@media (max-width: 500px) {
+
+      .card{
+  height:  250px;
+  }
+
+  .smallHeading{
+   font-size: 9px !important;
+  }
+
+  .heading{
+    font-size: 40px;
+    line-height: 1.2;
+  }
+
+  .reviewText{
+    font-size: 14px;
+  }
+  
 
 
-
-   .banner_21_skills {
+  .banner_21_skills {
     height: 300px;
   }
 
@@ -490,6 +760,24 @@
 }
 
 @media (max-width: 460px) {
+
+     .card{
+  height:  250px;
+  }
+
+  .smallHeading{
+   font-size: 9px !important;
+  }
+
+  .heading{
+    font-size: 40px;
+    line-height: 1.2;
+  }
+
+  .reviewText{
+    font-size: 14px;
+  }
+  
 
 
   .banner_21_skills {
@@ -569,6 +857,25 @@
 }
 
 @media (max-width: 400px) {
+
+    .card{
+  height:  250px;
+  }
+
+  .smallHeading{
+   font-size: 9px !important;
+  }
+
+  .heading{
+    font-size: 40px;
+    line-height: 1.2;
+  }
+
+  .reviewText{
+    font-size: 14px;
+  }
+  
+
   .banner_21_skills {
     height: 300px;
   }
@@ -646,6 +953,25 @@
 }
 
 @media (max-width: 360px) {
+
+  .card{
+  height:  250px;
+  }
+
+  .smallHeading{
+   font-size: 9px !important;
+  }
+
+  .heading{
+    font-size: 40px;
+    line-height: 1.2;
+  }
+
+  .reviewText{
+    font-size: 14px;
+  }
+  
+
   .banner_21_skills {
     height: 300px;
   }
