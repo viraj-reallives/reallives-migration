@@ -133,7 +133,10 @@ function WhoCanUsePanel({ supportingText, images, isActive = true }) {
     },
   ];
 
-  const duplicatedReviews = [...reviews, ...reviews];
+  // const duplicatedReviews = [...reviews, ...reviews];
+
+  const firstRow = reviews.slice(0, 5);
+  const secondRow = reviews.slice(5, 10);
 
   const startAutoScroll = (sliderRef, direction, speed = 0.7) => {
     let animation;
@@ -322,12 +325,11 @@ function WhoCanUsePanel({ supportingText, images, isActive = true }) {
           className={Style1.slider}
         >
           <div className={Style1.cardInner_grid_review}>
-            {duplicatedReviews.slice(0, 5).map((item) => (
-              <div className={Style1.card} key={item.id}>
+            {[...firstRow, ...firstRow].map((item) => (
+              <div className={Style1.card} key={`${item.id}-1`}>
                 <div>
                   <div className={Style1.userBox}>
-                    <img src={item.image} alt="" className={Style1.userImage} />
-
+                    <img src={item.image} className={Style1.userImage} />
                     <div>
                       <h3 className={Style1.userName}>{item.name}</h3>
                       <p className={Style1.userTitle}>{item.title}</p>
@@ -335,9 +337,7 @@ function WhoCanUsePanel({ supportingText, images, isActive = true }) {
                   </div>
 
                   <div className={Style1.line} />
-
                   <div className={Style1.stars}>{item.stars}</div>
-
                   <p className={Style1.reviewText}>{item.review}</p>
                 </div>
               </div>
@@ -353,12 +353,11 @@ function WhoCanUsePanel({ supportingText, images, isActive = true }) {
           className={Style1.slider}
         >
           <div className={Style1.cardInner_grid_review}>
-            {duplicatedReviews.slice(5, 10).map((item) => (
-              <div className={Style1.card} key={item.id}>
+            {[...secondRow, ...secondRow].map((item) => (
+              <div className={Style1.card} key={`${item.id}-2`}>
                 <div>
                   <div className={Style1.userBox}>
-                    <img src={item.image} alt="" className={Style1.userImage} />
-
+                    <img src={item.image} className={Style1.userImage} />
                     <div>
                       <h3 className={Style1.userName}>{item.name}</h3>
                       <p className={Style1.userTitle}>{item.title}</p>
@@ -366,9 +365,7 @@ function WhoCanUsePanel({ supportingText, images, isActive = true }) {
                   </div>
 
                   <div className={Style1.line} />
-
                   <div className={Style1.stars}>{item.stars}</div>
-
                   <p className={Style1.reviewText}>{item.review}</p>
                 </div>
               </div>

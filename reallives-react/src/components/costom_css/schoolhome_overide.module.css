@@ -103,7 +103,7 @@
 .cardInner_grid_review {
   display: flex;
   gap: 1.5rem;
-  width: max-content; /* IMPORTANT */
+  width: max-content;
 }
 
 ::-webkit-scrollbar {
