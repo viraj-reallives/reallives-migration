@@ -35,6 +35,14 @@
   --color-gray-900: #1f2937;
   --color-gray-950: #111827;
 
+  /*
+   * Dark UI stops that do NOT remap in [data-theme="dark"].
+   * Use for mixes where semantic grays flip to light (e.g. license hub cards).
+   */
+  --color-surface-dark-ink: #0a0e0f;
+  --color-surface-dark-base: #12181c;
+  --color-surface-dark-raised: #1c252c;
+
   /* Brand and accent colors from source CSS */
   --color-brand-blue: #2563eb;
   --color-brand-blue-strong: #1d4ed8;
@@ -212,6 +220,60 @@
 
   --transition-fast: 0.2s;
   --transition-base: 0.3s;
+
+  /* License hub — neutral charcoal panels; cyan only on borders / icons / hover ring */
+  --color-license-hub-page-bg: var(--color-black);
+  --color-license-hub-heading: var(--color-white);
+  --color-license-hub-subheading: color-mix(
+    in srgb,
+    var(--color-white) 62%,
+    var(--color-surface-dark-ink)
+  );
+  --color-license-hub-card-bg: var(--color-surface-dark-base);
+  --color-license-hub-card-bg-hover: color-mix(
+    in srgb,
+    var(--color-white) 7%,
+    var(--color-surface-dark-base)
+  );
+  --color-license-hub-card-border: color-mix(
+    in srgb,
+    var(--color-brand-cyan-bright) 18%,
+    var(--color-surface-dark-raised)
+  );
+  --color-license-hub-card-border-hover: color-mix(
+    in srgb,
+    var(--color-brand-cyan-bright) 42%,
+    var(--color-surface-dark-base)
+  );
+  --color-license-hub-icon-wrap-bg: color-mix(
+    in srgb,
+    var(--color-white) 5%,
+    var(--color-surface-dark-raised)
+  );
+  --color-license-hub-icon-wrap-border: color-mix(
+    in srgb,
+    var(--color-brand-cyan-bright) 30%,
+    var(--color-surface-dark-base)
+  );
+  --color-license-hub-icon: var(--color-brand-cyan-bright);
+  --color-license-hub-title: var(--color-white);
+  --color-license-hub-desc: color-mix(
+    in srgb,
+    var(--color-white) 55%,
+    var(--color-surface-dark-ink)
+  );
+  --color-license-hub-back-bg: var(--color-surface-dark-base);
+  --color-license-hub-back-text: var(--color-white);
+  --color-license-hub-back-border: color-mix(
+    in srgb,
+    var(--color-brand-cyan-bright) 28%,
+    var(--color-surface-dark-raised)
+  );
+  --color-license-hub-back-hover-bg: color-mix(
+    in srgb,
+    var(--color-white) 9%,
+    var(--color-surface-dark-base)
+  );
 }
 
 [data-theme="dark"] {

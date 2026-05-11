@@ -88,7 +88,7 @@ export default function Portal() {
       <div className={`${styles.content} ${styles1.content_overwrite_style}`}>
         <div className={styles.heading}>
           <p className={`${styles.chooseTitle} ${styles1.choose_title_starter}`}>
-            Step out of your life and into a thousand more
+            Step out of your life and into a billion more
           </p>
           <p className={`${styles.exploreTitle} ${styles1.explore_title_starter}`}>
             Live. Feel. Understand. Change

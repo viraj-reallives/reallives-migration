@@ -28,6 +28,8 @@ export const licensesContent = {
     ],
     visitPath: '/reallives/school',
     registerUrl: 'https://reallivesworld.com/register-school',
+    externalPricingUrl:
+      'https://reallivesworld.com/reallives-website-main/reallives/school/pricing',
   },
 
   university: {
@@ -80,6 +82,8 @@ export const licensesContent = {
     ],
     visitPath: '/reallives/university',
     registerUrl: 'https://reallivesworld.com/register-university',
+    externalPricingUrl:
+      'https://reallivesworld.com/reallives-website-main/reallives/university/pricing',
   },
 
   homeschooler: {
@@ -111,6 +115,8 @@ export const licensesContent = {
     ],
     visitPath: '/reallives/homeschooler',
     registerUrl: 'https://reallivesworld.com/register-family',
+    externalPricingUrl:
+      'https://reallivesworld.com/reallives-website-main/reallives/homeschooler/pricing',
   },
 
   gamer: {
@@ -149,5 +155,23 @@ export const licensesContent = {
     ],
     visitPath: '/reallives/gamer',
     registerUrl: 'https://reallivesworld.com/register-gamer',
+    externalPricingUrl:
+      'https://reallivesworld.com/reallives-website-main/reallives/gamer/pricing',
   },
+};
+
+export const licenseHubCopy = {
+  heading: 'Select your segment',
+  subheading:
+    'Flexible licensing options designed for every type of learner and explorer',
+  backPath: '/reallives',
+  backLabel: 'Back to RealLives home',
+};
+
+/** Material Symbols ligature names (Google Fonts) — distinct per segment. */
+export const licenseHubMaterialIcon = {
+  school: 'school',
+  university: 'cast_for_education',
+  homeschooler: 'family_restroom',
+  gamer: 'sports_esports',
 };

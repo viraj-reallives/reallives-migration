@@ -1,35 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400&display=swap");
+
 .page {
   min-height: 100vh;
-  background: var(--color-bg-primary);
-  color: var(--color-text-primary);
+  background: var(--color-license-hub-page-bg);
+  color: var(--color-license-hub-heading);
   display: flex;
   align-items: center;
+  justify-content: center;
+  font-family: "Inter", var(--font-ui), system-ui, sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.02em;
 }
 
 .container {
   width: 100%;
-  max-width: 72rem;
+  max-width: 64rem;
   margin: 0 auto;
-  padding: var(--space-40) var(--space-24);
+  padding: var(--space-48) var(--space-24);
 }
 
 .header {
   text-align: center;
-  margin-bottom: var(--space-32);
+  margin-bottom: var(--space-48);
+  max-width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .heading {
-  font-size: clamp(1.75rem, 4vw, 2.5rem);
-  font-weight: 300;
-  color: var(--color-white);
-  margin: 0 0 var(--space-12);
+  margin: 0 0 var(--space-16);
+  font-size: clamp(1.75rem, 3.2vw, 2.25rem);
+  font-weight: 200;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-license-hub-heading);
 }
 
 .subheading {
   margin: 0;
-  font-size: 1.125rem;
-  font-weight: 200;
-  color: var(--color-text-muted);
+  font-size: clamp(0.9375rem, 1.5vw, 1.0625rem);
+  font-weight: 300;
+  line-height: 1.65;
+  color: var(--color-license-hub-subheading);
 }
 
 .grid {
@@ -39,32 +51,52 @@
   align-items: stretch;
 }
 
-@media (min-width: 48rem) {
+@media (min-width: 36rem) {
   .grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-24);
+  }
+}
+
+@media (min-width: 56rem) {
+  .grid {
+    gap: var(--space-28);
   }
 }
 
 .backRow {
-  margin-top: var(--space-32);
-  text-align: center;
+  margin-top: var(--space-48);
+  display: flex;
+  justify-content: center;
 }
 
 .backLink {
-  color: var(--color-text-muted);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0 var(--space-28);
+  font-size: 0.8125rem;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   text-decoration: none;
-  font-weight: 500;
-  padding: var(--space-12) var(--space-16);
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--color-border-soft);
-  background: var(--color-bg-tertiary);
+  color: var(--color-license-hub-back-text);
+  background: var(--color-license-hub-back-bg);
+  border: 1px solid var(--color-license-hub-back-border);
+  border-radius: var(--radius-pill);
+  transition:
+    background var(--transition-fast) ease,
+    border-color var(--transition-fast) ease,
+    color var(--transition-fast) ease;
 }
 
 .backLink:hover {
-  border-color: var(--color-border-accent);
-  color: var(--color-text-primary);
+  background: var(--color-license-hub-back-hover-bg);
+  border-color: var(--color-license-hub-card-border-hover);
 }
 
-.margin_top_style{
-  margin-top: 6% !important;
+.backLink:focus-visible {
+  outline: 2px solid var(--color-border-accent);
+  outline-offset: 3px;
 }
