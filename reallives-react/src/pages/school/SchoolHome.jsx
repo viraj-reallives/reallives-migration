@@ -194,6 +194,16 @@ function WhoCanUsePanel({ supportingText, images, isActive = true }) {
     };
   }, []);
 
+  const logos = [
+    "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/united-nations.svg",
+    "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/world-bank-group.svg",
+    "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/lonely-planet.svg",
+    "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/common-products-page/birds-logo.svg",
+    // "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg",
+  ];
+
+  const duplicatedLogos = [...logos, ...logos, ...logos];
+
   // review section function end
 
   return (
@@ -299,11 +309,29 @@ function WhoCanUsePanel({ supportingText, images, isActive = true }) {
             </div>
           ) : null}
         </div>
+
         {images.gettingStartedIllustration ? (
           <div className={`${styles.mediaCard} ${Style1.image_style_override}`}>
             <img src={images.gettingStartedIllustration} alt="" />
           </div>
         ) : null}
+      </div>
+
+      <div className={Style1.logo_slide_conntainer}>
+        <h2 className={Style1.providerTitle}>Our Data Providers</h2>
+
+        <div className={Style1.sliderSection}>
+          <div className={Style1.fadeLeft}></div>
+          <div className={Style1.fadeRight}></div>
+
+          <div className={Style1.sliderTrack}>
+            {duplicatedLogos.map((logo, index) => (
+              <div key={`${logo}-${index}`} className={Style1.logoWrapper}>
+                <img src={logo} alt="logo" className={Style1.logoImage} />
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
 
       <div className={Style1.main}>
@@ -400,6 +428,7 @@ function SkillsPanel({ data, images }) {
               </p>
             ))}
           </section>
+
           <section>
             <h2 className={styles.blockTitle}>
               {data.introColumns.right.title}
@@ -470,6 +499,7 @@ function SkillsPanel({ data, images }) {
         <div>
           <h2 className={styles.blockTitle}>{data.closingCta.title}</h2>
           <p className={styles.paragraph}>{data.closingCta.body}</p>
+
           {data.closingCta.ctaPath ? (
             <div className={styles.ctaRow}>
               <CtaLink
@@ -481,6 +511,7 @@ function SkillsPanel({ data, images }) {
             </div>
           ) : null}
         </div>
+
         {images.readyToTransform ? (
           <div className={`${styles.mediaCard} ${Style1.image_style_override}`}>
             <img src={images.readyToTransform} alt="" />
@@ -544,6 +575,7 @@ function SdgPanel({ data, images }) {
         className={`${styles.sdgImpact} ${Style1.container_work_in_classroome}`}
       >
         <h2 className={styles.sdgImpactTitle}>{data.sdgImpact.title}</h2>
+
         {videoUrl ? (
           <div className={styles.videoFrame}>
             <video src={videoUrl} autoPlay muted loop playsInline />
@@ -600,6 +632,7 @@ function SdgPanel({ data, images }) {
           <h2 className={styles.benefitsHeading}>
             {data.beyondClassroom.title}
           </h2>
+
           <ul className={styles.list}>
             {data.beyondClassroom.listItems?.map((item) => (
               <li key={item}>
@@ -627,6 +660,7 @@ function SdgPanel({ data, images }) {
             </div>
           ) : null}
         </div>
+
         {images.sdgGlobalAction ? (
           <div className={`${styles.mediaCard} ${Style1.image_style_override}`}>
             <img src={images.sdgGlobalAction} alt="" />

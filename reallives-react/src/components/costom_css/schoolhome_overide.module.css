@@ -169,7 +169,7 @@
   font-size: 55px;
   line-height: 1.1;
   margin: 0;
-  font-weight: 800;
+  font-weight: 700;
   font-family: "Inter", sans-serif;
 }
 
@@ -312,6 +312,109 @@
 }
 
 /* review section css end  */
+
+
+/* logo slide  css start */
+
+
+.sliderSection {
+  background: #f8f8f8;
+  overflow: hidden;
+  padding:39px 0;
+  width: 100%;
+  position: relative;
+}
+
+[data-theme="dark"] .sliderSection {
+  background: #000;
+}
+
+.fadeLeft {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150px;
+  height: 100%;
+  background: #f8f8f8;
+  /* background: linear-gradient(to right, black, transparent); */
+  z-index: 2;
+}
+
+[data-theme="dark"] .fadeLeft {
+  background: linear-gradient(to right, black, transparent);
+}
+
+.fadeRight {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 150px;
+  height: 100%;
+  background: #f8f8f8;
+  /* background: linear-gradient(to left, black, transparent); */
+  z-index: 2;
+}
+
+[data-theme="dark"] .fadeRight {
+  background: linear-gradient(to right, black, transparent);
+}
+
+
+.sliderTrack {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: smoothScroll 25s linear infinite;
+}
+
+.logoWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  flex-shrink: 0;
+}
+
+/* .logoImage {
+  height: 45px;
+  filter: grayscale(100%) brightness(150%) opacity(0.7);
+  transition: filter 0.3s ease;
+} 
+*/
+
+/* .logoImage:hover {
+  filter: grayscale(0%) brightness(100%) opacity(1);
+} 
+*/
+
+
+[data-theme="dark"] .providerTitle {
+  background-color:  #000;
+  color: white;
+}
+
+
+.providerTitle {
+  color: #222222;
+  text-align: center;
+  font-size: 42px;
+  font-weight: 700;
+  background-color:  #f8f8f8;
+  padding-top: 1rem;
+}
+
+
+@keyframes smoothScroll {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-33.33%, 0, 0);
+  }
+}
+
+/* logo slide css end  */
 
 
 @media (max-width: 700px) {
@@ -470,7 +573,7 @@
 
 @media (max-width: 600px) {
 
-      .card{
+  .card{
   height:  250px;
   }
 
