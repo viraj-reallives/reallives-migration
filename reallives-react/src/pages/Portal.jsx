@@ -91,7 +91,7 @@ export default function Portal() {
             Step out of your life and into a billion more
           </p>
           <p className={`${styles.exploreTitle} ${styles1.explore_title_starter}`}>
-            Live. Feel. Understand. Change
+            Live | Feel | Understand | Change
           </p>
         </div>
 
