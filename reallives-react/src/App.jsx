@@ -68,15 +68,20 @@ const Kame_Research = lazy(() => import("./pages/research/Kame_Research"));
 const routerBasename =
   import.meta.env.BASE_URL.replace(/\/+$/, "") || undefined;
 
+const LOADER_CYAN = "#2bdce7";
+
 function RouteFallback() {
   return (
     <div
       style={{
-        minHeight: "40vh",
+        position: "fixed",
+        inset: 0,
+        zIndex: 9999,
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        color: "#2bdce7",
+        minHeight: "100dvh",
+        background: "#0a0a0c",
       }}
       role="status"
       aria-live="polite"
@@ -84,12 +89,14 @@ function RouteFallback() {
     >
       <span
         style={{
-          width: "2.25rem",
-          height: "2.25rem",
-          border: "3px solid rgba(43, 220, 231, 0.25)",
-          borderTopColor: "#2bdce7",
+          position: "relative",
+          width: "3rem",
+          height: "3rem",
+          border: "3px solid rgba(43, 220, 231, 0.2)",
+          borderTopColor: LOADER_CYAN,
           borderRadius: "50%",
-          animation: "rl-route-spin 0.7s linear infinite",
+          animation: "rl-route-spin 0.75s linear infinite",
+          boxShadow: `0 0 24px rgba(43, 220, 231, 0.35)`,
         }}
       />
       <style>{`@keyframes rl-route-spin { to { transform: rotate(360deg); } }`}</style>

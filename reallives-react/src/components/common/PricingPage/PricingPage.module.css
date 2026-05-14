@@ -452,6 +452,11 @@
   gap: var(--space-12);
 }
 
+/* One add-on pack (e.g. family) — full-width card, no radio affordance */
+.packListSingle {
+  gap: var(--space-16);
+}
+
 .packOption {
   position: relative;
   display: grid;
@@ -515,6 +520,15 @@
 
 .packOptionSelected .packRadio::after {
   transform: scale(1);
+}
+
+.packOptionSingle {
+  grid-template-columns: 1fr auto;
+  cursor: default;
+}
+
+.packOptionSingle .packRadio {
+  display: none;
 }
 
 .packMain {

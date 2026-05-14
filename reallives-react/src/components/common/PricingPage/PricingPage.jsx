@@ -26,7 +26,7 @@ import styles from './PricingPage.module.css';
  *                                  gamer.
  *
  * Props:
- *   - tenantType:  'GAMER' | 'SCHOOL' | 'UNIVERSITY'
+ *   - tenantType:  'GAMER' | 'SCHOOL' | 'UNIVERSITY' | 'HOMESCHOOLER'
  *   - registerUrl: external URL to redirect to once the user confirms purchase
  *   - layout:      'split' | 'stacked' (default 'split')
  */
@@ -46,7 +46,7 @@ export default function PricingPage({
 
   // "Best value" pack = lowest cost-per-credit among packs we have prices for.
   const bestValueId = useMemo(() => {
-    if (!creditPacks?.length) return null;
+    if (!creditPacks?.length || creditPacks.length < 2) return null;
     let bestId = null;
     let bestRate = Infinity;
     for (const pack of creditPacks) {
@@ -120,8 +120,13 @@ export default function PricingPage({
   if (!pricing) return null;
 
   const baseDisplay = baseLicense ? getDisplayPrice(baseLicense) : null;
-  const baseValidityYears = baseLicense?.rules?.validity?.value ?? 1;
+  const baseValidityRule = baseLicense?.rules?.validity;
+  const baseValidityYears =
+    baseValidityRule?.unit === 'YEARS' && Number(baseValidityRule?.value) > 0
+      ? Number(baseValidityRule.value)
+      : 1;
   const baseIncludedLives = baseLicense?.rules?.max_plays ?? 0;
+  const singleCreditPack = creditPacks.length === 1;
   const livesPerStudent = pricing.creditPacks?.livesPerStudent ?? 0;
 
   const selectedPack =
@@ -187,6 +192,7 @@ export default function PricingPage({
     ctaText: pricing.creditPacks?.ctaText || 'Buy License',
     tenantType,
     siteKey,
+    singleCreditPack,
   };
 
   return (
@@ -399,7 +405,23 @@ function SplitMode(props) {
     ctaText,
     tenantType,
     siteKey,
+    singleCreditPack,
   } = props;
+
+  const packsTitle = singleCreditPack
+    ? pricing.creditPacks?.singlePackHeading ||
+      pricing.creditPacks?.heading ||
+      'Credit add-on'
+    : pricing.creditPacks?.selectHeading ||
+      pricing.creditPacks?.heading ||
+      'Select your credit pack';
+
+  const packsSubheading = singleCreditPack
+    ? pricing.creditPacks?.singlePackSubheading ||
+      pricing.creditPacks?.subheading
+    : pricing.creditPacks?.subheading;
+
+  const packListSkeletonCount = tenantType === 'HOMESCHOOLER' ? 1 : 3;
 
   return (
     <section
@@ -512,29 +534,30 @@ function SplitMode(props) {
           {/* RIGHT — Pack picker + summary */}
           <div className={styles.splitRight}>
             <header className={styles.packsHeader}>
-              <h2 className={styles.packsTitle}>
-                {pricing.creditPacks?.selectHeading ||
-                  pricing.creditPacks?.heading ||
-                  'Select your credit pack'}
-              </h2>
-              {pricing.creditPacks?.subheading ? (
-                <p className={styles.packsSubheading}>
-                  {pricing.creditPacks.subheading}
-                </p>
+              <h2 className={styles.packsTitle}>{packsTitle}</h2>
+              {packsSubheading ? (
+                <p className={styles.packsSubheading}>{packsSubheading}</p>
               ) : null}
             </header>
 
             {loading ? (
               <div className={styles.packList} aria-hidden="true">
-                {[1, 2, 3].map((i) => (
+                {Array.from({ length: packListSkeletonCount }, (_, i) => (
                   <div key={i} className={styles.packSkeleton} />
                 ))}
               </div>
             ) : showPacks ? (
               <div
-                className={styles.packList}
-                role="radiogroup"
-                aria-label="Credit pack options"
+                className={`${styles.packList} ${
+                  singleCreditPack ? styles.packListSingle : ''
+                }`}
+                role={singleCreditPack ? 'group' : 'radiogroup'}
+                aria-label={
+                  singleCreditPack
+                    ? pricing.creditPacks?.singlePackAriaLabel ||
+                      'Simulation credits add-on'
+                    : 'Credit pack options'
+                }
               >
                 {creditPacks.map((pack) => (
                   <PackOptionRow
@@ -545,6 +568,7 @@ function SplitMode(props) {
                     livesPerStudent={livesPerStudent}
                     pricing={pricing}
                     onPick={onPackPick}
+                    singleOption={singleCreditPack}
                   />
                 ))}
               </div>
@@ -586,7 +610,11 @@ function SplitMode(props) {
                     ?
                   </span>
                   <span>
-                    Select a credit pack above to see your total and continue.
+                    {loading
+                      ? 'Fetching prices…'
+                      : singleCreditPack
+                        ? 'Preparing your summary…'
+                        : 'Select a credit pack above to see your total and continue.'}
                   </span>
                 </div>
               ) : (
@@ -921,6 +949,7 @@ function PackOptionRow({
   livesPerStudent,
   pricing,
   onPick,
+  singleOption = false,
 }) {
   const credits = pack?.rules?.max_plays ?? 0;
   const display = getDisplayPrice(pack);
@@ -934,11 +963,19 @@ function PackOptionRow({
   return (
     <button
       type="button"
-      role="radio"
-      aria-checked={isSelected}
+      role={singleOption ? undefined : 'radio'}
+      aria-checked={singleOption ? undefined : isSelected}
+      aria-label={
+        singleOption
+          ? `${pack.name}, ${credits.toLocaleString()} credits, ${formatPrice(
+              display.amount,
+              display.currency
+            )}`
+          : undefined
+      }
       className={`${styles.packOption} ${
         isSelected ? styles.packOptionSelected : ''
-      }`}
+      } ${singleOption ? styles.packOptionSingle : ''}`}
       onClick={() => onPick(pack._id)}
     >
       <span className={styles.packRadio} aria-hidden="true" />

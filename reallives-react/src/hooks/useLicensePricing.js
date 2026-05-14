@@ -34,6 +34,8 @@ function startFetchIfNeeded() {
 /**
  * Fetches the localized license pricing catalog and exposes derived helpers
  * for a specific tenant type (GAMER / SCHOOL / UNIVERSITY / HOMESCHOOLER).
+ * Homeschooler pages pass HOMESCHOOLER; the catalog uses tenant type FAMILY,
+ * which is mapped automatically when filtering definitions.
  *
  * @param {Object} opts
  * @param {string} opts.tenantType - e.g. "GAMER" — filter for definitions
@@ -78,11 +80,7 @@ export function useLicensePricing({ tenantType, enabled = true } = {}) {
   const definitions = Array.isArray(data?.definitions) ? data.definitions : [];
 
   const tenantDefinitions = tenantType
-    ? definitions.filter((def) =>
-        Array.isArray(def?.applicable_tenant_types)
-          ? def.applicable_tenant_types.includes(tenantType)
-          : false
-      )
+    ? definitions.filter((def) => definitionMatchesTenant(def, tenantType))
     : definitions;
 
   return {
@@ -113,19 +111,45 @@ export function useLicensePricing({ tenantType, enabled = true } = {}) {
 }
 
 /**
- * Splits any tenant's definitions into the base license (validity in YEARS) and
- * credit packs (everything else). Same shape works for GAMER, SCHOOL, etc.
+ * Splits catalog definitions into base license vs credit packs.
+ *
+ * - Prefer a definition whose validity is in YEARS (family base, gamer yearly,
+ *   some regional school rows).
+ * - Otherwise pick the institutional / family "basic" row: max_plays === 0
+ *   and code contains BASIC (e.g. UNIVERSITY_BASIC_* when validity is DAYS).
+ * - Credit packs are remaining definitions with max_plays > 0, sorted by size.
  */
 export function splitBaseAndCredits(defs = []) {
-  const baseLicense =
-    defs.find((def) => def?.rules?.validity?.unit === 'YEARS') ?? null;
+  const byYears = defs.find((def) => def?.rules?.validity?.unit === 'YEARS');
+  let baseLicense = byYears ?? null;
+
+  if (!baseLicense) {
+    const zeroPlay = defs.filter((def) => (def?.rules?.max_plays ?? 0) === 0);
+    baseLicense =
+      zeroPlay.find((def) => /BASIC/i.test(def.code || '')) ??
+      zeroPlay[0] ??
+      null;
+  }
 
   const creditPacks = defs
     .filter((def) => def !== baseLicense)
+    .filter((def) => (def?.rules?.max_plays ?? 0) > 0)
     .slice()
     .sort((a, b) => (a?.rules?.max_plays ?? 0) - (b?.rules?.max_plays ?? 0));
 
   return { baseLicense, creditPacks };
+}
+
+/** API catalog uses FAMILY for homeschooler / family segment licenses. */
+const TENANT_TO_API_TYPES = {
+  HOMESCHOOLER: ['FAMILY'],
+};
+
+function definitionMatchesTenant(def, tenantType) {
+  const types = TENANT_TO_API_TYPES[tenantType] ?? [tenantType];
+  const applicable = def?.applicable_tenant_types;
+  if (!Array.isArray(applicable)) return false;
+  return applicable.some((t) => types.includes(t));
 }
 
 /**

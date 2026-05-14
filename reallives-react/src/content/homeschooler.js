@@ -917,7 +917,7 @@ export const homeschoolerContent = {
         },
         {
           number: "02",
-          title: "Pick a Credit Pack for your kids",
+          title: "Add pooled credits for your kids",
           description:
             "1 credit = 1 simulated life. Credits are pooled across the family so anyone in the household can play whenever they want.",
         },
@@ -949,6 +949,11 @@ export const homeschoolerContent = {
     },
     creditPacks: {
       heading: "Choose a Credit Pack",
+      selectHeading: "Select your credit pack",
+      singlePackHeading: "Family credit pack",
+      singlePackSubheading:
+        "One add-on bundles pooled simulation credits for your whole household. Prices shown include any taxes and checkout charges for your country.",
+      singlePackAriaLabel: "Family pooled simulation credits add-on",
       subheading:
         "Every pack uses the same feature set — only the number of simulated lives differs. Stack multiple packs anytime as your family explores more.",
       bestValueLabel: "Best Value",
