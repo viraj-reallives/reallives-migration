@@ -739,7 +739,7 @@ function WhoCanUsePanel({ supportingText, images, isActive = true }) {
             ))}
           </div>
         </div>
-      </div>
+         </div>
 
       <div className={Style1.main}>
         <div className={Style1.headingBox}>

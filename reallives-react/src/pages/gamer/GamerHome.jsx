@@ -369,6 +369,7 @@ export default function GamerHome() {
       </div>
 
       <div className={styles.main}>
+
         <div className={styles.headingBox}>
           <p className={styles.smallHeading}>GLOBAL COMMUNITY</p>
 
@@ -377,16 +378,11 @@ export default function GamerHome() {
             <br />
             Global Students
           </h1>
+          
         </div>
 
-        <div
-          ref={slider1}
-          data-hover="false"
-          onMouseEnter={() => handleMouseEnter(slider1)}
-          onMouseLeave={() => handleMouseLeave(slider1)}
-          className={styles.slider}
-        >
-          <div className={styles.cardInner_grid_review}>
+        <div ref={slider1}  data-hover="false" onMouseEnter={() => handleMouseEnter(slider1)} onMouseLeave={() => handleMouseLeave(slider1)} className={styles.slider} >
+          <div className={styles.cardInner_grid_review}> 
             {[...firstRow, ...firstRow].map((item, index) => (
               <div className={styles.card} key={`first-${item.id}-${index}`}>
                 <div>
@@ -415,13 +411,7 @@ export default function GamerHome() {
           </div>
         </div>
 
-        <div
-          ref={slider2}
-          data-hover="false"
-          onMouseEnter={() => handleMouseEnter(slider2)}
-          onMouseLeave={() => handleMouseLeave(slider2)}
-          className={styles.slider}
-        >
+        <div ref={slider2} data-hover="false" onMouseEnter={() => handleMouseEnter(slider2)} onMouseLeave={() => handleMouseLeave(slider2)} className={styles.slider} >
           <div className={styles.cardInner_grid_review}>
             {[...secondRow, ...secondRow].map((item, index) => (
               <div className={styles.card} key={`second-${item.id}-${index}`}>
@@ -450,6 +440,7 @@ export default function GamerHome() {
             ))}
           </div>
         </div>
+
       </div>
     </div>
   );
