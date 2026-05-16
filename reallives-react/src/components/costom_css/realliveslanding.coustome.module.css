@@ -17,7 +17,8 @@ body {
 .landing_container {
   width: 100%;
   background-color: white;
-  padding-top: 6rem;
+  padding: 0rem 1rem;
+  /* padding-top: 6rem; */
 }
 
 .dark_theme .landing_container {
@@ -26,6 +27,14 @@ body {
 
 .dark_theme {
   background: #050505 !important;
+}
+
+.header_content_container{
+  background-image: url('https://res.cloudinary.com/dexw6sglh/image/upload/v1778927036/pexels-codioful-7135053_fttjtd.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
 }
 
 .theme_switch {
@@ -133,7 +142,7 @@ body {
 }
 
 .header {
-  background: #f3efef;
+  background: white;
 
   height: 85px;
   width: 75%;
@@ -171,13 +180,13 @@ body {
 .header::before {
   left: -40px;
   border-top-right-radius: 40px;
-  box-shadow: 20px 0 0 0 #f3efef;
+  box-shadow: 20px 0 0 0 white;
 }
 
 .header::after {
   right: -40px;
   border-top-left-radius: 40px;
-  box-shadow: -20px 0 0 0 #f3efef;
+  box-shadow: -20px 0 0 0 white;
 }
 .dark_theme .header::before {
   box-shadow: 20px 0 0 0 #111111;
@@ -320,9 +329,13 @@ body {
 
 .landing_content_1 {
   padding: 2rem 5rem;
+  padding-top: 6rem;
   display: grid;
-  grid-template-rows: 30% 1fr;
+  /* grid-template-rows: 30% 1fr; */
+  grid-template-rows: auto auto 1fr;
   position: relative;
+  height: 900px;
+  /* height: 100vh; */
 }
 
 .impact_container_landing {
@@ -330,7 +343,7 @@ body {
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
   padding: 2rem 10rem;
-  border-bottom: 1px solid #f2f2f6;
+  /* border-bottom: 1px solid #f2f2f6; */
 }
 
 .dark_theme .impact_container_landing{
@@ -338,7 +351,7 @@ body {
 }
 
 .title_top_landing {
-  font-size: 2.5rem;
+  font-size: 2.3rem;
   color: #24374e;
   text-align: center;
   font-family:
@@ -364,8 +377,10 @@ body {
   border-radius: 5px;
 }
 
-.card_top_inner:nth-child(1):hover {
-  background-color: #e6ecb7 !important;
+.card_top_inner:nth-child(1) {
+  /* background-color: #e6ecb7 !important; */
+  background-color: rgba(230, 236, 183, 0.15) !important;
+  
 }
 
  .dark_theme .card_top_inner:nth-child(1) {
@@ -373,44 +388,162 @@ body {
 }
 
 
-.card_top_inner:nth-child(2):hover {
-  background-color: #e8e0b8 !important;
+.card_top_inner:nth-child(2){
+  /* background-color: #e8e0b8 !important; */
+    background-color: rgba(232, 224, 184, 0.12) !important;
 }
 
 .dark_theme .card_top_inner:nth-child(2) {
   background-color: #1f2937 !important;
 }
 
-.card_top_inner:nth-child(3):hover {
-  background-color: #e7f3c8 !important;
+.card_top_inner:nth-child(3) {
+  /* background-color: #e7f3c8 !important; */
+  background-color: rgba(231, 243, 200, 0.12) !important;
 }
 
 .dark_theme .card_top_inner:nth-child(3) {
   background-color: #24374e !important;
 }
 
-.card_top_inner:hover .logo_redirect {
+/* .card_top_inner:hover .logo_redirect {
   transform: rotate(360deg) scale(1.05);
-}
+} */
 
 .logo_redirect {
-  width: 90px;
-  height: 90px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
-  transition: transform 2.2s cubic-bezier(0.22, 1, 0.36, 1);
+  /* transition: transform 2.2s cubic-bezier(0.22, 1, 0.36, 1); */
 }
 
-.card_top_inner:nth-child(1):hover .logo_redirect {
+/* .card_top_inner:nth-child(1):hover .logo_redirect {
   border: 1px solid #a5b149;
-}
+} */
 
-.card_top_inner:nth-child(2):hover .logo_redirect {
+/* .card_top_inner:nth-child(2):hover .logo_redirect {
   border: 1px solid #e2d17a;
+} */
+
+/* .card_top_inner:nth-child(3):hover .logo_redirect {
+  border: 1px solid #caea7a;
+} */
+
+/* ==========================================================================
+   3D ANIMATED ROTATING CAROUSEL STYLES
+   ========================================================================== */
+/* ==========================================================================
+   FIXED 3D ROTATING CAROUSEL (Fixed Left-Right Shifting)
+   ========================================================================== */
+
+.animated_card_container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+  /* margin-top: 2%; */
+  margin-bottom: 5%;
+  padding: 20px 0;
 }
 
-.card_top_inner:nth-child(3):hover .logo_redirect {
-  border: 1px solid #caea7a;
+.carousel_container {
+  position: relative;
+  width: 280px; 
+  height: 160px;
+  margin: 30px auto 0 auto;
+  perspective: 1000px;
 }
+
+.carousel {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d; 
+  animation: rotate360 15s infinite forwards linear; 
+}
+
+.carousel__face { 
+  position: absolute;
+  width: 100%; 
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: center;
+  box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5);
+  display: flex;
+  border-radius: 8px;
+  backface-visibility: hidden;
+}
+
+.carousel__face span {
+  margin: auto;
+  font-size: 1rem;
+  color: #ffffff;
+  text-align: center;
+  font-weight: 600;
+  padding: 0 10px;
+}
+
+/* 3D Faces Axis Positions & Background Images */
+
+.carousel__face:nth-child(1) {
+  background-image: url("https://images.pexels.com/photos/1141853/pexels-photo-1141853.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  transform: rotateY(0deg) translateZ(430px); 
+}
+
+.carousel__face:nth-child(2) { 
+  background-image: url("https://images.pexels.com/photos/1258865/pexels-photo-1258865.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  transform: rotateY(40deg) translateZ(430px); 
+}
+
+.carousel__face:nth-child(3) {
+  background-image: url("https://images.pexels.com/photos/808466/pexels-photo-808466.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  transform: rotateY(80deg) translateZ(430px); 
+}
+
+.carousel__face:nth-child(4) {
+  background-image: url("https://www.gconnect.in/gc22/wp-content/uploads/2022/09/Stepping-up-of-pay.jpg");
+  transform: rotateY(120deg) translateZ(430px); 
+}
+
+.carousel__face:nth-child(5) { 
+  background-image: url("https://wikihealth.biz.id/images/step-counts-still-down-after-pandemic-1440x810.jpg");
+  transform: rotateY(160deg) translateZ(430px); 
+}
+
+.carousel__face:nth-child(6) { 
+  background-image: url("https://static.vecteezy.com/ti/vecteur-libre/p1/5568329-en-savoir-plus-gagner-plus-cartoon-vector-illustration-vectoriel.jpg");
+  transform: rotateY(200deg) translateZ(430px); 
+}
+
+.carousel__face:nth-child(7) { 
+  background-image: url("https://www.youngisthan.in/wp-content/uploads/2018/03/belief-1280x720.jpg");
+  transform: rotateY(240deg) translateZ(430px); 
+}
+
+.carousel__face:nth-child(8) {
+  background-image: url("https://images.pexels.com/photos/135018/pexels-photo-135018.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  transform: rotateY(280deg) translateZ(430px); 
+}
+
+.carousel__face:nth-child(9) {
+  background-image: url("https://images.pexels.com/photos/1175135/pexels-photo-1175135.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  transform: rotateY(320deg) translateZ(430px); 
+}
+
+/* Animation Rotation keyframes (Global scope applied) */
+
+@keyframes rotate360 {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(-360deg);
+  }
+}
+/* 3rd card style end css  */
 
 .logo_redirect > img {
   width: 100%;
@@ -431,7 +564,7 @@ body {
 }
 
 .collect_title_text {
-  font-size: 1.733rem;
+  font-size: 1.5rem;
   line-height: 2.25rem;
   letter-spacing: 0;
   font-weight: 600;
@@ -453,7 +586,8 @@ body {
   font-size: 1rem;
   line-height: 1.5rem;
   letter-spacing: 0;
-  color: #586779;
+  color: white;
+  font-weight: 500;
 }
 
 .dark_theme .desc_title_text{
@@ -920,8 +1054,8 @@ body {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
   position: absolute;
-  bottom: 10%;
-  right: 5%;
+  bottom: 13%;
+  right: 2%;
 }
 
 .slider_btn:hover {

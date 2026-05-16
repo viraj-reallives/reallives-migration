@@ -897,7 +897,10 @@ const RealLivesLanding = () => {
 
       {/* HEADER */}
 
-      <header className={Style1.header_wrapper}>
+      <div className={Style1.header_content_container}>
+
+
+          <header className={Style1.header_wrapper}>
         <div className={Style1.header}>
           <nav className={Style1.nav_left}>
             <Link to="/" className={Style1.logo_reallives}>
@@ -970,11 +973,12 @@ const RealLivesLanding = () => {
             <span>Get Started</span>
           </Link>
         </div>
-      </header>
+        </header>
 
       {/* HERO SECTION */}
 
       <div className={Style1.landing_content_1}>
+
         <h1 className={Style1.title_top_landing}>
           Next-generation immersive <br /> education platform
         </h1>
@@ -1046,6 +1050,24 @@ const RealLivesLanding = () => {
           </Link>
         </div>
 
+        {/* <div className={Style1.animated_card_container}></div> */}
+
+        <div className={Style1.animated_card_container}>
+        <div className={Style1.carousel_container}>
+          <div className={Style1.carousel}>
+            <div className={Style1.carousel__face}><span>Failure isn't an option</span></div>
+            <div className={Style1.carousel__face}><span>Don't stop until you're proud</span></div>
+            <div className={Style1.carousel__face}><span>Find a way to make it happen</span></div>
+            <div className={Style1.carousel__face}><span>Never give up</span></div>
+            <div className={Style1.carousel__face}><span>Make every step count</span></div>
+            <div className={Style1.carousel__face}><span>The more you Learn <br />The more you Earn</span></div>
+            <div className={Style1.carousel__face}><span>Believe in yourself</span></div>
+            <div className={Style1.carousel__face}><span>Stay positive, Work hard</span></div>
+            <div className={Style1.carousel__face}><span>The harder you work,<br /> the Better you get</span></div>
+          </div>
+        </div>
+         </div>
+
         <button
           className={Style1.slider_btn}
           onClick={() => setIsModalOpen(true)}
@@ -1058,7 +1080,15 @@ const RealLivesLanding = () => {
             <h3>Open Gallery</h3>
           </div>
         </button>
+
+
       </div>
+
+      </div>
+
+    
+
+
 
       {/* MODAL (Swiper Fixed) */}
 
