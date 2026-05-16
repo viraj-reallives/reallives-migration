@@ -1,12 +1,11 @@
-import { Link } from 'react-router-dom';
-import { landingContent } from '@content/landing';
-import styles from './LandingFooter.module.css';
+import { Link } from "react-router-dom";
+import { landingContent } from "@content/landing";
+import styles from "./LandingFooter.module.css";
 import logo_reallives from "../../../add-image/realives-logo-footer.svg";
-import Style1  from '../../costom_css/LandingFooter_overide.module.css';   
-
+import Style1 from "../../costom_css/LandingFooter_overide.module.css";
 
 function SocialPlatformIcon({ icon, className }) {
-  if (icon === 'youtube') {
+  if (icon === "youtube") {
     return (
       <svg
         className={className}
@@ -21,7 +20,8 @@ function SocialPlatformIcon({ icon, className }) {
       </svg>
     );
   }
-  if (icon === 'linkedin') {
+
+  if (icon === "linkedin") {
     return (
       <svg
         className={className}
@@ -36,15 +36,17 @@ function SocialPlatformIcon({ icon, className }) {
       </svg>
     );
   }
+
   return null;
 }
 
 function trimText(value) {
-  return typeof value === 'string' ? value.trim() : '';
+  return typeof value === "string" ? value.trim() : "";
 }
 
 export default function LandingFooter() {
   const { footer = {} } = landingContent;
+
   const {
     about,
     contact = {},
@@ -52,49 +54,68 @@ export default function LandingFooter() {
     copyright,
     socialLinks = [],
     links = [],
-    organizationName = '',
-    linksColumnTitle = 'Company',
-    contactColumnTitle = 'Contact',
-    socialColumnTitle = 'Social Media',
+    organizationName = "",
+    linksColumnTitle = "Company",
+    contactColumnTitle = "Contact",
+    socialColumnTitle = "Social Media",
   } = footer;
 
   const email = trimText(contact.email);
   const phone = trimText(contact.phone);
   const address = trimText(contact.address);
+
   const hasContact = Boolean(email || phone || address);
 
   return (
-    <footer className={`${styles.footer} ${Style1.padding_footer_manange}`}>
-
+    <footer
+      className={`${styles.footer} ${Style1.padding_footer_manange}`}
+      style={{
+        background: "inherit",
+      }}
+    >
       <div className={styles.container}>
-       
         <div className={`${styles.top} ${Style1.top_footer_override}`}>
+          {/* BRAND */}
 
           <div className={styles.brand}>
-
             {logo ? (
               <div className={styles.logoWrap}>
                 <img
                   src={logo_reallives}
-                  alt={organizationName || 'RealLives'}
+                  alt={organizationName || "RealLives"}
                   className={styles.logoImg}
                 />
               </div>
-
             ) : null}
 
-            {about ? <p className={`${styles.about} ${Style1.footer_description}`}>{about}</p> : null}
-            {/* ooter_description  */}
+            {about ? (
+              <p className={`${styles.about} ${Style1.footer_description}`}>
+                {about}
+              </p>
+            ) : null}
           </div>
 
+          {/* SIDE COLUMNS */}
+
           <div className={`${styles.sideColumns} ${Style1.side_colume_style}`}>
+            {/* LINKS */}
+
             {links.length > 0 ? (
               <div className={styles.column}>
-                <h4 className={styles.columnTitle}>{linksColumnTitle}</h4>
+                <h4 className={styles.columnTitle}>
+                  {linksColumnTitle}
+                </h4>
+
                 <ul className={styles.linkList}>
                   {links.map((item, i) => (
-                    <li key={`${item.path}-${item.label}-${i}`} className={styles.linkItem}>
-                      <Link to={item.path} className={styles.navLink}>
+                    <li
+                      key={`${item.path}-${item.label}-${i}`}
+                      className={styles.linkItem}
+                    >
+                      <Link
+                        to={item.path}
+                        className={`${styles.navLink} ${Style1.footerNavLink_color}`}
+                      >
                         {item.label}
                       </Link>
                     </li>
@@ -103,63 +124,104 @@ export default function LandingFooter() {
               </div>
             ) : null}
 
+            {/* CONTACT */}
+
             {hasContact ? (
               <div className={styles.column}>
-                <h4 className={styles.columnTitle}>{contactColumnTitle}</h4>
+                <h4 className={styles.columnTitle}>
+                  {contactColumnTitle}
+                </h4>
+
                 <ul className={styles.contactList}>
                   {email ? (
                     <li className={styles.contactItem}>
-                      <a className={styles.contactValue} href={`mailto:${email}`}>
+                      <a
+                        className={`${styles.contactValue} ${Style1.footerNavLink_color}`}
+                        href={`mailto:${email}`}
+                      >
                         {email}
                       </a>
                     </li>
                   ) : null}
+
                   {phone ? (
                     <li className={styles.contactItem}>
-                      <a className={styles.contactValue} href={`tel:${phone.replace(/\s/g, '')}`}>
+                      <a
+                        className={`${styles.contactValue} ${Style1.footerNavLink_color}`}
+                        href={`tel:${phone.replace(/\s/g, "")}`}
+                      >
                         {phone}
                       </a>
                     </li>
                   ) : null}
+
                   {address ? (
                     <li className={styles.contactItem}>
-                      <span className={styles.contactValue}>{address}</span>
+                      <span
+                        className={`${styles.contactValue} ${Style1.footerNavLink_color}`}
+                      >
+                        {address}
+                      </span>
                     </li>
                   ) : null}
                 </ul>
               </div>
             ) : null}
 
+            {/* SOCIAL */}
+
             {socialLinks.length > 0 ? (
               <div className={styles.column}>
-                <h4 className={styles.columnTitle}>{socialColumnTitle}</h4>
+                <h4 className={styles.columnTitle}>
+                  {socialColumnTitle}
+                </h4>
+
                 <div className={styles.socialList}>
                   {socialLinks.map((item, i) => {
                     const href = item.url ?? item.href;
-                    const platform = item.platform ?? item.label ?? '';
-                    const builtInIcon = item.icon === 'youtube' || item.icon === 'linkedin';
+
+                    const platform =
+                      item.platform ?? item.label ?? "";
+
+                    const builtInIcon =
+                      item.icon === "youtube" ||
+                      item.icon === "linkedin";
+
                     const rasterSrc =
                       !builtInIcon &&
-                      ((typeof item.icon === 'string' && item.icon.startsWith('/')
+                      ((typeof item.icon === "string" &&
+                      item.icon.startsWith("/")
                         ? item.icon
                         : null) ||
                         item.iconPath ||
                         null);
+
                     return (
                       <a
                         key={`${href}-${platform}-${i}`}
                         href={href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={styles.socialLink}
+                        className={`${styles.socialLink} ${Style1.footerNavLink_color}`}
                       >
                         {builtInIcon ? (
-                          <SocialPlatformIcon icon={item.icon} className={styles.socialSvg} />
+                          <SocialPlatformIcon
+                            icon={item.icon}
+                            className={styles.socialSvg}
+                          />
                         ) : null}
+
                         {rasterSrc ? (
-                          <img src={rasterSrc} alt="" className={styles.socialRaster} />
+                          <img
+                            src={rasterSrc}
+                            alt=""
+                            className={styles.socialRaster}
+                          />
                         ) : null}
-                        <span className={styles.socialLabel}>{platform}</span>
+
+                        <span className={styles.socialLabel}>
+                          {platform}
+                        </span>
                       </a>
                     );
                   })}
@@ -169,9 +231,15 @@ export default function LandingFooter() {
           </div>
         </div>
 
+        {/* COPYRIGHT */}
+
         {copyright ? (
           <div className={styles.bottom}>
-            <p className={styles.copyright}>{copyright}</p>
+            <p
+              className={`${styles.copyright} ${Style1.footerNavLink_color}`}
+            >
+              {copyright}
+            </p>
           </div>
         ) : null}
       </div>

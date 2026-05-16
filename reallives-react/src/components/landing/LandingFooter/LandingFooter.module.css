@@ -18,6 +18,7 @@
   margin-bottom: var(--space-32);
 }
 
+
 @media (min-width: 52rem) {
   .top {
     grid-template-columns: minmax(0, 25rem) minmax(0, 1fr);

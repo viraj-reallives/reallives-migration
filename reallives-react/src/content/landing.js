@@ -153,6 +153,7 @@ export const landingContent = {
 
   carousel: {
   slides: [
+
     {
       image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_01.jpg",
       mobileImage: "https://reallivesfrontend.s3.us-east-1.amazonaws.com/iPhone+16+Pro+Max+-+5.png",
@@ -160,6 +161,7 @@ export const landingContent = {
       heading: "Life doesn’t always give you equal opportunities",
       subheading: "",
     },
+    
     {
       image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_02.jpg",
       mobileImage: "https://reallivesfrontend.s3.us-east-1.amazonaws.com/iPhone+16+Pro+Max+-+22.png",
@@ -314,6 +316,7 @@ export const landingContent = {
       heading: "Face factors beyond your control",
       subheading: "",
     },
+
   ],
 },
 
