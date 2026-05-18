@@ -389,7 +389,7 @@ body {
 }
 
  .dark_theme .card_top_inner:nth-child(1) {
-  background-color: #374151 !important;
+  background-color: #2b323c61  !important;
 }
 
 
@@ -399,7 +399,7 @@ body {
 }
 
 .dark_theme .card_top_inner:nth-child(2) {
-  background-color: #1f2937 !important;
+  background-color: #1f293775 !important;
 }
 
 .card_top_inner:nth-child(3) {
@@ -408,7 +408,7 @@ body {
 }
 
 .dark_theme .card_top_inner:nth-child(3) {
-  background-color: #24374e !important;
+  background-color: #24374e70 !important;
 }
 
 /* .card_top_inner:hover .logo_redirect {
