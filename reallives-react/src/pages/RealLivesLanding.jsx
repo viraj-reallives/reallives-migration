@@ -473,7 +473,11 @@ import Style1 from "../components/costom_css/realliveslanding.coustome.module.cs
 // const research_image = "https://img.icons8.com/fluency/96/research.png";
 
 const RealLivesLanding = () => {
-  const [darkMode, setDarkMode] = useState(false);
+  
+  // const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(() => {
+    return localStorage.getItem("theme") === "dark";
+  });
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -505,11 +509,24 @@ const RealLivesLanding = () => {
 
   // Body theme class toggle
 
+  // useEffect(() => {
+  //   if (darkMode) {
+  //     document.body.classList.add(Style1.dark_theme);
+  //   } else {
+  //     document.body.classList.remove(Style1.dark_theme);
+  //   }
+  // }, [darkMode]);
+
   useEffect(() => {
     if (darkMode) {
       document.body.classList.add(Style1.dark_theme);
+
+      document.body.setAttribute("data-theme", "dark");
+      localStorage.setItem("theme", "dark");
     } else {
       document.body.classList.remove(Style1.dark_theme);
+      document.body.setAttribute("data-theme", "light");
+      localStorage.setItem("theme", "light");
     }
   }, [darkMode]);
 
@@ -898,197 +915,211 @@ const RealLivesLanding = () => {
       {/* HEADER */}
 
       <div className={Style1.header_content_container}>
+        <header className={Style1.header_wrapper}>
+          <div className={Style1.header}>
+            <nav className={Style1.nav_left}>
+              <Link to="/" className={Style1.logo_reallives}>
+                <img
+                  src="https://res.cloudinary.com/dexw6sglh/image/upload/v1771840605/reallives-logo_v5cdkc.png"
+                  alt="Logo"
+                />
+              </Link>
+            </nav>
 
+            <div className={Style1.nav_right}>
+              <Link to="/reallives/licenses" className={Style1.white_btn}>
+                Buy License
+              </Link>
 
-          <header className={Style1.header_wrapper}>
-        <div className={Style1.header}>
-          <nav className={Style1.nav_left}>
-            <Link to="/" className={Style1.logo_reallives}>
-              <img
-                src="https://res.cloudinary.com/dexw6sglh/image/upload/v1771840605/reallives-logo_v5cdkc.png"
-                alt="Logo"
-              />
-            </Link>
-          </nav>
+              <a
+                href="https://reallivesworld.com/login"
+                target="_blank"
+                rel="noreferrer"
+                className={Style1.glow_btn}
+              >
+                <span>Get Started</span>
+              </a>
+            </div>
 
-          <div className={Style1.nav_right}>
-            <Link to="/reallives/licenses" className={Style1.white_btn}>
+            <div className={Style1.mobile_controls}>
+              <div className={Style1.mobile_toggle_container}>
+                <label className={Style1.switch}>
+                  <input
+                    type="checkbox"
+                    checked={darkMode}
+                    onChange={() => setDarkMode(!darkMode)}
+                  />
+
+                  <span className={Style1.slider_round}>
+                    <span className={Style1.icon_sun}>☀️</span>
+
+                    <span className={Style1.icon_moon}>🌙</span>
+                  </span>
+                </label>
+              </div>
+
+              <button
+                className={Style1.mobile_menu_btn}
+                onClick={() => setMobileMenu(!mobileMenu)}
+              >
+                {mobileMenu ? <X size={28} /> : <Menu size={28} />}
+              </button>
+            </div>
+          </div>
+
+          {/* MOBILE MENU */}
+
+          <div
+            className={`${Style1.mobile_menu} ${mobileMenu ? Style1.mobile_menu_active : ""}`}
+          >
+            <Link
+              to="/buy-license"
+              className={Style1.white_btn}
+              onClick={() => setMobileMenu(false)}
+            >
               Buy License
             </Link>
 
-            <a
-              href="https://reallivesworld.com/login"
-              target="_blank"
-              rel="noreferrer"
+            <Link
+              to="/login"
               className={Style1.glow_btn}
+              onClick={() => setMobileMenu(false)}
             >
               <span>Get Started</span>
-            </a>
+            </Link>
           </div>
-
-          <div className={Style1.mobile_controls}>
-            <div className={Style1.mobile_toggle_container}>
-              <label className={Style1.switch}>
-                <input
-                  type="checkbox"
-                  checked={darkMode}
-                  onChange={() => setDarkMode(!darkMode)}
-                />
-
-                <span className={Style1.slider_round}>
-                  <span className={Style1.icon_sun}>☀️</span>
-
-                  <span className={Style1.icon_moon}>🌙</span>
-                </span>
-              </label>
-            </div>
-
-            <button
-              className={Style1.mobile_menu_btn}
-              onClick={() => setMobileMenu(!mobileMenu)}
-            >
-              {mobileMenu ? <X size={28} /> : <Menu size={28} />}
-            </button>
-          </div>
-        </div>
-
-        {/* MOBILE MENU */}
-
-        <div
-          className={`${Style1.mobile_menu} ${mobileMenu ? Style1.mobile_menu_active : ""}`}
-        >
-          <Link
-            to="/buy-license"
-            className={Style1.white_btn}
-            onClick={() => setMobileMenu(false)}
-          >
-            Buy License
-          </Link>
-
-          <Link
-            to="/login"
-            className={Style1.glow_btn}
-            onClick={() => setMobileMenu(false)}
-          >
-            <span>Get Started</span>
-          </Link>
-        </div>
         </header>
 
-      {/* HERO SECTION */}
+        {/* HERO SECTION */}
 
-      <div className={Style1.landing_content_1}>
+        <div className={Style1.landing_content_1}>
+          <h1 className={Style1.title_top_landing}>
+            Next-generation immersive <br /> education platform
+          </h1>
 
-        <h1 className={Style1.title_top_landing}>
-          Next-generation immersive <br /> education platform
-        </h1>
-
-        <div className={Style1.impact_container_landing}>
-          <Link
-            to="/reallives/school/impact"
-            className={Style1.card_top_inner}
-            style={{ textDecoration: "none" }}
-          >
-            <div className={Style1.wrapper_logo_label}>
-              <div className={Style1.logo_redirect}>
-                <img
-                  src="https://res.cloudinary.com/dexw6sglh/image/upload/v1778838940/goal_hcd01r.png"
-                  alt="Impact"
-                />
+          <div className={Style1.impact_container_landing}>
+            <Link
+              to="/reallives/school/impact"
+              className={Style1.card_top_inner}
+              style={{ textDecoration: "none" }}
+            >
+              <div className={Style1.wrapper_logo_label}>
+                <div className={Style1.logo_redirect}>
+                  <img
+                    src="https://res.cloudinary.com/dexw6sglh/image/upload/v1778838940/goal_hcd01r.png"
+                    alt="Impact"
+                  />
+                </div>
               </div>
-            </div>
 
-            <div className={Style1.title_desc_container}>
-              <p className={Style1.collect_title_text}>Impact</p>
+              <div className={Style1.title_desc_container}>
+                <p className={Style1.collect_title_text}>Impact</p>
 
-              <p className={Style1.desc_title_text}>
-                Manually or through integrations
-              </p>
-            </div>
-          </Link>
-
-          <Link
-            to="/reallives/school/research"
-            className={Style1.card_top_inner}
-            style={{ textDecoration: "none" }}
-          >
-            <div className={Style1.wrapper_logo_label}>
-              <div className={Style1.logo_redirect}>
-                <img
-                  src="https://res.cloudinary.com/dexw6sglh/image/upload/v1778838613/searching_sr77ly.png"
-                  alt="Research"
-                />
+                <p className={Style1.desc_title_text}>
+                  Manually or through integrations
+                </p>
               </div>
-            </div>
+            </Link>
 
-            <div className={Style1.title_desc_container}>
-              <p className={Style1.collect_title_text}>Research</p>
-
-              <p className={Style1.desc_title_text}>Evidence-based results</p>
-            </div>
-          </Link>
-
-          <Link
-            to="/reallives/school/products"
-            className={Style1.card_top_inner}
-            style={{ textDecoration: "none" }}
-          >
-            <div className={Style1.wrapper_logo_label}>
-              <div className={Style1.logo_redirect}>
-                <img
-                  src="https://res.cloudinary.com/dexw6sglh/image/upload/v1778832770/computer-engineer_xxcniv.png"
-                  alt="product"
-                />
+            <Link
+              to="/reallives/school/research"
+              className={Style1.card_top_inner}
+              style={{ textDecoration: "none" }}
+            >
+              <div className={Style1.wrapper_logo_label}>
+                <div className={Style1.logo_redirect}>
+                  <img
+                    src="https://res.cloudinary.com/dexw6sglh/image/upload/v1778838613/searching_sr77ly.png"
+                    alt="Research"
+                  />
+                </div>
               </div>
-            </div>
 
-            <div className={Style1.title_desc_container}>
-              <p className={Style1.collect_title_text}>Products</p>
+              <div className={Style1.title_desc_container}>
+                <p className={Style1.collect_title_text}>Research</p>
 
-              <p className={Style1.desc_title_text}>Scalable for everyone</p>
-            </div>
-          </Link>
-        </div>
+                <p className={Style1.desc_title_text}>Evidence-based results</p>
+              </div>
+            </Link>
 
-        {/* <div className={Style1.animated_card_container}></div> */}
+            <Link
+              to="/reallives/school/products"
+              className={Style1.card_top_inner}
+              style={{ textDecoration: "none" }}
+            >
+              <div className={Style1.wrapper_logo_label}>
+                <div className={Style1.logo_redirect}>
+                  <img
+                    src="https://res.cloudinary.com/dexw6sglh/image/upload/v1778832770/computer-engineer_xxcniv.png"
+                    alt="product"
+                  />
+                </div>
+              </div>
 
-        <div className={Style1.animated_card_container}>
-        <div className={Style1.carousel_container}>
-          <div className={Style1.carousel}>
-            <div className={Style1.carousel__face}><span>Failure isn't an option</span></div>
-            <div className={Style1.carousel__face}><span>Don't stop until you're proud</span></div>
-            <div className={Style1.carousel__face}><span>Find a way to make it happen</span></div>
-            <div className={Style1.carousel__face}><span>Never give up</span></div>
-            <div className={Style1.carousel__face}><span>Make every step count</span></div>
-            <div className={Style1.carousel__face}><span>The more you Learn <br />The more you Earn</span></div>
-            <div className={Style1.carousel__face}><span>Believe in yourself</span></div>
-            <div className={Style1.carousel__face}><span>Stay positive, Work hard</span></div>
-            <div className={Style1.carousel__face}><span>The harder you work,<br /> the Better you get</span></div>
+              <div className={Style1.title_desc_container}>
+                <p className={Style1.collect_title_text}>Products</p>
+
+                <p className={Style1.desc_title_text}>Scalable for everyone</p>
+              </div>
+            </Link>
           </div>
-        </div>
-         </div>
 
-        <button
-          className={Style1.slider_btn}
-          onClick={() => setIsModalOpen(true)}
-        >
-          <div className={Style1.play_icon}>▶</div>
+          {/* <div className={Style1.animated_card_container}></div> */}
 
-          <div className={Style1.slider_text}>
-            <span>Interactive</span>
-
-            <h3>Open Gallery</h3>
+          <div className={Style1.animated_card_container}>
+            <div className={Style1.carousel_container}>
+              <div className={Style1.carousel}>
+                <div className={Style1.carousel__face}>
+                  <span>Failure isn't an option</span>
+                </div>
+                <div className={Style1.carousel__face}>
+                  <span>Don't stop until you're proud</span>
+                </div>
+                <div className={Style1.carousel__face}>
+                  <span>Find a way to make it happen</span>
+                </div>
+                <div className={Style1.carousel__face}>
+                  <span>Never give up</span>
+                </div>
+                <div className={Style1.carousel__face}>
+                  <span>Make every step count</span>
+                </div>
+                <div className={Style1.carousel__face}>
+                  <span>
+                    The more you Learn <br />
+                    The more you Earn
+                  </span>
+                </div>
+                <div className={Style1.carousel__face}>
+                  <span>Believe in yourself</span>
+                </div>
+                <div className={Style1.carousel__face}>
+                  <span>Stay positive, Work hard</span>
+                </div>
+                <div className={Style1.carousel__face}>
+                  <span>
+                    The harder you work,
+                    <br /> the Better you get
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
-        </button>
 
+          <button
+            className={Style1.slider_btn}
+            onClick={() => setIsModalOpen(true)}
+          >
+            <div className={Style1.play_icon}>▶</div>
 
+            <div className={Style1.slider_text}>
+              <span>Interactive</span>
+
+              <h3>Open Gallery</h3>
+            </div>
+          </button>
+        </div>
       </div>
-
-      </div>
-
-    
-
-
 
       {/* MODAL (Swiper Fixed) */}
 
@@ -1238,11 +1269,19 @@ const RealLivesLanding = () => {
             <div className={Style1.link_column}>
               <h3>Social Media</h3>
 
-              <a href="https://www.youtube.com/@reallivessimulation-empathy" target="_blank" rel="noreferrer">
+              <a
+                href="https://www.youtube.com/@reallivessimulation-empathy"
+                target="_blank"
+                rel="noreferrer"
+              >
                 YouTube
               </a>
 
-              <a href="https://www.linkedin.com/authwall?trk=bf&trkInfo=AQEbRyAm_bGh7wAAAZ4voPBoloXDarhnGcTXdJ-ArSowWI2dsaeJkt5Ty5-e_QFyCBGFfZEN8yiPqERueaxyira4Zgo1i0TkWzFt6ca-JrJ05TGcdodpNjpqbVo9XLLEKhI5KDI=&original_referer=&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2Freallives-foundation%2F" target="_blank" rel="noreferrer">
+              <a
+                href="https://www.linkedin.com/authwall?trk=bf&trkInfo=AQEbRyAm_bGh7wAAAZ4voPBoloXDarhnGcTXdJ-ArSowWI2dsaeJkt5Ty5-e_QFyCBGFfZEN8yiPqERueaxyira4Zgo1i0TkWzFt6ca-JrJ05TGcdodpNjpqbVo9XLLEKhI5KDI=&original_referer=&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2Freallives-foundation%2F"
+                target="_blank"
+                rel="noreferrer"
+              >
                 LinkedIn
               </a>
             </div>

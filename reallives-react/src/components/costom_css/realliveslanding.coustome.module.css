@@ -37,6 +37,11 @@ body {
   border-radius: 10px;
 }
 
+.dark_theme .header_content_container{
+  background-image: url('https://res.cloudinary.com/dexw6sglh/image/upload/v1779083653/landingbackground_qlevvg.png');
+}
+
+
 .theme_switch {
   position: fixed;
 
@@ -341,7 +346,7 @@ body {
 .impact_container_landing {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: 1rem;
   padding: 2rem 9rem;
   /* border-bottom: 1px solid #f2f2f6; */
 }
@@ -1426,6 +1431,9 @@ body {
 @media (max-width: 992px) {
 
   
+  .slider_text{
+    display: none;
+  }
 
   /* .header {
     width: 95%;
@@ -1505,6 +1513,7 @@ body {
   .landing_content_1 {
     grid-template-rows: 1fr;
     padding: 1rem;
+    height: auto;
   }
 
   .title_top_landing {
@@ -1554,11 +1563,24 @@ body {
   .lamp_wrapper {
     display: none;
   }
+  .animated_card_container{
+   display: none;
+  } 
 
   
 }
 
 @media (max-width: 768px) {
+
+    .landing_container{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+   .landing_content_1{
+    height: auto;
+   }
 
   /* mobile and pc toogle start  */
 
@@ -1591,7 +1613,7 @@ body {
   /* mobile and pc toogle end  */
 
   .landing_container {
-    padding-top: 5rem;
+    padding-top: 7rem;
   }
 
   .header {
@@ -1632,7 +1654,7 @@ body {
 
   .card_container {
     grid-template-columns: 1fr;
-    padding: 1rem;
+    padding: 0rem;
   }
 
   .slider_btn {
@@ -1669,6 +1691,17 @@ body {
 }
 
 @media (max-width: 480px) {
+
+    .landing_container{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+   .landing_content_1{
+    height: auto;
+   }
+
   .header {
     height: 70px;
   }
@@ -1726,6 +1759,19 @@ body {
 }
 
 @media (max-width: 360px) {
+
+   
+  .landing_container{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+   .landing_content_1{
+    height: auto;
+   }
+
+
   .header {
     height: 65px;
   }
@@ -1741,7 +1787,7 @@ body {
   }
 
   .card_container {
-    padding: 0rem 0.7rem;
+    padding: 0rem 0rem;
     padding-bottom: 1rem;
     grid-template-columns: 1fr;
   }
