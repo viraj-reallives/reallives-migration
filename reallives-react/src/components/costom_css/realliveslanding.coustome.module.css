@@ -1523,7 +1523,7 @@ body {
 
   .impact_container_landing {
     grid-template-columns: repeat(3,1fr);
-    padding: 1rem 6rem;
+    padding: 1rem 3rem;
     gap: 1rem;
   }
 
@@ -1576,6 +1576,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    padding-top: 6remm;
   }
 
    .landing_content_1{
@@ -1696,6 +1697,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    padding-top: 6rem;
   }
 
    .landing_content_1{
@@ -1765,6 +1767,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    padding-top: 6rem;
   }
 
    .landing_content_1{
