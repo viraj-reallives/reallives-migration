@@ -1000,111 +1000,134 @@ const RealLivesLanding = () => {
           </div>
         </header> */}
 
-        <header
-          className={Style1.header_wrapper}
-          style={{
-            position: "fixed",
-            top: 0,
-            left: 0,
-            width: 100 + "%",
-            zIndex: 1010,
-          }}
-        >
-          <div
-            className={Style1.header}
-            style={{ position: "relative", zIndex: 1012 }}
+        <>
+          {/* 1. FIXED MAIN HEADER */}
+          <header
+            className={Style1.header_wrapper}
+            style={{
+              position: "fixed",
+              top: 0,
+              left: 0,
+              width: "100%",
+              zIndex: 1010,
+              pointerEvents: "none",
+            }}
           >
-            <nav className={Style1.nav_left}>
-              <Link to="/" className={Style1.logo_reallives}>
-                <img
-                  src="https://res.cloudinary.com/dexw6sglh/image/upload/v1771840605/reallives-logo_v5cdkc.png"
-                  alt="Logo"
-                />
-              </Link>
-            </nav>
-
-            <div className={Style1.nav_right}>
-              <Link to="/reallives/licenses" className={Style1.white_btn}>
-                Buy License
-              </Link>
-
-              <a
-                href="https://reallivesworld.com/login"
-                target="_blank"
-                rel="noreferrer"
-                className={Style1.glow_btn}
-              >
-                <span>Get Started</span>
-              </a>
-            </div>
-
             <div
-              className={Style1.mobile_controls}
-              style={{ position: "relative", zIndex: 1015 }}
+              className={Style1.header}
+              style={{
+                position: "relative",
+                zIndex: 1012,
+                pointerEvents: "auto",
+              }}
             >
-              <div className={Style1.mobile_toggle_container}>
-                <label className={Style1.switch}>
-                  <input
-                    type="checkbox"
-                    checked={darkMode}
-                    onChange={() => setDarkMode(!darkMode)}
+              <nav className={Style1.nav_left}>
+                <Link to="/" className={Style1.logo_reallives}>
+                  <img
+                    src="https://res.cloudinary.com/dexw6sglh/image/upload/v1771840605/reallives-logo_v5cdkc.png"
+                    alt="Logo"
                   />
+                </Link>
+              </nav>
 
-                  <span className={Style1.slider_round}>
-                    <span className={Style1.icon_sun}>☀️</span>
-                    <span className={Style1.icon_moon}>🌙</span>
-                  </span>
-                </label>
+              <div className={Style1.nav_right}>
+                <Link to="/reallives/licenses" className={Style1.white_btn}>
+                  Buy License
+                </Link>
+
+                <a
+                  href="https://reallivesworld.com/login"
+                  target="_blank"
+                  rel="noreferrer"
+                  className={Style1.glow_btn}
+                >
+                  <span>Get Started</span>
+                </a>
               </div>
 
-              <button
-                className={Style1.mobile_menu_btn}
-                onClick={() => setMobileMenu(!mobileMenu)}
-                style={{
-                  position: "relative",
-                  zIndex: 1020,
-                  background: "transparent",
-                  border: "none",
-                  cursor: "pointer",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  color: mobileMenu ? "#000000" : "inherit",
-                }}
+              <div
+                className={Style1.mobile_controls}
+                style={{ position: "relative", zIndex: 1015 }}
               >
-                {mobileMenu ? (
-                  <X size={28} style={{ color: "#000000" }} />
-                ) : (
-                  <Menu size={28} />
-                )}
-              </button>
-            </div>
-          </div>
+                {/* <div className={Style1.mobile_toggle_container}>
+                  <label className={Style1.switch}>
+                    <input
+                      type="checkbox"
+                      checked={darkMode}
+                      onChange={() => setDarkMode(!darkMode)}
+                    />
+                    <span className={Style1.slider_round}>
+                      <span className={Style1.icon_sun}>☀️</span>
+                      <span className={Style1.icon_moon}>🌙</span>
+                    </span>
+                  </label>
+                </div> */}
 
-          {/* MOBILE MENU */}
+                <button
+                  className={Style1.mobile_menu_btn}
+                  onClick={() => setMobileMenu(!mobileMenu)}
+                  style={{
+                    position: "relative",
+                    zIndex: 1020,
+                    background: "transparent",
+                    border: "none",
+                    cursor: "pointer",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    color: mobileMenu ? "#000000" : "inherit",
+                  }}
+                >
+                  {mobileMenu ? (
+                    <X size={28} style={{ color: "#000000" }} />
+                  ) : (
+                    <Menu size={28} />
+                  )}
+                </button>
+              </div>
+            </div>
+          </header>
+
+          
           <div
             className={`${Style1.mobile_menu} ${mobileMenu ? Style1.mobile_menu_active : ""}`}
             style={{
-              zIndex: 1005,
-            }} 
+              position: "fixed",
+              top: 0,
+              left: 0,
+              width: "100vw",
+              height: "100vh",
+              zIndex: 1005, 
+              pointerEvents: mobileMenu ? "auto" : "none", 
+            }}
           >
             <Link
-              to="/buy-license"
+              to="/reallives/licenses"
               className={Style1.white_btn}
               onClick={() => setMobileMenu(false)}
+              style={{
+                pointerEvents: "auto",
+                position: "relative",
+                zIndex: 1006,
+              }}
             >
               Buy License
             </Link>
 
             <Link
-              to="/login"
+              to="https://reallivesworld.com/login"
               className={Style1.glow_btn}
               onClick={() => setMobileMenu(false)}
+              style={{
+                pointerEvents: "auto",
+                position: "relative",
+                zIndex: 1006,
+              }}
             >
               <span>Get Started</span>
             </Link>
           </div>
-        </header>
+        </>
 
         {/* IN-LINE AUTO-SLIDER REPLACED BUTTON HERE */}
 
