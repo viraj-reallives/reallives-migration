@@ -163,7 +163,7 @@ export const licensesContent = {
 export const licenseHubCopy = {
   heading: 'Select your segment',
   subheading:
-    'Flexible licensing options designed for every type of learner and explorer',
+    'Flexible licensing options designed for every type of learner and explorer.',
   backPath: '/reallives',
   backLabel: 'Back to RealLives home',
 };

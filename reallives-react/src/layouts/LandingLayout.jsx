@@ -13,8 +13,11 @@
 
 import { Outlet, useLocation } from 'react-router-dom';
 import LandingFooter from '@components/landing/LandingFooter/LandingFooter';
+import { useSiteTheme } from '@hooks/useSiteTheme';
 
 export default function LandingLayout() {
+  useSiteTheme('light');
+
   const location = useLocation();
 
   const hideFooter = location.pathname.startsWith('/reallives/licenses');

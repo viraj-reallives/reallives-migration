@@ -50,7 +50,8 @@
   .top {
     flex-direction: row;
     align-items: flex-start;
-    gap: var(--space-40);
+    justify-content: space-between;
+    gap: var(--space-48);
   }
 }
 
@@ -61,7 +62,8 @@
 
 @media (min-width: 64rem) {
   .brand {
-    flex: 0 0 min(22rem, 30%);
+    flex: 0 0 min(22rem, 32%);
+    max-width: 22rem;
   }
 }
 
@@ -109,14 +111,31 @@
   }
 }
 
-@media (min-width: 52rem) {
+@media (min-width: 52rem) and (max-width: 63.99rem) {
   .columns {
-    grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+    grid-template-columns: repeat(2, minmax(10rem, 1fr));
+    column-gap: var(--space-32);
+    row-gap: var(--space-28);
+  }
+}
+
+@media (min-width: 64rem) {
+  .columns {
+    display: flex;
+    flex: 1 1 auto;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: clamp(2rem, 3.5vw, 3.5rem);
+    margin-inline-start: auto;
+    max-width: 58rem;
   }
 }
 
 .column {
-  min-width: 0;
+  flex: 0 0 auto;
+  min-width: 8.5rem;
+  max-width: 12rem;
 }
 
 .columnTitle {

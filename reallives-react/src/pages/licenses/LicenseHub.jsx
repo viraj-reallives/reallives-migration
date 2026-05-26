@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import {
   licensesContent,
@@ -8,7 +9,19 @@ import styles from './LicenseHub.module.css';
 
 const userOrder = ['school', 'university', 'homeschooler', 'gamer'];
 
+/** Keeps document chrome light while this route is mounted (landing may leave dark on body). */
+function useLicenseHubLightChrome() {
+  useEffect(() => {
+    document.body.classList.add('license-hub-light');
+    return () => {
+      document.body.classList.remove('license-hub-light');
+    };
+  }, []);
+}
+
 export default function LicenseHub() {
+  useLicenseHubLightChrome();
+
   return (
     <main className={styles.page}>
       <div className={styles.container}>

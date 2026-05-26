@@ -1,71 +1,103 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 
+:global(body.license-hub-light) {
+  background: #f3f4f8;
+  color: #1c1b1f;
+}
+
+/*
+ * License hub is always light — tokens are scoped here so global
+ * [data-theme="dark"] (e.g. from the landing page) does not apply.
+ */
 .page {
+  --font-license-hub: "Roboto", "Google Sans", system-ui, sans-serif;
+  --color-license-hub-page-bg: #f3f4f8;
+  --color-license-hub-heading: #1c1b1f;
+  --color-license-hub-subheading: #49454f;
+  --color-school-brand: #e87722;
+  --color-university-brand: #1b4d3e;
+  --color-homeschooler-brand: #7b68c8;
+  --color-gamer-brand: #00bcd4;
+  --color-license-hub-title: #1c1b1f;
+  --color-license-hub-desc: #5c5c62;
+  --color-license-hub-back-bg: #e8eaed;
+  --color-license-hub-back-text: #1c1b1f;
+  --color-license-hub-back-border: transparent;
+  --color-license-hub-back-hover-bg: #dfe1e5;
+  --color-license-hub-school-surface: #ffede0;
+  --color-license-hub-school-icon: #c45a12;
+  --color-license-hub-university-surface: #e3f0eb;
+  --color-license-hub-university-icon: #1b5e45;
+  --color-license-hub-homeschooler-surface: #eee9f8;
+  --color-license-hub-homeschooler-icon: #5e4ba8;
+  --color-license-hub-gamer-surface: #e0f6fa;
+  --color-license-hub-gamer-icon: #00838f;
+
   min-height: 100vh;
   background: var(--color-license-hub-page-bg);
   color: var(--color-license-hub-heading);
+  color-scheme: light;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "Inter", var(--font-ui), system-ui, sans-serif;
-  font-weight: 300;
-  letter-spacing: 0.02em;
+  font-family: var(--font-license-hub);
+  font-weight: 400;
 }
 
 .container {
   width: 100%;
-  max-width: 64rem;
+  max-width: 52rem;
   margin: 0 auto;
   padding: var(--space-48) var(--space-24);
 }
 
 .header {
   text-align: center;
-  margin-bottom: var(--space-48);
-  max-width: 36rem;
+  margin-bottom: var(--space-40);
+  max-width: 32rem;
   margin-left: auto;
   margin-right: auto;
 }
 
 .heading {
-  margin: 0 0 var(--space-16);
-  font-size: clamp(1.75rem, 3.2vw, 2.25rem);
-  font-weight: 200;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  margin: 0 0 var(--space-12);
+  font-size: clamp(1.875rem, 4vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
   color: var(--color-license-hub-heading);
 }
 
 .subheading {
   margin: 0;
-  font-size: clamp(0.9375rem, 1.5vw, 1.0625rem);
-  font-weight: 300;
-  line-height: 1.65;
+  font-size: clamp(1rem, 1.6vw, 1.125rem);
+  font-weight: 400;
+  line-height: 1.6;
   color: var(--color-license-hub-subheading);
 }
 
 .grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--space-20);
+  gap: var(--space-16);
   align-items: stretch;
 }
 
 @media (min-width: 36rem) {
   .grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: var(--space-24);
+    gap: var(--space-20);
   }
 }
 
 @media (min-width: 56rem) {
   .grid {
-    gap: var(--space-28);
+    gap: var(--space-24);
   }
 }
 
 .backRow {
-  margin-top: var(--space-48);
+  margin-top: var(--space-40);
   display: flex;
   justify-content: center;
 }
@@ -76,27 +108,30 @@
   justify-content: center;
   min-height: 2.75rem;
   padding: 0 var(--space-28);
-  font-size: 0.8125rem;
-  font-weight: 300;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
   text-decoration: none;
   color: var(--color-license-hub-back-text);
   background: var(--color-license-hub-back-bg);
   border: 1px solid var(--color-license-hub-back-border);
-  border-radius: var(--radius-pill);
+  border-radius: var(--radius-full);
   transition:
     background var(--transition-fast) ease,
-    border-color var(--transition-fast) ease,
-    color var(--transition-fast) ease;
+    box-shadow var(--transition-fast) ease,
+    transform var(--transition-fast) ease;
 }
 
 .backLink:hover {
   background: var(--color-license-hub-back-hover-bg);
-  border-color: var(--color-license-hub-card-border-hover);
+  box-shadow: var(--shadow-sm);
+}
+
+.backLink:active {
+  transform: scale(0.98);
 }
 
 .backLink:focus-visible {
-  outline: 2px solid var(--color-border-accent);
+  outline: 2px solid var(--color-brand-blue);
   outline-offset: 3px;
 }

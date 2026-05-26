@@ -1,24 +1,91 @@
 .header {
+  --nav-glass-blur: 24px;
+  --nav-glass-saturate: 180%;
+
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 100000;
-  background-color: var(--color-bg-primary);
-  border-bottom: 1px solid var(--color-border-soft);
+  isolation: isolate;
+  /* Must stay visible so site switcher + nav dropdowns aren't clipped */
+  overflow: visible;
   transition:
-    background-color var(--transition-base) ease,
-    border-color var(--transition-base) ease;
+    background 0.4s ease,
+    box-shadow 0.4s ease,
+    border-color 0.4s ease;
+
+  /* Brand-tinted glass (school orange, university green, etc. via --color-site-brand) */
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--color-site-brand) 20%, transparent) 0%,
+    color-mix(in srgb, var(--color-site-brand) 16%, transparent) 100%
+  );
+  border-bottom: 1px solid color-mix(in srgb, var(--color-site-brand) 12%, transparent);
+  box-shadow:
+    0 4px 24px color-mix(in srgb, var(--color-site-brand) 10%, transparent),
+    inset 0 1px 0 rgb(255 255 255 / 0.35);
+}
+
+/* Blur on its own layer so dropdowns paint above the glass bar (not behind it). */
+.header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  backdrop-filter: blur(var(--nav-glass-blur)) saturate(var(--nav-glass-saturate));
+  -webkit-backdrop-filter: blur(var(--nav-glass-blur))
+    saturate(var(--nav-glass-saturate));
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background: linear-gradient(
+    105deg,
+    color-mix(in srgb, var(--color-site-brand) 22%, transparent) 0%,
+    color-mix(in srgb, var(--color-site-brand) 8%, transparent) 32%,
+    transparent 55%,
+    rgb(255 255 255 / 0.06) 100%
+  );
+}
+
+[data-theme="dark"] .header {
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--color-site-brand) 20%, transparent) 0%,
+    color-mix(in srgb, var(--color-site-brand) 14%, transparent) 100%
+  );
+  border-bottom-color: color-mix(in srgb, var(--color-site-brand) 15%, transparent);
+  box-shadow:
+    0 8px 28px rgb(0 0 0 / 0.28),
+    inset 0 1px 0 rgb(255 255 255 / 0.1);
+}
+
+[data-theme="dark"] .header::before {
+  background: linear-gradient(
+    105deg,
+    color-mix(in srgb, var(--color-site-brand) 12%, transparent) 0%,
+    color-mix(in srgb, var(--color-site-brand) 6%, transparent) 30%,
+    transparent 55%,
+    transparent 100%
+  );
 }
 
 .inner {
+  position: relative;
+  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   gap: var(--space-16);
   max-width: 100%;
   margin: 0 auto;
-  padding: var(--space-12) var(--space-24);
+  padding: var(--space-14) var(--space-24);
 }
 
 .leftCluster {
@@ -55,13 +122,12 @@
 
 .siteSwitcher {
   position: relative;
+  z-index: 1300;
   display: flex;
   align-items: stretch;
-  border-radius: 0.7rem;
-  border: 1px solid color-mix(in srgb, var(--color-site-brand) 26%, var(--color-border-soft));
-  box-shadow:
-    0 4px 14px rgba(2, 12, 30, 0.14),
-    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  border: none;
+  background: transparent;
+  box-shadow: none;
 }
 
 .siteSwitcherButton {
@@ -71,13 +137,12 @@
   gap: var(--space-8);
   padding: 0.125rem var(--space-16) 0;
   min-height: 2.75rem;
-  border: none;
+  border: 2px solid var(--color-site-brand);
   border-radius: 0.65rem;
-  background: linear-gradient(
-    135deg,
-    color-mix(in srgb, var(--color-site-brand) 58%, #10192f) 0%,
-    color-mix(in srgb, var(--color-site-brand) 42%, #0d1530) 100%
-  );
+  background: var(--color-site-brand);
+  box-shadow:
+    0 4px 14px color-mix(in srgb, var(--color-site-brand) 22%, transparent),
+    inset 0 1px 0 rgb(255 255 255 / 0.12);
   color: var(--color-white);
   font-family: var(--font-ui);
   font-size: 0.875rem;
@@ -85,12 +150,14 @@
   letter-spacing: 0.01em;
   cursor: pointer;
   transition:
-    filter 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease,
     transform 0.2s ease;
 }
 
 .siteSwitcherButton:hover {
-  filter: brightness(1.06);
+  background: color-mix(in srgb, var(--color-site-brand) 88%, #000);
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--color-site-brand) 35%, transparent);
 }
 
 .siteSwitcherButton:active {
@@ -111,23 +178,20 @@
 
 .siteSwitcherDropdown {
   position: absolute;
-  top: 100%;
+  top: calc(100% + 2px);
   inset-inline-start: 0;
-  margin-top: var(--space-8);
+  margin-top: 0;
   width: 17.5rem;
   max-height: calc(100vh - 4rem);
   overflow-y: auto;
   background-color: color-mix(in srgb, var(--color-bg-elevated) 94%, #061127);
-  border-radius: 0.9rem;
+  border-radius: 0.75rem;
   box-shadow:
     0 14px 30px rgba(0, 0, 0, 0.28),
     0 2px 8px rgba(0, 0, 0, 0.16);
   border: 1px solid color-mix(in srgb, var(--color-site-brand) 28%, var(--color-border-soft));
-  padding: var(--space-8);
-  z-index: 1200;
-  opacity: 1;
-  transform: translateY(0);
-  animation: dropdownFade var(--transition-base) ease;
+  padding: 0.375rem;
+  z-index: 1301;
 }
 
 .siteSwitcherItem {
@@ -171,25 +235,44 @@
   color: var(--color-text-muted);
 }
 
-[data-theme='light'] .siteSwitcher {
-  border-color: color-mix(in srgb, var(--color-site-brand) 34%, #d5dfec);
-  box-shadow:
-    0 6px 16px rgba(20, 47, 84, 0.15),
-    inset 0 1px 0 rgba(255, 255, 255, 0.45);
+/* School / university / homeschooler: solid brand chip + stroke (readable on tinted navbar) */
+[data-theme='light'] [data-site='school'] .siteSwitcher,
+[data-theme='light'] [data-site='university'] .siteSwitcher,
+[data-theme='light'] [data-site='homeschooler'] .siteSwitcher {
+  border: none;
+  background: transparent;
+  box-shadow: none;
 }
 
-[data-theme='light'] .siteSwitcherButton {
-  background: linear-gradient(
-    135deg,
-    color-mix(in srgb, var(--color-site-brand) 34%, #f5f9ff) 0%,
-    color-mix(in srgb, var(--color-site-brand) 24%, #e9f2ff) 100%
-  );
-  color: color-mix(in srgb, var(--color-site-brand) 58%, #0b2b4e);
+[data-theme='light'] [data-site='school'] .siteSwitcherButton,
+[data-theme='light'] [data-site='university'] .siteSwitcherButton,
+[data-theme='light'] [data-site='homeschooler'] .siteSwitcherButton {
+  background: var(--color-site-brand);
+  color: #ffffff;
+  border: 2px solid var(--color-site-brand);
+  box-shadow:
+    0 4px 14px color-mix(in srgb, var(--color-site-brand) 24%, rgb(15 23 42 / 0.14)),
+    inset 0 1px 0 rgb(255 255 255 / 0.2);
+}
+
+[data-theme='light'] [data-site='school'] .siteSwitcherButton:hover,
+[data-theme='light'] [data-site='university'] .siteSwitcherButton:hover,
+[data-theme='light'] [data-site='homeschooler'] .siteSwitcherButton:hover {
+  background: color-mix(in srgb, var(--color-site-brand) 90%, #1c1b1f);
+}
+
+[data-theme='dark'] [data-site='school'] .siteSwitcherButton,
+[data-theme='dark'] [data-site='university'] .siteSwitcherButton,
+[data-theme='dark'] [data-site='homeschooler'] .siteSwitcherButton {
+  border-color: color-mix(in srgb, var(--color-site-brand) 75%, #ffffff);
+  box-shadow:
+    0 4px 16px rgb(0 0 0 / 0.28),
+    0 0 0 1px color-mix(in srgb, var(--color-site-brand) 20%, transparent);
 }
 
 [data-theme='light'] .siteSwitcherDropdown {
-  background-color: #f9fcff;
-  border-color: color-mix(in srgb, var(--color-site-brand) 20%, #d3deea);
+  background-color: #ffffff;
+  border: 2px solid color-mix(in srgb, var(--color-site-brand) 35%, #d3deea);
   box-shadow:
     0 14px 26px rgba(17, 43, 77, 0.18),
     0 2px 8px rgba(17, 43, 77, 0.08);
@@ -202,6 +285,59 @@
 [data-theme='light'] .siteSwitcherItem:hover {
   background-color: color-mix(in srgb, var(--color-site-brand) 12%, #ecf5ff);
   border-color: color-mix(in srgb, var(--color-site-brand) 30%, #bdd2ea);
+}
+
+/* Gamer: layout sets light text color; dropdown needs its own dark panel + readable type */
+[data-site='gamer'] .header {
+  color: var(--color-text-primary);
+}
+
+[data-site='gamer'] .leftCluster {
+  position: relative;
+  z-index: 3;
+}
+
+[data-site='gamer'] .siteSwitcher {
+  z-index: 4;
+}
+
+[data-site='gamer'] .siteSwitcherDropdown {
+  z-index: 5;
+  background-color: color-mix(in srgb, var(--color-gamer-card-surface) 96%, #040a12);
+  border-color: color-mix(in srgb, var(--color-gamer-brand) 38%, transparent);
+  box-shadow:
+    0 16px 36px rgb(0 0 0 / 0.45),
+    0 0 0 1px color-mix(in srgb, var(--color-gamer-brand) 18%, transparent);
+}
+
+[data-site='gamer'] .siteSwitcherItem {
+  background: color-mix(in srgb, var(--color-gamer-card) 72%, transparent);
+}
+
+[data-site='gamer'] .siteSwitcherItem:hover {
+  background-color: color-mix(in srgb, var(--color-gamer-brand) 14%, var(--color-gamer-card));
+  border-color: color-mix(in srgb, var(--color-gamer-brand) 42%, transparent);
+}
+
+[data-site='gamer'] .siteSwitcherItemLabel {
+  color: #eaf5ff;
+}
+
+[data-site='gamer'] .siteSwitcherItemDescription {
+  color: var(--color-gamer-text-muted-soft);
+}
+
+[data-theme='light'] [data-site='gamer'] .siteSwitcherDropdown {
+  background-color: #f9fcff;
+  border-color: color-mix(in srgb, var(--color-gamer-brand) 22%, #d3deea);
+}
+
+[data-theme='light'] [data-site='gamer'] .siteSwitcherItemLabel {
+  color: #1c1b1f;
+}
+
+[data-theme='light'] [data-site='gamer'] .siteSwitcherItemDescription {
+  color: #5f6368;
 }
 
 .itemArrow {
@@ -251,6 +387,22 @@
 
 .navItemActive .navLabel {
   color: var(--color-site-brand);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--color-site-brand) 78%, transparent);
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 2px;
+  text-decoration-skip-ink: none;
+}
+
+.mobileItem.navItemActive .navLabel {
+  color: var(--color-site-brand);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--color-site-brand) 78%, transparent);
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 2px;
+  text-decoration-skip-ink: none;
 }
 
 .navCaret {
@@ -403,17 +555,20 @@
   padding: 0 var(--space-20);
   min-height: 2.75rem;
   border-radius: var(--radius-pill);
-  border: 1px solid var(--color-border-soft);
-  background-color: color-mix(
-    in srgb,
-    var(--color-bg-secondary) 88%,
-    transparent
-  );
+  border: 1px solid color-mix(in srgb, var(--color-site-brand) 16%, var(--color-border-soft));
+  background-color: color-mix(in srgb, var(--color-bg-secondary) 55%, transparent);
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
   color: var(--color-text-primary);
   font-family: var(--font-ui);
   font-size: 0.9375rem;
   font-weight: 600;
   text-decoration: none;
+}
+
+[data-theme="dark"] .loginButton {
+  background-color: color-mix(in srgb, var(--color-site-brand) 8%, rgb(0 0 0 / 0.35));
+  border-color: color-mix(in srgb, var(--color-site-brand) 20%, rgb(255 255 255 / 0.1));
 }
 
 .primaryCta {
@@ -440,8 +595,10 @@
   align-items: center;
   justify-content: center;
   border-radius: var(--radius-lg);
-  border: 1px solid var(--color-border);
-  background-color: var(--color-bg-secondary);
+  border: 1px solid color-mix(in srgb, var(--color-site-brand) 18%, var(--color-border));
+  background-color: color-mix(in srgb, var(--color-bg-secondary) 52%, transparent);
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
   color: var(--color-text-primary);
   font-size: 0.8125rem;
   font-weight: 600;
@@ -454,8 +611,18 @@
 }
 
 .themeToggle:hover {
-  background-color: var(--color-bg-tertiary);
-  border-color: var(--color-border-accent);
+  background-color: color-mix(in srgb, var(--color-site-brand) 10%, var(--color-bg-secondary));
+  border-color: color-mix(in srgb, var(--color-site-brand) 28%, var(--color-border));
+}
+
+[data-theme="dark"] .themeToggle {
+  background-color: color-mix(in srgb, var(--color-site-brand) 12%, rgb(0 0 0 / 0.35));
+  border-color: color-mix(in srgb, var(--color-site-brand) 22%, rgb(255 255 255 / 0.12));
+}
+
+[data-theme="dark"] .themeToggle:hover {
+  background-color: color-mix(in srgb, var(--color-site-brand) 18%, rgb(0 0 0 / 0.45));
+  border-color: color-mix(in srgb, var(--color-site-brand) 32%, rgb(255 255 255 / 0.16));
 }
 
 .themeIcon {

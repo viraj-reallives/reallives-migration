@@ -341,7 +341,8 @@ export const landingContent = {
   entryCards: [
     {
       label: "School",
-
+      badge: "Foundation",
+      headline: "Build Strong Beginnings",
       title_robot: [
         "Critical Thinking",
         "Global Awareness",
@@ -349,55 +350,60 @@ export const landingContent = {
         "Cultural Empathy",
         "Real-World Learning",
       ],
-      
-      description: "Empower young minds to turn empathy into action",
+      description:
+        "Help students develop empathy, decision-making, and global awareness through immersive life simulations and guided reflection.",
+      ctaLabel: "Explore School",
       path: "/reallives/school",
       image: "",
     },
-
     {
       label: "University",
-        title_robot: [
+      badge: "Mastery",
+      headline: "Learn Through Real-World Experience",
+      title_robot: [
         "Sustainable Development Goals",
         "Interdisciplinary Learning",
         "Experiential Learning",
         "Global Systems Thinking",
         "21st Century Skills",
       ],
-
-      description: "Bridge the gap between learning and real-world impact",
+      description:
+        "Prepare students for careers and life beyond campus with experiential simulations that connect theory to human impact.",
+      ctaLabel: "Explore University",
       path: "/reallives/university",
       image: "",
     },
-
     {
       label: "Home Schooler",
-
-        title_robot: [
+      badge: "Personalized",
+      headline: "Personalized Learning Journeys",
+      title_robot: [
         "Family Learning",
         "Character Building",
         "Decision Making Skills",
         "Life Skills Development",
         "Cultural Sensitivity",
       ],
-      
       description:
-        "Help your child grow wiser about the world one life at a time",
+        "Give learners the freedom to explore diverse lives, cultures, and choices in a safe, engaging environment tailored to their pace.",
+      ctaLabel: "Explore Home Schooler",
       path: "/reallives/homeschooler",
       image: "",
     },
-
     {
       label: "Gamer",
-         title_robot: [
+      badge: "Gaming",
+      headline: "Shape Worlds Through Your Choices",
+      title_robot: [
         "Global Adventure",
         "Immersive Gameplay",
         "Strategy & Luck",
         "Random Life Simulation",
         "Endless Replayability",
       ],
-
-      description: "Live a billion lives. Discover who you could be",
+      description:
+        "Step into countless lives where every decision unlocks new paths, unexpected consequences, and stories worth replaying.",
+      ctaLabel: "Explore Gamer",
       path: "/reallives/gamer",
       image: "",
     },
@@ -406,6 +412,34 @@ export const landingContent = {
   ctas: {
     buyLicense: { label: "Buy License", path: "/reallives/licenses" },
     login: { label: "Login", url: "https://reallivesworld.com/login" },
+  },
+
+  /** Landing page contact popup — same delivery as school contact (Web3Forms). */
+  contactModal: {
+    heading: "Get in Touch",
+    subheading:
+      "Questions about RealLives? Send us a message and our team will respond as soon as possible.",
+    contactInformationHeading: "Contact Information",
+    emailLabel: "Email",
+    email: "support@reallivesworld.com",
+    addressLabel: "Address",
+    address: "Pune, India",
+    web3formsAccessKey: "66469d30-3566-42fe-a853-2d5a0404a9b5",
+    formSubject: "RealLives Landing Contact Form",
+    formLabels: {
+      name: "Name",
+      email: "Email Address",
+      message: "Message",
+      messagePlaceholder: "Tell us how we can help you...",
+      submit: "Send Message",
+      sending: "Sending...",
+      captcha: "Security check",
+      captchaPlaceholder: "Your answer",
+      captchaRefresh: "New question",
+      successTitle: "Message sent!",
+      successBody: "Thank you for reaching out. We'll get back to you soon.",
+      sendAgain: "Send another message",
+    },
   },
 
   footer: {

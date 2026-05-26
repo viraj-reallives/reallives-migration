@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useSiteTheme } from '@hooks/useSiteTheme';
 import styles1 from '../components/costom_css/portal_coustome.module.css';
 import styles from './Portal.module.css';
 import logo_rl from "../add-image/logo.svg";
@@ -75,6 +76,7 @@ function ChangeMakerMark() {
 }
 
 export default function Portal() {
+  useSiteTheme('light');
   return (
     <main className={`${styles.page} ${styles1.background_black}`}>
      

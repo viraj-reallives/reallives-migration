@@ -18,7 +18,7 @@ export default function LicenseCard({ userType, license }) {
       rel="noopener noreferrer"
       aria-label={`${label}: open pricing on RealLives (new tab)`}
     >
-      <div className={styles.card}>
+      <div className={`${styles.card} ${styles[userType] ?? ''}`}>
         <div className={styles.iconWrap}>
           <span
             className={`material-symbols-outlined ${styles.materialIcon}`}

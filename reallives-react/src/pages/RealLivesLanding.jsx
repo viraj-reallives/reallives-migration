@@ -449,7 +449,6 @@ import {
   Gamepad2,
   X,
   Menu,
-  MoveRight,
 } from "lucide-react";
 
 // Swiper Imports
@@ -468,19 +467,20 @@ import "swiper/css/pagination";
 // CSS MODULE
 
 import Style1 from "../components/costom_css/realliveslanding.coustome.module.css";
+import LandingContactModal from "@components/landing/LandingContactModal/LandingContactModal";
+import { useTheme } from "@hooks/useTheme";
 
 // const impact_image = "https://img.icons8.com/fluency/96/combo-chart.png";
 
 // const research_image = "https://img.icons8.com/fluency/96/research.png";
 
 const RealLivesLanding = () => {
-  // const [darkMode, setDarkMode] = useState(false);
-
-  const [darkMode, setDarkMode] = useState(() => {
-    return localStorage.getItem("theme") === "dark";
-  });
+  const { theme, toggleTheme } = useTheme();
+  const darkMode = theme === "dark";
 
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const [contactModalOpen, setContactModalOpen] = useState(false);
 
   const [mobileMenu, setMobileMenu] = useState(false);
 
@@ -517,106 +517,68 @@ const RealLivesLanding = () => {
     };
   }, []);
 
-  // Body theme class toggle
-
-  // useEffect(() => {
-  //   if (darkMode) {
-  //     document.body.classList.add(Style1.dark_theme);
-  //   } else {
-  //     document.body.classList.remove(Style1.dark_theme);
-  //   }
-  // }, [darkMode]);
-
   useEffect(() => {
     if (darkMode) {
       document.body.classList.add(Style1.dark_theme);
-
-      document.body.setAttribute("data-theme", "dark");
-      localStorage.setItem("theme", "dark");
     } else {
       document.body.classList.remove(Style1.dark_theme);
-      document.body.setAttribute("data-theme", "light");
-      localStorage.setItem("theme", "light");
     }
+
+    return () => {
+      document.body.classList.remove(Style1.dark_theme);
+    };
   }, [darkMode]);
 
   const navigate = useNavigate();
 
   const cardData = [
     {
+      segment: "school",
       title: "School",
-
-      subTitle: "Early Education",
-
-      desc: "Build a strong foundation for your future self through interactive learning and social growth.",
-
+      subTitle: "Build Strong Beginnings",
+      desc: "Help students develop empathy, decision-making, and global awareness through immersive life simulations and guided reflection.",
       btnText: "Explore School",
-
       path: "/reallives/school",
-
       badge: "Foundation",
-
-      icon: <School size={24} color="#00bcd4" />,
-
+      icon: <School size={22} strokeWidth={2} aria-hidden />,
       image:
         "https://res.cloudinary.com/dexw6sglh/image/upload/v1771653477/orchid-background-img-2.jpeg_off002.png",
     },
-
     {
+      segment: "university",
       title: "University",
-
-      subTitle: "Higher Education",
-
-      desc: "Master your chosen field and prepare for the professional world with advanced simulations.",
-
+      subTitle: "Learn Through Real-World Experience",
+      desc: "Prepare students for careers and life beyond campus with experiential simulations that connect theory to human impact.",
       btnText: "Explore University",
-
       path: "/reallives/university",
-
       badge: "Mastery",
-
-      icon: <GraduationCap size={24} color="#00bcd4" />,
-
+      icon: <GraduationCap size={22} strokeWidth={2} aria-hidden />,
       image:
         "https://res.cloudinary.com/dexw6sglh/image/upload/v1771653475/school-3-image-slider_troncd.png",
     },
-
     {
+      segment: "homeschooler",
       title: "Home Schooler",
-
-      subTitle: "Character Building",
-
-      desc: "Help your child grow wiser about the world one life at a time in a personalized environment.",
-
+      subTitle: "Personalized Learning Journeys",
+      desc: "Give learners the freedom to explore diverse lives, cultures, and choices in a safe, engaging environment tailored to their pace.",
       btnText: "Explore Home Schooler",
-
       path: "/reallives/homeschooler",
-
       badge: "Personalized",
-
-      icon: <BookOpen size={24} color="#00bcd4" />,
-
+      icon: <BookOpen size={22} strokeWidth={2} aria-hidden />,
       image:
-        "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=400&auto=format&fit=crop",
+        "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/landing-page/homeschooler.jpg",
     },
-
     {
+      segment: "gamer",
       title: "Gamer",
-
-      subTitle: "Endless Replayability",
-
-      desc: "Live a billion lives. Discover who you could be through the power of choice.",
-
+      subTitle: "Shape Worlds Through Your Choices",
+      desc: "Step into countless lives where every decision unlocks new paths, unexpected consequences, and stories worth replaying.",
       btnText: "Explore Gamer",
-
       path: "/reallives/gamer",
-
       badge: "Gaming",
-
-      icon: <Gamepad2 size={24} color="#00bcd4" />,
-
+      icon: <Gamepad2 size={22} strokeWidth={2} aria-hidden />,
       image:
-        "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=400&auto=format&fit=crop",
+        "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/landing-page/gamer.png",
     },
   ];
 
@@ -911,7 +873,7 @@ const RealLivesLanding = () => {
     <div className={Style1.landing_container}>
       {/* <div
         className={`${Style1.lamp_wrapper} ${darkMode ? Style1.lamp_off : Style1.lamp_on}`}
-        onClick={() => setDarkMode(!darkMode)}
+        onClick={() => toggleTheme()}
       >
         <div className={Style1.lamp_rope}></div>
 
@@ -957,7 +919,7 @@ const RealLivesLanding = () => {
                   <input
                     type="checkbox"
                     checked={darkMode}
-                    onChange={() => setDarkMode(!darkMode)}
+                    onChange={() => toggleTheme()}
                   />
 
                   <span className={Style1.slider_round}>
@@ -1038,10 +1000,10 @@ const RealLivesLanding = () => {
                 <a
                   href="https://reallivesworld.com/login"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   className={Style1.glow_btn}
                 >
-                  <span>Get Started</span>
+                  <span>Login</span>
                 </a>
               </div>
 
@@ -1054,7 +1016,7 @@ const RealLivesLanding = () => {
                     <input
                       type="checkbox"
                       checked={darkMode}
-                      onChange={() => setDarkMode(!darkMode)}
+                      onChange={() => toggleTheme()}
                     />
                     <span className={Style1.slider_round}>
                       <span className={Style1.icon_sun}>☀️</span>
@@ -1114,8 +1076,10 @@ const RealLivesLanding = () => {
               Buy License
             </Link>
 
-            <Link
-              to="https://reallivesworld.com/login"
+            <a
+              href="https://reallivesworld.com/login"
+              target="_blank"
+              rel="noopener noreferrer"
               className={Style1.glow_btn}
               onClick={() => setMobileMenu(false)}
               style={{
@@ -1124,8 +1088,8 @@ const RealLivesLanding = () => {
                 zIndex: 1006,
               }}
             >
-              <span>Get Started</span>
-            </Link>
+              <span>Login</span>
+            </a>
           </div>
         </>
 
@@ -1224,38 +1188,6 @@ const RealLivesLanding = () => {
             </Swiper>
           </div>
 
-          <button
-            className={Style1.button_style1}
-            onClick={() => {
-              window.scrollTo({
-                top: window.innerHeight,
-                behavior: "smooth",
-              });
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor =
-                "rgba(255, 255, 255, 0.2)";
-              e.currentTarget.style.transform = "translateY(3px)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = "transparent";
-              e.currentTarget.style.transform = "translateY(0)";
-            }}
-          >
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="white"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <line x1="12" y1="5" x2="12" y2="19"></line>
-              <polyline points="19 12 12 19 5 12"></polyline>
-            </svg>
-          </button>
         </div>
       </div>
 
@@ -1312,67 +1244,47 @@ const RealLivesLanding = () => {
 
       <div className={Style1.card_container}>
         {cardData.map((card, index) => (
-          <div
-            key={index}
+          <article
+            key={card.segment}
             className={Style1.blog_card}
+            data-segment={card.segment}
             onClick={() => navigate(card.path)}
-            style={{ cursor: "pointer" }}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                navigate(card.path);
+              }
+            }}
+            role="link"
+            tabIndex={0}
+            aria-label={`${card.title}: ${card.subTitle}`}
           >
             <div className={Style1.card_image_wrapper}>
-              <img src={card.image} alt={card.title} />
-
-              <div className={Style1.wave_shape}></div>
+              <img src={card.image} alt="" />
+              <div className={Style1.wave_shape} aria-hidden />
             </div>
 
             <div className={Style1.card_content}>
               <div className={Style1.badge_row}>
-                <span className={`${Style1.badge} ${Style1.success}`}>
-                  {card.badge}
-                </span>
-
-                {card.icon}
+                <p className={Style1.segment_label}>{card.title}</p>
+                <span className={Style1.card_icon}>{card.icon}</span>
               </div>
-
-              <h4
-                className={Style1.robo_text_top}
-                style={{ color: darkMode ? "#ccc" : "#666" }}
-              >
-                {card.title}
-              </h4>
-
-              <h3 className={Style1.robo_text_main}>{card.subTitle}</h3>
-
-              <p
-                className={Style1.card_desc}
-                style={{ color: darkMode ? "#aaa" : "#555" }}
-              >
-                {card.desc}
-              </p>
+              <span className={Style1.badge}>{card.badge}</span>
+              <h3 className={Style1.card_headline}>{card.subTitle}</h3>
+              <p className={Style1.card_desc}>{card.desc}</p>
 
               <div className={Style1.card_footer}>
-                <div
-                  className={Style1.explore_btn}
-                  style={{
-                    textDecoration: "none",
-
-                    fontWeight: "600",
-
-                    color: "#00bcd4",
-
-                    display: "flex",
-
-                    alignItems: "center",
-
-                    gap: "5px",
-                  }}
-                >
-                  {card.btnText} <MoveRight size={18} />
-                </div>
+                <span className={Style1.explore_btn}>{card.btnText}</span>
               </div>
             </div>
-          </div>
+          </article>
         ))}
       </div>
+
+      <LandingContactModal
+        open={contactModalOpen}
+        onClose={() => setContactModalOpen(false)}
+      />
 
       {/* FOOTER */}
 
@@ -1400,7 +1312,13 @@ const RealLivesLanding = () => {
               <h3>Company</h3>
 
               <Link to="/reallives/school/about">About Us</Link>
-              <Link to="/reallives/school/contact">Contact Us</Link>
+              <button
+                type="button"
+                className={Style1.footer_contact_btn}
+                onClick={() => setContactModalOpen(true)}
+              >
+                Contact Us
+              </button>
             </div>
 
             <div className={Style1.link_column}>

@@ -197,6 +197,7 @@
   --radius-xl: 0.625rem;  /* 10px */
   --radius-2xl: 0.75rem;  /* 12px */
   --radius-3xl: 1rem;     /* 16px */
+  --radius-4xl: 1.75rem;  /* 28px — Material You cards */
   --radius-pill: 1.5625rem; /* 25px */
   --radius-pill-lg: 1.875rem; /* 30px */
   --radius-full: 9999px;
@@ -221,59 +222,42 @@
   --transition-fast: 0.2s;
   --transition-base: 0.3s;
 
-  /* License hub — neutral charcoal panels; cyan only on borders / icons / hover ring */
-  --color-license-hub-page-bg: var(--color-black);
-  --color-license-hub-heading: var(--color-white);
-  --color-license-hub-subheading: color-mix(
-    in srgb,
-    var(--color-white) 62%,
-    var(--color-surface-dark-ink)
-  );
-  --color-license-hub-card-bg: var(--color-surface-dark-base);
-  --color-license-hub-card-bg-hover: color-mix(
-    in srgb,
-    var(--color-white) 7%,
-    var(--color-surface-dark-base)
-  );
+  /* License hub — Material You light surfaces */
+  --font-license-hub: "Roboto", "Google Sans", system-ui, sans-serif;
+  --color-license-hub-page-bg: #f3f4f8;
+  --color-license-hub-heading: #1c1b1f;
+  --color-license-hub-subheading: #49454f;
+  --color-license-hub-card-bg: #ffffff;
+  --color-license-hub-card-bg-hover: #ffffff;
   --color-license-hub-card-border: color-mix(
     in srgb,
-    var(--color-brand-cyan-bright) 18%,
-    var(--color-surface-dark-raised)
+    var(--color-gray-400) 35%,
+    transparent
   );
   --color-license-hub-card-border-hover: color-mix(
     in srgb,
-    var(--color-brand-cyan-bright) 42%,
-    var(--color-surface-dark-base)
+    var(--color-brand-blue) 28%,
+    var(--color-gray-300)
   );
-  --color-license-hub-icon-wrap-bg: color-mix(
-    in srgb,
-    var(--color-white) 5%,
-    var(--color-surface-dark-raised)
-  );
-  --color-license-hub-icon-wrap-border: color-mix(
-    in srgb,
-    var(--color-brand-cyan-bright) 30%,
-    var(--color-surface-dark-base)
-  );
-  --color-license-hub-icon: var(--color-brand-cyan-bright);
-  --color-license-hub-title: var(--color-white);
-  --color-license-hub-desc: color-mix(
-    in srgb,
-    var(--color-white) 55%,
-    var(--color-surface-dark-ink)
-  );
-  --color-license-hub-back-bg: var(--color-surface-dark-base);
-  --color-license-hub-back-text: var(--color-white);
-  --color-license-hub-back-border: color-mix(
-    in srgb,
-    var(--color-brand-cyan-bright) 28%,
-    var(--color-surface-dark-raised)
-  );
-  --color-license-hub-back-hover-bg: color-mix(
-    in srgb,
-    var(--color-white) 9%,
-    var(--color-surface-dark-base)
-  );
+  --shadow-license-hub-card: 0 1px 2px rgb(28 27 31 / 0.06),
+    0 4px 12px rgb(28 27 31 / 0.08);
+  --shadow-license-hub-card-hover: 0 2px 4px rgb(28 27 31 / 0.06),
+    0 12px 28px rgb(28 27 31 / 0.12);
+  --color-license-hub-title: #1c1b1f;
+  --color-license-hub-desc: #5c5c62;
+  --color-license-hub-back-bg: #e8eaed;
+  --color-license-hub-back-text: #1c1b1f;
+  --color-license-hub-back-border: transparent;
+  --color-license-hub-back-hover-bg: #dfe1e5;
+  /* Per-segment soft accent surfaces (icon pill + icon color) */
+  --color-license-hub-school-surface: #ffede0;
+  --color-license-hub-school-icon: #c45a12;
+  --color-license-hub-university-surface: #e3f0eb;
+  --color-license-hub-university-icon: #1b5e45;
+  --color-license-hub-homeschooler-surface: #eee9f8;
+  --color-license-hub-homeschooler-icon: #5e4ba8;
+  --color-license-hub-gamer-surface: #e0f6fa;
+  --color-license-hub-gamer-icon: #00838f;
 }
 
 [data-theme="dark"] {
@@ -442,6 +426,7 @@
   --radius-xl: 0.625rem;
   --radius-2xl: 0.75rem;
   --radius-3xl: 1rem;
+  --radius-4xl: 1.75rem;
   --radius-pill: 1.5625rem;
   --radius-pill-lg: 1.875rem;
   --radius-full: 9999px;
@@ -464,6 +449,8 @@
 
   --transition-fast: 0.2s;
   --transition-base: 0.3s;
+
+  /* License hub dark tokens omitted — hub forces light via LicenseHub.module.css */
 }
 
 /* Site-scoped brand variable for Navbar and CTAs */
