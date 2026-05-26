@@ -457,6 +457,7 @@ import {
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import "swiper/css/effect-fade";
 
 import "swiper/css";
 
@@ -473,8 +474,8 @@ import Style1 from "../components/costom_css/realliveslanding.coustome.module.cs
 // const research_image = "https://img.icons8.com/fluency/96/research.png";
 
 const RealLivesLanding = () => {
-  
   // const [darkMode, setDarkMode] = useState(false);
+
   const [darkMode, setDarkMode] = useState(() => {
     return localStorage.getItem("theme") === "dark";
   });
@@ -482,6 +483,15 @@ const RealLivesLanding = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const [mobileMenu, setMobileMenu] = useState(false);
+
+  // Screen width state for responsive images inside slider
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   // Hide Global Footer logic
 
@@ -899,7 +909,7 @@ const RealLivesLanding = () => {
 
   return (
     <div className={Style1.landing_container}>
-      <div
+      {/* <div
         className={`${Style1.lamp_wrapper} ${darkMode ? Style1.lamp_off : Style1.lamp_on}`}
         onClick={() => setDarkMode(!darkMode)}
       >
@@ -910,12 +920,12 @@ const RealLivesLanding = () => {
         </div>
 
         <div className={Style1.pull_handle}></div>
-      </div>
+      </div> */}
 
       {/* HEADER */}
 
       <div className={Style1.header_content_container}>
-        <header className={Style1.header_wrapper}>
+        {/* <header className={Style1.header_wrapper}>
           <div className={Style1.header}>
             <nav className={Style1.nav_left}>
               <Link to="/" className={Style1.logo_reallives}>
@@ -967,7 +977,7 @@ const RealLivesLanding = () => {
             </div>
           </div>
 
-          {/* MOBILE MENU */}
+       
 
           <div
             className={`${Style1.mobile_menu} ${mobileMenu ? Style1.mobile_menu_active : ""}`}
@@ -988,140 +998,245 @@ const RealLivesLanding = () => {
               <span>Get Started</span>
             </Link>
           </div>
-        </header>
+        </header> */}
 
-        {/* HERO SECTION */}
+        <header
+          className={Style1.header_wrapper}
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: 100 + "%",
+            zIndex: 1010,
+          }}
+        >
+          <div
+            className={Style1.header}
+            style={{ position: "relative", zIndex: 1012 }}
+          >
+            <nav className={Style1.nav_left}>
+              <Link to="/" className={Style1.logo_reallives}>
+                <img
+                  src="https://res.cloudinary.com/dexw6sglh/image/upload/v1771840605/reallives-logo_v5cdkc.png"
+                  alt="Logo"
+                />
+              </Link>
+            </nav>
 
-        <div className={Style1.landing_content_1}>
-          <h1 className={Style1.title_top_landing}>
-            Next-generation immersive <br /> education platform
-          </h1>
+            <div className={Style1.nav_right}>
+              <Link to="/reallives/licenses" className={Style1.white_btn}>
+                Buy License
+              </Link>
 
-          <div className={Style1.impact_container_landing}>
-            <Link
-              to="/reallives/school/impact"
-              className={Style1.card_top_inner}
-              style={{ textDecoration: "none" }}
+              <a
+                href="https://reallivesworld.com/login"
+                target="_blank"
+                rel="noreferrer"
+                className={Style1.glow_btn}
+              >
+                <span>Get Started</span>
+              </a>
+            </div>
+
+            <div
+              className={Style1.mobile_controls}
+              style={{ position: "relative", zIndex: 1015 }}
             >
-              <div className={Style1.wrapper_logo_label}>
-                <div className={Style1.logo_redirect}>
-                  <img
-                    src="https://res.cloudinary.com/dexw6sglh/image/upload/v1778838940/goal_hcd01r.png"
-                    alt="Impact"
+              <div className={Style1.mobile_toggle_container}>
+                <label className={Style1.switch}>
+                  <input
+                    type="checkbox"
+                    checked={darkMode}
+                    onChange={() => setDarkMode(!darkMode)}
                   />
-                </div>
+
+                  <span className={Style1.slider_round}>
+                    <span className={Style1.icon_sun}>☀️</span>
+                    <span className={Style1.icon_moon}>🌙</span>
+                  </span>
+                </label>
               </div>
 
-              <div className={Style1.title_desc_container}>
-                <p className={Style1.collect_title_text}>Impact</p>
-
-                <p className={Style1.desc_title_text}>
-                  Manually or through integrations
-                </p>
-              </div>
-            </Link>
-
-            <Link
-              to="/reallives/school/research"
-              className={Style1.card_top_inner}
-              style={{ textDecoration: "none" }}
-            >
-              <div className={Style1.wrapper_logo_label}>
-                <div className={Style1.logo_redirect}>
-                  <img
-                    src="https://res.cloudinary.com/dexw6sglh/image/upload/v1778838613/searching_sr77ly.png"
-                    alt="Research"
-                  />
-                </div>
-              </div>
-
-              <div className={Style1.title_desc_container}>
-                <p className={Style1.collect_title_text}>Research</p>
-
-                <p className={Style1.desc_title_text}>Evidence-based results</p>
-              </div>
-            </Link>
-
-            <Link
-              to="/reallives/school/products"
-              className={Style1.card_top_inner}
-              style={{ textDecoration: "none" }}
-            >
-              <div className={Style1.wrapper_logo_label}>
-                <div className={Style1.logo_redirect}>
-                  <img
-                    src="https://res.cloudinary.com/dexw6sglh/image/upload/v1778832770/computer-engineer_xxcniv.png"
-                    alt="product"
-                  />
-                </div>
-              </div>
-
-              <div className={Style1.title_desc_container}>
-                <p className={Style1.collect_title_text}>Products</p>
-
-                <p className={Style1.desc_title_text}>Scalable for everyone</p>
-              </div>
-            </Link>
+              <button
+                className={Style1.mobile_menu_btn}
+                onClick={() => setMobileMenu(!mobileMenu)}
+                style={{
+                  position: "relative",
+                  zIndex: 1020,
+                  background: "transparent",
+                  border: "none",
+                  cursor: "pointer",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  color: mobileMenu ? "#000000" : "inherit",
+                }}
+              >
+                {mobileMenu ? (
+                  <X size={28} style={{ color: "#000000" }} />
+                ) : (
+                  <Menu size={28} />
+                )}
+              </button>
+            </div>
           </div>
 
-          {/* <div className={Style1.animated_card_container}></div> */}
+          {/* MOBILE MENU */}
+          <div
+            className={`${Style1.mobile_menu} ${mobileMenu ? Style1.mobile_menu_active : ""}`}
+            style={{
+              zIndex: 1005,
+            }} 
+          >
+            <Link
+              to="/buy-license"
+              className={Style1.white_btn}
+              onClick={() => setMobileMenu(false)}
+            >
+              Buy License
+            </Link>
 
-          <div className={Style1.animated_card_container}>
-            <div className={Style1.carousel_container}>
-              <div className={Style1.carousel}>
-                <div className={Style1.carousel__face}>
-                  <span>Failure isn't an option</span>
-                </div>
-                <div className={Style1.carousel__face}>
-                  <span>Don't stop until you're proud</span>
-                </div>
-                <div className={Style1.carousel__face}>
-                  <span>Find a way to make it happen</span>
-                </div>
-                <div className={Style1.carousel__face}>
-                  <span>Never give up</span>
-                </div>
-                <div className={Style1.carousel__face}>
-                  <span>Make every step count</span>
-                </div>
-                <div className={Style1.carousel__face}>
-                  <span>
-                    The more you Learn <br />
-                    The more you Earn
-                  </span>
-                </div>
-                <div className={Style1.carousel__face}>
-                  <span>Believe in yourself</span>
-                </div>
-                <div className={Style1.carousel__face}>
-                  <span>Stay positive, Work hard</span>
-                </div>
-                <div className={Style1.carousel__face}>
-                  <span>
-                    The harder you work,
-                    <br /> the Better you get
-                  </span>
-                </div>
-              </div>
-            </div>
+            <Link
+              to="/login"
+              className={Style1.glow_btn}
+              onClick={() => setMobileMenu(false)}
+            >
+              <span>Get Started</span>
+            </Link>
+          </div>
+        </header>
+
+        {/* IN-LINE AUTO-SLIDER REPLACED BUTTON HERE */}
+
+        <div
+          className={Style1.landing_content_1}
+          style={{
+            height: "100vh",
+            width: "100%",
+            padding: 0,
+            margin: 0,
+            overflow: "hidden",
+            position: "relative",
+          }}
+        >
+          <div
+            className={Style1.inline_slider_wrapper}
+            style={{
+              width: "100%",
+              height: "100%",
+              position: "absolute",
+              top: 0,
+              left: 0,
+            }}
+          >
+            <Swiper
+              modules={[
+                Autoplay,
+                Pagination,
+                ...[
+                  typeof window !== "undefined"
+                    ? require("swiper/modules").EffectFade
+                    : null,
+                ].filter(Boolean),
+              ]}
+              effect={"fade"}
+              fadeEffect={{ crossFade: true }}
+              speed={1000}
+              pagination={{ clickable: true }}
+              autoplay={{
+                delay: 3500,
+                disableOnInteraction: false,
+              }}
+              loop={true}
+              style={{ width: "100%", height: "100%" }}
+              className={Style1.mySwiper}
+            >
+              {sliderData.map((slide, index) => (
+                <SwiperSlide
+                  key={index}
+                  style={{ width: "100%", height: "100%" }}
+                >
+                  <div
+                    className={Style1.swiper_slide_inner}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      position: "relative",
+                    }}
+                  >
+                    <div
+                      style={{
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        width: "100%",
+                        height: "100%",
+                        background: "rgba(0, 0, 0, 0.40)",
+                        zIndex: 1,
+                        pointerEvents: "none",
+                      }}
+                    ></div>
+
+                    <img
+                      src={windowWidth <= 768 ? slide.mobileImage : slide.image}
+                      alt={slide.title}
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                        objectPosition: "center",
+                        display: "block",
+                      }}
+                    />
+
+                    <div
+                      className={Style1.old_slider_title_wrapper}
+                      style={{ zIndex: 2 }}
+                    >
+                      <h2 className={Style1.old_slider_title}>{slide.title}</h2>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
 
           <button
-            className={Style1.slider_btn}
-            onClick={() => setIsModalOpen(true)}
+            className={Style1.button_style1}
+            onClick={() => {
+              window.scrollTo({
+                top: window.innerHeight,
+                behavior: "smooth",
+              });
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor =
+                "rgba(255, 255, 255, 0.2)";
+              e.currentTarget.style.transform = "translateY(3px)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = "transparent";
+              e.currentTarget.style.transform = "translateY(0)";
+            }}
           >
-            <div className={Style1.play_icon}>▶</div>
-
-            <div className={Style1.slider_text}>
-              <span>Interactive</span>
-
-              <h3>Open Gallery</h3>
-            </div>
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="white"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <polyline points="19 12 12 19 5 12"></polyline>
+            </svg>
           </button>
         </div>
       </div>
 
-      {/* MODAL (Swiper Fixed) */}
+      {/* MODAL (Kept intact just in case required elsewhere) */}
 
       {isModalOpen && (
         <div
@@ -1141,9 +1256,12 @@ const RealLivesLanding = () => {
 
             <Swiper
               modules={[Navigation, Pagination, Autoplay]}
-              navigation
+              navigation={true}
               pagination={{ clickable: true }}
-              autoplay={{ delay: 4000 }}
+              autoplay={{
+                delay: 4000,
+                disableOnInteraction: false,
+              }}
               loop={true}
               className={Style1.mySwiper}
             >
@@ -1151,11 +1269,7 @@ const RealLivesLanding = () => {
                 <SwiperSlide key={index}>
                   <div className={Style1.swiper_slide_inner}>
                     <img
-                      src={
-                        window.innerWidth <= 768
-                          ? slide.mobileImage
-                          : slide.image
-                      }
+                      src={windowWidth <= 768 ? slide.mobileImage : slide.image}
                       alt={slide.title}
                       className={Style1.swiper_img}
                     />
@@ -1174,15 +1288,15 @@ const RealLivesLanding = () => {
       {/* CARD SECTION */}
 
       <div className={Style1.card_container}>
-        {cardData.map((cardData, index) => (
+        {cardData.map((card, index) => (
           <div
             key={index}
             className={Style1.blog_card}
-            onClick={() => navigate(cardData.path)}
+            onClick={() => navigate(card.path)}
             style={{ cursor: "pointer" }}
           >
             <div className={Style1.card_image_wrapper}>
-              <img src={cardData.image} alt={cardData.title} />
+              <img src={card.image} alt={card.title} />
 
               <div className={Style1.wave_shape}></div>
             </div>
@@ -1190,26 +1304,26 @@ const RealLivesLanding = () => {
             <div className={Style1.card_content}>
               <div className={Style1.badge_row}>
                 <span className={`${Style1.badge} ${Style1.success}`}>
-                  {cardData.badge}
+                  {card.badge}
                 </span>
 
-                {cardData.icon}
+                {card.icon}
               </div>
 
               <h4
                 className={Style1.robo_text_top}
                 style={{ color: darkMode ? "#ccc" : "#666" }}
               >
-                {cardData.title}
+                {card.title}
               </h4>
 
-              <h3 className={Style1.robo_text_main}>{cardData.subTitle}</h3>
+              <h3 className={Style1.robo_text_main}>{card.subTitle}</h3>
 
               <p
                 className={Style1.card_desc}
                 style={{ color: darkMode ? "#aaa" : "#555" }}
               >
-                {cardData.desc}
+                {card.desc}
               </p>
 
               <div className={Style1.card_footer}>
@@ -1229,7 +1343,7 @@ const RealLivesLanding = () => {
                     gap: "5px",
                   }}
                 >
-                  {cardData.btnText} <MoveRight size={18} />
+                  {card.btnText} <MoveRight size={18} />
                 </div>
               </div>
             </div>

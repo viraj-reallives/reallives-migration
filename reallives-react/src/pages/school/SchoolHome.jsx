@@ -142,6 +142,7 @@ function WhoCanUsePanel({ supportingText, images, isActive = true }) {
     let animation;
 
     const animate = () => {
+      
       if (sliderRef.current) {
         const slider = sliderRef.current;
 
@@ -244,9 +245,7 @@ function WhoCanUsePanel({ supportingText, images, isActive = true }) {
         ) : null}
       </div>
 
-      <div
-        className={`${styles.splitSection} ${styles.splitReverse} ${Style1.container_work_in_classroome}`}
-      >
+      <div className={`${styles.splitSection} ${styles.splitReverse} ${Style1.container_work_in_classroome}`} >
         {images.classroomDiagram ? (
           <div className={`${styles.mediaCard} ${Style1.image_style_override}`}>
             <img src={images.classroomDiagram} alt="" />
@@ -267,9 +266,7 @@ function WhoCanUsePanel({ supportingText, images, isActive = true }) {
         </div>
       </div>
 
-      <section
-        className={`${styles.benefitsSection} ${Style1.educational_benifit}`}
-      >
+      <section className={`${styles.benefitsSection} ${Style1.educational_benifit}`}>
         <div className={styles.benefitsInner}>
           <h2 className={styles.benefitsHeading}>
             {supportingText.educationalBenefitsHeading}
@@ -283,9 +280,8 @@ function WhoCanUsePanel({ supportingText, images, isActive = true }) {
         </div>
       </section>
 
-      <div
-        className={`${styles.gettingStarted} ${Style1.container_work_in_classroome}`}
-      >
+      <div className={`${styles.gettingStarted} ${Style1.container_work_in_classroome}`} >
+
         <div>
           <h2 className={styles.blockTitle}>
             {supportingText.gettingStartedHeading}

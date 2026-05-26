@@ -169,6 +169,7 @@ export const landingContent = {
       heading: "Jump into a life face whatever comes your way",
       subheading: "",
     },
+
     {
       image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_04.jpg",
       mobileImage: "https://reallivesfrontend.s3.us-east-1.amazonaws.com/iPhone+16+Pro+Max+-+23.png",
@@ -176,6 +177,7 @@ export const landingContent = {
       heading: "Live a life in a different country Face what comes your way",
       subheading: "",
     },
+
     {
       image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_05.jpg",
       mobileImage: "image/mobilehomescreen/iPhone 16 Pro Max - 24.png",
@@ -183,6 +185,7 @@ export const landingContent = {
       heading: "You are the world",
       subheading: "",
     },
+
     {
       image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_06.jpg",
       mobileImage: "image/mobilehomescreen/iPhone 16 Pro Max - 25.png",
@@ -190,6 +193,7 @@ export const landingContent = {
       heading: "Experience life with interactive role-play",
       subheading: "",
     },
+
     {
       image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_07.jpg",
       mobileImage: "image/mobilehomescreen/iPhone 16 Pro Max - 26.png",
@@ -197,6 +201,7 @@ export const landingContent = {
       heading: "Live a character, the one who does not have control on starting position in life",
       subheading: "",
     },
+
     {
       image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_08.jpg",
       mobileImage: "image/mobilehomescreen/iPhone 16 Pro Max - 27.png",
@@ -204,6 +209,7 @@ export const landingContent = {
       heading: "Experience how even the most fortunate are trapped by circumstances",
       subheading: "",
     },
+
     {
       image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_09.jpg",
       mobileImage: "image/mobilehomescreen/iPhone 16 Pro Max - 27.png", // Same mapping as per your list
@@ -211,6 +217,7 @@ export const landingContent = {
       heading: "Enjoy the randomness of being born in any country and any culture",
       subheading: "",
     },
+
     {
       image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_10.jpg",
       mobileImage: "image/mobilehomescreen/iPhone 16 Pro Max - 28.png",
@@ -218,6 +225,7 @@ export const landingContent = {
       heading: "Design any character that you wish to be",
       subheading: "",
     },
+
     {
       image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_11.jpg",
       mobileImage: "image/mobilehomescreen/iPhone 16 Pro Max - 29.png",
@@ -225,6 +233,7 @@ export const landingContent = {
       heading: "Guide your character through a life of tribulations, events & choices",
       subheading: "",
     },
+
     {
       image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_12.jpg",
       mobileImage: "image/mobilehomescreen/iPhone 16 Pro Max - 29.png",
@@ -232,6 +241,7 @@ export const landingContent = {
       heading: "Life rarely begins with equal opportunities",
       subheading: "",
     },
+
     {
       image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_13.jpg",
       mobileImage: "image/mobilehomescreen/iPhone 16 Pro Max - 30.png",
@@ -239,6 +249,7 @@ export const landingContent = {
       heading: "Take a chance on living a random life on earth",
       subheading: "",
     },
+
     {
       image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_14.jpg",
       mobileImage: "image/mobilehomescreen/iPhone 16 Pro Max - 31.png",
@@ -246,6 +257,7 @@ export const landingContent = {
       heading: "Experience and live the life of an ordinary person!",
       subheading: "",
     },
+
     {
       image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_15.jpg",
       mobileImage: "image/mobilehomescreen/iPhone 16 Pro Max - 32.png",
@@ -253,6 +265,7 @@ export const landingContent = {
       heading: "Live and experience a trillion human life stories",
       subheading: "",
     },
+
     {
       image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_16.jpg",
       mobileImage: "image/mobilehomescreen/iPhone 16 Pro Max - 33.png",
@@ -281,6 +294,7 @@ export const landingContent = {
       heading: "Surprisingly informative and enlightening",
       subheading: "",
     },
+
     {
       image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_20.jpg",
       mobileImage: "image/mobilehomescreen/iPhone 16 Pro Max - 37.png",
@@ -288,6 +302,7 @@ export const landingContent = {
       heading: "Informative time-sink",
       subheading: "",
     },
+
     {
       image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_21.jpg",
       mobileImage: "image/mobilehomescreen/iPhone 16 Pro Max - 38.png",
@@ -295,6 +310,7 @@ export const landingContent = {
       heading: "Experience how the millions of unfortunate are trapped by circumstances",
       subheading: "",
     },
+
     {
       image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_22.jpg",
       mobileImage: "image/mobilehomescreen/iPhone 16 Pro Max - 39.png",
@@ -302,6 +318,7 @@ export const landingContent = {
       heading: "Best way to learn about life in other countries short of going there!",
       subheading: "",
     },
+
     {
       image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_23.jpg",
       mobileImage: "image/mobilehomescreen/iPhone 16 Pro Max - 39.png",
@@ -309,6 +326,7 @@ export const landingContent = {
       heading: "Some one at some point has probably led a life similar to the one you are playing",
       subheading: "",
     },
+
     {
       image: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/homescreen-img/homeimage_24.jpg",
       mobileImage: "image/mobilehomescreen/iPhone 16 Pro Max - 39.png", // Added a fallback for the last one
@@ -319,8 +337,7 @@ export const landingContent = {
 
   ],
 },
-
-
+ 
   entryCards: [
     {
       label: "School",
