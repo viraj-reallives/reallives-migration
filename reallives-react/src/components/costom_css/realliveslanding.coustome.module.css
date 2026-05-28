@@ -45,34 +45,23 @@ body {
 
 .theme_switch {
   position: fixed;
-
   right: 30px;
   top: 50%;
-
   transform: translateY(-50%);
-
   width: 72px;
   height: 145px;
-
   border-radius: 999px;
-
   background: linear-gradient(180deg, #ffffff, #e8e8e8);
-
   box-shadow:
     0 10px 35px rgba(0, 0, 0, 0.15),
     inset 0 2px 8px rgba(255, 255, 255, 0.9);
-
   z-index: 99999;
-
   cursor: pointer;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-
   padding: 12px 0;
-
   transition: 0.4s ease;
 }
 
@@ -88,29 +77,20 @@ body {
 
 .switch_circle {
   position: absolute;
-
   width: 54px;
   height: 54px;
-
   border-radius: 50%;
-
   top: 8px;
   left: 50%;
-
   transform: translateX(-50%);
-
   background: linear-gradient(135deg, #ffffff, #dcdcdc);
-
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-
   transition: 0.4s ease;
 }
 
 .active_theme .switch_circle {
   top: 82px;
-
   background: linear-gradient(135deg, #7c3aed, #9333ea);
-
   box-shadow: 0 0 25px rgba(168, 85, 247, 0.7);
 }
 
@@ -215,6 +195,7 @@ body {
 }
 
 /* Subtle sheen — kept low so the bar does not read as frost white */
+
 .header::before {
   content: "";
   position: absolute;
@@ -268,6 +249,7 @@ body {
 }
 
 /* Match sub-site navbar logo (Navbar.module.css .logoImg) */
+
 .logo_reallives > img {
   display: block;
   height: 2.75rem;
@@ -456,14 +438,12 @@ body {
 
 .card_top_inner:nth-child(1) {
   /* background-color: #e6ecb7 !important; */
-  background-color: rgba(230, 236, 183, 0.15) !important;
-  
+  background-color: rgba(230, 236, 183, 0.15) !important
 }
 
  .dark_theme .card_top_inner:nth-child(1) {
   background-color: #2b323c61  !important;
 }
-
 
 .card_top_inner:nth-child(2){
   /* background-color: #e8e0b8 !important; */
@@ -677,13 +657,9 @@ body {
 
 .card_container {
   gap: 25px;
-
   padding: 2rem 11rem;
-
   display: grid;
-
   grid-template-columns: repeat(2, 1fr);
-
   grid-template-rows: repeat(2, 1fr);
 }
 
@@ -750,24 +726,17 @@ body {
 
 .card_image_wrapper {
   position: relative;
-
   height: 220px;
-
   overflow: hidden;
-
   background-color: #a2d2df;
 }
 
 .card_image_wrapper img {
   width: 100%;
   height: 100%;
-
   object-fit: cover;
-
   transform: scale(1);
-
   will-change: transform;
-
   transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -918,7 +887,6 @@ body {
 .dark_theme .footer_container_landing {
   background: #1e1b1b !important;
 }
-
 
 .background_color_none {
   background-color: none !important;

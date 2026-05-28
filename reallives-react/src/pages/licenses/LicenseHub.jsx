@@ -1,20 +1,18 @@
-import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import {
-  licensesContent,
-  licenseHubCopy,
-} from '@content/licenses';
-import LicenseCard from '@components/common/LicenseCard/LicenseCard';
-import styles from './LicenseHub.module.css';
+// import { useEffect } from "react";
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
+import { licensesContent, licenseHubCopy } from "@content/licenses";
+import LicenseCard from "@components/common/LicenseCard/LicenseCard";
+import styles from "./LicenseHub.module.css";
 
-const userOrder = ['school', 'university', 'homeschooler', 'gamer'];
+const userOrder = ["school", "university", "homeschooler", "gamer"];
 
 /** Keeps document chrome light while this route is mounted (landing may leave dark on body). */
 function useLicenseHubLightChrome() {
   useEffect(() => {
-    document.body.classList.add('license-hub-light');
+    document.body.classList.add("license-hub-light");
     return () => {
-      document.body.classList.remove('license-hub-light');
+      document.body.classList.remove("license-hub-light");
     };
   }, []);
 }
@@ -30,12 +28,28 @@ export default function LicenseHub() {
           <p className={styles.subheading}>{licenseHubCopy.subheading}</p>
         </header>
 
-        <section className={styles.grid} aria-label="Select a license type">
+        {/* <section className={styles.grid} aria-label="Select a license type">
           {userOrder.map((userType) => {
             const license = licensesContent[userType];
             if (!license) return null;
             return (
               <LicenseCard key={userType} userType={userType} license={license} />
+            );
+          })}
+        </section> */}
+
+        <section className={styles.grid} aria-label="Select a license type">
+          {userOrder.map((userType, index) => {
+            const license = licensesContent[userType];
+
+            if (!license) return null;
+
+            return (
+              <React.Fragment key={userType}>
+                <LicenseCard userType={userType} license={license} />
+
+                {index === 2 && <div className={styles.divider}></div>}
+              </React.Fragment>
             );
           })}
         </section>

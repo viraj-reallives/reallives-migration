@@ -457,15 +457,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css/effect-fade";
-
 import "swiper/css";
-
 import "swiper/css/navigation";
-
 import "swiper/css/pagination";
-
 // CSS MODULE
-
 import Style1 from "../components/costom_css/realliveslanding.coustome.module.css";
 import LandingContactModal from "@components/landing/LandingContactModal/LandingContactModal";
 import { useTheme } from "@hooks/useTheme";
@@ -871,6 +866,7 @@ const RealLivesLanding = () => {
 
   return (
     <div className={Style1.landing_container}>
+
       {/* <div
         className={`${Style1.lamp_wrapper} ${darkMode ? Style1.lamp_off : Style1.lamp_on}`}
         onClick={() => toggleTheme()}
@@ -887,6 +883,7 @@ const RealLivesLanding = () => {
       {/* HEADER */}
 
       <div className={Style1.header_content_container}>
+
         {/* <header className={Style1.header_wrapper}>
           <div className={Style1.header}>
             <nav className={Style1.nav_left}>
@@ -964,8 +961,8 @@ const RealLivesLanding = () => {
 
         <>
           {/* 1. FIXED MAIN HEADER */}
-          <header
-            className={Style1.header_wrapper}
+
+          <header className={Style1.header_wrapper}
             style={{
               position: "fixed",
               top: 0,
@@ -1004,7 +1001,9 @@ const RealLivesLanding = () => {
                   className={Style1.glow_btn}
                 >
                   <span>Login</span>
+
                 </a>
+
               </div>
 
               <div
@@ -1051,8 +1050,7 @@ const RealLivesLanding = () => {
           </header>
 
           
-          <div
-            className={`${Style1.mobile_menu} ${mobileMenu ? Style1.mobile_menu_active : ""}`}
+          <div className={`${Style1.mobile_menu} ${mobileMenu ? Style1.mobile_menu_active : ""}`}
             style={{
               position: "fixed",
               top: 0,
@@ -1063,10 +1061,7 @@ const RealLivesLanding = () => {
               pointerEvents: mobileMenu ? "auto" : "none", 
             }}
           >
-            <Link
-              to="/reallives/licenses"
-              className={Style1.white_btn}
-              onClick={() => setMobileMenu(false)}
+            <Link  to="/reallives/licenses" className={Style1.white_btn} onClick={() => setMobileMenu(false)}
               style={{
                 pointerEvents: "auto",
                 position: "relative",
@@ -1243,6 +1238,7 @@ const RealLivesLanding = () => {
       {/* CARD SECTION */}
 
       <div className={Style1.card_container}>
+
         {cardData.map((card, index) => (
           <article
             key={card.segment}
@@ -1288,9 +1284,7 @@ const RealLivesLanding = () => {
 
       {/* FOOTER */}
 
-      <footer
-        className={`${Style1.footer_container_landing} ${Style1.background_color_none}`}
-      >
+      <footer className={`${Style1.footer_container_landing} ${Style1.background_color_none}`} >
         <div className={Style1.footer_main}>
           <div className={Style1.footer_branding}>
             <div className={Style1.footer_logo}>
@@ -1349,6 +1343,7 @@ const RealLivesLanding = () => {
           <p>© 2026 RealLives Foundation. All rights reserved.</p>
         </div>
       </footer>
+
     </div>
   );
 };

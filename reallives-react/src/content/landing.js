@@ -150,7 +150,7 @@ export const landingContent = {
   //     },
   //   ],
   // },
-
+  
   carousel: {
   slides: [
 
@@ -415,6 +415,7 @@ export const landingContent = {
   },
 
   /** Landing page contact popup — same delivery as school contact (Web3Forms). */
+
   contactModal: {
     heading: "Get in Touch",
     subheading:
