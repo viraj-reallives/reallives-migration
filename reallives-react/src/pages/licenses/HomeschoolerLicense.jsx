@@ -1,6 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useMemo, useState } from 'react';
 import { licensesContent } from '@content/licenses';
+import { navigateToRegistration } from '@/utils/registrationRedirect';
 import LicenseTierCard from '@components/common/LicenseTierCard/LicenseTierCard';
 import Modal from '@components/common/Modal/Modal';
 import styles from './LicenseDetailPage.module.css';
@@ -172,9 +173,7 @@ export default function HomeschoolerLicense() {
   };
 
   const onConfirm = () => {
-    if (content.registerUrl) {
-      window.open(content.registerUrl, '_blank', 'noopener,noreferrer');
-    }
+    navigateToRegistration(content.registerUrl);
     setIsModalOpen(false);
   };
 

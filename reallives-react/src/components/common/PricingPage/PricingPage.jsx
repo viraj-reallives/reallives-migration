@@ -10,6 +10,7 @@ import {
   formatPrice,
   formatCurrency,
 } from '@hooks/useLicensePricing';
+import { navigateToRegistration } from '@/utils/registrationRedirect';
 import styles from './PricingPage.module.css';
 
 /** Shown when the pricing-catalog API is unreachable — intentionally generic. */
@@ -173,7 +174,7 @@ export default function PricingPage({
   }
 
   function handleConfirm() {
-    if (registerUrl) window.location.href = registerUrl;
+    navigateToRegistration(registerUrl);
   }
 
   const sharedLayoutProps = {
