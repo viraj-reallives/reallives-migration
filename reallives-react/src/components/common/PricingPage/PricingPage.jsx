@@ -12,6 +12,12 @@ import {
 } from '@hooks/useLicensePricing';
 import styles from './PricingPage.module.css';
 
+/** Shown when the pricing-catalog API is unreachable — intentionally generic. */
+const PRICING_UNAVAILABLE = {
+  heading: 'Pricing unavailable',
+  body: 'Pricing is not available right now. Please come back later to check.',
+};
+
 /**
  * Shared "Base License + Credit Pack" pricing page.
  *
@@ -37,7 +43,7 @@ export default function PricingPage({
 }) {
   const { siteKey } = useContext(SiteContext) || {};
   const { pricing } = useSiteContent();
-  const { tenantDefinitions, loading } = useLicensePricing({ tenantType });
+  const { tenantDefinitions, loading, error } = useLicensePricing({ tenantType });
 
   const { baseLicense, creditPacks } = useMemo(
     () => splitBaseAndCredits(tenantDefinitions),
@@ -152,7 +158,9 @@ export default function PricingPage({
       ? Number(baseDisplay.amount || 0) + Number(packDisplay?.amount || 0)
       : null;
 
-  const showComingSoon = !loading && !baseLicense && creditPacks.length === 0;
+  const showPricingUnavailable = !loading && !!error;
+  const showComingSoon =
+    !loading && !error && !baseLicense && creditPacks.length === 0;
   const showPacks = !loading && creditPacks.length > 0;
 
   // Stacked allows checkout with just the base license; split requires a pack.
@@ -229,7 +237,9 @@ export default function PricingPage({
         </section>
       ) : null}
 
-      {layout === 'stacked' ? (
+      {showPricingUnavailable ? (
+        <PricingUnavailableCard />
+      ) : layout === 'stacked' ? (
         <StackedMode {...sharedLayoutProps} />
       ) : (
         <SplitMode {...sharedLayoutProps} />
@@ -1117,6 +1127,22 @@ function buildModalBody({
     } for a total of ${formatCurrency(totalAmount, totalCurrency)}.`;
   }
   return `You will leave this site to complete your purchase of the Base License + ${selectedPack.name}.`;
+}
+
+function PricingUnavailableCard() {
+  return (
+    <section
+      className={styles.unavailableSection}
+      aria-labelledby="pricing-unavailable-heading"
+    >
+      <div className={styles.unavailableCard}>
+        <h2 id="pricing-unavailable-heading" className={styles.unavailableHeading}>
+          {PRICING_UNAVAILABLE.heading}
+        </h2>
+        <p className={styles.unavailableBody}>{PRICING_UNAVAILABLE.body}</p>
+      </div>
+    </section>
+  );
 }
 
 function ComingSoonCard({ pricing }) {

@@ -411,7 +411,7 @@ export const landingContent = {
 
   ctas: {
     buyLicense: { label: "Buy License", path: "/reallives/licenses" },
-    login: { label: "Login", url: "https://reallivesworld.com/login" },
+    login: { label: "Login", url: "https://sls.reallivesworld.com/login" },
   },
 
   /** Landing page contact popup — same delivery as school contact (Web3Forms). */

@@ -904,7 +904,7 @@ const RealLivesLanding = () => {
               </Link>
 
               <a
-                href="https://reallivesworld.com/login"
+                href="https://sls.reallivesworld.com/login"
                 target="_blank"
                 rel="noreferrer"
                 className={Style1.glow_btn}
@@ -998,7 +998,7 @@ const RealLivesLanding = () => {
                 </Link>
 
                 <a
-                  href="https://reallivesworld.com/login"
+                  href="https://sls.reallivesworld.com/login"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={Style1.glow_btn}
@@ -1077,7 +1077,7 @@ const RealLivesLanding = () => {
             </Link>
 
             <a
-              href="https://reallivesworld.com/login"
+              href="https://sls.reallivesworld.com/login"
               target="_blank"
               rel="noopener noreferrer"
               className={Style1.glow_btn}

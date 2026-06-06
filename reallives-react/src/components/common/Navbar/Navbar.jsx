@@ -611,7 +611,7 @@ export default function Navbar() {
 
           <div className={styles.ctaRow}>
             <a
-              href="https://reallivesworld.com/login"
+              href="https://sls.reallivesworld.com/login"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.loginButton}
@@ -886,7 +886,7 @@ export default function Navbar() {
 
             <div className={styles.mobileFooter}>
               <a
-                href="https://reallivesworld.com/login"
+                href="https://sls.reallivesworld.com/login"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.loginButton}

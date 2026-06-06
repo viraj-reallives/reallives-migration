@@ -1,44 +1,44 @@
 .header {
-  --nav-glass-blur: 24px;
-  --nav-glass-saturate: 180%;
+  /* Match landing header glass (realliveslanding.coustome.module.css) */
+  --nav-glass-blur: 20px;
+  --nav-glass-saturate: 140%;
 
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 100000;
-  isolation: isolate;
-  /* Must stay visible so site switcher + nav dropdowns aren't clipped */
+  /* isolation + overflow:hidden break backdrop-filter in prod (Chrome/Safari) */
   overflow: visible;
   transition:
     background 0.4s ease,
     box-shadow 0.4s ease,
     border-color 0.4s ease;
 
-  /* Brand-tinted glass (school orange, university green, etc. via --color-site-brand) */
+  /* Semi-transparent brand tint — must NOT mix with solid #fff or blur reads opaque */
   background: linear-gradient(
     180deg,
-    color-mix(in srgb, var(--color-site-brand) 20%, transparent) 0%,
-    color-mix(in srgb, var(--color-site-brand) 16%, transparent) 100%
+    color-mix(in srgb, var(--color-site-brand) 18%, rgb(255 255 255 / 0.38)) 0%,
+    color-mix(in srgb, var(--color-site-brand) 12%, rgb(255 255 255 / 0.28)) 100%
   );
-  border-bottom: 1px solid color-mix(in srgb, var(--color-site-brand) 12%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--color-site-brand) 10%, rgb(28 27 31 / 0.12));
   box-shadow:
-    0 4px 24px color-mix(in srgb, var(--color-site-brand) 10%, transparent),
+    0 4px 20px rgb(15 23 42 / 0.14),
     inset 0 1px 0 rgb(255 255 255 / 0.35);
 }
 
-/* Blur on its own layer so dropdowns paint above the glass bar (not behind it). */
+/* Frosted blur — separate layer (same pattern as landing header) */
 .header::after {
   content: "";
   position: absolute;
   inset: 0;
   pointer-events: none;
   z-index: 0;
+  -webkit-backdrop-filter: blur(var(--nav-glass-blur)) saturate(var(--nav-glass-saturate));
   backdrop-filter: blur(var(--nav-glass-blur)) saturate(var(--nav-glass-saturate));
-  -webkit-backdrop-filter: blur(var(--nav-glass-blur))
-    saturate(var(--nav-glass-saturate));
 }
 
+/* Light sheen only — keep low so content shows through (landing ::before) */
 .header::before {
   content: "";
   position: absolute;
@@ -47,33 +47,58 @@
   z-index: 1;
   background: linear-gradient(
     105deg,
-    color-mix(in srgb, var(--color-site-brand) 22%, transparent) 0%,
-    color-mix(in srgb, var(--color-site-brand) 8%, transparent) 32%,
+    rgb(255 255 255 / 0.12) 0%,
+    rgb(255 255 255 / 0.04) 32%,
     transparent 55%,
-    rgb(255 255 255 / 0.06) 100%
+    transparent 100%
   );
 }
 
 [data-theme="dark"] .header {
   background: linear-gradient(
     180deg,
-    color-mix(in srgb, var(--color-site-brand) 20%, transparent) 0%,
-    color-mix(in srgb, var(--color-site-brand) 14%, transparent) 100%
+    color-mix(in srgb, var(--color-site-brand) 14%, rgb(28 27 31 / 0.62)) 0%,
+    color-mix(in srgb, var(--color-site-brand) 10%, rgb(28 27 31 / 0.48)) 100%
   );
-  border-bottom-color: color-mix(in srgb, var(--color-site-brand) 15%, transparent);
+  border-bottom-color: rgb(255 255 255 / 0.1);
   box-shadow:
-    0 8px 28px rgb(0 0 0 / 0.28),
-    inset 0 1px 0 rgb(255 255 255 / 0.1);
+    0 8px 28px rgb(0 0 0 / 0.32),
+    inset 0 1px 0 rgb(255 255 255 / 0.08);
 }
 
 [data-theme="dark"] .header::before {
   background: linear-gradient(
     105deg,
-    color-mix(in srgb, var(--color-site-brand) 12%, transparent) 0%,
-    color-mix(in srgb, var(--color-site-brand) 6%, transparent) 30%,
+    rgb(255 255 255 / 0.1) 0%,
+    rgb(255 255 255 / 0.04) 30%,
     transparent 55%,
     transparent 100%
   );
+}
+
+/* Only when blur is unsupported — use readable opaque bar (prod fallback) */
+@supports not (
+  (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))
+) {
+  .header {
+    background: linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--color-site-brand) 32%, rgb(255 255 255 / 0.88)) 0%,
+      color-mix(in srgb, var(--color-site-brand) 22%, rgb(248 248 248 / 0.92)) 100%
+    );
+  }
+
+  [data-theme="dark"] .header {
+    background: linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--color-site-brand) 28%, rgb(28 27 31 / 0.88)) 0%,
+      color-mix(in srgb, var(--color-site-brand) 18%, rgb(28 27 31 / 0.78)) 100%
+    );
+  }
+
+  .header::after {
+    display: none;
+  }
 }
 
 .inner {

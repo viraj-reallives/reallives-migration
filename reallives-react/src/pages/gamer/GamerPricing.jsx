@@ -1,6 +1,6 @@
 import PricingPage from '@components/common/PricingPage/PricingPage';
 
-const GAMER_REGISTER_URL = 'https://reallivesworld.com/register-gamer';
+const GAMER_REGISTER_URL = 'https://sls.reallivesworld.com/signup/gamer';
 
 export default function GamerPricing() {
   return (

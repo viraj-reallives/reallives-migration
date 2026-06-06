@@ -1,6 +1,6 @@
 import PricingPage from '@components/common/PricingPage/PricingPage';
 
-const SCHOOL_REGISTER_URL = 'https://reallivesworld.com/register-school';
+const SCHOOL_REGISTER_URL = 'https://sls.reallivesworld.com/signup/school';
 
 export default function SchoolPricing() {
   return (

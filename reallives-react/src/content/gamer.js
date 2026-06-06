@@ -12,7 +12,7 @@ export const gamerContent = {
 
   liveALifeCta: {
     label: 'Live a life',
-    href: 'https://reallivesworld.com/login',
+    href: 'https://sls.reallivesworld.com/login',
     external: true,
   },
 

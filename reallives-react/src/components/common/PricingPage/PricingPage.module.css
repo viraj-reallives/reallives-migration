@@ -824,6 +824,34 @@
   text-align: center;
 }
 
+/* --------------------- API unavailable (all tenant types) ------------ */
+
+.unavailableSection {
+  margin-bottom: var(--space-32);
+}
+
+.unavailableCard {
+  background: var(--color-bg-elevated);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-3xl);
+  padding: var(--space-32);
+  text-align: center;
+}
+
+.unavailableHeading {
+  margin: 0 0 var(--space-12);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.unavailableBody {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+
 /* --------------------- Coming soon (university only) ----------------- */
 
 .comingSoonCard {

@@ -27,7 +27,7 @@ export const licensesContent = {
       },
     ],
     visitPath: '/reallives/school',
-    registerUrl: 'https://reallivesworld.com/register-school',
+    registerUrl: 'https://sls.reallivesworld.com/signup/school',
     externalPricingUrl:
       'https://reallivesworld.com/reallives-website-main/reallives/school/pricing',
   },
@@ -81,7 +81,7 @@ export const licensesContent = {
       },
     ],
     visitPath: '/reallives/university',
-    registerUrl: 'https://reallivesworld.com/register-university',
+    registerUrl: 'https://sls.reallivesworld.com/signup/university',
     externalPricingUrl:
       'https://reallivesworld.com/reallives-website-main/reallives/university/pricing',
   },
@@ -114,7 +114,7 @@ export const licensesContent = {
       },
     ],
     visitPath: '/reallives/homeschooler',
-    registerUrl: 'https://reallivesworld.com/register-family',
+    registerUrl: 'https://sls.reallivesworld.com/signup/homeschooler',
     externalPricingUrl:
       'https://reallivesworld.com/reallives-website-main/reallives/homeschooler/pricing',
   },
@@ -154,7 +154,7 @@ export const licensesContent = {
       },
     ],
     visitPath: '/reallives/gamer',
-    registerUrl: 'https://reallivesworld.com/register-gamer',
+    registerUrl: 'https://sls.reallivesworld.com/signup/gamer',
     externalPricingUrl:
       'https://reallivesworld.com/reallives-website-main/reallives/gamer/pricing',
   },
