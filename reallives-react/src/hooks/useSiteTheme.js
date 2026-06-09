@@ -1,24 +1,40 @@
+// import { useEffect } from 'react';
+// import { useLocation } from 'react-router-dom';
+// import { useTheme } from '@hooks/useTheme';
+
+
+// export function useSiteTheme(defaultTheme) {
+//   const { setTheme } = useTheme();
+//   const { pathname } = useLocation();
+
+//   useEffect(() => {
+//     setTheme(defaultTheme);
+
+//     if (defaultTheme !== 'dark') {
+//       return undefined;
+//     }
+
+//     return () => {
+//       setTheme('light');
+//     };
+//   }, [defaultTheme, setTheme, pathname]);
+// }
+
 import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
 import { useTheme } from '@hooks/useTheme';
 
 /**
- * Applies the section default theme on mount and when the route changes.
- * Light everywhere except gamer (dark). Leaving gamer restores light.
+ * Apply default theme only on first visit.
+ * User-selected theme remains unchanged when navigating pages.
  */
 export function useSiteTheme(defaultTheme) {
   const { setTheme } = useTheme();
-  const { pathname } = useLocation();
 
   useEffect(() => {
-    setTheme(defaultTheme);
+    const savedTheme = localStorage.getItem('rl-theme');
 
-    if (defaultTheme !== 'dark') {
-      return undefined;
+    if (!savedTheme) {
+      setTheme(defaultTheme);
     }
-
-    return () => {
-      setTheme('light');
-    };
-  }, [defaultTheme, setTheme, pathname]);
+  }, [defaultTheme, setTheme]);
 }
