@@ -21,12 +21,14 @@
 // }
 
 import { useEffect } from 'react';
+
 import { useTheme } from '@hooks/useTheme';
 
 /**
  * Apply default theme only on first visit.
  * User-selected theme remains unchanged when navigating pages.
  */
+
 export function useSiteTheme(defaultTheme) {
   const { setTheme } = useTheme();
 

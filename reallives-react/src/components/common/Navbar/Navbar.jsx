@@ -618,12 +618,14 @@ export default function Navbar() {
             >
               Log In
             </a>
+
             <Link
               to={`/reallives/${siteKey}/pricing`}
               className={styles.primaryCta}
             >
               Get Started
             </Link>
+            
           </div>
 
           <button
@@ -905,6 +907,6 @@ export default function Navbar() {
           </div>
         </>
       )}
-    </header>
+    </header>    
   );
 }
