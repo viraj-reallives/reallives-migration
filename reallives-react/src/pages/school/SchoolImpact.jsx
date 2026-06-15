@@ -1,6 +1,6 @@
 import { Fragment, useCallback, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import CTABanner from "@components/common/CTABanner/CTABanner";
+import WorkshopCard from "@components/common/WorkshopCard/WorkshopCard";
 import { useSiteContent } from "@hooks/useSiteContent";
 import styles from "./SchoolImpact.module.css";
 import Style1 from "../../components/costom_css/SchoolImpact_override.module.css";
@@ -10,7 +10,7 @@ import { GlobalMap } from "../../pages/GlobalMap/GlobalMap";
 
 const AUTO_MS = 5000;
 
-function ImpactImageSlider({ images, label }) {
+function ImpactImageSlider({ images }) {
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
   const len = images?.length ?? 0;
@@ -39,10 +39,9 @@ function ImpactImageSlider({ images, label }) {
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       aria-roledescription="carousel"
-      aria-label={label || "Workshop photos"}
+      aria-label="Workshop photos"
     >
       <div className={styles.sliderViewport}>
-        {label ? <p className={styles.sliderLabel}>{label}</p> : null}
         {images.map((src, i) => (
           <div
             key={src}
@@ -100,151 +99,6 @@ function ImpactImageSlider({ images, label }) {
   );
 }
 
-// function WorkshopCard({ card, learnMorePath }) {
-//   return (
-//     <article className={styles.card}>
-//       <div className={styles.cardHeader}>
-//         {card.title ? <h2 className={styles.cardTitle}>{card.title}</h2> : null}
-//         {card.date ? <p className={styles.cardDate}>{card.date}</p> : null}
-//       </div>
-
-//       <div className={`${styles.cardBody} ${Style1.impact_card_style}`}>
-//         {card.imagePath ? (
-
-//           <div className={`${styles.cardImage} ${Style1.cardImage_override}`}>
-//             <img src={card.imagePath} alt="" />
-//           </div>
-
-//         ) : null}
-//         <div>
-//           {card.university || card.department ? (
-//             <div className={styles.metaBlock}>
-//               {card.university ? <p className={styles.university}>{card.university}</p> : null}
-//               {card.department ? <p className={styles.department}>{card.department}</p> : null}
-//             </div>
-//           ) : null}
-
-//           {card.collaborationLabel && card.collaborationName ? (
-//             <div className={styles.row}>
-//               <p className={styles.muted}>{card.collaborationLabel}</p>
-//               <p className={styles.value}>{card.collaborationName}</p>
-//             </div>
-//           ) : null}
-
-//           {card.participantsLabel && card.participantsNumber ? (
-//             <div className={styles.row}>
-//               <p className={styles.muted}>{card.participantsLabel}</p>
-//               <p className={styles.value}>{card.participantsNumber}</p>
-//             </div>
-//           ) : null}
-
-//           {card.usedToolLabel && card.usedTool ? (
-//             <div className={styles.row}>
-//               <p className={styles.muted}>{card.usedToolLabel}</p>
-//               <p className={styles.value}>{card.usedTool}</p>
-//             </div>
-//           ) : null}
-
-//           {card.skillsDevelopedLabel && card.skills?.length ? (
-//             <div>
-//               <p className={styles.skillsHeading}>{card.skillsDevelopedLabel}</p>
-//               <div className={styles.skillRow}>
-//                 {card.skills.map((skill) => (
-//                   <span key={skill} className={styles.skillPill}>
-//                     {skill}
-//                   </span>
-//                 ))}
-//               </div>
-//             </div>
-//           ) : null}
-
-//           {learnMorePath && card.learnMoreText ? (
-//             <Link to={learnMorePath} className={styles.learnMore}>
-//               {card.learnMoreText}
-//               <span aria-hidden="true">→</span>
-//             </Link>
-//           ) : null}
-//         </div>
-//       </div>
-//     </article>
-//   );
-// }
-
-function WorkshopCard({ card }) {
-  return (
-    <article className={styles.card}>
-      <div className={styles.cardHeader}>
-        {card.title ? <h2 className={styles.cardTitle}>{card.title}</h2> : null}
-        {card.date ? <p className={styles.cardDate}>{card.date}</p> : null}
-      </div>
-
-      <div className={`${styles.cardBody} ${Style1.impact_card_style}`}>
-        {card.imagePath ? (
-          <div className={`${styles.cardImage} ${Style1.cardImage_override}`}>
-            <img src={card.imagePath} alt="" />
-          </div>
-        ) : null}
-
-        <div>
-          {card.university || card.department ? (
-            <div className={styles.metaBlock}>
-              {card.university ? (
-                <p className={styles.university}>{card.university}</p>
-              ) : null}
-              {card.department ? (
-                <p className={styles.department}>{card.department}</p>
-              ) : null}
-            </div>
-          ) : null}
-
-          {card.collaborationLabel && card.collaborationName ? (
-            <div className={styles.row}>
-              <p className={styles.muted}>{card.collaborationLabel}</p>
-              <p className={styles.value}>{card.collaborationName}</p>
-            </div>
-          ) : null}
-
-          {card.participantsLabel && card.participantsNumber ? (
-            <div className={styles.row}>
-              <p className={styles.muted}>{card.participantsLabel}</p>
-              <p className={styles.value}>{card.participantsNumber}</p>
-            </div>
-          ) : null}
-
-          {card.usedToolLabel && card.usedTool ? (
-            <div className={styles.row}>
-              <p className={styles.muted}>{card.usedToolLabel}</p>
-              <p className={styles.value}>{card.usedTool}</p>
-            </div>
-          ) : null}
-
-          {card.skillsDevelopedLabel && card.skills?.length ? (
-            <div>
-              <p className={styles.skillsHeading}>
-                {card.skillsDevelopedLabel}
-              </p>
-              <div className={styles.skillRow}>
-                {card.skills.map((skill) => (
-                  <span key={skill} className={styles.skillPill}>
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ) : null}
-
-          {card.learnMorePath && card.learnMoreText ? (
-            <Link to={card.learnMorePath} className={styles.learnMore}>
-              {card.learnMoreText}
-              <span>→</span>
-            </Link>
-          ) : null}
-        </div>
-      </div>
-    </article>
-  );
-}
-
 export default function SchoolImpact() {
   const { impact } = useSiteContent();
 
@@ -258,7 +112,7 @@ export default function SchoolImpact() {
       className={`${styles.page} ${Style1.padding_impact_style}`}
       id="impact"
     >
-      <ImpactImageSlider images={sliderImages} label={impact.sectionTitle} />
+      <ImpactImageSlider images={sliderImages} />
 
       <section className={styles.story} aria-labelledby="global-impact-story">
         <div

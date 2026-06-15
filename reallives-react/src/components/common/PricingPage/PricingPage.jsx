@@ -132,7 +132,10 @@ export default function PricingPage({
     baseValidityRule?.unit === 'YEARS' && Number(baseValidityRule?.value) > 0
       ? Number(baseValidityRule.value)
       : 1;
-  const baseIncludedLives = baseLicense?.rules?.max_plays ?? 0;
+  const baseIncludedLives =
+    pricing.baseLicense?.includedCredits ??
+    baseLicense?.rules?.max_plays ??
+    0;
   const singleCreditPack = creditPacks.length === 1;
   const livesPerStudent = pricing.creditPacks?.livesPerStudent ?? 0;
 
@@ -215,6 +218,15 @@ export default function PricingPage({
         </h1>
         {pricing.sectionSubheading ? (
           <p className={styles.heroSubtitle}>{pricing.sectionSubheading}</p>
+        ) : null}
+        {pricing.heroBadges?.length ? (
+          <ul className={styles.heroBadges} aria-label="Pricing highlights">
+            {pricing.heroBadges.map((badge) => (
+              <li key={badge} className={styles.heroBadge}>
+                {badge}
+              </li>
+            ))}
+          </ul>
         ) : null}
       </header>
 
@@ -358,6 +370,7 @@ export default function PricingPage({
           onClose={() => setModalOpen(false)}
           heading={pricing.purchaseModal.heading}
           body={buildModalBody({
+            pricing,
             selectedPack,
             totalAmount,
             totalCurrency,
@@ -454,7 +467,7 @@ function SplitMode(props) {
                   id="base-license-heading"
                   className={styles.baseTitle}
                 >
-                  Base License
+                  {getBaseProductName(pricing)}
                 </h2>
                 <p className={styles.baseLead}>
                   {pricing.baseLicense?.includedLine ||
@@ -709,7 +722,7 @@ function StackedMode(props) {
                   id="base-license-heading"
                   className={styles.baseTitle}
                 >
-                  Base License
+                  {getBaseProductName(pricing)}
                 </h2>
                 <p className={styles.baseLead}>
                   {pricing.baseLicense?.includedLine ||
@@ -772,7 +785,7 @@ function StackedMode(props) {
                       className={styles.removePackLink}
                       onClick={() => onPackPick(selectedPackId)}
                     >
-                      Remove credit pack — Base License only
+                      Remove credit pack — {getBaseProductName(pricing)} only
                     </button>
                   ) : showPacks ? (
                     <p className={styles.packHintNote}>
@@ -857,6 +870,24 @@ function StackedMode(props) {
 /*                           SHARED PIECES                              */
 /* ------------------------------------------------------------------ */
 
+function getBaseProductName(pricing) {
+  return pricing?.baseLicense?.title || 'Base License';
+}
+
+function getPackLabel(credits, pricing) {
+  const labels = pricing?.creditPacks?.packLabelsByCredits;
+  if (!labels) return null;
+  return labels[credits] ?? labels[String(credits)] ?? null;
+}
+
+function getPackBadgeText(credits, isBest, pricing) {
+  const contentLabel = getPackLabel(credits, pricing);
+  if (contentLabel?.badge) return contentLabel.badge;
+  if (pricing?.creditPacks?.packLabelsByCredits) return null;
+  if (isBest) return pricing?.creditPacks?.bestValueLabel || 'Best Value';
+  return null;
+}
+
 function OrderSummaryRows({
   pricing,
   baseDisplay,
@@ -894,7 +925,7 @@ function OrderSummaryRows({
         <div className={styles.summaryRow}>
           <span className={styles.summaryRowLabel}>
             <span className={styles.summaryRowName}>
-              Base License
+              {getBaseProductName(pricing)}
               {compactMeta ? (
                 <span className={styles.summaryRowMetaInline}>
                   {' '}
@@ -992,10 +1023,14 @@ function PackOptionRow({
       <span className={styles.packRadio} aria-hidden="true" />
       <span className={styles.packMain}>
         <span className={styles.packNameRow}>
-          <span className={styles.packName}>{pack.name}</span>
-          {isBest ? (
+          <span className={styles.packName}>
+            {pricing?.creditPacks?.packLabelsByCredits
+              ? `${credits} ${credits === 1 ? 'Credit' : 'Credits'}`
+              : pack.name}
+          </span>
+          {getPackBadgeText(credits, isBest, pricing) ? (
             <span className={styles.bestBadge}>
-              {pricing.creditPacks?.bestValueLabel || 'Best Value'}
+              {getPackBadgeText(credits, isBest, pricing)}
             </span>
           ) : null}
         </span>
@@ -1043,6 +1078,8 @@ function PackTile({ pack, isSelected, isBest, pricing, onPick }) {
   const display = getDisplayPrice(pack);
   const perCredit =
     credits > 0 ? (display.subtotalAmount || display.amount) / credits : 0;
+  const contentLabel = getPackLabel(credits, pricing);
+  const badgeText = getPackBadgeText(credits, isBest, pricing);
 
   return (
     <button
@@ -1054,15 +1091,22 @@ function PackTile({ pack, isSelected, isBest, pricing, onPick }) {
       }`}
       onClick={() => onPick(pack._id)}
     >
-      {isBest ? (
-        <span className={styles.packTileBadge}>
-          {pricing.creditPacks?.bestValueLabel || 'Best Value'}
+      {badgeText ? (
+        <span className={styles.packTileBadge}>{badgeText}</span>
+      ) : null}
+      <span className={styles.packTileName}>
+        {pricing?.creditPacks?.packLabelsByCredits
+          ? `${credits} ${credits === 1 ? 'Credit' : 'Credits'}`
+          : pack.name}
+      </span>
+      {contentLabel?.subtitle ? (
+        <span className={styles.packTileSubtitle}>{contentLabel.subtitle}</span>
+      ) : null}
+      {!pricing?.creditPacks?.packLabelsByCredits ? (
+        <span className={styles.packTileCredits}>
+          {credits.toLocaleString()} {credits === 1 ? 'credit' : 'credits'}
         </span>
       ) : null}
-      <span className={styles.packTileName}>{pack.name}</span>
-      <span className={styles.packTileCredits}>
-        {credits.toLocaleString()} {credits === 1 ? 'credit' : 'credits'}
-      </span>
       {perCredit > 0 ? (
         <span className={styles.packTilePerCredit}>
           {formatPrice(perCredit, display.currency, {
@@ -1109,25 +1153,27 @@ function tenantTypeLabel(tenantType) {
 }
 
 function buildModalBody({
+  pricing,
   selectedPack,
   totalAmount,
   totalCurrency,
   baseDisplay,
   fallback,
 }) {
+  const productName = getBaseProductName(pricing);
   if (!baseDisplay) return fallback;
   if (!selectedPack) {
-    return `You will leave this site to complete your purchase of the Base License for ${formatCurrency(
+    return `You will leave this site to complete your purchase of the ${productName} for ${formatCurrency(
       baseDisplay.amount,
       baseDisplay.currency
     )}.`;
   }
   if (totalAmount != null) {
-    return `You will leave this site to complete your purchase of the Base License + ${
+    return `You will leave this site to complete your purchase of the ${productName} + ${
       selectedPack.name
     } for a total of ${formatCurrency(totalAmount, totalCurrency)}.`;
   }
-  return `You will leave this site to complete your purchase of the Base License + ${selectedPack.name}.`;
+  return `You will leave this site to complete your purchase of the ${productName} + ${selectedPack.name}.`;
 }
 
 function PricingUnavailableCard() {

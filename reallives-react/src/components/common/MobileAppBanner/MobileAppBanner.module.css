@@ -1,0 +1,117 @@
+.banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1100;
+  display: none;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.625rem 0.875rem;
+  padding-bottom: calc(0.625rem + env(safe-area-inset-bottom, 0px));
+  background: linear-gradient(
+    165deg,
+    color-mix(in srgb, var(--color-gamer-card) 92%, var(--color-black)) 0%,
+    color-mix(in srgb, var(--color-gamer-bg-top) 96%, var(--color-black)) 55%,
+    color-mix(in srgb, var(--color-gamer-bg-mid) 98%, var(--color-black)) 100%
+  );
+  border-top: 1px solid color-mix(in srgb, var(--color-brand-cyan) 32%, transparent);
+  box-shadow:
+    0 -6px 28px color-mix(in srgb, var(--color-black) 45%, transparent),
+    inset 0 1px 0 color-mix(in srgb, var(--color-brand-cyan-bright) 12%, transparent);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+}
+
+@media (max-width: 768px) {
+  .banner {
+    display: flex;
+  }
+}
+
+.closeBtn {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--color-gamer-text-muted-soft);
+  cursor: pointer;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.closeBtn:hover {
+  color: var(--color-gamer-text);
+  background: color-mix(in srgb, var(--color-brand-cyan) 14%, transparent);
+}
+
+.icon {
+  flex: 0 0 auto;
+  width: 2.75rem;
+  height: 2.75rem;
+  object-fit: contain;
+  background: transparent;
+  box-shadow: none;
+}
+
+.copy {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.title {
+  font-family: var(--font-ui);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--color-gamer-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.subtitle {
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--color-gamer-text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cta {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.25rem;
+  padding: 0 1rem;
+  border-radius: var(--radius-pill);
+  border: none;
+  background: var(--color-brand-cyan-bright);
+  color: var(--color-black);
+  font-family: var(--font-ui);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: 0 2px 10px color-mix(in srgb, var(--color-brand-cyan) 35%, transparent);
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.cta:active {
+  transform: scale(0.97);
+}

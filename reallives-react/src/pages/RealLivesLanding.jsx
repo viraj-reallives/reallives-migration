@@ -448,7 +448,6 @@ import {
   BookOpen,
   Gamepad2,
   X,
-  Menu,
 } from "lucide-react";
 
 // Swiper Imports
@@ -476,8 +475,6 @@ const RealLivesLanding = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const [contactModalOpen, setContactModalOpen] = useState(false);
-
-  const [mobileMenu, setMobileMenu] = useState(false);
 
   // Screen width state for responsive images inside slider
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -990,7 +987,10 @@ const RealLivesLanding = () => {
               </nav>
 
               <div className={Style1.nav_right}>
-                <Link to="/reallives/licenses" className={Style1.white_btn}>
+                <Link
+                  to="/reallives/licenses"
+                  className={`${Style1.white_btn} ${Style1.nav_buy_license}`}
+                >
                   Buy License
                 </Link>
 
@@ -998,94 +998,13 @@ const RealLivesLanding = () => {
                   href="https://sls.reallivesworld.com/login"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={Style1.glow_btn}
+                  className={`${Style1.glow_btn} ${Style1.nav_login}`}
                 >
                   <span>Login</span>
-
                 </a>
-
-              </div>
-
-              <div
-                className={Style1.mobile_controls}
-                style={{ position: "relative", zIndex: 1015 }}
-              >
-                {/* <div className={Style1.mobile_toggle_container}>
-                  <label className={Style1.switch}>
-                    <input
-                      type="checkbox"
-                      checked={darkMode}
-                      onChange={() => toggleTheme()}
-                    />
-                    <span className={Style1.slider_round}>
-                      <span className={Style1.icon_sun}>☀️</span>
-                      <span className={Style1.icon_moon}>🌙</span>
-                    </span>
-                  </label>
-                </div> */}
-
-                <button
-                  className={Style1.mobile_menu_btn}
-                  onClick={() => setMobileMenu(!mobileMenu)}
-                  style={{
-                    position: "relative",
-                    zIndex: 1020,
-                    background: "transparent",
-                    border: "none",
-                    cursor: "pointer",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    color: mobileMenu ? "#000000" : "inherit",
-                  }}
-                >
-                  {mobileMenu ? (
-                    <X size={28} style={{ color: "#000000" }} />
-                  ) : (
-                    <Menu size={28} />
-                  )}
-                </button>
               </div>
             </div>
           </header>
-
-          
-          <div className={`${Style1.mobile_menu} ${mobileMenu ? Style1.mobile_menu_active : ""}`}
-            style={{
-              position: "fixed",
-              top: 0,
-              left: 0,
-              width: "100vw",
-              height: "100vh",
-              zIndex: 1005, 
-              pointerEvents: mobileMenu ? "auto" : "none", 
-            }}
-          >
-            <Link  to="/reallives/licenses" className={Style1.white_btn} onClick={() => setMobileMenu(false)}
-              style={{
-                pointerEvents: "auto",
-                position: "relative",
-                zIndex: 1006,
-              }}
-            >
-              Buy License
-            </Link>
-
-            <a
-              href="https://sls.reallivesworld.com/login"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={Style1.glow_btn}
-              onClick={() => setMobileMenu(false)}
-              style={{
-                pointerEvents: "auto",
-                position: "relative",
-                zIndex: 1006,
-              }}
-            >
-              <span>Login</span>
-            </a>
-          </div>
         </>
 
         {/* IN-LINE AUTO-SLIDER REPLACED BUTTON HERE */}

@@ -286,9 +286,14 @@ export const gamerContent = {
 
   pricing: {
     eyebrow: 'Gamer Pricing',
-    sectionHeading: 'Play at your own pace.',
+    sectionHeading: 'Start exploring lives around the world',
     sectionSubheading:
-      'Start with a one-year Base License and experience lives from around the world through RealLives. Add Credit Packs whenever you want more gameplay — your credits stay with your account and roll over as long as your license remains active.',
+      'Unlock RealLives and begin your journey with 3 included life credits.',
+    heroBadges: [
+      '3 Credits Included',
+      '1 Credit = 1 Life',
+      'Valid for 3 Years',
+    ],
     countryNote: {
       detectedPrefix: 'Showing prices for',
       fallback: 'Showing default international pricing',
@@ -298,87 +303,91 @@ export const gamerContent = {
       steps: [
         {
           number: '01',
-          title: 'Activate your Base License',
+          title: 'Get your World Pass',
           description:
-            'Your Base License unlocks full access to the RealLives platform for one year and includes starter lives so you can begin exploring immediately.',
+            'Your World Pass unlocks the full RealLives experience for three years and includes starter life credits so you can begin exploring immediately.',
         },
         {
           number: '02',
           title: 'Add Credits anytime',
           description:
-            '1 credit = 1 simulated life. Need more lives? Pick up a Credit Pack whenever you want. Credits are tied to your personal account, and you can stack as many as you like over time.',
+            '1 credit = 1 simulated life. Need more lives? Pick up a Credit Pack whenever you want. Credits stay on your account, and you can stack as many as you like over time.',
         },
         {
           number: '03',
           title: 'Keep unused credits with renewal',
           description:
-            'Unused credits never disappear. As long as your Base License remains active, your remaining credits carry forward into the next year automatically.',
+            'Unused credits never disappear. As long as your World Pass remains active, your remaining credits carry forward automatically.',
         },
       ],
     },
     baseLicense: {
+      title: 'World Pass',
       tagline: 'Required to play',
+      includedCredits: 3,
       includedLine:
-        '5 life credits included — start playing the moment you sign up.',
+        'Unlock the RealLives experience and start with 3 life credits.',
       bullets: [
-        '1 year of full RealLives Simulation access',
-        '5 simulated lives bundled with the license',
-        'Unlimited country and life-event content updates',
-        'Use credits whenever you play — no monthly commitment',
-        '5 credits to start with',
+        'Includes 3 life credits',
+        'Credits never expire while your pass is active',
+        'Purchase additional credits anytime',
+        'Keep credits on your account',
+        'Explore lives from every country',
       ],
       ctaText: 'Buy License',
+      onlyProductLabel: 'World Pass only',
       policyHeading: 'Good to know',
       policyNotes: [
-        'The Base License works on its own — you can start with the 5 included lives and add Credit Packs whenever you want more.',
+        'The World Pass works on its own — start with your included credits and add Credit Packs whenever you want more lives.',
         'No credit is charged when your simulated character dies before the age of 10.',
-        'Credits never expire — unused credits roll over to your next renewal year automatically.',
-        'Stack multiple Credit Packs anytime during the year as you need more lives.',
+        'Credits never expire while your World Pass is active — unused credits stay on your account.',
+        'Stack multiple Credit Packs anytime as you need more lives.',
       ],
     },
     creditPacks: {
-      heading: 'Choose a Credit Pack',
+      heading: 'Credit pack pricing',
       subheading:
-        'All packs use the same base feature set — only the number of credits (lives) differs. Stack multiple packs anytime during the year.',
+        'Add more lives anytime. Larger packs offer better value per credit.',
       bestValueLabel: 'Best Value',
       perCreditLabel: 'per credit',
       ctaText: 'Buy License',
-      bundledHint: 'Includes Base License + Credits',
+      bundledHint: 'Includes World Pass + Credits',
+      packLabelsByCredits: {
+        5: { subtitle: 'Great for getting started' },
+        10: { badge: 'Best Value' },
+        25: { badge: 'Most Popular' },
+        50: { subtitle: 'Ultimate Explorer' },
+      },
     },
     additionalCredits: {
-      heading: 'Buy additional credits',
+      heading: 'Credit pack pricing',
       subheading:
-        'Stack a Credit Pack on top of your Base License for more lives. Pick one and we\'ll add it to your order — credits never expire.',
+        'Add more lives anytime. Larger packs offer better value per credit — pick one to add to your order.',
       tileCtaText: 'Get Credit Pack',
     },
     rolloverPolicy: {
       heading: 'Credit rollover, in plain English',
       points: [
-        'Credits unused at the end of the year do not expire automatically.',
-        'Unused credits roll over to the next year, but only if your Base License is renewed.',
-        'If the Base License is not renewed, rolled-over credits are frozen — they’re not lost, they unlock again the moment you renew.',
+        'Credits unused while your pass is active do not expire.',
+        'Unused credits stay on your account as long as your World Pass remains active.',
+        'If your World Pass lapses, credits are held safely until you renew — they unlock again the moment you come back.',
       ],
     },
     faqs: [
       {
-        question: 'Do I really need the Base License?',
+        question: 'Do I really need the World Pass?',
         answer:
-          'Yes — the Base License is what unlocks the platform itself. It comes with 5 starter lives so you can begin playing right away. Credit Packs are optional add-ons for more lives whenever you need them.',
+          'Yes — the World Pass is what unlocks the RealLives experience. It comes with starter life credits so you can begin playing right away. Credit Packs are optional add-ons for more lives whenever you need them.',
       },
       {
         question: 'How long is one credit good for?',
         answer:
-          'One credit equals one simulated life — from birth to end. There’s no time limit on a single life; play it across many sessions if you like.',
+          'One credit equals one simulated life — from birth to end. There’s no time limit on a single life; play it across as many sessions as you like. If a life ends before age 10, no credit is used. A credit is only deducted once your character has lived past their tenth birthday.',
       },
       {
-        question: 'Why do prices differ by country?',
+        question: 'What happens to leftover credits when my pass ends?',
         answer:
-          'We tier prices by country using purchasing-power adjustments so RealLives stays affordable everywhere. Your displayed price already includes any local taxes and checkout charges that apply in your region.',
-      },
-      {
-        question: 'What happens to leftover credits when my year ends?',
-        answer:
-          'They’re held safely on your account. Renew the Base License and they unlock again. Skip renewal and they stay frozen until you come back — they’re never deleted.',
+          'They’re held safely on your account. Renew your World Pass and they unlock again. Let it lapse and they stay frozen until you come back — they’re never deleted.',
       },
     ],
     whatsIncluded: {
@@ -429,7 +438,7 @@ export const gamerContent = {
     purchaseModal: {
       heading: 'Continue to registration',
       body:
-        'You will leave this site and open the gamer license registration page to complete your purchase.',
+        'You will leave this site and open the gamer registration page to complete your World Pass or credit pack purchase.',
       confirmText: 'Continue',
     },
   },

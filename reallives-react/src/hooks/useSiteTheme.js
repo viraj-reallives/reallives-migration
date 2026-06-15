@@ -20,15 +20,13 @@
 //   }, [defaultTheme, setTheme, pathname]);
 // }
 
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 import { useTheme } from '@hooks/useTheme';
 
 /**
- * Apply default theme only on first visit.
- * User-selected theme remains unchanged when navigating pages.
+ * Apply a layout's default theme only on the user's first visit (no saved preference).
  */
-
 export function useSiteTheme(defaultTheme) {
   const { setTheme } = useTheme();
 
@@ -39,4 +37,26 @@ export function useSiteTheme(defaultTheme) {
       setTheme(defaultTheme);
     }
   }, [defaultTheme, setTheme]);
+}
+
+/**
+ * Always apply the given theme while this layout is mounted (e.g. gamer = dark).
+ * Restores the previous theme when the user leaves the layout.
+ */
+export function useForcedSiteTheme(forcedTheme) {
+  const { setTheme } = useTheme();
+  const previousThemeRef = useRef(null);
+
+  useEffect(() => {
+    previousThemeRef.current =
+      document.documentElement.getAttribute('data-theme') === 'dark'
+        ? 'dark'
+        : 'light';
+
+    setTheme(forcedTheme);
+
+    return () => {
+      setTheme(previousThemeRef.current ?? 'light');
+    };
+  }, [forcedTheme, setTheme]);
 }
