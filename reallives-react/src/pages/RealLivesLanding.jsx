@@ -538,10 +538,10 @@ const RealLivesLanding = () => {
     },
     {
       segment: "university",
-      title: "University",
+      title: "University Department",
       subTitle: "Learn Through Real-World Experience",
       desc: "Prepare students for careers and life beyond campus with experiential simulations that connect theory to human impact.",
-      btnText: "Explore University",
+      btnText: "Explore University Department",
       path: "/reallives/university",
       badge: "Mastery",
       icon: <GraduationCap size={22} strokeWidth={2} aria-hidden />,

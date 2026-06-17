@@ -25,7 +25,7 @@ const SITE_CONFIG = {
     path: "/reallives/school",
   },
   university: {
-    label: "University",
+    label: "University Department",
     description: "Our impactful journey from the year 2004",
     path: "/reallives/university",
   },

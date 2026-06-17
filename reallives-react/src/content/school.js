@@ -144,7 +144,7 @@ export const schoolContent = {
         learnMoreLinkText: 'Learn More',
       },
       {
-        title: 'ChangeMaker Index',
+        title: 'RealLives ChangeMaker Index (RCMI)',
         description:
           'Revolutionary assessment tool that measures 18 global competencies through gameplay decisions rather than self-reporting, providing authentic insights into student development.',
         imagePath: 'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/logos/changemaker-logo.svg',
@@ -950,7 +950,7 @@ export const schoolContent = {
       coversStudentsLabel: 'Covers ~',
     },
     rolloverPolicy: {
-      heading: 'Credit rollover, in plain English',
+      heading: 'Credit Rollover',
       points: [
         'Credits unused at the end of the year do not expire automatically.',
         'Unused credits roll over to the next year, but only if your Base License is renewed.',
@@ -1014,7 +1014,7 @@ export const schoolContent = {
         productTabId: 'tab4',
       },
       {
-        title: 'ChangeMaker Index',
+        title: 'RealLives ChangeMaker Index (RCMI)',
         description:
           'Assessment tool that measures 18 global competencies through gameplay decisions rather than self-reporting — providing authentic insights into student development.',
         imagePath: 'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/logos/changemaker-logo.svg',

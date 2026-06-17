@@ -69,7 +69,7 @@ function IncludedPanel() {
               </div>
 
               <p className={`${styles.includedItemTitle} ${Style1.include_title_text}`}>
-                RealLives ChangeMaker <br /> Index
+                RealLives ChangeMaker Index (RCMI)
               </p>
             </div>
             <p className={`${styles.includedItemDesc} ${Style1.color_cccccc}`}>

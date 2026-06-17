@@ -25,7 +25,7 @@ export const universityContent = {
     ctaText: "Get Started",
     ctaPath: "/reallives/university/contact",
     supportingText: {
-      whySchoolsHeading: "Why Universities Choose RealLives?",
+      whySchoolsHeading: "Why University Departments Choose RealLives?",
       whySchoolsBullets: [
         {
           title: "Interdisciplinary Applications\u00a0",
@@ -74,7 +74,7 @@ export const universityContent = {
       gettingStartedHeading: "Proven Impact in Higher Education",
       gettingStartedSubheading: "Integrate RealLives now!",
       gettingStartedParagraphs: [
-        "Universities worldwide report enhanced student engagement, improved analytical thinking, and stronger preparation for graduate research and global careers. Faculty consistently note increased class participation sophisticated student discussions of global issues.",
+        "University departments worldwide report enhanced student engagement, improved analytical thinking, and stronger preparation for graduate research and global careers. Faculty consistently note increased class participation sophisticated student discussions of global issues.",
         "Ready to enhance your courses with cutting-edge simulation technology?",
       ],
     },
@@ -152,7 +152,7 @@ export const universityContent = {
         learnMoreLinkText: "Learn More",
       },
       {
-        title: "ChangeMaker Index",
+        title: "RealLives ChangeMaker Index (RCMI)",
         description:
           "Revolutionary assessment tool that measures 18 global competencies through gameplay decisions rather than self-reporting, providing authentic insights into student development.",
         imagePath:
@@ -333,7 +333,7 @@ export const universityContent = {
     heroImageCaption: "RealLives at ETH University, Zurich, Switzerland",
     heading: "RealLives ChangeMaker Project",
     body: "The RealLives ChangeMaker Project is your journey from awareness to action. Experience life through different perspectives, assess your global competencies, and channel your insights into creating meaningful change through impactful business solutions",
-    ctaSchoolHeading: "Ready to Become a \nChangeMaker University?",
+    ctaSchoolHeading: "Ready to Become a \nChangeMaker University Department?",
     ctaButtonText: "Get Started",
     journeyHeading: "Your ChangeMaker Journey",
     phases: [
@@ -658,11 +658,11 @@ export const universityContent = {
     methodsLabel: "Methods\u00a0",
     goBackText: "Go Back",
     readPaperText: "Read the Paper",
-    bringToSchoolText: "Bring RealLives to Your University",
+    bringToSchoolText: "Bring RealLives to Your University Department",
     bringToSchoolPath: "/reallives/university/contact",
     contactBannerHeading: "Get in Touch",
     contactBannerSubheading:
-      "Questions about our research or bringing RealLives to your university? We would love to hear from you.",
+      "Questions about our research or bringing RealLives to your university department? We would love to hear from you.",
     contactBannerButtonPath: "/reallives/university/contact",
     items: [
       {
@@ -903,16 +903,16 @@ export const universityContent = {
   },
 
   pricing: {
-    eyebrow: "University Pricing",
+    eyebrow: "University Department Pricing",
     sectionHeading: "Built for higher-ed scale.",
     sectionSubheading:
       "Bring RealLives across courses, departments, and research programs with a flexible institution-wide license. Start with a Base License, add the credits your university needs, and distribute them across cohorts, classrooms, and initiatives without per-student restrictions.",
     howItWorks: {
-      heading: "How RealLives University licensing works",
+      heading: "How RealLives University Department licensing works",
       steps: [
         {
           number: "01",
-          title: "Activate your University License",
+          title: "Activate your University Department License",
           description:
             "One annual Base License provides access for your faculty, department, or institution — enabling educators and administrators to run RealLives across multiple courses and programs without individual student licensing.",
         },
@@ -965,17 +965,17 @@ export const universityContent = {
       eyebrow: "Coming Soon",
       heading: "Localized pricing for your region is on the way.",
       body:
-        "We're rolling out country-tiered pricing for universities to keep RealLives affordable everywhere. In the meantime, get in touch and we'll quote you directly.",
+        "We're rolling out country-tiered pricing for university departments to keep RealLives affordable everywhere. In the meantime, get in touch and we'll quote you directly.",
       ctaText: "Contact our team",
       ctaHref: "/reallives/university/contact",
     },
     rolloverPolicy: {
-      heading: "Credit rollover, in plain English",
+      heading: "Credit Rollover",
       points: [
         "Credits unused at the end of the year do not expire automatically.",
         "Unused credits roll over to the next year, but only if your Base License is renewed.",
         "Without renewal, rolled-over credits are frozen — never lost. They unlock again the moment you renew.",
-        "University credits are pooled across the entire institution; faculty decide how to allocate them.",
+        "University Department credits are pooled across the entire institution; faculty decide how to allocate them.",
       ],
     },
     faqs: [
@@ -1039,7 +1039,7 @@ export const universityContent = {
         productTabId: "tab4",
       },
       {
-        title: "ChangeMaker Index",
+        title: "RealLives ChangeMaker Index (RCMI)",
         description:
           "Assessment tool that measures 18 global competencies through gameplay decisions rather than self-reporting — providing authentic insights into student development.",
         imagePath: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/logos/changemaker-logo.svg",
@@ -1050,7 +1050,7 @@ export const universityContent = {
     ],
     purchaseModal: {
       heading: "Continue to registration",
-      body: "You will leave this site and open the university license registration page to complete your purchase.",
+      body: "You will leave this site and open the university department license registration page to complete your purchase.",
       confirmText: "Continue",
     },
   },
@@ -1090,7 +1090,7 @@ export const universityContent = {
         {
           version: "RealLives 2025",
           description:
-            "The current RealLives release continues the cloud-first experience with refreshed flows, updated global datasets, and ongoing improvements to empathy-focused learning outcomes for universities worldwide.",
+            "The current RealLives release continues the cloud-first experience with refreshed flows, updated global datasets, and ongoing improvements to empathy-focused learning outcomes for university departments worldwide.",
           badge: "Current Version",
         },
       ],

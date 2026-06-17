@@ -182,7 +182,7 @@ export default function UniversityContact() {
     submissionData.append("name", formData.name);
     submissionData.append("email", formData.email);
     submissionData.append("message", formData.message);
-    submissionData.append("subject", "University Contact Form");
+    submissionData.append("subject", "University Department Contact Form");
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {

@@ -357,7 +357,7 @@ export const landingContent = {
       image: "",
     },
     {
-      label: "University",
+      label: "University Department",
       badge: "Mastery",
       headline: "Learn Through Real-World Experience",
       title_robot: [
@@ -369,7 +369,7 @@ export const landingContent = {
       ],
       description:
         "Prepare students for careers and life beyond campus with experiential simulations that connect theory to human impact.",
-      ctaLabel: "Explore University",
+      ctaLabel: "Explore University Department",
       path: "/reallives/university",
       image: "",
     },

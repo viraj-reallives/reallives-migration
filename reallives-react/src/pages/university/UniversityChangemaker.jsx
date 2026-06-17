@@ -247,7 +247,7 @@ export default function UniversityChangemaker() {
             {/* Left Content */}
             <div>
               <h1 className={`${styles.heroTitle} ${Style1.changemaker_hero_title}`}>
-                {data.heading || "University Changemaker"}
+                {data.heading || "University Department Changemaker"}
               </h1>
               <p className={`${styles.heroBody} ${Style1.changemaker_herbody_p}`}>
                 {data.body || "Empowering students through immersive global simulation."}
@@ -349,7 +349,7 @@ export default function UniversityChangemaker() {
       {/* CLOSING SECTION */}
       <footer className={styles.closing}>
         <h2 className={styles.closingHeading}>
-          {data.closingHeading || "Bring RealLives to Your University"}
+          {data.closingHeading || "Bring RealLives to Your University Department"}
         </h2>
         
         <p className={styles.closingSub}>

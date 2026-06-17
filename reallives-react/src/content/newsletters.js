@@ -4767,7 +4767,7 @@ export const newslettersContent = {
     ],
   },
   university: {
-    heading: 'Newsletters for Universities',
+    heading: 'Newsletters for University Departments',
     intro:
       'Read faculty stories, course integration examples, and data-backed practices for higher education cohorts.',
     categories,

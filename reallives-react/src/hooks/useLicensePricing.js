@@ -111,15 +111,33 @@ export function useLicensePricing({ tenantType, enabled = true } = {}) {
 }
 
 /**
+ * Gamer catalog product codes shown on the pricing page (names come from API `name`).
+ */
+const GAMER_BASE_LICENSE_CODE = 'YEARLY_GAMER';
+const GAMER_CREDIT_PACK_CODES = ['WANDERER', 'STARTER', 'STANDARD', 'MAX_GAMER'];
+
+/**
  * Splits catalog definitions into base license vs credit packs.
  *
- * - Prefer a definition whose validity is in YEARS (family base, gamer yearly,
+ * - GAMER: base = YEARLY_GAMER; packs = WANDERER, STARTER, STANDARD, MAX_GAMER.
+ * - Otherwise prefer a definition whose validity is in YEARS (family base, gamer yearly,
  *   some regional school rows).
  * - Otherwise pick the institutional / family "basic" row: max_plays === 0
  *   and code contains BASIC (e.g. UNIVERSITY_BASIC_* when validity is DAYS).
  * - Credit packs are remaining definitions with max_plays > 0, sorted by size.
  */
-export function splitBaseAndCredits(defs = []) {
+export function splitBaseAndCredits(defs = [], { tenantType } = {}) {
+  if (tenantType === 'GAMER') {
+    const baseLicense =
+      defs.find((def) => def?.code === GAMER_BASE_LICENSE_CODE) ?? null;
+    const creditPacks = defs
+      .filter((def) => GAMER_CREDIT_PACK_CODES.includes(def?.code))
+      .slice()
+      .sort((a, b) => (a?.rules?.max_plays ?? 0) - (b?.rules?.max_plays ?? 0));
+
+    return { baseLicense, creditPacks };
+  }
+
   const byYears = defs.find((def) => def?.rules?.validity?.unit === 'YEARS');
   let baseLicense = byYears ?? null;
 

@@ -33,7 +33,7 @@ export const licensesContent = {
   },
 
   university: {
-    title: "University",
+    title: "University Department",
     description: "Bridge the gap between learning and real-world impact",
     icon: "/assets/images/license/image-add/Vector-2.svg",
     tiers: [

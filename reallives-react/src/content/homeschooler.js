@@ -331,7 +331,7 @@ export const homeschoolerContent = {
     heroImageCaption: "RealLives at ETH University, Zurich, Switzerland",
     heading: "RealLives ChangeMaker Project",
     body: "The RealLives ChangeMaker Project is your journey from awareness to action. Experience life through different perspectives, assess your global competencies, and channel your insights into creating meaningful change through impactful business solutions",
-    ctaSchoolHeading: "Ready to Become a \nChangeMaker University?",
+    ctaSchoolHeading: "Ready to Become a \nChangeMaker University Department?",
     ctaButtonText: "Get Started",
     journeyHeading: "Your ChangeMaker Journey",
     phases: [
@@ -965,7 +965,7 @@ export const homeschoolerContent = {
       coversStudentsLabel: "Covers ~",
     },
     rolloverPolicy: {
-      heading: "Credit rollover, in plain English",
+      heading: "Credit Rollover",
       points: [
         "Credits unused at the end of the year do not expire automatically.",
         "Unused credits roll over to the next year, but only if your Base License is renewed.",
@@ -1006,6 +1006,44 @@ export const homeschoolerContent = {
       description:
         "Every family license unlocks the full RealLives experience — simulations, reflection tools, and age-appropriate content for kids and teens.",
     },
+    includedProductCards: [
+      {
+        title: "RealLives Simulation",
+        description:
+          "Experience life from birth to death in different countries and circumstances. Make decisions that shape your virtual life while learning about global inequalities and cultural differences.",
+        imagePath: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/logos/real-r-logo.svg",
+        featureTags: ["Life Simulation", "Cultural Awareness"],
+        learnMoreLinkText: "Learn More",
+        productTabId: "tab1",
+      },
+      {
+        title: "Empathy Canvas",
+        description:
+          "A structured reflection framework that helps learners process their RealLives experiences and develop deeper empathy through guided self-reflection.",
+        imagePath: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/logos/empathy-logo.svg",
+        featureTags: ["Reflection Tool", "Empathy Building"],
+        learnMoreLinkText: "Learn More",
+        productTabId: "tab3",
+      },
+      {
+        title: "RealBoard",
+        description:
+          "A safe, private family social platform where learners share their RealLives experiences and engage in moderated peer discussion.",
+        imagePath: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/logos/realboard-logo.svg",
+        featureTags: ["Social Platform", "Peer Learning"],
+        learnMoreLinkText: "Learn More",
+        productTabId: "tab4",
+      },
+      {
+        title: "RealLives ChangeMaker Index (RCMI)",
+        description:
+          "Assessment tool that measures 18 global competencies through gameplay decisions rather than self-reporting — providing authentic insights into learner development.",
+        imagePath: "https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/logos/changemaker-logo.svg",
+        featureTags: ["Assessment Tool", "18 Competencies"],
+        learnMoreLinkText: "Learn More",
+        productTabId: "tab2",
+      },
+    ],
     purchaseModal: {
       heading: "Continue to registration",
       body: "You will leave this site and open the family license registration page to complete your purchase.",

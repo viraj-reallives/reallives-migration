@@ -288,9 +288,9 @@ export const gamerContent = {
     eyebrow: 'Gamer Pricing',
     sectionHeading: 'Start exploring lives around the world',
     sectionSubheading:
-      'Unlock RealLives and begin your journey with 3 included life credits.',
+      'Unlock RealLives and begin your journey with 4 included life credits.',
     heroBadges: [
-      '3 Credits Included',
+      '4 Credits Included',
       '1 Credit = 1 Life',
       'Valid for 3 Years',
     ],
@@ -305,7 +305,7 @@ export const gamerContent = {
           number: '01',
           title: 'Get your World Pass',
           description:
-            'Your World Pass unlocks the full RealLives experience for three years and includes starter life credits so you can begin exploring immediately.',
+            'Your World Pass unlocks the full RealLives experience for three years and includes 4 starter life credits so you can begin exploring immediately.',
         },
         {
           number: '02',
@@ -324,11 +324,13 @@ export const gamerContent = {
     baseLicense: {
       title: 'World Pass',
       tagline: 'Required to play',
-      includedCredits: 3,
+      includedCredits: 4,
+      validityYears: 3,
       includedLine:
-        'Unlock the RealLives experience and start with 3 life credits.',
+        'Unlock the RealLives experience and start with 4 life credits.',
       bullets: [
-        'Includes 3 life credits',
+        'Includes 4 life credits',
+        'Valid for 3 years',
         'Credits never expire while your pass is active',
         'Purchase additional credits anytime',
         'Keep credits on your account',
@@ -353,10 +355,8 @@ export const gamerContent = {
       ctaText: 'Buy License',
       bundledHint: 'Includes World Pass + Credits',
       packLabelsByCredits: {
-        5: { subtitle: 'Great for getting started' },
         10: { badge: 'Best Value' },
         25: { badge: 'Most Popular' },
-        50: { subtitle: 'Ultimate Explorer' },
       },
     },
     additionalCredits: {
@@ -366,7 +366,7 @@ export const gamerContent = {
       tileCtaText: 'Get Credit Pack',
     },
     rolloverPolicy: {
-      heading: 'Credit rollover, in plain English',
+      heading: 'Credit Rollover',
       points: [
         'Credits unused while your pass is active do not expire.',
         'Unused credits stay on your account as long as your World Pass remains active.',
@@ -377,7 +377,7 @@ export const gamerContent = {
       {
         question: 'Do I really need the World Pass?',
         answer:
-          'Yes — the World Pass is what unlocks the RealLives experience. It comes with starter life credits so you can begin playing right away. Credit Packs are optional add-ons for more lives whenever you need them.',
+          'Yes — the World Pass is what unlocks the RealLives experience. It comes with 4 starter life credits and is valid for 3 years so you can begin playing right away. Credit Packs are optional add-ons for more lives whenever you need them.',
       },
       {
         question: 'How long is one credit good for?',
@@ -424,7 +424,7 @@ export const gamerContent = {
         productTabId: 'tab4',
       },
       {
-        title: 'ChangeMaker Index',
+        title: 'RealLives ChangeMaker Index (RCMI)',
         description:
           'Revolutionary assessment tool that measures 18 global competencies through gameplay decisions rather than self-reporting, providing authentic insights into student development.',
         imagePath: 'https://d2jn82ki4w4ftn.cloudfront.net/reallives-website/logos/changemaker-logo.svg',
